@@ -3,721 +3,564 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Daynize | 서류 입력에 뺏기던 시간, 단 3초 만에 끝내세요</title>
-<meta name="description" content="보험 증권, 영수증, 고객 서류 촬영 한 번으로 데이터 자동 추출부터 스케줄 등록까지. 영업인을 위한 OCR 생산성 도구, Daynize.">
+<title>Daynize | 비우고 채우는 가벼운 일상</title>
+<meta name="description" content="Daynize는 금융/자산 정리와 교육/배움을 하나로 잇는 가벼운 일상 도구입니다. 서류 한 장은 OCR로, 배움은 카드 한 장으로.">
 
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<!-- Google Font: Pretendard fallback to system, using Noto Sans KR for reliability -->
+<!-- Google Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 <script>
   tailwind.config = {
     theme: {
       extend: {
         colors: {
-          navy: {
-            DEFAULT: '#0f172a',
-            50: '#f8fafc',
-            100: '#e2e8f0',
-            700: '#1e293b',
-            800: '#152238',
-            900: '#0f172a',
-            950: '#080e1c'
-          },
-          brand: {
-            blue: '#3b82f6',
-            emerald: '#10b981'
-          }
+          ink: '#F4F5F3',
+          paper: '#0A0C10',
+          'paper-soft': '#12151B',
+          line: '#2A2E36',
+          finance: { DEFAULT: '#6F97E8', soft: '#2C4272', deep: '#B9D0FF' },
+          edu: { DEFAULT: '#6FCB93', soft: '#2C4A38', deep: '#B9E8CB' }
         },
         fontFamily: {
           sans: ['"Noto Sans KR"', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
         },
-        boxShadow: {
-          glass: '0 8px 32px 0 rgba(15, 23, 42, 0.37)',
-          glow: '0 0 40px rgba(59, 130, 246, 0.35)'
+        keyframes: {
+          fadeup: {
+            '0%': { opacity: '0', transform: 'translateY(18px)' },
+            '100%': { opacity: '1', transform: 'translateY(0)' }
+          },
+          bob: {
+            '0%,100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(8px)' }
+          }
         },
         animation: {
-          'scan-line': 'scanline 2.2s ease-in-out infinite',
-          'float-slow': 'floaty 6s ease-in-out infinite',
-          'fade-up': 'fadeup .7s ease forwards'
-        },
-        keyframes: {
-          scanline: {
-            '0%': { top: '0%', opacity: '0.2' },
-            '10%': { opacity: '1' },
-            '50%': { top: '100%', opacity: '1' },
-            '60%': { opacity: '0.2' },
-            '100%': { top: '0%', opacity: '0' }
-          },
-          floaty: {
-            '0%, 100%': { transform: 'translateY(0px)' },
-            '50%': { transform: 'translateY(-14px)' }
-          },
-          fadeup: {
-            '0%': { opacity: '0', transform: 'translateY(16px)' },
-            '100%': { opacity: '1', transform: 'translateY(0)' }
-          }
+          'fade-up': 'fadeup .8s ease forwards',
+          'bob': 'bob 1.8s ease-in-out infinite'
         }
       }
     }
-  }
+  };
 </script>
 
 <style>
   html { scroll-behavior: smooth; }
   body {
-    background-color: #0b1220;
+    background: #0A0C10;
+    color: #F4F5F3;
     font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: #e2e8f0;
     overflow-x: hidden;
+    position: relative;
+  }
+  section { scroll-margin-top: 84px; }
+
+  /* Glassmorphism Common Utilities */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
 
-  /* Glassmorphic crystal panel */
-  .glass {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  .glass-strong {
-    background: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-  }
   .glass-card {
-    background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015));
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255,255,255,0.09);
-  }
-
-  /* Background ambient glow */
-  .bg-mesh {
-    background:
-      radial-gradient(ellipse 80% 50% at 20% -10%, rgba(59,130,246,0.25), transparent),
-      radial-gradient(ellipse 60% 50% at 100% 10%, rgba(16,185,129,0.18), transparent),
-      radial-gradient(ellipse 60% 50% at 50% 100%, rgba(59,130,246,0.12), transparent);
-  }
-
-  .text-gradient {
-    background: linear-gradient(90deg, #60a5fa, #34d399);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .btn-primary {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    box-shadow: 0 10px 30px -10px rgba(59,130,246,0.6);
-    transition: all .25s ease;
-  }
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 34px -8px rgba(59,130,246,0.75);
-  }
-
-  .btn-emerald {
-    background: linear-gradient(135deg, #10b981, #059669);
-    box-shadow: 0 10px 30px -10px rgba(16,185,129,0.6);
-    transition: all .25s ease;
-  }
-  .btn-emerald:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 34px -8px rgba(16,185,129,0.75);
-  }
-
-  .card-hover { transition: all .3s ease; }
-  .card-hover:hover { transform: translateY(-6px); }
-
-  /* Upload dropzone */
-  .dropzone {
-    border: 2px dashed rgba(148,163,184,0.35);
-    transition: all .25s ease;
-  }
-  .dropzone.dragover {
-    border-color: #3b82f6;
-    background: rgba(59,130,246,0.08);
-  }
-
-  /* Scan laser */
-  .scan-wrap { position: relative; overflow: hidden; }
-  .scan-laser {
-    position: absolute;
-    left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #34d399, #3b82f6, transparent);
-    box-shadow: 0 0 20px 4px rgba(59,130,246,0.8);
-    animation: scanline 1.8s linear infinite;
-  }
-  .scan-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(59,130,246,0.15) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(59,130,246,0.15) 1px, transparent 1px);
-    background-size: 24px 24px;
-    mix-blend-mode: screen;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
 
   @keyframes fadeup {
-    0% { opacity: 0; transform: translateY(16px); }
+    0% { opacity: 0; transform: translateY(18px); }
     100% { opacity: 1; transform: translateY(0); }
   }
-  .fade-up { opacity: 0; animation: fadeup .7s ease forwards; }
-  .delay-1 { animation-delay: .1s; }
-  .delay-2 { animation-delay: .2s; }
-  .delay-3 { animation-delay: .3s; }
+  .fade-up { opacity: 0; animation: fadeup .8s ease forwards; }
+  .delay-1 { animation-delay: .15s; }
+  .delay-2 { animation-delay: .3s; }
+  .delay-3 { animation-delay: .45s; }
 
-  ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: #0b1220; }
-  ::-webkit-scrollbar-thumb { background: #334155; border-radius: 8px; }
+  #header { transition: background-color .3s ease, box-shadow .3s ease, border-color .3s ease; }
+  #header.scrolled {
+    background-color: rgba(8, 10, 14, 0.65);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+  }
+
+  .track-card { transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+  .track-card:hover { transform: translateY(-6px); box-shadow: 0 25px 60px -15px rgba(0,0,0,0.6); }
+
+  .dropzone { border: 1.5px dashed rgba(255,255,255,0.25); transition: all .25s ease; }
+  .dropzone.dragover { border-color: #6F97E8; background: rgba(111,151,232,0.12); }
 
   .spinner {
-    border: 3px solid rgba(255,255,255,0.1);
-    border-top-color: #3b82f6;
+    border: 3px solid rgba(255,255,255,0.15);
+    border-top-color: #6F97E8;
     border-radius: 50%;
     width: 20px; height: 20px;
-    animation: spin 0.8s linear infinite;
+    animation: spin .8s linear infinite;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  .typing-dot { animation: blink 1.4s infinite both; }
-  .typing-dot:nth-child(2) { animation-delay: .2s; }
-  .typing-dot:nth-child(3) { animation-delay: .4s; }
-  @keyframes blink { 0%, 80%, 100% { opacity: .2; } 40% { opacity: 1; } }
+  .bar-grow { transition: height 1s cubic-bezier(.2,.8,.2,1); }
 
-  .badge-pop { animation: pop .4s ease; }
-  @keyframes pop { 0% { transform: scale(0.8); opacity:0; } 100% { transform: scale(1); opacity:1; } }
+  /* Flip card */
+  .flip-card { perspective: 1400px; }
+  .flip-card-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform .6s cubic-bezier(.4,.2,.2,1);
+    transform-style: preserve-3d;
+  }
+  .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-face {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 1.5rem;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 2rem;
+  }
+  .flip-card-back { transform: rotateY(180deg); }
 
-  /* modal backdrop */
-  .modal-backdrop { background: rgba(8,14,28,0.75); backdrop-filter: blur(6px); }
+  .dot { transition: all .25s ease; }
 
   input[type="file"] { display: none; }
 </style>
 </head>
-<body class="bg-navy-900 bg-mesh min-h-screen">
+<body class="bg-paper min-h-screen">
 
-<!-- ============ HEADER ============ -->
-<header id="top" class="fixed top-0 left-0 right-0 z-50">
-  <div class="glass mx-3 mt-3 rounded-2xl md:mx-6 md:mt-4">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-2">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-blue to-brand-emerald flex items-center justify-center shadow-glow">
-          <i class="fa-solid fa-bolt text-white text-sm"></i>
-        </div>
-        <span class="text-xl font-black tracking-tight text-white">Daynize</span>
+<!-- 야경 무드 배경: 어두운 톤 + 원형 빛 블롭(Orbs) + 가독성을 위한 어두운 오버레이 -->
+<div class="fixed inset-0 -z-20 bg-paper"></div>
+<div class="fixed top-[-15%] left-[-12%] w-[55vw] h-[55vw] rounded-full bg-blue-500/40 blur-[130px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-[-15%] right-[-12%] w-[55vw] h-[55vw] rounded-full bg-emerald-500/35 blur-[130px] pointer-events-none -z-10"></div>
+<div class="fixed top-[15%] right-[-18%] w-[38vw] h-[38vw] rounded-full bg-amber-400/25 blur-[130px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-[5%] left-[-18%] w-[42vw] h-[42vw] rounded-full bg-fuchsia-500/20 blur-[130px] pointer-events-none -z-10"></div>
+<div class="fixed inset-0 -z-10 pointer-events-none" style="background: linear-gradient(180deg, rgba(4,5,8,0.2) 0%, rgba(4,5,8,0.35) 55%, rgba(4,5,8,0.6) 100%);"></div>
+
+<!-- ============ HEADER / GNB ============ -->
+<header id="header" class="fixed top-0 inset-x-0 z-50">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-full bg-ink flex items-center justify-center">
+        <span class="w-2.5 h-2.5 rounded-full bg-paper"></span>
+      </span>
+      <span class="text-lg font-black tracking-tight text-ink">Daynize</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1 text-sm font-semibold">
+      <a href="#finance" class="px-4 py-2 rounded-full text-finance-deep hover:bg-white/15 transition">금융 · 자산</a>
+      <a href="#education" class="px-4 py-2 rounded-full text-edu-deep hover:bg-white/15 transition">교육 · 배움</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href="#tracks" class="hidden sm:inline-flex items-center gap-1.5 bg-ink/90 backdrop-blur-md text-paper text-sm font-bold px-5 py-2.5 rounded-full hover:bg-ink transition shadow-md">
+        시작하기 <i class="fa-solid fa-arrow-right text-xs"></i>
       </a>
-
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#demo" class="hover:text-white transition">OCR 데모</a>
-        <a href="#pricing" class="hover:text-white transition">요금제</a>
-        <a href="#reviews" class="hover:text-white transition">고객 후기</a>
-        <a href="#footer" class="hover:text-white transition">회사 정보</a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <button onclick="openModal('loginModal')" class="hidden sm:inline-flex px-4 py-2 text-sm font-semibold text-slate-200 hover:text-white transition">
-          로그인
-        </button>
-        <button onclick="scrollToDemo()" class="btn-primary text-white text-sm font-bold px-4 sm:px-5 py-2.5 rounded-xl">
-          무료 체험하기
-        </button>
-        <button class="md:hidden text-white text-lg ml-1" onclick="toggleMobileMenu()">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
+      <button class="md:hidden text-ink text-lg" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
+  </div>
 
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 flex flex-col gap-3 text-slate-300 text-sm font-medium border-t border-white/10 pt-3">
-      <a href="#demo" onclick="toggleMobileMenu()" class="hover:text-white">OCR 데모</a>
-      <a href="#pricing" onclick="toggleMobileMenu()" class="hover:text-white">요금제</a>
-      <a href="#reviews" onclick="toggleMobileMenu()" class="hover:text-white">고객 후기</a>
-      <a href="#footer" onclick="toggleMobileMenu()" class="hover:text-white">회사 정보</a>
-      <button onclick="openModal('loginModal')" class="text-left hover:text-white">로그인 / 결제</button>
-    </div>
+  <div id="mobileMenu" class="hidden md:hidden px-5 pb-4 flex flex-col gap-1 border-t border-white/15 pt-3 bg-paper/80 backdrop-blur-lg">
+    <a href="#finance" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl font-semibold text-finance-deep">금융 · 자산 트랙</a>
+    <a href="#education" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl font-semibold text-edu-deep">교육 · 배움 트랙</a>
   </div>
 </header>
 
 <!-- ============ HERO ============ -->
-<section class="relative pt-40 pb-24 px-4 sm:px-6">
-  <div class="max-w-5xl mx-auto text-center">
-    <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-6 fade-up">
-      <span class="w-2 h-2 rounded-full bg-brand-emerald animate-pulse"></span>
-      <span class="text-xs font-semibold text-slate-300">영업인을 위한 AI 서류 자동화, 지금 3초 체험</span>
+<section id="top" class="relative min-h-[92vh] flex flex-col items-center justify-center px-5 sm:px-8 text-center">
+  <p class="fade-up text-xs sm:text-sm font-bold tracking-[0.25em] text-ink/40 uppercase mb-6">Daynize</p>
+
+  <h1 class="fade-up delay-1 text-4xl sm:text-6xl md:text-7xl leading-[1.15] tracking-tight text-ink mb-7">
+    <span class="font-light">비우고 채우는</span><br>
+    <span class="font-black">가벼운 일상</span>
+  </h1>
+
+  <p class="fade-up delay-2 text-base sm:text-lg text-ink/60 max-w-md sm:max-w-lg leading-relaxed mb-14">
+    복잡한 서류와 흩어진 배움을,<br class="hidden sm:block">
+    하루 3초의 습관으로 정리합니다.
+  </p>
+
+  <button onclick="scrollToId('tracks')" class="fade-up delay-3 flex flex-col items-center gap-2 text-ink/40 hover:text-ink/70 transition">
+    <span class="text-xs font-semibold">오늘, 무엇을 비워볼까요</span>
+    <i class="fa-solid fa-chevron-down animate-bob"></i>
+  </button>
+</section>
+
+<!-- ============ TRACK SELECTION ============ -->
+<section id="tracks" class="px-5 sm:px-8 py-20 sm:py-28 relative">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-2xl sm:text-3xl font-black text-ink mb-3">목적에 맞는 하루를 선택하세요</h2>
+      <p class="text-ink/50 text-sm sm:text-base">두 갈래 길, 결국 같은 목표 — 가벼워지는 것</p>
     </div>
 
-    <h1 class="fade-up delay-1 text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight text-white mb-6">
-      서류 입력에 뺏기던 시간,<br>
-      <span class="text-gradient">단 3초 만에</span> 끝내세요.
-    </h1>
+    <div class="grid sm:grid-cols-2 gap-5 sm:gap-6">
+      <!-- Finance track card -->
+      <a href="#finance" onclick="openNoticeModal()" class="track-card glass-panel rounded-3xl p-8 sm:p-9 group block">
+        <div class="w-12 h-12 rounded-2xl bg-finance-soft/80 flex items-center justify-center mb-6 shadow-inner">
+          <i class="fa-solid fa-file-invoice-dollar text-finance text-lg"></i>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-black text-ink mb-2">금융 · 자산 트랙</h3>
+        <p class="text-ink/60 text-sm leading-relaxed mb-6">
+          보험 서류, 영수증 촬영 한 번으로 자동 인식하고<br>지출과 자산 흐름을 한눈에 정리합니다.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-7">
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-finance-soft/80 text-finance-deep">OCR 자동 인식</span>
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-finance-soft/80 text-finance-deep">자산/지출 분석</span>
+        </div>
+        <span class="inline-flex items-center gap-1.5 text-sm font-bold text-finance-deep">
+          자산 정리 시작하기
+          <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+        </span>
+      </a>
 
-    <p class="fade-up delay-2 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-      보험 증권, 영수증, 고객 서류 촬영 한 번으로<br class="hidden sm:block">
-      데이터 자동 추출부터 스케줄 등록까지.
-    </p>
-
-    <div class="fade-up delay-3 flex flex-col sm:flex-row items-center justify-center gap-3">
-      <button onclick="scrollToDemo()" class="btn-primary text-white font-bold px-7 py-4 rounded-2xl text-base w-full sm:w-auto">
-        <i class="fa-solid fa-camera-retro mr-2"></i>영수증/증권 OCR 3초 체험하기
-      </button>
-      <a href="#pricing" class="glass text-slate-200 font-semibold px-7 py-4 rounded-2xl text-base w-full sm:w-auto hover:bg-white/10 transition">
-        요금제 보기
+      <!-- Education track card -->
+      <a href="#education" onclick="openNoticeModal()" class="track-card glass-panel rounded-3xl p-8 sm:p-9 group block">
+        <div class="w-12 h-12 rounded-2xl bg-edu-soft/80 flex items-center justify-center mb-6 shadow-inner">
+          <i class="fa-solid fa-layer-group text-edu text-lg"></i>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-black text-ink mb-2">교육 · 배움 트랙</h3>
+        <p class="text-ink/60 text-sm leading-relaxed mb-6">
+          하루 한 장, 카드를 넘기며 채우는 학습.<br>짧은 문장이 자연스럽게 쌓여 습관이 됩니다.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-7">
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-edu-soft/80 text-edu-deep">플립 카드 학습</span>
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-edu-soft/80 text-edu-deep">하루 10분 반복</span>
+        </div>
+        <span class="inline-flex items-center gap-1.5 text-sm font-bold text-edu-deep">
+          학습 시작하기
+          <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+        </span>
       </a>
     </div>
-
-    <div class="fade-up delay-3 mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-slate-500 text-xs font-medium">
-      <span><i class="fa-solid fa-shield-halved text-brand-emerald mr-1.5"></i>개인정보 암호화 처리</span>
-      <span><i class="fa-solid fa-bolt text-brand-blue mr-1.5"></i>평균 인식 속도 2.8초</span>
-      <span><i class="fa-solid fa-users text-brand-blue mr-1.5"></i>영업인 3,200명 사용중</span>
-    </div>
-  </div>
-
-  <!-- floating decor cards (desktop only) -->
-  <div class="hidden lg:block absolute top-40 left-8 glass-card rounded-2xl p-4 w-52 animate-float-slow shadow-glass">
-    <div class="flex items-center gap-2 text-xs text-slate-400 mb-2"><i class="fa-solid fa-file-invoice text-brand-emerald"></i> 인식 완료</div>
-    <div class="text-sm font-bold text-white">삼성생명 보장분석서</div>
-    <div class="text-[11px] text-slate-500 mt-1">고객명: 김O훈 · 812,000원</div>
-  </div>
-  <div class="hidden lg:block absolute top-64 right-10 glass-card rounded-2xl p-4 w-52 animate-float-slow shadow-glass" style="animation-delay: 1.5s;">
-    <div class="flex items-center gap-2 text-xs text-slate-400 mb-2"><i class="fa-solid fa-calendar-check text-brand-blue"></i> 일정 자동 등록</div>
-    <div class="text-sm font-bold text-white">상담 후속 미팅</div>
-    <div class="text-[11px] text-slate-500 mt-1">9/22(월) 14:00 등록됨</div>
   </div>
 </section>
 
-<!-- ============ OCR DEMO SECTION ============ -->
-<section id="demo" class="relative px-4 sm:px-6 py-20">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-12">
-      <span class="text-brand-blue font-bold text-sm tracking-wide uppercase">Live Demo</span>
-      <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 mb-4">OCR 핵심 기능, 지금 바로 체험해보세요</h2>
-      <p class="text-slate-400 max-w-xl mx-auto">증권/영수증 이미지를 올리면 Daynize AI가 핵심 데이터를 추출합니다.</p>
+<!-- ============ FINANCE / OCR SECTION ============ -->
+<section id="finance" class="px-5 sm:px-8 py-20 sm:py-28 relative">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div>
+      <span class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-finance mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-finance"></span> Finance Track
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-black text-ink mb-5 leading-tight">
+        서류는 사진으로,<br>정리는 자동으로
+      </h2>
+      <p class="text-ink/60 leading-relaxed mb-9">
+        보험 증권이나 영수증을 촬영하면 Daynize가 핵심 정보를 자동으로 읽어내고,
+        지출과 자산 흐름을 리포트로 정리해 드립니다.
+      </p>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="w-7 h-7 rounded-full bg-finance/10 flex items-center justify-center mt-0.5"><i class="fa-solid fa-camera text-finance text-xs"></i></span>
+          <span class="text-sm text-ink/70"><b class="text-ink">서류 OCR</b> — 보험 증권/영수증 이미지에서 항목 자동 추출</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-7 h-7 rounded-full bg-finance/10 flex items-center justify-center mt-0.5"><i class="fa-solid fa-chart-pie text-finance text-xs"></i></span>
+          <span class="text-sm text-ink/70"><b class="text-ink">자산/지출 분석</b> — 추출된 데이터를 카테고리별 리포트로 자동 연동</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-7 h-7 rounded-full bg-finance/10 flex items-center justify-center mt-0.5"><i class="fa-solid fa-calendar-check text-finance text-xs"></i></span>
+          <span class="text-sm text-ink/70"><b class="text-ink">일정 자동 등록</b> — 상담/납입 일정까지 이어서 관리</span>
+        </li>
+      </ul>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6">
-      <!-- Upload / Preview Panel -->
-      <div class="glass-strong rounded-3xl p-6 sm:p-8 shadow-glass">
-        <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
-          <i class="fa-solid fa-image text-brand-blue"></i> 이미지 업로드
-        </h3>
+    <div class="glass-panel rounded-3xl p-6 sm:p-7 shadow-lg">
+      <h3 class="text-ink font-bold text-sm mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-image text-finance"></i> 이미지 업로드
+      </h3>
 
-        <div id="dropzone" class="dropzone rounded-2xl p-8 flex flex-col items-center justify-center text-center cursor-pointer min-h-[280px] relative scan-wrap"
-             onclick="document.getElementById('fileInput').click()">
-          <div id="uploadPrompt" class="flex flex-col items-center">
-            <div class="w-16 h-16 rounded-2xl glass flex items-center justify-center mb-4">
-              <i class="fa-solid fa-cloud-arrow-up text-2xl text-brand-blue"></i>
-            </div>
-            <p class="text-slate-200 font-semibold mb-1">이미지를 드래그하거나 클릭해서 업로드</p>
-            <p class="text-slate-500 text-xs mb-4">JPG, PNG 파일 지원 (샘플 이미지로 시뮬레이션됩니다)</p>
-            <button type="button" class="glass px-5 py-2.5 rounded-xl text-sm font-semibold text-white hover:bg-white/10 transition">
-              <i class="fa-solid fa-folder-open mr-1.5"></i>파일 선택
-            </button>
+      <div id="dropzone" class="dropzone bg-white/5 rounded-2xl p-7 flex flex-col items-center justify-center text-center cursor-pointer min-h-[220px] relative backdrop-blur-sm"
+           onclick="document.getElementById('fileInput').click()">
+        <div id="uploadPrompt" class="flex flex-col items-center">
+          <div class="w-14 h-14 rounded-2xl bg-finance-soft/80 flex items-center justify-center mb-4 shadow-sm">
+            <i class="fa-solid fa-cloud-arrow-up text-xl text-finance"></i>
           </div>
-
-          <img id="previewImg" class="hidden absolute inset-0 w-full h-full object-cover rounded-2xl" alt="업로드된 이미지 미리보기">
-          <div id="scanGrid" class="scan-grid hidden rounded-2xl"></div>
-          <div id="scanLaser" class="scan-laser hidden"></div>
-
-          <div id="scanningLabel" class="hidden absolute bottom-4 left-4 right-4 glass-strong rounded-xl px-4 py-2.5 flex items-center gap-2">
-            <div class="spinner"></div>
-            <span class="text-xs font-semibold text-white">AI가 문서를 분석하고 있어요<span class="typing-dot">.</span><span class="typing-dot">.</span><span class="typing-dot">.</span></span>
-          </div>
+          <p class="text-ink font-semibold text-sm mb-1">이미지를 드래그하거나 클릭</p>
+          <p class="text-ink/40 text-xs">샘플 버튼으로도 체험할 수 있어요</p>
         </div>
-
-        <input type="file" id="fileInput" accept="image/*">
-
-        <div id="sampleButtons" class="mt-4 flex flex-wrap gap-2">
-          <span class="text-xs text-slate-500 mr-1 self-center">샘플로 체험하기:</span>
-          <button onclick="runDemo('insurance')" class="text-xs font-semibold px-3 py-1.5 rounded-lg glass text-slate-200 hover:bg-white/10 transition">
-            <i class="fa-solid fa-file-shield mr-1"></i>보험증권
-          </button>
-          <button onclick="runDemo('receipt')" class="text-xs font-semibold px-3 py-1.5 rounded-lg glass text-slate-200 hover:bg-white/10 transition">
-            <i class="fa-solid fa-receipt mr-1"></i>영수증
-          </button>
+        <img id="previewImg" class="hidden absolute inset-0 w-full h-full object-cover rounded-2xl" alt="업로드 미리보기">
+        <div id="scanningLabel" class="hidden absolute bottom-3 left-3 right-3 bg-ink/80 backdrop-blur-md rounded-xl px-4 py-2.5 flex items-center gap-2">
+          <div class="spinner"></div>
+          <span class="text-xs font-semibold text-paper">문서를 분석하고 있어요...</span>
         </div>
       </div>
+      <input type="file" id="fileInput" accept="image/*">
 
-      <!-- Result Panel -->
-      <div class="glass-strong rounded-3xl p-6 sm:p-8 shadow-glass flex flex-col">
-        <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
-          <i class="fa-solid fa-table-list text-brand-emerald"></i> 인식 결과
-        </h3>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="text-xs text-ink/40 mr-1 self-center">샘플:</span>
+        <button onclick="runOcrDemo('insurance')" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-finance-soft/80 text-finance-deep hover:bg-finance-soft transition shadow-sm">
+          <i class="fa-solid fa-file-shield mr-1"></i>보험증권
+        </button>
+        <button onclick="runOcrDemo('receipt')" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-finance-soft/80 text-finance-deep hover:bg-finance-soft transition shadow-sm">
+          <i class="fa-solid fa-receipt mr-1"></i>영수증
+        </button>
+      </div>
 
-        <div id="resultEmpty" class="flex-1 flex flex-col items-center justify-center text-center py-10">
-          <i class="fa-solid fa-magnifying-glass-chart text-4xl text-slate-700 mb-4"></i>
-          <p class="text-slate-500 text-sm">이미지를 업로드하면<br>여기에 분석 결과가 표시됩니다.</p>
+      <div id="resultEmpty" class="mt-6 text-center py-6">
+        <p class="text-ink/35 text-xs">이미지를 업로드하면 인식 결과와 지출 분석이 표시됩니다.</p>
+      </div>
+
+      <div id="resultContent" class="hidden mt-6">
+        <span class="inline-flex items-center gap-1.5 bg-finance/15 text-finance-deep text-xs font-bold px-3 py-1.5 rounded-full mb-4">
+          <i class="fa-solid fa-circle-check"></i> 인식 완료 · 신뢰도 98.4%
+        </span>
+        <div class="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md overflow-hidden mb-5">
+          <table class="w-full text-sm">
+            <tbody id="resultTable" class="divide-y divide-white/10"></tbody>
+          </table>
         </div>
 
-        <div id="resultContent" class="hidden flex-1 flex flex-col">
-          <div class="flex items-center gap-2 mb-4 badge-pop">
-            <span class="inline-flex items-center gap-1.5 bg-brand-emerald/15 text-brand-emerald text-xs font-bold px-3 py-1.5 rounded-full">
-              <i class="fa-solid fa-circle-check"></i> 인식 완료 · 신뢰도 98.4%
-            </span>
-          </div>
-
-          <div class="overflow-hidden rounded-2xl border border-white/10 mb-5">
-            <table class="w-full text-sm">
-              <tbody id="resultTable" class="divide-y divide-white/10"></tbody>
-            </table>
-          </div>
-
-          <div class="grid grid-cols-2 gap-3 mt-auto">
-            <button onclick="openModal('proModal')" class="btn-emerald text-white font-bold px-4 py-3 rounded-xl text-sm">
-              <i class="fa-solid fa-calendar-plus mr-1.5"></i>일정에 자동 등록
-            </button>
-            <button onclick="openModal('proModal')" class="glass text-slate-100 font-bold px-4 py-3 rounded-xl text-sm hover:bg-white/10 transition">
-              <i class="fa-solid fa-file-export mr-1.5"></i>엑셀/PDF 내보내기
-            </button>
-          </div>
-        </div>
+        <p class="text-xs font-bold text-ink/50 mb-2">카테고리별 지출 분석</p>
+        <div class="flex items-end gap-3 h-24 mb-1" id="analysisChart"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PRICING ============ -->
-<section id="pricing" class="relative px-4 sm:px-6 py-24">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-14">
-      <span class="text-brand-blue font-bold text-sm tracking-wide uppercase">Pricing</span>
-      <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 mb-4">우리 팀에 맞는 플랜을 선택하세요</h2>
-      <p class="text-slate-400">언제든지 해지 가능, 숨겨진 비용 없음</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6 items-start">
-      <!-- Free -->
-      <div class="glass-card card-hover rounded-3xl p-8">
-        <h3 class="text-white font-bold text-lg mb-1">Free</h3>
-        <p class="text-slate-500 text-sm mb-6">개인 영업인을 위한 시작 플랜</p>
-        <div class="mb-6">
-          <span class="text-4xl font-black text-white">0원</span>
-          <span class="text-slate-500 text-sm">/ 월</span>
-        </div>
-        <ul class="space-y-3 mb-8 text-sm text-slate-300">
-          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-500 mt-1"></i>월 OCR 10건</li>
-          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-500 mt-1"></i>기본 스케줄러</li>
-          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-500 mt-1"></i>1인 계정</li>
-        </ul>
-        <button onclick="selectPlan('free')" class="w-full glass text-white font-bold py-3.5 rounded-xl hover:bg-white/10 transition">
-          무료로 시작하기
-        </button>
-      </div>
-
-      <!-- Pro (Best) -->
-      <div class="relative glass-strong card-hover rounded-3xl p-8 border-2 border-brand-blue/60 shadow-glow scale-100 md:scale-105">
-        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-          <span class="bg-gradient-to-r from-brand-blue to-brand-emerald text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
-            <i class="fa-solid fa-star mr-1"></i>BEST
-          </span>
-        </div>
-        <h3 class="text-white font-bold text-lg mb-1">Pro</h3>
-        <p class="text-slate-400 text-sm mb-6">영업 생산성을 극대화</p>
-        <div class="mb-1">
-          <span class="text-4xl font-black text-white">14,900원</span>
-          <span class="text-slate-500 text-sm">/ 월</span>
-        </div>
-        <p class="text-brand-emerald text-xs font-semibold mb-6"><i class="fa-solid fa-tag mr-1"></i>연결제 시 30% 할인</p>
-        <ul class="space-y-3 mb-8 text-sm text-slate-200">
-          <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brand-emerald mt-1"></i>월 OCR 무제한</li>
-          <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brand-emerald mt-1"></i>엑셀/PDF 자동 변환</li>
-          <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brand-emerald mt-1"></i>고객 알림톡 자동 발송</li>
-          <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brand-emerald mt-1"></i>스케줄 자동 등록</li>
-        </ul>
-        <button onclick="selectPlan('pro')" class="w-full btn-primary text-white font-bold py-3.5 rounded-xl">
-          지금 시작하기
-        </button>
-      </div>
-
-      <!-- Team -->
-      <div class="glass-card card-hover rounded-3xl p-8">
-        <h3 class="text-white font-bold text-lg mb-1">Team / 지점</h3>
-        <p class="text-slate-500 text-sm mb-6">5인 이상 영업팀 전용</p>
-        <div class="mb-6">
-          <span class="text-4xl font-black text-white">49,000원</span>
-          <span class="text-slate-500 text-sm">/ 월</span>
-        </div>
-        <ul class="space-y-3 mb-8 text-sm text-slate-300">
-          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-500 mt-1"></i>Pro 플랜 모든 기능</li>
-          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-500 mt-1"></i>영업팀 공유 DB</li>
-          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-500 mt-1"></i>지점 관리자 권한</li>
-          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-500 mt-1"></i>전담 매니저 지원</li>
-        </ul>
-        <button onclick="selectPlan('team')" class="w-full glass text-white font-bold py-3.5 rounded-xl hover:bg-white/10 transition">
-          지금 시작하기
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SOCIAL PROOF ============ -->
-<section id="reviews" class="relative px-4 sm:px-6 py-24">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-14">
-      <span class="text-brand-blue font-bold text-sm tracking-wide uppercase">Reviews</span>
-      <h2 class="text-3xl sm:text-4xl font-black text-white mt-3">현직 영업 전문가들이 말하는 Daynize</h2>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="glass-card rounded-3xl p-8">
-        <div class="flex gap-1 text-brand-emerald mb-4">
-          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        </div>
-        <p class="text-slate-200 text-base leading-relaxed mb-6">"달마다 서류 정리하느라 밤새우던 일상이 사라졌습니다. 이제는 촬영만 하면 알아서 정리되니까 퇴근이 빨라졌어요."</p>
-        <div class="flex items-center gap-3">
-          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-brand-blue to-brand-emerald flex items-center justify-center text-white font-bold">K</div>
-          <div>
-            <div class="text-white font-semibold text-sm">K씨</div>
-            <div class="text-slate-500 text-xs">보험설계사 · 8년차</div>
+<!-- ============ EDUCATION / FLIP CARD SECTION ============ -->
+<section id="education" class="px-5 sm:px-8 py-20 sm:py-28 relative">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="order-2 lg:order-1 flex flex-col items-center">
+      <div class="flip-card w-full max-w-sm h-64 sm:h-72 cursor-pointer" id="flipCard" onclick="toggleFlip()">
+        <div class="flip-card-inner">
+          <div class="flip-card-face flip-card-front glass-panel shadow-lg">
+            <span class="text-xs font-bold tracking-widest uppercase text-edu mb-4">Today's Card</span>
+            <p id="cardFront" class="text-xl sm:text-2xl font-black text-ink leading-snug"></p>
+            <span class="mt-6 text-xs text-ink/35"><i class="fa-solid fa-rotate mr-1"></i>탭해서 뒤집기</span>
+          </div>
+          <div class="flip-card-face flip-card-back bg-edu/25 backdrop-blur-lg border border-white/20 text-ink shadow-lg">
+            <span class="text-xs font-bold tracking-widest uppercase text-ink/60 mb-4">Meaning</span>
+            <p id="cardBack" class="text-base sm:text-lg font-bold leading-relaxed"></p>
           </div>
         </div>
       </div>
 
-      <div class="glass-card rounded-3xl p-8">
-        <div class="flex gap-1 text-brand-emerald mb-4">
-          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        </div>
-        <p class="text-slate-200 text-base leading-relaxed mb-6">"고객 상담 후 영수증 찍어두면 알아서 장부에 들어가니 너무 편합니다. 엑셀 정리하던 시간을 고객 미팅에 쓸 수 있게 됐어요."</p>
-        <div class="flex items-center gap-3">
-          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-brand-emerald to-brand-blue flex items-center justify-center text-white font-bold">L</div>
-          <div>
-            <div class="text-white font-semibold text-sm">L씨</div>
-            <div class="text-slate-500 text-xs">금융 컨설턴트 · 5년차</div>
-          </div>
-        </div>
+      <div class="flex items-center gap-5 mt-7">
+        <button onclick="prevCard()" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-white/25 transition">
+          <i class="fa-solid fa-chevron-left text-ink/70 text-xs"></i>
+        </button>
+        <span id="cardCounter" class="text-xs font-bold text-ink/50 w-12 text-center">1 / 6</span>
+        <button onclick="nextCard()" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-white/25 transition">
+          <i class="fa-solid fa-chevron-right text-ink/70 text-xs"></i>
+        </button>
       </div>
+
+      <div id="cardDots" class="flex items-center gap-1.5 mt-4"></div>
     </div>
 
-    <div class="mt-10 grid grid-cols-3 gap-4 text-center">
-      <div class="glass rounded-2xl py-6">
-        <div class="text-2xl sm:text-3xl font-black text-white">3,200<span class="text-brand-blue">+</span></div>
-        <div class="text-xs text-slate-500 mt-1">활성 사용자</div>
-      </div>
-      <div class="glass rounded-2xl py-6">
-        <div class="text-2xl sm:text-3xl font-black text-white">128<span class="text-brand-emerald">만</span></div>
-        <div class="text-xs text-slate-500 mt-1">누적 처리 서류</div>
-      </div>
-      <div class="glass rounded-2xl py-6">
-        <div class="text-2xl sm:text-3xl font-black text-white">98.4<span class="text-brand-blue">%</span></div>
-        <div class="text-xs text-slate-500 mt-1">평균 인식 정확도</div>
-      </div>
+    <div class="order-1 lg:order-2">
+      <span class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-edu mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-edu"></span> Education Track
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-black text-ink mb-5 leading-tight">
+        하루 한 장,<br>카드를 넘기는 배움
+      </h2>
+      <p class="text-ink/60 leading-relaxed mb-9">
+        짧은 문장 하나가 카드처럼 넘어가며 자연스럽게 쌓입니다.
+        정답을 보기 전 스스로 떠올려보는 짧은 순간이 기억을 오래 남깁니다.
+      </p>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="w-7 h-7 rounded-full bg-edu/10 flex items-center justify-center mt-0.5"><i class="fa-solid fa-clone text-edu text-xs"></i></span>
+          <span class="text-sm text-ink/70"><b class="text-ink">플립 애니메이션</b> — 카드 형태의 자연스러운 인터랙션으로 학습 몰입도 강화</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-7 h-7 rounded-full bg-edu/10 flex items-center justify-center mt-0.5"><i class="fa-solid fa-repeat text-edu text-xs"></i></span>
+          <span class="text-sm text-ink/70"><b class="text-ink">하루 10분 반복학습</b> — 짧은 세션으로 부담 없이 매일 지속</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-7 h-7 rounded-full bg-edu/10 flex items-center justify-center mt-0.5"><i class="fa-solid fa-layer-group text-edu text-xs"></i></span>
+          <span class="text-sm text-ink/70"><b class="text-ink">나만의 덱</b> — 취향에 맞는 카드 세트를 골라 채우는 구조 (예정)</span>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- ============ CTA BAND ============ -->
-<section class="px-4 sm:px-6 py-16">
-  <div class="max-w-5xl mx-auto glass-strong rounded-3xl p-10 sm:p-14 text-center shadow-glass relative overflow-hidden">
-    <div class="absolute -top-20 -right-20 w-64 h-64 bg-brand-blue/20 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-brand-emerald/20 rounded-full blur-3xl"></div>
-    <h2 class="relative text-2xl sm:text-3xl font-black text-white mb-4">지금 바로 서류 정리 시간을 되찾으세요</h2>
-    <p class="relative text-slate-400 mb-8">신용카드 등록 없이 무료로 시작할 수 있습니다.</p>
-    <button onclick="scrollToDemo()" class="relative btn-primary text-white font-bold px-8 py-4 rounded-2xl">
-      무료 체험하기 <i class="fa-solid fa-arrow-right ml-1.5"></i>
-    </button>
+<section class="px-5 sm:px-8 py-20 relative">
+  <div class="max-w-4xl mx-auto text-center glass-panel rounded-3xl p-10 sm:p-14">
+    <h2 class="text-2xl sm:text-3xl font-black text-ink mb-4">오늘부터, 가볍게 시작하세요</h2>
+    <p class="text-ink/50 mb-8 text-sm sm:text-base">신용카드 등록 없이 무료로 체험할 수 있습니다.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a href="#finance" class="bg-finance text-paper font-bold px-7 py-3.5 rounded-full text-sm hover:opacity-90 transition w-full sm:w-auto shadow-md">
+        금융 트랙 체험하기
+      </a>
+      <a href="#education" class="bg-edu text-paper font-bold px-7 py-3.5 rounded-full text-sm hover:opacity-90 transition w-full sm:w-auto shadow-md">
+        교육 트랙 체험하기
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer id="footer" class="relative border-t border-white/10 px-4 sm:px-6 py-14">
-  <div class="max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between gap-10">
-      <div class="max-w-sm">
-        <div class="flex items-center gap-2 mb-4">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-blue to-brand-emerald flex items-center justify-center">
-            <i class="fa-solid fa-bolt text-white text-xs"></i>
-          </div>
-          <span class="text-lg font-black text-white">Daynize</span>
-        </div>
-        <p class="text-slate-500 text-sm leading-relaxed">
-          (주) 데이나이즈<br>
-          영업인을 위한 OCR 기반 생산성 도구<br>
-          <a href="https://www.daynize.co.kr" target="_blank" rel="noopener" class="text-brand-blue hover:underline">www.daynize.co.kr</a>
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
-        <div>
-          <h4 class="text-white font-semibold mb-3">제품</h4>
-          <ul class="space-y-2 text-slate-500">
-            <li><a href="#demo" class="hover:text-slate-300">OCR 데모</a></li>
-            <li><a href="#pricing" class="hover:text-slate-300">요금제</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-semibold mb-3">회사</h4>
-          <ul class="space-y-2 text-slate-500">
-            <li><a href="#reviews" class="hover:text-slate-300">고객 후기</a></li>
-            <li><a href="#" class="hover:text-slate-300">채용</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-semibold mb-3">법적 정보</h4>
-          <ul class="space-y-2 text-slate-500">
-            <li><a href="terms.html" class="hover:text-slate-300">이용약관</a></li>
-            <li><a href="privacy.html" class="hover:text-slate-300">개인정보처리방침</a></li>
-            <li><a href="refund.html" class="hover:text-slate-300">환불정책</a></li>
-          </ul>
-        </div>
-      </div>
+<footer class="border-t border-white/15 px-5 sm:px-8 py-12 relative bg-paper/60 backdrop-blur-md">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
+    <div class="flex items-center gap-2">
+      <span class="w-7 h-7 rounded-full bg-ink flex items-center justify-center">
+        <span class="w-2 h-2 rounded-full bg-paper"></span>
+      </span>
+      <span class="font-black text-ink">Daynize</span>
+      <span class="text-ink/35 text-xs ml-2">비움과 가벼움, 매일의 습관</span>
     </div>
+    <p class="text-ink/35 text-xs">© 2026 Daynize Inc. All rights reserved.</p>
+  </div>
 
-    <!-- ============ 사업자 정보 (통신판매업/전자상거래법 고지) ============ -->
-    <div class="mt-10 pt-8 border-t border-white/10">
-      <div class="flex flex-wrap gap-x-3 gap-y-1.5 text-slate-500 text-xs leading-relaxed">
-        <span>상호명 : 데이나이즈</span>
-        <span class="text-slate-700">|</span>
-        <span>대표자 : 강성준</span>
-        <span class="text-slate-700">|</span>
-        <span>사업자등록번호 : 665-13-02896</span>
-        <span class="text-slate-700">|</span>
-        <span>통신판매업신고번호 : 제2026-경기오산-0299호</span>
-      </div>
-      <div class="mt-1.5 flex flex-wrap gap-x-3 gap-y-1.5 text-slate-500 text-xs leading-relaxed">
-        <span>주소 : 경기도 오산시 오산로 212번길 11-3, 301-N06호(원동)</span>
-      </div>
-      <div class="mt-1.5 flex flex-wrap gap-x-3 gap-y-1.5 text-slate-500 text-xs leading-relaxed">
-        <span>고객센터 : <a href="mailto:support@daynize.co.kr" class="hover:text-slate-300 hover:underline">support@daynize.co.kr</a></span>
-      </div>
+  <div class="max-w-6xl mx-auto mt-10 pt-8 border-t border-white/15">
+    <div class="flex flex-wrap gap-x-3 gap-y-1.5 text-ink/40 text-xs leading-relaxed">
+      <span>상호명 : <span data-biz-field="company">데이나이즈</span></span>
+      <span class="text-ink/15">|</span>
+      <span>대표자 : <span data-biz-field="ceo">강성준</span></span>
+      <span class="text-ink/15">|</span>
+      <span>사업자등록번호 : <span data-biz-field="bizNo">665-13-02896</span></span>
+      <span class="text-ink/15">|</span>
+      <span>통신판매업신고번호 : <span data-biz-field="mailOrderNo">제2026-경기오산-0299호</span></span>
     </div>
-
-    <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-slate-600 text-xs">© 2026 Daynize Inc. All rights reserved.</p>
-      <div class="flex gap-4 text-slate-500">
-        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
-        <a href="mailto:support@daynize.co.kr" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
-      </div>
+    <div class="mt-1.5 flex flex-wrap gap-x-3 gap-y-1.5 text-ink/40 text-xs leading-relaxed">
+      <span>주소 : <span data-biz-field="address">경기도 오산시 오산로 212번길 11-3, 301-N06호(원동)</span></span>
+    </div>
+    <div class="mt-1.5 flex flex-wrap gap-x-3 gap-y-1.5 text-ink/40 text-xs leading-relaxed">
+      <span>고객센터 : <a href="mailto:support@daynize.co.kr" data-biz-field="email" class="hover:text-ink/70 hover:underline">support@daynize.co.kr</a></span>
     </div>
   </div>
 </footer>
 
-<!-- ============ PRO PLAN UPSELL MODAL ============ -->
-<div id="proModal" class="hidden fixed inset-0 z-[100] modal-backdrop flex items-center justify-center p-4">
-  <div class="glass-strong rounded-3xl p-8 max-w-md w-full relative shadow-glass">
-    <button onclick="closeModal('proModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white transition">
-      <i class="fa-solid fa-xmark text-lg"></i>
+<!-- ============ 카드사 승인 대기 안내 모달 ============ -->
+<div id="noticeModal" class="hidden fixed inset-0 z-[200] items-center justify-center px-5" style="background: rgba(0,0,0,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+  <div class="glass-panel rounded-3xl max-w-sm w-full p-8 text-center shadow-2xl relative">
+    <button onclick="closeNoticeModal()" class="absolute top-5 right-5 text-ink/40 hover:text-ink/70 transition" aria-label="닫기">
+      <i class="fa-solid fa-xmark text-base"></i>
     </button>
-    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-blue to-brand-emerald flex items-center justify-center mb-5 shadow-glow">
-      <i class="fa-solid fa-crown text-white text-xl"></i>
+
+    <div class="w-14 h-14 rounded-2xl bg-finance-soft/80 flex items-center justify-center mx-auto mb-5 shadow-inner">
+      <i class="fa-solid fa-hourglass-half text-finance text-xl"></i>
     </div>
-    <h3 class="text-white font-black text-xl mb-2">Pro 플랜 전용 기능이에요</h3>
-    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-      일정 자동 등록과 엑셀/PDF 내보내기는 Pro 플랜부터 무제한으로 이용하실 수 있습니다. 지금 업그레이드하고 서류 업무에서 완전히 벗어나세요.
+
+    <h3 class="text-lg font-black text-ink mb-3">서비스 준비 안내</h3>
+    <p class="text-sm text-ink/60 leading-relaxed mb-8">
+      서비스는 카드사 승인 나는대로<br>오픈 예정입니다.<br>
+      조금만 기다려 주시면 가볍게 찾아뵙겠습니다.
     </p>
-    <div class="flex gap-3">
-      <button onclick="closeModal('proModal')" class="flex-1 glass text-slate-200 font-semibold py-3 rounded-xl hover:bg-white/10 transition">
-        나중에
-      </button>
-      <button onclick="closeModal('proModal'); requestPayment('pro');" class="flex-1 btn-primary text-white font-bold py-3 rounded-xl">
-        Pro로 업그레이드
-      </button>
-    </div>
-  </div>
-</div>
 
-<!-- ============ LOGIN MODAL ============ -->
-<div id="loginModal" class="hidden fixed inset-0 z-[100] modal-backdrop flex items-center justify-center p-4">
-  <div class="glass-strong rounded-3xl p-8 max-w-sm w-full relative shadow-glass">
-    <button onclick="closeModal('loginModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white transition">
-      <i class="fa-solid fa-xmark text-lg"></i>
-    </button>
-    <h3 class="text-white font-black text-xl mb-6 text-center">Daynize 로그인</h3>
-    <div class="space-y-3 mb-5">
-      <input type="email" placeholder="이메일" class="w-full glass rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none focus:border-brand-blue border border-transparent">
-      <input type="password" placeholder="비밀번호" class="w-full glass rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none focus:border-brand-blue border border-transparent">
-    </div>
-    <button class="w-full btn-primary text-white font-bold py-3 rounded-xl mb-3">로그인</button>
-    <button class="w-full glass text-slate-200 font-semibold py-3 rounded-xl hover:bg-white/10 transition">
-      <i class="fa-brands fa-google mr-2"></i>Google로 계속하기
-    </button>
-    <p class="text-center text-slate-500 text-xs mt-5">계정이 없으신가요? <a href="#" class="text-brand-blue font-semibold">무료로 가입하기</a></p>
-  </div>
-</div>
-
-<!-- ============ PAYMENT CONFIRM MODAL ============ -->
-<div id="paymentModal" class="hidden fixed inset-0 z-[100] modal-backdrop flex items-center justify-center p-4">
-  <div class="glass-strong rounded-3xl p-8 max-w-sm w-full relative shadow-glass text-center">
-    <div id="paymentLoading">
-      <div class="spinner mx-auto mb-5" style="width:32px;height:32px;"></div>
-      <h3 class="text-white font-bold text-lg mb-2">결제창을 불러오는 중입니다</h3>
-      <p class="text-slate-500 text-sm">PortOne 결제 모듈을 연결하고 있어요...</p>
-    </div>
-    <div id="paymentDone" class="hidden">
-      <div class="w-14 h-14 rounded-full bg-brand-emerald/15 flex items-center justify-center mx-auto mb-5">
-        <i class="fa-solid fa-check text-brand-emerald text-2xl"></i>
-      </div>
-      <h3 class="text-white font-bold text-lg mb-2">결제 모듈 연동 준비 완료</h3>
-      <p class="text-slate-500 text-sm mb-6" id="paymentPlanLabel">Pro 플랜 결제창이 연결될 예정입니다.</p>
-      <button onclick="closeModal('paymentModal')" class="w-full btn-primary text-white font-bold py-3 rounded-xl">확인</button>
+    <div class="flex flex-col gap-2">
+      <button onclick="closeNoticeModal()" class="w-full bg-ink text-paper font-bold py-3 rounded-full text-sm hover:opacity-90 transition shadow-md">
+        확인
+      </button>
+      <button onclick="dismissNoticeModalForToday()" class="w-full text-ink/40 text-xs font-semibold py-2 hover:text-ink/60 transition">
+        오늘 하루 보지 않기
+      </button>
     </div>
   </div>
 </div>
 
 <script>
-  /* ============ Mobile menu ============ */
+  /* ============ 카드사 승인 대기 안내 모달 ============ */
+  const NOTICE_DISMISS_KEY = 'daynize_notice_dismiss_date';
+  const noticeModal = document.getElementById('noticeModal');
+
+  function getTodayStr() {
+    return new Date().toISOString().slice(0, 10);
+  }
+
+  function shouldShowNoticeModal() {
+    try {
+      return localStorage.getItem(NOTICE_DISMISS_KEY) !== getTodayStr();
+    } catch (e) {
+      return true;
+    }
+  }
+
+  function openNoticeModal() {
+    noticeModal.classList.remove('hidden');
+    noticeModal.classList.add('flex');
+  }
+
+  function closeNoticeModal() {
+    noticeModal.classList.add('hidden');
+    noticeModal.classList.remove('flex');
+  }
+
+  function dismissNoticeModalForToday() {
+    try { localStorage.setItem(NOTICE_DISMISS_KEY, getTodayStr()); } catch (e) {}
+    closeNoticeModal();
+  }
+
+  noticeModal.addEventListener('click', (e) => {
+    if (e.target === noticeModal) closeNoticeModal();
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (shouldShowNoticeModal()) openNoticeModal();
+  });
+
+  /* ============ Header scroll state ============ */
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  });
+
   function toggleMobileMenu() {
     document.getElementById('mobileMenu').classList.toggle('hidden');
   }
 
-  /* ============ Modal helpers ============ */
-  function openModal(id) {
-    document.getElementById(id).classList.remove('hidden');
-  }
-  function closeModal(id) {
-    document.getElementById(id).classList.add('hidden');
+  function scrollToId(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   }
 
-  function scrollToDemo() {
-    document.getElementById('demo').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  /* ============ OCR Demo logic ============ */
+  /* ============ Finance / OCR mock demo ============ */
   const dropzone = document.getElementById('dropzone');
   const fileInput = document.getElementById('fileInput');
   const uploadPrompt = document.getElementById('uploadPrompt');
   const previewImg = document.getElementById('previewImg');
-  const scanGrid = document.getElementById('scanGrid');
-  const scanLaser = document.getElementById('scanLaser');
   const scanningLabel = document.getElementById('scanningLabel');
   const resultEmpty = document.getElementById('resultEmpty');
   const resultContent = document.getElementById('resultContent');
   const resultTable = document.getElementById('resultTable');
+  const analysisChart = document.getElementById('analysisChart');
 
-  const SAMPLE_DATA = {
+  const OCR_SAMPLES = {
     insurance: {
-      badge: '보험 증권',
       rows: [
         ['고객명', '김O훈'],
         ['서류 유형', '보장분석서 (생명보험)'],
         ['가입 금액', '812,000원 / 월'],
-        ['계약일', '2026-03-14'],
-        ['핵심 내용', '종신보험 + 실손 특약, 갱신주기 3년']
+        ['계약일', '2026-03-14']
+      ],
+      chart: [
+        { label: '보험료', value: 62, color: '#6F97E8' },
+        { label: '저축', value: 24, color: '#9DB8EE' },
+        { label: '기타', value: 14, color: '#CBD8F5' }
       ]
     },
     receipt: {
-      badge: '영수증',
       rows: [
         ['고객명', '이O영'],
         ['서류 유형', '상담 경비 영수증'],
         ['결제 금액', '48,500원'],
-        ['거래 일자', '2026-09-12'],
-        ['핵심 내용', '고객 미팅 카페 결제, 법인카드 사용']
+        ['거래 일자', '2026-09-12']
+      ],
+      chart: [
+        { label: '식비', value: 45, color: '#6F97E8' },
+        { label: '교통', value: 20, color: '#9DB8EE' },
+        { label: '기타', value: 35, color: '#CBD8F5' }
       ]
     }
   };
 
-  dropzone.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    dropzone.classList.add('dragover');
-  });
+  dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
   dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
   dropzone.addEventListener('drop', (e) => {
     e.preventDefault();
@@ -725,7 +568,6 @@
     const file = e.dataTransfer.files[0];
     if (file) handleFile(file);
   });
-
   fileInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
     if (file) handleFile(file);
@@ -736,8 +578,7 @@
     const reader = new FileReader();
     reader.onload = (e) => {
       showPreview(e.target.result);
-      const type = Math.random() > 0.5 ? 'insurance' : 'receipt';
-      startScan(type);
+      startScan(Math.random() > 0.5 ? 'insurance' : 'receipt');
     };
     reader.readAsDataURL(file);
   }
@@ -745,29 +586,20 @@
   function buildSampleSvg(label, accent) {
     const svg = `
       <svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
-        <defs>
-          <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#0f172a"/>
-            <stop offset="100%" stop-color="#1e293b"/>
-          </linearGradient>
-        </defs>
-        <rect width="600" height="400" fill="url(#bg)"/>
+        <rect width="600" height="400" fill="#F2EFE8"/>
         <rect x="40" y="40" width="520" height="320" rx="18" fill="none" stroke="${accent}" stroke-width="2" stroke-opacity="0.4"/>
         <rect x="70" y="80" width="260" height="18" rx="4" fill="${accent}" fill-opacity="0.55"/>
-        <rect x="70" y="120" width="340" height="12" rx="4" fill="#94a3b8" fill-opacity="0.4"/>
-        <rect x="70" y="146" width="300" height="12" rx="4" fill="#94a3b8" fill-opacity="0.4"/>
-        <rect x="70" y="172" width="360" height="12" rx="4" fill="#94a3b8" fill-opacity="0.4"/>
-        <rect x="70" y="220" width="150" height="60" rx="10" fill="${accent}" fill-opacity="0.15" stroke="${accent}" stroke-opacity="0.5"/>
-        <rect x="240" y="220" width="150" height="60" rx="10" fill="${accent}" fill-opacity="0.15" stroke="${accent}" stroke-opacity="0.5"/>
-        <text x="300" y="340" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#e2e8f0">${label}</text>
+        <rect x="70" y="120" width="340" height="12" rx="4" fill="#8a8578" fill-opacity="0.4"/>
+        <rect x="70" y="146" width="300" height="12" rx="4" fill="#8a8578" fill-opacity="0.4"/>
+        <text x="300" y="340" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#1A1A18">${label}</text>
       </svg>`;
     return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
   }
 
-  function runDemo(type) {
+  function runOcrDemo(type) {
     const sample = type === 'insurance'
-      ? buildSampleSvg('보험 증권 이미지', '#60a5fa')
-      : buildSampleSvg('영수증 이미지', '#34d399');
+      ? buildSampleSvg('보험 증권 이미지', '#6F97E8')
+      : buildSampleSvg('영수증 이미지', '#6FCB93');
     showPreview(sample);
     startScan(type);
   }
@@ -776,171 +608,98 @@
     uploadPrompt.classList.add('hidden');
     previewImg.src = src;
     previewImg.classList.remove('hidden');
-    resultEmpty.classList.add('hidden');
     resultContent.classList.add('hidden');
+    resultEmpty.classList.remove('hidden');
   }
 
   function startScan(type) {
-    scanGrid.classList.remove('hidden');
-    scanLaser.classList.remove('hidden');
     scanningLabel.classList.remove('hidden');
-    resultContent.classList.add('hidden');
-    resultEmpty.classList.add('hidden');
-
     setTimeout(() => {
-      scanGrid.classList.add('hidden');
-      scanLaser.classList.add('hidden');
       scanningLabel.classList.add('hidden');
-      renderResult(type);
-    }, 2600);
+      renderOcrResult(type);
+    }, 1600);
   }
 
-  function renderResult(type) {
-    const data = SAMPLE_DATA[type];
+  function renderOcrResult(type) {
+    const data = OCR_SAMPLES[type];
     resultTable.innerHTML = '';
     data.rows.forEach((row, i) => {
       const tr = document.createElement('tr');
-      tr.className = i % 2 === 0 ? 'bg-white/[0.02]' : '';
+      tr.className = i % 2 === 0 ? 'bg-white/5' : '';
       tr.innerHTML = `
-        <td class="px-4 py-3 text-slate-500 font-medium w-28 align-top">${row[0]}</td>
-        <td class="px-4 py-3 text-slate-100 font-semibold">${row[1]}</td>
+        <td class="px-4 py-3 text-ink/45 font-medium w-28 align-top">${row[0]}</td>
+        <td class="px-4 py-3 text-ink font-semibold">${row[1]}</td>
       `;
       resultTable.appendChild(tr);
     });
-    resultContent.classList.remove('hidden');
-  }
 
-  /* ============ Pricing plan selection ============ */
-  function selectPlan(plan) {
-    if (plan === 'free') {
-      openModal('loginModal');
-      return;
-    }
-    requestPayment(plan);
-  }
-
-  /* ============ PortOne payment integration stub ============
-     실제 연동 시 아래 스크립트를 head 태그에 추가하세요:
-     script src="https://cdn.portone.io/v2/browser-sdk.js"
-     그리고 PortOne.requestPayment({...}) 형태로 실제 결제창을 호출합니다.
-  ============================================================== */
-  const PLAN_META = {
-    pro: { name: 'Pro 플랜', amount: 14900 },
-    team: { name: 'Team / 지점 플랜', amount: 49000 }
-  };
-
-  async function requestPayment(planKey) {
-    const plan = PLAN_META[planKey] || PLAN_META.pro;
-
-    openModal('paymentModal');
-    document.getElementById('paymentLoading').classList.remove('hidden');
-    document.getElementById('paymentDone').classList.add('hidden');
-
-    // --- 실제 PortOne 연동 지점 ---
-    // const response = await PortOne.requestPayment({
-    //   storeId: "YOUR_STORE_ID",
-    //   channelKey: "YOUR_CHANNEL_KEY",
-    //   paymentId: `dainize-${Date.now()}`,
-    //   orderName: plan.name,
-    //   totalAmount: plan.amount,
-    //   currency: "CURRENCY_KRW",
-    //   payMethod: "CARD",
-    // });
-    // if (response.code != null) { /* 결제 실패 처리 */ return; }
-    // /* 결제 성공 시 서버에 검증 요청 */
-
-    setTimeout(() => {
-      document.getElementById('paymentLoading').classList.add('hidden');
-      document.getElementById('paymentDone').classList.remove('hidden');
-      document.getElementById('paymentPlanLabel').textContent =
-        `${plan.name} (월 ${plan.amount.toLocaleString()}원) 결제창이 이 지점에 연결될 예정입니다.`;
-    }, 1400);
-  }
-
-  /* Close modal on backdrop click */
-  document.querySelectorAll('.modal-backdrop').forEach(modal => {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.add('hidden');
+    analysisChart.innerHTML = '';
+    data.chart.forEach(bar => {
+      const col = document.createElement('div');
+      col.className = 'flex-1 flex flex-col items-center justify-end h-full';
+      col.innerHTML = `
+        <div class="bar-grow w-full max-w-[36px] rounded-t-md" style="height:0%; background:${bar.color};" data-target="${bar.value}"></div>
+        <span class="text-[10px] text-ink/40 mt-1.5">${bar.label}</span>
+      `;
+      analysisChart.appendChild(col);
     });
-  });
-</script>
 
-<!-- 오픈 준비 안내 모달 (팝업) -->
-<div id="notice-modal-overlay" style="
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(10, 15, 30, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 99999;
-  padding: 20px;
-  box-sizing: border-box;
-">
-  <div style="
-    background: #111827;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
-    padding: 36px 28px;
-    max-width: 420px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    color: #ffffff;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  ">
-    <!-- 아이콘 영역 -->
-    <div style="
-      width: 60px;
-      height: 60px;
-      background: rgba(37, 99, 235, 0.15);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px auto;
-      font-size: 28px;
-    ">
-      🚀
-    </div>
+    resultEmpty.classList.add('hidden');
+    resultContent.classList.remove('hidden');
 
-    <!-- 타이틀 & 안내 문구 -->
-    <h3 style="margin: 0 0 12px 0; font-size: 22px; font-weight: 700; color: #ffffff;">
-      정식 오픈 준비 중입니다
-    </h3>
-    <p style="margin: 0 0 24px 0; font-size: 15px; color: #9CA3AF; line-height: 1.6;">
-      현재 <strong style="color: #60A5FA;">Daynize</strong> 홈페이지 시스템 점검 및 업데이트 진행 중입니다.<br>
-      조만간 정식 서비스로 찾아뵙겠습니다.
-    </p>
+    requestAnimationFrame(() => {
+      analysisChart.querySelectorAll('.bar-grow').forEach(bar => {
+        bar.style.height = bar.dataset.target + '%';
+      });
+    });
+  }
 
-    <!-- 닫기 버튼 -->
-    <button id="close-notice-btn" style="
-      width: 100%;
-      padding: 14px 0;
-      background: #2563EB;
-      color: #ffffff;
-      border: none;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    ">
-      홈페이지 둘러보기
-    </button>
-  </div>
-</div>
+  /* ============ Education / flip card demo ============ */
+  const CARDS = [
+    { front: 'Resilient', back: '회복력 있는 — 어려움에도 다시 일어서는' },
+    { front: 'Compound Interest', back: '복리 — 원금과 이자에 다시 이자가 붙는 구조' },
+    { front: 'Serendipity', back: '뜻밖의 좋은 발견, 운 좋은 우연' },
+    { front: 'Diversify', back: '분산하다 — 위험을 낮추기 위해 나누어 투자하기' },
+    { front: 'Mindfulness', back: '지금 이 순간에 집중하는 알아차림' },
+    { front: 'Leverage', back: '지렛대 — 적은 힘(자본)으로 큰 효과를 내는 것' }
+  ];
+  let cardIndex = 0;
+  const flipCard = document.getElementById('flipCard');
+  const cardFront = document.getElementById('cardFront');
+  const cardBack = document.getElementById('cardBack');
+  const cardCounter = document.getElementById('cardCounter');
+  const cardDots = document.getElementById('cardDots');
 
-<script>
-  // 닫기 버튼 클릭 시 모달 숨김
-  document.getElementById('close-notice-btn').addEventListener('click', function() {
-    document.getElementById('notice-modal-overlay').style.display = 'none';
-  });
+  function renderDots() {
+    cardDots.innerHTML = CARDS.map((_, i) =>
+      `<span class="dot w-1.5 h-1.5 rounded-full ${i === cardIndex ? 'bg-edu w-4' : 'bg-ink/15'}"></span>`
+    ).join('');
+  }
+
+  function renderCard() {
+    flipCard.classList.remove('is-flipped');
+    const card = CARDS[cardIndex];
+    cardFront.textContent = card.front;
+    cardBack.textContent = card.back;
+    cardCounter.textContent = `${cardIndex + 1} / ${CARDS.length}`;
+    renderDots();
+  }
+
+  function toggleFlip() {
+    flipCard.classList.toggle('is-flipped');
+  }
+
+  function nextCard() {
+    cardIndex = (cardIndex + 1) % CARDS.length;
+    renderCard();
+  }
+
+  function prevCard() {
+    cardIndex = (cardIndex - 1 + CARDS.length) % CARDS.length;
+    renderCard();
+  }
+
+  renderCard();
 </script>
 
 </body>

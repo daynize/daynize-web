@@ -20,12 +20,12 @@
     theme: {
       extend: {
         colors: {
-          ink: '#1A1A18',
-          paper: '#FAF8F4',
-          'paper-soft': '#F2EFE8',
-          line: '#E6E1D6',
-          finance: { DEFAULT: '#33507A', soft: '#EAF0F6', deep: '#22385A' },
-          edu: { DEFAULT: '#5B7A5E', soft: '#EEF3EB', deep: '#3E5941' }
+          ink: '#F4F5F3',
+          paper: '#0A0C10',
+          'paper-soft': '#12151B',
+          line: '#2A2E36',
+          finance: { DEFAULT: '#6F97E8', soft: '#2C4272', deep: '#B9D0FF' },
+          edu: { DEFAULT: '#6FCB93', soft: '#2C4A38', deep: '#B9E8CB' }
         },
         fontFamily: {
           sans: ['"Noto Sans KR"', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
@@ -52,8 +52,8 @@
 <style>
   html { scroll-behavior: smooth; }
   body {
-    background: #FAF8F4;
-    color: #1A1A18;
+    background: #0A0C10;
+    color: #F4F5F3;
     font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
     position: relative;
@@ -62,19 +62,19 @@
 
   /* Glassmorphism Common Utilities */
   .glass-panel {
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: 0 20px 40px -15px rgba(26, 26, 24, 0.07), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 10px 30px -10px rgba(26, 26, 24, 0.08);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
 
   @keyframes fadeup {
@@ -88,22 +88,22 @@
 
   #header { transition: background-color .3s ease, box-shadow .3s ease, border-color .3s ease; }
   #header.scrolled {
-    background-color: rgba(250, 248, 244, 0.75);
+    background-color: rgba(8, 10, 14, 0.65);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.35);
   }
 
   .track-card { transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
-  .track-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -12px rgba(26,26,24,0.15); }
+  .track-card:hover { transform: translateY(-6px); box-shadow: 0 25px 60px -15px rgba(0,0,0,0.6); }
 
-  .dropzone { border: 1.5px dashed rgba(51,80,122,0.3); transition: all .25s ease; }
-  .dropzone.dragover { border-color: #33507A; background: rgba(51,80,122,0.08); }
+  .dropzone { border: 1.5px dashed rgba(255,255,255,0.25); transition: all .25s ease; }
+  .dropzone.dragover { border-color: #6F97E8; background: rgba(111,151,232,0.12); }
 
   .spinner {
-    border: 3px solid rgba(26,26,24,0.08);
-    border-top-color: #33507A;
+    border: 3px solid rgba(255,255,255,0.15);
+    border-top-color: #6F97E8;
     border-radius: 50%;
     width: 20px; height: 20px;
     animation: spin .8s linear infinite;
@@ -138,9 +138,13 @@
 </head>
 <body class="bg-paper min-h-screen">
 
-<!-- 글라스모피즘 배경 그라데이션 블롭(Orbs) -->
-<div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-finance-soft/60 blur-[120px] pointer-events-none -z-10"></div>
-<div class="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-edu-soft/70 blur-[120px] pointer-events-none -z-10"></div>
+<!-- 야경 무드 배경: 어두운 톤 + 원형 빛 블롭(Orbs) + 가독성을 위한 어두운 오버레이 -->
+<div class="fixed inset-0 -z-20 bg-paper"></div>
+<div class="fixed top-[-15%] left-[-12%] w-[55vw] h-[55vw] rounded-full bg-blue-500/40 blur-[130px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-[-15%] right-[-12%] w-[55vw] h-[55vw] rounded-full bg-emerald-500/35 blur-[130px] pointer-events-none -z-10"></div>
+<div class="fixed top-[15%] right-[-18%] w-[38vw] h-[38vw] rounded-full bg-amber-400/25 blur-[130px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-[5%] left-[-18%] w-[42vw] h-[42vw] rounded-full bg-fuchsia-500/20 blur-[130px] pointer-events-none -z-10"></div>
+<div class="fixed inset-0 -z-10 pointer-events-none" style="background: linear-gradient(180deg, rgba(4,5,8,0.2) 0%, rgba(4,5,8,0.35) 55%, rgba(4,5,8,0.6) 100%);"></div>
 
 <!-- ============ HEADER / GNB ============ -->
 <header id="header" class="fixed top-0 inset-x-0 z-50">
@@ -153,8 +157,8 @@
     </a>
 
     <nav class="hidden md:flex items-center gap-1 text-sm font-semibold">
-      <a href="#finance" class="px-4 py-2 rounded-full text-finance-deep hover:bg-white/50 transition">금융 · 자산</a>
-      <a href="#education" class="px-4 py-2 rounded-full text-edu-deep hover:bg-white/50 transition">교육 · 배움</a>
+      <a href="#finance" class="px-4 py-2 rounded-full text-finance-deep hover:bg-white/15 transition">금융 · 자산</a>
+      <a href="#education" class="px-4 py-2 rounded-full text-edu-deep hover:bg-white/15 transition">교육 · 배움</a>
     </nav>
 
     <div class="flex items-center gap-2">
@@ -167,7 +171,7 @@
     </div>
   </div>
 
-  <div id="mobileMenu" class="hidden md:hidden px-5 pb-4 flex flex-col gap-1 border-t border-white/40 pt-3 bg-paper/80 backdrop-blur-lg">
+  <div id="mobileMenu" class="hidden md:hidden px-5 pb-4 flex flex-col gap-1 border-t border-white/15 pt-3 bg-paper/80 backdrop-blur-lg">
     <a href="#finance" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl font-semibold text-finance-deep">금융 · 자산 트랙</a>
     <a href="#education" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl font-semibold text-edu-deep">교육 · 배움 트랙</a>
   </div>
@@ -278,7 +282,7 @@
         <i class="fa-solid fa-image text-finance"></i> 이미지 업로드
       </h3>
 
-      <div id="dropzone" class="dropzone bg-white/40 rounded-2xl p-7 flex flex-col items-center justify-center text-center cursor-pointer min-h-[220px] relative backdrop-blur-sm"
+      <div id="dropzone" class="dropzone bg-white/5 rounded-2xl p-7 flex flex-col items-center justify-center text-center cursor-pointer min-h-[220px] relative backdrop-blur-sm"
            onclick="document.getElementById('fileInput').click()">
         <div id="uploadPrompt" class="flex flex-col items-center">
           <div class="w-14 h-14 rounded-2xl bg-finance-soft/80 flex items-center justify-center mb-4 shadow-sm">
@@ -310,12 +314,12 @@
       </div>
 
       <div id="resultContent" class="hidden mt-6">
-        <span class="inline-flex items-center gap-1.5 bg-finance/10 text-finance-deep text-xs font-bold px-3 py-1.5 rounded-full mb-4">
+        <span class="inline-flex items-center gap-1.5 bg-finance/15 text-finance-deep text-xs font-bold px-3 py-1.5 rounded-full mb-4">
           <i class="fa-solid fa-circle-check"></i> 인식 완료 · 신뢰도 98.4%
         </span>
-        <div class="rounded-2xl border border-white/60 bg-white/50 backdrop-blur-md overflow-hidden mb-5">
+        <div class="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md overflow-hidden mb-5">
           <table class="w-full text-sm">
-            <tbody id="resultTable" class="divide-y divide-white/40"></tbody>
+            <tbody id="resultTable" class="divide-y divide-white/10"></tbody>
           </table>
         </div>
 
@@ -337,20 +341,20 @@
             <p id="cardFront" class="text-xl sm:text-2xl font-black text-ink leading-snug"></p>
             <span class="mt-6 text-xs text-ink/35"><i class="fa-solid fa-rotate mr-1"></i>탭해서 뒤집기</span>
           </div>
-          <div class="flip-card-face flip-card-back bg-edu-deep/90 backdrop-blur-lg border border-white/20 text-paper shadow-lg">
-            <span class="text-xs font-bold tracking-widest uppercase text-paper/60 mb-4">Meaning</span>
+          <div class="flip-card-face flip-card-back bg-edu/25 backdrop-blur-lg border border-white/20 text-ink shadow-lg">
+            <span class="text-xs font-bold tracking-widest uppercase text-ink/60 mb-4">Meaning</span>
             <p id="cardBack" class="text-base sm:text-lg font-bold leading-relaxed"></p>
           </div>
         </div>
       </div>
 
       <div class="flex items-center gap-5 mt-7">
-        <button onclick="prevCard()" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-white transition">
-          <i class="fa-solid fa-chevron-left text-ink/60 text-xs"></i>
+        <button onclick="prevCard()" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-white/25 transition">
+          <i class="fa-solid fa-chevron-left text-ink/70 text-xs"></i>
         </button>
         <span id="cardCounter" class="text-xs font-bold text-ink/50 w-12 text-center">1 / 6</span>
-        <button onclick="nextCard()" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-white transition">
-          <i class="fa-solid fa-chevron-right text-ink/60 text-xs"></i>
+        <button onclick="nextCard()" class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-white/25 transition">
+          <i class="fa-solid fa-chevron-right text-ink/70 text-xs"></i>
         </button>
       </div>
 
@@ -403,7 +407,7 @@
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer class="border-t border-white/50 px-5 sm:px-8 py-12 relative bg-paper/60 backdrop-blur-md">
+<footer class="border-t border-white/15 px-5 sm:px-8 py-12 relative bg-paper/60 backdrop-blur-md">
   <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
     <div class="flex items-center gap-2">
       <span class="w-7 h-7 rounded-full bg-ink flex items-center justify-center">
@@ -415,7 +419,7 @@
     <p class="text-ink/35 text-xs">© 2026 Daynize Inc. All rights reserved.</p>
   </div>
 
-  <div class="max-w-6xl mx-auto mt-10 pt-8 border-t border-white/50">
+  <div class="max-w-6xl mx-auto mt-10 pt-8 border-t border-white/15">
     <div class="flex flex-wrap gap-x-3 gap-y-1.5 text-ink/40 text-xs leading-relaxed">
       <span>상호명 : <span data-biz-field="company">데이나이즈</span></span>
       <span class="text-ink/15">|</span>
@@ -435,9 +439,9 @@
 </footer>
 
 <!-- ============ 카드사 승인 대기 안내 모달 ============ -->
-<div id="noticeModal" class="hidden fixed inset-0 z-[200] items-center justify-center px-5" style="background: rgba(26,26,24,0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
-  <div class="glass-panel rounded-3xl max-w-sm w-full p-8 text-center shadow-2xl relative bg-white/80">
-    <button onclick="closeNoticeModal()" class="absolute top-5 right-5 text-ink/30 hover:text-ink/60 transition" aria-label="닫기">
+<div id="noticeModal" class="hidden fixed inset-0 z-[200] items-center justify-center px-5" style="background: rgba(0,0,0,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+  <div class="glass-panel rounded-3xl max-w-sm w-full p-8 text-center shadow-2xl relative">
+    <button onclick="closeNoticeModal()" class="absolute top-5 right-5 text-ink/40 hover:text-ink/70 transition" aria-label="닫기">
       <i class="fa-solid fa-xmark text-base"></i>
     </button>
 
@@ -536,9 +540,9 @@
         ['계약일', '2026-03-14']
       ],
       chart: [
-        { label: '보험료', value: 62, color: '#33507A' },
-        { label: '저축', value: 24, color: '#6D89AC' },
-        { label: '기타', value: 14, color: '#A9BCD3' }
+        { label: '보험료', value: 62, color: '#6F97E8' },
+        { label: '저축', value: 24, color: '#9DB8EE' },
+        { label: '기타', value: 14, color: '#CBD8F5' }
       ]
     },
     receipt: {
@@ -549,9 +553,9 @@
         ['거래 일자', '2026-09-12']
       ],
       chart: [
-        { label: '식비', value: 45, color: '#33507A' },
-        { label: '교통', value: 20, color: '#6D89AC' },
-        { label: '기타', value: 35, color: '#A9BCD3' }
+        { label: '식비', value: 45, color: '#6F97E8' },
+        { label: '교통', value: 20, color: '#9DB8EE' },
+        { label: '기타', value: 35, color: '#CBD8F5' }
       ]
     }
   };
@@ -594,8 +598,8 @@
 
   function runOcrDemo(type) {
     const sample = type === 'insurance'
-      ? buildSampleSvg('보험 증권 이미지', '#33507A')
-      : buildSampleSvg('영수증 이미지', '#5B7A5E');
+      ? buildSampleSvg('보험 증권 이미지', '#6F97E8')
+      : buildSampleSvg('영수증 이미지', '#6FCB93');
     showPreview(sample);
     startScan(type);
   }
@@ -621,7 +625,7 @@
     resultTable.innerHTML = '';
     data.rows.forEach((row, i) => {
       const tr = document.createElement('tr');
-      tr.className = i % 2 === 0 ? 'bg-white/30' : '';
+      tr.className = i % 2 === 0 ? 'bg-white/5' : '';
       tr.innerHTML = `
         <td class="px-4 py-3 text-ink/45 font-medium w-28 align-top">${row[0]}</td>
         <td class="px-4 py-3 text-ink font-semibold">${row[1]}</td>
