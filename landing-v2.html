@@ -10,6 +10,8 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- SortableJS (드래그 앤 드롭 문장 맞추기) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js"></script>
 <!-- Google Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -203,6 +205,28 @@
   .card-menu-dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
 
   .course-grid.is-list { grid-template-columns: 1fr !important; }
+
+  /* ============ 드래그 앤 드롭 문장 맞추기 ============ */
+  .word-chip {
+    cursor: grab; user-select: none; -webkit-user-select: none;
+    box-shadow: 0 6px 16px -6px rgba(0,0,0,0.4);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .word-chip:active { cursor: grabbing; }
+  .word-chip.sortable-chosen,
+  .word-chip.sortable-drag {
+    transform: scale(1.05);
+    box-shadow: 0 14px 28px -8px rgba(0,0,0,0.55);
+  }
+  .word-chip.sortable-ghost { opacity: .35; }
+
+  .sentence-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    min-height: 48px; padding: 0 1.25rem; border-radius: 9999px;
+    font-weight: 800; font-size: .95rem;
+    transition: transform .15s ease, opacity .15s ease, background-color .15s ease;
+  }
+  .sentence-btn:active { transform: scale(.97); }
 </style>
 </head>
 <body class="bg-paper min-h-screen">
@@ -764,13 +788,40 @@
 
 <!-- ============ 영상 강의 모달 ============ -->
 <div id="videoModal" class="hidden fixed inset-0 z-[300] items-center justify-center px-4 sm:px-6" style="background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" onclick="if (event.target === this) closeVideoModal();">
-  <div class="glass-panel rounded-3xl max-w-3xl w-full p-4 sm:p-6 relative shadow-2xl">
+  <div class="glass-panel rounded-3xl max-w-3xl w-full p-4 sm:p-6 relative shadow-2xl max-h-[92vh] overflow-y-auto">
     <button onclick="closeVideoModal()" class="absolute -top-4 -right-4 w-11 h-11 rounded-full bg-ink text-paper flex items-center justify-center shadow-lg hover:opacity-90 transition z-10" aria-label="닫기">
       <i class="fa-solid fa-xmark text-lg"></i>
     </button>
     <h3 id="videoModalTitle" class="text-ink font-black text-lg sm:text-xl mb-4 pr-8"></h3>
     <div class="rounded-2xl overflow-hidden bg-black">
       <video id="videoModalPlayer" class="w-full aspect-video" controls playsinline></video>
+    </div>
+
+    <!-- ============ 드래그 앤 드롭 문장 맞추기 실습 ============ -->
+    <div class="mt-6 pt-6 border-t border-white/10">
+      <h4 class="text-ink font-black text-base sm:text-lg mb-2">🧩 오늘의 문장 완성하기 (손가락으로 드래그)</h4>
+      <p class="text-ink/60 text-sm sm:text-base font-bold mb-4">나는 너를 행복하게 만든다.</p>
+
+      <div id="sentenceBuilder" class="flex flex-wrap gap-3 mb-4 min-h-[76px] p-3 rounded-2xl bg-white/5 border-2 border-dashed border-white/15">
+        <div class="word-chip rounded-2xl flex items-center justify-center px-5 min-h-[56px] font-bold text-lg bg-amber-100 text-amber-900" data-word="happy">happy</div>
+        <div class="word-chip rounded-2xl flex items-center justify-center px-5 min-h-[56px] font-bold text-lg bg-blue-100 text-blue-900" data-word="I">I</div>
+        <div class="word-chip rounded-2xl flex items-center justify-center px-5 min-h-[56px] font-bold text-lg bg-emerald-100 text-emerald-900" data-word="make">make</div>
+        <div class="word-chip rounded-2xl flex items-center justify-center px-5 min-h-[56px] font-bold text-lg bg-amber-100 text-amber-900" data-word="you">you</div>
+      </div>
+
+      <p id="sentenceFeedback" class="text-sm sm:text-base font-bold mb-4 min-h-[24px]"></p>
+
+      <div class="flex flex-wrap gap-2.5">
+        <button onclick="playAssembledSentence()" class="sentence-btn bg-finance text-paper hover:opacity-90">
+          🔊 완성 문장 듣기
+        </button>
+        <button onclick="checkSentenceAnswer()" class="sentence-btn bg-edu text-paper hover:opacity-90">
+          ✨ 정답 확인
+        </button>
+        <button onclick="resetSentenceBuilder()" class="sentence-btn bg-white/10 text-ink border border-white/20 hover:bg-white/20">
+          🔄 다시 하기
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -827,6 +878,7 @@
     videoModal.classList.remove('hidden');
     videoModal.classList.add('flex');
     videoModalPlayer.play().catch(() => {});
+    resetSentenceBuilder();
   }
 
   function closeVideoModal() {
@@ -835,6 +887,55 @@
     videoModalPlayer.load();
     videoModal.classList.add('hidden');
     videoModal.classList.remove('flex');
+  }
+
+  /* ============ 드래그 앤 드롭 문장 맞추기 ============ */
+  const SENTENCE_ANSWER = ['I', 'make', 'you', 'happy'];
+  const SENTENCE_SHUFFLED = ['happy', 'I', 'make', 'you'];
+  const sentenceBuilderEl = document.getElementById('sentenceBuilder');
+  const sentenceFeedbackEl = document.getElementById('sentenceFeedback');
+
+  if (sentenceBuilderEl && typeof Sortable !== 'undefined') {
+    Sortable.create(sentenceBuilderEl, {
+      animation: 150,
+      delayOnTouchOnly: false,
+      touchStartThreshold: 5,
+      ghostClass: 'sortable-ghost',
+      chosenClass: 'sortable-chosen',
+      dragClass: 'sortable-drag'
+    });
+  }
+
+  function getSentenceOrder() {
+    return Array.from(sentenceBuilderEl.querySelectorAll('.word-chip')).map(el => el.dataset.word);
+  }
+
+  function playAssembledSentence() {
+    speakText(getSentenceOrder().join(' '), 0.85);
+  }
+
+  function checkSentenceAnswer() {
+    const words = getSentenceOrder();
+    const isCorrect = words.length === SENTENCE_ANSWER.length && words.every((w, i) => w === SENTENCE_ANSWER[i]);
+    if (isCorrect) {
+      sentenceFeedbackEl.textContent = '정답이에요! 🎉 "I make you happy."';
+      sentenceFeedbackEl.className = 'text-sm sm:text-base font-bold mb-4 min-h-[24px] text-edu';
+    } else {
+      sentenceFeedbackEl.textContent = '다시 한 번 순서를 맞춰볼까요? 😊';
+      sentenceFeedbackEl.className = 'text-sm sm:text-base font-bold mb-4 min-h-[24px] text-red-300';
+    }
+  }
+
+  function resetSentenceBuilder() {
+    if (!sentenceBuilderEl) return;
+    SENTENCE_SHUFFLED.forEach(word => {
+      const chip = sentenceBuilderEl.querySelector(`.word-chip[data-word="${word}"]`);
+      if (chip) sentenceBuilderEl.appendChild(chip);
+    });
+    if (sentenceFeedbackEl) {
+      sentenceFeedbackEl.textContent = '';
+      sentenceFeedbackEl.className = 'text-sm sm:text-base font-bold mb-4 min-h-[24px]';
+    }
   }
 
   /* ============ Header scroll state ============ */
