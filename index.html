@@ -445,12 +445,12 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: .5rem;
+      gap: .4rem;
       min-height: 48px;
-      padding: 0 1.25rem;
       border-radius: 9999px;
       font-weight: 800;
-      font-size: .95rem;
+      text-align: center;
+      line-height: 1.2;
       transition: transform .15s ease, opacity .15s ease, background-color .15s ease;
     }
 
@@ -1111,41 +1111,56 @@
   <div id="videoModal" class="hidden fixed inset-0 z-[300] items-center justify-center px-4 sm:px-6"
     style="background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);"
     onclick="if (event.target === this) closeVideoModal();">
-    <div class="glass-panel rounded-3xl max-w-3xl w-full p-4 sm:p-6 relative shadow-2xl max-h-[92vh] overflow-y-auto">
-      <button onclick="closeVideoModal()"
-        class="absolute -top-4 -right-4 w-11 h-11 rounded-full bg-ink text-paper flex items-center justify-center shadow-lg hover:opacity-90 transition z-10"
-        aria-label="닫기">
-        <i class="fa-solid fa-xmark text-lg"></i>
-      </button>
-      <h3 id="videoModalTitle" class="text-ink font-black text-lg sm:text-xl mb-4 pr-8"></h3>
-      <div class="rounded-2xl overflow-hidden bg-black">
-        <video id="videoModalPlayer" class="w-full aspect-video" controls playsinline></video>
+    <div class="glass-panel rounded-3xl max-w-3xl w-full shadow-2xl flex flex-col max-h-[92vh] overflow-hidden">
+
+      <!-- 헤더: 제목 + 닫기 버튼 (스크롤과 무관하게 항상 표시) -->
+      <div class="flex items-center justify-between gap-3 p-4 sm:p-6 pb-3 sm:pb-4 flex-shrink-0">
+        <h3 id="videoModalTitle" class="text-ink font-black text-lg sm:text-xl leading-snug"></h3>
+        <button onclick="closeVideoModal()"
+          class="w-11 h-11 shrink-0 rounded-full bg-ink text-paper flex items-center justify-center shadow-lg hover:opacity-90 transition"
+          aria-label="닫기">
+          <span class="text-xl font-bold leading-none">✕</span>
+        </button>
       </div>
 
-      <!-- ============ 드래그 앤 드롭 문장 맞추기 실습 ============ -->
-      <div class="mt-6 pt-6 border-t border-white/10">
-        <h4 class="text-ink font-black text-base sm:text-lg mb-2">🧩 오늘의 문장 완성하기 (손가락으로 드래그)</h4>
-        <p class="text-ink/60 text-sm sm:text-base font-bold mb-4">나는 너를 행복하게 만든다.</p>
-
-        <div id="sentenceBuilder" class="flex flex-wrap gap-3 mb-4 min-h-[76px] p-3 rounded-2xl bg-white/5 border-2 border-dashed border-white/15">
-          <div class="word-chip rounded-2xl flex items-center justify-center px-5 min-h-[56px] font-bold text-lg bg-amber-100 text-amber-900" data-word="happy">happy</div>
-          <div class="word-chip rounded-2xl flex items-center justify-center px-5 min-h-[56px] font-bold text-lg bg-blue-100 text-blue-900" data-word="I">I</div>
-          <div class="word-chip rounded-2xl flex items-center justify-center px-5 min-h-[56px] font-bold text-lg bg-emerald-100 text-emerald-900" data-word="make">make</div>
-          <div class="word-chip rounded-2xl flex items-center justify-center px-5 min-h-[56px] font-bold text-lg bg-amber-100 text-amber-900" data-word="you">you</div>
+      <!-- 본문: 영상 + 실습 (스크롤 영역) -->
+      <div class="overflow-y-auto px-4 sm:px-6 pb-5 sm:pb-6">
+        <div class="rounded-2xl overflow-hidden bg-black">
+          <video id="videoModalPlayer" class="w-full aspect-video" controls playsinline></video>
         </div>
 
-        <p id="sentenceFeedback" class="text-sm sm:text-base font-bold mb-4 min-h-[24px]"></p>
+        <!-- ============ 드래그 앤 드롭 문장 맞추기 실습 ============ -->
+        <div class="mt-6 pt-6 border-t border-white/10">
+          <h4 class="text-ink font-black text-base sm:text-lg mb-2">🧩 오늘의 문장 완성하기 (손가락으로 드래그)</h4>
+          <p class="text-ink/60 text-sm sm:text-base font-bold mb-4">나는 너를 행복하게 만든다.</p>
 
-        <div class="flex flex-wrap gap-2.5">
-          <button onclick="playAssembledSentence()" class="sentence-btn bg-finance text-paper hover:opacity-90">
-            🔊 완성 문장 듣기
-          </button>
-          <button onclick="checkSentenceAnswer()" class="sentence-btn bg-edu text-paper hover:opacity-90">
-            ✨ 정답 확인
-          </button>
-          <button onclick="resetSentenceBuilder()" class="sentence-btn bg-white/10 text-ink border border-white/20 hover:bg-white/20">
-            🔄 다시 하기
-          </button>
+          <p class="text-sm sm:text-base font-black text-edu mb-2">👇 이곳으로 단어를 옮기세요</p>
+          <div id="sentenceDropZone"
+            class="flex flex-wrap gap-3 mb-5 min-h-[76px] p-3 rounded-2xl bg-edu/10 border-2 border-dashed border-edu/50">
+          </div>
+
+          <p class="text-sm sm:text-base font-black text-ink/50 mb-2">🧩 단어 조각</p>
+          <div id="sentencePool"
+            class="flex flex-wrap gap-3 mb-4 min-h-[76px] p-3 rounded-2xl bg-white/5 border-2 border-dashed border-white/15">
+            <div class="word-chip rounded-2xl flex items-center justify-center px-5 min-h-[56px] font-bold text-lg bg-amber-100 text-amber-900" data-word="happy">happy</div>
+            <div class="word-chip rounded-2xl flex items-center justify-center px-5 min-h-[56px] font-bold text-lg bg-blue-100 text-blue-900" data-word="I">I</div>
+            <div class="word-chip rounded-2xl flex items-center justify-center px-5 min-h-[56px] font-bold text-lg bg-emerald-100 text-emerald-900" data-word="make">make</div>
+            <div class="word-chip rounded-2xl flex items-center justify-center px-5 min-h-[56px] font-bold text-lg bg-amber-100 text-amber-900" data-word="you">you</div>
+          </div>
+
+          <p id="sentenceFeedback" class="text-sm sm:text-base font-bold mb-4 min-h-[24px]"></p>
+
+          <div class="grid grid-cols-3 gap-2 sm:gap-3">
+            <button onclick="playAssembledSentence()" class="sentence-btn bg-finance text-paper hover:opacity-90 px-2 sm:px-4 text-xs sm:text-sm">
+              🔊 완성 문장 듣기
+            </button>
+            <button onclick="checkSentenceAnswer()" class="sentence-btn bg-edu text-paper hover:opacity-90 px-2 sm:px-4 text-xs sm:text-sm">
+              ✨ 정답 확인
+            </button>
+            <button onclick="resetSentenceBuilder()" class="sentence-btn bg-white/10 text-ink border border-white/20 hover:bg-white/20 px-2 sm:px-4 text-xs sm:text-sm">
+              🔄 다시 하기
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -1217,31 +1232,42 @@
     /* ============ 드래그 앤 드롭 문장 맞추기 ============ */
     const SENTENCE_ANSWER = ['I', 'make', 'you', 'happy'];
     const SENTENCE_SHUFFLED = ['happy', 'I', 'make', 'you'];
-    const sentenceBuilderEl = document.getElementById('sentenceBuilder');
+    const sentenceDropZoneEl = document.getElementById('sentenceDropZone');
+    const sentencePoolEl = document.getElementById('sentencePool');
     const sentenceFeedbackEl = document.getElementById('sentenceFeedback');
 
-    if (sentenceBuilderEl && typeof Sortable !== 'undefined') {
-      Sortable.create(sentenceBuilderEl, {
+    if (sentenceDropZoneEl && sentencePoolEl && typeof Sortable !== 'undefined') {
+      const sortableOptions = {
+        group: 'sentence-words',
         animation: 150,
         delayOnTouchOnly: false,
         touchStartThreshold: 5,
         ghostClass: 'sortable-ghost',
         chosenClass: 'sortable-chosen',
         dragClass: 'sortable-drag'
-      });
+      };
+      Sortable.create(sentenceDropZoneEl, sortableOptions);
+      Sortable.create(sentencePoolEl, sortableOptions);
     }
 
     function getSentenceOrder() {
-      return Array.from(sentenceBuilderEl.querySelectorAll('.word-chip')).map(el => el.dataset.word);
+      return Array.from(sentenceDropZoneEl.querySelectorAll('.word-chip')).map(el => el.dataset.word);
     }
 
     function playAssembledSentence() {
-      speakText(getSentenceOrder().join(' '), 0.85);
+      const words = getSentenceOrder();
+      if (!words.length) return;
+      speakText(words.join(' '), 0.85);
     }
 
     function checkSentenceAnswer() {
       const words = getSentenceOrder();
-      const isCorrect = words.length === SENTENCE_ANSWER.length && words.every((w, i) => w === SENTENCE_ANSWER[i]);
+      if (words.length < SENTENCE_ANSWER.length) {
+        sentenceFeedbackEl.textContent = '아직 단어가 남아있어요. 아래 단어 조각을 위 칸으로 옮겨주세요.';
+        sentenceFeedbackEl.className = 'text-sm sm:text-base font-bold mb-4 min-h-[24px] text-amber-300';
+        return;
+      }
+      const isCorrect = words.every((w, i) => w === SENTENCE_ANSWER[i]);
       if (isCorrect) {
         sentenceFeedbackEl.textContent = '정답이에요! 🎉 "I make you happy."';
         sentenceFeedbackEl.className = 'text-sm sm:text-base font-bold mb-4 min-h-[24px] text-edu';
@@ -1252,10 +1278,10 @@
     }
 
     function resetSentenceBuilder() {
-      if (!sentenceBuilderEl) return;
+      if (!sentencePoolEl) return;
       SENTENCE_SHUFFLED.forEach(word => {
-        const chip = sentenceBuilderEl.querySelector(`.word-chip[data-word="${word}"]`);
-        if (chip) sentenceBuilderEl.appendChild(chip);
+        const chip = document.querySelector(`.word-chip[data-word="${word}"]`);
+        if (chip) sentencePoolEl.appendChild(chip);
       });
       if (sentenceFeedbackEl) {
         sentenceFeedbackEl.textContent = '';
