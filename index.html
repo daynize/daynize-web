@@ -231,6 +231,81 @@
       transition: all .25s ease;
     }
 
+    /* ============ TTS (단어 발음 듣기) ============ */
+    .word-speak-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #F4F5F3;
+      font-size: 12px;
+      font-weight: 600;
+      transition: background .2s ease, transform .15s ease;
+    }
+
+    .word-speak-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .word-speak-btn i {
+      font-size: 10px;
+      color: #6FCB93;
+    }
+
+    .sentence-play-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      background: rgba(111, 203, 147, 0.16);
+      border: 1px solid rgba(111, 203, 147, 0.4);
+      color: #B9E8CB;
+      font-size: 12.5px;
+      font-weight: 700;
+      transition: background .2s ease, transform .15s ease;
+    }
+
+    .sentence-play-btn:hover {
+      background: rgba(111, 203, 147, 0.26);
+      transform: translateY(-1px);
+    }
+
+    .sentence-play-btn.is-playing {
+      animation: pulse-play 1s ease-in-out infinite;
+    }
+
+    @keyframes pulse-play {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .55;
+      }
+    }
+
+    .voice-select {
+      background: transparent;
+      color: rgba(244, 245, 243, 0.85);
+      font-size: 12px;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+      max-width: 190px;
+    }
+
+    .voice-select option {
+      background: #12151B;
+      color: #F4F5F3;
+    }
+
     input[type="file"] {
       display: none;
     }
@@ -571,8 +646,12 @@
           <div class="flip-card-inner">
             <div class="flip-card-face flip-card-front glass-panel shadow-lg">
               <span class="text-xs font-bold tracking-widest uppercase text-edu mb-4">Today's Card</span>
-              <p id="cardFront" class="text-xl sm:text-2xl font-black text-ink leading-snug"></p>
-              <span class="mt-6 text-xs text-ink/35"><i class="fa-solid fa-rotate mr-1"></i>탭해서 뒤집기</span>
+              <p id="cardFront" class="text-xl sm:text-2xl font-black text-ink leading-snug mb-3"></p>
+              <div id="cardWordButtons" class="flex flex-wrap items-center justify-center gap-2 mb-3"></div>
+              <button type="button" onclick="speakSentence(event)" class="sentence-play-btn" id="sentencePlayBtn">
+                <i class="fa-solid fa-volume-high"></i> 문장 전체 듣기
+              </button>
+              <span class="mt-5 text-xs text-ink/35"><i class="fa-solid fa-rotate mr-1"></i>탭해서 뒤집기</span>
             </div>
             <div
               class="flip-card-face flip-card-back bg-edu/25 backdrop-blur-lg border border-white/20 text-ink shadow-lg">
@@ -595,6 +674,11 @@
         </div>
 
         <div id="cardDots" class="flex items-center gap-1.5 mt-4"></div>
+
+        <div class="flex items-center gap-2 mt-4 glass-panel rounded-full pl-3 pr-2 py-1.5">
+          <i class="fa-solid fa-microphone-lines text-ink/45 text-xs"></i>
+          <select id="ttsVoiceSelect" class="voice-select"></select>
+        </div>
       </div>
 
       <div class="order-1 lg:order-2">
@@ -1181,12 +1265,14 @@
     }
 
     function renderCard() {
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
       flipCard.classList.remove('is-flipped');
       const card = CARDS[cardIndex];
       cardFront.textContent = card.front;
       cardBack.textContent = card.back;
       cardCounter.textContent = `${cardIndex + 1} / ${CARDS.length}`;
       renderDots();
+      renderWordButtons(card.front);
     }
 
     function toggleFlip() {
@@ -1201,6 +1287,98 @@
     function prevCard() {
       cardIndex = (cardIndex - 1 + CARDS.length) % CARDS.length;
       renderCard();
+    }
+
+    /* ============ TTS (단어/문장 발음 듣기) ============ */
+    const PREFERRED_VOICE_NAMES = [
+      'Google US English',
+      'Microsoft Jenny Online (Natural)',
+      'Microsoft Aria Online (Natural)',
+      'Microsoft Guy Online (Natural)',
+      'Samantha',
+      'Microsoft Zira',
+      'Microsoft David',
+      'Alex'
+    ];
+    let ttsVoices = [];
+    let selectedVoice = null;
+    const ttsVoiceSelect = document.getElementById('ttsVoiceSelect');
+    const sentencePlayBtn = document.getElementById('sentencePlayBtn');
+    const cardWordButtons = document.getElementById('cardWordButtons');
+
+    function pickBestVoice(voices) {
+      for (const name of PREFERRED_VOICE_NAMES) {
+        const found = voices.find(v => v.name.includes(name));
+        if (found) return found;
+      }
+      const enVoices = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+      const natural = enVoices.find(v => /natural|premium|enhanced|neural/i.test(v.name));
+      if (natural) return natural;
+      return enVoices[0] || voices[0] || null;
+    }
+
+    function renderVoiceOptions() {
+      if (!ttsVoiceSelect) return;
+      const enVoices = ttsVoices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+      const list = enVoices.length ? enVoices : ttsVoices;
+      ttsVoiceSelect.innerHTML = list.map(v =>
+        `<option value="${v.name}" ${selectedVoice && v.name === selectedVoice.name ? 'selected' : ''}>${v.name} (${v.lang})</option>`
+      ).join('');
+    }
+
+    function loadVoices() {
+      if (!('speechSynthesis' in window)) return;
+      ttsVoices = window.speechSynthesis.getVoices();
+      if (!ttsVoices.length) return;
+      if (!selectedVoice) selectedVoice = pickBestVoice(ttsVoices);
+      renderVoiceOptions();
+    }
+
+    if ('speechSynthesis' in window) {
+      loadVoices();
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    ttsVoiceSelect?.addEventListener('change', (e) => {
+      selectedVoice = ttsVoices.find(v => v.name === e.target.value) || selectedVoice;
+    });
+
+    function speakText(text, rate, onEnd) {
+      if (!('speechSynthesis' in window) || !text) return;
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = (selectedVoice && selectedVoice.lang) || 'en-US';
+      if (selectedVoice) utter.voice = selectedVoice;
+      utter.rate = rate || 0.95;
+      utter.pitch = 1;
+      if (onEnd) {
+        utter.onend = onEnd;
+        utter.onerror = onEnd;
+      }
+      window.speechSynthesis.speak(utter);
+    }
+
+    function speakWord(event, word) {
+      event.stopPropagation();
+      speakText(word, 0.9);
+    }
+
+    function speakSentence(event) {
+      if (event) event.stopPropagation();
+      const card = CARDS[cardIndex];
+      sentencePlayBtn?.classList.add('is-playing');
+      speakText(card.front, 0.85, () => sentencePlayBtn?.classList.remove('is-playing'));
+    }
+
+    function renderWordButtons(front) {
+      if (!cardWordButtons) return;
+      const words = front.split(' ');
+      cardWordButtons.innerHTML = words.map(w => `
+        <button type="button" class="word-speak-btn" onclick="speakWord(event, '${w.replace(/'/g, "\\'")}')">
+          <span>${w}</span>
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+      `).join('');
     }
 
     renderCard();
