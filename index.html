@@ -757,10 +757,13 @@
         <div class="course-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <!-- Featured card 1 -->
-          <div class="course-card glass-card rounded-3xl overflow-hidden relative h-72 sm:h-80" onclick="openNoticeModal()">
+          <div class="course-card glass-card rounded-3xl overflow-hidden relative h-72 sm:h-80"
+            onclick="openVideoModal(event, 'videos/5형식_동사_패턴_이것만_알면_끝납니다.mp4', '5형식 동사 패턴 이것만 알아도 끝!')">
             <div
               class="absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(111,151,232,0.9),rgba(10,12,16,0.98)_75%)] flex items-center justify-center">
-              <i class="fa-solid fa-coins text-6xl text-white/20"></i>
+              <span class="w-16 h-16 rounded-full bg-white/15 border-2 border-white/40 flex items-center justify-center">
+                <i class="fa-solid fa-play text-2xl text-white ml-1"></i>
+              </span>
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
             <button class="card-menu-btn absolute top-3 right-3 z-10" onclick="toggleCardMenu(event, this)"
@@ -778,11 +781,11 @@
             <div class="absolute bottom-0 left-0 right-0 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span
-                  class="w-7 h-7 rounded-full bg-finance flex items-center justify-center text-xs font-black text-paper">D</span>
+                  class="w-7 h-7 rounded-full bg-edu flex items-center justify-center text-xs font-black text-paper">D</span>
                 <span class="text-sm font-semibold text-white/70">Daynize 편집팀</span>
               </div>
-              <h4 class="text-lg sm:text-xl font-black text-white leading-snug mb-3">복리의 마법: 자산이 눈덩이처럼 불어나는 원리</h4>
-              <p class="text-sm font-medium text-white/55">2026. 8. 28. · 소스 12개</p>
+              <h4 class="text-lg sm:text-xl font-black text-white leading-snug mb-3">5형식 동사 패턴 이것만 알아도 끝!</h4>
+              <p class="text-sm font-medium text-white/55">2026. 9. 19. · 영상 강의</p>
             </div>
           </div>
 
@@ -1062,6 +1065,23 @@
     </div>
   </div>
 
+  <!-- ============ 영상 강의 모달 ============ -->
+  <div id="videoModal" class="hidden fixed inset-0 z-[300] items-center justify-center px-4 sm:px-6"
+    style="background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);"
+    onclick="if (event.target === this) closeVideoModal();">
+    <div class="glass-panel rounded-3xl max-w-3xl w-full p-4 sm:p-6 relative shadow-2xl">
+      <button onclick="closeVideoModal()"
+        class="absolute -top-4 -right-4 w-11 h-11 rounded-full bg-ink text-paper flex items-center justify-center shadow-lg hover:opacity-90 transition z-10"
+        aria-label="닫기">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+      <h3 id="videoModalTitle" class="text-ink font-black text-lg sm:text-xl mb-4 pr-8"></h3>
+      <div class="rounded-2xl overflow-hidden bg-black">
+        <video id="videoModalPlayer" class="w-full aspect-video" controls playsinline></video>
+      </div>
+    </div>
+  </div>
+
   <script>
     /* ============ 카드사 승인 대기 안내 모달 ============ */
     const NOTICE_DISMISS_KEY = 'daynize_notice_dismiss_date';
@@ -1101,6 +1121,28 @@
     window.addEventListener('DOMContentLoaded', () => {
       if (shouldShowNoticeModal()) openNoticeModal();
     });
+
+    /* ============ 영상 강의 모달 ============ */
+    const videoModal = document.getElementById('videoModal');
+    const videoModalPlayer = document.getElementById('videoModalPlayer');
+    const videoModalTitle = document.getElementById('videoModalTitle');
+
+    function openVideoModal(event, src, title) {
+      if (event) event.stopPropagation();
+      videoModalTitle.textContent = title || '';
+      videoModalPlayer.src = src;
+      videoModal.classList.remove('hidden');
+      videoModal.classList.add('flex');
+      videoModalPlayer.play().catch(() => {});
+    }
+
+    function closeVideoModal() {
+      videoModalPlayer.pause();
+      videoModalPlayer.removeAttribute('src');
+      videoModalPlayer.load();
+      videoModal.classList.add('hidden');
+      videoModal.classList.remove('flex');
+    }
 
     /* ============ Header scroll state ============ */
     const header = document.getElementById('header');
