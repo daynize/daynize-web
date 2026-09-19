@@ -753,119 +753,122 @@
 
       <!-- 추천 강의 섹션 -->
       <div class="mb-16">
-        <h3 class="text-lg sm:text-xl font-black text-ink mb-5">추천 강의</h3>
+        <h3 class="text-xl sm:text-2xl font-black text-ink mb-5">추천 강의</h3>
         <div class="course-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <!-- Featured card 1 -->
-          <div class="course-card glass-card rounded-3xl overflow-hidden relative" onclick="openNoticeModal()">
+          <div class="course-card glass-card rounded-3xl overflow-hidden relative h-72 sm:h-80" onclick="openNoticeModal()">
             <div
-              class="h-36 relative bg-[radial-gradient(circle_at_30%_25%,rgba(111,151,232,0.9),rgba(10,12,16,0.95)_72%)] flex items-center justify-center">
-              <i class="fa-solid fa-coins text-5xl text-white/25"></i>
-              <button class="card-menu-btn absolute top-3 right-3" onclick="toggleCardMenu(event, this)"
-                aria-label="더보기">
-                <i class="fa-solid fa-ellipsis text-sm"></i>
-              </button>
-              <div class="card-menu-dropdown absolute top-11 right-3 glass-panel rounded-xl py-1.5 w-36 z-10">
-                <button class="w-full text-left px-3 py-2 text-xs font-semibold text-ink/80 hover:bg-white/10"
-                  onclick="event.stopPropagation(); openNoticeModal();">공유하기</button>
-                <button class="w-full text-left px-3 py-2 text-xs font-semibold text-ink/80 hover:bg-white/10"
-                  onclick="event.stopPropagation(); openNoticeModal();">이름 변경</button>
-                <button class="w-full text-left px-3 py-2 text-xs font-semibold text-red-300 hover:bg-white/10"
-                  onclick="event.stopPropagation(); openNoticeModal();">삭제</button>
-              </div>
+              class="absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(111,151,232,0.9),rgba(10,12,16,0.98)_75%)] flex items-center justify-center">
+              <i class="fa-solid fa-coins text-6xl text-white/20"></i>
             </div>
-            <div class="p-5">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            <button class="card-menu-btn absolute top-3 right-3 z-10" onclick="toggleCardMenu(event, this)"
+              aria-label="더보기">
+              <i class="fa-solid fa-ellipsis text-sm"></i>
+            </button>
+            <div class="card-menu-dropdown absolute top-11 right-3 glass-panel rounded-xl py-1.5 w-36 z-20">
+              <button class="w-full text-left px-3 py-2 text-xs font-semibold text-ink/80 hover:bg-white/10"
+                onclick="event.stopPropagation(); openNoticeModal();">공유하기</button>
+              <button class="w-full text-left px-3 py-2 text-xs font-semibold text-ink/80 hover:bg-white/10"
+                onclick="event.stopPropagation(); openNoticeModal();">이름 변경</button>
+              <button class="w-full text-left px-3 py-2 text-xs font-semibold text-red-300 hover:bg-white/10"
+                onclick="event.stopPropagation(); openNoticeModal();">삭제</button>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span
-                  class="w-6 h-6 rounded-full bg-finance flex items-center justify-center text-[10px] font-black text-paper">D</span>
-                <span class="text-xs font-semibold text-ink/50">Daynize 편집팀</span>
+                  class="w-7 h-7 rounded-full bg-finance flex items-center justify-center text-xs font-black text-paper">D</span>
+                <span class="text-sm font-semibold text-white/70">Daynize 편집팀</span>
               </div>
-              <h4 class="text-base font-black text-ink leading-snug mb-4">복리의 마법: 자산이 눈덩이처럼 불어나는 원리</h4>
-              <p class="text-xs font-medium text-ink/40">2026. 8. 28. · 소스 12개</p>
+              <h4 class="text-lg sm:text-xl font-black text-white leading-snug mb-3">복리의 마법: 자산이 눈덩이처럼 불어나는 원리</h4>
+              <p class="text-sm font-medium text-white/55">2026. 8. 28. · 소스 12개</p>
             </div>
           </div>
 
           <!-- Featured card 2 -->
-          <div class="course-card glass-card rounded-3xl overflow-hidden relative" onclick="openNoticeModal()">
+          <div class="course-card glass-card rounded-3xl overflow-hidden relative h-72 sm:h-80" onclick="openNoticeModal()">
             <div
-              class="h-36 relative bg-[radial-gradient(circle_at_70%_30%,rgba(111,203,147,0.9),rgba(10,12,16,0.95)_72%)] flex items-center justify-center">
-              <i class="fa-solid fa-language text-5xl text-white/25"></i>
-              <button class="card-menu-btn absolute top-3 right-3" onclick="toggleCardMenu(event, this)"
-                aria-label="더보기">
-                <i class="fa-solid fa-ellipsis text-sm"></i>
-              </button>
-              <div class="card-menu-dropdown absolute top-11 right-3 glass-panel rounded-xl py-1.5 w-36 z-10">
-                <button class="w-full text-left px-3 py-2 text-xs font-semibold text-ink/80 hover:bg-white/10"
-                  onclick="event.stopPropagation(); openNoticeModal();">공유하기</button>
-                <button class="w-full text-left px-3 py-2 text-xs font-semibold text-ink/80 hover:bg-white/10"
-                  onclick="event.stopPropagation(); openNoticeModal();">이름 변경</button>
-                <button class="w-full text-left px-3 py-2 text-xs font-semibold text-red-300 hover:bg-white/10"
-                  onclick="event.stopPropagation(); openNoticeModal();">삭제</button>
-              </div>
+              class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(111,203,147,0.9),rgba(10,12,16,0.98)_75%)] flex items-center justify-center">
+              <i class="fa-solid fa-language text-6xl text-white/20"></i>
             </div>
-            <div class="p-5">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            <button class="card-menu-btn absolute top-3 right-3 z-10" onclick="toggleCardMenu(event, this)"
+              aria-label="더보기">
+              <i class="fa-solid fa-ellipsis text-sm"></i>
+            </button>
+            <div class="card-menu-dropdown absolute top-11 right-3 glass-panel rounded-xl py-1.5 w-36 z-20">
+              <button class="w-full text-left px-3 py-2 text-xs font-semibold text-ink/80 hover:bg-white/10"
+                onclick="event.stopPropagation(); openNoticeModal();">공유하기</button>
+              <button class="w-full text-left px-3 py-2 text-xs font-semibold text-ink/80 hover:bg-white/10"
+                onclick="event.stopPropagation(); openNoticeModal();">이름 변경</button>
+              <button class="w-full text-left px-3 py-2 text-xs font-semibold text-red-300 hover:bg-white/10"
+                onclick="event.stopPropagation(); openNoticeModal();">삭제</button>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span
-                  class="w-6 h-6 rounded-full bg-edu flex items-center justify-center text-[10px] font-black text-paper">D</span>
-                <span class="text-xs font-semibold text-ink/50">Daynize 편집팀</span>
+                  class="w-7 h-7 rounded-full bg-edu flex items-center justify-center text-xs font-black text-paper">D</span>
+                <span class="text-sm font-semibold text-white/70">Daynize 편집팀</span>
               </div>
-              <h4 class="text-base font-black text-ink leading-snug mb-4">영어 회화 3분 완성: 오늘의 표현 30개</h4>
-              <p class="text-xs font-medium text-ink/40">2026. 9. 2. · 소스 30개</p>
+              <h4 class="text-lg sm:text-xl font-black text-white leading-snug mb-3">영어 회화 3분 완성: 오늘의 표현 30개</h4>
+              <p class="text-sm font-medium text-white/55">2026. 9. 2. · 소스 30개</p>
             </div>
           </div>
 
           <!-- Featured card 3 -->
-          <div class="course-card glass-card rounded-3xl overflow-hidden relative" onclick="openNoticeModal()">
+          <div class="course-card glass-card rounded-3xl overflow-hidden relative h-72 sm:h-80" onclick="openNoticeModal()">
             <div
-              class="h-36 relative bg-[radial-gradient(circle_at_40%_70%,rgba(245,158,11,0.85),rgba(10,12,16,0.95)_72%)] flex items-center justify-center">
-              <i class="fa-solid fa-file-shield text-5xl text-white/25"></i>
-              <button class="card-menu-btn absolute top-3 right-3" onclick="toggleCardMenu(event, this)"
-                aria-label="더보기">
-                <i class="fa-solid fa-ellipsis text-sm"></i>
-              </button>
-              <div class="card-menu-dropdown absolute top-11 right-3 glass-panel rounded-xl py-1.5 w-36 z-10">
-                <button class="w-full text-left px-3 py-2 text-xs font-semibold text-ink/80 hover:bg-white/10"
-                  onclick="event.stopPropagation(); openNoticeModal();">공유하기</button>
-                <button class="w-full text-left px-3 py-2 text-xs font-semibold text-ink/80 hover:bg-white/10"
-                  onclick="event.stopPropagation(); openNoticeModal();">이름 변경</button>
-                <button class="w-full text-left px-3 py-2 text-xs font-semibold text-red-300 hover:bg-white/10"
-                  onclick="event.stopPropagation(); openNoticeModal();">삭제</button>
-              </div>
+              class="absolute inset-0 bg-[radial-gradient(circle_at_40%_70%,rgba(245,158,11,0.85),rgba(10,12,16,0.98)_75%)] flex items-center justify-center">
+              <i class="fa-solid fa-file-shield text-6xl text-white/20"></i>
             </div>
-            <div class="p-5">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            <button class="card-menu-btn absolute top-3 right-3 z-10" onclick="toggleCardMenu(event, this)"
+              aria-label="더보기">
+              <i class="fa-solid fa-ellipsis text-sm"></i>
+            </button>
+            <div class="card-menu-dropdown absolute top-11 right-3 glass-panel rounded-xl py-1.5 w-36 z-20">
+              <button class="w-full text-left px-3 py-2 text-xs font-semibold text-ink/80 hover:bg-white/10"
+                onclick="event.stopPropagation(); openNoticeModal();">공유하기</button>
+              <button class="w-full text-left px-3 py-2 text-xs font-semibold text-ink/80 hover:bg-white/10"
+                onclick="event.stopPropagation(); openNoticeModal();">이름 변경</button>
+              <button class="w-full text-left px-3 py-2 text-xs font-semibold text-red-300 hover:bg-white/10"
+                onclick="event.stopPropagation(); openNoticeModal();">삭제</button>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
               <div class="flex items-center gap-2 mb-3">
                 <span
-                  class="w-6 h-6 rounded-full bg-finance flex items-center justify-center text-[10px] font-black text-paper">D</span>
-                <span class="text-xs font-semibold text-ink/50">Daynize 편집팀</span>
+                  class="w-7 h-7 rounded-full bg-finance flex items-center justify-center text-xs font-black text-paper">D</span>
+                <span class="text-sm font-semibold text-white/70">Daynize 편집팀</span>
               </div>
-              <h4 class="text-base font-black text-ink leading-snug mb-4">보험 용어 완전정복: 헷갈리는 특약 총정리</h4>
-              <p class="text-xs font-medium text-ink/40">2026. 9. 10. · 소스 8개</p>
+              <h4 class="text-lg sm:text-xl font-black text-white leading-snug mb-3">보험 용어 완전정복: 헷갈리는 특약 총정리</h4>
+              <p class="text-sm font-medium text-white/55">2026. 9. 10. · 소스 8개</p>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- 최근 학습 섹션 -->
+      <!-- 최근 강의 섹션 -->
       <div>
-        <h3 class="text-lg sm:text-xl font-black text-ink mb-5">최근 학습</h3>
+        <h3 class="text-xl sm:text-2xl font-black text-ink mb-5">최근 강의</h3>
         <div id="recentGrid" class="course-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <!-- 새 노트/강의 만들기 가이드 카드 -->
+          <!-- 새 강의/노트 학습하기 가이드 카드 -->
           <button onclick="openNoticeModal()"
-            class="course-card new-card glass-panel rounded-3xl p-8 flex flex-col items-center justify-center text-center min-h-[168px]">
-            <div class="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center mb-3">
-              <i class="fa-solid fa-plus text-ink/70"></i>
+            class="course-card new-card glass-panel rounded-3xl p-8 flex flex-col items-center justify-center text-center min-h-[190px]">
+            <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mb-4">
+              <i class="fa-solid fa-plus text-ink/70 text-xl"></i>
             </div>
-            <span class="text-sm font-bold text-ink/80">새 노트/강의 만들기</span>
+            <span class="text-base sm:text-lg font-bold text-ink/80">새 강의/노트 학습하기</span>
           </button>
 
           <!-- Recent card 1 -->
           <div class="course-card glass-panel rounded-3xl p-6 relative" data-title="복리 개념 카드 15장"
             data-sortdate="2026-09-18" onclick="openNoticeModal()">
             <div class="flex items-start justify-between mb-8">
-              <span class="w-9 h-9 rounded-xl bg-finance-soft/80 flex items-center justify-center"><i
-                  class="fa-solid fa-coins text-finance text-sm"></i></span>
+              <span class="w-10 h-10 rounded-xl bg-finance-soft/80 flex items-center justify-center"><i
+                  class="fa-solid fa-coins text-finance"></i></span>
               <button class="card-menu-btn" onclick="toggleCardMenu(event, this)" aria-label="더보기"><i
                   class="fa-solid fa-ellipsis text-sm"></i></button>
               <div class="card-menu-dropdown absolute top-11 right-4 glass-panel rounded-xl py-1.5 w-36 z-10">
@@ -877,16 +880,17 @@
                   onclick="event.stopPropagation(); openNoticeModal();">삭제</button>
               </div>
             </div>
-            <h4 class="text-sm font-black text-ink leading-snug mb-4">복리 개념 카드 15장</h4>
-            <p class="text-xs font-medium text-ink/40">오늘 · 소스 15개</p>
+            <h4 class="text-base sm:text-lg font-black text-ink leading-snug mb-2">복리 개념 카드 15장</h4>
+            <p class="text-sm font-medium text-ink/40 mb-1">2026. 9. 18.</p>
+            <p class="text-sm font-bold text-ink/60">전자책 · 소스 15개</p>
           </div>
 
           <!-- Recent card 2 -->
           <div class="course-card glass-panel rounded-3xl p-6 relative" data-title="영어 필수 동사 정리"
             data-sortdate="2026-09-17" onclick="openNoticeModal()">
             <div class="flex items-start justify-between mb-8">
-              <span class="w-9 h-9 rounded-xl bg-edu-soft/80 flex items-center justify-center"><i
-                  class="fa-solid fa-language text-edu text-sm"></i></span>
+              <span class="w-10 h-10 rounded-xl bg-edu-soft/80 flex items-center justify-center"><i
+                  class="fa-solid fa-language text-edu"></i></span>
               <button class="card-menu-btn" onclick="toggleCardMenu(event, this)" aria-label="더보기"><i
                   class="fa-solid fa-ellipsis text-sm"></i></button>
               <div class="card-menu-dropdown absolute top-11 right-4 glass-panel rounded-xl py-1.5 w-36 z-10">
@@ -898,16 +902,17 @@
                   onclick="event.stopPropagation(); openNoticeModal();">삭제</button>
               </div>
             </div>
-            <h4 class="text-sm font-black text-ink leading-snug mb-4">영어 필수 동사 정리</h4>
-            <p class="text-xs font-medium text-ink/40">어제 · 소스 22개</p>
+            <h4 class="text-base sm:text-lg font-black text-ink leading-snug mb-2">영어 필수 동사 정리</h4>
+            <p class="text-sm font-medium text-ink/40 mb-1">2026. 9. 17.</p>
+            <p class="text-sm font-bold text-ink/60">전자책 · 소스 22개</p>
           </div>
 
           <!-- Recent card 3 -->
           <div class="course-card glass-panel rounded-3xl p-6 relative" data-title="보험 특약 A to Z"
             data-sortdate="2026-09-15" onclick="openNoticeModal()">
             <div class="flex items-start justify-between mb-8">
-              <span class="w-9 h-9 rounded-xl bg-finance-soft/80 flex items-center justify-center"><i
-                  class="fa-solid fa-file-shield text-finance text-sm"></i></span>
+              <span class="w-10 h-10 rounded-xl bg-finance-soft/80 flex items-center justify-center"><i
+                  class="fa-solid fa-file-shield text-finance"></i></span>
               <button class="card-menu-btn" onclick="toggleCardMenu(event, this)" aria-label="더보기"><i
                   class="fa-solid fa-ellipsis text-sm"></i></button>
               <div class="card-menu-dropdown absolute top-11 right-4 glass-panel rounded-xl py-1.5 w-36 z-10">
@@ -919,16 +924,17 @@
                   onclick="event.stopPropagation(); openNoticeModal();">삭제</button>
               </div>
             </div>
-            <h4 class="text-sm font-black text-ink leading-snug mb-4">보험 특약 A to Z</h4>
-            <p class="text-xs font-medium text-ink/40">3일 전 · 소스 8개</p>
+            <h4 class="text-base sm:text-lg font-black text-ink leading-snug mb-2">보험 특약 A to Z</h4>
+            <p class="text-sm font-medium text-ink/40 mb-1">2026. 9. 15.</p>
+            <p class="text-sm font-bold text-ink/60">전자책 · 소스 8개</p>
           </div>
 
           <!-- Recent card 4 -->
           <div class="course-card glass-panel rounded-3xl p-6 relative" data-title="지출 분석 리포트 읽는 법"
             data-sortdate="2026-09-13" onclick="openNoticeModal()">
             <div class="flex items-start justify-between mb-8">
-              <span class="w-9 h-9 rounded-xl bg-finance-soft/80 flex items-center justify-center"><i
-                  class="fa-solid fa-chart-pie text-finance text-sm"></i></span>
+              <span class="w-10 h-10 rounded-xl bg-finance-soft/80 flex items-center justify-center"><i
+                  class="fa-solid fa-chart-pie text-finance"></i></span>
               <button class="card-menu-btn" onclick="toggleCardMenu(event, this)" aria-label="더보기"><i
                   class="fa-solid fa-ellipsis text-sm"></i></button>
               <div class="card-menu-dropdown absolute top-11 right-4 glass-panel rounded-xl py-1.5 w-36 z-10">
@@ -940,16 +946,17 @@
                   onclick="event.stopPropagation(); openNoticeModal();">삭제</button>
               </div>
             </div>
-            <h4 class="text-sm font-black text-ink leading-snug mb-4">지출 분석 리포트 읽는 법</h4>
-            <p class="text-xs font-medium text-ink/40">5일 전 · 소스 6개</p>
+            <h4 class="text-base sm:text-lg font-black text-ink leading-snug mb-2">지출 분석 리포트 읽는 법</h4>
+            <p class="text-sm font-medium text-ink/40 mb-1">2026. 9. 13.</p>
+            <p class="text-sm font-bold text-ink/60">전자책 · 소스 6개</p>
           </div>
 
           <!-- Recent card 5 -->
           <div class="course-card glass-panel rounded-3xl p-6 relative" data-title="마인드풀니스 기초"
             data-sortdate="2026-09-10" onclick="openNoticeModal()">
             <div class="flex items-start justify-between mb-8">
-              <span class="w-9 h-9 rounded-xl bg-edu-soft/80 flex items-center justify-center"><i
-                  class="fa-solid fa-brain text-edu text-sm"></i></span>
+              <span class="w-10 h-10 rounded-xl bg-edu-soft/80 flex items-center justify-center"><i
+                  class="fa-solid fa-brain text-edu"></i></span>
               <button class="card-menu-btn" onclick="toggleCardMenu(event, this)" aria-label="더보기"><i
                   class="fa-solid fa-ellipsis text-sm"></i></button>
               <div class="card-menu-dropdown absolute top-11 right-4 glass-panel rounded-xl py-1.5 w-36 z-10">
@@ -961,8 +968,9 @@
                   onclick="event.stopPropagation(); openNoticeModal();">삭제</button>
               </div>
             </div>
-            <h4 class="text-sm font-black text-ink leading-snug mb-4">마인드풀니스 기초</h4>
-            <p class="text-xs font-medium text-ink/40">1주 전 · 소스 10개</p>
+            <h4 class="text-base sm:text-lg font-black text-ink leading-snug mb-2">마인드풀니스 기초</h4>
+            <p class="text-sm font-medium text-ink/40 mb-1">2026. 9. 10.</p>
+            <p class="text-sm font-bold text-ink/60">전자책 · 소스 10개</p>
           </div>
 
         </div>
