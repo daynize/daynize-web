@@ -497,6 +497,10 @@
       </nav>
 
       <div class="flex items-center gap-2">
+        <button id="authNavBtn" onclick="handleAuthNavClick()"
+          class="hidden sm:inline-flex items-center gap-1.5 bg-white/10 text-ink border border-white/20 text-sm font-bold px-4 py-2.5 rounded-full hover:bg-white/20 transition">
+          로그인
+        </button>
         <a href="#tracks"
           class="hidden sm:inline-flex items-center gap-1.5 bg-ink/90 backdrop-blur-md text-paper text-sm font-bold px-5 py-2.5 rounded-full hover:bg-ink transition shadow-md">
           시작하기 <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -514,6 +518,8 @@
       <a href="#education" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl font-semibold text-edu-deep">교육 ·
         배움 트랙</a>
       <a href="#pricing" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl font-semibold text-ink/70">가격</a>
+      <button id="authNavBtnMobile" onclick="handleAuthNavClick(); toggleMobileMenu();"
+        class="px-3 py-2.5 rounded-xl font-semibold text-ink/70 text-left">로그인</button>
     </div>
   </header>
 
@@ -1142,6 +1148,43 @@
     </div>
   </div>
 
+  <!-- ============ 로그인 / 회원가입 모달 ============ -->
+  <div id="authModal" class="hidden fixed inset-0 z-[260] items-center justify-center px-5"
+    style="background: rgba(0,0,0,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);"
+    onclick="if (event.target === this) closeAuthModal();">
+    <div class="glass-panel rounded-3xl max-w-sm w-full p-8 shadow-2xl relative">
+      <button onclick="closeAuthModal()" class="absolute top-5 right-5 text-ink/40 hover:text-ink/70 transition"
+        aria-label="닫기">
+        <i class="fa-solid fa-xmark text-base"></i>
+      </button>
+
+      <div class="w-14 h-14 rounded-2xl bg-finance-soft/80 flex items-center justify-center mx-auto mb-5 shadow-inner">
+        <i class="fa-solid fa-user text-finance text-xl"></i>
+      </div>
+
+      <h3 id="authModalTitle" class="text-lg font-black text-ink mb-1 text-center">로그인</h3>
+      <p class="text-sm text-ink/50 mb-6 text-center">이메일로 로그인하고 구독을 시작하세요.</p>
+
+      <form id="authForm" onsubmit="submitAuth(event)" class="flex flex-col gap-3">
+        <input id="authEmail" type="email" required placeholder="이메일" autocomplete="email"
+          class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-ink text-sm placeholder:text-ink/35 focus:outline-none focus:border-ink/40" />
+        <input id="authPassword" type="password" required minlength="8" placeholder="비밀번호 (8자 이상)"
+          autocomplete="current-password"
+          class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-ink text-sm placeholder:text-ink/35 focus:outline-none focus:border-ink/40" />
+        <p id="authError" class="hidden text-xs text-red-400 font-semibold"></p>
+        <button id="authSubmitBtn" type="submit"
+          class="w-full bg-ink text-paper font-bold py-3 rounded-full text-sm hover:opacity-90 transition shadow-md">
+          로그인
+        </button>
+      </form>
+
+      <button onclick="toggleAuthMode()"
+        class="w-full text-ink/40 text-xs font-semibold py-2 mt-2 hover:text-ink/60 transition">
+        <span id="authToggleText">아직 계정이 없으신가요? 회원가입</span>
+      </button>
+    </div>
+  </div>
+
   <!-- ============ PortOne 결제 모달 ============ -->
   <div id="checkoutModal" class="hidden fixed inset-0 z-[250] items-center justify-center px-5"
     style="background: rgba(0,0,0,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);"
@@ -1356,6 +1399,102 @@
         return null;
       }
     }
+
+    /* ============ 로그인 / 회원가입 (CMP-34) ============
+       백엔드 계약: POST {API_BASE}/auth/login    { email, password } -> { user, accessToken, refreshToken }
+                    POST {API_BASE}/auth/register { email, password } -> { user, accessToken, refreshToken }
+       성공 시 accessToken을 DAYNIZE_TOKEN_KEY에 저장해 결제 API 인증(Authorization: Bearer)에 사용.
+    */
+    const DAYNIZE_USER_EMAIL_KEY = 'daynize_user_email';
+    const authModal = document.getElementById('authModal');
+    const authNavBtn = document.getElementById('authNavBtn');
+    const authNavBtnMobile = document.getElementById('authNavBtnMobile');
+    let authMode = 'login';
+
+    function getStoredUserEmail() {
+      try {
+        return localStorage.getItem(DAYNIZE_USER_EMAIL_KEY);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function refreshAuthNavUI() {
+      const email = getAccessToken() ? getStoredUserEmail() : null;
+      const label = email ? `${email.split('@')[0]} · 로그아웃` : '로그인';
+      if (authNavBtn) authNavBtn.textContent = label;
+      if (authNavBtnMobile) authNavBtnMobile.textContent = label;
+    }
+
+    function handleAuthNavClick() {
+      if (getAccessToken()) {
+        try {
+          localStorage.removeItem(DAYNIZE_TOKEN_KEY);
+          localStorage.removeItem(DAYNIZE_USER_EMAIL_KEY);
+        } catch (e) { }
+        refreshAuthNavUI();
+      } else {
+        openAuthModal();
+      }
+    }
+
+    function openAuthModal() {
+      authModal.classList.remove('hidden');
+      authModal.classList.add('flex');
+    }
+
+    function closeAuthModal() {
+      authModal.classList.add('hidden');
+      authModal.classList.remove('flex');
+      document.getElementById('authError').classList.add('hidden');
+      document.getElementById('authForm').reset();
+    }
+
+    function toggleAuthMode() {
+      authMode = authMode === 'login' ? 'register' : 'login';
+      document.getElementById('authModalTitle').textContent = authMode === 'login' ? '로그인' : '회원가입';
+      document.getElementById('authSubmitBtn').textContent = authMode === 'login' ? '로그인' : '회원가입';
+      document.getElementById('authToggleText').textContent =
+        authMode === 'login' ? '아직 계정이 없으신가요? 회원가입' : '이미 계정이 있으신가요? 로그인';
+      document.getElementById('authError').classList.add('hidden');
+    }
+
+    async function submitAuth(event) {
+      event.preventDefault();
+      const email = document.getElementById('authEmail').value.trim();
+      const password = document.getElementById('authPassword').value;
+      const errorEl = document.getElementById('authError');
+      const submitBtn = document.getElementById('authSubmitBtn');
+      errorEl.classList.add('hidden');
+      submitBtn.disabled = true;
+
+      try {
+        const res = await fetch(`${DAYNIZE_API_BASE}/auth/${authMode}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          throw new Error(data.message || '로그인에 실패했습니다.');
+        }
+
+        try {
+          localStorage.setItem(DAYNIZE_TOKEN_KEY, data.accessToken);
+          localStorage.setItem(DAYNIZE_USER_EMAIL_KEY, data.user.email);
+        } catch (e) { }
+
+        refreshAuthNavUI();
+        closeAuthModal();
+      } catch (err) {
+        errorEl.textContent = err && err.message ? err.message : '잠시 후 다시 시도해 주세요.';
+        errorEl.classList.remove('hidden');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    }
+
+    refreshAuthNavUI();
 
     function isPortOneConfigured() {
       return typeof PortOne !== 'undefined' &&
