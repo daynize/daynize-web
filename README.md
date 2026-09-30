@@ -59,10 +59,14 @@ git push -u origin main
 - `.nojekyll` — GitHub Pages의 Jekyll 처리를 건너뛰기 위한 빈 파일
 - `.gitignore` — OS/도구 관련 불필요한 파일 제외
 
-## 결제 연동 (PortOne)
+## 결제 연동 (PortOne) — CMP-33
 
-`index.html`의 `requestPayment()` 함수에 PortOne 연동 지점이 주석으로 표시되어 있습니다. 실제 연동 시:
+`index.html`의 `<script>` 마지막 블록(`PortOne 결제 (CMP-33)` 주석 아래)에 실제 연동 코드가 구현되어 있습니다. "가격" 섹션(`#pricing`)의 "구독하기" 버튼 → `openCheckoutModal()` → 결제 수단 선택 → `submitPayment()` 순서로 동작하며, 백엔드의 `POST /payments/request` → PortOne 결제창 → `POST /payments/verify` 흐름을 그대로 따릅니다.
 
-1. `<head>`에 PortOne 브라우저 SDK를 추가합니다.
-2. `requestPayment()` 내 주석 처리된 `PortOne.requestPayment({...})` 블록의 `storeId`, `channelKey`를 실제 값으로 채우고 주석을 해제합니다.
-3. 결제 성공/실패 응답을 서버로 전달해 검증하는 백엔드 로직이 별도로 필요합니다.
+**배포 전 채워야 하는 값 (현재 placeholder):**
+
+1. `DAYNIZE_API_BASE` — 백엔드가 아직 공개 도메인에 배포되어 있지 않아 placeholder(`https://api.daynize.co.kr`)로 두었습니다. 실제 배포 URL이 정해지면 이 상수를 교체하세요.
+2. `DAYNIZE_PORTONE_CHANNEL_KEY` — PortOne 콘솔에서 카드사 승인 완료 후 발급되는 채널 키입니다. 현재 `.env.example`에는 `storeId`/`apiSecret`/`webhookSecret`만 있고 채널 키가 없어 비워둔 상태입니다.
+3. `DAYNIZE_TOKEN_KEY`(`daynize_access_token`) — 로그인 후 `localStorage`에 저장되어야 하는 액세스 토큰 키입니다. 이 랜딩 페이지에는 로그인 UI가 없으므로, 로그인/세션 기능이 있는 화면에서 로그인 성공 시 이 키로 토큰을 저장해 주어야 결제 버튼이 동작합니다.
+
+채널 키가 비어 있는 동안에는 "구독하기"를 눌러도 결제창이 아니라 기존 "서비스 준비 안내" 모달(`openNoticeModal()`)이 뜨도록 안전장치를 넣어두었습니다 — 위 값들이 채워지면 자동으로 실제 결제 흐름으로 전환됩니다.
