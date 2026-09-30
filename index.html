@@ -40,6 +40,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <!-- SortableJS (드래그 앤 드롭 문장 맞추기) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js"></script>
+  <!-- PortOne 결제 브라우저 SDK (V2) -->
+  <script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -491,6 +493,7 @@
       <nav class="hidden md:flex items-center gap-1 text-sm font-semibold">
         <a href="#finance" class="px-4 py-2 rounded-full text-finance-deep hover:bg-white/15 transition">금융 · 자산</a>
         <a href="#education" class="px-4 py-2 rounded-full text-edu-deep hover:bg-white/15 transition">교육 · 배움</a>
+        <a href="#pricing" class="px-4 py-2 rounded-full text-ink/70 hover:bg-white/15 transition">가격</a>
       </nav>
 
       <div class="flex items-center gap-2">
@@ -510,6 +513,7 @@
         · 자산 트랙</a>
       <a href="#education" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl font-semibold text-edu-deep">교육 ·
         배움 트랙</a>
+      <a href="#pricing" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl font-semibold text-ink/70">가격</a>
     </div>
   </header>
 
@@ -1026,6 +1030,35 @@
     </div>
   </section>
 
+  <!-- ============ PRICING / 구독 ============ -->
+  <section id="pricing" class="px-5 sm:px-8 py-20 sm:py-28 relative">
+    <div class="max-w-md mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl font-black text-ink mb-3">필요한 만큼, 가볍게 구독하세요</h2>
+        <p class="text-ink/50 text-sm sm:text-base">언제든 해지할 수 있습니다</p>
+      </div>
+
+      <div class="glass-panel rounded-3xl p-8 sm:p-10 text-center">
+        <span
+          class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-finance mb-5">
+          <span class="w-1.5 h-1.5 rounded-full bg-finance"></span> Pro 플랜
+        </span>
+        <h3 class="text-xl sm:text-2xl font-black text-ink mb-1">DAYNIZE Pro</h3>
+        <p class="text-ink/50 text-sm mb-7">금융 · 교육 트랙 전체 이용</p>
+        <div class="flex items-end justify-center gap-1 mb-8">
+          <span class="text-4xl sm:text-5xl font-black text-ink">9,900</span>
+          <span class="text-ink/50 font-bold pb-1.5">원 / 월</span>
+        </div>
+
+        <button id="pricingSubscribeBtn" onclick="openCheckoutModal('PRO_PLAN')"
+          class="w-full bg-finance text-paper font-bold py-3.5 rounded-full text-sm hover:opacity-90 transition shadow-md">
+          구독하기
+        </button>
+        <p class="text-ink/35 text-xs mt-4">PortOne을 통해 안전하게 결제됩니다</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CTA BAND ============ -->
   <section class="px-5 sm:px-8 py-20 relative">
     <div class="max-w-4xl mx-auto text-center glass-panel rounded-3xl p-10 sm:p-14">
@@ -1105,6 +1138,79 @@
           class="w-full text-ink/40 text-xs font-semibold py-2 hover:text-ink/60 transition">
           오늘 하루 보지 않기
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PortOne 결제 모달 ============ -->
+  <div id="checkoutModal" class="hidden fixed inset-0 z-[250] items-center justify-center px-5"
+    style="background: rgba(0,0,0,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);"
+    onclick="if (event.target === this) closeCheckoutModal();">
+    <div class="glass-panel rounded-3xl max-w-sm w-full p-8 text-center shadow-2xl relative">
+      <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-ink/40 hover:text-ink/70 transition"
+        aria-label="닫기">
+        <i class="fa-solid fa-xmark text-base"></i>
+      </button>
+
+      <!-- 1) 결제 수단 선택 -->
+      <div id="checkoutStepMethod">
+        <div class="w-14 h-14 rounded-2xl bg-finance-soft/80 flex items-center justify-center mx-auto mb-5 shadow-inner">
+          <i class="fa-solid fa-credit-card text-finance text-xl"></i>
+        </div>
+        <h3 class="text-lg font-black text-ink mb-1">결제 수단 선택</h3>
+        <p id="checkoutOrderSummary" class="text-sm text-ink/50 mb-7">DAYNIZE Pro 플랜 · 9,900원 / 월</p>
+
+        <div class="flex flex-col gap-2.5">
+          <button onclick="submitPayment('CARD')"
+            class="w-full flex items-center justify-center gap-2 bg-ink text-paper font-bold py-3.5 rounded-full text-sm hover:opacity-90 transition shadow-md">
+            <i class="fa-solid fa-credit-card"></i> 카드 결제
+          </button>
+          <button onclick="submitPayment('EASY_PAY')"
+            class="w-full flex items-center justify-center gap-2 bg-white/10 text-ink border border-white/20 font-bold py-3.5 rounded-full text-sm hover:bg-white/20 transition">
+            <i class="fa-solid fa-wallet"></i> 간편결제
+          </button>
+        </div>
+      </div>
+
+      <!-- 2) 결제 진행 중 로딩 -->
+      <div id="checkoutStepLoading" class="hidden">
+        <div class="w-14 h-14 rounded-2xl bg-finance-soft/80 flex items-center justify-center mx-auto mb-5 shadow-inner">
+          <i class="fa-solid fa-circle-notch fa-spin text-finance text-xl"></i>
+        </div>
+        <h3 class="text-lg font-black text-ink mb-3">결제 진행 중입니다</h3>
+        <p class="text-sm text-ink/60 leading-relaxed">결제창에서 진행 상황을 확인해 주세요.<br>잠시만 기다려 주세요.</p>
+      </div>
+
+      <!-- 3) 성공 -->
+      <div id="checkoutStepSuccess" class="hidden">
+        <div class="w-14 h-14 rounded-2xl bg-edu-soft/80 flex items-center justify-center mx-auto mb-5 shadow-inner">
+          <i class="fa-solid fa-check text-edu text-xl"></i>
+        </div>
+        <h3 class="text-lg font-black text-ink mb-3">결제가 완료되었습니다</h3>
+        <p id="checkoutSuccessDetail" class="text-sm text-ink/60 leading-relaxed mb-8"></p>
+        <button onclick="closeCheckoutModal()"
+          class="w-full bg-ink text-paper font-bold py-3 rounded-full text-sm hover:opacity-90 transition shadow-md">
+          확인
+        </button>
+      </div>
+
+      <!-- 4) 실패 -->
+      <div id="checkoutStepFail" class="hidden">
+        <div class="w-14 h-14 rounded-2xl bg-red-500/20 flex items-center justify-center mx-auto mb-5 shadow-inner">
+          <i class="fa-solid fa-triangle-exclamation text-red-400 text-xl"></i>
+        </div>
+        <h3 class="text-lg font-black text-ink mb-3">결제에 실패했습니다</h3>
+        <p id="checkoutFailDetail" class="text-sm text-ink/60 leading-relaxed mb-8">잠시 후 다시 시도해 주세요.</p>
+        <div class="flex flex-col gap-2">
+          <button onclick="showCheckoutStep('method')"
+            class="w-full bg-ink text-paper font-bold py-3 rounded-full text-sm hover:opacity-90 transition shadow-md">
+            다시 시도
+          </button>
+          <button onclick="closeCheckoutModal()"
+            class="w-full text-ink/40 text-xs font-semibold py-2 hover:text-ink/60 transition">
+            닫기
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1218,6 +1324,141 @@
     window.addEventListener('DOMContentLoaded', () => {
       if (shouldShowNoticeModal()) openNoticeModal();
     });
+
+    /* ============ PortOne 결제 (CMP-33) ============
+       백엔드 계약: POST {API_BASE}/payments/request  { productCode } -> { paymentId, orderName, amount, storeId }
+                    POST {API_BASE}/payments/verify   { paymentId }   -> { verified, paymentId, amount, status, orderName }
+       두 엔드포인트 모두 Authorization: Bearer <accessToken> 필요 (로그인 후 DAYNIZE_TOKEN_KEY에 저장된 토큰 사용).
+    */
+    // TODO: 백엔드가 실제 도메인에 배포되면 그 origin으로 교체 (현재 로컬 개발 서버 기준 placeholder)
+    const DAYNIZE_API_BASE = window.DAYNIZE_API_BASE || 'https://api.daynize.co.kr';
+    // TODO: PortOne 콘솔에서 발급받은 채널 키로 교체 (카드사 승인 완료 후 발급)
+    const DAYNIZE_PORTONE_CHANNEL_KEY = 'REPLACE_WITH_PORTONE_CHANNEL_KEY';
+    const DAYNIZE_TOKEN_KEY = 'daynize_access_token';
+
+    const DAYNIZE_PRODUCTS = {
+      PRO_PLAN: { orderName: 'DAYNIZE Pro 플랜', amount: 9900 }
+    };
+
+    const checkoutModal = document.getElementById('checkoutModal');
+    const checkoutSteps = {
+      method: document.getElementById('checkoutStepMethod'),
+      loading: document.getElementById('checkoutStepLoading'),
+      success: document.getElementById('checkoutStepSuccess'),
+      fail: document.getElementById('checkoutStepFail')
+    };
+    let checkoutProductCode = null;
+
+    function getAccessToken() {
+      try {
+        return localStorage.getItem(DAYNIZE_TOKEN_KEY);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function isPortOneConfigured() {
+      return typeof PortOne !== 'undefined' &&
+        DAYNIZE_PORTONE_CHANNEL_KEY && DAYNIZE_PORTONE_CHANNEL_KEY !== 'REPLACE_WITH_PORTONE_CHANNEL_KEY';
+    }
+
+    function showCheckoutStep(step) {
+      Object.keys(checkoutSteps).forEach((key) => {
+        checkoutSteps[key].classList.toggle('hidden', key !== step);
+      });
+    }
+
+    function openCheckoutModal(productCode) {
+      // 카드사 승인/채널 키 발급 전에는 기존 "서비스 준비 안내" 모달로 대체 안내
+      if (!isPortOneConfigured()) {
+        openNoticeModal();
+        return;
+      }
+
+      checkoutProductCode = productCode;
+      const product = DAYNIZE_PRODUCTS[productCode];
+      const summaryEl = document.getElementById('checkoutOrderSummary');
+      if (summaryEl && product) {
+        summaryEl.textContent = `${product.orderName} · ${product.amount.toLocaleString()}원 / 월`;
+      }
+
+      showCheckoutStep('method');
+      checkoutModal.classList.remove('hidden');
+      checkoutModal.classList.add('flex');
+    }
+
+    function closeCheckoutModal() {
+      checkoutModal.classList.add('hidden');
+      checkoutModal.classList.remove('flex');
+    }
+
+    async function submitPayment(payMethod) {
+      const productCode = checkoutProductCode;
+      const accessToken = getAccessToken();
+
+      if (!accessToken) {
+        document.getElementById('checkoutFailDetail').textContent =
+          '로그인이 필요한 기능입니다. 로그인 후 다시 시도해 주세요.';
+        showCheckoutStep('fail');
+        return;
+      }
+
+      showCheckoutStep('loading');
+
+      try {
+        // 1) 결제 요청 생성 (금액은 서버가 단일 출처로 결정)
+        const requestRes = await fetch(`${DAYNIZE_API_BASE}/payments/request`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${accessToken}`
+          },
+          body: JSON.stringify({ productCode })
+        });
+        const order = await requestRes.json();
+        if (!requestRes.ok) {
+          throw new Error(order.message || '결제 요청 생성에 실패했습니다.');
+        }
+
+        // 2) PortOne 결제창 모달/팝업 호출
+        const payment = await PortOne.requestPayment({
+          storeId: order.storeId,
+          channelKey: DAYNIZE_PORTONE_CHANNEL_KEY,
+          paymentId: order.paymentId,
+          orderName: order.orderName,
+          totalAmount: order.amount,
+          currency: 'CURRENCY_KRW',
+          payMethod
+        });
+
+        if (payment.code != null) {
+          // 사용자가 결제창을 취소했거나 PG 단계에서 실패
+          throw new Error(payment.message || '결제가 취소되었거나 실패했습니다.');
+        }
+
+        // 3) 결제 완료 후 서버 측 검증
+        const verifyRes = await fetch(`${DAYNIZE_API_BASE}/payments/verify`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${accessToken}`
+          },
+          body: JSON.stringify({ paymentId: order.paymentId })
+        });
+        const verified = await verifyRes.json();
+        if (!verifyRes.ok || !verified.verified) {
+          throw new Error(verified.message || '결제 검증에 실패했습니다.');
+        }
+
+        document.getElementById('checkoutSuccessDetail').textContent =
+          `${verified.orderName} 결제가 확인되었습니다. (${verified.amount.toLocaleString()}원)`;
+        showCheckoutStep('success');
+      } catch (err) {
+        document.getElementById('checkoutFailDetail').textContent =
+          err && err.message ? err.message : '잠시 후 다시 시도해 주세요.';
+        showCheckoutStep('fail');
+      }
+    }
 
     /* ============ 영상 강의 모달 ============ */
     const videoModal = document.getElementById('videoModal');
