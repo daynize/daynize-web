@@ -223,7 +223,9 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 2rem;
+      padding: 1.75rem;
+      gap: .5rem;
+      overflow: hidden;
     }
 
     .flip-card-back {
@@ -259,6 +261,16 @@
       color: #6FCB93;
     }
 
+    .word-speak-btn.is-verb {
+      color: #F55654;
+      border-color: rgba(245, 86, 84, 0.45);
+    }
+
+    .verb-highlight {
+      color: #F55654;
+      font-weight: 800;
+    }
+
     .sentence-play-btn {
       display: inline-flex;
       align-items: center;
@@ -280,6 +292,47 @@
 
     .sentence-play-btn.is-playing {
       animation: pulse-play 1s ease-in-out infinite;
+    }
+
+    .stt-mic-btn.is-listening {
+      background: #E36A6A;
+      animation: pulse-play 1s ease-in-out infinite;
+      box-shadow: 0 0 0 8px rgba(227, 106, 106, 0.2);
+    }
+
+    .stt-mic-btn:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+
+    .stt-mode-btn {
+      padding: 5px 12px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(244, 245, 243, 0.5);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .stt-mode-btn.active {
+      color: #F4F5F3;
+      background: #F55654;
+      border-color: #F55654;
+    }
+
+    .stt-playback-btn:disabled {
+      opacity: .3;
+      cursor: not-allowed;
+    }
+
+    #sttProgressFill {
+      transition: width .1s linear;
+    }
+
+    #sttVisualizer {
+      display: block;
     }
 
     @keyframes pulse-play {
@@ -483,32 +536,28 @@
   <!-- ============ HEADER / GNB ============ -->
   <header id="header" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-6xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-2">
-        <span class="w-8 h-8 rounded-full bg-ink flex items-center justify-center">
-          <span class="w-2.5 h-2.5 rounded-full bg-paper"></span>
-        </span>
-        <span class="text-lg font-black tracking-tight text-ink">Daynize</span>
-      </a>
+      <a href="#top" class="flex items-center">
+        <img src="./DAYNIZE LOGO ONLY.png" alt="Daynize" class="h-16 w-auto select-none" draggable="false">
 
-      <nav class="hidden md:flex items-center gap-1 text-sm font-semibold">
-        <a href="#finance" class="px-4 py-2 rounded-full text-finance-deep hover:bg-white/15 transition">금융 · 자산</a>
-        <a href="#education" class="px-4 py-2 rounded-full text-edu-deep hover:bg-white/15 transition">교육 · 배움</a>
-        <a href="#pricing" class="px-4 py-2 rounded-full text-ink/70 hover:bg-white/15 transition">가격</a>
-      </nav>
+        <nav class="hidden md:flex items-center gap-1 text-sm font-semibold">
+          <a href="#finance" class="px-4 py-2 rounded-full text-finance-deep hover:bg-white/15 transition">금융 · 자산</a>
+          <a href="#education" class="px-4 py-2 rounded-full text-edu-deep hover:bg-white/15 transition">교육 · 배움</a>
+          <a href="#pricing" class="px-4 py-2 rounded-full text-ink/70 hover:bg-white/15 transition">가격</a>
+        </nav>
 
-      <div class="flex items-center gap-2">
-        <button id="authNavBtn" onclick="handleAuthNavClick()"
-          class="hidden sm:inline-flex items-center gap-1.5 bg-white/10 text-ink border border-white/20 text-sm font-bold px-4 py-2.5 rounded-full hover:bg-white/20 transition">
-          로그인
-        </button>
-        <a href="#tracks"
-          class="hidden sm:inline-flex items-center gap-1.5 bg-ink/90 backdrop-blur-md text-paper text-sm font-bold px-5 py-2.5 rounded-full hover:bg-ink transition shadow-md">
-          시작하기 <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-        <button class="md:hidden text-ink text-lg" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
+        <div class="flex items-center gap-2">
+          <button id="authNavBtn" onclick="handleAuthNavClick()"
+            class="hidden sm:inline-flex items-center gap-1.5 bg-white/10 text-ink border border-white/20 text-sm font-bold px-4 py-2.5 rounded-full hover:bg-white/20 transition">
+            로그인
+          </button>
+          <a href="#tracks"
+            class="hidden sm:inline-flex items-center gap-1.5 bg-ink/90 backdrop-blur-md text-paper text-sm font-bold px-5 py-2.5 rounded-full hover:bg-ink transition shadow-md">
+            시작하기 <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+          <button class="md:hidden text-ink text-lg" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
     </div>
 
     <div id="mobileMenu"
@@ -525,7 +574,6 @@
 
   <!-- ============ HERO ============ -->
   <section id="top" class="relative min-h-[92vh] flex flex-col items-center justify-center px-5 sm:px-8 text-center">
-    <p class="fade-up text-xs sm:text-sm font-bold tracking-[0.25em] text-ink/40 uppercase mb-6">Daynize</p>
 
     <h1 class="fade-up delay-1 text-4xl sm:text-6xl md:text-7xl leading-[1.15] tracking-tight text-ink mb-7">
       <span class="font-light">비우고 채우는</span><br>
@@ -693,21 +741,24 @@
   <section id="education" class="px-5 sm:px-8 py-20 sm:py-28 relative">
     <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div class="order-2 lg:order-1 flex flex-col items-center">
-        <div class="flip-card w-full max-w-sm h-64 sm:h-72 cursor-pointer" id="flipCard" onclick="toggleFlip()">
+        <div class="flip-card w-full max-w-sm h-[21rem] sm:h-[24rem] cursor-pointer" id="flipCard" onclick="toggleFlip()">
           <div class="flip-card-inner">
             <div class="flip-card-face flip-card-front glass-panel shadow-lg">
-              <span class="text-xs font-bold tracking-widest uppercase text-edu mb-4">Today's Card</span>
-              <p id="cardFront" class="text-xl sm:text-2xl font-black text-ink leading-snug mb-3"></p>
-              <div id="cardWordButtons" class="flex flex-wrap items-center justify-center gap-2 mb-3"></div>
-              <button type="button" onclick="speakSentence(event)" class="sentence-play-btn" id="sentencePlayBtn">
-                <i class="fa-solid fa-volume-high"></i> 문장 전체 듣기
-              </button>
-              <span class="mt-5 text-xs text-ink/35"><i class="fa-solid fa-rotate mr-1"></i>탭해서 뒤집기</span>
+              <span id="cardSectionLabel" class="text-xs font-bold tracking-widest uppercase text-edu"></span>
+              <span id="cardSpeakerBadge"
+                class="inline-flex items-center justify-center text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-ink/50"></span>
+              <p id="cardTranslationText" class="text-lg sm:text-xl font-black text-ink leading-relaxed"></p>
+              <p id="cardWordGloss" class="text-xs text-ink/45"></p>
+              <span class="text-xs text-ink/35"><i class="fa-solid fa-rotate mr-1"></i>탭해서 뒤집기</span>
             </div>
             <div
               class="flip-card-face flip-card-back bg-edu/25 backdrop-blur-lg border border-white/20 text-ink shadow-lg">
-              <span class="text-xs font-bold tracking-widest uppercase text-ink/60 mb-4">Meaning</span>
-              <p id="cardBack" class="text-base sm:text-lg font-bold leading-relaxed"></p>
+              <span class="text-xs font-bold tracking-widest uppercase text-ink/60">English</span>
+              <p id="cardSentenceText" class="text-base sm:text-lg font-bold leading-relaxed"></p>
+              <div id="cardWordButtons" class="flex flex-wrap items-center justify-center gap-2"></div>
+              <button type="button" onclick="speakSentence(event)" class="sentence-play-btn" id="sentencePlayBtn">
+                <i class="fa-solid fa-volume-high"></i> 문장 전체 듣기
+              </button>
             </div>
           </div>
         </div>
@@ -729,6 +780,60 @@
         <div class="flex items-center gap-2 mt-4 glass-panel rounded-full pl-3 pr-2 py-1.5">
           <i class="fa-solid fa-microphone-lines text-ink/45 text-xs"></i>
           <select id="ttsVoiceSelect" class="voice-select"></select>
+        </div>
+
+        <!-- ============ 스마트 말하기 & AI 통역 (통합 STT) ============ -->
+        <div id="smartSttPanel" class="w-full max-w-sm mt-5 glass-panel rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold tracking-widest uppercase text-edu flex items-center gap-1.5">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> 스마트 말하기 & AI 통역
+            </span>
+            <span id="sttStatus" class="text-[11px] font-semibold text-ink/40">대기 중</span>
+          </div>
+
+          <div class="flex items-center justify-center gap-1.5 mb-3">
+            <button type="button" id="sttModePracticeBtn" onclick="setSttMode('practice')"
+              class="stt-mode-btn active">말하기 연습</button>
+            <button type="button" id="sttModeTranslateBtn" onclick="setSttMode('translate')"
+              class="stt-mode-btn">AI 통역 (한국어)</button>
+          </div>
+
+          <canvas id="sttVisualizer" class="w-full h-24 mb-3 rounded-lg bg-white/5" width="320" height="96"></canvas>
+
+          <div class="flex items-center justify-center gap-4">
+            <button type="button" id="sttRecordBtn" onclick="toggleSttRecording()" aria-label="녹음 시작/중지"
+              class="stt-mic-btn w-16 h-16 flex items-center justify-center rounded-full bg-edu text-paper text-xl shadow-lg transition hover:opacity-90">
+              <i class="fa-solid fa-microphone"></i>
+            </button>
+            <button type="button" id="sttPlaybackBtn" onclick="playSttRecording()" aria-label="녹음 음성 재생" disabled
+              class="stt-playback-btn w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-ink/60 text-base shadow transition hover:bg-white/20">
+              <i class="fa-solid fa-play"></i>
+            </button>
+          </div>
+
+          <p id="sttHint" class="text-center text-[11px] text-ink/40 mt-2">마이크를 탭하고 카드 속 문장을 따라 말해보세요</p>
+
+          <div class="mt-3 h-1.5 rounded-full bg-white/10 overflow-hidden">
+            <div id="sttProgressFill" class="h-full bg-edu rounded-full" style="width:0%"></div>
+          </div>
+          <p id="sttCountdown" class="text-center text-[11px] text-ink/40 mt-1">대기 중</p>
+
+          <div class="mt-4 rounded-xl bg-white/5 border border-white/10 px-4 py-3 min-h-[44px]">
+            <p id="sttTranscript" class="text-sm text-ink/70 leading-relaxed">여기에 인식된 내용이 표시됩니다.</p>
+          </div>
+
+          <!-- AI 통역 결과(영문)는 한국어 인식 박스 바로 아래에 표시 -->
+          <div class="mt-2 rounded-xl bg-white/5 border border-edu/25 px-4 py-3 min-h-[44px]">
+            <p id="sttTranslatedTextBox" class="text-sm text-edu leading-relaxed">번역된 영어 문장이 여기에 표시됩니다.</p>
+          </div>
+
+          <div class="flex items-center justify-between mt-2">
+            <span id="sttCharCount" class="text-[11px] text-ink/35">0 / 200자</span>
+            <span id="sttFeedback" class="text-[11px] font-bold"></span>
+          </div>
+
+          <p id="sttMicError" class="hidden text-center text-xs font-bold text-red-300 mt-2">마이크 권한을 허용해주세요</p>
+          <audio id="sttPlaybackAudio" class="hidden"></audio>
         </div>
       </div>
 
@@ -1045,8 +1150,7 @@
       </div>
 
       <div class="glass-panel rounded-3xl p-8 sm:p-10 text-center">
-        <span
-          class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-finance mb-5">
+        <span class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-finance mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-finance"></span> Pro 플랜
         </span>
         <h3 class="text-xl sm:text-2xl font-black text-ink mb-1">DAYNIZE Pro</h3>
@@ -1087,11 +1191,8 @@
   <footer class="border-t border-white/15 px-5 sm:px-8 py-12 relative bg-paper/60 backdrop-blur-md">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
       <div class="flex items-center gap-2">
-        <span class="w-7 h-7 rounded-full bg-ink flex items-center justify-center">
-          <span class="w-2 h-2 rounded-full bg-paper"></span>
-        </span>
-        <span class="font-black text-ink">Daynize</span>
-        <span class="text-ink/35 text-xs ml-2">비움과 가벼움, 매일의 습관</span>
+
+        <img src="./DAYNIZE LOGO ONLY.png" alt="Daynize" class="h-16 w-auto object-contain" />
       </div>
       <p class="text-ink/35 text-xs">© 2026 Daynize Inc. All rights reserved.</p>
     </div>
@@ -1197,7 +1298,8 @@
 
       <!-- 1) 결제 수단 선택 -->
       <div id="checkoutStepMethod">
-        <div class="w-14 h-14 rounded-2xl bg-finance-soft/80 flex items-center justify-center mx-auto mb-5 shadow-inner">
+        <div
+          class="w-14 h-14 rounded-2xl bg-finance-soft/80 flex items-center justify-center mx-auto mb-5 shadow-inner">
           <i class="fa-solid fa-credit-card text-finance text-xl"></i>
         </div>
         <h3 class="text-lg font-black text-ink mb-1">결제 수단 선택</h3>
@@ -1217,7 +1319,8 @@
 
       <!-- 2) 결제 진행 중 로딩 -->
       <div id="checkoutStepLoading" class="hidden">
-        <div class="w-14 h-14 rounded-2xl bg-finance-soft/80 flex items-center justify-center mx-auto mb-5 shadow-inner">
+        <div
+          class="w-14 h-14 rounded-2xl bg-finance-soft/80 flex items-center justify-center mx-auto mb-5 shadow-inner">
           <i class="fa-solid fa-circle-notch fa-spin text-finance text-xl"></i>
         </div>
         <h3 class="text-lg font-black text-ink mb-3">결제 진행 중입니다</h3>
@@ -1830,37 +1933,267 @@
       });
     }
 
-    /* ============ Education / flip card demo ============ */
-    const CARDS = [
-      { front: 'Resilient', back: '회복력 있는 — 어려움에도 다시 일어서는' },
-      { front: 'Compound Interest', back: '복리 — 원금과 이자에 다시 이자가 붙는 구조' },
-      { front: 'Serendipity', back: '뜻밖의 좋은 발견, 운 좋은 우연' },
-      { front: 'Diversify', back: '분산하다 — 위험을 낮추기 위해 나누어 투자하기' },
-      { front: 'Mindfulness', back: '지금 이 순간에 집중하는 알아차림' },
-      { front: 'Leverage', back: '지렛대 — 적은 힘(자본)으로 큰 효과를 내는 것' }
+    /* ============ Education / flip card demo (주차별 자동 로테이션 비즈니스 회화) ============ */
+    // DO NOT CHANGE: 1/1 기준 경과일로 주차(Week Number)를 산출
+    function getCurrentWeekNumber(date = new Date()) {
+      const start = new Date(date.getFullYear(), 0, 1);
+      const dayOfYear = Math.floor((date - start) / 86400000) + 1;
+      return Math.ceil(dayOfYear / 7);
+    }
+
+    // 주차별 회화 데이터셋: 섹션 3개 x 대화 6문장(A-B-A-B-A-B), 4주치 보유 → 주차 변경 시 자동 전환
+    const WEEK_DATA_STORE = [
+      {
+        sections: [
+          {
+            title: 'Financial & Banking',
+            cards: [
+              { speaker: 'A', word: 'savings account', sentence: "I'd like to open a foreign currency savings account.", translation: '외화 예금 계좌를 개설하고 싶습니다.' },
+              { speaker: 'B', word: 'proof of address', sentence: 'Sure, could I see your passport and proof of address, please?', translation: '네, 여권과 주소 증빙 서류를 보여주시겠어요?' },
+              { speaker: 'A', word: 'exchange rate', sentence: "Here you go. Also, what's today's exchange rate for US dollars?", translation: '여기 있습니다. 그리고 오늘 달러 환율이 어떻게 되나요?' },
+              { speaker: 'B', word: 'buying rate', sentence: 'The buying rate is 1,350 won per dollar today.', translation: '오늘 매입 환율은 달러당 1,350원입니다.' },
+              { speaker: 'A', word: 'exchange currency', sentence: "Great, I'd like to exchange 500 dollars into won.", translation: '좋아요, 500달러를 원화로 환전하고 싶습니다.' },
+              { speaker: 'B', word: 'service fee', sentence: 'That comes to 675,000 won after the service fee.', translation: '수수료를 제외하면 675,000원입니다.' }
+            ]
+          },
+          {
+            title: 'Payment & Expense',
+            cards: [
+              { speaker: 'A', word: 'invoice', sentence: "Could you send me the invoice for last month's service?", translation: '지난달 서비스 청구서를 보내주시겠어요?' },
+              { speaker: 'B', word: 'by end of day', sentence: "I'll email it to you by the end of the day.", translation: '오늘 중으로 이메일로 보내드리겠습니다.' },
+              { speaker: 'A', word: 'installment', sentence: 'Can we split this payment into three installments?', translation: '이 결제를 3회 분할로 나눌 수 있을까요?' },
+              { speaker: 'B', word: 'installment plan', sentence: 'Yes, we offer a 3-month installment plan with no extra interest.', translation: '네, 추가 이자 없는 3개월 할부 플랜을 제공합니다.' },
+              { speaker: 'A', word: 'business expense', sentence: 'I need a receipt for this business expense.', translation: '이 업무 비용에 대한 영수증이 필요합니다.' },
+              { speaker: 'B', word: 'receipt', sentence: "No problem, I'll print one out for your records.", translation: '문제없습니다, 기록용으로 출력해 드리겠습니다.' }
+            ]
+          },
+          {
+            title: 'Smart Daily Business',
+            cards: [
+              { speaker: 'A', word: 'reschedule', sentence: 'Can we move our 3 PM meeting to tomorrow morning?', translation: '오후 3시 회의를 내일 오전으로 옮길 수 있을까요?' },
+              { speaker: 'B', word: 'instead', sentence: "That works for me. Let's say 10 AM instead.", translation: '좋습니다. 오전 10시로 하죠.' },
+              { speaker: 'A', word: 'revised contract', sentence: "I'll send over the revised contract by email.", translation: '수정된 계약서를 이메일로 보내드리겠습니다.' },
+              { speaker: 'B', word: 'review', sentence: "Thanks, I'll review it and get back to you by Friday.", translation: '감사합니다, 검토 후 금요일까지 회신드리겠습니다.' },
+              { speaker: 'A', word: 'finalize the budget', sentence: "Let's finalize the budget before the quarter ends.", translation: '분기가 끝나기 전에 예산을 확정합시다.' },
+              { speaker: 'B', word: 'final numbers', sentence: "Agreed, I'll prepare the final numbers tonight.", translation: '동의합니다, 오늘 밤 최종 수치를 준비하겠습니다.' }
+            ]
+          }
+        ]
+      },
+      {
+        sections: [
+          {
+            title: 'Financial & Banking',
+            cards: [
+              { speaker: 'A', word: 'personal loan', sentence: "I want to apply for a personal loan. What's the process?", translation: '개인 대출을 신청하고 싶은데, 절차가 어떻게 되나요?' },
+              { speaker: 'B', word: 'proof of income', sentence: "You'll need proof of income and a valid ID to start.", translation: '소득 증빙 서류와 신분증이 필요합니다.' },
+              { speaker: 'A', word: 'interest rate', sentence: "What's the current interest rate for a one-year term?", translation: '1년 만기 현재 금리가 어떻게 되나요?' },
+              { speaker: 'B', word: 'fixed rate', sentence: "It's 4.2 percent annually, fixed for the full term.", translation: '연 4.2%이며 전체 기간 동안 고정금리입니다.' },
+              { speaker: 'A', word: 'automatic transfer', sentence: 'Can I set up automatic transfers for the repayment?', translation: '상환을 위한 자동이체를 설정할 수 있을까요?' },
+              { speaker: 'B', word: 'checking account', sentence: 'Yes, we can link it directly to your checking account.', translation: '네, 입출금 계좌와 바로 연동해 드릴 수 있습니다.' }
+            ]
+          },
+          {
+            title: 'Payment & Expense',
+            cards: [
+              { speaker: 'A', word: 'declined transaction', sentence: 'This transaction was declined. Can you check what happened?', translation: '이 거래가 거절되었는데, 확인해 주시겠어요?' },
+              { speaker: 'B', word: 'daily limit', sentence: 'It looks like the card reached its daily limit.', translation: '일일 한도에 도달한 것 같습니다.' },
+              { speaker: 'A', word: 'credit limit', sentence: 'Could you increase my credit limit temporarily?', translation: '신용 한도를 일시적으로 늘려주실 수 있나요?' },
+              { speaker: 'B', word: 'business day', sentence: "I'll submit the request, it usually takes one business day.", translation: '요청을 제출하겠습니다, 보통 영업일 기준 하루 걸립니다.' },
+              { speaker: 'A', word: 'refund', sentence: "I'd like a refund for this duplicate charge.", translation: '이 중복 청구 건에 대해 환불을 받고 싶습니다.' },
+              { speaker: 'B', word: 'duplicate charge', sentence: "I've processed the refund; it'll reflect in 3 to 5 days.", translation: '환불 처리했습니다, 3~5일 내로 반영될 예정입니다.' }
+            ]
+          },
+          {
+            title: 'Smart Daily Business',
+            cards: [
+              { speaker: 'A', word: 'quarterly report', sentence: "Let's review the quarterly report before the call.", translation: '통화 전에 분기 보고서를 검토합시다.' },
+              { speaker: 'B', word: 'key figures', sentence: "Sure, I'll highlight the key figures for you.", translation: '네, 주요 수치를 강조해서 정리해 드리겠습니다.' },
+              { speaker: 'A', word: 'client feedback', sentence: "Could you forward me the client's latest feedback?", translation: '고객의 최근 피드백을 전달해 주시겠어요?' },
+              { speaker: 'B', word: 'summary', sentence: "I'll share the summary right after this meeting.", translation: '회의가 끝나는 대로 요약본을 공유해 드리겠습니다.' },
+              { speaker: 'A', word: 'follow up', sentence: 'We should follow up with the vendor about the delay.', translation: '지연된 건에 대해 공급업체와 후속 조치를 해야 합니다.' },
+              { speaker: 'B', word: 'update', sentence: "I'll call them this afternoon and update you.", translation: '오늘 오후에 전화해서 업데이트해 드리겠습니다.' }
+            ]
+          }
+        ]
+      },
+      {
+        sections: [
+          {
+            title: 'Financial & Banking',
+            cards: [
+              { speaker: 'A', word: 'account balance', sentence: "I'd like to check my account balance and recent transactions.", translation: '계좌 잔액과 최근 거래 내역을 확인하고 싶습니다.' },
+              { speaker: 'B', word: 'statement', sentence: "Of course, here's your statement for the last 30 days.", translation: '네, 최근 30일간의 명세서를 보여드리겠습니다.' },
+              { speaker: 'A', word: 'wire transfer', sentence: 'Is there a fee for international wire transfers?', translation: '해외 송금에 수수료가 있나요?' },
+              { speaker: 'B', word: 'flat fee', sentence: 'Yes, a flat fee of 20 dollars applies per transfer.', translation: '네, 건당 20달러의 정액 수수료가 부과됩니다.' },
+              { speaker: 'A', word: 'fixed deposit', sentence: 'Can I set up a fixed deposit for six months?', translation: '6개월짜리 정기예금을 개설할 수 있을까요?' },
+              { speaker: 'B', word: 'deposit rate', sentence: 'Sure, the current rate for six months is 3.5 percent.', translation: '네, 현재 6개월 금리는 3.5%입니다.' }
+            ]
+          },
+          {
+            title: 'Payment & Expense',
+            cards: [
+              { speaker: 'A', word: 'corporate card', sentence: 'Can I pay this invoice using a corporate card?', translation: '이 청구서를 법인카드로 결제할 수 있나요?' },
+              { speaker: 'B', word: 'checkout', sentence: 'Yes, just enter the card details at checkout.', translation: '네, 결제 시 카드 정보를 입력해 주세요.' },
+              { speaker: 'A', word: 'reconcile', sentence: "I need to reconcile these expense reports by Friday.", translation: '금요일까지 이 비용 보고서들을 정산해야 합니다.' },
+              { speaker: 'B', word: 'expense report', sentence: "I'll send you the receipts so you can match them.", translation: '영수증을 보내드릴 테니 대조해 주세요.' },
+              { speaker: 'A', word: 'service charge', sentence: 'Why was an extra service charge added to this bill?', translation: '이 청구서에 추가 수수료가 왜 붙었나요?' },
+              { speaker: 'B', word: 'settlement', sentence: "That's a processing fee for same-day settlement.", translation: '당일 결제 처리에 대한 수수료입니다.' }
+            ]
+          },
+          {
+            title: 'Smart Daily Business',
+            cards: [
+              { speaker: 'A', word: 'presentation', sentence: "Could you prepare the slides for tomorrow's presentation?", translation: '내일 발표 자료를 준비해 주시겠어요?' },
+              { speaker: 'B', word: 'draft', sentence: "Already working on it, I'll have a draft by tonight.", translation: '이미 작업 중입니다, 오늘 밤까지 초안을 드리겠습니다.' },
+              { speaker: 'A', word: 'shipping schedule', sentence: "Let's confirm the shipping schedule with the supplier.", translation: '공급업체와 배송 일정을 확인합시다.' },
+              { speaker: 'B', word: 'supplier', sentence: "I'll email them now and copy you on the reply.", translation: '지금 바로 이메일 보내고 참조로 넣어드리겠습니다.' },
+              { speaker: 'A', word: 'sign off', sentence: 'We need to sign off on the proposal by end of day.', translation: '오늘 안에 제안서 승인을 마쳐야 합니다.' },
+              { speaker: 'B', word: 'approval', sentence: "I'll review it one more time and send my approval.", translation: '한 번 더 검토하고 승인 보내드리겠습니다.' }
+            ]
+          }
+        ]
+      },
+      {
+        sections: [
+          {
+            title: 'Financial & Banking',
+            cards: [
+              { speaker: 'A', word: 'close an account', sentence: 'I\'d like to close this account and transfer the balance.', translation: '이 계좌를 해지하고 잔액을 이체하고 싶습니다.' },
+              { speaker: 'B', word: 'transfer the balance', sentence: 'Sure, where would you like the funds transferred?', translation: '네, 자금을 어디로 이체해 드릴까요?' },
+              { speaker: 'A', word: 'business loan', sentence: 'What documents do I need to apply for a business loan?', translation: '사업자 대출 신청에 어떤 서류가 필요한가요?' },
+              { speaker: 'B', word: 'business registration', sentence: "You'll need your business registration and tax returns.", translation: '사업자 등록증과 세금 신고서가 필요합니다.' },
+              { speaker: 'A', word: 'checking vs savings', sentence: 'Can you explain the difference between a checking and savings account?', translation: '입출금 계좌와 저축 계좌의 차이를 설명해 주시겠어요?' },
+              { speaker: 'B', word: 'earns interest', sentence: 'A checking account is for daily use; savings earns interest.', translation: '입출금 계좌는 일상용이고, 저축 계좌는 이자가 붙습니다.' }
+            ]
+          },
+          {
+            title: 'Payment & Expense',
+            cards: [
+              { speaker: 'A', word: 'recurring payment', sentence: 'Can we set up a recurring monthly payment for this service?', translation: '이 서비스에 대해 매달 자동 결제를 설정할 수 있을까요?' },
+              { speaker: 'B', word: 'autopay', sentence: "Yes, I'll enroll you in autopay starting next cycle.", translation: '네, 다음 주기부터 자동결제에 등록해 드리겠습니다.' },
+              { speaker: 'A', word: 'missing receipt', sentence: 'This expense report is missing a receipt.', translation: '이 비용 보고서에 영수증이 빠져 있습니다.' },
+              { speaker: 'B', word: 'upload a receipt', sentence: "I'll upload the missing receipt right away.", translation: '빠진 영수증을 바로 업로드하겠습니다.' },
+              { speaker: 'A', word: 'late fee', sentence: 'Is there a late fee if the payment is a few days overdue?', translation: '결제가 며칠 늦으면 연체료가 부과되나요?' },
+              { speaker: 'B', word: 'grace period', sentence: "There's a small grace period, then a 2 percent late fee applies.", translation: '약간의 유예기간이 있고, 이후 2%의 연체료가 부과됩니다.' }
+            ]
+          },
+          {
+            title: 'Smart Daily Business',
+            cards: [
+              { speaker: 'A', word: 'agenda', sentence: "Let's draft the agenda for next week's strategy meeting.", translation: '다음 주 전략 회의 안건을 작성합시다.' },
+              { speaker: 'B', word: 'strategy meeting', sentence: "I'll list the main topics and send it for your review.", translation: '주요 주제를 정리해서 검토용으로 보내드리겠습니다.' },
+              { speaker: 'A', word: 'project timeline', sentence: 'Can you update the client on the project timeline?', translation: '고객에게 프로젝트 일정을 업데이트해 주시겠어요?' },
+              { speaker: 'B', word: 'status update', sentence: "I'll send a status email with the revised deadlines.", translation: '수정된 마감일을 포함한 현황 이메일을 보내겠습니다.' },
+              { speaker: 'A', word: 'back up data', sentence: 'We should back up this data before the system upgrade.', translation: '시스템 업그레이드 전에 이 데이터를 백업해야 합니다.' },
+              { speaker: 'B', word: 'system upgrade', sentence: "I'm already running the backup, it'll finish shortly.", translation: '이미 백업을 진행 중입니다, 곧 완료됩니다.' }
+            ]
+          }
+        ]
+      }
     ];
+
+    // 주차 인덱스에 해당하는 데이터셋을 18개(3섹션 x 6문장) 카드 배열로 평탄화
+    function buildCardsForWeek(weekIndex) {
+      const weekSet = WEEK_DATA_STORE[weekIndex % WEEK_DATA_STORE.length];
+      const cards = [];
+      let id = 1;
+      weekSet.sections.forEach((section, sectionIndex) => {
+        section.cards.forEach(item => {
+          cards.push({
+            id: id++,
+            sectionIndex,
+            sectionTitle: section.title,
+            sectionTotal: weekSet.sections.length,
+            word: item.word,
+            sentence: item.sentence,
+            translation: item.translation,
+            speaker: item.speaker
+          });
+        });
+      });
+      return cards;
+    }
+
+    const CURRENT_WEEK_NUMBER = getCurrentWeekNumber();
+    const CARDS = buildCardsForWeek(CURRENT_WEEK_NUMBER - 1);
+    const CARD_SECTION_SIZE = CARDS.length / WEEK_DATA_STORE[0].sections.length;
+
+    // 문장 내에서 #F55654 색상으로 강조할 핵심 동사 토큰 (실제 등장 형태 기준)
+    const VERB_HIGHLIGHT_WORDS = new Set([
+      'open', 'see', 'exchange', 'buying', 'comes', 'send', 'email', 'split', 'offer',
+      'need', 'print', 'move', 'say', 'review', 'finalize', 'prepare', 'want', 'start',
+      'fixed', 'set', 'link', 'declined', 'check', 'happened', 'looks', 'reached',
+      'increase', 'submit', 'takes', 'refund', 'processed', 'reflect', 'highlight',
+      'forward', 'share', 'follow', 'call', 'update', 'applies', 'enter', 'reconcile',
+      'match', 'added', 'processing', 'working', 'have', 'confirm', 'copy', 'sign',
+      'close', 'transfer', 'transferred', 'explain', 'earns', 'enroll', 'starting',
+      'missing', 'upload', 'draft', 'list', 'revised', 'back', 'running', 'finish',
+      'using', 'agreed', 'pay'
+    ]);
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, (ch) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[ch]));
+    }
+
+    // 토큰에서 선행/후행 기호를 분리해 핵심 영문 단어만 추출 (하이라이트 비교용)
+    function extractWordCore(token) {
+      const matched = token.match(/^([^A-Za-z]*)([A-Za-z']+)([^A-Za-z]*)$/);
+      if (!matched) return null;
+      return { prefix: matched[1], core: matched[2], suffix: matched[3] };
+    }
+
+    // 문장 내 핵심 동사에 #F55654 컬러를 입힌 안전한 HTML 생성
+    function highlightVerbsHtml(sentence) {
+      return sentence.split(/(\s+)/).map(chunk => {
+        if (!chunk.trim()) return chunk;
+        const parsed = extractWordCore(chunk);
+        if (!parsed) return escapeHtml(chunk);
+        const { prefix, core, suffix } = parsed;
+        const coreHtml = VERB_HIGHLIGHT_WORDS.has(core.toLowerCase())
+          ? `<span class="verb-highlight">${escapeHtml(core)}</span>`
+          : escapeHtml(core);
+        return escapeHtml(prefix) + coreHtml + escapeHtml(suffix);
+      }).join('');
+    }
+
     let cardIndex = 0;
     const flipCard = document.getElementById('flipCard');
-    const cardFront = document.getElementById('cardFront');
-    const cardBack = document.getElementById('cardBack');
+    const cardSectionLabel = document.getElementById('cardSectionLabel');
+    const cardSpeakerBadge = document.getElementById('cardSpeakerBadge');
+    const cardSentenceText = document.getElementById('cardSentenceText');
+    const cardTranslationText = document.getElementById('cardTranslationText');
+    const cardWordGloss = document.getElementById('cardWordGloss');
     const cardCounter = document.getElementById('cardCounter');
     const cardDots = document.getElementById('cardDots');
 
     function renderDots() {
-      cardDots.innerHTML = CARDS.map((_, i) =>
-        `<span class="dot w-1.5 h-1.5 rounded-full ${i === cardIndex ? 'bg-edu w-4' : 'bg-ink/15'}"></span>`
+      const withinIndex = cardIndex % CARD_SECTION_SIZE;
+      cardDots.innerHTML = Array.from({ length: CARD_SECTION_SIZE }, (_, i) =>
+        `<span class="dot w-1.5 h-1.5 rounded-full ${i === withinIndex ? 'bg-edu w-4' : 'bg-ink/15'}"></span>`
       ).join('');
     }
 
     function renderCard() {
       if ('speechSynthesis' in window) window.speechSynthesis.cancel();
       flipCard.classList.remove('is-flipped');
+      sttTranslatedText = ''; // 카드가 바뀌면 이전 AI 통역 결과는 폐기
       const card = CARDS[cardIndex];
-      cardFront.textContent = card.front;
-      cardBack.textContent = card.back;
-      cardCounter.textContent = `${cardIndex + 1} / ${CARDS.length}`;
+      const withinIndex = cardIndex % CARD_SECTION_SIZE;
+      if (cardSectionLabel) {
+        cardSectionLabel.textContent =
+          `Week ${CURRENT_WEEK_NUMBER} · Section ${card.sectionIndex + 1}/${card.sectionTotal} · ${card.sectionTitle}`;
+      }
+      if (cardSpeakerBadge) cardSpeakerBadge.textContent = `Speaker ${card.speaker}`;
+      cardSentenceText.innerHTML = highlightVerbsHtml(card.sentence);
+      cardTranslationText.textContent = card.translation;
+      if (cardWordGloss) cardWordGloss.textContent = card.word;
+      cardCounter.textContent = `${withinIndex + 1} / ${CARD_SECTION_SIZE}`;
       renderDots();
-      renderWordButtons(card.front);
+      renderWordButtons(card.sentence);
+      resetSttPractice();
     }
 
     function toggleFlip() {
@@ -1877,14 +2210,19 @@
       renderCard();
     }
 
-    /* ============ TTS (단어/문장 발음 듣기) ============ */
+    /* ============ TTS (단어/문장 발음 듣기, 여성 원어민 성우 우선) ============ */
+    // DO NOT CHANGE: 1순위 음성은 'Google US English'(en-US, 여성 성우)로 절대 고정
+    const FIXED_PRIMARY_VOICE_NAME = 'Google US English';
+    const FIXED_PRIMARY_VOICE_LANG = 'en-US';
     const PREFERRED_VOICE_NAMES = [
-      'Google US English',
+      FIXED_PRIMARY_VOICE_NAME,
       'Microsoft Jenny Online (Natural)',
       'Microsoft Aria Online (Natural)',
-      'Microsoft Guy Online (Natural)',
       'Samantha',
       'Microsoft Zira',
+      'Victoria',
+      'Karen',
+      'Microsoft Guy Online (Natural)',
       'Microsoft David',
       'Alex'
     ];
@@ -1894,7 +2232,13 @@
     const sentencePlayBtn = document.getElementById('sentencePlayBtn');
     const cardWordButtons = document.getElementById('cardWordButtons');
 
+    // DO NOT CHANGE: 'Google US English'(en-US)가 있으면 다른 목록보다 항상 우선 반환
     function pickBestVoice(voices) {
+      const fixedPrimary = voices.find(v =>
+        v.name === FIXED_PRIMARY_VOICE_NAME && v.lang === FIXED_PRIMARY_VOICE_LANG
+      ) || voices.find(v => v.name.includes(FIXED_PRIMARY_VOICE_NAME));
+      if (fixedPrimary) return fixedPrimary;
+
       for (const name of PREFERRED_VOICE_NAMES) {
         const found = voices.find(v => v.name.includes(name));
         if (found) return found;
@@ -1931,42 +2275,468 @@
       selectedVoice = ttsVoices.find(v => v.name === e.target.value) || selectedVoice;
     });
 
-    function speakText(text, rate, onEnd) {
-      if (!('speechSynthesis' in window) || !text) return;
-      window.speechSynthesis.cancel();
-      const utter = new SpeechSynthesisUtterance(text);
-      utter.lang = (selectedVoice && selectedVoice.lang) || 'en-US';
-      if (selectedVoice) utter.voice = selectedVoice;
-      utter.rate = rate || 0.95;
-      utter.pitch = 1;
-      if (onEnd) {
-        utter.onend = onEnd;
-        utter.onerror = onEnd;
+    // 여성 원어민 성우 우선 지정 TTS 재생 함수 (음성 미로딩 시 자동 대기 후 재시도)
+    function speakText(text, rate) {
+      if (!text) return;
+      if (!('speechSynthesis' in window)) {
+        alert('이 브라우저는 음성 출력을 지원하지 않습니다.');
+        return;
       }
-      window.speechSynthesis.speak(utter);
+
+      window.speechSynthesis.cancel();
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = rate || 0.9;
+
+      const applyVoiceAndSpeak = () => {
+        const voice = selectedVoice || pickBestVoice(window.speechSynthesis.getVoices());
+        if (voice) {
+          utterance.voice = voice;
+          utterance.lang = voice.lang;
+        } else {
+          utterance.lang = 'en-US';
+        }
+        window.speechSynthesis.speak(utterance);
+      };
+
+      if (window.speechSynthesis.getVoices().length > 0) {
+        applyVoiceAndSpeak();
+      } else {
+        window.speechSynthesis.onvoiceschanged = () => {
+          applyVoiceAndSpeak();
+          window.speechSynthesis.onvoiceschanged = null;
+        };
+      }
     }
 
-    function speakWord(event, word) {
-      event.stopPropagation();
-      speakText(word, 0.9);
+    // 카드 단어를 토큰으로 나눠 개별 발음 듣기 버튼으로 렌더링 (핵심 동사는 #F55654로 강조)
+    function renderWordButtons(text) {
+      if (!cardWordButtons) return;
+      const words = text.split(/\s+/).filter(Boolean);
+      cardWordButtons.innerHTML = words.map(word => {
+        const parsed = extractWordCore(word);
+        const isVerb = VERB_HIGHLIGHT_WORDS.has((parsed ? parsed.core : word).toLowerCase());
+        const safeWord = escapeHtml(word);
+        return `<button type="button" class="word-speak-btn${isVerb ? ' is-verb' : ''}" data-word="${safeWord}">${safeWord}</button>`;
+      }).join('');
+      cardWordButtons.querySelectorAll('.word-speak-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          speakText(btn.dataset.word);
+        });
+      });
     }
 
+    // 카드 앞면 문장 전체를 재생
     function speakSentence(event) {
       if (event) event.stopPropagation();
-      const card = CARDS[cardIndex];
-      sentencePlayBtn?.classList.add('is-playing');
-      speakText(card.front, 0.85, () => sentencePlayBtn?.classList.remove('is-playing'));
+      speakText(CARDS[cardIndex].sentence);
     }
 
-    function renderWordButtons(front) {
-      if (!cardWordButtons) return;
-      const words = front.split(' ');
-      cardWordButtons.innerHTML = words.map(w => `
-        <button type="button" class="word-speak-btn" onclick="speakWord(event, '${w.replace(/'/g, "\\'")}')">
-          <span>${w}</span>
-          <i class="fa-solid fa-volume-high"></i>
-        </button>
-      `).join('');
+    // 스마트 STT 패널 내부, 마이크 버튼 바로 위 박스에 번역 결과를 표시하고 재생 버튼을 활성화
+    function renderSttTranslation(englishText) {
+      sttTranslatedText = englishText;
+      if (sttTranslatedTextBox) sttTranslatedTextBox.textContent = englishText || '번역된 영어 문장이 여기에 표시됩니다.';
+      if (sttPlaybackBtn) sttPlaybackBtn.disabled = !englishText;
+    }
+
+    /* ============ 스마트 말하기 & AI 통역 (통합 STT 컨트롤러) ============ */
+    let sttTranslatedText = '';
+    const SpeechRecognitionImpl = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const sttModePracticeBtn = document.getElementById('sttModePracticeBtn');
+    const sttModeTranslateBtn = document.getElementById('sttModeTranslateBtn');
+    const sttRecordBtn = document.getElementById('sttRecordBtn');
+    const sttPlaybackBtn = document.getElementById('sttPlaybackBtn');
+    const sttPlaybackAudio = document.getElementById('sttPlaybackAudio');
+    const sttTranslatedTextBox = document.getElementById('sttTranslatedTextBox');
+    const sttStatus = document.getElementById('sttStatus');
+    const sttHint = document.getElementById('sttHint');
+    const sttTranscript = document.getElementById('sttTranscript');
+    const sttCharCount = document.getElementById('sttCharCount');
+    const sttFeedback = document.getElementById('sttFeedback');
+    const sttMicError = document.getElementById('sttMicError');
+    const sttProgressFill = document.getElementById('sttProgressFill');
+    const sttCountdown = document.getElementById('sttCountdown');
+    const sttVisualizerCanvas = document.getElementById('sttVisualizer');
+
+    const STT_MAX_DURATION_MS = 15000;
+    const STT_MAX_CHARS = 200;
+    // 옵션: 추후 다국어 지원 시 setSttTranslateLanguage()로 교체 가능하도록 변수로 유지
+    let STT_TRANSLATE_LANG = 'ko-KR';
+
+    let sttMode = 'practice'; // 'practice'(영어 발음 연습) | 'translate'(한국어 AI 통역)
+    let sttRecognizer = null;
+    let sttListening = false;
+    let sttStartedAt = 0;
+    let sttFinalText = '';
+    let sttProgressTimer = null;
+    let sttAutoStopTimer = null;
+
+    let sttMicStream = null;
+    let sttAudioContext = null;
+    let sttAnalyser = null;
+    let sttVisualizerRaf = null;
+
+    let sttMediaRecorder = null;
+    let sttRecordedChunks = [];
+    let sttRecordedBlobUrl = null;
+
+    function setSttTranslateLanguage(lang) {
+      STT_TRANSLATE_LANG = lang || 'ko-KR';
+      if (sttRecognizer && sttMode === 'translate') sttRecognizer.lang = STT_TRANSLATE_LANG;
+    }
+
+    function normalizeForCompare(text) {
+      return text.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+    }
+
+    function scoreTranscript(transcript, target) {
+      const spoken = normalizeForCompare(transcript).split(/\s+/).filter(Boolean);
+      const words = normalizeForCompare(target).split(/\s+/).filter(Boolean);
+      if (!words.length) return 0;
+      const matched = words.filter(w => spoken.includes(w)).length;
+      return Math.round((matched / words.length) * 100);
+    }
+
+    function setSttFeedback(message, tone) {
+      if (!sttFeedback) return;
+      sttFeedback.textContent = message;
+      sttFeedback.className = `text-[11px] font-bold ${tone || ''}`;
+    }
+
+    function renderPracticeScore(transcript) {
+      const target = CARDS[cardIndex].sentence;
+      const score = scoreTranscript(transcript, target);
+      if (score >= 80) setSttFeedback(`훌륭해요! 일치율 ${score}% 🎉`, 'text-edu');
+      else if (score >= 40) setSttFeedback(`좋아요, 일치율 ${score}% — 한 번 더 말해볼까요?`, 'text-amber-300');
+      else setSttFeedback(`다시 시도해볼까요? 일치율 ${score}%`, 'text-red-300');
+    }
+
+    // 200자 초과분은 잘라내고 초과 여부를 함께 반환
+    function truncateToMaxChars(text, maxChars) {
+      if (text.length <= maxChars) return { text, wasTruncated: false };
+      return { text: text.slice(0, maxChars), wasTruncated: true };
+    }
+
+    function renderSttTranscript(rawText) {
+      const { text, wasTruncated } = truncateToMaxChars(rawText, STT_MAX_CHARS);
+      if (sttTranscript) sttTranscript.textContent = text || '여기에 인식된 내용이 표시됩니다.';
+      if (sttCharCount) sttCharCount.textContent = `${text.length} / ${STT_MAX_CHARS}자`;
+      if (wasTruncated) setSttFeedback('⚠️ 200자를 초과하여 이후 내용은 잘렸습니다', 'text-amber-300');
+      return text;
+    }
+
+    function showSttMicError(show) {
+      if (sttMicError) sttMicError.classList.toggle('hidden', !show);
+      if (sttStatus && show) sttStatus.textContent = '마이크 권한 필요';
+    }
+
+    function setSttListening(active) {
+      sttListening = active;
+      sttRecordBtn?.classList.toggle('is-listening', active);
+      if (sttStatus) sttStatus.textContent = active ? '듣고 있어요...' : '대기 중';
+    }
+
+    // 모드 전환 시 언어/안내 문구를 갱신하고 레코더를 재생성
+    function setSttMode(mode) {
+      sttMode = mode;
+      sttModePracticeBtn?.classList.toggle('active', mode === 'practice');
+      sttModeTranslateBtn?.classList.toggle('active', mode === 'translate');
+      if (sttListening && sttRecognizer) {
+        try { sttRecognizer.stop(); } catch (err) { /* 이미 종료된 경우 무시 */ }
+      }
+      sttRecognizer = null;
+      if (sttHint) {
+        sttHint.textContent = mode === 'practice'
+          ? '마이크를 탭하고 카드 속 문장을 따라 말해보세요'
+          : '최대 15초, 한국어로 말하면 번역 · 숏츠 제작에 사용돼요';
+      }
+      resetSttPractice();
+    }
+
+    function resetSttPractice() {
+      if (sttListening && sttRecognizer) sttRecognizer.stop();
+      renderSttTranscript('');
+      setSttFeedback('');
+      renderSttTranslation('');
+      if (sttPlaybackBtn) sttPlaybackBtn.disabled = true;
+    }
+
+    // 세션마다 새 인스턴스를 생성해 이전 recognizer의 잔여 상태(stale result 누적)를 방지
+    function initSttRecognizer() {
+      if (!SpeechRecognitionImpl) return null;
+      sttRecognizer = new SpeechRecognitionImpl();
+      sttRecognizer.lang = sttMode === 'practice' ? 'en-US' : STT_TRANSLATE_LANG;
+      sttRecognizer.interimResults = true;
+      sttRecognizer.continuous = false;
+      sttRecognizer.maxAlternatives = 1;
+      sttFinalText = '';
+
+      sttRecognizer.onresult = (e) => {
+        let interim = '';
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          const transcript = e.results[i][0].transcript;
+          if (e.results[i].isFinal) sttFinalText += transcript;
+          else interim += transcript;
+        }
+        renderSttTranscript(sttFinalText + interim);
+        if ((sttFinalText + interim).length > STT_MAX_CHARS) {
+          sttFinalText = sttFinalText.substring(0, STT_MAX_CHARS);
+          try { sttRecognizer.stop(); } catch (err) { /* 이미 종료된 경우 무시 */ }
+        }
+      };
+      sttRecognizer.onerror = (e) => {
+        setSttListening(false);
+        stopSttCountdown();
+        stopSttAudioCapture();
+        if (e.error === 'not-allowed' || e.error === 'permission-denied') {
+          showSttMicError(true);
+        } else if (e.error === 'no-speech') {
+          if (sttStatus) sttStatus.textContent = '음성이 감지되지 않았어요, 다시 시도해주세요';
+        } else if (sttStatus) {
+          sttStatus.textContent = '오류가 발생했어요, 다시 시도해주세요';
+        }
+      };
+      sttRecognizer.onend = () => {
+        const durationMs = Math.min(STT_MAX_DURATION_MS, Date.now() - sttStartedAt);
+        setSttListening(false);
+        stopSttCountdown();
+        stopSttAudioCapture();
+        const finalText = renderSttTranscript(sttFinalText);
+        if (finalText && sttMode === 'practice') renderPracticeScore(finalText);
+        if (sttMode === 'translate' && finalText.trim()) handleTranslatePipeline(finalText.trim(), durationMs);
+      };
+      return sttRecognizer;
+    }
+
+    function startSttCountdown() {
+      sttStartedAt = Date.now();
+      clearInterval(sttProgressTimer);
+      sttProgressTimer = setInterval(() => {
+        const elapsed = Date.now() - sttStartedAt;
+        const remaining = Math.max(0, STT_MAX_DURATION_MS - elapsed);
+        const progressPct = Math.min(100, (elapsed / STT_MAX_DURATION_MS) * 100);
+        if (sttProgressFill) sttProgressFill.style.width = `${progressPct}%`;
+        if (sttCountdown) sttCountdown.textContent = `${(remaining / 1000).toFixed(1)}초 남음`;
+      }, 100);
+
+      clearTimeout(sttAutoStopTimer);
+      sttAutoStopTimer = setTimeout(() => {
+        if (sttListening) stopSttRecording(); // 15초 경과 시 자동 종료
+      }, STT_MAX_DURATION_MS);
+    }
+
+    function stopSttCountdown() {
+      clearInterval(sttProgressTimer);
+      clearTimeout(sttAutoStopTimer);
+      if (sttProgressFill) sttProgressFill.style.width = '0%';
+      if (sttCountdown) sttCountdown.textContent = '대기 중';
+    }
+
+    // 번역/숏츠 파이프라인으로 전달할 데이터 객체
+    function buildSttPipelinePayload(koreanText, durationMs, englishText) {
+      return {
+        koreanText,
+        englishText: englishText || '',
+        duration: Math.round(durationMs / 1000),
+        timestamp: new Date().toISOString()
+      };
+    }
+
+    function onSttPipelineReady(payload) {
+      document.dispatchEvent(new CustomEvent('sttCompleted', { detail: payload }));
+    }
+
+    // API 키 없이 호출 가능한 무료 번역 엔드포인트 (한국어 → 영어)
+    async function translateText(koreanText) {
+      if (!koreanText || !koreanText.trim()) return '';
+      try {
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(koreanText.trim())}&langpair=ko|en`;
+        const res = await fetch(url);
+        const data = await res.json();
+        return (data && data.responseData && data.responseData.translatedText) || '';
+      } catch (err) {
+        console.error('AI 통역 번역 요청 실패:', err);
+        return '';
+      }
+    }
+
+    // STT 완료 후 번역 요청 → 통역 패널 내부 박스 반영 → 파이프라인 이벤트 발행까지 일괄 처리
+    async function handleTranslatePipeline(koreanText, durationMs) {
+      setSttFeedback('번역 중...', 'text-ink/50');
+      const englishText = await translateText(koreanText);
+      if (englishText) {
+        renderSttTranslation(englishText);
+        setSttFeedback('번역 완료! 마이크 위 박스와 재생 버튼을 확인해보세요 🎧', 'text-edu');
+      } else {
+        setSttFeedback('번역에 실패했어요, 잠시 후 다시 시도해주세요', 'text-red-300');
+      }
+      onSttPipelineReady(buildSttPipelinePayload(koreanText, durationMs, englishText));
+    }
+
+    // 마이크 입력 음량에 반응하는 수직 바 시각화 (민감도 가중치로 작은 목소리도 크게 반응)
+    const STT_VISUALIZER_SENSITIVITY = 1.8;
+
+    function startSttVisualizer(stream) {
+      const AudioContextImpl = window.AudioContext || window.webkitAudioContext;
+      if (!sttVisualizerCanvas || !AudioContextImpl) return;
+      sttAudioContext = new AudioContextImpl();
+      const source = sttAudioContext.createMediaStreamSource(stream);
+      sttAnalyser = sttAudioContext.createAnalyser();
+      sttAnalyser.fftSize = 32;
+      sttAnalyser.smoothingTimeConstant = 0.8;
+      source.connect(sttAnalyser);
+
+      const ctx = sttVisualizerCanvas.getContext('2d');
+      const bufferLength = sttAnalyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+      const width = sttVisualizerCanvas.width;
+      const height = sttVisualizerCanvas.height;
+      const barWidth = width / bufferLength;
+
+      const draw = () => {
+        sttVisualizerRaf = requestAnimationFrame(draw);
+        sttAnalyser.getByteFrequencyData(dataArray);
+        ctx.clearRect(0, 0, width, height);
+        for (let i = 0; i < bufferLength; i++) {
+          const amplified = Math.min(255, dataArray[i] * STT_VISUALIZER_SENSITIVITY);
+          const barHeight = Math.max(4, (amplified / 255) * height);
+          ctx.fillStyle = '#F55654';
+          ctx.fillRect(i * barWidth, height - barHeight, barWidth - 2, barHeight);
+        }
+      };
+      draw();
+    }
+
+    function stopSttVisualizer() {
+      if (sttVisualizerRaf) cancelAnimationFrame(sttVisualizerRaf);
+      sttVisualizerRaf = null;
+      if (sttAudioContext) {
+        sttAudioContext.close().catch(() => { });
+        sttAudioContext = null;
+      }
+      sttAnalyser = null;
+      if (sttVisualizerCanvas) {
+        const ctx = sttVisualizerCanvas.getContext('2d');
+        ctx.clearRect(0, 0, sttVisualizerCanvas.width, sttVisualizerCanvas.height);
+      }
+    }
+
+    // 재생 버튼용으로 내 음성을 별도 녹음 (STT 인식과 별개의 트랙)
+    function startSttMediaRecorder(stream) {
+      if (typeof MediaRecorder === 'undefined') return;
+      sttRecordedChunks = [];
+      try {
+        sttMediaRecorder = new MediaRecorder(stream);
+      } catch (err) {
+        sttMediaRecorder = null;
+        return;
+      }
+      sttMediaRecorder.ondataavailable = (e) => {
+        if (e.data && e.data.size > 0) sttRecordedChunks.push(e.data);
+      };
+      sttMediaRecorder.onstop = () => {
+        if (!sttRecordedChunks.length) return;
+        const blob = new Blob(sttRecordedChunks, { type: 'audio/webm' });
+        revokeSttRecordedAudio();
+        sttRecordedBlobUrl = URL.createObjectURL(blob);
+        if (sttPlaybackBtn) sttPlaybackBtn.disabled = false;
+      };
+      sttMediaRecorder.start();
+    }
+
+    function stopSttMediaRecorder() {
+      try {
+        if (sttMediaRecorder && sttMediaRecorder.state !== 'inactive') sttMediaRecorder.stop();
+      } catch (err) { /* 이미 중지된 경우 무시 */ }
+    }
+
+    // 비주얼라이저/레코더 스트림만 정리 (SpeechRecognition과 독립적으로 종료 가능)
+    function stopSttAudioCapture() {
+      stopSttMediaRecorder();
+      stopSttVisualizer();
+      if (sttMicStream) {
+        sttMicStream.getTracks().forEach(track => track.stop());
+        sttMicStream = null;
+      }
+    }
+
+    function revokeSttRecordedAudio() {
+      if (sttRecordedBlobUrl) {
+        URL.revokeObjectURL(sttRecordedBlobUrl);
+        sttRecordedBlobUrl = null;
+      }
+    }
+
+    // AI 통역 모드에서는 번역된 영문을 TTS로, 말하기 연습 모드에서는 녹음된 내 음성을 재생
+    function playSttRecording() {
+      if (sttMode === 'translate' && sttTranslatedText) {
+        speakText(sttTranslatedText);
+        return;
+      }
+      if (!sttPlaybackAudio || !sttRecordedBlobUrl) return;
+      sttPlaybackAudio.src = sttRecordedBlobUrl;
+      sttPlaybackAudio.currentTime = 0;
+      sttPlaybackAudio.play().catch(() => { });
+    }
+
+    // 녹음 시작/중지 전용 버튼: 음성 인식을 먼저 켠 뒤 비주얼라이저·녹음용 스트림을 붙여 자원 충돌을 방지
+    function toggleSttRecording() {
+      if (sttListening) {
+        stopSttRecording();
+        return;
+      }
+      if (!SpeechRecognitionImpl) {
+        if (sttStatus) sttStatus.textContent = '이 브라우저는 음성 인식을 지원하지 않아요';
+        return;
+      }
+
+      showSttMicError(false);
+      renderSttTranscript('');
+      setSttFeedback('');
+      revokeSttRecordedAudio();
+      renderSttTranslation('');
+      if (sttPlaybackBtn) sttPlaybackBtn.disabled = true;
+
+      const recognizer = initSttRecognizer();
+      if (!recognizer) {
+        showSttMicError(true);
+        return;
+      }
+
+      // 1) 사용자 제스처 컨텍스트가 살아있는 동안 음성 인식을 먼저 시작 (Safari 등 호환성)
+      try {
+        recognizer.start();
+        setSttListening(true);
+        startSttCountdown();
+      } catch (err) {
+        setSttListening(false);
+        if (sttStatus) sttStatus.textContent = '마이크를 다시 눌러 재시도해주세요';
+        return;
+      }
+
+      // 2) 인식이 시작된 뒤 비주얼라이저 · 녹음용 스트림을 별도로 연결 (실패해도 STT는 계속 동작)
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then((stream) => {
+          sttMicStream = stream;
+          startSttVisualizer(stream);
+          startSttMediaRecorder(stream);
+        })
+        .catch(() => {
+          showSttMicError(true);
+        });
+    }
+
+    function stopSttRecording() {
+      if (sttRecognizer && sttListening) {
+        try { sttRecognizer.stop(); } catch (err) { /* 이미 종료된 세션은 무시 */ }
+      }
+      stopSttAudioCapture();
+    }
+
+    if (!SpeechRecognitionImpl) {
+      if (sttStatus) sttStatus.textContent = '미지원 브라우저';
+      if (sttRecordBtn) sttRecordBtn.disabled = true;
     }
 
     renderCard();
