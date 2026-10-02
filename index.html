@@ -47,6 +47,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
     rel="stylesheet">
+  <!-- GSAP deterministic motion timeline for shorts preview -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
   <script>
     tailwind.config = {
@@ -232,6 +234,35 @@
       transform: rotateY(180deg);
     }
 
+    .card-translation {
+      word-break: keep-all;
+      line-height: 1.55;
+    }
+
+    .stt-hint {
+      display: inline-block;
+      word-break: keep-all;
+      text-align: center;
+    }
+
+    .stt-result-box {
+      position: relative;
+      min-height: 76px;
+      overflow: hidden;
+    }
+
+    .stt-result-box canvas {
+      display: none;
+    }
+
+    .stt-result-box.is-listening canvas {
+      display: block;
+    }
+
+    .stt-result-box.is-listening p {
+      opacity: 0;
+    }
+
     .dot {
       transition: all .25s ease;
     }
@@ -298,6 +329,230 @@
       background: #E36A6A;
       animation: pulse-play 1s ease-in-out infinite;
       box-shadow: 0 0 0 8px rgba(227, 106, 106, 0.2);
+    }
+
+    .stt-playback-btn.is-ready:not(:disabled) {
+      color: #17120A !important;
+      background: #F2A65A !important;
+      box-shadow: 0 0 0 3px rgba(242, 166, 90, 0.2) !important;
+    }
+
+    .shorts-sheet {
+      animation: sheet-in .28s cubic-bezier(.2, .8, .2, 1) both;
+      max-height: 88vh;
+      max-height: 88dvh;
+      overflow-y: auto;
+      padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+    }
+
+    @keyframes sheet-in {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .short-preview-frame {
+      aspect-ratio: 9 / 16;
+      background: #0A0A0A;
+    }
+
+    .motion-preview-stage {
+      position: relative;
+      isolation: isolate;
+      min-height: 540px;
+      perspective: 1000px;
+      perspective-origin: 50% 50%;
+      transform-origin: 50% 52%;
+      background: #0A0A0A;
+      transition: none;
+    }
+
+    .motion-preview-stage::before {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      content: '';
+      background: linear-gradient(145deg, #0A0A0A 0%, #111 55%, #180A12 100%);
+      pointer-events: none;
+    }
+
+    .motion-preview-stage::after {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: '';
+      opacity: .16;
+      background-image: repeating-linear-gradient(135deg, transparent 0, transparent 22px, rgba(255,255,255,.07) 23px, transparent 24px);
+      pointer-events: none;
+    }
+
+    .motion-preview-meta,
+    .motion-preview-foot {
+      position: absolute;
+      left: 7%;
+      right: 7%;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .motion-preview-meta { top: 5%; }
+    .motion-preview-foot { bottom: 5%; }
+
+    .motion-scene {
+      position: absolute;
+      inset: 12% 6% 13%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      visibility: hidden;
+      opacity: 0;
+      transform-origin: 50% 50%;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .motion-scene-korean {
+      inset: 17% 5% 18%;
+      font-size: 3.4rem;
+      font-weight: 900;
+      line-height: 1.18;
+      letter-spacing: -.055em;
+      color: #FFFFFF;
+      word-break: keep-all;
+    }
+
+    .motion-scene-english {
+      inset: 15% 4% 17%;
+      font-size: 4.45rem;
+      font-weight: 900;
+      line-height: .99;
+      letter-spacing: -.045em;
+      color: #FFFFFF;
+      overflow-wrap: anywhere;
+    }
+
+    .motion-english-phrase {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-content: center;
+      column-gap: .12em;
+      visibility: hidden;
+      opacity: 0;
+      transform-origin: 50% 50%;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .motion-word--accent {
+      padding: 0 .09em .04em;
+      margin: 0 .015em;
+      color: #0A0A0A;
+      background: #FF007F;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .motion-word--accent .motion-char {
+      color: #0A0A0A !important;
+      -webkit-text-stroke-color: transparent !important;
+    }
+
+    .motion-accent-slice {
+      position: absolute;
+      z-index: 2;
+      top: 43%;
+      left: -8%;
+      width: 116%;
+      height: 13%;
+      background: #FF007F;
+      transform: scaleX(0) skewX(-18deg);
+      transform-origin: left center;
+      pointer-events: none;
+      mix-blend-mode: normal;
+    }
+
+    .motion-scene-index {
+      position: absolute;
+      z-index: 4;
+      right: 7%;
+      top: 50%;
+      writing-mode: vertical-rl;
+      transform: translateY(-50%);
+      color: rgba(244,245,243,.42);
+      font: 700 9px/1 monospace;
+      letter-spacing: .16em;
+    }
+
+    .motion-copy-line {
+      max-width: 100%;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+
+    .motion-word-mask {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+      padding: .08em .045em .14em;
+    }
+
+    .motion-char {
+      display: inline-block;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(244, 245, 243, .9);
+      will-change: transform, opacity, filter, color;
+    }
+
+    .motion-control-range {
+      accent-color: #FF007F;
+    }
+
+    .motion-play-button.is-playing {
+      box-shadow: 0 0 24px rgba(255, 0, 127, .48);
+      transform: scale(1.05);
+    }
+
+    .motion-audio-button.is-enabled {
+      color: #FF1493;
+      border-color: #FF007F;
+      background: rgba(255, 0, 127, .12);
+    }
+
+    @media (max-width: 640px) {
+      .motion-preview-stage { min-height: 500px; }
+      .motion-scene-korean { font-size: 2.7rem; }
+      .motion-scene-english { font-size: 3.45rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .shorts-sheet { animation-duration: .01ms; }
+    }
+
+    .learning-tab {
+      color: rgba(244, 245, 243, .55);
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .learning-tab.active {
+      color: #0A0C10;
+      background: #F4F5F3;
+      border-color: #F4F5F3;
     }
 
     .stt-mic-btn:disabled {
@@ -543,6 +798,7 @@
           <a href="#finance" class="px-4 py-2 rounded-full text-finance-deep hover:bg-white/15 transition">금융 · 자산</a>
           <a href="#education" class="px-4 py-2 rounded-full text-edu-deep hover:bg-white/15 transition">교육 · 배움</a>
           <a href="#pricing" class="px-4 py-2 rounded-full text-ink/70 hover:bg-white/15 transition">가격</a>
+          <a href="#learningHub" class="px-4 py-2 rounded-full text-ink/70 hover:bg-white/15 transition">학습창</a>
         </nav>
 
         <div class="flex items-center gap-2">
@@ -567,6 +823,8 @@
       <a href="#education" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl font-semibold text-edu-deep">교육 ·
         배움 트랙</a>
       <a href="#pricing" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl font-semibold text-ink/70">가격</a>
+      <a href="#learningHub" onclick="toggleMobileMenu()" class="px-3 py-2.5 rounded-xl font-semibold text-ink/70">개인
+        학습창 · 둘러보기</a>
       <button id="authNavBtnMobile" onclick="handleAuthNavClick(); toggleMobileMenu();"
         class="px-3 py-2.5 rounded-xl font-semibold text-ink/70 text-left">로그인</button>
     </div>
@@ -741,13 +999,15 @@
   <section id="education" class="px-5 sm:px-8 py-20 sm:py-28 relative">
     <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div class="order-2 lg:order-1 flex flex-col items-center">
-        <div class="flip-card w-full max-w-sm h-[21rem] sm:h-[24rem] cursor-pointer" id="flipCard" onclick="toggleFlip()">
+        <div class="flip-card w-full max-w-sm h-[21rem] sm:h-[24rem] cursor-pointer" id="flipCard"
+          onclick="toggleFlip()">
           <div class="flip-card-inner">
             <div class="flip-card-face flip-card-front glass-panel shadow-lg">
-              <span id="cardSectionLabel" class="text-xs font-bold tracking-widest uppercase text-edu"></span>
+              <span id="cardSectionLabel" class="text-xs font-bold tracking-widest uppercase text-edu">THIS WEEK'S
+                PICK</span>
               <span id="cardSpeakerBadge"
                 class="inline-flex items-center justify-center text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-ink/50"></span>
-              <p id="cardTranslationText" class="text-lg sm:text-xl font-black text-ink leading-relaxed"></p>
+              <p id="cardTranslationText" class="card-translation text-xl sm:text-2xl font-black text-ink"></p>
               <p id="cardWordGloss" class="text-xs text-ink/45"></p>
               <span class="text-xs text-ink/35"><i class="fa-solid fa-rotate mr-1"></i>탭해서 뒤집기</span>
             </div>
@@ -794,37 +1054,34 @@
           <div class="flex items-center justify-center gap-1.5 mb-3">
             <button type="button" id="sttModePracticeBtn" onclick="setSttMode('practice')"
               class="stt-mode-btn active">말하기 연습</button>
-            <button type="button" id="sttModeTranslateBtn" onclick="setSttMode('translate')"
-              class="stt-mode-btn">AI 통역 (한국어)</button>
+            <button type="button" id="sttModeTranslateBtn" onclick="setSttMode('translate')" class="stt-mode-btn">AI 통역
+              (한국어)</button>
           </div>
 
-          <canvas id="sttVisualizer" class="w-full h-24 mb-3 rounded-lg bg-white/5" width="320" height="96"></canvas>
+          <div id="sttResultBox"
+            class="stt-result-box mt-1 rounded-xl bg-white/5 border border-edu/25 px-4 py-3 flex items-center">
+            <canvas id="sttVisualizer" class="absolute inset-0 w-full h-full" width="320" height="96"></canvas>
+            <p id="sttTranslatedTextBox" class="translation-box relative z-10 text-sm text-edu leading-relaxed">한국어 음성을
+              영어로 통역합니다.</p>
+          </div>
 
-          <div class="flex items-center justify-center gap-4">
-            <button type="button" id="sttRecordBtn" onclick="toggleSttRecording()" aria-label="녹음 시작/중지"
+          <div class="mt-4 border-t border-white/10 pt-3">
+            <div class="h-1.5 rounded-full bg-white/10 overflow-hidden">
+              <div id="sttProgressFill" class="h-full bg-edu rounded-full" style="width:0%"></div>
+            </div>
+            <p id="sttCountdown" class="text-center text-[11px] text-ink/40 mt-1">대기 중</p>
+            <p id="sttHint" class="stt-hint text-center text-[11px] text-ink/40 mt-2">마이크를 탭하고 카드 속 문장을 따라 말해보세요</p>
+          </div>
+
+          <div class="flex items-center justify-center gap-4 mt-3">
+            <button type="button" id="sttRecordBtn" onclick="toggleSttRecording()" aria-label="녹음 시작"
               class="stt-mic-btn w-16 h-16 flex items-center justify-center rounded-full bg-edu text-paper text-xl shadow-lg transition hover:opacity-90">
-              <i class="fa-solid fa-microphone"></i>
+              <i id="sttRecordIcon" class="fa-solid fa-microphone"></i>
             </button>
             <button type="button" id="sttPlaybackBtn" onclick="playSttRecording()" aria-label="녹음 음성 재생" disabled
               class="stt-playback-btn w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-ink/60 text-base shadow transition hover:bg-white/20">
               <i class="fa-solid fa-play"></i>
             </button>
-          </div>
-
-          <p id="sttHint" class="text-center text-[11px] text-ink/40 mt-2">마이크를 탭하고 카드 속 문장을 따라 말해보세요</p>
-
-          <div class="mt-3 h-1.5 rounded-full bg-white/10 overflow-hidden">
-            <div id="sttProgressFill" class="h-full bg-edu rounded-full" style="width:0%"></div>
-          </div>
-          <p id="sttCountdown" class="text-center text-[11px] text-ink/40 mt-1">대기 중</p>
-
-          <div class="mt-4 rounded-xl bg-white/5 border border-white/10 px-4 py-3 min-h-[44px]">
-            <p id="sttTranscript" class="text-sm text-ink/70 leading-relaxed">여기에 인식된 내용이 표시됩니다.</p>
-          </div>
-
-          <!-- AI 통역 결과(영문)는 한국어 인식 박스 바로 아래에 표시 -->
-          <div class="mt-2 rounded-xl bg-white/5 border border-edu/25 px-4 py-3 min-h-[44px]">
-            <p id="sttTranslatedTextBox" class="text-sm text-edu leading-relaxed">번역된 영어 문장이 여기에 표시됩니다.</p>
           </div>
 
           <div class="flex items-center justify-between mt-2">
@@ -1141,6 +1398,102 @@
     </div>
   </section>
 
+  <!-- ============ PERSONAL LEARNING + PUBLIC FEED ============ -->
+  <section id="learningHub" class="px-5 sm:px-8 py-16 sm:py-20 relative">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between border-b border-white/10 pb-5">
+        <div>
+          <span class="text-xs font-bold tracking-widest uppercase text-edu">Learning Space</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-ink mt-2">문장을 모으고, 다시 꺼내 보세요</h2>
+        </div>
+        <div class="flex gap-2" role="tablist" aria-label="학습 콘텐츠 보기">
+          <button id="learningTabPersonal" type="button" onclick="setLearningView('personal')" role="tab"
+            aria-selected="true" class="learning-tab active px-4 py-2.5 rounded-full text-sm font-bold transition">
+            <i class="fa-solid fa-lock mr-1.5"></i>개인 학습창 <span id="personalCount" class="ml-1 text-xs">0</span>
+          </button>
+          <button id="learningTabExplore" type="button" onclick="setLearningView('explore')" role="tab"
+            aria-selected="false" class="learning-tab px-4 py-2.5 rounded-full text-sm font-bold transition">
+            <i class="fa-solid fa-earth-asia mr-1.5"></i>전체 둘러보기 <span id="feedCount" class="ml-1 text-xs">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="learningListView" class="pt-6">
+        <div class="flex items-center justify-between gap-3 mb-5">
+          <p id="learningViewDescription" class="text-sm text-ink/50">나만의 복습 문장을 보관합니다.</p>
+          <button id="learningSearchToggle" type="button" onclick="toggleLearningSearch()" aria-label="문장 검색"
+            class="w-10 h-10 shrink-0 rounded-full glass-card flex items-center justify-center text-ink/70 hover:text-ink transition">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+        <input id="learningSearch" type="search" oninput="renderLearningHub()" placeholder="한국어 또는 영어 문장 검색"
+          class="hidden w-full mb-5 px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-ink text-sm placeholder:text-ink/35 focus:outline-none focus:border-edu/60">
+        <div id="learningHubList" class="divide-y divide-white/10"></div>
+      </div>
+
+      <div id="shortsPreviewView" class="hidden pt-6">
+        <button type="button" onclick="setLearningView('personal')"
+          class="text-sm font-bold text-ink/55 hover:text-ink mb-5">
+          <i class="fa-solid fa-arrow-left mr-2"></i>학습창으로 돌아가기
+        </button>
+        <div class="grid md:grid-cols-[minmax(220px,320px)_1fr] gap-8 items-center">
+          <div>
+            <div id="shortPreviewStage"
+              class="motion-preview-stage short-preview-frame rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+              <div class="motion-preview-meta">
+                <span class="text-[9px] tracking-[.2em] font-bold text-white/55">DAYNIZE / MOTION STUDY</span>
+                <span id="shortPreviewFrameRate" class="text-[9px] tracking-widest font-mono text-white/45">30 FPS</span>
+              </div>
+              <div id="shortSceneKorean" class="motion-scene motion-scene-korean" aria-label="한국어 원문">
+                <p id="shortPreviewKorean" class="motion-copy-line m-0"></p>
+              </div>
+              <div id="shortSceneEnglish" class="motion-scene motion-scene-english" aria-label="영어 번역">
+                <div id="shortPreviewEnglish" class="motion-copy-line"></div>
+              </div>
+              <div id="shortPreviewAccent" class="motion-accent-slice"></div>
+              <span id="shortPreviewBeat" class="motion-scene-index">01 / 02</span>
+              <div class="motion-preview-foot">
+                <span id="shortPreviewFootLabel" class="text-[9px] font-bold tracking-[.14em] text-white/45">ORIGINAL / 01</span>
+                <span class="text-[9px] tracking-[.14em] text-white/35">9:16 · PREVIEW</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 mt-4 px-1">
+              <button id="shortPreviewPlayBtn" type="button" onclick="toggleShortPreviewPlayback()" aria-label="재생"
+                class="motion-play-button w-10 h-10 shrink-0 rounded-full bg-[#FF007F] text-white flex items-center justify-center hover:bg-[#FF1493] transition">
+                <i id="shortPreviewPlayIcon" class="fa-solid fa-play text-xs ml-0.5"></i>
+              </button>
+              <button id="shortPreviewAudioBtn" type="button" onclick="toggleShortPreviewAudio()" aria-pressed="false" aria-label="합성 비트 켜기"
+                class="motion-audio-button w-10 h-10 shrink-0 rounded-full border border-white/15 text-white/65 flex items-center justify-center transition">
+                <i id="shortPreviewAudioIcon" class="fa-solid fa-volume-xmark text-xs"></i>
+              </button>
+              <input id="shortPreviewSeek" class="motion-control-range w-full h-1.5 cursor-pointer" type="range" min="0" max="1000" value="0" step="1" aria-label="프리뷰 탐색">
+              <span id="shortPreviewTime" class="text-[10px] font-mono text-ink/40 tabular-nums">0:00</span>
+            </div>
+            <p class="text-[9px] text-ink/30 mt-2 px-1">합성 비트 · 120 BPM · 브라우저 내 생성</p>
+          </div>
+          <div>
+            <span class="inline-flex items-center gap-2 text-xs font-bold text-[#FF1493] mb-3">
+              <i class="fa-solid fa-clapperboard"></i> 숏츠 프리뷰
+            </span>
+            <h3 class="text-2xl font-black text-ink mb-3">문장을 세로 영상 구성으로 미리 봅니다</h3>
+            <p id="shortPreviewStatus" class="text-sm text-ink/55 leading-relaxed mb-6">프리뷰는 학습창에 저장되었습니다. 실제 영상 렌더링은 서버
+              기능 연결 후 사용할 수 있습니다.</p>
+            <div class="flex flex-wrap gap-2">
+              <button type="button" onclick="setLearningView('personal')"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-ink text-paper text-sm font-bold hover:opacity-90 transition">
+                <i class="fa-solid fa-bookmark"></i>내 학습창 보기
+              </button>
+              <button type="button" onclick="setLearningView('explore')"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/20 text-ink text-sm font-bold hover:bg-white/10 transition">
+                <i class="fa-solid fa-earth-asia"></i>공유 피드 보기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ PRICING / 구독 ============ -->
   <section id="pricing" class="px-5 sm:px-8 py-20 sm:py-28 relative">
     <div class="max-w-md mx-auto">
@@ -1244,6 +1597,43 @@
         <button onclick="dismissNoticeModalForToday()"
           class="w-full text-ink/40 text-xs font-semibold py-2 hover:text-ink/60 transition">
           오늘 하루 보지 않기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SHORTS SUGGESTION SHEET ============ -->
+  <div id="shortsProposalModal"
+    class="hidden fixed inset-0 z-[360] items-end sm:items-center justify-center px-0 sm:px-5"
+    style="background: rgba(0,0,0,0.62); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);"
+    onclick="if (event.target === this) closeShortsProposal();">
+    <div class="shorts-sheet glass-panel rounded-t-3xl sm:rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl">
+      <button type="button" onclick="closeShortsProposal()" aria-label="닫기"
+        class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 text-ink/60 hover:text-ink flex items-center justify-center">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <span class="inline-flex items-center gap-2 text-xs font-bold text-amber-200 mb-3">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>오늘의 문장 저장
+      </span>
+      <h3 class="text-xl sm:text-2xl font-black text-ink mb-2">이 문장으로 숏츠를 만들어 볼까요?</h3>
+      <p class="text-sm text-ink/55 leading-relaxed mb-5">문장은 개인 학습창에 보관됩니다. 공유를 켜면 전체 둘러보기에도 함께 게시됩니다.</p>
+      <div class="rounded-xl border border-white/10 bg-black/15 px-4 py-3 mb-5">
+        <p id="proposalKorean" class="text-sm font-semibold text-ink/70 mb-1"></p>
+        <p id="proposalEnglish" class="text-sm font-bold text-edu"></p>
+      </div>
+      <label class="flex items-start gap-3 cursor-pointer mb-6">
+        <input id="proposalShareToggle" type="checkbox" checked class="mt-1 accent-emerald-400">
+        <span><span class="block text-sm font-bold text-ink">전체 둘러보기 페이지에 공유</span><span
+            class="block text-xs text-ink/45 mt-1">다른 학습자가 문장을 담아갈 수 있습니다.</span></span>
+      </label>
+      <div class="grid sm:grid-cols-2 gap-2">
+        <button type="button" onclick="acceptShortsProposal()"
+          class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-amber-300 text-[#20170D] text-sm font-black hover:bg-amber-200 transition">
+          <i class="fa-solid fa-clapperboard"></i>숏츠 만들기
+        </button>
+        <button type="button" onclick="declineShortsProposal()"
+          class="px-4 py-3 rounded-full border border-white/15 text-ink/75 text-sm font-bold hover:bg-white/10 transition">
+          아니오, 저장소에만 보관
         </button>
       </div>
     </div>
@@ -1476,8 +1866,13 @@
                     POST {API_BASE}/payments/verify   { paymentId }   -> { verified, paymentId, amount, status, orderName }
        두 엔드포인트 모두 Authorization: Bearer <accessToken> 필요 (로그인 후 DAYNIZE_TOKEN_KEY에 저장된 토큰 사용).
     */
-    // TODO: 백엔드가 실제 도메인에 배포되면 그 origin으로 교체 (현재 로컬 개발 서버 기준 placeholder)
+    // Configure these on window before the page script runs, or inject the LLM key in the console for testing.
     const DAYNIZE_API_BASE = window.DAYNIZE_API_BASE || 'https://api.daynize.co.kr';
+    const DAYNIZE_LLM_ENDPOINT = window.DAYNIZE_LLM_ENDPOINT || `${DAYNIZE_API_BASE}/ai/translate`;
+    const DAYNIZE_LLM_API_KEY = window.DAYNIZE_LLM_API_KEY || '';
+    const DAYNIZE_LLM_MODEL = window.DAYNIZE_LLM_MODEL || 'gpt-4o-mini';
+    const DAYNIZE_STT_FALLBACK_ENDPOINT = window.DAYNIZE_STT_FALLBACK_ENDPOINT || `${DAYNIZE_API_BASE}/stt/transcribe`;
+    const DAYNIZE_API_BASE_PLACEHOLDER = 'https://api.daynize.co.kr';
     // TODO: PortOne 콘솔에서 발급받은 채널 키로 교체 (카드사 승인 완료 후 발급)
     const DAYNIZE_PORTONE_CHANNEL_KEY = 'REPLACE_WITH_PORTONE_CHANNEL_KEY';
     const DAYNIZE_TOKEN_KEY = 'daynize_access_token';
@@ -2182,10 +2577,7 @@
       sttTranslatedText = ''; // 카드가 바뀌면 이전 AI 통역 결과는 폐기
       const card = CARDS[cardIndex];
       const withinIndex = cardIndex % CARD_SECTION_SIZE;
-      if (cardSectionLabel) {
-        cardSectionLabel.textContent =
-          `Week ${CURRENT_WEEK_NUMBER} · Section ${card.sectionIndex + 1}/${card.sectionTotal} · ${card.sectionTitle}`;
-      }
+      if (cardSectionLabel) cardSectionLabel.textContent = "THIS WEEK'S PICK";
       if (cardSpeakerBadge) cardSpeakerBadge.textContent = `Speaker ${card.speaker}`;
       cardSentenceText.innerHTML = highlightVerbsHtml(card.sentence);
       cardTranslationText.textContent = card.translation;
@@ -2337,7 +2729,7 @@
     function renderSttTranslation(englishText) {
       sttTranslatedText = englishText;
       if (sttTranslatedTextBox) sttTranslatedTextBox.textContent = englishText || '번역된 영어 문장이 여기에 표시됩니다.';
-      if (sttPlaybackBtn) sttPlaybackBtn.disabled = !englishText;
+      updateSttPlaybackAvailability();
     }
 
     /* ============ 스마트 말하기 & AI 통역 (통합 STT 컨트롤러) ============ */
@@ -2346,12 +2738,13 @@
     const sttModePracticeBtn = document.getElementById('sttModePracticeBtn');
     const sttModeTranslateBtn = document.getElementById('sttModeTranslateBtn');
     const sttRecordBtn = document.getElementById('sttRecordBtn');
+    const sttRecordIcon = document.getElementById('sttRecordIcon');
     const sttPlaybackBtn = document.getElementById('sttPlaybackBtn');
     const sttPlaybackAudio = document.getElementById('sttPlaybackAudio');
-    const sttTranslatedTextBox = document.getElementById('sttTranslatedTextBox');
+    const sttTranslatedTextBox = document.querySelector('.translation-box');
+    const sttResultBox = document.getElementById('sttResultBox');
     const sttStatus = document.getElementById('sttStatus');
     const sttHint = document.getElementById('sttHint');
-    const sttTranscript = document.getElementById('sttTranscript');
     const sttCharCount = document.getElementById('sttCharCount');
     const sttFeedback = document.getElementById('sttFeedback');
     const sttMicError = document.getElementById('sttMicError');
@@ -2367,19 +2760,56 @@
     let sttMode = 'practice'; // 'practice'(영어 발음 연습) | 'translate'(한국어 AI 통역)
     let sttRecognizer = null;
     let sttListening = false;
+    let sttTranslating = false;
+    let sttSessionFinished = true;
+    let sttResultHandled = false;
+    let sttSessionMode = 'practice';
+    let sttRecognitionUnavailable = false;
     let sttStartedAt = 0;
     let sttFinalText = '';
     let sttProgressTimer = null;
     let sttAutoStopTimer = null;
+    let sttRestartTimer = null;
+    let sttRecognitionRetryTimer = null;
+    let sttRecognitionRetryCount = 0;
+    let sttFinalizeTimer = null;
 
     let sttMicStream = null;
     let sttAudioContext = null;
     let sttAnalyser = null;
     let sttVisualizerRaf = null;
+    let sttAudioProcessor = null;
+    let sttAudioMuteGain = null;
+    let sttPcmChunks = [];
+    let sttPcmSampleRate = 0;
 
     let sttMediaRecorder = null;
     let sttRecordedChunks = [];
+    let sttRecordedBlob = null;
     let sttRecordedBlobUrl = null;
+    let sttRecordingResult = Promise.resolve(null);
+    let sttRecordingSession = null;
+    let sttActiveRecordingSession = null;
+
+    function createSttRecordingSession() {
+      let resolve;
+      const promise = new Promise(done => { resolve = done; });
+      return { promise, resolve };
+    }
+
+    function resolveSttRecordingSession(session, recording) {
+      if (!session?.resolve) return;
+      session.resolve(recording);
+      session.resolve = null;
+    }
+
+    function updateSttPlaybackAvailability() {
+      if (sttPlaybackBtn) {
+        const ready = Boolean(sttTranslatedText || sttRecordedBlobUrl);
+        sttPlaybackBtn.disabled = !ready;
+        sttPlaybackBtn.classList.toggle('is-ready', ready);
+      }
+    }
 
     function setSttTranslateLanguage(lang) {
       STT_TRANSLATE_LANG = lang || 'ko-KR';
@@ -2420,7 +2850,6 @@
 
     function renderSttTranscript(rawText) {
       const { text, wasTruncated } = truncateToMaxChars(rawText, STT_MAX_CHARS);
-      if (sttTranscript) sttTranscript.textContent = text || '여기에 인식된 내용이 표시됩니다.';
       if (sttCharCount) sttCharCount.textContent = `${text.length} / ${STT_MAX_CHARS}자`;
       if (wasTruncated) setSttFeedback('⚠️ 200자를 초과하여 이후 내용은 잘렸습니다', 'text-amber-300');
       return text;
@@ -2434,17 +2863,23 @@
     function setSttListening(active) {
       sttListening = active;
       sttRecordBtn?.classList.toggle('is-listening', active);
-      if (sttStatus) sttStatus.textContent = active ? '듣고 있어요...' : '대기 중';
+      if (sttRecordIcon) {
+        sttRecordIcon.classList.toggle('fa-microphone', !active);
+        sttRecordIcon.classList.toggle('fa-stop', active);
+      }
+      sttRecordBtn?.setAttribute('aria-label', active ? '녹음 정지' : '녹음 시작');
+      sttResultBox?.classList.toggle('is-listening', active || sttTranslating);
+      if (sttStatus && (active || !sttRecognitionUnavailable || !sttSessionFinished)) {
+        sttStatus.textContent = active ? '듣고 있어요...' : '대기 중';
+      }
     }
 
     // 모드 전환 시 언어/안내 문구를 갱신하고 레코더를 재생성
     function setSttMode(mode) {
+      if (sttListening) stopSttRecording();
       sttMode = mode;
       sttModePracticeBtn?.classList.toggle('active', mode === 'practice');
       sttModeTranslateBtn?.classList.toggle('active', mode === 'translate');
-      if (sttListening && sttRecognizer) {
-        try { sttRecognizer.stop(); } catch (err) { /* 이미 종료된 경우 무시 */ }
-      }
       sttRecognizer = null;
       if (sttHint) {
         sttHint.textContent = mode === 'practice'
@@ -2455,7 +2890,7 @@
     }
 
     function resetSttPractice() {
-      if (sttListening && sttRecognizer) sttRecognizer.stop();
+      if (sttListening) stopSttRecording();
       renderSttTranscript('');
       setSttFeedback('');
       renderSttTranslation('');
@@ -2466,11 +2901,15 @@
     function initSttRecognizer() {
       if (!SpeechRecognitionImpl) return null;
       sttRecognizer = new SpeechRecognitionImpl();
-      sttRecognizer.lang = sttMode === 'practice' ? 'en-US' : STT_TRANSLATE_LANG;
+      sttRecognizer.lang = sttSessionMode === 'practice' ? 'en-US' : STT_TRANSLATE_LANG;
       sttRecognizer.interimResults = true;
-      sttRecognizer.continuous = false;
+      sttRecognizer.continuous = true;
       sttRecognizer.maxAlternatives = 1;
       sttFinalText = '';
+      sttRecognizer.onstart = () => {
+        sttRecognitionUnavailable = false;
+        if (sttStatus && sttListening) sttStatus.textContent = '듣고 있어요...';
+      };
 
       sttRecognizer.onresult = (e) => {
         let interim = '';
@@ -2479,34 +2918,123 @@
           if (e.results[i].isFinal) sttFinalText += transcript;
           else interim += transcript;
         }
+        console.log('[STT] result', {
+          mode: sttSessionMode,
+          final: sttFinalText,
+          interim
+        });
+        if (sttFinalText || interim) sttRecognitionRetryCount = 0;
         renderSttTranscript(sttFinalText + interim);
         if ((sttFinalText + interim).length > STT_MAX_CHARS) {
           sttFinalText = sttFinalText.substring(0, STT_MAX_CHARS);
-          try { sttRecognizer.stop(); } catch (err) { /* 이미 종료된 경우 무시 */ }
+          stopSttRecording();
         }
       };
       sttRecognizer.onerror = (e) => {
-        setSttListening(false);
-        stopSttCountdown();
-        stopSttAudioCapture();
+        console.error('[STT] recognition error', { mode: sttSessionMode, error: e.error, message: e.message });
         if (e.error === 'not-allowed' || e.error === 'permission-denied') {
           showSttMicError(true);
-        } else if (e.error === 'no-speech') {
-          if (sttStatus) sttStatus.textContent = '음성이 감지되지 않았어요, 다시 시도해주세요';
-        } else if (sttStatus) {
-          sttStatus.textContent = '오류가 발생했어요, 다시 시도해주세요';
+          stopSttRecording();
+        } else if (e.error === 'network' || e.error === 'no-speech' || e.error === 'aborted') {
+          if (!sttListening || sttSessionFinished) return;
+          sttRecognitionUnavailable = true;
+          const retryMessage = e.error === 'no-speech'
+            ? '음성을 다시 기다리고 있어요...'
+            : e.error === 'aborted'
+              ? '인식을 다시 연결하고 있어요...'
+              : '인식 연결을 다시 시도하고 있어요...';
+          if (sttStatus) sttStatus.textContent = retryMessage;
+          scheduleSttRecognitionRetry(e.error);
+        } else {
+          if (sttStatus) sttStatus.textContent = '오류가 발생했어요, 다시 시도해주세요';
+          sttRecognitionUnavailable = true;
+          setSttFeedback('음성 인식은 중단됐지만 오디오 녹음은 계속됩니다. 정지 버튼으로 저장할 수 있어요.', 'text-amber-300');
         }
       };
       sttRecognizer.onend = () => {
-        const durationMs = Math.min(STT_MAX_DURATION_MS, Date.now() - sttStartedAt);
-        setSttListening(false);
-        stopSttCountdown();
-        stopSttAudioCapture();
-        const finalText = renderSttTranscript(sttFinalText);
-        if (finalText && sttMode === 'practice') renderPracticeScore(finalText);
-        if (sttMode === 'translate' && finalText.trim()) handleTranslatePipeline(finalText.trim(), durationMs);
+        console.log('[STT] recognition ended', {
+          mode: sttSessionMode,
+          finalTranscript: sttFinalText,
+          sessionFinished: sttSessionFinished
+        });
+        if (!sttListening || sttSessionFinished) {
+          finishSttSession(Math.min(STT_MAX_DURATION_MS, Date.now() - sttStartedAt));
+          return;
+        }
+        if (sttRecognitionRetryTimer) return;
+        if (sttListening && !sttSessionFinished && Date.now() - sttStartedAt < STT_MAX_DURATION_MS) {
+          scheduleSttRecognitionRetry('ended');
+          return;
+        }
+        finishSttSession(Math.min(STT_MAX_DURATION_MS, Date.now() - sttStartedAt));
       };
       return sttRecognizer;
+    }
+
+    function scheduleSttRecognitionRetry(reason) {
+      if (sttRecognitionRetryTimer || !sttListening || sttSessionFinished) return;
+      if (Date.now() - sttStartedAt >= STT_MAX_DURATION_MS) {
+        sttRecognitionUnavailable = true;
+        if (sttStatus) sttStatus.textContent = '음성 인식 대기 시간 종료 · 녹음은 정지할 때까지 저장됩니다';
+        setSttFeedback('음성 인식을 다시 연결하지 못했지만 오디오 녹음은 유지됩니다.', 'text-amber-300');
+        return;
+      }
+      sttRecognitionRetryCount += 1;
+      const delay = Math.min(1000, 200 * (2 ** Math.min(sttRecognitionRetryCount - 1, 3)));
+      console.info('[STT] scheduling recognition retry', {
+        reason,
+        retry: sttRecognitionRetryCount,
+        sessionRemainingMs: Math.max(0, STT_MAX_DURATION_MS - (Date.now() - sttStartedAt)),
+        delay
+      });
+      if (sttStatus) sttStatus.textContent = '음성 인식 재연결 중...';
+      sttRecognitionRetryTimer = setTimeout(() => {
+        sttRecognitionRetryTimer = null;
+        if (!sttListening || sttSessionFinished || !sttRecognizer) return;
+        try {
+          if (sttSessionMode === 'translate') sttRecognizer.lang = STT_TRANSLATE_LANG || 'ko-KR';
+          else sttRecognizer.lang = 'en-US';
+          sttRecognizer.start();
+          sttRecognitionUnavailable = false;
+        } catch (error) {
+          console.warn('[STT] recognition retry start failed', {
+            retry: sttRecognitionRetryCount,
+            errorName: error?.name,
+            message: error?.message
+          });
+          scheduleSttRecognitionRetry('start-failed');
+        }
+      }, delay);
+    }
+
+    function finishSttSession(durationMs) {
+      clearTimeout(sttFinalizeTimer);
+      sttFinalizeTimer = null;
+      sttSessionFinished = true;
+      setSttListening(false);
+      stopSttCountdown('완료');
+      stopSttAudioCapture();
+      if (sttResultHandled) return;
+      sttResultHandled = true;
+      const finalText = renderSttTranscript(sttFinalText);
+      console.log('[STT] session finalized', {
+        mode: sttSessionMode,
+        finalTranscript: finalText,
+        recordingAvailable: Boolean(sttRecordedBlobUrl)
+      });
+      if (!finalText && sttRecognitionUnavailable && sttStatus) {
+        sttStatus.textContent = sttRecordedBlobUrl
+          ? '인식 연결 오류 · 녹음은 저장되었습니다'
+          : '인식 연결 오류 · 다시 시도해 주세요';
+      }
+      if (finalText && sttSessionMode === 'practice') renderPracticeScore(finalText);
+      if (sttSessionMode === 'translate' && finalText.trim()) {
+        handleTranslatePipeline(finalText.trim(), durationMs, sttActiveRecordingSession?.promise || sttRecordingResult);
+      } else if (!finalText.trim()) {
+        const recordingPromise = sttActiveRecordingSession?.promise || sttRecordingResult;
+        transcribeSttRecordingFallback(durationMs, recordingPromise, sttSessionMode);
+      }
+      sttActiveRecordingSession = null;
     }
 
     function startSttCountdown() {
@@ -2526,18 +3054,28 @@
       }, STT_MAX_DURATION_MS);
     }
 
-    function stopSttCountdown() {
+    function stopSttCountdown(label = '대기 중') {
       clearInterval(sttProgressTimer);
+      sttProgressTimer = null;
       clearTimeout(sttAutoStopTimer);
+      sttAutoStopTimer = null;
+      clearTimeout(sttRestartTimer);
+      sttRestartTimer = null;
+      clearTimeout(sttRecognitionRetryTimer);
+      sttRecognitionRetryTimer = null;
       if (sttProgressFill) sttProgressFill.style.width = '0%';
-      if (sttCountdown) sttCountdown.textContent = '대기 중';
+      if (sttCountdown) sttCountdown.textContent = label;
     }
 
     // 번역/숏츠 파이프라인으로 전달할 데이터 객체
-    function buildSttPipelinePayload(koreanText, durationMs, englishText) {
+    function buildSttPipelinePayload(koreanText, durationMs, englishText, recording) {
       return {
         koreanText,
         englishText: englishText || '',
+        audioBlob: recording?.blob || null,
+        mediaRecorderBlob: recording?.mediaRecorderBlob || null,
+        audioUrl: recording?.url || null,
+        audioMimeType: recording?.mimeType || '',
         duration: Math.round(durationMs / 1000),
         timestamp: new Date().toISOString()
       };
@@ -2547,31 +3085,998 @@
       document.dispatchEvent(new CustomEvent('sttCompleted', { detail: payload }));
     }
 
-    // API 키 없이 호출 가능한 무료 번역 엔드포인트 (한국어 → 영어)
-    async function translateText(koreanText) {
-      if (!koreanText || !koreanText.trim()) return '';
-      try {
-        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(koreanText.trim())}&langpair=ko|en`;
-        const res = await fetch(url);
-        const data = await res.json();
-        return (data && data.responseData && data.responseData.translatedText) || '';
-      } catch (err) {
-        console.error('AI 통역 번역 요청 실패:', err);
-        return '';
+    const TRANSLATION_SYSTEM_PROMPT = `너는 최고 수준의 한-영 구어체 전문 통번역가이다.
+입력되는 한국어 텍스트는 음성 인식(STT) 결과물이므로 문맥상 어색한 오타, 중얼거림("아", "음" 등)이 포함되어 있을 수 있다.
+1. STT 오타와 이상한 단어는 문맥을 추론하여 자연스럽게 먼저 교정해라.
+2. 교정된 의미를 바탕으로 미국/영국 현지인이 실생활에서 사용하는 가장 자연스러운 구어체 영어로 번역해라.
+3. 번역 결과물(영어 텍스트만) 이외의 설명이나 인사말은 절대로 출력하지 마라.`;
+
+    let lastTranslationProvider = '';
+
+    async function translateTextWithMyMemory(text) {
+      const inputText = String(text || '').trim();
+      if (!inputText) return '';
+      const endpoint = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(inputText)}&langpair=ko|en`;
+      console.info('[Translation] using MyMemory fallback', { endpoint: 'api.mymemory.translated.net', characters: inputText.length });
+      const response = await fetch(endpoint);
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(`무료 번역 API 요청 실패 (${response.status})`);
       }
+      if (data?.quotaFinished || Number(data?.responseStatus) >= 400) {
+        throw new Error(data?.responseDetails || '무료 번역 API 사용량 한도에 도달했습니다.');
+      }
+      const translatedText = data?.responseData?.translatedText;
+      if (typeof translatedText !== 'string' || !translatedText.trim()) {
+        throw new Error('무료 번역 API가 번역 결과를 반환하지 않았습니다.');
+      }
+      lastTranslationProvider = 'mymemory';
+      return translatedText.trim();
+    }
+
+    function formatRetrievedExamples(retrievedExamples) {
+      if (!Array.isArray(retrievedExamples) || !retrievedExamples.length) return '';
+      const examples = retrievedExamples.map((example, index) => {
+        if (typeof example === 'string') return `${index + 1}. ${example}`;
+        const source = example?.source || example?.korean || example?.text || '';
+        const target = example?.translation || example?.english || '';
+        return source || target ? `${index + 1}. ${source}${target ? ` -> ${target}` : ''}` : '';
+      }).filter(Boolean);
+      return examples.length ? `\n\n참고 예문:\n${examples.join('\n')}` : '';
+    }
+
+    // API 키는 브라우저 코드에 저장하지 않습니다. 직접 호출은 런타임 주입 시에만 사용하세요.
+    async function translateTextWithLLM(text, retrievedExamples = []) {
+      const inputText = String(text || '').trim();
+      if (!inputText) return '';
+
+      const systemPrompt = TRANSLATION_SYSTEM_PROMPT + formatRetrievedExamples(retrievedExamples);
+      const messages = [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: inputText }
+      ];
+      const apiKey = window.DAYNIZE_LLM_API_KEY || DAYNIZE_LLM_API_KEY;
+      const model = window.DAYNIZE_LLM_MODEL || DAYNIZE_LLM_MODEL;
+      const directOpenAI = Boolean(apiKey);
+      const runtimeBackendEndpoint = window.DAYNIZE_LLM_ENDPOINT ||
+        (window.DAYNIZE_API_BASE ? `${window.DAYNIZE_API_BASE}/ai/translate` : '');
+      const hasConfiguredBackend = Boolean(runtimeBackendEndpoint) || DAYNIZE_API_BASE !== DAYNIZE_API_BASE_PLACEHOLDER;
+      if (!directOpenAI && !hasConfiguredBackend) {
+        const fallbackText = await translateTextWithMyMemory(inputText);
+        console.info('[Translation] completed with free fallback; LLM correction and RAG prompt are not applied.');
+        return fallbackText;
+      }
+      const endpoint = directOpenAI
+        ? 'https://api.openai.com/v1/chat/completions'
+        : runtimeBackendEndpoint || DAYNIZE_LLM_ENDPOINT;
+      const headers = { 'Content-Type': 'application/json' };
+      if (directOpenAI) headers.Authorization = `Bearer ${apiKey}`;
+
+      console.log('[STT] sending final transcript to LLM', {
+        mode: sttSessionMode,
+        model,
+        endpoint: directOpenAI ? 'OpenAI Chat Completions' : endpoint,
+        authConfigured: directOpenAI,
+        transcript: inputText,
+        exampleCount: Array.isArray(retrievedExamples) ? retrievedExamples.length : 0
+      });
+
+      let response;
+      try {
+        response = await fetch(endpoint, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify(directOpenAI
+            ? { model, messages }
+            : {
+              model,
+              messages,
+              text: inputText,
+              systemPrompt,
+              retrievedExamples
+            })
+        });
+      } catch (cause) {
+        const message = cause?.name === 'TypeError'
+          ? `번역 서버에 연결할 수 없습니다. API 주소/DNS 또는 CORS를 확인해 주세요: ${endpoint}`
+          : `번역 요청 중 네트워크 오류가 발생했습니다: ${cause?.message || '알 수 없는 오류'}`;
+        console.error('[LLM] network request failed', {
+          endpoint,
+          route: directOpenAI ? 'openai-direct' : 'backend',
+          errorName: cause?.name,
+          errorMessage: cause?.message,
+          pageOrigin: window.location.origin
+        });
+        throw new Error(message, { cause });
+      }
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        const providerMessage = data?.error?.message || data?.message || '';
+        const category = response.status === 401 || response.status === 403
+          ? 'API 키 인증 실패'
+          : response.status === 429
+            ? '요청 한도 초과 또는 크레딧 부족'
+            : response.status >= 500
+              ? 'LLM 서버 오류'
+              : 'LLM 요청 실패';
+        const message = `${category} (${response.status})${providerMessage ? `: ${providerMessage}` : ''}`;
+        console.error('[LLM] HTTP error response', {
+          endpoint,
+          route: directOpenAI ? 'openai-direct' : 'backend',
+          status: response.status,
+          statusText: response.statusText,
+          providerMessage,
+          requestId: response.headers.get('x-request-id') || response.headers.get('request-id')
+        });
+        throw new Error(message);
+      }
+
+      const translatedText = data?.translation || data?.translatedText || data?.text || data?.choices?.[0]?.message?.content;
+      if (typeof translatedText !== 'string' || !translatedText.trim()) {
+        throw new Error('LLM 응답에 번역 텍스트가 없습니다.');
+      }
+      const result = translatedText.trim();
+      lastTranslationProvider = directOpenAI ? 'openai' : 'backend';
+      console.log('[STT] LLM translation response', { translatedText: result });
+      return result;
+    }
+
+    let sttSubtitleDatasetPromise = null;
+
+    function normalizeSubtitlePair(entry) {
+      const korean = entry?.korean || entry?.ko || entry?.source || entry?.text;
+      const english = entry?.english || entry?.en || entry?.translation || entry?.translatedText;
+      if (typeof korean !== 'string' || typeof english !== 'string') return null;
+      const source = korean.trim();
+      const translation = english.trim();
+      return source && translation ? { source, translation } : null;
+    }
+
+    function getCardSubtitleFallback() {
+      return CARDS.map(card => normalizeSubtitlePair({
+        korean: card.translation,
+        english: card.sentence
+      })).filter(Boolean);
+    }
+
+    async function loadSubtitleDataset() {
+      if (!sttSubtitleDatasetPromise) {
+        const defaultUrl = new URL('./subtitles.json', window.location.href).href;
+        const datasetUrl = window.DAYNIZE_SUBTITLES_URL || defaultUrl;
+        sttSubtitleDatasetPromise = fetch(datasetUrl)
+          .then(response => {
+            if (!response.ok) throw new Error(`자막 데이터 요청 실패 (${response.status})`);
+            return response.json();
+          })
+          .then(data => {
+            const entries = Array.isArray(data) ? data : data?.subtitles;
+            if (!Array.isArray(entries)) throw new Error('subtitles.json은 한-영 쌍 배열이어야 합니다.');
+            const pairs = entries.map(normalizeSubtitlePair).filter(Boolean);
+            if (!pairs.length) throw new Error('subtitles.json에서 유효한 한-영 예문을 찾지 못했습니다.');
+            console.info('[RAG] subtitle dataset loaded', { url: datasetUrl, count: pairs.length });
+            return pairs;
+          })
+          .catch(error => {
+            console.warn('[RAG] subtitle dataset unavailable; using card examples', {
+              url: datasetUrl,
+              message: error.message
+            });
+            return getCardSubtitleFallback();
+          });
+      }
+      return sttSubtitleDatasetPromise;
+    }
+
+    function tokenizeKoreanText(text) {
+      const normalized = String(text || '').toLowerCase().replace(/[.,!?;:()[\]{}"'“”‘’]/g, ' ');
+      if (typeof Intl.Segmenter === 'function') {
+        const segmenter = new Intl.Segmenter('ko', { granularity: 'word' });
+        return Array.from(segmenter.segment(normalized))
+          .filter(part => part.isWordLike)
+          .map(part => part.segment)
+          .filter(token => token.length > 1);
+      }
+      return normalized.split(/\s+/).filter(token => token.length > 1);
+    }
+
+    function cosineTextSimilarity(leftText, rightText) {
+      const leftTokens = tokenizeKoreanText(leftText);
+      const rightTokens = tokenizeKoreanText(rightText);
+      if (!leftTokens.length || !rightTokens.length) return 0;
+
+      const leftCounts = new Map();
+      const rightCounts = new Map();
+      leftTokens.forEach(token => leftCounts.set(token, (leftCounts.get(token) || 0) + 1));
+      rightTokens.forEach(token => rightCounts.set(token, (rightCounts.get(token) || 0) + 1));
+
+      let dotProduct = 0;
+      let leftMagnitude = 0;
+      let rightMagnitude = 0;
+      leftCounts.forEach((count, token) => {
+        dotProduct += count * (rightCounts.get(token) || 0);
+        leftMagnitude += count * count;
+      });
+      rightCounts.forEach(count => { rightMagnitude += count * count; });
+      return dotProduct / (Math.sqrt(leftMagnitude) * Math.sqrt(rightMagnitude));
+    }
+
+    async function retrieveSubtitleExamples(koreanText, limit = 3) {
+      const dataset = await loadSubtitleDataset();
+      const ranked = dataset.map(example => ({
+        ...example,
+        score: cosineTextSimilarity(koreanText, example.source)
+      })).filter(example => example.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, Math.max(1, Math.min(3, limit)));
+      window.DAYNIZE_TRANSLATION_EXAMPLES = ranked.map(({ source, translation, score }) => ({ source, translation, score }));
+      console.info('[RAG] retrieved subtitle examples', {
+        query: koreanText,
+        count: ranked.length,
+        scores: ranked.map(example => example.score)
+      });
+      return window.DAYNIZE_TRANSLATION_EXAMPLES;
     }
 
     // STT 완료 후 번역 요청 → 통역 패널 내부 박스 반영 → 파이프라인 이벤트 발행까지 일괄 처리
-    async function handleTranslatePipeline(koreanText, durationMs) {
+    async function handleTranslatePipeline(
+      koreanText,
+      durationMs,
+      recordingPromise = sttRecordingResult,
+      retrievedExamples = null
+    ) {
+      sttTranslating = true;
+      sttResultBox?.classList.add('is-listening');
       setSttFeedback('번역 중...', 'text-ink/50');
-      const englishText = await translateText(koreanText);
-      if (englishText) {
+      let englishText = '';
+      let recording = null;
+      try {
+        const examples = typeof retrievedExamples === 'function'
+          ? await retrievedExamples(koreanText)
+          : retrievedExamples || await retrieveSubtitleExamples(koreanText, 3);
+        [englishText, recording] = await Promise.all([
+          translateTextWithLLM(koreanText, examples),
+          recordingPromise
+        ]);
         renderSttTranslation(englishText);
         setSttFeedback('번역 완료! 마이크 위 박스와 재생 버튼을 확인해보세요 🎧', 'text-edu');
-      } else {
-        setSttFeedback('번역에 실패했어요, 잠시 후 다시 시도해주세요', 'text-red-300');
+      } catch (err) {
+        console.error('[STT] LLM translation pipeline failed', {
+          message: err?.message,
+          stack: err?.stack,
+          transcript: koreanText,
+          endpoint: (window.DAYNIZE_LLM_API_KEY || DAYNIZE_LLM_API_KEY)
+            ? 'OpenAI Chat Completions'
+            : window.DAYNIZE_LLM_ENDPOINT || DAYNIZE_LLM_ENDPOINT,
+          authConfigured: Boolean(window.DAYNIZE_LLM_API_KEY || DAYNIZE_LLM_API_KEY),
+          model: window.DAYNIZE_LLM_MODEL || DAYNIZE_LLM_MODEL
+        });
+        try {
+          englishText = await translateTextWithMyMemory(koreanText);
+          renderSttTranslation(englishText);
+          setSttFeedback('기본 번역으로 완료했어요. AI 문맥 교정은 적용되지 않았습니다.', 'text-amber-300');
+          console.warn('[Translation] LLM unavailable; MyMemory fallback succeeded.', {
+            llmError: err?.message,
+            transcript: koreanText
+          });
+        } catch (fallbackError) {
+          console.error('[Translation] LLM and fallback both failed', {
+            llmError: err?.message,
+            fallbackError: fallbackError?.message,
+            transcript: koreanText
+          });
+          setSttFeedback('번역에 실패했어요. 잠시 후 다시 시도해 주세요.', 'text-red-300');
+          window.alert(`번역에 실패했습니다. ${fallbackError?.message || err?.message || '네트워크 또는 서버 설정을 확인해 주세요.'}`);
+        }
+        recording = await recordingPromise.catch(() => null);
+      } finally {
+        sttTranslating = false;
+        sttResultBox?.classList.toggle('is-listening', sttListening);
       }
-      onSttPipelineReady(buildSttPipelinePayload(koreanText, durationMs, englishText));
+
+      console.log('[STT] translation pipeline completed', {
+        transcript: koreanText,
+        translatedText: englishText,
+        provider: lastTranslationProvider,
+        audioAvailable: Boolean(recording?.blob),
+        audioUrl: recording?.url || null
+      });
+      onSttPipelineReady(buildSttPipelinePayload(koreanText, durationMs, englishText, recording));
+      if (englishText) openShortsProposal(koreanText, englishText);
+    }
+
+    async function transcribeSttRecordingFallback(durationMs, recordingPromise, mode) {
+      const recording = await recordingPromise.catch(() => null);
+      if (!recording?.blob?.size) {
+        console.warn('[STT fallback] no recorded audio blob is available');
+        if (sttRecognitionUnavailable) {
+          setSttFeedback('음성 인식에 실패했고 저장된 오디오도 없습니다. 다시 녹음해 주세요.', 'text-red-300');
+        }
+        return;
+      }
+
+      const runtimeKey = window.DAYNIZE_WHISPER_API_KEY || window.DAYNIZE_LLM_API_KEY || DAYNIZE_LLM_API_KEY;
+      const endpoint = runtimeKey
+        ? 'https://api.openai.com/v1/audio/transcriptions'
+        : window.DAYNIZE_STT_FALLBACK_ENDPOINT || DAYNIZE_STT_FALLBACK_ENDPOINT;
+      const fileExtension = recording.mimeType?.includes('wav') ? 'wav' : recording.mimeType?.includes('mp4') ? 'mp4' : 'webm';
+      const formData = new FormData();
+      formData.append('file', recording.blob, `daynize-recording.${fileExtension}`);
+      formData.append('model', window.DAYNIZE_WHISPER_MODEL || 'whisper-1');
+      formData.append('language', mode === 'practice' ? 'en' : 'ko');
+
+      setSttFeedback('음성 인식 서버로 오디오를 다시 분석하고 있어요...', 'text-ink/50');
+      console.info('[STT fallback] sending recorded audio for transcription', {
+        endpoint: runtimeKey ? 'OpenAI audio/transcriptions' : endpoint,
+        mimeType: recording.mimeType,
+        byteLength: recording.blob.size,
+        language: mode === 'practice' ? 'en' : 'ko'
+      });
+
+      try {
+        const headers = runtimeKey ? { Authorization: `Bearer ${runtimeKey}` } : {};
+        const response = await fetch(endpoint, { method: 'POST', headers, body: formData });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          throw new Error(data?.error?.message || data?.message || `STT fallback 요청 실패 (${response.status})`);
+        }
+        const transcript = String(data?.text || data?.transcript || data?.data?.text || '').trim();
+        if (!transcript) throw new Error('STT fallback 응답에 인식 텍스트가 없습니다.');
+
+        sttFinalText = transcript;
+        renderSttTranscript(transcript);
+        console.info('[STT fallback] transcription completed', { mode, characters: transcript.length });
+        if (mode === 'translate') {
+          await handleTranslatePipeline(transcript, durationMs, Promise.resolve(recording));
+        } else {
+          renderPracticeScore(transcript);
+          onSttPipelineReady(buildSttPipelinePayload(transcript, durationMs, '', recording));
+          if (sttStatus) sttStatus.textContent = '녹음 분석 완료';
+        }
+      } catch (error) {
+        console.error('[STT fallback] transcription failed', {
+          message: error?.message,
+          endpoint: runtimeKey ? 'OpenAI audio/transcriptions' : endpoint,
+          mimeType: recording.mimeType,
+          byteLength: recording.blob.size
+        });
+        setSttFeedback('음성 인식 서버에도 연결하지 못했습니다. 녹음은 재생 버튼으로 들을 수 있어요.', 'text-red-300');
+        if (sttStatus) sttStatus.textContent = '오디오 저장 완료 · STT fallback 실패';
+      }
+    }
+
+    const PERSONAL_LEARNING_KEY = 'daynize_personal_learning_v1';
+    const PUBLIC_LEARNING_KEY = 'daynize_public_feed_v1';
+    let learningView = 'personal';
+    let pendingLearningContent = null;
+    let activeShortPreviewItemId = null;
+    let shortsMotionTimeline = null;
+    let shortsMotionDuration = 0;
+    const SHORTS_PREVIEW_BPM = 120;
+    const SHORTS_PREVIEW_BEAT_SECONDS = 60 / SHORTS_PREVIEW_BPM;
+    let shortsPreviewAudioContext = null;
+    let shortsPreviewAudioEnabled = false;
+    let shortsPreviewLastSubdivision = -1;
+    let shortsPreviewPreviousFps = 60;
+    let shortsPreviewAdjustedFps = false;
+
+    function readLearningStorage(key) {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(key) || '[]');
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (error) {
+        console.warn('[Learning] failed to read local storage', { key, message: error.message });
+        return [];
+      }
+    }
+
+    function writeLearningStorage(key, items) {
+      try {
+        localStorage.setItem(key, JSON.stringify(items));
+        return true;
+      } catch (error) {
+        console.error('[Learning] failed to save local storage', { key, message: error.message });
+        window.alert('학습 데이터를 저장하지 못했습니다. 브라우저 저장 공간을 확인해 주세요.');
+        return false;
+      }
+    }
+
+    function createLearningItem(koreanText, englishText, options = {}) {
+      const email = typeof getStoredUserEmail === 'function' ? getStoredUserEmail() : '';
+      const authorName = email ? email.split('@')[0] : '내 학습창';
+      const createdAt = new Date().toISOString();
+      const uniqueId = window.crypto?.randomUUID ? crypto.randomUUID() : `${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+      return {
+        content_id: `item_${uniqueId}`,
+        author_id: email || 'local_user',
+        author_name: authorName,
+        sentences: [{ id: 'sent_1', kr: koreanText, en: englishText }],
+        shorts_info: {
+          is_generated: Boolean(options.isGenerated),
+          video_url: null,
+          bgm_id: null
+        },
+        is_public: Boolean(options.isPublic),
+        learning_status: { is_reviewed: false, last_reviewed_at: null },
+        stats: { likes: 0, scraps: 0 },
+        created_at: createdAt
+      };
+    }
+
+    function storeLearningItem(item) {
+      const personalItems = readLearningStorage(PERSONAL_LEARNING_KEY);
+      const existingIndex = personalItems.findIndex(saved => saved.content_id === item.content_id);
+      if (existingIndex >= 0) personalItems[existingIndex] = item;
+      else personalItems.unshift(item);
+      if (!writeLearningStorage(PERSONAL_LEARNING_KEY, personalItems)) return false;
+      syncPublicFeedItem(item);
+      renderLearningHub();
+      return true;
+    }
+
+    function syncPublicFeedItem(item) {
+      const publicItems = readLearningStorage(PUBLIC_LEARNING_KEY)
+        .filter(shared => shared.content_id !== item.content_id);
+      if (item.is_public) publicItems.unshift(JSON.parse(JSON.stringify(item)));
+      writeLearningStorage(PUBLIC_LEARNING_KEY, publicItems);
+    }
+
+    function openShortsProposal(koreanText, englishText) {
+      pendingLearningContent = { koreanText, englishText };
+      document.getElementById('proposalKorean').textContent = koreanText;
+      document.getElementById('proposalEnglish').textContent = englishText;
+      document.getElementById('proposalShareToggle').checked = true;
+      const modal = document.getElementById('shortsProposalModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeShortsProposal() {
+      if (pendingLearningContent) finalizeShortsProposal(false, false);
+      const modal = document.getElementById('shortsProposalModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function acceptShortsProposal() {
+      finalizeShortsProposal(true, document.getElementById('proposalShareToggle').checked);
+    }
+
+    function declineShortsProposal() {
+      finalizeShortsProposal(false, document.getElementById('proposalShareToggle').checked);
+    }
+
+    function finalizeShortsProposal(generateShorts, isPublic) {
+      if (!pendingLearningContent) return;
+      const item = createLearningItem(pendingLearningContent.koreanText, pendingLearningContent.englishText, {
+        isGenerated: generateShorts,
+        isPublic
+      });
+      pendingLearningContent = null;
+      const modal = document.getElementById('shortsProposalModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      if (!storeLearningItem(item)) return;
+
+      if (generateShorts) {
+        activeShortPreviewItemId = item.content_id;
+        document.getElementById('shortPreviewKorean').textContent = item.sentences[0].kr;
+        document.getElementById('shortPreviewEnglish').textContent = item.sentences[0].en;
+        document.getElementById('shortPreviewStatus').textContent = isPublic
+          ? '프리뷰를 개인 학습창에 저장하고 전체 둘러보기에 공유했습니다. 실제 영상 파일 렌더링은 서버 연결 후 사용할 수 있습니다.'
+          : '프리뷰를 개인 학습창에 저장했습니다. 실제 영상 파일 렌더링은 서버 연결 후 사용할 수 있습니다.';
+        setLearningView('preview');
+      } else {
+        setLearningView('personal');
+      }
+    }
+
+    function setLearningView(view) {
+      learningView = view;
+      const previewing = view === 'preview';
+      document.getElementById('learningListView').classList.toggle('hidden', previewing);
+      document.getElementById('shortsPreviewView').classList.toggle('hidden', !previewing);
+      document.getElementById('learningTabPersonal').classList.toggle('active', view === 'personal');
+      document.getElementById('learningTabExplore').classList.toggle('active', view === 'explore');
+      document.getElementById('learningTabPersonal').setAttribute('aria-selected', String(view === 'personal'));
+      document.getElementById('learningTabExplore').setAttribute('aria-selected', String(view === 'explore'));
+      document.getElementById('learningViewDescription').textContent = view === 'explore'
+        ? '다른 학습자가 공개한 문장을 둘러보고 내 학습창에 담습니다.'
+        : '나만의 복습 문장을 보관합니다.';
+      if (previewing) {
+        buildShortPreviewTimeline(
+          document.getElementById('shortPreviewKorean').textContent,
+          document.getElementById('shortPreviewEnglish').textContent
+        );
+      } else if (shortsMotionTimeline) {
+        shortsMotionTimeline.pause();
+        updateShortPreviewPlayButton(false);
+        setShortPreviewTicker(false);
+        if (shortsPreviewAudioEnabled) toggleShortPreviewAudio();
+      }
+      renderLearningHub();
+      document.getElementById('learningHub').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function renderKineticWords(element, text, accentWordIndices = []) {
+      element.replaceChildren();
+      element.setAttribute('aria-label', text);
+      const tokens = String(text || '').split(/(\s+)/u).filter(Boolean);
+      const characters = [];
+      const words = [];
+      let wordIndex = 0;
+      tokens.forEach(token => {
+        if (/^\s+$/u.test(token)) {
+          element.appendChild(document.createTextNode(token));
+          return;
+        }
+        const mask = document.createElement('span');
+        mask.className = 'motion-word-mask';
+        const word = document.createElement('span');
+        word.className = `motion-word${accentWordIndices.includes(wordIndex) ? ' motion-word--accent' : ''}`;
+        wordIndex += 1;
+        Array.from(token).forEach(character => {
+          const char = document.createElement('span');
+          char.className = 'motion-char';
+          char.textContent = character;
+          word.appendChild(char);
+          characters.push(char);
+        });
+        mask.appendChild(word);
+        element.appendChild(mask);
+        words.push(word);
+      });
+      return { characters, words };
+    }
+
+    function setShortPreviewTicker(active) {
+      if (typeof gsap === 'undefined') return;
+      if (active && !shortsPreviewAdjustedFps) {
+        shortsPreviewPreviousFps = gsap.ticker.fps() || 60;
+        gsap.ticker.fps(30);
+        shortsPreviewAdjustedFps = true;
+      } else if (!active && shortsPreviewAdjustedFps) {
+        gsap.ticker.fps(shortsPreviewPreviousFps);
+        shortsPreviewAdjustedFps = false;
+      }
+    }
+
+    function playShortPreviewKick() {
+      if (!shortsPreviewAudioEnabled || !shortsPreviewAudioContext) return;
+      const context = shortsPreviewAudioContext;
+      const now = context.currentTime;
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      oscillator.type = 'sine';
+      oscillator.frequency.setValueAtTime(142, now);
+      oscillator.frequency.exponentialRampToValueAtTime(46, now + .12);
+      gain.gain.setValueAtTime(.0001, now);
+      gain.gain.exponentialRampToValueAtTime(.18, now + .008);
+      gain.gain.exponentialRampToValueAtTime(.0001, now + .16);
+      oscillator.connect(gain);
+      gain.connect(context.destination);
+      oscillator.start(now);
+      oscillator.stop(now + .17);
+    }
+
+    function playShortPreviewHat() {
+      if (!shortsPreviewAudioEnabled || !shortsPreviewAudioContext) return;
+      const context = shortsPreviewAudioContext;
+      const now = context.currentTime;
+      const frames = Math.floor(context.sampleRate * .035);
+      const buffer = context.createBuffer(1, frames, context.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let index = 0; index < frames; index++) data[index] = Math.random() * 2 - 1;
+      const source = context.createBufferSource();
+      const highPass = context.createBiquadFilter();
+      const gain = context.createGain();
+      source.buffer = buffer;
+      highPass.type = 'highpass';
+      highPass.frequency.value = 7200;
+      gain.gain.setValueAtTime(.0001, now);
+      gain.gain.exponentialRampToValueAtTime(.025, now + .003);
+      gain.gain.exponentialRampToValueAtTime(.0001, now + .035);
+      source.connect(highPass);
+      highPass.connect(gain);
+      gain.connect(context.destination);
+      source.start(now);
+      source.stop(now + .04);
+    }
+
+    function syncShortPreviewBeatAudio() {
+      if (!shortsMotionTimeline || !shortsPreviewAudioEnabled) return;
+      const subdivisionLength = SHORTS_PREVIEW_BEAT_SECONDS / 2;
+      const subdivision = Math.floor((shortsMotionTimeline.time() + .0001) / subdivisionLength);
+      if (subdivision <= shortsPreviewLastSubdivision) return;
+      shortsPreviewLastSubdivision = subdivision;
+      if (subdivision % 2 === 0) playShortPreviewKick();
+      else playShortPreviewHat();
+    }
+
+    async function toggleShortPreviewAudio() {
+      shortsPreviewAudioEnabled = !shortsPreviewAudioEnabled;
+      const button = document.getElementById('shortPreviewAudioBtn');
+      const icon = document.getElementById('shortPreviewAudioIcon');
+      button?.setAttribute('aria-pressed', String(shortsPreviewAudioEnabled));
+      button?.setAttribute('aria-label', shortsPreviewAudioEnabled ? '합성 비트 끄기' : '합성 비트 켜기');
+      button?.classList.toggle('is-enabled', shortsPreviewAudioEnabled);
+      icon?.classList.toggle('fa-volume-xmark', !shortsPreviewAudioEnabled);
+      icon?.classList.toggle('fa-volume-high', shortsPreviewAudioEnabled);
+
+      if (shortsPreviewAudioEnabled) {
+        const AudioContextImpl = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextImpl) {
+          shortsPreviewAudioEnabled = false;
+          button?.setAttribute('aria-pressed', 'false');
+          button?.setAttribute('aria-label', '오디오를 지원하지 않는 브라우저');
+          button?.classList.remove('is-enabled');
+          icon?.classList.add('fa-volume-xmark');
+          icon?.classList.remove('fa-volume-high');
+          window.alert('이 브라우저는 Web Audio를 지원하지 않습니다.');
+          return;
+        }
+        shortsPreviewAudioContext ||= new AudioContextImpl();
+        await shortsPreviewAudioContext.resume();
+        shortsPreviewLastSubdivision = Math.floor((shortsMotionTimeline?.time() || 0) / (SHORTS_PREVIEW_BEAT_SECONDS / 2)) - 1;
+        syncShortPreviewBeatAudio();
+      } else if (shortsPreviewAudioContext?.state === 'running') {
+        await shortsPreviewAudioContext.suspend();
+      }
+    }
+
+    function updateShortPreviewPlayButton(isPlaying) {
+      const icon = document.getElementById('shortPreviewPlayIcon');
+      const button = document.getElementById('shortPreviewPlayBtn');
+      icon?.classList.toggle('fa-play', !isPlaying);
+      icon?.classList.toggle('fa-pause', isPlaying);
+      button?.setAttribute('aria-label', isPlaying ? '일시정지' : '재생');
+      button?.classList.toggle('is-playing', isPlaying);
+    }
+
+    function updateShortPreviewControls() {
+      if (!shortsMotionTimeline) return;
+      const currentTime = shortsMotionTimeline.time();
+      const progress = shortsMotionDuration ? currentTime / shortsMotionDuration : 0;
+      const seek = document.getElementById('shortPreviewSeek');
+      const time = document.getElementById('shortPreviewTime');
+      const beat = document.getElementById('shortPreviewBeat');
+      const footLabel = document.getElementById('shortPreviewFootLabel');
+      if (seek) seek.value = String(Math.round(progress * 1000));
+      syncShortPreviewBeatAudio();
+      if (time) {
+        const seconds = Math.floor(currentTime);
+        time.textContent = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
+      }
+      let activeBeat = 0;
+      for (let index = 0; index < shortsMotionBeatTimes.length; index++) {
+        if (currentTime >= shortsMotionBeatTimes[index]) activeBeat = index;
+      }
+      if (beat) beat.textContent = `${String(activeBeat + 1).padStart(2, '0')} / ${String(shortsMotionBeatTimes.length).padStart(2, '0')}`;
+      if (footLabel) footLabel.textContent = activeBeat === 0 ? 'ORIGINAL / 01' : `TRANSLATION / ${String(activeBeat).padStart(2, '0')}`;
+    }
+
+    let shortsMotionBeatTimes = [];
+
+    function buildShortPreviewTimeline(koreanText, englishText) {
+      if (typeof gsap === 'undefined') {
+        console.error('[Shorts] GSAP failed to load; preview remains static.');
+        return;
+      }
+      if (shortsMotionTimeline) shortsMotionTimeline.kill();
+
+      const stage = document.getElementById('shortPreviewStage');
+      const koreanScene = document.getElementById('shortSceneKorean');
+      const englishScene = document.getElementById('shortSceneEnglish');
+      const englishContainer = document.getElementById('shortPreviewEnglish');
+      const korean = renderKineticWords(document.getElementById('shortPreviewKorean'), koreanText);
+      englishContainer.replaceChildren();
+      const englishWords = String(englishText || '').trim().split(/\s+/u).filter(Boolean);
+      const phraseGroups = [];
+      for (let index = 0; index < englishWords.length; index += 3) {
+        const phrase = document.createElement('div');
+        phrase.className = 'motion-english-phrase motion-copy-line';
+        englishContainer.appendChild(phrase);
+        const phraseWords = englishWords.slice(index, index + 3);
+        const accentIndices = phraseWords.length ? [phraseWords.length - 1] : [];
+        const rendered = renderKineticWords(phrase, phraseWords.join(' '), accentIndices);
+        phraseGroups.push({ element: phrase, ...rendered });
+      }
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const scale = reducedMotion ? 0.08 : 1;
+      const accent = document.getElementById('shortPreviewAccent');
+      const sceneColors = ['#0A0A0A', '#12000A', '#07070A', '#16000C'];
+      const accentColors = ['#FF007F', '#FF1493', '#FF007F', '#FF1493'];
+      const beat = SHORTS_PREVIEW_BEAT_SECONDS;
+      const introBeats = 4;
+      const phraseBeats = 2;
+
+      gsap.set(stage, { scale: 1, x: 0, y: 0, rotation: 0, backgroundColor: sceneColors[0], transformPerspective: 1000 });
+      gsap.set(koreanScene, { autoAlpha: 1, x: 0, y: 0, rotationX: 0, rotationY: 0, z: 0, scale: 1, filter: 'blur(0px)', transformPerspective: 1000, transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' });
+      gsap.set(englishScene, { autoAlpha: 0, x: 0, y: 0, rotationX: -18, rotationY: 92, z: -420, scale: .72, filter: 'blur(18px)', transformPerspective: 1000, transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' });
+      gsap.set(korean.characters, {
+        yPercent: reducedMotion ? 0 : 130,
+        xPercent: reducedMotion ? 0 : 5,
+        rotationX: reducedMotion ? 0 : -24,
+        rotationY: reducedMotion ? 0 : 12,
+        scale: reducedMotion ? 1 : 0.6,
+        opacity: reducedMotion ? 1 : 0,
+        filter: reducedMotion ? 'blur(0px)' : 'blur(18px)',
+        color: reducedMotion ? '#FFFFFF' : 'transparent',
+        webkitTextStrokeColor: reducedMotion ? 'transparent' : 'rgba(255, 255, 255, 1)',
+        transformPerspective: 1000,
+        transformOrigin: '50% 50%'
+      });
+      phraseGroups.forEach(group => {
+        gsap.set(group.element, { autoAlpha: 0, x: 0, y: 0, rotationX: 18, rotationY: -88, z: -520, scale: .48, filter: 'blur(18px)', transformPerspective: 1000, transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' });
+        gsap.set(group.characters, {
+          yPercent: reducedMotion ? 0 : 75,
+          xPercent: reducedMotion ? 0 : 18,
+          rotationX: reducedMotion ? 0 : -18,
+          rotationY: reducedMotion ? 0 : 24,
+          scale: reducedMotion ? 1 : 0.48,
+          opacity: reducedMotion ? 1 : 0,
+          filter: reducedMotion ? 'blur(0px)' : 'blur(16px)',
+          color: reducedMotion ? '#FFFFFF' : 'transparent',
+          webkitTextStrokeColor: reducedMotion ? 'transparent' : 'rgba(255, 255, 255, 1)',
+          transformPerspective: 1000
+        });
+      });
+      gsap.set(accent, { scaleX: 0, xPercent: -8, skewX: -22, transformOrigin: 'left center', backgroundColor: accentColors[0] });
+
+      setShortPreviewTicker(true);
+      document.getElementById('shortPreviewFrameRate').textContent = '30 FPS';
+      if (shortsPreviewAudioEnabled && shortsPreviewAudioContext) shortsPreviewAudioContext.resume().catch(() => { });
+      shortsMotionTimeline = gsap.timeline({
+        paused: true,
+        defaults: { ease: 'power3.out' },
+        onUpdate: updateShortPreviewControls,
+        onComplete: () => updateShortPreviewPlayButton(false)
+      });
+      shortsMotionBeatTimes = [0];
+      const koreanFlipAt = beat * 3.45;
+      const firstEnglishAt = beat * introBeats;
+      shortsMotionTimeline
+        .to(stage, { backgroundColor: '#0A0A0A', scale: 1.035, duration: beat * 1.5 * scale, ease: 'power2.out' }, 0)
+        .to(korean.characters, {
+          yPercent: 0,
+          xPercent: 0,
+          rotationX: 0,
+          rotationY: 0,
+          scale: 1,
+          opacity: 1,
+          filter: 'blur(0px)',
+          color: '#F4F5F3',
+          webkitTextStrokeColor: 'rgba(255, 0, 127, 0)',
+          duration: beat * 1.25 * scale,
+          stagger: reducedMotion ? 0 : .022,
+          ease: 'power4.out'
+        }, .18 * scale)
+        .to(korean.characters, {
+          color: '#FF1493',
+          webkitTextStrokeColor: 'rgba(255, 0, 127, 0)',
+          duration: beat * .62 * scale,
+          stagger: reducedMotion ? 0 : .018,
+          ease: 'power2.out'
+        }, beat * 1.1 * scale)
+        .to(koreanScene, { scale: 1.09, duration: beat * 1.2 * scale, ease: 'power2.inOut' }, beat * 1.85 * scale)
+        .to(accent, { scaleX: 1, duration: beat * .34 * scale, ease: 'power4.in' }, beat * 3.1 * scale)
+        .to(koreanScene, {
+          rotationY: -92,
+          rotationX: 12,
+          xPercent: -24,
+          z: -420,
+          scale: .72,
+          filter: 'blur(16px)',
+          autoAlpha: 0,
+          duration: beat * .55 * scale,
+          ease: 'power4.in'
+        }, koreanFlipAt * scale)
+        .to(accent, { xPercent: 8, scaleX: 0, transformOrigin: 'right center', duration: beat * .55 * scale, ease: 'power2.inOut' }, koreanFlipAt * scale)
+        .fromTo(englishScene,
+          { autoAlpha: 0, rotationY: 92, rotationX: -18, z: -520, scale: .68, filter: 'blur(18px)' },
+          { autoAlpha: 1, rotationY: 0, rotationX: 0, z: 0, scale: 1, filter: 'blur(0px)', duration: beat * .8 * scale, ease: 'back.out(1.35)' },
+          firstEnglishAt * scale
+        );
+
+      let sceneStart = introBeats * beat;
+      phraseGroups.forEach((group, index) => {
+        const colorIndex = index % accentColors.length;
+        const isFinalPhrase = index === phraseGroups.length - 1;
+        shortsMotionBeatTimes.push(sceneStart * scale);
+        const phraseTimeline = shortsMotionTimeline
+          .set(group.element, { autoAlpha: 1 }, sceneStart * scale)
+          .set(accent, { backgroundColor: accentColors[colorIndex], xPercent: index % 2 ? 5 : -5, transformOrigin: index % 2 ? 'right center' : 'left center' }, sceneStart * scale)
+          .to(stage, { backgroundColor: sceneColors[(index + 1) % sceneColors.length], scale: index % 2 ? 1.12 : 1.085, duration: beat * .8 * scale, ease: 'power2.inOut' }, sceneStart * scale)
+          .to(group.characters, {
+            yPercent: 0,
+            xPercent: 0,
+            rotationX: 0,
+            rotationY: 0,
+            scale: 1,
+            opacity: 1,
+            filter: 'blur(0px)',
+            color: '#FFFFFF',
+            webkitTextStrokeColor: 'rgba(255, 255, 255, 0)',
+            duration: beat * .66 * scale,
+            stagger: reducedMotion ? 0 : .024,
+            ease: 'back.out(1.55)'
+          }, (sceneStart + beat * .08) * scale)
+          .to(group.element, { rotationX: 0, rotationY: 0, z: 0, scale: 1.02, filter: 'blur(0px)', duration: beat * .42 * scale, ease: 'power2.out' }, (sceneStart + beat * .24) * scale)
+          .to(accent, { scaleX: 1, duration: beat * .3 * scale, ease: 'power4.in' }, (sceneStart + beat * .22) * scale);
+
+        const shakeSeed = index + 1;
+        const shakeX = Math.sin(shakeSeed * 12.9898) * 4.2;
+        const shakeY = Math.cos(shakeSeed * 7.233) * 3.2;
+        const shakeRotation = Math.sin(shakeSeed * 4.117) * 1.25;
+        phraseTimeline.to(stage, {
+          x: shakeX,
+          y: shakeY,
+          rotation: shakeRotation,
+          duration: .045,
+          repeat: 5,
+          yoyo: true,
+          ease: 'power1.inOut'
+        }, (sceneStart + beat * .56) * scale);
+        if (!isFinalPhrase) {
+          phraseTimeline.to(group.element, {
+            xPercent: index % 2 ? 145 : -145,
+            yPercent: index % 2 ? -18 : 18,
+            rotationY: index % 2 ? -86 : 86,
+            rotationX: index % 2 ? 18 : -18,
+            z: -380,
+            scale: 1.42,
+            filter: 'blur(17px)',
+            autoAlpha: 0,
+            duration: beat * .48 * scale,
+            ease: 'power4.in'
+          }, (sceneStart + beat * 1.43) * scale)
+            .to(accent, { scaleX: 0, duration: beat * .38 * scale, ease: 'power2.inOut' }, (sceneStart + beat * 1.43) * scale);
+        } else {
+          phraseTimeline.to(accent, { scaleX: 0, duration: beat * .36 * scale, ease: 'power2.inOut' }, (sceneStart + beat * 1.42) * scale);
+        }
+        sceneStart += phraseBeats * beat;
+      });
+
+      const finalMoment = (sceneStart + phraseBeats * beat) * scale;
+      shortsMotionTimeline.to(stage, { scale: 1, x: 0, y: 0, rotation: 0, duration: beat * .75 * scale, ease: 'power3.out' }, finalMoment);
+      shortsMotionDuration = shortsMotionTimeline.duration();
+      document.getElementById('shortPreviewBeat').textContent = `01 / ${String(shortsMotionBeatTimes.length).padStart(2, '0')}`;
+      document.getElementById('shortPreviewSeek').value = '0';
+      shortsPreviewLastSubdivision = -1;
+      shortsMotionTimeline.progress(0).play();
+      updateShortPreviewPlayButton(true);
+    }
+
+    async function toggleShortPreviewPlayback() {
+      if (!shortsMotionTimeline) {
+        buildShortPreviewTimeline(
+          document.getElementById('shortPreviewKorean').textContent,
+          document.getElementById('shortPreviewEnglish').textContent
+        );
+        return;
+      }
+      if (shortsPreviewAudioEnabled && shortsPreviewAudioContext?.state === 'suspended') {
+        await shortsPreviewAudioContext.resume();
+      }
+      if (shortsMotionTimeline.progress() >= 1) shortsMotionTimeline.restart();
+      else if (shortsMotionTimeline.paused()) shortsMotionTimeline.play();
+      else shortsMotionTimeline.pause();
+      updateShortPreviewPlayButton(!shortsMotionTimeline.paused());
+    }
+
+    document.getElementById('shortPreviewSeek').addEventListener('input', event => {
+      if (!shortsMotionTimeline) return;
+      shortsMotionTimeline.pause().progress(Number(event.target.value) / 1000);
+      shortsPreviewLastSubdivision = Math.floor(shortsMotionTimeline.time() / (SHORTS_PREVIEW_BEAT_SECONDS / 2));
+      updateShortPreviewPlayButton(false);
+      updateShortPreviewControls();
+    });
+
+    function toggleLearningSearch() {
+      const search = document.getElementById('learningSearch');
+      search.classList.toggle('hidden');
+      if (!search.classList.contains('hidden')) search.focus();
+      else search.value = '';
+      renderLearningHub();
+    }
+
+    function formatLearningDate(isoDate) {
+      return new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'short', day: 'numeric' })
+        .format(new Date(isoDate));
+    }
+
+    function renderLearningHub() {
+      const personalItems = readLearningStorage(PERSONAL_LEARNING_KEY);
+      const publicItems = readLearningStorage(PUBLIC_LEARNING_KEY);
+      document.getElementById('personalCount').textContent = personalItems.length;
+      document.getElementById('feedCount').textContent = publicItems.length;
+      if (learningView === 'preview') return;
+
+      const sourceItems = learningView === 'explore' ? publicItems : personalItems;
+      const query = document.getElementById('learningSearch').value.trim().toLocaleLowerCase();
+      const filteredItems = sourceItems.filter(item => {
+        const sentence = item.sentences?.[0] || {};
+        return !query || `${sentence.kr || ''} ${sentence.en || ''} ${item.author_name || ''}`.toLocaleLowerCase().includes(query);
+      });
+      const container = document.getElementById('learningHubList');
+
+      if (!filteredItems.length) {
+        container.innerHTML = `<div class="py-14 text-center"><i class="fa-solid ${learningView === 'explore' ? 'fa-earth-asia' : 'fa-book-open'} text-2xl text-ink/25 mb-3"></i><p class="text-sm font-bold text-ink/55">${query ? '검색 결과가 없습니다.' : learningView === 'explore' ? '아직 공개된 문장이 없습니다.' : '저장된 문장이 없습니다.'}</p><p class="text-xs text-ink/35 mt-1">${learningView === 'explore' ? '번역 후 공유를 켜면 이곳에 나타납니다.' : 'AI 통역을 완료하면 이곳에 보관할 수 있습니다.'}</p></div>`;
+        return;
+      }
+
+      container.innerHTML = filteredItems.map(item => {
+        const sentence = item.sentences?.[0] || {};
+        const reviewed = Boolean(item.learning_status?.is_reviewed);
+        const savedPrivately = personalItems.some(saved => saved.content_id === item.content_id);
+        const visibilityControl = learningView === 'personal'
+          ? `<button type="button" onclick="toggleLearningVisibility('${item.content_id}')" class="text-xs font-bold ${item.is_public ? 'text-edu' : 'text-ink/45'}" aria-label="공개 상태 변경"><i class="fa-solid ${item.is_public ? 'fa-earth-asia' : 'fa-lock'} mr-1"></i>${item.is_public ? '공개' : '비공개'}</button>`
+          : `<span class="text-xs text-ink/35"><i class="fa-solid fa-user mr-1"></i>${escapeHtml(item.author_name || 'Daynize 사용자')}</span>`;
+        const action = learningView === 'personal'
+          ? `<label class="inline-flex items-center gap-2 text-xs text-ink/55 cursor-pointer"><input type="checkbox" ${reviewed ? 'checked' : ''} onchange="toggleLearningReviewed('${item.content_id}', this.checked)" class="accent-emerald-400">복습 완료</label>`
+          : `<button type="button" onclick="scrapPublicContent('${item.content_id}')" ${savedPrivately ? 'disabled' : ''} class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold ${savedPrivately ? 'bg-white/5 text-ink/35 cursor-default' : 'bg-ink text-paper hover:opacity-90'}">${savedPrivately ? '<i class="fa-solid fa-check"></i>내 학습창에 담김' : '<i class="fa-solid fa-download"></i>내 학습창으로 담기'}</button>`;
+        return `<article class="py-6 grid gap-4 sm:grid-cols-[1fr_auto] sm:items-center" data-content-id="${item.content_id}">
+          <div class="min-w-0"><p class="text-sm sm:text-base font-bold text-ink leading-relaxed mb-1">${escapeHtml(sentence.kr || '')}</p><p class="text-sm text-ink/60 leading-relaxed">${escapeHtml(sentence.en || '')}</p><div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3">${visibilityControl}<span class="text-[11px] text-ink/30">${formatLearningDate(item.created_at)}</span>${item.shorts_info?.is_generated ? '<span class="text-[11px] text-amber-200"><i class="fa-solid fa-clapperboard mr-1"></i>숏츠 프리뷰</span>' : ''}${learningView === 'personal' && reviewed ? `<span class="text-[11px] text-edu">복습 ${item.learning_status?.last_reviewed_at ? formatLearningDate(item.learning_status.last_reviewed_at) : '완료'}</span>` : ''}</div></div>
+          <div class="flex items-center justify-between sm:justify-end gap-3">${action}<button type="button" onclick="speakText(this.dataset.sentence)" data-sentence="${escapeHtml(sentence.en || '')}" class="w-9 h-9 rounded-full glass-card flex items-center justify-center text-edu hover:bg-white/20" aria-label="영어 발음 듣기"><i class="fa-solid fa-volume-high text-xs"></i></button></div>
+        </article>`;
+      }).join('');
+    }
+
+    function openDefaultShortsPreviewIfEmpty() {
+      const hasPersonalItems = readLearningStorage(PERSONAL_LEARNING_KEY).length > 0;
+      const hasPublicItems = readLearningStorage(PUBLIC_LEARNING_KEY).length > 0;
+      if (hasPersonalItems || hasPublicItems) return false;
+
+      document.getElementById('shortPreviewKorean').textContent = '거둬내서 가벼운 삶, 걷다';
+      document.getElementById('shortPreviewEnglish').textContent = 'Clear away for a lighter life, Walk.';
+      document.getElementById('shortPreviewStatus').textContent = '기본 예시 문장으로 모션을 미리 봅니다. 이 샘플은 개인 학습창에 저장되지 않습니다.';
+      activeShortPreviewItemId = null;
+      setLearningView('preview');
+      return true;
+    }
+
+    function toggleLearningVisibility(contentId) {
+      const items = readLearningStorage(PERSONAL_LEARNING_KEY);
+      const item = items.find(entry => entry.content_id === contentId);
+      if (!item) return;
+      item.is_public = !item.is_public;
+      if (writeLearningStorage(PERSONAL_LEARNING_KEY, items)) {
+        syncPublicFeedItem(item);
+        renderLearningHub();
+      }
+    }
+
+    function toggleLearningReviewed(contentId, reviewed) {
+      const items = readLearningStorage(PERSONAL_LEARNING_KEY);
+      const item = items.find(entry => entry.content_id === contentId);
+      if (!item) return;
+      item.learning_status = {
+        is_reviewed: reviewed,
+        last_reviewed_at: reviewed ? new Date().toISOString() : null
+      };
+      writeLearningStorage(PERSONAL_LEARNING_KEY, items);
+      renderLearningHub();
+    }
+
+    function scrapPublicContent(contentId) {
+      const publicItems = readLearningStorage(PUBLIC_LEARNING_KEY);
+      const sharedItem = publicItems.find(item => item.content_id === contentId);
+      if (!sharedItem) return;
+      const personalItems = readLearningStorage(PERSONAL_LEARNING_KEY);
+      if (personalItems.some(item => item.source_content_id === contentId || item.content_id === contentId)) return;
+      const copy = JSON.parse(JSON.stringify(sharedItem));
+      copy.source_content_id = contentId;
+      copy.content_id = `item_scrap_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+      copy.author_id = 'local_user';
+      copy.author_name = '내 학습창';
+      copy.is_public = false;
+      copy.shorts_info = { ...copy.shorts_info, is_generated: false, video_url: null };
+      copy.learning_status = { is_reviewed: false, last_reviewed_at: null };
+      personalItems.unshift(copy);
+      if (writeLearningStorage(PERSONAL_LEARNING_KEY, personalItems)) {
+        sharedItem.stats = { ...(sharedItem.stats || {}), scraps: (sharedItem.stats?.scraps || 0) + 1 };
+        writeLearningStorage(PUBLIC_LEARNING_KEY, publicItems);
+        renderLearningHub();
+      }
     }
 
     // 마이크 입력 음량에 반응하는 수직 바 시각화 (민감도 가중치로 작은 목소리도 크게 반응)
@@ -2581,11 +4086,25 @@
       const AudioContextImpl = window.AudioContext || window.webkitAudioContext;
       if (!sttVisualizerCanvas || !AudioContextImpl) return;
       sttAudioContext = new AudioContextImpl();
+      sttAudioContext.resume().catch(() => { });
       const source = sttAudioContext.createMediaStreamSource(stream);
       sttAnalyser = sttAudioContext.createAnalyser();
       sttAnalyser.fftSize = 32;
       sttAnalyser.smoothingTimeConstant = 0.8;
       source.connect(sttAnalyser);
+
+      // Some browser MediaRecorder outputs are not demuxable; retain raw PCM for a playable WAV fallback.
+      sttPcmChunks = [];
+      sttPcmSampleRate = sttAudioContext.sampleRate;
+      sttAudioProcessor = sttAudioContext.createScriptProcessor(4096, 1, 1);
+      sttAudioMuteGain = sttAudioContext.createGain();
+      sttAudioMuteGain.gain.value = 0;
+      sttAudioProcessor.onaudioprocess = (event) => {
+        sttPcmChunks.push(new Float32Array(event.inputBuffer.getChannelData(0)));
+      };
+      source.connect(sttAudioProcessor);
+      sttAudioProcessor.connect(sttAudioMuteGain);
+      sttAudioMuteGain.connect(sttAudioContext.destination);
 
       const ctx = sttVisualizerCanvas.getContext('2d');
       const bufferLength = sttAnalyser.frequencyBinCount;
@@ -2611,6 +4130,15 @@
     function stopSttVisualizer() {
       if (sttVisualizerRaf) cancelAnimationFrame(sttVisualizerRaf);
       sttVisualizerRaf = null;
+      if (sttAudioProcessor) {
+        sttAudioProcessor.onaudioprocess = null;
+        sttAudioProcessor.disconnect();
+        sttAudioProcessor = null;
+      }
+      if (sttAudioMuteGain) {
+        sttAudioMuteGain.disconnect();
+        sttAudioMuteGain = null;
+      }
       if (sttAudioContext) {
         sttAudioContext.close().catch(() => { });
         sttAudioContext = null;
@@ -2622,40 +4150,125 @@
       }
     }
 
+    function createSttWavBlob(pcmChunks, sampleRate) {
+      const frameCount = pcmChunks.reduce((total, chunk) => total + chunk.length, 0);
+      if (!frameCount || !sampleRate) return null;
+
+      const wavBuffer = new ArrayBuffer(44 + frameCount * 2);
+      const view = new DataView(wavBuffer);
+      const writeText = (offset, text) => {
+        for (let index = 0; index < text.length; index++) view.setUint8(offset + index, text.charCodeAt(index));
+      };
+
+      writeText(0, 'RIFF');
+      view.setUint32(4, 36 + frameCount * 2, true);
+      writeText(8, 'WAVE');
+      writeText(12, 'fmt ');
+      view.setUint32(16, 16, true);
+      view.setUint16(20, 1, true);
+      view.setUint16(22, 1, true);
+      view.setUint32(24, sampleRate, true);
+      view.setUint32(28, sampleRate * 2, true);
+      view.setUint16(32, 2, true);
+      view.setUint16(34, 16, true);
+      writeText(36, 'data');
+      view.setUint32(40, frameCount * 2, true);
+
+      let offset = 44;
+      pcmChunks.forEach(chunk => {
+        chunk.forEach(sample => {
+          const clamped = Math.max(-1, Math.min(1, sample));
+          view.setInt16(offset, clamped < 0 ? clamped * 0x8000 : clamped * 0x7fff, true);
+          offset += 2;
+        });
+      });
+
+      return new Blob([wavBuffer], { type: 'audio/wav' });
+    }
+
     // 재생 버튼용으로 내 음성을 별도 녹음 (STT 인식과 별개의 트랙)
-    function startSttMediaRecorder(stream) {
-      if (typeof MediaRecorder === 'undefined') return;
-      sttRecordedChunks = [];
+    function startSttMediaRecorder(stream, recordingSession = sttRecordingSession) {
+      if (typeof MediaRecorder === 'undefined') {
+        resolveSttRecordingSession(recordingSession, null);
+        return;
+      }
+      const audioChunks = [];
+      sttRecordedChunks = audioChunks;
+      sttRecordedBlob = null;
       try {
         sttMediaRecorder = new MediaRecorder(stream);
       } catch (err) {
         sttMediaRecorder = null;
+        console.error('[MediaRecorder] initialization failed', err);
+        setSttFeedback('오디오 녹음기를 시작하지 못했어요.', 'text-red-300');
+        resolveSttRecordingSession(recordingSession, null);
         return;
       }
-      sttMediaRecorder.ondataavailable = (e) => {
-        if (e.data && e.data.size > 0) sttRecordedChunks.push(e.data);
+      const recorder = sttMediaRecorder;
+      recorder.ondataavailable = (e) => {
+        if (e.data && e.data.size > 0) {
+          audioChunks.push(e.data);
+          console.log('[MediaRecorder] audio chunk received', { size: e.data.size, type: e.data.type });
+        }
       };
-      sttMediaRecorder.onstop = () => {
-        if (!sttRecordedChunks.length) return;
-        const blob = new Blob(sttRecordedChunks, { type: 'audio/webm' });
-        revokeSttRecordedAudio();
-        sttRecordedBlobUrl = URL.createObjectURL(blob);
-        if (sttPlaybackBtn) sttPlaybackBtn.disabled = false;
+      recorder.onstop = () => {
+        const recordedType = recorder.mimeType || audioChunks.find(chunk => chunk.type)?.type || 'audio/webm';
+        const mediaRecorderBlob = new Blob(audioChunks, { type: recordedType });
+        const wavBlob = createSttWavBlob(sttPcmChunks, sttPcmSampleRate);
+        const blob = wavBlob?.size > 44 ? wavBlob : mediaRecorderBlob;
+        let recording = null;
+        if (blob.size > 0) {
+          revokeSttRecordedAudio();
+          sttRecordedBlob = blob;
+          sttRecordedBlobUrl = URL.createObjectURL(blob);
+          if (sttPlaybackAudio) sttPlaybackAudio.src = sttRecordedBlobUrl;
+          recording = { blob, mediaRecorderBlob, url: sttRecordedBlobUrl, mimeType: blob.type };
+        } else {
+          console.error('[MediaRecorder] stopped without audio data', { chunkCount: audioChunks.length });
+          setSttFeedback('오디오 데이터가 비어 있어요. 다시 녹음해 주세요.', 'text-red-300');
+        }
+        console.log('[MediaRecorder] recording finalized', {
+          chunkCount: audioChunks.length,
+          mediaRecorderBlobSize: mediaRecorderBlob.size,
+          playableBlobSize: blob.size,
+          mimeType: blob.type,
+          audioUrl: recording?.url || null
+        });
+        if (sttPlaybackAudio && recording) sttPlaybackAudio.load();
+        updateSttPlaybackAvailability();
+        resolveSttRecordingSession(recordingSession, recording);
+        if (sttMicStream) {
+          sttMicStream.getTracks().forEach(track => track.stop());
+          sttMicStream = null;
+        }
       };
-      sttMediaRecorder.start();
+      try {
+        recorder.start(1000);
+      } catch (err) {
+        sttMediaRecorder = null;
+        console.error('[MediaRecorder] start failed', err);
+        resolveSttRecordingSession(recordingSession, null);
+        setSttFeedback('녹음을 시작하지 못했어요. 다시 시도해 주세요.', 'text-red-300');
+      }
     }
 
     function stopSttMediaRecorder() {
       try {
-        if (sttMediaRecorder && sttMediaRecorder.state !== 'inactive') sttMediaRecorder.stop();
+        if (sttMediaRecorder && sttMediaRecorder.state !== 'inactive') {
+          if (sttMediaRecorder.state === 'recording') {
+            try { sttMediaRecorder.requestData(); } catch (err) { /* stop emits the final dataavailable event */ }
+          }
+          sttMediaRecorder.stop();
+        }
       } catch (err) { /* 이미 중지된 경우 무시 */ }
     }
 
     // 비주얼라이저/레코더 스트림만 정리 (SpeechRecognition과 독립적으로 종료 가능)
     function stopSttAudioCapture() {
+      const recorderIsActive = sttMediaRecorder && sttMediaRecorder.state !== 'inactive';
       stopSttMediaRecorder();
       stopSttVisualizer();
-      if (sttMicStream) {
+      if (!recorderIsActive && sttMicStream) {
         sttMicStream.getTracks().forEach(track => track.stop());
         sttMicStream = null;
       }
@@ -2666,18 +4279,24 @@
         URL.revokeObjectURL(sttRecordedBlobUrl);
         sttRecordedBlobUrl = null;
       }
+      sttRecordedBlob = null;
+      updateSttPlaybackAvailability();
     }
 
     // AI 통역 모드에서는 번역된 영문을 TTS로, 말하기 연습 모드에서는 녹음된 내 음성을 재생
     function playSttRecording() {
-      if (sttMode === 'translate' && sttTranslatedText) {
-        speakText(sttTranslatedText);
+      if (sttPlaybackAudio && sttRecordedBlobUrl) {
+        sttPlaybackAudio.src = sttRecordedBlobUrl;
+        sttPlaybackAudio.currentTime = 0;
+        sttPlaybackAudio.play().catch(err => {
+          console.error('[MediaRecorder] audio playback failed', err);
+          setSttFeedback('녹음 재생을 시작하지 못했어요.', 'text-red-300');
+        });
         return;
       }
-      if (!sttPlaybackAudio || !sttRecordedBlobUrl) return;
-      sttPlaybackAudio.src = sttRecordedBlobUrl;
-      sttPlaybackAudio.currentTime = 0;
-      sttPlaybackAudio.play().catch(() => { });
+      if (sttSessionMode === 'translate' && sttTranslatedText) {
+        speakText(sttTranslatedText);
+      }
     }
 
     // 녹음 시작/중지 전용 버튼: 음성 인식을 먼저 켠 뒤 비주얼라이저·녹음용 스트림을 붙여 자원 충돌을 방지
@@ -2696,42 +4315,75 @@
       setSttFeedback('');
       revokeSttRecordedAudio();
       renderSttTranslation('');
-      if (sttPlaybackBtn) sttPlaybackBtn.disabled = true;
 
+      const recordingSession = createSttRecordingSession();
+      sttRecordingSession = recordingSession;
+      sttActiveRecordingSession = recordingSession;
+      sttRecordingResult = recordingSession.promise;
+      sttSessionMode = sttMode;
+      sttRecognitionUnavailable = false;
       const recognizer = initSttRecognizer();
       if (!recognizer) {
+        resolveSttRecordingSession(recordingSession, null);
+        sttActiveRecordingSession = null;
         showSttMicError(true);
         return;
       }
 
       // 1) 사용자 제스처 컨텍스트가 살아있는 동안 음성 인식을 먼저 시작 (Safari 등 호환성)
+      sttSessionFinished = false;
+      sttResultHandled = false;
+      sttRecognitionRetryCount = 0;
       try {
+        console.log('[STT] starting session', { mode: sttSessionMode });
         recognizer.start();
         setSttListening(true);
         startSttCountdown();
       } catch (err) {
-        setSttListening(false);
-        if (sttStatus) sttStatus.textContent = '마이크를 다시 눌러 재시도해주세요';
-        return;
+        console.error('[STT] recognition start failed', err);
+        sttRecognitionUnavailable = true;
+        setSttListening(true);
+        startSttCountdown();
+        if (sttStatus) sttStatus.textContent = '인식 연결 중 · 오디오 녹음은 시작합니다';
+        setSttFeedback('음성 인식에 연결하지 못했지만 녹음은 계속됩니다.', 'text-amber-300');
+        scheduleSttRecognitionRetry('initial-start-failed');
       }
 
       // 2) 인식이 시작된 뒤 비주얼라이저 · 녹음용 스트림을 별도로 연결 (실패해도 STT는 계속 동작)
       navigator.mediaDevices.getUserMedia({ audio: true })
         .then((stream) => {
+          if (sttSessionFinished || recordingSession !== sttActiveRecordingSession) {
+            stream.getTracks().forEach(track => track.stop());
+            resolveSttRecordingSession(recordingSession, null);
+            return;
+          }
           sttMicStream = stream;
           startSttVisualizer(stream);
-          startSttMediaRecorder(stream);
+          startSttMediaRecorder(stream, recordingSession);
         })
-        .catch(() => {
+        .catch((err) => {
+          console.error('[STT] microphone stream request failed', err);
+          resolveSttRecordingSession(recordingSession, null);
           showSttMicError(true);
         });
     }
 
     function stopSttRecording() {
-      if (sttRecognizer && sttListening) {
+      if (!sttListening && sttSessionFinished) return;
+      const wasListening = sttListening;
+      sttSessionFinished = true;
+      clearTimeout(sttRecognitionRetryTimer);
+      sttRecognitionRetryTimer = null;
+      stopSttCountdown('완료');
+      if (sttRecognizer && wasListening) {
         try { sttRecognizer.stop(); } catch (err) { /* 이미 종료된 세션은 무시 */ }
       }
+      setSttListening(false);
       stopSttAudioCapture();
+      clearTimeout(sttFinalizeTimer);
+      sttFinalizeTimer = setTimeout(() => {
+        finishSttSession(Math.min(STT_MAX_DURATION_MS, Date.now() - sttStartedAt));
+      }, 500);
     }
 
     if (!SpeechRecognitionImpl) {
@@ -2740,6 +4392,8 @@
     }
 
     renderCard();
+    renderLearningHub();
+    openDefaultShortsPreviewIfEmpty();
 
     /* ============ 교육 콘텐츠 라이브러리 (NotebookLM 스타일) ============ */
     function setActiveTab(btn) {
