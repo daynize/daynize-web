@@ -1167,11 +1167,11 @@
       <!-- 추천 강의 섹션 -->
       <div class="mb-16">
         <h3 class="text-xl sm:text-2xl font-black text-ink mb-5">추천 강의</h3>
-        <div class="course-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="featuredCoursesGrid" class="course-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <!-- Featured card 1 -->
           <div class="course-card glass-card rounded-3xl overflow-hidden relative h-72 sm:h-80"
-            onclick="openVideoModal(event, 'videos/5형식_동사_패턴_이것만_알면_끝납니다.mp4', '5형식 동사 패턴 이것만 알아도 끝!')">
+            onclick="openVideoModal(event, 'https://pub-0e9dc9c0460d43219870328d8caf683d.r2.dev/GET.mp4', '5형식 동사 패턴 이것만 알아도 끝!')">
             <div
               class="absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(111,151,232,0.9),rgba(10,12,16,0.98)_75%)] flex items-center justify-center">
               <span
@@ -1613,6 +1613,159 @@
         <i class="fa-solid fa-xmark"></i>
       </button>
       <span class="inline-flex items-center gap-2 text-xs font-bold text-amber-200 mb-3">
+  <script type="module">
+    import { collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+    import { db, storage } from './firebase.js';
+
+    window.firebaseDb = db;
+    window.firebaseStorage = storage;
+
+    const featuredGrid = document.getElementById('featuredCoursesGrid');
+    const recentGrid = document.getElementById('recentGrid');
+    const recentAction = recentGrid.querySelector('.new-card');
+
+    function showCourseMessage(grid, message, preserveAction = false) {
+      grid.replaceChildren(...(preserveAction && recentAction ? [recentAction] : []));
+      const status = document.createElement('p');
+      status.className = 'col-span-full py-10 text-center text-sm text-ink/55';
+      status.textContent = message;
+      grid.appendChild(status);
+    }
+
+    function readCourseField(data, names) {
+      for (const name of names) {
+        const value = data[name];
+        if (value !== undefined && value !== null && value !== '') return value;
+      }
+      return '';
+    }
+
+    function normalizeVideoUrl(value) {
+      if (!value) return '';
+      try {
+        const url = new URL(String(value), window.location.href);
+        return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
+      } catch {
+        return '';
+      }
+    }
+
+    function normalizeCourse(snapshot) {
+      const data = snapshot.data();
+      const rawDate = readCourseField(data, ['date', 'createdAt', 'created_at', 'updatedAt', 'publishedAt']);
+      let date = null;
+      if (rawDate && typeof rawDate.toDate === 'function') date = rawDate.toDate();
+      else if (rawDate && typeof rawDate === 'object' && rawDate.seconds) date = new Date(rawDate.seconds * 1000);
+      else if (rawDate) date = new Date(rawDate);
+      if (date && Number.isNaN(date.getTime())) date = null;
+
+      const rawCategory = readCourseField(data, ['category', 'track', 'type']);
+      return {
+        id: snapshot.id,
+        title: String(readCourseField(data, ['title', 'name']) || '제목 없는 강의'),
+        category: Array.isArray(rawCategory) ? rawCategory.join(', ') : String(rawCategory || '미분류'),
+        videoUrl: normalizeVideoUrl(readCourseField(data, ['videoUrl', 'videoURL', 'video_url', 'streamingUrl', 'url'])),
+        date,
+        isFeatured: Boolean(data.featured || data.isFeatured)
+      };
+    }
+
+    function createCourseCard(course, index) {
+      const card = document.createElement('article');
+      card.className = 'course-card glass-card rounded-3xl overflow-hidden relative min-h-[19rem]';
+      card.dataset.title = course.title;
+      card.dataset.sortdate = course.date ? course.date.toISOString().slice(0, 10) : '';
+
+      const accents = [
+        'radial-gradient(circle at 30% 25%, rgba(111,151,232,0.85), rgba(10,12,16,0.98) 75%)',
+        'radial-gradient(circle at 70% 30%, rgba(111,203,147,0.82), rgba(10,12,16,0.98) 75%)',
+        'radial-gradient(circle at 40% 70%, rgba(245,158,11,0.78), rgba(10,12,16,0.98) 75%)'
+      ];
+      const visual = document.createElement('div');
+      visual.className = 'absolute inset-0 flex items-center justify-center';
+      visual.style.background = accents[index % accents.length];
+      visual.innerHTML = '<span class="w-16 h-16 rounded-full bg-white/15 border-2 border-white/40 flex items-center justify-center"><i class="fa-solid fa-play text-2xl text-white ml-1"></i></span>';
+
+      const shade = document.createElement('div');
+      shade.className = 'absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent';
+
+      const details = document.createElement('div');
+      details.className = 'absolute bottom-0 left-0 right-0 p-5 sm:p-6';
+      const category = document.createElement('span');
+      category.className = 'inline-block text-xs font-bold text-edu mb-2';
+      category.textContent = course.category;
+      const title = document.createElement('h4');
+      title.className = 'text-lg sm:text-xl font-black text-white leading-snug mb-2';
+      title.textContent = course.title;
+      const date = document.createElement('p');
+      date.className = 'text-sm font-medium text-white/65 mb-2';
+      date.textContent = course.date
+        ? new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }).format(course.date)
+        : '날짜 정보 없음';
+      const video = document.createElement('a');
+      video.className = 'block text-xs text-white/55 underline underline-offset-2 break-all';
+      video.textContent = course.videoUrl || '영상 URL 없음';
+      if (course.videoUrl) {
+        video.href = course.videoUrl;
+        video.target = '_blank';
+        video.rel = 'noopener noreferrer';
+        video.addEventListener('click', event => event.stopPropagation());
+      }
+      details.append(category, title, date, video);
+      card.append(visual, shade, details);
+
+      if (course.videoUrl) {
+        card.classList.add('cursor-pointer');
+        card.addEventListener('click', event => window.openVideoModal?.(event, course.videoUrl, course.title));
+      }
+      return card;
+    }
+
+    async function loadCourses() {
+      const failures = [];
+      for (const collectionName of ['courses', 'lectures']) {
+        try {
+          const result = await getDocs(collection(db, collectionName));
+          if (result.docs.length) return result.docs.map(normalizeCourse);
+        } catch (error) {
+          failures.push(error);
+          console.warn(`[Courses] Failed to read ${collectionName}`, error);
+        }
+      }
+      if (failures.length) throw failures[failures.length - 1];
+      return [];
+    }
+
+    async function renderCourseCatalog() {
+      showCourseMessage(featuredGrid, '강의를 불러오는 중입니다.');
+      showCourseMessage(recentGrid, '강의를 불러오는 중입니다.', true);
+      try {
+        const courses = await loadCourses();
+        const sortedCourses = [...courses].sort((left, right) =>
+          (right.date?.getTime() || 0) - (left.date?.getTime() || 0));
+        const featuredCourses = sortedCourses.filter(course => course.isFeatured);
+        const recommendations = featuredCourses.length ? featuredCourses : sortedCourses.slice(0, 3);
+
+        featuredGrid.replaceChildren();
+        recentGrid.replaceChildren(...(recentAction ? [recentAction] : []));
+        if (!courses.length) {
+          showCourseMessage(featuredGrid, '등록된 강의가 없습니다.');
+          showCourseMessage(recentGrid, '등록된 강의가 없습니다.', true);
+          return;
+        }
+
+        recommendations.forEach((course, index) => featuredGrid.appendChild(createCourseCard(course, index)));
+        sortedCourses.forEach((course, index) => recentGrid.appendChild(createCourseCard(course, index)));
+      } catch (error) {
+        console.error('[Courses] Could not load course catalog', error);
+        showCourseMessage(featuredGrid, '강의 목록을 불러오지 못했습니다. Firestore 읽기 권한과 컬렉션 설정을 확인해 주세요.');
+        showCourseMessage(recentGrid, '강의 목록을 불러오지 못했습니다. Firestore 읽기 권한과 컬렉션 설정을 확인해 주세요.', true);
+      }
+    }
+
+    renderCourseCatalog();
+  </script>
+
         <i class="fa-solid fa-wand-magic-sparkles"></i>오늘의 문장 저장
       </span>
       <h3 class="text-xl sm:text-2xl font-black text-ink mb-2">이 문장으로 숏츠를 만들어 볼까요?</h3>
