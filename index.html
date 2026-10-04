@@ -1046,16 +1046,315 @@
         }
 
         .site-footer {
-            padding: 30px 0;
+            padding: 34px 0 26px;
             border-top: 1px solid var(--line);
+            background: rgba(237, 238, 233, .78);
+            color: #626a64;
+            font-size: 14px;
+        }
+
+        .footer-inner {
+            display: grid;
+            gap: 24px;
+        }
+
+        .footer-top,
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-brand strong {
+            display: block;
+            color: #3b4840;
+            font-family: var(--serif);
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .footer-brand span {
+            display: block;
+            margin-top: 2px;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 22px;
+        }
+
+        .footer-links a,
+        .business-info a {
+            color: #46564b;
+            text-decoration: underline;
+            text-decoration-color: #aab2aa;
+            text-underline-offset: 3px;
+        }
+
+        .footer-links a:hover,
+        .business-info a:hover {
+            color: var(--sage);
+            text-decoration-color: currentColor;
+        }
+
+        .footer-links button,
+        .consent-link {
+            padding: 0;
+            border: 0;
+            background: none;
+            color: #46564b;
+            font: inherit;
+            text-decoration: underline;
+            text-decoration-color: #aab2aa;
+            text-underline-offset: 3px;
+            cursor: pointer;
+        }
+
+        .footer-links button:hover,
+        .consent-link:hover {
+            color: var(--sage);
+            text-decoration-color: currentColor;
+        }
+
+        .consent-list {
+            display: grid;
+            gap: 12px;
+            margin: 22px 0;
+            padding: 16px 18px;
+            border: 1px solid #e0e3dc;
+            background: rgba(255, 255, 255, .58);
+        }
+
+        .consent-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 0;
+            color: #424e46;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        .consent-item input {
+            width: 21px;
+            height: 21px;
+            flex: 0 0 auto;
+            margin: 3px 0 0;
+            accent-color: var(--sage);
+        }
+
+        .consent-item-copy {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 3px 8px;
+        }
+
+        .consent-item-copy label {
+            cursor: pointer;
+        }
+
+        .consent-link {
+            font-size: 15px;
+        }
+
+        .legal-modal {
+            width: min(760px, calc(100% - 32px));
+            max-width: none;
+            max-height: min(84dvh, 860px);
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .92);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .94);
+            color: var(--ink);
+            box-shadow: 0 24px 90px rgba(30, 41, 34, .24), 0 0 36px rgba(182, 139, 76, .14);
+            -webkit-backdrop-filter: blur(22px);
+            backdrop-filter: blur(22px);
+        }
+
+        .legal-modal[open] {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .legal-modal::backdrop {
+            background: rgba(27, 36, 31, .48);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+        }
+
+        .legal-modal-header {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 26px;
+            border-bottom: 1px solid #e5e7e0;
+            background: rgba(255, 255, 255, .92);
+        }
+
+        .legal-modal-header h2 {
+            margin: 0;
+            font-family: var(--serif);
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .legal-close {
+            display: grid;
+            width: 44px;
+            height: 44px;
+            flex: 0 0 auto;
+            place-items: center;
+            border: 1px solid #d9dfd8;
+            border-radius: 50%;
+            background: #fff;
+            color: var(--ink);
+            font-size: 25px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .legal-close:hover {
+            background: var(--sage-soft);
+        }
+
+        .legal-modal-body {
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            padding: 24px 30px 34px;
+            scrollbar-color: #9aa69b #eef0eb;
+            scrollbar-width: thin;
+        }
+
+        .legal-modal-body::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .legal-modal-body::-webkit-scrollbar-track {
+            border-radius: 8px;
+            background: #eef0eb;
+        }
+
+        .legal-modal-body::-webkit-scrollbar-thumb {
+            border: 2px solid #eef0eb;
+            border-radius: 8px;
+            background: #9aa69b;
+        }
+
+        .legal-effective-date,
+        .legal-notice {
             color: var(--muted);
             font-size: 15px;
         }
 
-        .footer-inner {
+        .legal-notice {
+            margin: 0 0 22px;
+            padding: 15px 17px;
+            border-left: 3px solid var(--gold);
+            background: #f5f2e9;
+        }
+
+        .legal-article h3 {
+            margin: 25px 0 8px;
+            color: #304d3d;
+            font-family: var(--serif);
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .legal-article h3:first-of-type {
+            margin-top: 20px;
+        }
+
+        .legal-article p,
+        .legal-article li {
+            color: #4f5952;
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+        .legal-article p {
+            margin: 7px 0;
+        }
+
+        .legal-article ul,
+        .legal-article ol {
+            padding-left: 1.35em;
+        }
+
+        .legal-article li+li {
+            margin-top: 5px;
+        }
+
+        .legal-table-wrap {
+            overflow-x: auto;
+            margin: 12px 0;
+        }
+
+        .legal-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+        }
+
+        .legal-table th,
+        .legal-table td {
+            padding: 11px 12px;
+            border: 1px solid #dfe3dc;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .legal-table th {
+            background: #eef2ed;
+            color: #34483a;
+        }
+
+        .business-info {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 9px 22px;
+            margin: 0;
+            padding: 19px 0;
+            border-top: 1px solid #d9ddd7;
+            border-bottom: 1px solid #d9ddd7;
+        }
+
+        .business-info>div {
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 4px 8px;
+            min-width: 0;
+        }
+
+        .business-info .business-address,
+        .business-info .business-contact {
+            grid-column: span 2;
+        }
+
+        .business-info dt {
+            flex: 0 0 auto;
+            color: #424e46;
+            font-weight: 700;
+        }
+
+        .business-info dd {
+            min-width: 0;
+            margin: 0;
+            overflow-wrap: anywhere;
+        }
+
+        .footer-bottom {
+            color: #707771;
+            font-size: 13px;
         }
 
         @media (max-width: 900px) {
@@ -1313,9 +1612,33 @@
                 grid-column: auto;
             }
 
-            .footer-inner {
+            .footer-top,
+            .footer-bottom {
+                align-items: flex-start;
                 flex-direction: column;
-                gap: 6px;
+                gap: 10px;
+            }
+
+            .business-info {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .business-info .business-address,
+            .business-info .business-contact {
+                grid-column: auto;
+            }
+
+            .legal-modal {
+                max-height: 88dvh;
+            }
+
+            .legal-modal-header {
+                padding: 16px 19px;
+            }
+
+            .legal-modal-body {
+                padding: 18px 20px 26px;
             }
         }
 
@@ -1533,7 +1856,7 @@
                         <div class="field">
                             <label for="phone">연락처</label>
                             <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
-                                placeholder="010-0000-0000" pattern="[0-9()\-+\s]{9,20}" required>
+                                placeholder="010-0000-0000" minlength="9" maxlength="20" required>
                         </div>
                         <div class="field full">
                             <label for="time">희망 수강 시간대</label>
@@ -1547,10 +1870,23 @@
                             </select>
                         </div>
                     </div>
-                    <label class="privacy-check" for="privacy">
-                        <input id="privacy" name="privacy" type="checkbox" required>
-                        <span>수강 안내를 위한 개인정보 수집 및 이용에 동의합니다.</span>
-                    </label>
+                    <p class="legal-notice">현재 상담 신청은 운영 서버에 연결되어 있지 않아, 입력 정보가 전송되거나 저장되지 않습니다.</p>
+                    <div class="consent-list" aria-label="필수 동의 항목">
+                        <div class="consent-item">
+                            <input id="privacy-consent" name="privacyConsent" type="checkbox" required>
+                            <span class="consent-item-copy"><label for="privacy-consent">[필수] 개인정보 수집 및 이용에
+                                    동의합니다.</label>
+                                <button class="consent-link" type="button" data-open-legal="privacy-dialog">내용
+                                    보기</button>
+                            </span>
+                        </div>
+                        <div class="consent-item">
+                            <input id="terms-consent" name="termsConsent" type="checkbox" required>
+                            <span class="consent-item-copy"><label for="terms-consent">[필수] 이용약관에 동의합니다.</label>
+                                <button class="consent-link" type="button" data-open-legal="terms-dialog">내용 보기</button>
+                            </span>
+                        </div>
+                    </div>
                     <button class="button form-submit" type="submit">수강 상담 신청하기 <span
                             aria-hidden="true">→</span></button>
                     <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
@@ -1560,8 +1896,191 @@
     </main>
 
     <footer class="site-footer">
-        <div class="wrap footer-inner"><span>DAYNIZE · 지난 주 영어</span><span>배움의 기록은 오늘도 이어집니다.</span></div>
+        <div class="wrap footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <strong>DAYNIZE (걷다) · 데이나이즈</strong>
+                    <span>지난 주 영어 | 배움의 기록은 오늘도 이어집니다.</span>
+                </div>
+                <nav class="footer-links" aria-label="법적 고지">
+                    <button type="button" data-open-legal="terms-dialog">이용약관</button>
+                    <button type="button" data-open-legal="privacy-dialog">개인정보처리방침</button>
+                </nav>
+            </div>
+            <dl class="business-info" aria-label="사업자 정보">
+                <div>
+                    <dt>대표자</dt>
+                    <dd>강성준</dd>
+                </div>
+                <div>
+                    <dt>사업자등록번호</dt>
+                    <dd>665-13-02896</dd>
+                </div>
+                <div>
+                    <dt>통신판매업신고번호</dt>
+                    <dd>제2026-경기오산-0299호</dd>
+                </div>
+                <div class="business-address">
+                    <dt>주소</dt>
+                    <dd>경기도 오산시 오산로212번길 11-3, 301-N06호 (원동)</dd>
+                </div>
+                <div class="business-contact">
+                    <dt>고객센터</dt>
+                    <dd><a href="tel:01087650070">010-8765-0070</a> · <a
+                            href="mailto:ifonly1204@gmail.com">ifonly1204@gmail.com</a></dd>
+                </div>
+            </dl>
+            <div class="footer-bottom">
+                <span>Copyright © DAYNIZE. All rights reserved.</span>
+                <span>사업자 정보는 등록 서류 기준입니다.</span>
+            </div>
+        </div>
     </footer>
+
+    <dialog class="legal-modal" id="privacy-dialog" aria-labelledby="privacy-dialog-title">
+        <div class="legal-modal-header">
+            <h2 id="privacy-dialog-title">개인정보처리방침</h2>
+            <form method="dialog"><button class="legal-close" type="submit" aria-label="개인정보처리방침 닫기">×</button></form>
+        </div>
+        <div class="legal-modal-body">
+            <p class="legal-effective-date">시행일: 2026년 10월 4일</p>
+            <p class="legal-notice"><strong>서비스 준비 안내</strong><br>현재 이 페이지의 수강 상담 폼은 운영 서버와 연결되어 있지 않습니다. 입력한 정보는
+                전송·저장되지 않으며, 아래 내용은 상담 접수 기능을 운영할 때 적용할 처리 기준입니다. 실제 접수 개시 전 처리 시스템과 위탁 업체를 확정해 본 방침을 갱신하겠습니다.</p>
+            <article class="legal-article">
+                <h3>1. 수집하는 개인정보 항목</h3>
+                <p>수강 상담 및 서비스 제공을 위해 다음 정보를 수집·이용합니다.</p>
+                <ul>
+                    <li>상담 신청: 이름, 연락처(전화번호), 희망 수강 시간대</li>
+                    <li>학습 기능 이용 시: 음성 학습 기록(음성 인식 결과, 학습 진행·이용 기록). 브라우저 녹음 재생용 음성 파일은 현재 페이지가 메모리에서 임시 처리하며 서버에 저장하지
+                        않습니다.</li>
+                    <li>서비스 접속 과정에서 호스팅·보안·콘텐츠 전송 업체가 접속 IP, 브라우저 정보, 접속 시각 등 기술 로그를 처리할 수 있습니다.</li>
+                </ul>
+                <p>브라우저 음성 인식(Web Speech API)을 이용하면 음성 데이터가 해당 브라우저 또는 운영체제 제공자의 음성 인식 서비스로 전달될 수 있습니다. DAYNIZE는 현재 음성
+                    원본이나 인식 문장을 자체 서버에 보관하지 않습니다.</p>
+
+                <h3>2. 개인정보의 수집 및 이용 목적</h3>
+                <p>수강 신청 상담 및 연락, 서비스 제공과 본인 확인, 수강·학습 현황 관리, 문의·불만 처리 및 관련 법령상 의무 이행을 위해 이용합니다.</p>
+
+                <h3>3. 보유 및 이용 기간</h3>
+                <p>상담 정보는 상담 완료일로부터 1년간 보관 후 파기합니다. 다만, 계약·결제·분쟁 등 관계 법령에 따라 보존할 필요가 있는 정보는 해당 법령이 정한 기간 동안 별도로 보관합니다.
+                    전자상거래 등에서의 소비자보호에 관한 법률에 따른 계약·청약철회, 대금결제·재화 공급 기록은 5년, 소비자 불만·분쟁 처리 기록은 3년 보관 대상이 될 수 있습니다.</p>
+                <p>현재 데모 폼으로 입력한 정보는 서버에 전송되지 않습니다. 브라우저를 통해 생성한 임시 녹음·인식 결과는 사용자가 페이지를 닫거나 새로고침하면 소멸합니다.</p>
+
+                <h3>4. 개인정보의 제3자 제공</h3>
+                <p>개인정보를 원칙적으로 외부에 제공하지 않습니다. 정보주체의 별도 동의가 있거나 법령에 근거한 요청이 있는 경우에만 필요한 범위에서 제공하며, 제공 대상·목적·항목·보유 기간을 사전에
+                    안내합니다.</p>
+
+                <h3>5. 개인정보 처리 업무의 위탁</h3>
+                <p>웹페이지 호스팅·콘텐츠 전송 및 보안 기능을 위해 GitHub Pages, Cloudflare CDN 등 인프라가 사용될 수 있고, 글꼴·이미지 제공을 위해 Google Fonts
+                    및 Unsplash 서버에 브라우저 요청이 발생할 수 있습니다. 이 과정에서 각 사업자가 자신의 서비스 운영을 위한 접속 정보를 처리할 수 있습니다.</p>
+                <p>현재 결제 기능과 결제대행사(PG)는 연결되어 있지 않습니다. 향후 PG사를 통한 결제를 도입할 경우 업체명, 위탁 업무, 처리 항목과 보유 기간을 결제 전에 이 방침과 결제 화면에
+                    공개하고 필요한 동의를 받겠습니다.</p>
+
+                <h3>6. 개인정보의 파기 절차 및 방법</h3>
+                <p>보유 기간이 끝나거나 처리 목적이 달성된 개인정보는 내부 확인 절차를 거쳐 지체 없이 파기합니다. 전자 파일은 복구할 수 없도록 삭제하고, 종이 문서는 분쇄 또는 소각합니다. 법정
+                    보관 정보는 다른 정보와 분리하여 해당 기간 동안 보관한 뒤 파기합니다.</p>
+
+                <h3>7. 정보주체의 권리와 행사 방법</h3>
+                <p>정보주체는 개인정보 열람, 정정, 삭제, 처리정지 및 동의 철회를 요청할 수 있습니다. 고객센터 전화 또는 이메일로 요청하면 본인 확인 후 지체 없이 처리하며, 법령상 보존 의무가
+                    있는 정보는 해당 기간 동안 삭제가 제한될 수 있습니다.</p>
+
+                <h3>8. 개인정보의 안전성 확보 조치</h3>
+                <p>개인정보 접근 권한 최소화, 접근 통제, 안전한 전송 및 보관, 처리 기록 점검 등 합리적인 보호 조치를 시행합니다. 실제 상담 접수 시스템을 도입할 때에는 운영 환경과 위탁 구조에
+                    맞는 보호 조치를 확정합니다.</p>
+
+                <h3>9. 개인정보 보호책임자 및 문의처</h3>
+                <p>개인정보 보호책임자: 강성준(대표자)<br>전화: <a href="tel:01087650070">010-8765-0070</a><br>이메일: <a
+                        href="mailto:ifonly1204@gmail.com">ifonly1204@gmail.com</a></p>
+
+                <h3>10. 방침의 변경</h3>
+                <p>법령, 서비스 또는 개인정보 처리 방식이 변경되면 변경 내용과 시행일을 이 페이지에 공지합니다.</p>
+            </article>
+        </div>
+    </dialog>
+
+    <dialog class="legal-modal" id="terms-dialog" aria-labelledby="terms-dialog-title">
+        <div class="legal-modal-header">
+            <h2 id="terms-dialog-title">이용약관</h2>
+            <form method="dialog"><button class="legal-close" type="submit" aria-label="이용약관 닫기">×</button></form>
+        </div>
+        <div class="legal-modal-body">
+            <p class="legal-effective-date">시행일: 2026년 10월 4일</p>
+            <p class="legal-notice"><strong>서비스 준비 안내</strong><br>현재 홈페이지는 수강 상담 및 학습 기능의 시연 페이지이며, 상담 신청 전송·회원 계정·온라인
+                결제는 연결되어 있지 않습니다. 유료 강의 신청과 결제는 실제 제공 조건과 결제 금액을 별도로 안내한 후 진행됩니다.</p>
+            <article class="legal-article">
+                <h3>제1조 목적 및 용어</h3>
+                <p>이 약관은 데이나이즈(DAYNIZE, 이하 “회사”)가 제공하는 시니어 영어 학습·상담 서비스(이하 “서비스”)의 이용 조건과 회사 및 이용자의 권리·의무를 정합니다. “이용자”는
+                    홈페이지를 방문하거나 서비스를 이용하는 사람이며, “수강생”은 회사와 수강 계약을 체결한 사람입니다.</p>
+
+                <h3>제2조 약관의 게시와 변경</h3>
+                <p>회사는 약관을 홈페이지에 게시합니다. 법령을 위반하지 않는 범위에서 약관을 변경할 수 있으며, 변경 내용과 시행일을 명시하여 적용 전에 공지합니다. 이용자에게 불리한 변경은 관계
+                    법령이 정한 기간과 방식에 따라 별도로 알립니다.</p>
+
+                <h3>제3조 서비스의 제공·변경·중단</h3>
+                <p>회사는 영어 학습 콘텐츠, 강의 및 수강 상담을 제공합니다. 제공 방식·일정·구성은 강의별 안내에 따릅니다. 운영상 또는 기술상 필요한 경우 서비스 내용을 변경하거나
+                    점검·장애·천재지변 등 불가피한 사유로 제공을 일시 중단할 수 있으며, 중요한 변경이나 중단은 가능한 한 사전에 공지합니다.</p>
+
+                <h3>제4조 수강 신청과 계약 성립</h3>
+                <p>홈페이지의 상담 신청만으로 유료 수강 계약이나 결제가 성립하지 않습니다. 회사가 수강 내용, 일정, 총액, 결제 방법 및 환불 조건을 안내하고 이용자가 이를 확인하여 신청한 뒤,
+                    회사가 승낙을 통지하면 계약이 성립합니다. 결제 기능이 제공되는 경우 결제 전에 총 금액과 조건을 표시합니다.</p>
+
+                <h3>제5조 수강료 결제와 환불</h3>
+                <p>수강료는 개별 강의 또는 계약 화면에 표시된 금액과 결제 방법에 따릅니다. 현재 홈페이지에는 결제 기능이 연결되어 있지 않습니다. 환불 및 청약철회는 계약 형태와 실제 서비스 제공
+                    방식에 적용되는 관계 법령의 강행 규정을 우선 적용합니다.</p>
+                <p>전자상거래에 해당하는 계약에는 「전자상거래 등에서의 소비자보호에 관한 법률」 등 관계 법령에 따른 청약철회와 디지털 콘텐츠 제공 개시 관련 제한·예외가 적용됩니다. 법령상 청약철회
+                    제한 사유가 있는 경우 회사는 사전에 그 사실과 필요한 조치를 알립니다.</p>
+                <p>학원법이 적용되는 등록 교습 과정의 반환 기준은 「학원의 설립·운영 및 과외교습에 관한 법률 시행령」 별표 4를 따릅니다. 교습 시작 전에는 이미 납부한 교습비 전액을 반환하고,
+                    교습기간이 1개월 이내인 경우에는 아래 기준을 적용합니다.</p>
+                <div class="legal-table-wrap">
+                    <table class="legal-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">반환 사유 발생 시점</th>
+                                <th scope="col">반환 기준</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>총 교습시간의 1/3 경과 전</td>
+                                <td>이미 납부한 교습비의 2/3</td>
+                            </tr>
+                            <tr>
+                                <td>총 교습시간의 1/2 경과 전</td>
+                                <td>이미 납부한 교습비의 1/2</td>
+                            </tr>
+                            <tr>
+                                <td>총 교습시간의 1/2 경과 후</td>
+                                <td>반환하지 않음</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>교습기간이 1개월을 초과하는 경우에는 반환 사유가 발생한 해당 월의 반환액(위 1개월 이내 기준 적용)과 나머지 월의 교습비 전액을 합산합니다. 회사의 귀책사유, 교습 중단 등
+                    별도의 반환 사유에는 관계 법령의 기준을 적용합니다. 실제 과정이 학원법상 교습에 해당하는지와 온라인 콘텐츠 환불 기준은 과정 개설·판매 전에 확인하여 안내합니다.</p>
+
+                <h3>제6조 회사와 이용자의 의무</h3>
+                <p>회사는 관계 법령과 약관에 따라 서비스를 제공하고 이용자의 문의 및 정당한 권리 행사를 처리합니다. 이용자는 타인의 권리를 침해하거나 서비스 운영을 방해하는 행위, 허위 정보 제출,
+                    불법 복제·배포를 하지 않아야 합니다.</p>
+
+                <h3>제7조 저작권 및 콘텐츠 이용</h3>
+                <p>강의 영상, 음성, 교재, 문장·디자인 등 서비스 콘텐츠의 저작권과 지식재산권은 회사 또는 정당한 권리자에게 있습니다. 이용자는 개인 학습 목적 범위에서만 이용할 수 있으며, 사전
+                    허락 없이 복제·녹화·배포·공유·판매하거나 공개된 링크를 통해 제3자에게 제공할 수 없습니다. 법령이 허용하는 이용은 예외로 합니다.</p>
+
+                <h3>제8조 서비스 이용 제한과 책임</h3>
+                <p>회사는 이용자가 법령 또는 약관을 위반하거나 서비스의 안전한 운영을 현저히 해치는 경우 사전 통지 후 이용을 제한할 수 있습니다. 회사는 고의 또는 과실이 있는 경우 관계 법령에
+                    따른 책임을 부담하며, 천재지변 등 통제할 수 없는 사유로 발생한 장애에 대해서는 법령이 허용하는 범위에서 책임이 제한될 수 있습니다.</p>
+
+                <h3>제9조 분쟁 해결 및 준거법</h3>
+                <p>서비스 이용과 관련한 분쟁은 이용자와 회사가 성실히 협의하여 해결합니다. 협의가 이루어지지 않으면 소비자분쟁조정 등 관계 법령상 절차를 이용할 수 있으며, 소송의 관할은
+                    「민사소송법」 등 관계 법령이 정하는 법원에 따릅니다. 이 약관에는 대한민국 법령을 적용합니다.</p>
+
+                <h3>사업자 및 문의처</h3>
+                <p>상호: 데이나이즈(DAYNIZE) · 대표자: 강성준<br>사업자등록번호: 665-13-02896 · 통신판매업신고번호: 제2026-경기오산-0299호<br>주소: 경기도 오산시
+                    오산로212번길 11-3, 301-N06호 (원동)<br>전화: <a href="tel:01087650070">010-8765-0070</a> · 이메일: <a
+                        href="mailto:ifonly1204@gmail.com">ifonly1204@gmail.com</a></p>
+            </article>
+        </div>
+    </dialog>
 
     <script>
         (() => {
@@ -1584,6 +2103,28 @@
                     menuButton.setAttribute('aria-expanded', 'false');
                     menuButton.setAttribute('aria-label', '메뉴 열기');
                 }
+            });
+
+            document.querySelectorAll('[data-open-legal]').forEach((trigger) => {
+                trigger.addEventListener('click', () => {
+                    const dialog = document.getElementById(trigger.dataset.openLegal);
+                    if (dialog instanceof HTMLDialogElement && !dialog.open) dialog.showModal();
+                });
+            });
+            document.querySelectorAll('.legal-modal').forEach((dialog) => {
+                dialog.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape') {
+                        event.preventDefault();
+                        dialog.close();
+                    }
+                });
+                dialog.addEventListener('cancel', (event) => {
+                    event.preventDefault();
+                    dialog.close();
+                });
+                dialog.addEventListener('click', (event) => {
+                    if (event.target === dialog) dialog.close();
+                });
             });
 
             // Rotate the three lesson cards while preserving a single focused action.
