@@ -1,0 +1,1853 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f7f2">
+    <meta name="description" content="지난 주에는 몰랐던 걸, 이제는 안다. 시니어를 위한 따뜻하고 품격 있는 영어 배움의 기록, 데이나이즈.">
+    <title>지난 주 영어 | DAYNIZE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <style>
+        :root {
+            color-scheme: light;
+            --paper: #f8f7f2;
+            --white: #fffefa;
+            --ink: #202b27;
+            --muted: #59635d;
+            --sage: #345d4d;
+            --sage-soft: #e7eee8;
+            --gold: #b68b4c;
+            --line: #deded5;
+            --serif: "Noto Serif KR", Georgia, serif;
+            --sans: "Noto Sans KR", sans-serif;
+            --shadow: 0 18px 55px rgba(44, 54, 46, .09);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 92px;
+            overflow-x: clip;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background-color: var(--paper);
+            background-image: repeating-linear-gradient(0deg, rgba(95, 82, 58, .018) 0, rgba(95, 82, 58, .018) 1px, transparent 1px, transparent 5px);
+            font-family: var(--sans);
+            font-size: 18px;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        button,
+        input,
+        select {
+            font: inherit;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button {
+            color: inherit;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        :focus-visible {
+            outline: 3px solid #9b7135;
+            outline-offset: 4px;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: 8px;
+            left: 8px;
+            z-index: 99;
+            padding: 10px 16px;
+            background: white;
+            transform: translateY(-150%);
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
+        .wrap {
+            width: min(1160px, calc(100% - 64px));
+            margin-inline: auto;
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--sage);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: .08em;
+        }
+
+        .section-title {
+            margin: 0;
+            font-family: var(--serif);
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: 0;
+        }
+
+        .section-intro {
+            max-width: 680px;
+            margin: 14px 0 0;
+            color: var(--muted);
+            font-size: 19px;
+        }
+
+        .section-head {
+            margin-bottom: 42px;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, .75);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, .9);
+            box-shadow: var(--shadow), 0 0 24px rgba(182, 139, 76, .07);
+            animation: ceramic-glow 7s ease-in-out infinite alternate;
+        }
+
+        @keyframes ceramic-glow {
+            from {
+                box-shadow: var(--shadow), 0 0 16px rgba(182, 139, 76, .045);
+            }
+
+            to {
+                box-shadow: var(--shadow), 0 0 28px rgba(182, 139, 76, .12);
+            }
+        }
+
+        /* Navigation */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            border-bottom: 1px solid rgba(222, 222, 213, .75);
+            background: rgba(248, 247, 242, .9);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+        }
+
+        .nav-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 78px;
+            gap: 28px;
+        }
+
+        .logo-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            width: 150px;
+            height: 48px;
+            min-height: 48px;
+            overflow: hidden;
+        }
+
+        .main-logo-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            max-height: 40px;
+            width: auto;
+            object-fit: contain;
+            transform: translate(-50%, -50%) scale(3.5);
+        }
+
+        .main-logo-img[hidden] {
+            display: none;
+        }
+
+        .logo-fallback {
+            color: var(--sage);
+            font-family: var(--serif);
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo-fallback small {
+            display: block;
+            color: var(--muted);
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(14px, 2.2vw, 30px);
+        }
+
+        .main-nav a {
+            color: #3e4943;
+            font-size: 16px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .main-nav a:hover {
+            color: var(--sage);
+        }
+
+        .nav-cta {
+            padding: 9px 17px;
+            border: 1px solid #577261;
+            border-radius: 3px;
+            color: var(--sage) !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 48px;
+            height: 48px;
+            padding: 10px;
+            border: 1px solid var(--line);
+            background: var(--white);
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 2px;
+            margin: 5px 0;
+            background: var(--ink);
+        }
+
+        /* Hero scrapbook */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 82px 0 92px;
+        }
+
+        .hero::before {
+            position: absolute;
+            top: 70px;
+            left: -120px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(182, 139, 76, .17);
+            border-radius: 50%;
+            content: "";
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.04fr .96fr;
+            align-items: center;
+            min-height: 520px;
+            gap: 35px;
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 2;
+            padding: 12px 0 24px;
+        }
+
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: var(--sage);
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .hero-kicker::before {
+            width: 32px;
+            height: 1px;
+            background: var(--gold);
+            content: "";
+        }
+
+        h1 {
+            margin: 0;
+            font-family: var(--serif);
+            font-size: clamp(48px, 7vw, 82px);
+            font-weight: 500;
+            line-height: 1.22;
+            letter-spacing: 0;
+        }
+
+        h1 span {
+            display: block;
+            color: var(--sage);
+        }
+
+        .hero-subtitle {
+            margin: 22px 0 0;
+            font-family: var(--serif);
+            font-size: clamp(22px, 2.4vw, 29px);
+            line-height: 1.7;
+        }
+
+        .hero-subtitle em {
+            color: var(--sage);
+            font-style: normal;
+        }
+
+        .hero-desc {
+            max-width: 500px;
+            margin: 16px 0 30px;
+            color: var(--muted);
+            font-size: 19px;
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-flex;
+            min-height: 56px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 22px;
+            border: 1px solid var(--sage);
+            border-radius: 3px;
+            background: var(--sage);
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .2s ease, transform .2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            background: #284a3b;
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: var(--sage);
+        }
+
+        .button.secondary:hover {
+            background: var(--sage-soft);
+        }
+
+        .button:disabled {
+            cursor: not-allowed;
+            opacity: .55;
+            transform: none;
+        }
+
+        .hero-art {
+            position: relative;
+            min-height: 480px;
+        }
+
+        .hero-photo {
+            position: absolute;
+            top: 30px;
+            right: 35px;
+            width: min(78%, 405px);
+            padding: 13px 13px 48px;
+            background: #fff;
+            box-shadow: 0 20px 45px rgba(30, 41, 34, .16);
+            transform: rotate(3deg);
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            position: absolute;
+            right: 0;
+            bottom: 7px;
+            left: 0;
+            color: #4d554f;
+            font-family: var(--serif);
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .pin {
+            position: absolute;
+            top: -11px;
+            left: 48%;
+            width: 19px;
+            height: 19px;
+            border: 4px solid #f8f7f2;
+            border-radius: 50%;
+            background: #ba8e56;
+            box-shadow: 0 2px 5px #0003;
+        }
+
+        .note {
+            position: absolute;
+            z-index: 2;
+            padding: 19px 21px;
+            background: #f4e9c9;
+            box-shadow: 0 12px 28px rgba(50, 45, 30, .12);
+            color: #4d493e;
+            font-family: var(--serif);
+        }
+
+        .note-one {
+            top: 18px;
+            left: -5px;
+            width: 188px;
+            transform: rotate(-7deg);
+        }
+
+        .note-two {
+            right: -5px;
+            bottom: 10px;
+            width: 200px;
+            background: #e9efe8;
+            transform: rotate(5deg);
+        }
+
+        .note small {
+            display: block;
+            margin-bottom: 5px;
+            color: #687068;
+            font-family: var(--sans);
+            font-size: 13px;
+        }
+
+        .note strong {
+            display: block;
+            font-size: 19px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .date-stamp {
+            position: absolute;
+            right: 8px;
+            bottom: 98px;
+            z-index: 3;
+            width: 88px;
+            height: 88px;
+            display: grid;
+            place-content: center;
+            border: 1px solid #b68b4c;
+            border-radius: 50%;
+            color: #8f6932;
+            font-size: 13px;
+            line-height: 1.35;
+            text-align: center;
+            transform: rotate(-12deg);
+        }
+
+        /* Small brand statement */
+        .archive-band {
+            padding: 27px 0;
+            border-block: 1px solid #e3e1d8;
+            background: rgba(255, 255, 255, .42);
+        }
+
+        .archive-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .archive-inner strong {
+            color: var(--sage);
+            font-family: var(--serif);
+            font-size: 21px;
+            font-weight: 500;
+        }
+
+        .archive-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+
+        /* Video carousel */
+        .section {
+            padding: 96px 0;
+        }
+
+        .video-section {
+            background: rgba(255, 255, 255, .35);
+        }
+
+        .carousel-shell {
+            position: relative;
+            padding: 18px 54px 32px;
+        }
+
+        .carousel-stage {
+            position: relative;
+            display: grid;
+            min-height: 520px;
+            place-items: center;
+            perspective: 1200px;
+            touch-action: pan-y;
+        }
+
+        .lesson-card {
+            position: absolute;
+            width: min(38%, 355px);
+            overflow: hidden;
+            padding: 12px 12px 18px;
+            border: 1px solid #eeeae0;
+            background: #fff;
+            box-shadow: 0 18px 40px rgba(31, 40, 34, .13);
+            cursor: grab;
+            transition: transform .5s cubic-bezier(.2, .75, .2, 1), opacity .4s ease, filter .4s ease;
+            user-select: none;
+        }
+
+        .lesson-card:active {
+            cursor: grabbing;
+        }
+
+        .lesson-card[data-position="center"] {
+            z-index: 3;
+            opacity: 1;
+            transform: translateX(0) rotateY(0) scale(1);
+        }
+
+        .lesson-card[data-position="left"] {
+            z-index: 2;
+            opacity: .82;
+            transform: translateX(-75%) rotateY(14deg) scale(.86);
+        }
+
+        .lesson-card[data-position="right"] {
+            z-index: 2;
+            opacity: .82;
+            transform: translateX(75%) rotateY(-14deg) scale(.86);
+        }
+
+        .lesson-card[data-position="hidden"] {
+            z-index: 0;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(0) scale(.72);
+        }
+
+        .lesson-image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1.2 / 1;
+            background: #dce2db;
+        }
+
+        .lesson-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .lesson-number {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, .9);
+            color: var(--sage);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .play-mark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: grid;
+            width: 58px;
+            height: 58px;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .9);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .84);
+            color: var(--sage);
+            font-size: 22px;
+            transform: translate(-50%, -50%);
+        }
+
+        .lesson-info {
+            padding: 16px 7px 2px;
+        }
+
+        .lesson-info h3 {
+            margin: 0;
+            font-family: var(--serif);
+            font-size: 23px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .lesson-meta {
+            display: flex;
+            justify-content: space-between;
+            margin: 7px 0 14px;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .lesson-info .button {
+            width: 100%;
+            min-height: 50px;
+            font-size: 17px;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            z-index: 5;
+            display: grid;
+            width: 50px;
+            height: 50px;
+            place-items: center;
+            border: 1px solid #cbd2ca;
+            border-radius: 50%;
+            background: #fff;
+            color: var(--sage);
+            font-size: 25px;
+            cursor: pointer;
+            transform: translateY(-50%);
+        }
+
+        .carousel-control:hover {
+            background: var(--sage-soft);
+        }
+
+        .carousel-control.prev {
+            left: 0;
+        }
+
+        .carousel-control.next {
+            right: 0;
+        }
+
+        .carousel-status {
+            margin: 0;
+            color: var(--muted);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 9px;
+            margin-top: 13px;
+        }
+
+        .carousel-dots button {
+            width: 11px;
+            height: 11px;
+            padding: 0;
+            border: 1px solid #829186;
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .carousel-dots button[aria-current="true"] {
+            background: var(--sage);
+        }
+
+        /* Conversation */
+        .conversation-layout {
+            display: grid;
+            grid-template-columns: .95fr 1.05fr;
+            align-items: stretch;
+            gap: 48px;
+        }
+
+        .conversation-aside {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .conversation-aside blockquote {
+            margin: 26px 0 0;
+            padding-left: 20px;
+            border-left: 2px solid var(--gold);
+            color: var(--sage);
+            font-family: var(--serif);
+            font-size: 22px;
+        }
+
+        .conversation-card-wrap {
+            perspective: 1200px;
+        }
+
+        .flip-card {
+            position: relative;
+            min-height: 338px;
+            transform-style: preserve-3d;
+            transition: transform .7s cubic-bezier(.2, .7, .2, 1);
+            cursor: pointer;
+        }
+
+        .flip-card.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flip-face {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 38px;
+            border-radius: 4px;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .flip-front {
+            background: #e8eee8;
+        }
+
+        .flip-back {
+            background: #fff;
+            transform: rotateY(180deg);
+        }
+
+        .face-label {
+            margin: 0 0 13px;
+            color: var(--sage);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: .06em;
+        }
+
+        .flip-face h3 {
+            margin: 0;
+            font-family: var(--serif);
+            font-size: clamp(25px, 3vw, 34px);
+            font-weight: 500;
+            line-height: 1.55;
+        }
+
+        .flip-back h3 {
+            color: var(--sage);
+            font-family: Georgia, serif;
+        }
+
+        .flip-hint {
+            margin: 18px 0 0;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .conversation-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .text-button {
+            min-height: 48px;
+            padding: 8px 5px;
+            border: 0;
+            background: none;
+            color: var(--sage);
+            font-size: 17px;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+            cursor: pointer;
+        }
+
+        .translation-panel {
+            margin-top: 14px;
+            padding: 19px 22px;
+            border-left: 3px solid var(--gold);
+            background: #f5f0e5;
+            color: #424841;
+        }
+
+        .translation-panel[hidden] {
+            display: none;
+        }
+
+        .translation-panel p {
+            margin: 0;
+        }
+
+        .translation-panel p+p {
+            margin-top: 8px;
+        }
+
+        /* Voice studio */
+        .voice-section {
+            background: #edf1eb;
+        }
+
+        .voice-layout {
+            display: grid;
+            grid-template-columns: 1fr .92fr;
+            gap: 30px;
+        }
+
+        .voice-panel,
+        .transcript-panel {
+            padding: 30px;
+            border-radius: 4px;
+        }
+
+        .voice-panel h3,
+        .transcript-panel h3 {
+            margin: 0 0 8px;
+            font-family: var(--serif);
+            font-size: 26px;
+            font-weight: 500;
+        }
+
+        .practice-line {
+            margin: 16px 0 22px;
+            padding: 18px 20px;
+            border-left: 3px solid var(--gold);
+            background: rgba(255, 255, 255, .68);
+            color: #2b3830;
+            font-family: Georgia, serif;
+            font-size: 24px;
+            line-height: 1.5;
+        }
+
+        .practice-translation {
+            margin: -12px 0 21px;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .voice-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .voice-status {
+            min-height: 30px;
+            margin: 14px 0 0;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .transcript-paper {
+            min-height: 170px;
+            margin: 15px 0;
+            padding: 18px 20px;
+            border: 1px solid #e9ddbd;
+            background: #fbf2d8;
+            color: #48463e;
+            font-family: var(--serif);
+            font-size: 19px;
+            white-space: pre-wrap;
+        }
+
+        .transcript-paper.is-listening {
+            box-shadow: inset 0 0 0 2px rgba(182, 139, 76, .32);
+        }
+
+        .recording-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 8px;
+            border-radius: 50%;
+            background: #bd5549;
+            vertical-align: 1px;
+            animation: pulse 1s ease infinite alternate;
+        }
+
+        .recording-indicator[hidden] {
+            display: none;
+        }
+
+        @keyframes pulse {
+            to {
+                opacity: .35;
+            }
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 12px;
+        }
+
+        .compat-note {
+            margin: 16px 0 0;
+            color: #59635d;
+            font-size: 15px;
+        }
+
+        /* Registration */
+        .registration-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .registration-section::after {
+            position: absolute;
+            right: -100px;
+            bottom: -130px;
+            width: 320px;
+            height: 320px;
+            border: 1px solid rgba(182, 139, 76, .22);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+        }
+
+        .registration-layout {
+            display: grid;
+            grid-template-columns: .78fr 1.22fr;
+            align-items: start;
+            gap: 64px;
+        }
+
+        .registration-copy {
+            position: sticky;
+            top: 120px;
+        }
+
+        .registration-copy p {
+            color: var(--muted);
+            font-size: 19px;
+        }
+
+        .contact-line {
+            margin-top: 25px;
+            padding-top: 18px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+        }
+
+        .registration-form {
+            position: relative;
+            z-index: 1;
+            padding: 34px;
+            border-radius: 4px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 21px 18px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        .field label {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .field input,
+        .field select {
+            width: 100%;
+            min-height: 58px;
+            padding: 12px 15px;
+            border: 1px solid #cdd2ca;
+            border-radius: 3px;
+            background: #fff;
+            color: var(--ink);
+        }
+
+        .field input::placeholder {
+            color: #79817b;
+        }
+
+        .privacy-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 22px 0;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .privacy-check input {
+            width: 22px;
+            height: 22px;
+            flex: 0 0 auto;
+            accent-color: var(--sage);
+        }
+
+        .form-submit {
+            width: 100%;
+            min-height: 60px;
+        }
+
+        .form-message {
+            margin: 14px 0 0;
+            color: var(--sage);
+            font-weight: 700;
+        }
+
+        .form-message:empty {
+            display: none;
+        }
+
+        .site-footer {
+            padding: 30px 0;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .wrap {
+                width: min(100% - 44px, 720px);
+            }
+
+            .nav-row {
+                min-height: 72px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .main-nav {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 8px 22px 18px;
+                border-bottom: 1px solid var(--line);
+                background: rgba(248, 247, 242, .98);
+            }
+
+            .main-nav.is-open {
+                display: flex;
+            }
+
+            .main-nav a {
+                padding: 12px 8px;
+            }
+
+            .nav-cta {
+                margin-top: 7px;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 50px 0 66px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .hero-copy {
+                max-width: 620px;
+            }
+
+            .hero-art {
+                width: min(100%, 570px);
+                margin: 0 auto;
+            }
+
+            .conversation-layout,
+            .voice-layout,
+            .registration-layout {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .conversation-aside {
+                max-width: 650px;
+            }
+
+            .registration-copy {
+                position: static;
+            }
+
+            .carousel-stage {
+                min-height: 500px;
+            }
+
+            .lesson-card {
+                width: min(52%, 355px);
+            }
+
+            .lesson-card[data-position="left"] {
+                transform: translateX(-58%) rotateY(12deg) scale(.82);
+            }
+
+            .lesson-card[data-position="right"] {
+                transform: translateX(58%) rotateY(-12deg) scale(.82);
+            }
+        }
+
+        @media (max-width: 560px) {
+            body {
+                font-size: 18px;
+            }
+
+            .wrap {
+                width: calc(100% - 36px);
+            }
+
+            .brand-name {
+                font-size: 18px;
+            }
+
+            .hero {
+                padding-top: 42px;
+            }
+
+            h1 {
+                font-size: clamp(48px, 14vw, 64px);
+            }
+
+            .hero-subtitle {
+                font-size: 22px;
+            }
+
+            .hero-desc {
+                font-size: 18px;
+            }
+
+            .hero-art {
+                min-height: 390px;
+            }
+
+            .hero-photo {
+                top: 38px;
+                right: 15px;
+                width: 76%;
+                padding: 9px 9px 43px;
+            }
+
+            .hero-photo img {
+                height: 280px;
+            }
+
+            .note {
+                padding: 13px 14px;
+            }
+
+            .note-one {
+                top: 8px;
+                left: 0;
+                width: 155px;
+            }
+
+            .note-two {
+                right: 0;
+                bottom: 5px;
+                width: 165px;
+            }
+
+            .note strong {
+                font-size: 16px;
+            }
+
+            .date-stamp {
+                right: 2px;
+                bottom: 85px;
+                width: 72px;
+                height: 72px;
+                font-size: 11px;
+            }
+
+            .archive-inner {
+                flex-wrap: wrap;
+                gap: 8px 13px;
+                font-size: 15px;
+            }
+
+            .archive-inner strong {
+                font-size: 18px;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-head {
+                margin-bottom: 27px;
+            }
+
+            .section-intro {
+                font-size: 18px;
+            }
+
+            .carousel-shell {
+                padding: 4px 0 25px;
+            }
+
+            .carousel-stage {
+                min-height: 450px;
+                overflow: hidden;
+            }
+
+            .lesson-card {
+                width: min(77%, 330px);
+            }
+
+            .lesson-card[data-position="left"] {
+                transform: translateX(-68%) rotateY(10deg) scale(.78);
+            }
+
+            .lesson-card[data-position="right"] {
+                transform: translateX(68%) rotateY(-10deg) scale(.78);
+            }
+
+            .carousel-control {
+                top: auto;
+                bottom: -3px;
+                width: 44px;
+                height: 44px;
+                transform: none;
+            }
+
+            .carousel-control.prev {
+                left: calc(50% - 83px);
+            }
+
+            .carousel-control.next {
+                right: calc(50% - 83px);
+            }
+
+            .carousel-status {
+                padding-top: 8px;
+            }
+
+            .flip-card {
+                min-height: 320px;
+            }
+
+            .flip-face {
+                padding: 26px;
+            }
+
+            .voice-panel,
+            .transcript-panel,
+            .registration-form {
+                padding: 23px 19px;
+            }
+
+            .practice-line {
+                font-size: 21px;
+            }
+
+            .voice-controls .button {
+                flex: 1 1 100%;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .field.full {
+                grid-column: auto;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">본문 바로가기</a>
+    <header class="site-header">
+        <div class="wrap nav-row">
+            <a href="#top" class="logo-link" aria-label="DAYNIZE 지난 주 영어 홈">
+                <img src="DAYNIZE LOGO ONLY.png" alt="DAYNIZE 지난 주 영어" class="main-logo-img">
+                <span class="logo-fallback" hidden>DAYNIZE<small>지난 주 영어</small></span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"
+                aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+            <nav class="main-nav" id="main-nav" aria-label="주요 메뉴">
+                <a href="#archive">지난주 영어</a>
+                <a href="#lessons">동영상 강의</a>
+                <a href="#conversation">오늘의 회화</a>
+                <a href="#voice">음성 스튜디오</a>
+                <a class="nav-cta" href="#register">수강 신청</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero" id="top" aria-labelledby="hero-title">
+            <div class="wrap hero-grid">
+                <div class="hero-copy">
+                    <p class="hero-kicker">천천히, 그러나 분명하게</p>
+                    <h1 id="hero-title">지난 주 <span>영어</span></h1>
+                    <p class="hero-subtitle">지난 주에는 몰랐던 걸,<br><em>이제는 안다...</em></p>
+                    <p class="hero-desc">배운 만큼 자신감이 되고, 지나온 시간만큼 나만의 이야기가 됩니다. 오늘의 한 문장을 함께 시작해요.</p>
+                    <div class="button-row">
+                        <a class="button" href="#lessons">이번 주 수업 만나기 <span aria-hidden="true">→</span></a>
+                        <a class="button secondary" href="#conversation">오늘의 회화 보기</a>
+                    </div>
+                </div>
+                <div class="hero-art" aria-label="영어를 함께 배우는 따뜻한 순간을 담은 사진 콜라주">
+                    <div class="note note-one"><small>나의 배움 기록</small><strong>한 문장씩,<br>내 것이 되는 중</strong></div>
+                    <figure class="hero-photo">
+                        <span class="pin" aria-hidden="true"></span>
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                            alt="노트북 화면을 가리키며 함께 공부하는 손" fetchpriority="high">
+                        <figcaption class="photo-caption">A little better, every week.</figcaption>
+                    </figure>
+                    <div class="date-stamp" aria-hidden="true">WEEKLY<br>JOURNAL<br>2026</div>
+                    <div class="note note-two"><small>오늘의 마음</small><strong>배움에는<br>늦은 때가 없어요.</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="archive-band" id="archive">
+            <div class="wrap archive-inner">
+                <span>배움의 페이지를 한 장씩</span><span class="archive-dot" aria-hidden="true"></span>
+                <strong>지난 주보다 조금 더 편안한 영어</strong><span class="archive-dot" aria-hidden="true"></span>
+                <span>나만의 속도로 쌓이는 기록</span>
+            </div>
+        </div>
+
+        <section class="section video-section" id="lessons" aria-labelledby="lessons-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">THIS WEEK'S CLASS</p>
+                    <h2 class="section-title" id="lessons-title">다시 보고 싶은 순간,<br>내 속도에 맞춘 동영상 강의</h2>
+                    <p class="section-intro">짧고 또렷한 설명으로 시작해, 생활 속 영어를 차근차근 익혀 봅니다.</p>
+                </div>
+                <div class="carousel-shell" aria-roledescription="회전식 강의 목록" aria-label="동영상 강의">
+                    <button class="carousel-control prev" type="button" aria-label="이전 강의">‹</button>
+                    <div class="carousel-stage" id="lesson-carousel" tabindex="0">
+                        <article class="lesson-card" data-index="0" data-position="center" aria-label="강의 1 / 3">
+                            <div class="lesson-image"><img
+                                    src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+                                    alt="여행 노트와 지도" loading="lazy"><span class="lesson-number">01 · 여행 영어</span><span
+                                    class="play-mark" aria-hidden="true">▶</span></div>
+                            <div class="lesson-info">
+                                <h3>공항에서 길 묻기</h3>
+                                <div class="lesson-meta"><span>천천히 듣고 따라 하기</span><span>12분</span></div><button
+                                    class="button lesson-action" type="button" data-lesson="공항에서 길 묻기">강의 보기 <span
+                                        aria-hidden="true">→</span></button>
+                            </div>
+                        </article>
+                        <article class="lesson-card" data-index="1" data-position="right" aria-label="강의 2 / 3">
+                            <div class="lesson-image"><img
+                                    src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+                                    alt="따뜻한 카페 테이블과 커피" loading="lazy"><span class="lesson-number">02 · 일상
+                                    영어</span><span class="play-mark" aria-hidden="true">▶</span></div>
+                            <div class="lesson-info">
+                                <h3>카페에서 주문하기</h3>
+                                <div class="lesson-meta"><span>주문할 때 쓰는 표현</span><span>9분</span></div><button
+                                    class="button lesson-action" type="button" data-lesson="카페에서 주문하기">강의 보기 <span
+                                        aria-hidden="true">→</span></button>
+                            </div>
+                        </article>
+                        <article class="lesson-card" data-index="2" data-position="left" aria-label="강의 3 / 3">
+                            <div class="lesson-image"><img
+                                    src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+                                    alt="한 문장씩 적어 둔 영어 노트" loading="lazy"><span class="lesson-number">03 · 만남의
+                                    영어</span><span class="play-mark" aria-hidden="true">▶</span></div>
+                            <div class="lesson-info">
+                                <h3>처음 만난 사람과 인사하기</h3>
+                                <div class="lesson-meta"><span>반가운 첫마디 연습</span><span>11분</span></div><button
+                                    class="button lesson-action" type="button" data-lesson="처음 만난 사람과 인사하기">강의 보기 <span
+                                        aria-hidden="true">→</span></button>
+                            </div>
+                        </article>
+                    </div>
+                    <button class="carousel-control next" type="button" aria-label="다음 강의">›</button>
+                    <p class="carousel-status" aria-live="polite">1 / 3</p>
+                    <div class="carousel-dots" aria-label="강의 선택">
+                        <button type="button" aria-label="첫 번째 강의" aria-current="true"></button>
+                        <button type="button" aria-label="두 번째 강의" aria-current="false"></button>
+                        <button type="button" aria-label="세 번째 강의" aria-current="false"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="conversation" aria-labelledby="conversation-title">
+            <div class="wrap conversation-layout">
+                <div class="conversation-aside">
+                    <p class="eyebrow">TODAY'S CONVERSATION</p>
+                    <h2 class="section-title" id="conversation-title">오늘의 회화,<br>한마디부터 편안하게</h2>
+                    <p class="section-intro">상황을 떠올리고 카드를 눌러 영어 표현을 확인해 보세요. 소리 내어 읽으면 더 오래 기억됩니다.</p>
+                    <blockquote>“완벽한 문장보다<br>건네는 용기가 먼저예요.”</blockquote>
+                </div>
+                <div>
+                    <div class="flip-card" id="conversation-card" role="button" tabindex="0" aria-pressed="false"
+                        aria-label="카드를 뒤집어 영어 표현 보기">
+                        <div class="flip-face flip-front"><span class="face-label">상황 · 카페에서</span>
+                            <h3>“따뜻한 차 한 잔<br>부탁드려요.”</h3><span class="flip-hint">카드를 누르면 영어 표현이 보여요</span>
+                        </div>
+                        <div class="flip-face flip-back"><span class="face-label">ENGLISH · 천천히 읽어 보세요</span>
+                            <h3 lang="en">Could I have a cup of tea, please?</h3><span class="flip-hint">Could I have…?
+                                는 정중하게 무언가를 부탁할 때 쓰는 표현이에요.</span>
+                        </div>
+                    </div>
+                    <div class="conversation-actions">
+                        <button class="button secondary" type="button" id="translation-toggle" aria-expanded="false"
+                            aria-controls="translation-panel">한국어 ↔ 영어 해설 보기</button>
+                        <button class="text-button" type="button" id="speak-phrase">영어 발음 듣기</button>
+                    </div>
+                    <div class="translation-panel" id="translation-panel" hidden>
+                        <p><strong>한국어</strong> 따뜻한 차 한 잔 부탁드려요.</p>
+                        <p><strong>영어</strong> <span lang="en">Could I have a cup of tea, please?</span></p>
+                        <p><strong>말의 느낌</strong> “주세요”보다 부드럽고 정중하게 부탁하는 표현입니다. 마지막 please를 또렷하게 말해 보세요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section voice-section" id="voice" aria-labelledby="voice-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">YOUR VOICE STUDIO</p>
+                    <h2 class="section-title" id="voice-title">듣고, 말하고, 다시 들어 보기</h2>
+                    <p class="section-intro">내 목소리로 연습하면 영어가 조금 더 가까워집니다. 녹음과 음성 인식은 이 기기의 브라우저에서 작동합니다.</p>
+                </div>
+                <div class="voice-layout">
+                    <div class="voice-panel glass">
+                        <h3>오늘 연습할 문장</h3>
+                        <p class="practice-line" id="practice-phrase" lang="en">Could I have a cup of tea, please?</p>
+                        <p class="practice-translation">따뜻한 차 한 잔 부탁드려요.</p>
+                        <div class="voice-controls">
+                            <button class="button" type="button" id="tts-button"><span aria-hidden="true">▶</span> 영어 발음
+                                듣기</button>
+                            <button class="button secondary" type="button" id="tts-korean-button">한국어 발음 듣기</button>
+                            <button class="button secondary" type="button" id="record-button"><span
+                                    class="recording-indicator" id="recording-indicator" hidden></span><span
+                                    id="record-label">녹음 시작</span></button>
+                        </div>
+                        <p class="voice-status" id="voice-status" role="status" aria-live="polite">발음 듣기를 누르거나, 녹음을 시작해
+                            문장을 읽어 보세요.</p>
+                        <p class="compat-note">음성 인식은 Chrome 또는 Edge와 HTTPS 연결에서 가장 잘 지원됩니다. 지원되지 않는 환경에서도 녹음과 재생을 사용할 수
+                            있습니다.</p>
+                    </div>
+                    <div class="transcript-panel glass">
+                        <h3>나의 발음 노트</h3>
+                        <p class="compat-note">말씀하신 내용이 여기에 표시됩니다.</p>
+                        <div class="transcript-paper" id="transcript" aria-live="polite">녹음을 시작하면 여기에 인식된 문장이 나타납니다.
+                        </div>
+                        <button class="button secondary" type="button" id="playback-button" disabled>내 발음 들어보기</button>
+                        <audio id="recording-playback" controls hidden aria-label="내 녹음 재생"></audio>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section registration-section" id="register" aria-labelledby="register-title">
+            <div class="wrap registration-layout">
+                <div class="registration-copy">
+                    <p class="eyebrow">A NEW PAGE STARTS HERE</p>
+                    <h2 class="section-title" id="register-title">다음 페이지를<br>함께 시작해요</h2>
+                    <p>수강에 대해 궁금한 점이나 희망하시는 시간을 남겨 주세요. 담당자가 안내해 드립니다.</p>
+                    <div class="contact-line">편하신 수강 시간대를 남겨 주시면<br><strong>담당자가 안내해 드립니다.</strong></div>
+                </div>
+                <form class="registration-form glass" id="registration-form">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="name">성함</label>
+                            <input id="name" name="name" autocomplete="name" placeholder="성함을 입력해 주세요" required>
+                        </div>
+                        <div class="field">
+                            <label for="phone">연락처</label>
+                            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
+                                placeholder="010-0000-0000" pattern="[0-9()\-+\s]{9,20}" required>
+                        </div>
+                        <div class="field full">
+                            <label for="time">희망 수강 시간대</label>
+                            <select id="time" name="time" required>
+                                <option value="" selected disabled>편한 시간대를 선택해 주세요</option>
+                                <option>평일 오전 (9시 - 12시)</option>
+                                <option>평일 오후 (12시 - 5시)</option>
+                                <option>평일 저녁 (5시 이후)</option>
+                                <option>주말</option>
+                                <option>시간 상담 후 결정</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label class="privacy-check" for="privacy">
+                        <input id="privacy" name="privacy" type="checkbox" required>
+                        <span>수강 안내를 위한 개인정보 수집 및 이용에 동의합니다.</span>
+                    </label>
+                    <button class="button form-submit" type="submit">수강 상담 신청하기 <span
+                            aria-hidden="true">→</span></button>
+                    <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-inner"><span>DAYNIZE · 지난 주 영어</span><span>배움의 기록은 오늘도 이어집니다.</span></div>
+    </footer>
+
+    <script>
+        (() => {
+            const menuButton = document.querySelector('.menu-toggle');
+            const navigation = document.querySelector('#main-nav');
+            const logoImage = document.querySelector('.main-logo-img');
+            const logoFallback = document.querySelector('.logo-fallback');
+            const showLogoFallback = () => { logoImage.hidden = true; logoFallback.hidden = false; };
+            logoImage.addEventListener('error', showLogoFallback, { once: true });
+            if (logoImage.complete && logoImage.naturalWidth === 0) showLogoFallback();
+            menuButton.addEventListener('click', () => {
+                const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', String(!isOpen));
+                menuButton.setAttribute('aria-label', isOpen ? '메뉴 열기' : '메뉴 닫기');
+                navigation.classList.toggle('is-open', !isOpen);
+            });
+            navigation.addEventListener('click', (event) => {
+                if (event.target.closest('a')) {
+                    navigation.classList.remove('is-open');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    menuButton.setAttribute('aria-label', '메뉴 열기');
+                }
+            });
+
+            // Rotate the three lesson cards while preserving a single focused action.
+            const stage = document.querySelector('#lesson-carousel');
+            const cards = [...stage.querySelectorAll('.lesson-card')];
+            const dots = [...document.querySelectorAll('.carousel-dots button')];
+            const status = document.querySelector('.carousel-status');
+            let activeLesson = 0;
+            const renderCarousel = () => {
+                cards.forEach((card, index) => {
+                    const offset = (index - activeLesson + cards.length) % cards.length;
+                    const position = offset === 0 ? 'center' : offset === 1 ? 'right' : 'left';
+                    card.dataset.position = position;
+                    card.setAttribute('aria-hidden', String(position !== 'center'));
+                    card.querySelector('.lesson-action').tabIndex = position === 'center' ? 0 : -1;
+                });
+                dots.forEach((dot, index) => dot.setAttribute('aria-current', String(index === activeLesson)));
+                status.textContent = `${activeLesson + 1} / ${cards.length}`;
+            };
+            const moveCarousel = (step) => {
+                activeLesson = (activeLesson + step + cards.length) % cards.length;
+                renderCarousel();
+            };
+            document.querySelector('.carousel-control.prev').addEventListener('click', () => moveCarousel(-1));
+            document.querySelector('.carousel-control.next').addEventListener('click', () => moveCarousel(1));
+            dots.forEach((dot, index) => dot.addEventListener('click', () => { activeLesson = index; renderCarousel(); }));
+            stage.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowLeft') { event.preventDefault(); moveCarousel(-1); }
+                if (event.key === 'ArrowRight') { event.preventDefault(); moveCarousel(1); }
+            });
+            let dragStartX = null;
+            stage.addEventListener('pointerdown', (event) => { dragStartX = event.clientX; });
+            stage.addEventListener('pointerup', (event) => {
+                if (dragStartX === null) return;
+                const distance = event.clientX - dragStartX;
+                if (Math.abs(distance) > 45) moveCarousel(distance < 0 ? 1 : -1);
+                dragStartX = null;
+            });
+            stage.addEventListener('pointercancel', () => { dragStartX = null; });
+            renderCarousel();
+
+            document.querySelectorAll('.lesson-action').forEach((button) => {
+                button.addEventListener('click', () => {
+                    const lesson = button.dataset.lesson;
+                    document.querySelector('#voice-status').textContent = `“${lesson}” 강의는 수업 페이지 연결 후 시청하실 수 있습니다. 지금은 음성 스튜디오에서 오늘의 문장을 연습해 보세요.`;
+                    document.querySelector('#voice').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            const flipCard = document.querySelector('#conversation-card');
+            flipCard.addEventListener('click', () => {
+                const flipped = flipCard.classList.toggle('is-flipped');
+                flipCard.setAttribute('aria-pressed', String(flipped));
+                flipCard.setAttribute('aria-label', flipped ? '카드를 뒤집어 한국어 상황 보기' : '카드를 뒤집어 영어 표현 보기');
+            });
+            flipCard.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    flipCard.click();
+                }
+            });
+            const translationToggle = document.querySelector('#translation-toggle');
+            const translationPanel = document.querySelector('#translation-panel');
+            translationToggle.addEventListener('click', () => {
+                const expanded = translationToggle.getAttribute('aria-expanded') === 'true';
+                translationToggle.setAttribute('aria-expanded', String(!expanded));
+                translationPanel.hidden = expanded;
+                translationToggle.textContent = expanded ? '한국어 ↔ 영어 해설 보기' : '해설 닫기';
+            });
+
+            const phraseElement = document.querySelector('#practice-phrase');
+            const phrase = phraseElement.textContent.trim();
+            const koreanPhrase = '따뜻한 차 한 잔 부탁드려요.';
+            const voiceStatus = document.querySelector('#voice-status');
+            let availableVoices = window.speechSynthesis?.getVoices() || [];
+            window.speechSynthesis?.addEventListener('voiceschanged', () => {
+                availableVoices = window.speechSynthesis.getVoices();
+            });
+            const speak = (text = phrase, language = phraseElement.lang || 'en-US') => {
+                if (!('speechSynthesis' in window)) {
+                    voiceStatus.textContent = '이 브라우저는 음성 읽기를 지원하지 않습니다. Chrome, Edge 또는 Safari를 이용해 주세요.';
+                    return;
+                }
+                window.speechSynthesis.cancel();
+                const isKorean = language.toLowerCase().startsWith('ko');
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = isKorean ? 'ko-KR' : 'en-US';
+                utterance.rate = 0.82;
+                availableVoices = window.speechSynthesis.getVoices();
+                const preferredName = isKorean ? /jian|지안/i : /samantha/i;
+                const preferredVoice = availableVoices.find((voice) => preferredName.test(voice.name));
+                if (preferredVoice) utterance.voice = preferredVoice;
+                utterance.onstart = () => { voiceStatus.textContent = `${isKorean ? '한국어' : '영어'} 문장을 들려드리고 있어요.`; };
+                utterance.onend = () => { voiceStatus.textContent = '한 번 더 듣고 천천히 따라 해 보세요.'; };
+                utterance.onerror = () => { voiceStatus.textContent = '음성을 재생하지 못했어요. 기기의 소리 설정을 확인해 주세요.'; };
+                window.speechSynthesis.speak(utterance);
+            };
+            document.querySelector('#tts-button').addEventListener('click', () => speak(phrase, phraseElement.lang || 'en-US'));
+            document.querySelector('#tts-korean-button').addEventListener('click', () => speak(koreanPhrase, 'ko-KR'));
+            document.querySelector('#speak-phrase').addEventListener('click', () => speak(phrase, phraseElement.lang || 'en-US'));
+
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const transcript = document.querySelector('#transcript');
+            const recordButton = document.querySelector('#record-button');
+            const recordLabel = document.querySelector('#record-label');
+            const recordingIndicator = document.querySelector('#recording-indicator');
+            const playback = document.querySelector('#recording-playback');
+            const playbackButton = document.querySelector('#playback-button');
+            let recorder = null;
+            let mediaStream = null;
+            let recordingChunks = [];
+            let recognition = null;
+            let finalizedTranscript = '';
+            let isRecording = false;
+            let recognitionCanRestart = true;
+
+            const stopRecognition = () => {
+                if (recognition) {
+                    try { recognition.stop(); } catch (_) { /* The recognition session may already have ended. */ }
+                }
+            };
+            const stopRecording = () => {
+                if (!isRecording) return;
+                isRecording = false;
+                recordButton.disabled = true;
+                recordLabel.textContent = '녹음 정리 중';
+                recordingIndicator.hidden = true;
+                transcript.classList.remove('is-listening');
+                stopRecognition();
+                if (recorder && recorder.state !== 'inactive') recorder.stop();
+                else finishRecording();
+            };
+            const finishRecording = () => {
+                if (recordingChunks.length) {
+                    const blob = new Blob(recordingChunks, { type: recorder?.mimeType || 'audio/webm' });
+                    if (playback.src) URL.revokeObjectURL(playback.src);
+                    playback.src = URL.createObjectURL(blob);
+                    playback.hidden = false;
+                    playbackButton.disabled = false;
+                    voiceStatus.textContent = '녹음이 저장되었어요. 내 발음 들어보기를 눌러 확인해 보세요.';
+                } else {
+                    voiceStatus.textContent = '녹음 파일을 만들지 못했어요. 브라우저의 녹음 지원 여부를 확인해 주세요.';
+                }
+                if (mediaStream) mediaStream.getTracks().forEach((track) => track.stop());
+                mediaStream = null;
+                recorder = null;
+                recordLabel.textContent = '녹음 시작';
+                recordButton.disabled = false;
+            };
+            const startRecognition = () => {
+                if (!SpeechRecognition) {
+                    voiceStatus.textContent = '녹음 중이에요. 이 브라우저는 음성 인식(STT)을 지원하지 않지만, 녹음 후 내 발음을 들을 수 있어요.';
+                    return;
+                }
+                recognition = new SpeechRecognition();
+                recognition.lang = 'en-US';
+                recognition.continuous = true;
+                recognition.interimResults = true;
+                recognitionCanRestart = true;
+                recognition.onresult = (event) => {
+                    let interim = '';
+                    for (let index = event.resultIndex; index < event.results.length; index += 1) {
+                        const text = event.results[index][0].transcript;
+                        if (event.results[index].isFinal) finalizedTranscript += `${text.trim()} `;
+                        else interim += text;
+                    }
+                    transcript.textContent = `${finalizedTranscript}${interim}`.trim() || '말씀하신 내용이 여기에 표시됩니다.';
+                };
+                recognition.onerror = (event) => {
+                    if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+                        recognitionCanRestart = false;
+                        voiceStatus.textContent = '마이크 또는 음성 인식 권한을 허용해 주세요. 녹음 자체는 계속 진행할 수 있습니다.';
+                    } else if (event.error !== 'no-speech' && event.error !== 'aborted') {
+                        recognitionCanRestart = false;
+                        voiceStatus.textContent = '음성 인식 연결이 원활하지 않아요. 녹음은 계속되니 천천히 말씀해 주세요.';
+                    }
+                };
+                recognition.onend = () => {
+                    if (isRecording && recognitionCanRestart) {
+                        try { recognition.start(); } catch (_) { /* Keep the audio recording even if STT cannot restart. */ }
+                    }
+                };
+                try { recognition.start(); } catch (_) { voiceStatus.textContent = '녹음 중이에요. 음성 인식은 현재 사용할 수 없어 녹음 후 재생으로 확인해 주세요.'; }
+            };
+            const startRecording = async () => {
+                if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
+                    voiceStatus.textContent = '이 브라우저는 음성 녹음을 지원하지 않습니다. 최신 Chrome, Edge 또는 Safari를 이용해 주세요.';
+                    return;
+                }
+                recordButton.disabled = true;
+                voiceStatus.textContent = '마이크 권한을 확인하고 있어요. 브라우저 안내가 나오면 허용해 주세요.';
+                try {
+                    mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    const mimeType = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4'].find((type) => MediaRecorder.isTypeSupported(type));
+                    recorder = mimeType ? new MediaRecorder(mediaStream, { mimeType }) : new MediaRecorder(mediaStream);
+                    recordingChunks = [];
+                    finalizedTranscript = '';
+                    transcript.textContent = '말씀하시는 동안 인식된 문장이 표시됩니다.';
+                    recorder.ondataavailable = (event) => { if (event.data.size > 0) recordingChunks.push(event.data); };
+                    recorder.onerror = () => { voiceStatus.textContent = '녹음 중 문제가 생겼어요. 마이크 권한을 확인하고 다시 시도해 주세요.'; stopRecording(); };
+                    recorder.onstop = finishRecording;
+                    recorder.start(250);
+                    isRecording = true;
+                    recordButton.disabled = false;
+                    recordLabel.textContent = '녹음 중지';
+                    recordingIndicator.hidden = false;
+                    transcript.classList.add('is-listening');
+                    voiceStatus.textContent = '녹음 중이에요. 영어 문장을 천천히 읽어 주세요.';
+                    startRecognition();
+                } catch (error) {
+                    if (mediaStream) mediaStream.getTracks().forEach((track) => track.stop());
+                    mediaStream = null;
+                    recordButton.disabled = false;
+                    voiceStatus.textContent = error.name === 'NotAllowedError' ? '마이크 권한이 허용되지 않았어요. 주소창 왼쪽의 사이트 설정에서 마이크를 허용해 주세요.' : '마이크에 연결할 수 없어요. 마이크가 연결되어 있는지 확인해 주세요.';
+                }
+            };
+            recordButton.addEventListener('click', () => { if (isRecording) stopRecording(); else startRecording(); });
+            playbackButton.addEventListener('click', () => {
+                if (playback.src) {
+                    playback.play().catch(() => { voiceStatus.textContent = '재생 버튼을 한 번 더 눌러 오디오를 들어 보세요.'; });
+                }
+            });
+            document.querySelector('#registration-form').addEventListener('submit', (event) => {
+                event.preventDefault();
+                const form = event.currentTarget;
+                if (!form.reportValidity()) return;
+                const name = form.elements.name.value.trim();
+                document.querySelector('#form-message').textContent = `${name}님, 신청 내용이 입력되었습니다. 실제 접수와 안내를 위해서는 운영 서버 연결이 필요합니다.`;
+                form.reset();
+            });
+
+            // GSAP is progressive enhancement; the page remains fully usable without the CDN.
+            window.addEventListener('load', () => {
+                if (!window.gsap || !window.ScrollTrigger || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                gsap.registerPlugin(ScrollTrigger);
+                gsap.from('.hero-copy > *', { y: 22, opacity: 0, duration: .8, stagger: .1, ease: 'power2.out' });
+                gsap.utils.toArray('.section-head, .conversation-aside, .conversation-card-wrap, .voice-panel, .transcript-panel, .registration-form').forEach((element) => {
+                    gsap.from(element, { y: 28, opacity: 0, duration: .75, ease: 'power2.out', scrollTrigger: { trigger: element, start: 'top 88%', once: true } });
+                });
+                gsap.to('.note-one', { y: -13, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .7 } });
+                gsap.to('.note-two', { y: 18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .7 } });
+
+                gsap.utils.toArray('.hero, .video-section, #conversation, #voice, #register').forEach((section) => {
+                    ScrollTrigger.create({
+                        trigger: section,
+                        start: 'top top+=78',
+                        end: () => `+=${Math.round(window.innerHeight * .5)}`,
+                        pin: true,
+                        pinSpacing: true,
+                        scrub: .5,
+                        snap: {
+                            snapTo: 1,
+                            delay: .08,
+                            duration: { min: .3, max: .55 },
+                            ease: 'power3.out',
+                            inertia: false
+                        },
+                        anticipatePin: 1,
+                        invalidateOnRefresh: true
+                    });
+                });
+            }, { once: true });
+        })();
+    </script>
+</body>
+
+</html>
