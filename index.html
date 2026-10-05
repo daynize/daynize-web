@@ -509,7 +509,7 @@
             background: var(--gold);
         }
 
-        /* Video carousel */
+        /* Course categories and lesson dialogs */
         .section {
             padding: 96px 0;
         }
@@ -518,184 +518,361 @@
             background: rgba(255, 255, 255, .35);
         }
 
-        .carousel-shell {
+        .category-carousel {
             position: relative;
-            padding: 18px 54px 32px;
         }
 
-        .carousel-stage {
-            position: relative;
+        .category-track {
             display: grid;
-            min-height: 520px;
-            place-items: center;
-            perspective: 1200px;
-            touch-action: pan-y;
+            grid-auto-columns: minmax(230px, 1fr);
+            grid-auto-flow: column;
+            gap: 18px;
+            overflow-x: auto;
+            padding: 8px 3px 20px;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-color: #aab5aa #edf0eb;
+            scrollbar-width: thin;
         }
 
-        .lesson-card {
-            position: absolute;
-            width: min(38%, 355px);
-            overflow: hidden;
-            padding: 12px 12px 18px;
-            border: 1px solid #eeeae0;
-            background: #fff;
-            box-shadow: 0 18px 40px rgba(31, 40, 34, .13);
-            cursor: grab;
-            transition: transform .5s cubic-bezier(.2, .75, .2, 1), opacity .4s ease, filter .4s ease;
-            user-select: none;
+        .category-track::-webkit-scrollbar {
+            height: 9px;
         }
 
-        .lesson-card:active {
-            cursor: grabbing;
+        .category-track::-webkit-scrollbar-track {
+            border-radius: 8px;
+            background: #edf0eb;
         }
 
-        .lesson-card[data-position="center"] {
-            z-index: 3;
-            opacity: 1;
-            transform: translateX(0) rotateY(0) scale(1);
+        .category-track::-webkit-scrollbar-thumb {
+            border: 2px solid #edf0eb;
+            border-radius: 8px;
+            background: #aab5aa;
         }
 
-        .lesson-card[data-position="left"] {
-            z-index: 2;
-            opacity: .82;
-            transform: translateX(-75%) rotateY(14deg) scale(.86);
-        }
-
-        .lesson-card[data-position="right"] {
-            z-index: 2;
-            opacity: .82;
-            transform: translateX(75%) rotateY(-14deg) scale(.86);
-        }
-
-        .lesson-card[data-position="hidden"] {
-            z-index: 0;
-            opacity: 0;
-            pointer-events: none;
-            transform: translateX(0) scale(.72);
-        }
-
-        .lesson-image {
+        .category-card {
             position: relative;
+            display: flex;
+            min-height: 300px;
+            flex-direction: column;
+            align-items: flex-start;
             overflow: hidden;
-            aspect-ratio: 1.2 / 1;
-            background: #dce2db;
+            padding: 0;
+            scroll-snap-align: start;
+            border: 1px solid rgba(255, 255, 255, .95);
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0 12px 32px rgba(31, 40, 34, .09);
+            text-align: left;
+            cursor: pointer;
+            transition: transform .32s ease, box-shadow .32s ease;
         }
 
-        .lesson-image img {
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 38px rgba(31, 40, 34, .14);
+        }
+
+        .category-card img {
             width: 100%;
-            height: 100%;
+            height: 155px;
             object-fit: cover;
-            pointer-events: none;
+            background: #e5ebe5;
         }
 
-        .lesson-number {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            padding: 4px 10px;
-            background: rgba(255, 255, 255, .9);
+        .category-copy {
+            display: flex;
+            width: 100%;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 17px 18px 19px;
+        }
+
+        .category-count {
             color: var(--sage);
             font-size: 14px;
             font-weight: 700;
         }
 
-        .play-mark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            display: grid;
-            width: 58px;
-            height: 58px;
-            place-items: center;
-            border: 1px solid rgba(255, 255, 255, .9);
-            border-radius: 50%;
-            background: rgba(255, 255, 255, .84);
-            color: var(--sage);
-            font-size: 22px;
-            transform: translate(-50%, -50%);
-        }
-
-        .lesson-info {
-            padding: 16px 7px 2px;
-        }
-
-        .lesson-info h3 {
-            margin: 0;
+        .category-copy strong {
+            margin-top: 5px;
             font-family: var(--serif);
-            font-size: 23px;
-            font-weight: 500;
-            line-height: 1.5;
+            font-size: 21px;
+            font-weight: 600;
+            line-height: 1.45;
         }
 
-        .lesson-meta {
-            display: flex;
-            justify-content: space-between;
-            margin: 7px 0 14px;
+        .category-copy span:last-child {
+            margin-top: 7px;
             color: var(--muted);
             font-size: 16px;
+            line-height: 1.55;
         }
 
-        .lesson-info .button {
-            width: 100%;
-            min-height: 50px;
-            font-size: 17px;
+        .category-carousel-controls {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 3px;
         }
 
-        .carousel-control {
-            position: absolute;
-            top: 50%;
-            z-index: 5;
+        .category-arrow {
             display: grid;
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             place-items: center;
             border: 1px solid #cbd2ca;
             border-radius: 50%;
             background: #fff;
             color: var(--sage);
-            font-size: 25px;
+            font-size: 24px;
             cursor: pointer;
-            transform: translateY(-50%);
         }
 
-        .carousel-control:hover {
+        .category-arrow:hover {
             background: var(--sage-soft);
         }
 
-        .carousel-control.prev {
-            left: 0;
-        }
-
-        .carousel-control.next {
-            right: 0;
-        }
-
-        .carousel-status {
-            margin: 0;
-            color: var(--muted);
-            font-size: 16px;
-            text-align: center;
-        }
-
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 9px;
-            margin-top: 13px;
-        }
-
-        .carousel-dots button {
-            width: 11px;
-            height: 11px;
+        .course-dialog {
+            width: min(1100px, calc(100% - 32px));
+            max-width: none;
+            max-height: min(88dvh, 920px);
             padding: 0;
-            border: 1px solid #829186;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .94);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .95);
+            color: var(--ink);
+            box-shadow: 0 24px 90px rgba(30, 41, 34, .24), 0 0 36px rgba(182, 139, 76, .13);
+            -webkit-backdrop-filter: blur(22px);
+            backdrop-filter: blur(22px);
+        }
+
+        .course-dialog[open] {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-dialog::backdrop {
+            background: rgba(27, 36, 31, .52);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+        }
+
+        .course-dialog-header {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 25px 30px 22px;
+            border-bottom: 1px solid #e5e7e0;
+            background: rgba(255, 255, 255, .92);
+        }
+
+        .course-dialog-header h2 {
+            margin: 0;
+            font-family: var(--serif);
+            font-size: clamp(25px, 3vw, 34px);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .course-dialog-header p {
+            margin: 7px 0 0;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .course-close {
+            display: grid;
+            width: 48px;
+            height: 48px;
+            flex: 0 0 auto;
+            place-items: center;
+            border: 1px solid #d9dfd8;
             border-radius: 50%;
-            background: transparent;
+            background: #fff;
+            color: var(--ink);
+            font-size: 27px;
+            line-height: 1;
             cursor: pointer;
         }
 
-        .carousel-dots button[aria-current="true"] {
-            background: var(--sage);
+        .course-close:hover {
+            background: var(--sage-soft);
+        }
+
+        .course-dialog-body {
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            padding: 24px 30px 32px;
+            scrollbar-color: #9aa69b #eef0eb;
+            scrollbar-width: thin;
+        }
+
+        .course-dialog-body::-webkit-scrollbar,
+        .video-dialog-body::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .course-dialog-body::-webkit-scrollbar-track,
+        .video-dialog-body::-webkit-scrollbar-track {
+            border-radius: 8px;
+            background: #eef0eb;
+        }
+
+        .course-dialog-body::-webkit-scrollbar-thumb,
+        .video-dialog-body::-webkit-scrollbar-thumb {
+            border: 2px solid #eef0eb;
+            border-radius: 8px;
+            background: #9aa69b;
+        }
+
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .grid-lesson {
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #e2e6df;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, .92);
+        }
+
+        .grid-lesson img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            background: #e7ece6;
+        }
+
+        .grid-lesson-copy {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 15px;
+        }
+
+        .grid-lesson-copy .lesson-episode {
+            color: var(--sage);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .grid-lesson-copy h3 {
+            margin: 5px 0 0;
+            font-family: var(--serif);
+            font-size: 19px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .grid-lesson-copy p {
+            margin: 7px 0 14px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .grid-lesson-meta {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: auto;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .grid-lesson-copy .button {
+            width: 100%;
+            min-height: 48px;
+            margin-top: 12px;
+            font-size: 16px;
+        }
+
+        .courses-message {
+            padding: 28px;
+            border: 1px solid #e0e4dc;
+            background: rgba(255, 255, 255, .75);
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .video-dialog {
+            width: min(940px, calc(100% - 32px));
+        }
+
+        .video-dialog-body {
+            overflow-y: auto;
+            padding: 22px 30px 30px;
+        }
+
+        .video-frame {
+            display: grid;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            place-items: center;
+            overflow: hidden;
+            background: #1f2b25;
+            color: white;
+        }
+
+        .video-frame iframe,
+        .video-frame video {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            object-fit: contain;
+        }
+
+        .video-placeholder {
+            max-width: 520px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .video-placeholder strong {
+            display: block;
+            font-family: var(--serif);
+            font-size: 24px;
+        }
+
+        .video-placeholder span {
+            display: block;
+            margin-top: 9px;
+            color: #e2e8e2;
+            font-size: 17px;
+        }
+
+        .lesson-study-notes {
+            margin-top: 20px;
+            padding: 20px 22px;
+            border-left: 3px solid var(--gold);
+            background: #f4f1e8;
+        }
+
+        .lesson-study-notes h3 {
+            margin: 0 0 8px;
+            color: #34483a;
+            font-family: var(--serif);
+            font-size: 20px;
+        }
+
+        .lesson-study-notes p {
+            margin: 6px 0;
+            color: #4f5952;
+            font-size: 17px;
+            line-height: 1.7;
         }
 
         /* Conversation */
@@ -1430,20 +1607,12 @@
                 position: static;
             }
 
-            .carousel-stage {
-                min-height: 500px;
+            .category-track {
+                grid-auto-columns: minmax(245px, 65%);
             }
 
-            .lesson-card {
-                width: min(52%, 355px);
-            }
-
-            .lesson-card[data-position="left"] {
-                transform: translateX(-58%) rotateY(12deg) scale(.82);
-            }
-
-            .lesson-card[data-position="right"] {
-                transform: translateX(58%) rotateY(-12deg) scale(.82);
+            .lesson-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
@@ -1541,45 +1710,36 @@
                 font-size: 18px;
             }
 
-            .carousel-shell {
-                padding: 4px 0 25px;
+            .category-track {
+                grid-auto-columns: minmax(230px, 84%);
+                gap: 14px;
             }
 
-            .carousel-stage {
-                min-height: 450px;
-                overflow: hidden;
+            .category-card {
+                min-height: 290px;
             }
 
-            .lesson-card {
-                width: min(77%, 330px);
+            .category-carousel-controls {
+                justify-content: center;
             }
 
-            .lesson-card[data-position="left"] {
-                transform: translateX(-68%) rotateY(10deg) scale(.78);
+            .lesson-grid {
+                grid-template-columns: 1fr;
             }
 
-            .lesson-card[data-position="right"] {
-                transform: translateX(68%) rotateY(-10deg) scale(.78);
+            .course-dialog-header {
+                gap: 12px;
+                padding: 18px;
             }
 
-            .carousel-control {
-                top: auto;
-                bottom: -3px;
+            .course-dialog-body,
+            .video-dialog-body {
+                padding: 17px;
+            }
+
+            .course-close {
                 width: 44px;
                 height: 44px;
-                transform: none;
-            }
-
-            .carousel-control.prev {
-                left: calc(50% - 83px);
-            }
-
-            .carousel-control.next {
-                right: calc(50% - 83px);
-            }
-
-            .carousel-status {
-                padding-top: 8px;
             }
 
             .flip-card {
@@ -1718,56 +1878,50 @@
                     <h2 class="section-title" id="lessons-title">다시 보고 싶은 순간,<br>내 속도에 맞춘 동영상 강의</h2>
                     <p class="section-intro">짧고 또렷한 설명으로 시작해, 생활 속 영어를 차근차근 익혀 봅니다.</p>
                 </div>
-                <div class="carousel-shell" aria-roledescription="회전식 강의 목록" aria-label="동영상 강의">
-                    <button class="carousel-control prev" type="button" aria-label="이전 강의">‹</button>
-                    <div class="carousel-stage" id="lesson-carousel" tabindex="0">
-                        <article class="lesson-card" data-index="0" data-position="center" aria-label="강의 1 / 3">
-                            <div class="lesson-image"><img
-                                    src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
-                                    alt="여행 노트와 지도" loading="lazy"><span class="lesson-number">01 · 여행 영어</span><span
-                                    class="play-mark" aria-hidden="true">▶</span></div>
-                            <div class="lesson-info">
-                                <h3>공항에서 길 묻기</h3>
-                                <div class="lesson-meta"><span>천천히 듣고 따라 하기</span><span>12분</span></div><button
-                                    class="button lesson-action" type="button" data-lesson="공항에서 길 묻기">강의 보기 <span
-                                        aria-hidden="true">→</span></button>
-                            </div>
-                        </article>
-                        <article class="lesson-card" data-index="1" data-position="right" aria-label="강의 2 / 3">
-                            <div class="lesson-image"><img
-                                    src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
-                                    alt="따뜻한 카페 테이블과 커피" loading="lazy"><span class="lesson-number">02 · 일상
-                                    영어</span><span class="play-mark" aria-hidden="true">▶</span></div>
-                            <div class="lesson-info">
-                                <h3>카페에서 주문하기</h3>
-                                <div class="lesson-meta"><span>주문할 때 쓰는 표현</span><span>9분</span></div><button
-                                    class="button lesson-action" type="button" data-lesson="카페에서 주문하기">강의 보기 <span
-                                        aria-hidden="true">→</span></button>
-                            </div>
-                        </article>
-                        <article class="lesson-card" data-index="2" data-position="left" aria-label="강의 3 / 3">
-                            <div class="lesson-image"><img
-                                    src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&amp;fit=crop&amp;w=700&amp;q=80"
-                                    alt="한 문장씩 적어 둔 영어 노트" loading="lazy"><span class="lesson-number">03 · 만남의
-                                    영어</span><span class="play-mark" aria-hidden="true">▶</span></div>
-                            <div class="lesson-info">
-                                <h3>처음 만난 사람과 인사하기</h3>
-                                <div class="lesson-meta"><span>반가운 첫마디 연습</span><span>11분</span></div><button
-                                    class="button lesson-action" type="button" data-lesson="처음 만난 사람과 인사하기">강의 보기 <span
-                                        aria-hidden="true">→</span></button>
-                            </div>
-                        </article>
+                <div class="category-carousel" aria-label="영어 강의 카테고리">
+                    <div class="category-track" id="category-track" tabindex="0" aria-live="polite">
+                        <p class="courses-message">강의 목록을 불러오고 있습니다.</p>
                     </div>
-                    <button class="carousel-control next" type="button" aria-label="다음 강의">›</button>
-                    <p class="carousel-status" aria-live="polite">1 / 3</p>
-                    <div class="carousel-dots" aria-label="강의 선택">
-                        <button type="button" aria-label="첫 번째 강의" aria-current="true"></button>
-                        <button type="button" aria-label="두 번째 강의" aria-current="false"></button>
-                        <button type="button" aria-label="세 번째 강의" aria-current="false"></button>
+                    <div class="category-carousel-controls">
+                        <button class="category-arrow" type="button" data-category-scroll="-1"
+                            aria-label="이전 카테고리">‹</button>
+                        <button class="category-arrow" type="button" data-category-scroll="1"
+                            aria-label="다음 카테고리">›</button>
                     </div>
                 </div>
             </div>
         </section>
+
+        <dialog class="course-dialog" id="category-dialog" aria-labelledby="category-dialog-title">
+            <div class="course-dialog-header">
+                <div>
+                    <h2 id="category-dialog-title">강의 카테고리</h2>
+                    <p id="category-dialog-description"></p>
+                </div>
+                <button class="course-close" type="button" data-close-dialog aria-label="강의 목록 닫기">×</button>
+            </div>
+            <div class="course-dialog-body">
+                <div class="lesson-grid" id="lesson-grid"></div>
+            </div>
+        </dialog>
+
+        <dialog class="course-dialog video-dialog" id="video-dialog" aria-labelledby="video-dialog-title">
+            <div class="course-dialog-header">
+                <div>
+                    <h2 id="video-dialog-title">강의 영상</h2>
+                    <p id="video-dialog-description"></p>
+                </div>
+                <button class="course-close" type="button" data-close-dialog aria-label="강의 영상 닫기">×</button>
+            </div>
+            <div class="video-dialog-body">
+                <div class="video-frame" id="video-frame"></div>
+                <div class="lesson-study-notes">
+                    <h3>오늘의 핵심 문장</h3>
+                    <p id="lesson-key-phrase" lang="en"></p>
+                    <p id="lesson-explanation"></p>
+                </div>
+            </div>
+        </dialog>
 
         <section class="section" id="conversation" aria-labelledby="conversation-title">
             <div class="wrap conversation-layout">
@@ -2127,52 +2281,197 @@
                 });
             });
 
-            // Rotate the three lesson cards while preserving a single focused action.
-            const stage = document.querySelector('#lesson-carousel');
-            const cards = [...stage.querySelectorAll('.lesson-card')];
-            const dots = [...document.querySelectorAll('.carousel-dots button')];
-            const status = document.querySelector('.carousel-status');
-            let activeLesson = 0;
-            const renderCarousel = () => {
-                cards.forEach((card, index) => {
-                    const offset = (index - activeLesson + cards.length) % cards.length;
-                    const position = offset === 0 ? 'center' : offset === 1 ? 'right' : 'left';
-                    card.dataset.position = position;
-                    card.setAttribute('aria-hidden', String(position !== 'center'));
-                    card.querySelector('.lesson-action').tabIndex = position === 'center' ? 0 : -1;
-                });
-                dots.forEach((dot, index) => dot.setAttribute('aria-current', String(index === activeLesson)));
-                status.textContent = `${activeLesson + 1} / ${cards.length}`;
-            };
-            const moveCarousel = (step) => {
-                activeLesson = (activeLesson + step + cards.length) % cards.length;
-                renderCarousel();
-            };
-            document.querySelector('.carousel-control.prev').addEventListener('click', () => moveCarousel(-1));
-            document.querySelector('.carousel-control.next').addEventListener('click', () => moveCarousel(1));
-            dots.forEach((dot, index) => dot.addEventListener('click', () => { activeLesson = index; renderCarousel(); }));
-            stage.addEventListener('keydown', (event) => {
-                if (event.key === 'ArrowLeft') { event.preventDefault(); moveCarousel(-1); }
-                if (event.key === 'ArrowRight') { event.preventDefault(); moveCarousel(1); }
-            });
-            let dragStartX = null;
-            stage.addEventListener('pointerdown', (event) => { dragStartX = event.clientX; });
-            stage.addEventListener('pointerup', (event) => {
-                if (dragStartX === null) return;
-                const distance = event.clientX - dragStartX;
-                if (Math.abs(distance) > 45) moveCarousel(distance < 0 ? 1 : -1);
-                dragStartX = null;
-            });
-            stage.addEventListener('pointercancel', () => { dragStartX = null; });
-            renderCarousel();
+            const categoryTrack = document.querySelector('#category-track');
+            const categoryDialog = document.querySelector('#category-dialog');
+            const videoDialog = document.querySelector('#video-dialog');
+            const lessonGrid = document.querySelector('#lesson-grid');
+            const categoryTitle = document.querySelector('#category-dialog-title');
+            const categoryDescription = document.querySelector('#category-dialog-description');
+            const videoFrame = document.querySelector('#video-frame');
+            const defaultThumbnail = 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=85';
+            let courseCategories = [];
+            let selectedCategory = null;
 
-            document.querySelectorAll('.lesson-action').forEach((button) => {
+            const makeElement = (tagName, className, text) => {
+                const element = document.createElement(tagName);
+                if (className) element.className = className;
+                if (text !== undefined) element.textContent = text;
+                return element;
+            };
+            const safeHttpUrl = (value) => {
+                if (typeof value !== 'string' || !value.trim()) return null;
+                try {
+                    const url = new URL(value, document.baseURI);
+                    return url.protocol === 'https:' || url.protocol === 'http:' ? url : null;
+                } catch (_) {
+                    return null;
+                }
+            };
+            const renderCategories = () => {
+                categoryTrack.replaceChildren();
+                courseCategories.forEach((category) => {
+                    const button = makeElement('button', 'category-card');
+                    button.type = 'button';
+                    button.dataset.categoryId = category.categoryId;
+                    button.setAttribute('aria-haspopup', 'dialog');
+                    const image = document.createElement('img');
+                    image.src = category.thumbnail || category.lessons.find((lesson) => lesson.thumbnail)?.thumbnail || defaultThumbnail;
+                    image.alt = '';
+                    image.loading = 'lazy';
+                    image.onerror = () => { image.onerror = null; image.src = defaultThumbnail; };
+                    const copy = makeElement('span', 'category-copy');
+                    copy.append(
+                        makeElement('span', 'category-count', `강의 ${category.lessons.length}편`),
+                        makeElement('strong', '', category.categoryName),
+                        makeElement('span', '', category.categoryDesc)
+                    );
+                    button.append(image, copy);
+                    categoryTrack.append(button);
+                });
+            };
+            const renderLessons = (category) => {
+                lessonGrid.replaceChildren();
+                category.lessons.forEach((lesson, index) => {
+                    const card = makeElement('article', 'grid-lesson');
+                    const image = document.createElement('img');
+                    image.src = lesson.thumbnail || category.thumbnail || defaultThumbnail;
+                    image.alt = '';
+                    image.loading = 'lazy';
+                    image.onerror = () => { image.onerror = null; image.src = defaultThumbnail; };
+                    const copy = makeElement('div', 'grid-lesson-copy');
+                    copy.append(
+                        makeElement('span', 'lesson-episode', `${String(index + 1).padStart(2, '0')}회차`),
+                        makeElement('h3', '', lesson.title),
+                        makeElement('p', '', lesson.desc)
+                    );
+                    const meta = makeElement('div', 'grid-lesson-meta');
+                    meta.append(makeElement('span', '', category.categoryName), makeElement('span', '', lesson.duration || '시간 미정'));
+                    const watch = makeElement('button', 'button');
+                    watch.type = 'button';
+                    watch.dataset.lessonId = lesson.id;
+                    watch.append(document.createTextNode('시청하기 '), makeElement('span', '', '→'));
+                    copy.append(meta, watch);
+                    card.append(image, copy);
+                    lessonGrid.append(card);
+                });
+            };
+            const openCategory = (category) => {
+                selectedCategory = category;
+                categoryTitle.textContent = category.categoryName;
+                categoryDescription.textContent = category.categoryDesc;
+                renderLessons(category);
+                categoryDialog.showModal();
+            };
+            const renderVideoSource = (lesson) => {
+                videoFrame.replaceChildren();
+                const url = safeHttpUrl(lesson.videoUrl);
+                if (!url) {
+                    const placeholder = makeElement('div', 'video-placeholder');
+                    placeholder.append(
+                        makeElement('strong', '', '강의 영상 준비 중'),
+                        makeElement('span', '', '영상이 등록되면 이곳에서 재생할 수 있습니다. 아래 핵심 문장과 해설부터 살펴보세요.')
+                    );
+                    videoFrame.append(placeholder);
+                    return;
+                }
+                const isYouTube = ['youtube.com', 'www.youtube.com', 'm.youtube.com', 'youtube-nocookie.com', 'www.youtube-nocookie.com', 'youtu.be'].includes(url.hostname);
+                if (isYouTube) {
+                    let videoId = '';
+                    if (url.hostname === 'youtu.be') videoId = url.pathname.split('/').filter(Boolean)[0] || '';
+                    else if (url.pathname === '/watch') videoId = url.searchParams.get('v') || '';
+                    else videoId = url.pathname.split('/').filter(Boolean).at(-1) || '';
+                    if (!/^[A-Za-z0-9_-]{11}$/.test(videoId)) {
+                        videoFrame.append(makeElement('div', 'video-placeholder', '등록된 YouTube 주소를 확인해 주세요.'));
+                        return;
+                    }
+                    const iframe = document.createElement('iframe');
+                    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+                    iframe.title = lesson.title;
+                    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                    iframe.allowFullscreen = true;
+                    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                    videoFrame.append(iframe);
+                    return;
+                }
+                if (/\.mp4(?:$|[?#])/i.test(url.pathname + url.search + url.hash)) {
+                    const video = document.createElement('video');
+                    video.src = url.href;
+                    video.controls = true;
+                    video.playsInline = true;
+                    video.autoplay = true;
+                    video.setAttribute('aria-label', lesson.title);
+                    videoFrame.append(video);
+                    video.play().catch(() => { });
+                    return;
+                }
+                videoFrame.append(makeElement('div', 'video-placeholder', '지원하는 YouTube 또는 MP4 영상 주소가 아닙니다.'));
+            };
+            const openLesson = (lesson) => {
+                document.querySelector('#video-dialog-title').textContent = lesson.title;
+                document.querySelector('#video-dialog-description').textContent = `${selectedCategory.categoryName} · ${lesson.duration || '시간 미정'}`;
+                document.querySelector('#lesson-key-phrase').textContent = lesson.keyPhrase || '핵심 문장을 준비하고 있습니다.';
+                document.querySelector('#lesson-explanation').textContent = lesson.explanation || lesson.desc;
+                renderVideoSource(lesson);
+                videoDialog.showModal();
+            };
+
+            categoryTrack.addEventListener('click', (event) => {
+                const button = event.target.closest('[data-category-id]');
+                if (!button) return;
+                const category = courseCategories.find((item) => item.categoryId === button.dataset.categoryId);
+                if (category) openCategory(category);
+            });
+            categoryTrack.addEventListener('keydown', (event) => {
+                if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+                event.preventDefault();
+                categoryTrack.scrollBy({ left: event.key === 'ArrowRight' ? 290 : -290, behavior: 'smooth' });
+            });
+            document.querySelectorAll('[data-category-scroll]').forEach((button) => {
                 button.addEventListener('click', () => {
-                    const lesson = button.dataset.lesson;
-                    document.querySelector('#voice-status').textContent = `“${lesson}” 강의는 수업 페이지 연결 후 시청하실 수 있습니다. 지금은 음성 스튜디오에서 오늘의 문장을 연습해 보세요.`;
-                    document.querySelector('#voice').scrollIntoView({ behavior: 'smooth' });
+                    const firstCard = categoryTrack.querySelector('.category-card');
+                    const distance = firstCard ? firstCard.getBoundingClientRect().width + 18 : 280;
+                    categoryTrack.scrollBy({ left: distance * Number(button.dataset.categoryScroll), behavior: 'smooth' });
                 });
             });
+            lessonGrid.addEventListener('click', (event) => {
+                const button = event.target.closest('[data-lesson-id]');
+                if (!button || !selectedCategory) return;
+                const lesson = selectedCategory.lessons.find((item) => item.id === button.dataset.lessonId);
+                if (lesson) openLesson(lesson);
+            });
+            document.querySelectorAll('.course-dialog').forEach((dialog) => {
+                dialog.querySelector('[data-close-dialog]').addEventListener('click', () => dialog.close());
+                dialog.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape') {
+                        event.preventDefault();
+                        dialog.close();
+                    }
+                });
+                dialog.addEventListener('cancel', (event) => {
+                    event.preventDefault();
+                    dialog.close();
+                });
+                dialog.addEventListener('click', (event) => {
+                    if (event.target === dialog) dialog.close();
+                });
+                dialog.addEventListener('close', () => {
+                    if (dialog === videoDialog) videoFrame.replaceChildren();
+                });
+            });
+            fetch(new URL('courses.json', document.baseURI))
+                .then((response) => {
+                    if (!response.ok) throw new Error(`강의 데이터 요청 실패 (${response.status})`);
+                    return response.json();
+                })
+                .then((data) => {
+                    if (!Array.isArray(data) || data.length === 0) throw new Error('강의 데이터 형식을 확인해 주세요.');
+                    courseCategories = data.filter((category) => category && category.categoryId && category.categoryName && Array.isArray(category.lessons));
+                    if (!courseCategories.length) throw new Error('표시할 강의 카테고리가 없습니다.');
+                    renderCategories();
+                })
+                .catch((error) => {
+                    categoryTrack.replaceChildren(makeElement('p', 'courses-message', `${error.message} 웹 서버로 페이지를 열고 courses.json 파일이 함께 배포됐는지 확인해 주세요.`));
+                });
 
             const flipCard = document.querySelector('#conversation-card');
             flipCard.addEventListener('click', () => {

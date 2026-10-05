@@ -1,0 +1,492 @@
+[
+    {
+        "categoryId": "speaking",
+        "categoryName": "영어 말하는 법",
+        "categoryDesc": "학습 원리와 문장 구조를 익혀 내 문장으로 말해 봅니다.",
+        "thumbnail": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=85",
+        "lessons": [
+            {
+                "id": "speak-01",
+                "title": "영어 문장, 순서부터 익혀요",
+                "desc": "누가 무엇을 하는지 기본 어순을 익힙니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "I like this song.",
+                "explanation": "주어(I) 다음에 동사(like), 그 뒤에 대상(this song)이 옵니다."
+            },
+            {
+                "id": "speak-02",
+                "title": "I am과 I do 구분하기",
+                "desc": "상태와 행동을 자연스럽게 나눠 봅니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "I am happy. / I like tea.",
+                "explanation": "기분이나 상태에는 be동사, 좋아하는 행동에는 일반동사를 씁니다."
+            },
+            {
+                "id": "speak-03",
+                "title": "주어를 바꾸면 문장이 보여요",
+                "desc": "I, you, we를 넣어 같은 문장을 연습합니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "We enjoy the class.",
+                "explanation": "말하는 사람에 따라 주어를 바꾸되 문장 순서는 그대로 유지합니다."
+            },
+            {
+                "id": "speak-04",
+                "title": "부정문은 not으로 시작해요",
+                "desc": "하고 싶지 않은 일과 아닌 상태를 표현합니다.",
+                "duration": "10분",
+                "videoUrl": null,
+                "keyPhrase": "I do not understand.",
+                "explanation": "일반동사 문장은 do not을 동사 앞에 놓아 부정합니다."
+            },
+            {
+                "id": "speak-05",
+                "title": "Do you로 질문 만들기",
+                "desc": "상대의 취향과 일상을 묻는 순서를 익힙니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "Do you like coffee?",
+                "explanation": "Do를 문장 앞에 두고 주어와 동사를 이어 질문을 만듭니다."
+            },
+            {
+                "id": "speak-06",
+                "title": "Can으로 할 수 있는 일 말하기",
+                "desc": "능력과 정중한 부탁을 함께 연습합니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "Can you help me?",
+                "explanation": "Can 뒤에는 동사 원형을 쓰며, 질문으로 부탁을 부드럽게 표현합니다."
+            },
+            {
+                "id": "speak-07",
+                "title": "과거의 일을 한 문장으로",
+                "desc": "어제 있었던 일을 간단한 과거형으로 말합니다.",
+                "duration": "10분",
+                "videoUrl": null,
+                "keyPhrase": "I visited my friend yesterday.",
+                "explanation": "과거에 끝난 일에는 동사의 과거형을 쓰고 yesterday로 시점을 덧붙입니다."
+            },
+            {
+                "id": "speak-08",
+                "title": "앞으로 할 일을 말해요",
+                "desc": "계획과 약속을 be going to로 표현합니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "I am going to call you.",
+                "explanation": "be going to 다음에 동사 원형을 놓아 예정된 일을 나타냅니다."
+            },
+            {
+                "id": "speak-09",
+                "title": "Please로 부탁을 부드럽게",
+                "desc": "명령처럼 들리지 않게 정중한 표현을 만듭니다.",
+                "duration": "7분",
+                "videoUrl": null,
+                "keyPhrase": "Please speak slowly.",
+                "explanation": "부탁하는 문장에 please를 더하면 말투가 한층 정중해집니다."
+            },
+            {
+                "id": "speak-10",
+                "title": "한 문장씩 내 이야기 만들기",
+                "desc": "배운 어순을 활용해 자기소개를 이어 봅니다.",
+                "duration": "11분",
+                "videoUrl": null,
+                "keyPhrase": "I live near the station, and I enjoy walking.",
+                "explanation": "짧은 문장 두 개를 and로 연결해 자연스럽게 이야기를 확장합니다."
+            }
+        ]
+    },
+    {
+        "categoryId": "daily",
+        "categoryName": "일상회화",
+        "categoryDesc": "인사부터 약속까지 매일 마주치는 생활 표현을 익힙니다.",
+        "thumbnail": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
+        "lessons": [
+            {
+                "id": "daily-01",
+                "title": "아침 인사와 안부 묻기",
+                "desc": "반가운 하루의 첫 대화를 시작합니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "How are you doing today?",
+                "explanation": "How are you?보다 조금 더 다정하게 오늘의 안부를 묻는 표현입니다."
+            },
+            {
+                "id": "daily-02",
+                "title": "오랜만에 만난 친구에게",
+                "desc": "근황을 나누고 반가움을 전합니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "It is so nice to see you again.",
+                "explanation": "다시 만나 반갑다는 마음을 편안하고 따뜻하게 전할 수 있습니다."
+            },
+            {
+                "id": "daily-03",
+                "title": "카페에서 따뜻한 차 주문하기",
+                "desc": "원하는 음료와 온도를 정중하게 말합니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "Could I have a cup of tea, please?",
+                "explanation": "Could I have...?는 주문할 때 공손하게 원하는 것을 요청하는 표현입니다."
+            },
+            {
+                "id": "daily-04",
+                "title": "식당에서 자리와 메뉴 부탁하기",
+                "desc": "자리를 안내받고 메뉴를 요청합니다.",
+                "duration": "10분",
+                "videoUrl": null,
+                "keyPhrase": "Could we have the menu, please?",
+                "explanation": "Could we have...?로 일행을 대신해 정중하게 부탁할 수 있습니다."
+            },
+            {
+                "id": "daily-05",
+                "title": "잘 못 들었을 때 다시 묻기",
+                "desc": "당황하지 않고 한 번 더 부탁하는 표현입니다.",
+                "duration": "7분",
+                "videoUrl": null,
+                "keyPhrase": "Could you say that again, please?",
+                "explanation": "다시 말해 달라고 정중하게 요청하는 실용적인 표현입니다."
+            },
+            {
+                "id": "daily-06",
+                "title": "천천히 말씀해 주세요",
+                "desc": "대화 속도를 편안하게 맞춰 달라고 합니다.",
+                "duration": "7분",
+                "videoUrl": null,
+                "keyPhrase": "Could you speak a little more slowly?",
+                "explanation": "a little을 넣으면 상대에게 부담을 덜 주는 부드러운 부탁이 됩니다."
+            },
+            {
+                "id": "daily-07",
+                "title": "약속 시간 정하기",
+                "desc": "가능한 시간과 장소를 주고받습니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "Would three o'clock work for you?",
+                "explanation": "상대에게 세 시가 괜찮은지 자연스럽게 제안하는 표현입니다."
+            },
+            {
+                "id": "daily-08",
+                "title": "날씨 이야기 나누기",
+                "desc": "가벼운 대화를 이어 주는 날씨 표현입니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "It is a lovely day, isn't it?",
+                "explanation": "날씨에 대한 감상을 말하고 isn't it?으로 상대의 공감을 구합니다."
+            },
+            {
+                "id": "daily-09",
+                "title": "감사와 답례 표현",
+                "desc": "고마움과 괜찮다는 마음을 전합니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "Thank you for your kindness.",
+                "explanation": "도움이나 친절에 대해 진심 어린 감사를 전하는 표현입니다."
+            },
+            {
+                "id": "daily-10",
+                "title": "기분과 컨디션 표현하기",
+                "desc": "오늘의 몸과 마음 상태를 간단히 말합니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "I feel much better today.",
+                "explanation": "feel 뒤에 기분이나 상태를 나타내는 말을 붙여 컨디션을 표현합니다."
+            }
+        ]
+    },
+    {
+        "categoryId": "situations",
+        "categoryName": "분야별 영어",
+        "categoryDesc": "공항, 카페, 병원 등 실제 상황에서 바로 쓰는 영어입니다.",
+        "thumbnail": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=85",
+        "lessons": [
+            {
+                "id": "field-01",
+                "title": "공항에서 탑승구 찾기",
+                "desc": "탑승구 위치를 묻고 안내를 이해합니다.",
+                "duration": "10분",
+                "videoUrl": null,
+                "keyPhrase": "Where is gate twelve?",
+                "explanation": "Where is...? 뒤에 장소를 말하면 위치를 간단히 물을 수 있습니다."
+            },
+            {
+                "id": "field-02",
+                "title": "호텔 체크인하기",
+                "desc": "예약 확인과 체크인에 필요한 말을 익힙니다.",
+                "duration": "10분",
+                "videoUrl": null,
+                "keyPhrase": "I have a reservation under Kim.",
+                "explanation": "예약자 이름을 under 뒤에 말하면 예약 정보를 찾도록 안내할 수 있습니다."
+            },
+            {
+                "id": "field-03",
+                "title": "병원에서 증상 설명하기",
+                "desc": "아픈 곳과 불편한 정도를 설명합니다.",
+                "duration": "11분",
+                "videoUrl": null,
+                "keyPhrase": "I have a pain in my shoulder.",
+                "explanation": "아픈 부위를 in 뒤에 말해 의료진에게 증상을 전달합니다."
+            },
+            {
+                "id": "field-04",
+                "title": "약국에서 약 문의하기",
+                "desc": "필요한 약과 복용법을 확인합니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "How often should I take this?",
+                "explanation": "How often...?은 약을 얼마나 자주 복용해야 하는지 묻는 표현입니다."
+            },
+            {
+                "id": "field-05",
+                "title": "택시에서 목적지 말하기",
+                "desc": "목적지를 알려 주고 도착 여부를 확인합니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "Please take me to this address.",
+                "explanation": "지도나 주소를 보여 주며 목적지까지 데려다 달라고 요청합니다."
+            },
+            {
+                "id": "field-06",
+                "title": "기차표와 좌석 문의하기",
+                "desc": "표를 사고 좌석 정보를 확인합니다.",
+                "duration": "10분",
+                "videoUrl": null,
+                "keyPhrase": "Is this seat taken?",
+                "explanation": "좌석에 사람이 있는지 묻는 짧고 공손한 질문입니다."
+            },
+            {
+                "id": "field-07",
+                "title": "관광지에서 사진 부탁하기",
+                "desc": "사진을 찍어 달라고 정중하게 부탁합니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "Would you mind taking a photo of us?",
+                "explanation": "Would you mind...?는 상대의 의사를 존중하며 부탁하는 표현입니다."
+            },
+            {
+                "id": "field-08",
+                "title": "상점에서 크기와 색상 찾기",
+                "desc": "원하는 물건의 색과 크기를 물어봅니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "Do you have this in a larger size?",
+                "explanation": "옷이나 상품의 다른 크기가 있는지 자연스럽게 확인합니다."
+            },
+            {
+                "id": "field-09",
+                "title": "길을 잃었을 때 도움 청하기",
+                "desc": "현재 위치와 길 안내를 부탁합니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "Could you show me the way on the map?",
+                "explanation": "지도에서 길을 가리켜 달라고 부탁하면 설명을 이해하기 쉽습니다."
+            },
+            {
+                "id": "field-10",
+                "title": "응급 상황에서 도움 요청하기",
+                "desc": "급한 상황임을 알리고 필요한 도움을 말합니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "I need help. Please call an ambulance.",
+                "explanation": "응급 상황에서는 짧고 분명한 문장으로 필요한 도움을 요청합니다."
+            }
+        ]
+    },
+    {
+        "categoryId": "culture",
+        "categoryName": "추억의 Pop & Culture",
+        "categoryDesc": "올드 팝의 시대와 문화 이야기에서 오늘의 영어를 발견합니다.",
+        "thumbnail": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=85",
+        "lessons": [
+            {
+                "id": "culture-01",
+                "title": "팝송 제목으로 배우는 Let it be",
+                "desc": "명곡의 배경과 핵심 문장 구조를 알아봅니다.",
+                "duration": "10분",
+                "videoUrl": null,
+                "keyPhrase": "Let it be.",
+                "explanation": "let과 목적어, 동사 원형으로 이루어진 표현으로 ‘그대로 두다’의 뜻을 살펴봅니다."
+            },
+            {
+                "id": "culture-02",
+                "title": "Yesterday가 들려주는 과거 이야기",
+                "desc": "익숙한 노래 제목으로 과거 표현을 익힙니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "I remember yesterday.",
+                "explanation": "remember 뒤에 기억하는 일을 이어 말하는 문장 구조를 연습합니다."
+            },
+            {
+                "id": "culture-03",
+                "title": "영화관에서 자주 듣는 한마디",
+                "desc": "영화 대화에서 쓰는 일상 표현을 배웁니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "That sounds like a good idea.",
+                "explanation": "상대방의 제안에 동의하며 좋은 생각이라고 말하는 자연스러운 표현입니다."
+            },
+            {
+                "id": "culture-04",
+                "title": "옛날 라디오와 신청곡 표현",
+                "desc": "음악을 신청하고 감상을 나누는 표현입니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "This song brings back memories.",
+                "explanation": "bring back memories는 추억을 떠올리게 한다는 뜻입니다."
+            },
+            {
+                "id": "culture-05",
+                "title": "공연장에서 박수와 감탄 전하기",
+                "desc": "공연을 보고 느낀 감동을 표현합니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "What a wonderful performance!",
+                "explanation": "What a...! 형태로 공연이 정말 훌륭했다는 감탄을 나타냅니다."
+            },
+            {
+                "id": "culture-06",
+                "title": "흑백 영화 속 정중한 말투",
+                "desc": "옛 영화 장면으로 공손한 부탁을 익힙니다.",
+                "duration": "10분",
+                "videoUrl": null,
+                "keyPhrase": "Would you care to join us?",
+                "explanation": "함께하겠느냐고 격식 있고 정중하게 권하는 표현입니다."
+            },
+            {
+                "id": "culture-07",
+                "title": "뮤지컬에서 배우는 감정 표현",
+                "desc": "기쁨과 놀라움을 담은 감탄 표현입니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "I am so glad to be here.",
+                "explanation": "glad to 뒤에 반가운 이유나 상황을 연결할 수 있습니다."
+            },
+            {
+                "id": "culture-08",
+                "title": "세대가 함께 나누는 음악 취향",
+                "desc": "좋아하는 가수와 음악을 소개합니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "I grew up listening to this music.",
+                "explanation": "grow up listening to로 자라면서 즐겨 들은 음악을 설명합니다."
+            },
+            {
+                "id": "culture-09",
+                "title": "명곡의 후렴구와 반복 표현",
+                "desc": "반복되는 말이 영어에서 주는 느낌을 알아봅니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "Again and again, we sing together.",
+                "explanation": "again and again은 되풀이되는 동작을 강조하는 표현입니다."
+            },
+            {
+                "id": "culture-10",
+                "title": "나의 인생 노래 소개하기",
+                "desc": "좋아하는 노래와 그 이유를 영어로 나눕니다.",
+                "duration": "10분",
+                "videoUrl": null,
+                "keyPhrase": "This is my favorite song of all time.",
+                "explanation": "of all time을 덧붙여 지금까지 가장 좋아하는 노래라고 표현합니다."
+            }
+        ]
+    },
+    {
+        "categoryId": "review",
+        "categoryName": "지난 주 복습",
+        "categoryDesc": "배운 문장을 다시 꺼내 보고 나만의 학습 기록으로 쌓습니다.",
+        "thumbnail": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=85",
+        "lessons": [
+            {
+                "id": "review-01",
+                "title": "지난주의 인사 표현 다시 보기",
+                "desc": "만남과 안부 표현을 천천히 복습합니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "It is good to see you.",
+                "explanation": "지난주에 익힌 만남의 인사를 다시 말하고 상황에 맞게 바꿔 봅니다."
+            },
+            {
+                "id": "review-02",
+                "title": "카페 주문 문장 복습",
+                "desc": "부탁 표현을 음료와 함께 바꾸어 연습합니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "Could I have a cup of coffee?",
+                "explanation": "Could I have...? 뒤의 메뉴 이름만 바꿔 여러 주문에 활용합니다."
+            },
+            {
+                "id": "review-03",
+                "title": "길 묻는 질문 모아 보기",
+                "desc": "위치 질문과 방향 안내를 되짚습니다.",
+                "duration": "10분",
+                "videoUrl": null,
+                "keyPhrase": "How can I get to the station?",
+                "explanation": "How can I get to...?로 목적지까지 가는 방법을 묻습니다."
+            },
+            {
+                "id": "review-04",
+                "title": "천천히 말해 달라고 부탁하기",
+                "desc": "대화를 이어 가는 도움 요청 표현을 복습합니다.",
+                "duration": "7분",
+                "videoUrl": null,
+                "keyPhrase": "Could you speak more slowly, please?",
+                "explanation": "상대방에게 속도를 조절해 달라고 다시 부탁하는 표현입니다."
+            },
+            {
+                "id": "review-05",
+                "title": "현재형과 과거형 구별 연습",
+                "desc": "오늘과 어제의 일을 비교해 말합니다.",
+                "duration": "9분",
+                "videoUrl": null,
+                "keyPhrase": "I walk every day. I walked yesterday.",
+                "explanation": "반복되는 습관에는 현재형, 어제 끝난 일에는 과거형을 씁니다."
+            },
+            {
+                "id": "review-06",
+                "title": "Can 질문과 대답 복습",
+                "desc": "가능한 일과 도움 요청을 이어 말합니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "Can you help me? Yes, of course.",
+                "explanation": "Can 질문에 Of course로 흔쾌히 답하는 짧은 대화를 연습합니다."
+            },
+            {
+                "id": "review-07",
+                "title": "고마움을 전하는 표현 모음",
+                "desc": "도움을 받았을 때 감사 인사를 고릅니다.",
+                "duration": "8분",
+                "videoUrl": null,
+                "keyPhrase": "Thank you for helping me.",
+                "explanation": "Thank you for 뒤에는 명사나 동명사를 사용해 감사의 이유를 말합니다."
+            },
+            {
+                "id": "review-08",
+                "title": "내가 자주 쓰는 문장 세 가지",
+                "desc": "배운 문장을 나의 생활에 맞게 바꿉니다.",
+                "duration": "10분",
+                "videoUrl": null,
+                "keyPhrase": "I enjoy walking in the morning.",
+                "explanation": "enjoy 뒤에 동명사를 붙여 자신이 즐기는 일을 설명합니다."
+            },
+            {
+                "id": "review-09",
+                "title": "한 주 학습 기록 말해 보기",
+                "desc": "이번 주에 배운 내용을 한 문단으로 정리합니다.",
+                "duration": "11분",
+                "videoUrl": null,
+                "keyPhrase": "This week, I learned three useful phrases.",
+                "explanation": "This week로 시작해 이번 주에 배운 것을 간단히 돌아봅니다."
+            },
+            {
+                "id": "review-10",
+                "title": "복습 아카이브: 나의 자신감 문장",
+                "desc": "가장 편해진 표현을 골라 또렷하게 말합니다.",
+                "duration": "10분",
+                "videoUrl": null,
+                "keyPhrase": "I can speak English one sentence at a time.",
+                "explanation": "한 문장씩 꾸준히 말할 수 있다는 자신감을 담은 복습 문장입니다."
+            }
+        ]
+    }
+]
