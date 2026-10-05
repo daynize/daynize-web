@@ -2310,10 +2310,15 @@
             const renderCategories = () => {
                 categoryTrack.replaceChildren();
                 courseCategories.forEach((category) => {
-                    const button = makeElement('button', 'category-card');
-                    button.type = 'button';
-                    button.dataset.categoryId = category.categoryId;
-                    button.setAttribute('aria-haspopup', 'dialog');
+                    const isSpeakingCourse = category.categoryId === 'speaking';
+                    const button = makeElement(isSpeakingCourse ? 'a' : 'button', 'category-card');
+                    if (isSpeakingCourse) {
+                        button.href = 'courses/speaking/';
+                    } else {
+                        button.type = 'button';
+                        button.dataset.categoryId = category.categoryId;
+                        button.setAttribute('aria-haspopup', 'dialog');
+                    }
                     const image = document.createElement('img');
                     image.src = category.thumbnail || category.lessons.find((lesson) => lesson.thumbnail)?.thumbnail || defaultThumbnail;
                     image.alt = '';
@@ -2321,7 +2326,7 @@
                     image.onerror = () => { image.onerror = null; image.src = defaultThumbnail; };
                     const copy = makeElement('span', 'category-copy');
                     copy.append(
-                        makeElement('span', 'category-count', `강의 ${category.lessons.length}편`),
+                        makeElement('span', 'category-count', isSpeakingCourse ? '동사별 영상 강의' : `강의 ${category.lessons.length}편`),
                         makeElement('strong', '', category.categoryName),
                         makeElement('span', '', category.categoryDesc)
                     );
