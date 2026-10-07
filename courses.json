@@ -94,6 +94,33 @@
                 "videoUrl": null,
                 "keyPhrase": "I live near the station, and I enjoy walking.",
                 "explanation": "짧은 문장 두 개를 and로 연결해 자연스럽게 이야기를 확장합니다."
+            },
+            {
+                "id": "do-make",
+                "title": "do와 make, 어떻게 다를까요?",
+                "desc": "do와 make가 쓰이는 상황을 구분해 말해 봅니다.",
+                "duration": "2분",
+                "videoUrl": "VIDEOS/verbs/do-make.mp4",
+                "keyPhrase": "I do my homework. / I make a plan.",
+                "explanation": "해야 할 일이나 활동에는 do, 무언가를 만들어 내는 경우에는 make를 씁니다."
+            },
+            {
+                "id": "catch",
+                "title": "catch, 잡다 그 이상의 표현",
+                "desc": "catch가 쓰이는 다양한 상황을 익혀 봅니다.",
+                "duration": "2분",
+                "videoUrl": "VIDEOS/verbs/catch.mp4",
+                "keyPhrase": "I caught the bus. / I caught a cold.",
+                "explanation": "catch는 공을 잡거나 버스를 타는 것, 감기에 걸리는 것까지 폭넓게 쓰입니다."
+            },
+            {
+                "id": "bring",
+                "title": "bring, 가져오다",
+                "desc": "bring의 기본 의미와 쓰임을 익혀 봅니다.",
+                "duration": "2분",
+                "videoUrl": "VIDEOS/verbs/bring.mp4",
+                "keyPhrase": "Please bring your ID.",
+                "explanation": "bring은 무언가를 말하는 사람이 있는 곳으로 가져오거나 데려올 때 씁니다."
             }
         ]
     },
