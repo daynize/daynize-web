@@ -273,6 +273,42 @@
                 "videoUrl": "VIDEOS/daily/borrow-lend.mp4",
                 "keyPhrase": "Can I borrow your pen? / Can you lend me your pen?",
                 "explanation": "borrow는 빌려 오는 것, lend는 빌려주는 것입니다."
+            },
+            {
+                "id": "lay-lie",
+                "title": "lay와 lie, 놓다와 눕다",
+                "desc": "타동사 lay와 자동사 lie를 구분해 말합니다.",
+                "duration": "2분",
+                "videoUrl": "VIDEOS/daily/lay-lie.mp4",
+                "keyPhrase": "Lay the book on the desk. / I lie on the sofa.",
+                "explanation": "lay는 목적어를 놓을 때, lie는 스스로 눕거나 놓여 있을 때 씁니다."
+            },
+            {
+                "id": "raise-rise",
+                "title": "raise와 rise, 올리다와 오르다",
+                "desc": "타동사 raise와 자동사 rise를 구분해 말합니다.",
+                "duration": "2분",
+                "videoUrl": "VIDEOS/daily/raise-rise.mp4",
+                "keyPhrase": "Raise your hand. / The sun rises.",
+                "explanation": "raise는 무언가를 올릴 때, rise는 스스로 오를 때 씁니다."
+            },
+            {
+                "id": "sit-set",
+                "title": "sit과 set, 앉다와 놓다",
+                "desc": "자동사 sit과 타동사 set의 쓰임을 구분합니다.",
+                "duration": "2분",
+                "videoUrl": "VIDEOS/daily/sit-set.mp4",
+                "keyPhrase": "Please sit down. / Set the cup on the table.",
+                "explanation": "sit은 앉는 행동, set은 무언가를 두거나 맞추는 행동입니다."
+            },
+            {
+                "id": "let",
+                "title": "let이 들어간 표현",
+                "desc": "let을 활용한 구동사와 자주 쓰는 표현을 익힙니다.",
+                "duration": "1분",
+                "videoUrl": "VIDEOS/daily/let.mp4",
+                "keyPhrase": "Let me know. / Let it go.",
+                "explanation": "let은 허락하거나 ~하게 두다라는 뜻으로 폭넓게 쓰입니다."
             }
         ]
     },
