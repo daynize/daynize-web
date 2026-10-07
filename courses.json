@@ -219,6 +219,60 @@
                 "videoUrl": null,
                 "keyPhrase": "I feel much better today.",
                 "explanation": "feel 뒤에 기분이나 상태를 나타내는 말을 붙여 컨디션을 표현합니다."
+            },
+            {
+                "id": "active-passive",
+                "title": "능동태와 수동태, 언제 쓸까요?",
+                "desc": "행위자가 중요한 문장과 결과가 중요한 문장을 구분합니다.",
+                "duration": "4분",
+                "videoUrl": "VIDEOS/daily/active-passive.mp4",
+                "keyPhrase": "The chef made this soup. / This soup was made by the chef.",
+                "explanation": "주어가 행동하면 능동태, 주어가 행동을 받으면 수동태(be + 과거분사)를 씁니다."
+            },
+            {
+                "id": "emotional-verb",
+                "title": "감정을 나타내는 동사",
+                "desc": "감정 동사의 -ing와 -ed 형태를 구분해 말해 봅니다.",
+                "duration": "2분",
+                "videoUrl": "VIDEOS/daily/emotional-verb.mp4",
+                "keyPhrase": "The movie was boring. / I was bored.",
+                "explanation": "감정을 일으키는 대상에는 -ing, 감정을 느끼는 사람에는 -ed를 씁니다."
+            },
+            {
+                "id": "transitive-verb",
+                "title": "목적어가 필요한 타동사",
+                "desc": "목적어가 꼭 필요한 동사의 쓰임을 익힙니다.",
+                "duration": "2분",
+                "videoUrl": "VIDEOS/daily/transitive-verb.mp4",
+                "keyPhrase": "I need a pen.",
+                "explanation": "타동사는 뒤에 목적어가 있어야 문장이 완성됩니다."
+            },
+            {
+                "id": "intransitive-verb",
+                "title": "목적어가 필요 없는 자동사",
+                "desc": "목적어 없이도 완성되는 동사의 쓰임을 익힙니다.",
+                "duration": "2분",
+                "videoUrl": "VIDEOS/daily/intransitive-verb.mp4",
+                "keyPhrase": "The sun rises in the east.",
+                "explanation": "자동사는 목적어 없이 쓰이며, 전치사와 함께 장소나 방향을 덧붙입니다."
+            },
+            {
+                "id": "put-set",
+                "title": "put과 set, 어떻게 다를까요?",
+                "desc": "두 동사가 놓는 행동을 어떻게 다르게 나타내는지 비교합니다.",
+                "duration": "1분",
+                "videoUrl": "VIDEOS/daily/put-set.mp4",
+                "keyPhrase": "Put the book on the table. / Set the table.",
+                "explanation": "put은 일반적으로 놓는 것, set은 알맞게 배치하거나 맞출 때 씁니다."
+            },
+            {
+                "id": "borrow-lend",
+                "title": "borrow와 lend, 빌리다와 빌려주다",
+                "desc": "빌리는 쪽과 빌려주는 쪽을 구분해 말합니다.",
+                "duration": "2분",
+                "videoUrl": "VIDEOS/daily/borrow-lend.mp4",
+                "keyPhrase": "Can I borrow your pen? / Can you lend me your pen?",
+                "explanation": "borrow는 빌려 오는 것, lend는 빌려주는 것입니다."
             }
         ]
     },
