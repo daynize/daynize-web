@@ -137,7 +137,8 @@
                 "duration": "4분",
                 "videoUrl": "VIDEOS/daily/active-passive.mp4",
                 "keyPhrase": "The chef made this soup. / This soup was made by the chef.",
-                "explanation": "주어가 행동하면 능동태, 주어가 행동을 받으면 수동태(be + 과거분사)를 씁니다."
+                "explanation": "주어가 행동하면 능동태, 주어가 행동을 받으면 수동태(be + 과거분사)를 씁니다.",
+                "thumbnail": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=85"
             },
             {
                 "id": "emotional-verb",
@@ -146,7 +147,8 @@
                 "duration": "2분",
                 "videoUrl": "VIDEOS/daily/emotional-verb.mp4",
                 "keyPhrase": "The movie was boring. / I was bored.",
-                "explanation": "감정을 일으키는 대상에는 -ing, 감정을 느끼는 사람에는 -ed를 씁니다."
+                "explanation": "감정을 일으키는 대상에는 -ing, 감정을 느끼는 사람에는 -ed를 씁니다.",
+                "thumbnail": "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=900&q=85"
             },
             {
                 "id": "transitive-verb",
@@ -155,7 +157,8 @@
                 "duration": "2분",
                 "videoUrl": "VIDEOS/daily/transitive-verb.mp4",
                 "keyPhrase": "I need a pen.",
-                "explanation": "타동사는 뒤에 목적어가 있어야 문장이 완성됩니다."
+                "explanation": "타동사는 뒤에 목적어가 있어야 문장이 완성됩니다.",
+                "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
             },
             {
                 "id": "intransitive-verb",
@@ -164,7 +167,8 @@
                 "duration": "2분",
                 "videoUrl": "VIDEOS/daily/intransitive-verb.mp4",
                 "keyPhrase": "The sun rises in the east.",
-                "explanation": "자동사는 목적어 없이 쓰이며, 전치사와 함께 장소나 방향을 덧붙입니다."
+                "explanation": "자동사는 목적어 없이 쓰이며, 전치사와 함께 장소나 방향을 덧붙입니다.",
+                "thumbnail": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85"
             },
             {
                 "id": "put-set",
@@ -173,7 +177,8 @@
                 "duration": "1분",
                 "videoUrl": "VIDEOS/daily/put-set.mp4",
                 "keyPhrase": "Put the book on the table. / Set the table.",
-                "explanation": "put은 일반적으로 놓는 것, set은 알맞게 배치하거나 맞출 때 씁니다."
+                "explanation": "put은 일반적으로 놓는 것, set은 알맞게 배치하거나 맞출 때 씁니다.",
+                "thumbnail": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=85"
             },
             {
                 "id": "borrow-lend",
@@ -182,7 +187,8 @@
                 "duration": "2분",
                 "videoUrl": "VIDEOS/daily/borrow-lend.mp4",
                 "keyPhrase": "Can I borrow your pen? / Can you lend me your pen?",
-                "explanation": "borrow는 빌려 오는 것, lend는 빌려주는 것입니다."
+                "explanation": "borrow는 빌려 오는 것, lend는 빌려주는 것입니다.",
+                "thumbnail": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=900&q=85"
             },
             {
                 "id": "lay-lie",
@@ -191,7 +197,8 @@
                 "duration": "2분",
                 "videoUrl": "VIDEOS/daily/lay-lie.mp4",
                 "keyPhrase": "Lay the book on the desk. / I lie on the sofa.",
-                "explanation": "lay는 목적어를 놓을 때, lie는 스스로 눕거나 놓여 있을 때 씁니다."
+                "explanation": "lay는 목적어를 놓을 때, lie는 스스로 눕거나 놓여 있을 때 씁니다.",
+                "thumbnail": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=85"
             },
             {
                 "id": "raise-rise",
@@ -200,7 +207,8 @@
                 "duration": "2분",
                 "videoUrl": "VIDEOS/daily/raise-rise.mp4",
                 "keyPhrase": "Raise your hand. / The sun rises.",
-                "explanation": "raise는 무언가를 올릴 때, rise는 스스로 오를 때 씁니다."
+                "explanation": "raise는 무언가를 올릴 때, rise는 스스로 오를 때 씁니다.",
+                "thumbnail": "https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&w=900&q=85"
             },
             {
                 "id": "sit-set",
@@ -209,7 +217,8 @@
                 "duration": "2분",
                 "videoUrl": "VIDEOS/daily/sit-set.mp4",
                 "keyPhrase": "Please sit down. / Set the cup on the table.",
-                "explanation": "sit은 앉는 행동, set은 무언가를 두거나 맞추는 행동입니다."
+                "explanation": "sit은 앉는 행동, set은 무언가를 두거나 맞추는 행동입니다.",
+                "thumbnail": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=85"
             },
             {
                 "id": "let",
@@ -218,7 +227,8 @@
                 "duration": "1분",
                 "videoUrl": "VIDEOS/daily/let.mp4",
                 "keyPhrase": "Let me know. / Let it go.",
-                "explanation": "let은 허락하거나 ~하게 두다라는 뜻으로 폭넓게 쓰입니다."
+                "explanation": "let은 허락하거나 ~하게 두다라는 뜻으로 폭넓게 쓰입니다.",
+                "thumbnail": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=85"
             }
         ]
     },
