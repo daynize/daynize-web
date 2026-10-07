@@ -809,7 +809,8 @@
         }
 
         .video-dialog {
-            width: min(940px, calc(100% - 32px));
+            width: min(480px, calc(100% - 32px));
+            max-height: calc(100dvh - 24px);
         }
 
         .video-dialog-body {
@@ -819,8 +820,10 @@
 
         .video-frame {
             display: grid;
-            width: 100%;
-            aspect-ratio: 16 / 9;
+            height: min(60dvh, 560px);
+            max-width: 100%;
+            margin-inline: auto;
+            aspect-ratio: 9 / 16;
             place-items: center;
             overflow: hidden;
             background: #1f2b25;
@@ -833,6 +836,7 @@
             height: 100%;
             border: 0;
             object-fit: contain;
+            background: #000;
         }
 
         .video-placeholder {
@@ -1929,7 +1933,7 @@
                     <p class="eyebrow">TODAY'S CONVERSATION</p>
                     <h2 class="section-title" id="conversation-title">오늘의 회화,<br>한마디부터 편안하게</h2>
                     <p class="section-intro">상황을 떠올리고 카드를 눌러 영어 표현을 확인해 보세요. 소리 내어 읽으면 더 오래 기억됩니다.</p>
-                    <blockquote>“완벽한 문장보다<br>건네는 용기가 먼저예요.”</blockquote>
+                    <blockquote>“완벽한 문장보다<br>한마디 용기가 먼저예요.”</blockquote>
                 </div>
                 <div>
                     <div class="flip-card" id="conversation-card" role="button" tabindex="0" aria-pressed="false"
@@ -2053,7 +2057,7 @@
         <div class="wrap footer-inner">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <strong>DAYNIZE (걷다) · 데이나이즈</strong>
+                    <img src="./DAYNIZE LOGO ONLY.png" alt="DAYNIZE" class="brand-logo" />
                     <span>지난 주 영어 | 배움의 기록은 오늘도 이어집니다.</span>
                 </div>
                 <nav class="footer-links" aria-label="법적 고지">
