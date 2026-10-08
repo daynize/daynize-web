@@ -1,0 +1,46 @@
+{
+  "id": "field-10",
+  "title": "응급 상황에서 도움 요청하기",
+  "episode": 10,
+  "totalSec": 30,
+  "speechEndSec": 26.75,
+  "audioFile": "audio/field-10.wav",
+  "sentences": [
+    {
+      "ko": "급하게 도움이 필요하다고 외칩니다.",
+      "en": "Please help me right away!",
+      "T": 1.6,
+      "blockStart": 0,
+      "koStart": 0.4,
+      "koEnd": 2.88322,
+      "enStart": 3.28322,
+      "enEnd": 4.88322,
+      "followEnd": 7.483219999999999,
+      "restEnd": 10.48322
+    },
+    {
+      "ko": "구급차를 불러달라고 부탁합니다.",
+      "en": "Call an ambulance, please.",
+      "T": 2,
+      "blockStart": 10.48322,
+      "koStart": 10.48322,
+      "koEnd": 12.771201999999999,
+      "enStart": 13.171202,
+      "enEnd": 15.171202,
+      "followEnd": 18.171202,
+      "restEnd": 21.171202
+    },
+    {
+      "ko": "경찰이 필요하다고 알립니다.",
+      "en": "I need the police.",
+      "T": 1.2,
+      "blockStart": 21.171202,
+      "koStart": 21.171202,
+      "koEnd": 22.951338,
+      "enStart": 23.351338,
+      "enEnd": 24.551337999999998,
+      "followEnd": 26.751337999999997,
+      "restEnd": 26.751337999999997
+    }
+  ]
+}

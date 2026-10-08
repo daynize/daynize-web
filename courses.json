@@ -243,90 +243,240 @@
                 "title": "공항에서 탑승구 찾기",
                 "desc": "탑승구 위치를 묻고 안내를 이해합니다.",
                 "duration": "10분",
-                "videoUrl": null,
+                "videoUrl": "VIDEOS/field-specific/field-01.mp4",
                 "keyPhrase": "Where is gate twelve?",
-                "explanation": "Where is...? 뒤에 장소를 말하면 위치를 간단히 물을 수 있습니다."
+                "explanation": "Where is...? 뒤에 장소를 말하면 위치를 간단히 물을 수 있습니다.",
+                "script": [
+                    {
+                        "ko": "탑승구가 어디인지 물어볼 때입니다.",
+                        "en": "Where is Gate 15?"
+                    },
+                    {
+                        "ko": "직원이 직진하라고 안내합니다.",
+                        "en": "Go straight and turn left."
+                    },
+                    {
+                        "ko": "친절한 안내에 감사 인사를 전합니다.",
+                        "en": "Thank you for your help."
+                    }
+                ],
+                "thumbnail": "IMAGE/field-specific/field_01.jpg"
             },
             {
                 "id": "field-02",
                 "title": "호텔 체크인하기",
                 "desc": "예약 확인과 체크인에 필요한 말을 익힙니다.",
                 "duration": "10분",
-                "videoUrl": null,
+                "videoUrl": "VIDEOS/field-specific/field-02.mp4",
                 "keyPhrase": "I have a reservation under Kim.",
-                "explanation": "예약자 이름을 under 뒤에 말하면 예약 정보를 찾도록 안내할 수 있습니다."
+                "explanation": "예약자 이름을 under 뒤에 말하면 예약 정보를 찾도록 안내할 수 있습니다.",
+                "script": [
+                    {
+                        "ko": "예약 확인 및 체크인을 요청합니다.",
+                        "en": "I’d like to check in, please."
+                    },
+                    {
+                        "ko": "예약자 이름을 전달합니다.",
+                        "en": "My name is Sean Kang."
+                    },
+                    {
+                        "ko": "조식 시간을 물어봅니다.",
+                        "en": "What time is breakfast?"
+                    }
+                ],
+                "thumbnail": "IMAGE/field-specific/field_02.jpg"
             },
             {
                 "id": "field-03",
                 "title": "병원에서 증상 설명하기",
                 "desc": "아픈 곳과 불편한 정도를 설명합니다.",
                 "duration": "11분",
-                "videoUrl": null,
+                "videoUrl": "VIDEOS/field-specific/field-03.mp4",
                 "keyPhrase": "I have a pain in my shoulder.",
-                "explanation": "아픈 부위를 in 뒤에 말해 의료진에게 증상을 전달합니다."
+                "explanation": "아픈 부위를 in 뒤에 말해 의료진에게 증상을 전달합니다.",
+                "script": [
+                    {
+                        "ko": "의사에게 두통이 있다고 말합니다.",
+                        "en": "I have a severe headache."
+                    },
+                    {
+                        "ko": "어제부터 아프기 시작했다고 설명합니다.",
+                        "en": "It started yesterday."
+                    },
+                    {
+                        "ko": "처방전이 필요한지 문의합니다.",
+                        "en": "Do I need a prescription?"
+                    }
+                ],
+                "thumbnail": "IMAGE/field-specific/field_03.jpg"
             },
             {
                 "id": "field-04",
                 "title": "약국에서 약 문의하기",
                 "desc": "필요한 약과 복용법을 확인합니다.",
                 "duration": "9분",
-                "videoUrl": null,
+                "videoUrl": "VIDEOS/field-specific/field-04.mp4",
                 "keyPhrase": "How often should I take this?",
-                "explanation": "How often...?은 약을 얼마나 자주 복용해야 하는지 묻는 표현입니다."
+                "explanation": "How often...?은 약을 얼마나 자주 복용해야 하는지 묻는 표현입니다.",
+                "script": [
+                    {
+                        "ko": "감기약이 있는지 물어봅니다.",
+                        "en": "Do you have medicine for a cold?"
+                    },
+                    {
+                        "ko": "하루에 몇 번 먹는지 확인합니다.",
+                        "en": "How many times a day?"
+                    },
+                    {
+                        "ko": "식후에 복용해야 하는지 물어봅니다.",
+                        "en": "Should I take it after meals?"
+                    }
+                ],
+                "thumbnail": "IMAGE/field-specific/field_04.jpg"
             },
             {
                 "id": "field-05",
                 "title": "택시에서 목적지 말하기",
                 "desc": "목적지를 알려 주고 도착 여부를 확인합니다.",
                 "duration": "8분",
-                "videoUrl": null,
+                "videoUrl": "VIDEOS/field-specific/field-05.mp4",
                 "keyPhrase": "Please take me to this address.",
-                "explanation": "지도나 주소를 보여 주며 목적지까지 데려다 달라고 요청합니다."
+                "explanation": "지도나 주소를 보여 주며 목적지까지 데려다 달라고 요청합니다.",
+                "script": [
+                    {
+                        "ko": "택시 기사님께 목적지를 말합니다.",
+                        "en": "Please take me to the airport."
+                    },
+                    {
+                        "ko": "얼마나 걸리는지 물어봅니다.",
+                        "en": "How long does it take?"
+                    },
+                    {
+                        "ko": "여기서 내려달라고 요청합니다.",
+                        "en": "You can drop me off here."
+                    }
+                ],
+                "thumbnail": "IMAGE/field-specific/field_05.jpg"
             },
             {
                 "id": "field-06",
                 "title": "기차표와 좌석 문의하기",
                 "desc": "표를 사고 좌석 정보를 확인합니다.",
                 "duration": "10분",
-                "videoUrl": null,
+                "videoUrl": "VIDEOS/field-specific/field-06.mp4",
                 "keyPhrase": "Is this seat taken?",
-                "explanation": "좌석에 사람이 있는지 묻는 짧고 공손한 질문입니다."
+                "explanation": "좌석에 사람이 있는지 묻는 짧고 공손한 질문입니다.",
+                "script": [
+                    {
+                        "ko": "서울행 기차표를 요청합니다.",
+                        "en": "One ticket to Seoul, please."
+                    },
+                    {
+                        "ko": "창가 쪽 좌석을 선호한다고 말합니다.",
+                        "en": "I’d like a window seat."
+                    },
+                    {
+                        "ko": "출발 시간을 확인합니다.",
+                        "en": "What time does it leave?"
+                    }
+                ],
+                "thumbnail": "IMAGE/field-specific/field_06.jpg"
             },
             {
                 "id": "field-07",
                 "title": "관광지에서 사진 부탁하기",
                 "desc": "사진을 찍어 달라고 정중하게 부탁합니다.",
                 "duration": "8분",
-                "videoUrl": null,
+                "videoUrl": "VIDEOS/field-specific/field-07.mp4",
                 "keyPhrase": "Would you mind taking a photo of us?",
-                "explanation": "Would you mind...?는 상대의 의사를 존중하며 부탁하는 표현입니다."
+                "explanation": "Would you mind...?는 상대의 의사를 존중하며 부탁하는 표현입니다.",
+                "script": [
+                    {
+                        "ko": "사진을 찍어달라고 정중히 부탁합니다.",
+                        "en": "Could you take a picture of me?"
+                    },
+                    {
+                        "ko": "셔터 버튼 위치를 알려줍니다.",
+                        "en": "Just press this button."
+                    },
+                    {
+                        "ko": "예쁘게 찍어줘서 감사하다고 말합니다.",
+                        "en": "It looks wonderful, thank you!"
+                    }
+                ],
+                "thumbnail": "IMAGE/field-specific/field_07.jpg"
             },
             {
                 "id": "field-08",
                 "title": "상점에서 크기와 색상 찾기",
                 "desc": "원하는 물건의 색과 크기를 물어봅니다.",
                 "duration": "9분",
-                "videoUrl": null,
+                "videoUrl": "VIDEOS/field-specific/field-08.mp4",
                 "keyPhrase": "Do you have this in a larger size?",
-                "explanation": "옷이나 상품의 다른 크기가 있는지 자연스럽게 확인합니다."
+                "explanation": "옷이나 상품의 다른 크기가 있는지 자연스럽게 확인합니다.",
+                "script": [
+                    {
+                        "ko": "더 큰 사이즈가 있는지 물어봅니다.",
+                        "en": "Do you have this in a larger size?"
+                    },
+                    {
+                        "ko": "검은색 제품이 있는지 확인합니다.",
+                        "en": "Does this come in black?"
+                    },
+                    {
+                        "ko": "입어봐도 되는지 물어봅니다.",
+                        "en": "Can I try this on?"
+                    }
+                ],
+                "thumbnail": "IMAGE/field-specific/field_08.jpg"
             },
             {
                 "id": "field-09",
                 "title": "길을 잃었을 때 도움 청하기",
                 "desc": "현재 위치와 길 안내를 부탁합니다.",
                 "duration": "8분",
-                "videoUrl": null,
+                "videoUrl": "VIDEOS/field-specific/field-09.mp4",
                 "keyPhrase": "Could you show me the way on the map?",
-                "explanation": "지도에서 길을 가리켜 달라고 부탁하면 설명을 이해하기 쉽습니다."
+                "explanation": "지도에서 길을 가리켜 달라고 부탁하면 설명을 이해하기 쉽습니다.",
+                "script": [
+                    {
+                        "ko": "길을 잃었다고 도움을 요청합니다.",
+                        "en": "Excuse me, I’m lost."
+                    },
+                    {
+                        "ko": "지하철역 위치를 물어봅니다.",
+                        "en": "Where is the nearest station?"
+                    },
+                    {
+                        "ko": "지도에서 보여달라고 부탁합니다.",
+                        "en": "Can you show me on the map?"
+                    }
+                ],
+                "thumbnail": "IMAGE/field-specific/field_09.jpg"
             },
             {
                 "id": "field-10",
                 "title": "응급 상황에서 도움 요청하기",
                 "desc": "급한 상황임을 알리고 필요한 도움을 말합니다.",
                 "duration": "8분",
-                "videoUrl": null,
+                "videoUrl": "VIDEOS/field-specific/field-10.mp4",
                 "keyPhrase": "I need help. Please call an ambulance.",
-                "explanation": "응급 상황에서는 짧고 분명한 문장으로 필요한 도움을 요청합니다."
+                "explanation": "응급 상황에서는 짧고 분명한 문장으로 필요한 도움을 요청합니다.",
+                "script": [
+                    {
+                        "ko": "급하게 도움이 필요하다고 외칩니다.",
+                        "en": "Please help me right away!"
+                    },
+                    {
+                        "ko": "구급차를 불러달라고 부탁합니다.",
+                        "en": "Call an ambulance, please."
+                    },
+                    {
+                        "ko": "경찰이 필요하다고 알립니다.",
+                        "en": "I need the police."
+                    }
+                ],
+                "thumbnail": "IMAGE/field-specific/field_10.jpg"
             }
         ]
     },

@@ -451,6 +451,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="../../exit-quiz.css">
 </head>
 
 <body>
@@ -519,6 +520,7 @@
         </div>
     </footer>
 
+    <script src="../../exit-quiz.js"></script>
     <script>
         (() => {
             const lessons = [
@@ -540,7 +542,7 @@
                 ['set', '놓다 · 설정하다'],
                 ['take', '가져가다 · 데려가다'],
                 ['turn', '돌다 · 바꾸다']
-            ].map(([word, meaning]) => ({ word, meaning, src: `../../VIDEOS/videos/${word}.mp4` }));
+            ].map(([word, meaning]) => ({ word, meaning, src: `../../VIDEOS/verbs/${word}.mp4` }));
 
             const video = document.querySelector('#lesson-video');
             const playlist = document.querySelector('#playlist-items');
@@ -549,11 +551,22 @@
             const indexLabel = document.querySelector('#current-index');
             const status = document.querySelector('#player-status');
             let selectedIndex = 0;
+            const quiz = ExitQuiz.init({
+                getItems: () => lessons.map((l) => ({ id: l.word, title: `I ${l.word} — ${l.meaning.split('·')[0].trim()}`, keyPhrase: `I ${l.word}`, explanation: l.meaning })),
+                triggerSelector: '.brand, .back-link, .breadcrumbs a, .site-footer a',
+                storageKey: 'exitQuizUsedSpeaking',
+                onRewatch: (item) => {
+                    selectLesson(lessons.findIndex((l) => l.word === item.id), true);
+                    video.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+            video.addEventListener('play', () => quiz.markWatched(lessons[selectedIndex].word));
 
             const selectLesson = (index, shouldPlay = false) => {
                 selectedIndex = (index + lessons.length) % lessons.length;
                 const lesson = lessons[selectedIndex];
-                video.src = lesson.src;
+                if (shouldPlay) quiz.markWatched(lesson.word);
+                video.src = lesson.src.replace('VIDEOS/videos/', 'VIDEOS/verbs/');
                 video.load();
                 title.textContent = `I ${lesson.word}`;
                 meaning.textContent = lesson.meaning;

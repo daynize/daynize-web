@@ -1,0 +1,46 @@
+{
+  "id": "field-07",
+  "title": "관광지에서 사진 부탁하기",
+  "episode": 7,
+  "totalSec": 30,
+  "speechEndSec": 28.44,
+  "audioFile": "audio/field-07.wav",
+  "sentences": [
+    {
+      "ko": "사진을 찍어달라고 정중히 부탁합니다.",
+      "en": "Could you take a picture of me?",
+      "T": 1.7,
+      "blockStart": 0,
+      "koStart": 0.4,
+      "koEnd": 2.8789569999999998,
+      "enStart": 3.2789569999999997,
+      "enEnd": 4.978956999999999,
+      "followEnd": 7.678957,
+      "restEnd": 10.678957
+    },
+    {
+      "ko": "셔터 버튼 위치를 알려줍니다.",
+      "en": "Just press this button.",
+      "T": 1.5,
+      "blockStart": 10.678957,
+      "koStart": 10.678957,
+      "koEnd": 12.797733000000001,
+      "enStart": 13.197733000000001,
+      "enEnd": 14.697733000000001,
+      "followEnd": 17.197733,
+      "restEnd": 20.197733
+    },
+    {
+      "ko": "예쁘게 찍어줘서 감사하다고 말합니다.",
+      "en": "It looks wonderful, thank you!",
+      "T": 2.1,
+      "blockStart": 20.197733,
+      "koStart": 20.197733,
+      "koEnd": 22.839683,
+      "enStart": 23.239683,
+      "enEnd": 25.339683,
+      "followEnd": 28.439683000000002,
+      "restEnd": 28.439683000000002
+    }
+  ]
+}

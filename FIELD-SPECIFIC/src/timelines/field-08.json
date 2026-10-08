@@ -1,0 +1,46 @@
+{
+  "id": "field-08",
+  "title": "상점에서 크기와 색상 찾기",
+  "episode": 8,
+  "totalSec": 30,
+  "speechEndSec": 26.67,
+  "audioFile": "audio/field-08.wav",
+  "sentences": [
+    {
+      "ko": "더 큰 사이즈가 있는지 물어봅니다.",
+      "en": "Do you have this in a larger size?",
+      "T": 2.1,
+      "blockStart": 0,
+      "koStart": 0.4,
+      "koEnd": 2.571882,
+      "enStart": 2.971882,
+      "enEnd": 5.0718820000000004,
+      "followEnd": 8.171882,
+      "restEnd": 11.171882
+    },
+    {
+      "ko": "검은색 제품이 있는지 확인합니다.",
+      "en": "Does this come in black?",
+      "T": 1.4,
+      "blockStart": 11.171882,
+      "koStart": 11.171882,
+      "koEnd": 13.455964,
+      "enStart": 13.855964,
+      "enEnd": 15.255964,
+      "followEnd": 17.655964,
+      "restEnd": 20.655964
+    },
+    {
+      "ko": "입어봐도 되는지 물어봅니다.",
+      "en": "Can I try this on?",
+      "T": 1.4,
+      "blockStart": 20.655964,
+      "koStart": 20.655964,
+      "koEnd": 22.473606,
+      "enStart": 22.873606,
+      "enEnd": 24.273605999999997,
+      "followEnd": 26.673605999999996,
+      "restEnd": 26.673605999999996
+    }
+  ]
+}

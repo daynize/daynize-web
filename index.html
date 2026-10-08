@@ -1818,6 +1818,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="exit-quiz.css">
 </head>
 
 <body>
@@ -2240,6 +2241,7 @@
         </div>
     </dialog>
 
+    <script src="exit-quiz.js"></script>
     <script>
         (() => {
             const menuButton = document.querySelector('.menu-toggle');
@@ -2371,9 +2373,19 @@
                 renderLessons(category);
                 categoryDialog.showModal();
             };
+            const VIDEO_FOLDERS = ['verbs', 'daily', 'field-specific', 'script'];
+            const CATEGORY_FOLDER = { speaking: 'verbs', verbs: 'verbs', daily: 'daily', situations: 'field-specific', 'field-specific': 'field-specific', script: 'script' };
+            // 경로 안의 마지막 알려진 폴더를 우선하고, 없으면 카테고리 ID로 폴더를 정한다.
+            const normalizeVideoPath = (raw, categoryId) => {
+                if (typeof raw !== 'string' || !raw.trim() || /^https?:/i.test(raw.trim())) return raw;
+                const parts = raw.trim().replace(/^(?:\.?\/)+/, '').split('/').filter(Boolean);
+                const file = parts.pop().replace(/\.mp4$/i, '') + '.mp4';
+                const folder = [...parts].reverse().find((part) => VIDEO_FOLDERS.includes(part.toLowerCase()))?.toLowerCase() || CATEGORY_FOLDER[categoryId] || 'verbs';
+                return `VIDEOS/${folder}/${file}`;
+            };
             const renderVideoSource = (lesson) => {
                 videoFrame.replaceChildren();
-                const url = safeHttpUrl(lesson.videoUrl);
+                const url = safeHttpUrl(normalizeVideoPath(lesson.videoPath || lesson.videoUrl, selectedCategory?.categoryId));
                 if (!url) {
                     const placeholder = makeElement('div', 'video-placeholder');
                     placeholder.append(
@@ -2408,20 +2420,25 @@
                     video.controls = true;
                     video.playsInline = true;
                     video.autoplay = true;
+                    video.preload = 'auto';
                     video.setAttribute('aria-label', lesson.title);
+                    video.addEventListener('error', () => {
+                        videoFrame.replaceChildren(makeElement('div', 'video-placeholder', `영상을 불러오지 못했습니다. (${url.pathname})`));
+                    }, { once: true });
                     videoFrame.append(video);
-                    video.play().catch(() => { });
                     return;
                 }
                 videoFrame.append(makeElement('div', 'video-placeholder', '지원하는 YouTube 또는 MP4 영상 주소가 아닙니다.'));
             };
             const openLesson = (lesson) => {
+                quiz.markWatched(lesson.id);
                 document.querySelector('#video-dialog-title').textContent = lesson.title;
                 document.querySelector('#video-dialog-description').textContent = `${selectedCategory.categoryName} · ${lesson.duration || '시간 미정'}`;
                 document.querySelector('#lesson-key-phrase').textContent = lesson.keyPhrase || '핵심 문장을 준비하고 있습니다.';
                 document.querySelector('#lesson-explanation').textContent = lesson.explanation || lesson.desc;
                 renderVideoSource(lesson);
                 videoDialog.showModal();
+                videoFrame.querySelector('video')?.play().catch(() => { });
             };
 
             categoryTrack.addEventListener('click', (event) => {
@@ -2466,6 +2483,20 @@
                 dialog.addEventListener('close', () => {
                     if (dialog === videoDialog) videoFrame.replaceChildren();
                 });
+            });
+            const quiz = ExitQuiz.init({
+                getItems: () => courseCategories.flatMap((category) => category.lessons),
+                triggerSelector: '.logo-link, .category-card, #video-dialog [data-close-dialog]',
+                ignoreSelector: '#lesson-grid, [data-lesson-id], .video-frame',
+                storageKey: 'exitQuizUsed',
+                onRewatch: (lesson) => {
+                    const category = courseCategories.find((item) => item.lessons.includes(lesson));
+                    if (!category) return;
+                    selectedCategory = category;
+                    document.querySelector('#lessons')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    if (videoDialog.open) videoDialog.close();
+                    openLesson(lesson);
+                }
             });
             fetch(new URL('courses.json', document.baseURI))
                 .then((response) => {

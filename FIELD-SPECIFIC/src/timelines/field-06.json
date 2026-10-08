@@ -1,0 +1,46 @@
+{
+  "id": "field-06",
+  "title": "기차표와 좌석 문의하기",
+  "episode": 6,
+  "totalSec": 30,
+  "speechEndSec": 26.87,
+  "audioFile": "audio/field-06.wav",
+  "sentences": [
+    {
+      "ko": "서울행 기차표를 요청합니다.",
+      "en": "One ticket to Seoul, please.",
+      "T": 2.1,
+      "blockStart": 0,
+      "koStart": 0.4,
+      "koEnd": 2.344853,
+      "enStart": 2.744853,
+      "enEnd": 4.8448530000000005,
+      "followEnd": 7.944853,
+      "restEnd": 10.944853
+    },
+    {
+      "ko": "창가 쪽 좌석을 선호한다고 말합니다.",
+      "en": "I’d like a window seat.",
+      "T": 1.5,
+      "blockStart": 10.944853,
+      "koStart": 10.944853,
+      "koEnd": 13.576508,
+      "enStart": 13.976508,
+      "enEnd": 15.476508,
+      "followEnd": 17.976508000000003,
+      "restEnd": 20.976508000000003
+    },
+    {
+      "ko": "출발 시간을 확인합니다.",
+      "en": "What time does it leave?",
+      "T": 1.4,
+      "blockStart": 20.976508000000003,
+      "koStart": 20.976508000000003,
+      "koEnd": 22.666304000000004,
+      "enStart": 23.066304000000002,
+      "enEnd": 24.466304,
+      "followEnd": 26.866304,
+      "restEnd": 26.866304
+    }
+  ]
+}

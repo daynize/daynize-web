@@ -1,0 +1,46 @@
+{
+  "id": "field-09",
+  "title": "길을 잃었을 때 도움 요청하기",
+  "episode": 9,
+  "totalSec": 30,
+  "speechEndSec": 27.05,
+  "audioFile": "audio/field-09.wav",
+  "sentences": [
+    {
+      "ko": "길을 잃었다고 도움을 요청합니다.",
+      "en": "Excuse me, I’m lost.",
+      "T": 1.9,
+      "blockStart": 0,
+      "koStart": 0.4,
+      "koEnd": 2.486077,
+      "enStart": 2.886077,
+      "enEnd": 4.786077,
+      "followEnd": 7.686076999999999,
+      "restEnd": 10.686077
+    },
+    {
+      "ko": "지하철역 위치를 물어봅니다.",
+      "en": "Where is the nearest station?",
+      "T": 1.7,
+      "blockStart": 10.686077,
+      "koStart": 10.686077,
+      "koEnd": 12.517007,
+      "enStart": 12.917007,
+      "enEnd": 14.617007,
+      "followEnd": 17.317007,
+      "restEnd": 20.317007
+    },
+    {
+      "ko": "지도에서 보여달라고 부탁합니다.",
+      "en": "Can you show me on the map?",
+      "T": 1.5,
+      "blockStart": 20.317007,
+      "koStart": 20.317007,
+      "koEnd": 22.65229,
+      "enStart": 23.05229,
+      "enEnd": 24.55229,
+      "followEnd": 27.05229,
+      "restEnd": 27.05229
+    }
+  ]
+}

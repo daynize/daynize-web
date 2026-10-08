@@ -1,0 +1,46 @@
+{
+  "id": "field-03",
+  "title": "병원에서 증상 설명하기",
+  "episode": 3,
+  "totalSec": 30,
+  "speechEndSec": 26.27,
+  "audioFile": "audio/field-03.wav",
+  "sentences": [
+    {
+      "ko": "의사에게 두통이 있다고 말합니다.",
+      "en": "I have a severe headache.",
+      "T": 1.4,
+      "blockStart": 0,
+      "koStart": 0.4,
+      "koEnd": 2.7746939999999998,
+      "enStart": 3.1746939999999997,
+      "enEnd": 4.574693999999999,
+      "followEnd": 6.9746939999999995,
+      "restEnd": 9.974694
+    },
+    {
+      "ko": "어제부터 아프기 시작했다고 설명합니다.",
+      "en": "It started yesterday.",
+      "T": 1.3,
+      "blockStart": 9.974694,
+      "koStart": 9.974694,
+      "koEnd": 12.578230999999999,
+      "enStart": 12.978231,
+      "enEnd": 14.278231,
+      "followEnd": 16.578231,
+      "restEnd": 19.578231
+    },
+    {
+      "ko": "처방전이 필요한지 문의합니다.",
+      "en": "Do I need a prescription?",
+      "T": 1.6,
+      "blockStart": 19.578231,
+      "koStart": 19.578231,
+      "koEnd": 21.669387,
+      "enStart": 22.069387,
+      "enEnd": 23.669387,
+      "followEnd": 26.269387000000002,
+      "restEnd": 26.269387000000002
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "field-02",
+  "title": "호텔 체크인하기",
+  "episode": 2,
+  "totalSec": 30,
+  "speechEndSec": 26.58,
+  "audioFile": "audio/field-02.wav",
+  "sentences": [
+    {
+      "ko": "예약 확인 및 체크인을 요청합니다.",
+      "en": "I’d like to check in, please.",
+      "T": 2.1,
+      "blockStart": 0,
+      "koStart": 0.4,
+      "koEnd": 2.9838999999999998,
+      "enStart": 3.3838999999999997,
+      "enEnd": 5.4839,
+      "followEnd": 8.5839,
+      "restEnd": 11.5839
+    },
+    {
+      "ko": "예약자 이름을 전달합니다.",
+      "en": "My name is Sean Kang.",
+      "T": 1.5,
+      "blockStart": 11.5839,
+      "koStart": 11.5839,
+      "koEnd": 13.320227,
+      "enStart": 13.720227,
+      "enEnd": 15.220227,
+      "followEnd": 17.720227,
+      "restEnd": 20.720227
+    },
+    {
+      "ko": "조식 시간을 물어봅니다.",
+      "en": "What time is breakfast?",
+      "T": 1.5,
+      "blockStart": 20.720227,
+      "koStart": 20.720227,
+      "koEnd": 22.183129,
+      "enStart": 22.583129,
+      "enEnd": 24.083129,
+      "followEnd": 26.583129,
+      "restEnd": 26.583129
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+/* 이탈 방지 퀴즈 모달 공통 스타일 (index.html, courses/speaking/index.html) */
+#exit-quiz-modal {
+    position: relative;
+    width: min(640px, calc(100vw - 28px));
+    max-height: calc(100dvh - 28px);
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--line, #deded5);
+    border-radius: 22px;
+    background: var(--white, #fffefa);
+    color: var(--ink, #202b27);
+    box-shadow: 0 18px 55px rgba(44, 54, 46, .18);
+    overflow: auto;
+    font-family: var(--sans, "Noto Sans KR", sans-serif);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+#exit-quiz-modal::backdrop {
+    background: rgba(32, 43, 39, .62);
+}
+
+#exit-quiz-modal .quiz-body {
+    padding: 34px 28px 28px;
+}
+
+#exit-quiz-modal .quiz-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--sage-soft, #e7eee8);
+    color: var(--sage, #345d4d);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+#exit-quiz-modal .quiz-close:hover,
+#exit-quiz-modal .quiz-close:focus-visible {
+    background: var(--sage, #345d4d);
+    color: #fff;
+}
+
+#exit-quiz-modal h2 {
+    margin: 0 0 6px;
+    padding-right: 44px;
+    font-family: var(--serif, "Noto Serif KR", Georgia, serif);
+    font-size: clamp(24px, 5vw, 32px);
+    line-height: 1.4;
+    color: var(--sage, #345d4d);
+}
+
+#exit-quiz-modal .quiz-sub {
+    margin: 0 0 20px;
+    color: var(--muted, #59635d);
+    font-size: 19px;
+}
+
+#exit-quiz-modal .quiz-item {
+    margin-bottom: 26px;
+}
+
+#exit-quiz-modal .quiz-question {
+    margin: 0 0 14px;
+    padding: 18px 20px;
+    border-radius: 14px;
+    background: var(--sage-soft, #e7eee8);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.55;
+}
+
+#exit-quiz-modal .quiz-question small {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--muted, #59635d);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#exit-quiz-modal .quiz-options {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#exit-quiz-modal .quiz-option {
+    width: 100%;
+    min-height: 64px;
+    padding: 14px 18px;
+    border: 2px solid var(--line, #deded5);
+    border-radius: 14px;
+    background: #fff;
+    color: var(--ink, #202b27);
+    font: inherit;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: left;
+    cursor: pointer;
+}
+
+#exit-quiz-modal .quiz-option:hover:not(:disabled),
+#exit-quiz-modal .quiz-option:focus-visible {
+    border-color: var(--sage, #345d4d);
+}
+
+#exit-quiz-modal .quiz-option:disabled {
+    cursor: default;
+}
+
+#exit-quiz-modal .quiz-option.is-correct {
+    border-color: var(--sage, #345d4d);
+    background: var(--sage-soft, #e7eee8);
+    font-weight: 700;
+}
+
+#exit-quiz-modal .quiz-option.is-wrong {
+    border-color: #c2553f;
+    background: #fbeeea;
+}
+
+#exit-quiz-modal .quiz-feedback {
+    margin: 14px 0 0;
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 19px;
+}
+
+#exit-quiz-modal .quiz-feedback.is-correct {
+    background: var(--sage-soft, #e7eee8);
+    color: var(--sage, #345d4d);
+}
+
+#exit-quiz-modal .quiz-feedback.is-wrong {
+    background: #fbeeea;
+    color: #8a3524;
+}
+
+#exit-quiz-modal .quiz-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+#exit-quiz-modal .quiz-btn {
+    min-height: 56px;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--sage, #345d4d);
+    color: #fff;
+    font: inherit;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#exit-quiz-modal .quiz-btn.secondary {
+    background: var(--sage-soft, #e7eee8);
+    color: var(--sage, #345d4d);
+}
+
+#exit-quiz-modal .quiz-confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+#exit-quiz-modal .quiz-confetti i {
+    position: absolute;
+    top: -20px;
+    width: 10px;
+    height: 16px;
+    border-radius: 2px;
+    animation: exit-quiz-fall 1.6s ease-in forwards;
+}
+
+@keyframes exit-quiz-fall {
+    to {
+        transform: translateY(105vh) rotate(540deg);
+        opacity: .8;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #exit-quiz-modal .quiz-confetti i {
+        animation: none;
+    }
+}

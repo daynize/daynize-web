@@ -1,0 +1,46 @@
+{
+  "id": "field-04",
+  "title": "약국에서 약 문의하기",
+  "episode": 4,
+  "totalSec": 30,
+  "speechEndSec": 27.69,
+  "audioFile": "audio/field-04.wav",
+  "sentences": [
+    {
+      "ko": "감기약이 있는지 물어봅니다.",
+      "en": "Do you have medicine for a cold?",
+      "T": 2,
+      "blockStart": 0,
+      "koStart": 0.4,
+      "koEnd": 2.336463,
+      "enStart": 2.736463,
+      "enEnd": 4.7364630000000005,
+      "followEnd": 7.7364630000000005,
+      "restEnd": 10.736463
+    },
+    {
+      "ko": "하루에 몇 번 먹는지 확인합니다.",
+      "en": "How many times a day?",
+      "T": 1.5,
+      "blockStart": 10.736463,
+      "koStart": 10.736463,
+      "koEnd": 12.960227,
+      "enStart": 13.360227,
+      "enEnd": 14.860227,
+      "followEnd": 17.360227000000002,
+      "restEnd": 20.360227000000002
+    },
+    {
+      "ko": "식후에 복용해야 하는지 물어봅니다.",
+      "en": "Should I take it after meals?",
+      "T": 1.8,
+      "blockStart": 20.360227000000002,
+      "koStart": 20.360227000000002,
+      "koEnd": 22.687755000000003,
+      "enStart": 23.087755,
+      "enEnd": 24.887755000000002,
+      "followEnd": 27.687755000000003,
+      "restEnd": 27.687755000000003
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "field-01",
+  "title": "공항에서 탑승구 찾기",
+  "episode": 1,
+  "totalSec": 30,
+  "speechEndSec": 25.95,
+  "audioFile": "audio/field-01.wav",
+  "sentences": [
+    {
+      "ko": "탑승구가 어디인지 물어볼 때입니다.",
+      "en": "Where is Gate 15?",
+      "T": 1.4,
+      "blockStart": 0,
+      "koStart": 0.4,
+      "koEnd": 2.848798,
+      "enStart": 3.248798,
+      "enEnd": 4.648797999999999,
+      "followEnd": 7.048798,
+      "restEnd": 10.048798
+    },
+    {
+      "ko": "직원이 직진하라고 안내합니다.",
+      "en": "Go straight and turn left.",
+      "T": 1.6,
+      "blockStart": 10.048798,
+      "koStart": 10.048798,
+      "koEnd": 12.022222,
+      "enStart": 12.422222,
+      "enEnd": 14.022222,
+      "followEnd": 16.622222,
+      "restEnd": 19.622222
+    },
+    {
+      "ko": "친절한 안내에 감사 인사를 전합니다.",
+      "en": "Thank you for your help.",
+      "T": 1.3,
+      "blockStart": 19.622222,
+      "koStart": 19.622222,
+      "koEnd": 21.951837,
+      "enStart": 22.351837,
+      "enEnd": 23.651837,
+      "followEnd": 25.951837,
+      "restEnd": 25.951837
+    }
+  ]
+}

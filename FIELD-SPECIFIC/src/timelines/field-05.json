@@ -1,0 +1,46 @@
+{
+  "id": "field-05",
+  "title": "택시에서 목적지 말하기",
+  "episode": 5,
+  "totalSec": 30,
+  "speechEndSec": 26.77,
+  "audioFile": "audio/field-05.wav",
+  "sentences": [
+    {
+      "ko": "택시 기사님께 목적지를 말합니다.",
+      "en": "Please take me to the airport.",
+      "T": 1.8,
+      "blockStart": 0,
+      "koStart": 0.4,
+      "koEnd": 2.9273919999999998,
+      "enStart": 3.3273919999999997,
+      "enEnd": 5.1273919999999995,
+      "followEnd": 7.927391999999999,
+      "restEnd": 10.927392
+    },
+    {
+      "ko": "얼마나 걸리는지 물어봅니다.",
+      "en": "How long does it take?",
+      "T": 1.4,
+      "blockStart": 10.927392,
+      "koStart": 10.927392,
+      "koEnd": 12.884352999999999,
+      "enStart": 13.284353,
+      "enEnd": 14.684353,
+      "followEnd": 17.084353,
+      "restEnd": 20.084353
+    },
+    {
+      "ko": "여기서 내려달라고 요청합니다.",
+      "en": "You can drop me off here.",
+      "T": 1.6,
+      "blockStart": 20.084353,
+      "koStart": 20.084353,
+      "koEnd": 22.168843,
+      "enStart": 22.568842999999998,
+      "enEnd": 24.168843,
+      "followEnd": 26.768843,
+      "restEnd": 26.768843
+    }
+  ]
+}
