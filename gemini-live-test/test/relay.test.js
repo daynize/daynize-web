@@ -155,3 +155,25 @@ test('PCM is signed little-endian and resampling preserves duration across block
         assert.ok(chunks.every(chunk => chunk.every(sample => Math.abs(sample - 0.5) < 0.000001)));
     }
 });
+
+test('server session deadline closes client and upstream independently of browser', { timeout: 5000 }, async context => {
+    const upstream = new WebSocketServer({ port: 0, host: '127.0.0.1' });
+    await once(upstream, 'listening');
+    const relay = createRelayServer({ apiKey: 'test-key', maxSessionMs: 1000, upstreamUrl: `ws://127.0.0.1:${upstream.address().port}` });
+    relay.server.listen(0, '127.0.0.1');
+    await once(relay.server, 'listening');
+    context.after(async () => { await relay.close(); for (const socket of upstream.clients) socket.terminate(); await new Promise(resolve => upstream.close(resolve)); });
+    const connected = once(upstream, 'connection');
+    const client = new WebSocket(`ws://127.0.0.1:${relay.server.address().port}`);
+    const [gemini] = await connected;
+    await nextMessage(gemini);
+    const ready = nextMessage(client);
+    gemini.send(JSON.stringify({ setupComplete: {} }));
+    await ready;
+    const deadline = nextMessage(client);
+    const closedClient = once(client, 'close');
+    const closedUpstream = once(gemini, 'close');
+    assert.match((await deadline).error.message, /time limit/);
+    await closedClient;
+    await closedUpstream;
+});

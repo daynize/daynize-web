@@ -1,6 +1,7 @@
 import { AudioEngine } from './audio-engine.mjs';
 import { LiveService } from './live-service.mjs';
 import { AmbientOrb } from './ambient-orb.mjs';
+import { SessionSafety } from './session-safety.mjs';
 
 const asset = name => new URL(name, import.meta.url).href;
 const STATES = {
@@ -40,7 +41,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
                 <div class="spotlight-bar">
                     <section class="identity">
                         <div class="traffic-lights"><button class="traffic close" type="button" aria-label="닫기" title="닫기">${icon('x')}</button><button class="traffic minimize" type="button" aria-label="최소화" title="최소화"><span aria-hidden="true">−</span></button><button class="traffic expand" type="button" aria-label="창 확장" title="창 확장" aria-pressed="false"><span aria-hidden="true">↗</span></button></div>
-                        <div class="tutor-profile"><canvas class="ambient-orb" width="64" height="64" aria-hidden="true"></canvas><div><h2 id="tutor-title">Gemini 튜터</h2><div class="status-line" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span class="status-label"></span></div></div></div>
+                        <div class="tutor-profile"><canvas class="ambient-orb" width="64" height="64" aria-hidden="true"></canvas><h2 id="tutor-title" class="sr-only">Gemini 튜터</h2></div>
                     </section>
                     <canvas class="visualizer" aria-label="마이크와 선생님 음성의 실시간 파형" role="img"></canvas>
                     <div class="icon-tray">
@@ -51,7 +52,8 @@ export class DaynizeVoiceTutor extends HTMLElement {
                         <button class="icon-button end" type="button" aria-label="세션 종료" title="세션 종료">${icon('x')}</button>
                     </div>
                 </div>
-                <div class="session-strip"><p class="message"></p><span class="time">00:00</span></div>
+                <div class="session-strip"><div class="status-line" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span class="status-label"></span></div><p class="message"></p><span class="time">00:00</span></div>
+                <p class="safety-notice" role="status" aria-live="polite" hidden></p>
                 <section id="text-drawer" class="drawer" hidden><h3>대화 자막</h3><p class="caption-empty">음성이 인식되면 자막이 표시됩니다.</p><div class="transcripts" role="log" aria-live="polite" aria-label="실시간 대화 자막"></div></section>
                 <section id="preferences-drawer" class="drawer" hidden>
                     <h3>음성 환경설정</h3><div class="settings-grid">
@@ -144,6 +146,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         }, { signal });
         this.audio.addEventListener('error', event => this.fail(event.detail), { signal });
         window.addEventListener('pagehide', () => this.end(), { signal });
+        document.addEventListener('visibilitychange', () => this.checkSafety(), { signal });
         this.setState('idle');
     }
 
@@ -194,6 +197,9 @@ export class DaynizeVoiceTutor extends HTMLElement {
         if (this.callActive) return;
         const generation = ++this.generation;
         this.callActive = true;
+        this.safety = new SessionSafety(performance.now());
+        this.shadowRoot.querySelector('.safety-notice').hidden = true;
+        this.safetyTimer = setInterval(() => this.checkSafety(), 100);
         this.duration = 0;
         this.sentFrames = this.receivedFrames = 0;
         this.transcriptRows = {};
@@ -278,6 +284,22 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.updateTransport();
     }
 
+    checkSafety() {
+        if (!this.callActive || !this.safety) return;
+        const result = this.safety.check(performance.now(), this.audio.inputVolume());
+        const notice = this.shadowRoot.querySelector('.safety-notice');
+        if (result.reason) {
+            const message = result.reason === 'timeout' ? '오늘의 튜터링 시간이 완료되었습니다!' : '30초 동안 음성 입력이 없어 대화를 자동 종료했습니다.';
+            this.end();
+            this.setState('ended', message);
+            notice.textContent = message;
+            notice.hidden = false;
+            return;
+        }
+        notice.hidden = !result.warning;
+        if (result.warning) notice.textContent = `생각 중이신가요? ${result.remaining}초 후 대화가 자동 종료됩니다.`;
+    }
+
     toggleDrawer(id, selector) {
         const panel = this.shadowRoot.getElementById(id);
         panel.hidden = !panel.hidden;
@@ -315,6 +337,9 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.service = undefined;
         this.audio.stop();
         clearInterval(this.clock);
+        clearInterval(this.safetyTimer);
+        this.safetyTimer = undefined;
+        this.safety = undefined;
         clearTimeout(this.responseTimer);
         this.playbackBlocked = false;
         this.clock = undefined;

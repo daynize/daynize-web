@@ -48,6 +48,7 @@ export class AudioEngine extends EventTarget {
                 analyser.smoothingTimeConstant = 0.94;
             }
             this.inputBins = new Uint8Array(this.inputAnalyser.frequencyBinCount);
+            this.inputSamples = new Float32Array(this.inputAnalyser.fftSize);
             this.outputBins = new Uint8Array(this.outputAnalyser.frequencyBinCount);
             this.outputGain = context.createGain();
             this.outputGain.gain.value = this.speakerMuted ? 0 : 1;
@@ -82,6 +83,12 @@ export class AudioEngine extends EventTarget {
     }
 
     setStreaming(enabled) { this.streaming = enabled; }
+
+    inputVolume() {
+        if (this.muted || !this.inputAnalyser || !this.inputSamples) return 0;
+        this.inputAnalyser.getFloatTimeDomainData(this.inputSamples);
+        return Math.sqrt(this.inputSamples.reduce((sum, sample) => sum + sample * sample, 0) / this.inputSamples.length);
+    }
 
     setSpeakerMuted(muted) {
         this.speakerMuted = muted;
@@ -199,5 +206,6 @@ export class AudioEngine extends EventTarget {
         this.context = this.stream = this.microphone = this.processor = this.silence = undefined;
         this.inputAnalyser = this.outputAnalyser = this.inputBins = this.outputBins = undefined;
         this.outputGain = undefined;
+        this.inputSamples = undefined;
     }
 }
