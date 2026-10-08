@@ -6,7 +6,7 @@ async function startSession(page) {
     await page.evaluate(() => {
         window.safetyTest = { rms: 0, sockets: [] };
         const widget = document.querySelector('daynize-voice-tutor');
-        widget.audio.start = async () => {};
+        widget.audio.start = async () => { };
         widget.audio.inputVolume = () => window.safetyTest.rms;
         class MockSocket {
             static OPEN = 1;
@@ -16,7 +16,7 @@ async function startSession(page) {
                 window.safetyTest.sockets.push(this);
                 queueMicrotask(() => this.onmessage?.({ data: JSON.stringify({ setupComplete: {} }) }));
             }
-            send() {}
+            send() { }
             close() { this.readyState = 3; }
         }
         window.WebSocket = MockSocket;
