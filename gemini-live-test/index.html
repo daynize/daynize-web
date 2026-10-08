@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>DAYNIZE | AI 영어 회화</title>
+    <meta name="theme-color" content="#FBF9F5">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --ink: #1F2937;
+            --muted: #63756e;
+            --green: #147a52;
+            --line: #d8e4dd;
+            --red: #b42c3f;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            font: 18px 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+            background: #FBF9F5;
+            letter-spacing: 0;
+        }
+
+        main {
+            max-width: 1040px;
+            margin: 48px auto;
+            padding: 28px 28px 140px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 650;
+        }
+
+        .badge {
+            font: 12px 'Avenir Next', sans-serif;
+            color: var(--muted);
+            border-left: 2px solid var(--line);
+            padding-left: 12px;
+        }
+
+        .status {
+            margin: 42px 0 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            min-height: 64px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            flex-shrink: 0;
+            margin-top: 6px;
+            border-radius: 50%;
+            background: #9aaba2;
+        }
+
+        body[data-state="active"] .dot {
+            background: var(--green);
+        }
+
+        body[data-state="error"] .dot {
+            background: var(--red);
+        }
+
+        #status {
+            margin: 0;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            min-height: 48px;
+            padding: 12px 20px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            font: inherit;
+            cursor: pointer;
+            background: white;
+            color: var(--ink);
+        }
+
+        #microphone {
+            background: var(--green);
+            border-color: var(--green);
+            color: white;
+            min-width: 160px;
+        }
+
+        #microphone[aria-pressed="true"] {
+            background: var(--red);
+            border-color: var(--red);
+        }
+
+        button:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        button:focus-visible {
+            outline: 3px solid #e0b139;
+            outline-offset: 3px;
+        }
+
+        dl {
+            margin: 40px 0 0;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        dt {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        dd {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            main {
+                margin-top: 6vh;
+                padding: 24px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            dl {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <img src="/daynize-logo.png" alt="DAYNIZE" style="width:136px;height:52px;object-fit:contain"><span
+                class="badge">지난 주 영어</span>
+        </header>
+        <section style="margin-top:56px">
+            <p style="color:#4A7C59;font-size:14px;font-weight:600">DAYNIZE CONVERSATION</p>
+            <h1 style="color:#2D5A43;line-height:1.6">내 속도로 나누는<br>영어 이야기</h1>
+            <p style="color:#6B7280;line-height:1.9">오늘 있었던 일, 좋아하는 음식, 가고 싶은 여행지.<br>작은 이야기부터 천천히 나눠요.</p>
+        </section>
+    </main>
+    <script type="module" src="./daynize-tutor.mjs" data-daynize-tutor></script>
+</body>
+
+</html>

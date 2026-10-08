@@ -1,0 +1,23 @@
+{
+    "name": "gemini-live-test",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Standalone local Gemini Live PCM audio relay",
+    "scripts": {
+        "start": "node server.js",
+        "test": "node --test test/*.test.*",
+        "test:browser": "playwright test",
+        "check": "node --check server.js && node --check live-service.mjs && node --check audio-engine.mjs && node --check tutor-widget.mjs && node --check daynize-tutor.mjs && node --check audio.mjs && node --check pcm-worklet.mjs"
+    },
+    "engines": {
+        "node": ">=20"
+    },
+    "dependencies": {
+        "dotenv": "^16.6.1",
+        "lucide-static": "^1.53.0",
+        "ws": "^8.18.3"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.64.0"
+    }
+}
