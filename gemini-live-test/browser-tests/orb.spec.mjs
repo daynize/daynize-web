@@ -7,7 +7,8 @@ for (const width of [1280, 375]) {
         await page.evaluate(() => {
             const widget = document.querySelector('daynize-voice-tutor');
             widget.audio.start = async () => { };
-            widget.audio.levels = () => ({ input: new Uint8Array(128).fill(55), output: new Uint8Array(128) });
+            widget.audio.inputVolume = () => 0.025;
+            widget.audio.outputVolume = () => 0;
             class MockSocket {
                 static OPEN = 1;
                 constructor() {
@@ -45,10 +46,10 @@ for (const width of [1280, 375]) {
         const timestamp = await page.evaluate(() => document.querySelector('daynize-voice-tutor').orb.lastTimestamp);
         await page.waitForFunction(previous => document.querySelector('daynize-voice-tutor').orb.lastTimestamp > previous + 200, timestamp);
         expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').orb.motion.phase)).toBe(phase);
-        await page.getByRole('button', { name: '최소화', exact: true }).click();
-        const stopped = await page.evaluate(() => document.querySelector('daynize-voice-tutor').orb.lastTimestamp);
+        await page.evaluate(() => document.querySelector('daynize-voice-tutor').minimize());
+        const stopped = await page.evaluate(() => document.querySelector('daynize-voice-tutor').orb.motion.phase);
         await page.getByRole('button', { name: /AI 음성 회화 ·/ }).waitFor();
-        expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').orb.lastTimestamp)).toBe(stopped);
+        expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').orb.motion.phase)).toBe(stopped);
         await page.getByRole('button', { name: /AI 음성 회화 ·/ }).click();
         await page.keyboard.press('Escape');
     });

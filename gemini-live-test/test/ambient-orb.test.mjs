@@ -12,7 +12,7 @@ test('orb motion damps abrupt volume and state changes and stays within subtle b
         assert.ok(frame.ripple <= 2.4);
         assert.ok(Math.abs(frame.breath) <= 0.55);
         assert.ok(frame.mist <= 0.035);
-        assert.ok(frame.glow <= 0.095);
+        assert.ok(frame.glow <= 0.345);
     }
     const previous = motion.warmth;
     motion.step();
@@ -31,4 +31,18 @@ test('orb damping is frame-rate independent and reduced motion freezes drift', (
     assert.equal(reduced.breath, 0);
     assert.equal(reduced.ripple, 0);
     assert.equal(reduced.mist, 0);
+});
+
+test('speech visibly strengthens rotation and glow without a sudden jump', () => {
+    const idle = new OrbMotion();
+    const active = new OrbMotion();
+    for (let frame = 0; frame < 180; frame++) {
+        idle.step();
+        active.step({ input: 0.8, speaking: true });
+    }
+    assert.ok(active.phase > idle.phase * 1.4);
+    const quietGlow = idle.step().glow;
+    const speechGlow = active.step({ input: 0.8, speaking: true }).glow;
+    assert.ok(speechGlow > quietGlow * 1.8);
+    assert.ok(speechGlow <= 0.345);
 });

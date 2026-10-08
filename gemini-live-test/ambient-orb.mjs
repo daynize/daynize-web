@@ -17,9 +17,10 @@ export class OrbMotion {
         this.input += (clamp(input) - this.input) * damping;
         this.output += (clamp(output) - this.output) * damping;
         this.warmth += ((speaking || thinking ? 1 : 0) - this.warmth) * damping;
+        const activity = Math.max(this.input, this.output);
         if (!reduced) {
             this.time += duration;
-            this.phase += duration * (0.09 + 0.04 * this.warmth);
+            this.phase += duration * (0.45 + 0.35 * activity + 0.08 * this.warmth);
         }
         return {
             phase: this.phase,
@@ -27,7 +28,7 @@ export class OrbMotion {
             ripple: reduced ? 0 : Math.min(2.4, this.input * 1.5 + this.output * 0.9),
             warmth: this.warmth,
             mist: reduced ? 0 : this.input * 0.035,
-            glow: 0.06 + this.warmth * 0.035
+            glow: 0.15 + this.warmth * 0.045 + activity * 0.15
         };
     }
 }
@@ -59,13 +60,14 @@ export class AmbientOrb {
         const motion = this.motion.step({ input, output, speaking: state === 'speaking', thinking: state === 'waiting', reduced, delta });
         const context = this.paint;
         const radius = 23 + motion.breath;
-        const emerald = blend([79, 146, 124], [153, 155, 113], motion.warmth);
-        const gold = blend([207, 183, 127], [203, 158, 112], motion.warmth);
+        const emerald = blend([78, 218, 161], [128, 204, 152], motion.warmth);
+        const gold = blend([238, 204, 123], [245, 187, 116], motion.warmth);
         context.clearRect(0, 0, 64, 64);
         context.save();
-        context.globalAlpha = 0.6;
+        context.globalAlpha = 0.8;
         const halo = context.createRadialGradient(32, 32, 14, 32, 32, 31);
         halo.addColorStop(0, color(emerald, motion.glow));
+        halo.addColorStop(0.65, color(emerald, motion.glow * 0.5));
         halo.addColorStop(1, color(gold, 0));
         context.fillStyle = halo;
         context.fillRect(0, 0, 64, 64);
@@ -99,16 +101,29 @@ export class AmbientOrb {
         context.filter = 'blur(6px)';
         for (let layer = 0; layer < 3; layer++) {
             const angle = motion.phase + layer * 2.1;
-            const horizontal = 32 + Math.cos(angle) * 9;
-            const vertical = 32 + Math.sin(angle * 0.8) * 8;
+            const horizontal = 32 + Math.cos(angle) * 12;
+            const vertical = 32 + Math.sin(angle) * 10;
             const tint = layer === 1 ? gold : emerald;
             const cloud = context.createRadialGradient(horizontal, vertical, 0, horizontal, vertical, 23);
-            cloud.addColorStop(0, color(tint, 0.34 + motion.warmth * 0.035));
-            cloud.addColorStop(0.55, color(tint, 0.12));
+            cloud.addColorStop(0, color(tint, 0.4 + motion.glow * 0.45));
+            cloud.addColorStop(0.55, color(tint, 0.18));
             cloud.addColorStop(1, color(tint, 0));
             context.fillStyle = cloud;
             context.fillRect(0, 0, 64, 64);
         }
+        context.save();
+        context.translate(32, 32);
+        context.rotate(motion.phase);
+        context.filter = 'blur(1px)';
+        context.globalCompositeOperation = 'screen';
+        for (let ribbon = 0; ribbon < 4; ribbon++) {
+            context.beginPath();
+            context.ellipse(0, 0, 18 - ribbon * 1.3, 7 + ribbon * 2, ribbon * 0.5, 0.3, Math.PI * 1.7);
+            context.strokeStyle = color(ribbon % 2 ? gold : emerald, 0.38 + motion.glow * 0.5);
+            context.lineWidth = 1.7;
+            context.stroke();
+        }
+        context.restore();
         context.filter = 'blur(2px)';
         const reflection = context.createRadialGradient(24, 17, 0, 24, 17, 10);
         reflection.addColorStop(0, 'rgba(255,255,255,0.25)');

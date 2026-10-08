@@ -44,7 +44,7 @@ test('20s silence warning resets on sound; 30s silence releases session', async 
 test('10-minute wall-clock limit closes minimized session despite ongoing sound', async ({ page }) => {
     await startSession(page);
     await page.evaluate(() => { window.safetyTest.rms = 0.04; });
-    await page.getByRole('button', { name: '최소화', exact: true }).click();
+    await page.evaluate(() => document.querySelector('daynize-voice-tutor').minimize());
     await page.clock.fastForward(600000);
     expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').callActive)).toBe(false);
     expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').messageElement.textContent)).toBe('오늘의 튜터링 시간이 완료되었습니다!');
@@ -52,7 +52,7 @@ test('10-minute wall-clock limit closes minimized session despite ongoing sound'
 });
 
 for (const width of [1280, 375]) {
-    test(`horizontal 90px bar and right aligned icon row at ${width}px`, async ({ page }) => {
+    test(`horizontal 84px dark bar and right aligned icon row at ${width}px`, async ({ page }) => {
         await page.setViewportSize({ width, height: 900 });
         await startSession(page);
         await page.getByRole('dialog').evaluate(element => element.getAnimations().forEach(animation => animation.finish()));
@@ -61,8 +61,9 @@ for (const width of [1280, 375]) {
             const bounds = selector => { const rect = root.querySelector(selector).getBoundingClientRect(); return { x: rect.x, y: rect.y, width: rect.width, height: rect.height, right: rect.right }; };
             return { bar: bounds('.spotlight-bar'), modal: bounds('dialog'), orb: bounds('.ambient-orb'), wave: bounds('.visualizer'), tray: bounds('.icon-tray'), buttons: [...root.querySelectorAll('.icon-tray button')].map(button => button.getBoundingClientRect().y) };
         });
-        expect(geometry.bar.height).toBe(90);
-        if (width === 1280) expect(geometry.modal.width).toBe(680);
+        expect(geometry.modal.height).toBe(84);
+        expect(geometry.bar.height).toBe(82);
+        if (width === 1280) expect(geometry.modal.width).toBe(720);
         expect(geometry.orb.width).toBe(64);
         expect(geometry.tray.x).toBeGreaterThanOrEqual(geometry.wave.right);
         expect(new Set(geometry.buttons).size).toBe(1);

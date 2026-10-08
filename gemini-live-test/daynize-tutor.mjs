@@ -5,4 +5,8 @@ const sameOriginTest = location.hostname.endsWith('.trycloudflare.com') || ['loc
 const endpoint = loader?.dataset.endpoint || (sameOriginTest
     ? `${location.protocol === 'https:' ? 'wss:' : 'ws:'}//${location.host}/ws/gemini-live`
     : 'wss://api.daynize.co.kr/ws/gemini-live');
-if (!document.querySelector('daynize-voice-tutor')) mountVoiceTutor({ endpoint });
+const designPreview = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname) && new URLSearchParams(location.search).get('preview') === 'design';
+if (!document.querySelector('daynize-voice-tutor')) {
+    const widget = mountVoiceTutor({ endpoint, designPreview });
+    if (designPreview) widget.open();
+}

@@ -50,6 +50,7 @@ export class AudioEngine extends EventTarget {
             this.inputBins = new Uint8Array(this.inputAnalyser.frequencyBinCount);
             this.inputSamples = new Float32Array(this.inputAnalyser.fftSize);
             this.outputBins = new Uint8Array(this.outputAnalyser.frequencyBinCount);
+            this.outputSamples = new Float32Array(this.outputAnalyser.fftSize);
             this.outputGain = context.createGain();
             this.outputGain.gain.value = this.speakerMuted ? 0 : 1;
             this.outputAnalyser.connect(this.outputGain).connect(context.destination);
@@ -88,6 +89,12 @@ export class AudioEngine extends EventTarget {
         if (this.muted || !this.inputAnalyser || !this.inputSamples) return 0;
         this.inputAnalyser.getFloatTimeDomainData(this.inputSamples);
         return Math.sqrt(this.inputSamples.reduce((sum, sample) => sum + sample * sample, 0) / this.inputSamples.length);
+    }
+
+    outputVolume() {
+        if (this.speakerMuted || !this.outputAnalyser || !this.outputSamples) return 0;
+        this.outputAnalyser.getFloatTimeDomainData(this.outputSamples);
+        return Math.sqrt(this.outputSamples.reduce((sum, sample) => sum + sample * sample, 0) / this.outputSamples.length);
     }
 
     setSpeakerMuted(muted) {
@@ -207,5 +214,6 @@ export class AudioEngine extends EventTarget {
         this.inputAnalyser = this.outputAnalyser = this.inputBins = this.outputBins = undefined;
         this.outputGain = undefined;
         this.inputSamples = undefined;
+        this.outputSamples = undefined;
     }
 }

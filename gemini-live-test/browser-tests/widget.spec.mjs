@@ -62,17 +62,16 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 375, height: 812 
     });
 }
 
-test('Finder window opens inline, expands and closes from the backdrop', async ({ page }) => {
+test('Spotlight shows Daynize labs without traffic lights and closes from backdrop', async ({ page }) => {
     await page.goto('/');
     await installAudioMocks(page);
     const initialUrl = page.url();
     await page.getByRole('button', { name: 'AI 음성 회화 시작하기' }).click();
     await expect(page.getByRole('dialog')).toBeVisible();
-    const original = await page.getByRole('dialog').boundingBox();
-    await page.getByRole('button', { name: '창 확장', exact: true }).click();
-    await expect(page.getByRole('button', { name: '창 원래 크기' })).toHaveAttribute('aria-pressed', 'true');
-    expect((await page.getByRole('dialog').boundingBox()).width).toBeGreaterThan(original.width);
-    await page.getByRole('button', { name: '창 원래 크기' }).click();
+    await expect(page.getByText('Daynize labs', { exact: true })).toBeVisible();
+    await expect(page.locator('.traffic-lights')).toHaveCount(0);
+    const bounds = await page.getByRole('dialog').boundingBox();
+    expect(bounds.width).toBeLessThanOrEqual(720);
     expect(page.url()).toBe(initialUrl);
     expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').callActive)).toBe(true);
     await page.mouse.click(4, 4);
@@ -93,7 +92,7 @@ test('real AudioWorklet PCM, playback, barge-in, mute, reconnect and cleanup', a
     expect(input).toEqual({ mime: 'audio/pcm;rate=16000', bytes: 3200, analyser: true });
     const socketCount = await page.evaluate(() => window.audioTest.sockets.length);
     const framesBeforeMinimize = await page.evaluate(() => document.querySelector('daynize-voice-tutor').sentFrames);
-    await page.getByRole('button', { name: '최소화', exact: true }).click();
+    await page.evaluate(() => document.querySelector('daynize-voice-tutor').minimize());
     await expect(page.getByRole('dialog')).not.toBeVisible();
     await page.waitForFunction(previous => document.querySelector('daynize-voice-tutor').sentFrames > previous + 5, framesBeforeMinimize);
     await page.getByRole('button', { name: /AI 음성 회화 ·/ }).click();
@@ -137,7 +136,7 @@ test('real AudioWorklet PCM, playback, barge-in, mute, reconnect and cleanup', a
     await expect(page.locator('.status-line')).toHaveText('듣고 있어요...');
     const previousFrames = await page.evaluate(() => window.audioTest.sent.filter(message => message.realtimeInput?.audio).length);
     await page.waitForFunction(previous => window.audioTest.sent.filter(message => message.realtimeInput?.audio).length >= previous + 10, previousFrames);
-    await page.getByRole('button', { name: '닫기', exact: true }).click();
+    await page.getByRole('button', { name: '세션 종료', exact: true }).click();
     await expect(page.getByRole('dialog')).not.toBeVisible();
     await expect(page.locator('.status-line')).toHaveText('대화 종료');
     expect(await page.evaluate(() => window.audioTest.tracks.every(track => track.readyState === 'ended'))).toBe(true);

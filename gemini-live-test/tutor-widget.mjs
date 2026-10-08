@@ -35,12 +35,12 @@ export class DaynizeVoiceTutor extends HTMLElement {
         const signal = this.abort.signal;
         const icon = (name, light = false) => `<img class="icon${light ? ' light' : ''}" src="${asset(`icons/${name}.svg`)}" alt="" aria-hidden="true">`;
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="${asset('tutor.css')}">
+            <link rel="stylesheet" href="${asset('spotlight-bar.css')}?v=dark-horizontal-1">
             <button class="launch" type="button" aria-haspopup="dialog">${icon('mic', true)}<span>AI 음성 회화 시작하기</span></button>
             <dialog id="spotlight-modal" aria-labelledby="tutor-title" aria-describedby="privacy">
                 <div class="spotlight-bar">
                     <section class="identity">
-                        <div class="traffic-lights"><button class="traffic close" type="button" aria-label="닫기" title="닫기">${icon('x')}</button><button class="traffic minimize" type="button" aria-label="최소화" title="최소화"><span aria-hidden="true">−</span></button><button class="traffic expand" type="button" aria-label="창 확장" title="창 확장" aria-pressed="false"><span aria-hidden="true">↗</span></button></div>
+                        <span class="labs-label">Daynize labs</span>
                         <div class="tutor-profile"><canvas class="ambient-orb" width="64" height="64" aria-hidden="true"></canvas><h2 id="tutor-title" class="sr-only">Gemini 튜터</h2></div>
                     </section>
                     <canvas class="visualizer" aria-label="마이크와 선생님 음성의 실시간 파형" role="img"></canvas>
@@ -79,14 +79,6 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.resize = new ResizeObserver(() => this.resizeCanvas());
         this.resize.observe(this.canvas);
         this.launch.addEventListener('click', () => this.open(), { signal });
-        query('.close').addEventListener('click', () => this.close(), { signal });
-        query('.minimize').addEventListener('click', () => this.minimize(), { signal });
-        query('.expand').addEventListener('click', () => {
-            const expanded = this.dialog.classList.toggle('expanded');
-            query('.expand').setAttribute('aria-pressed', String(expanded));
-            query('.expand').setAttribute('aria-label', expanded ? '창 원래 크기' : '창 확장');
-            query('.expand').title = expanded ? '창 원래 크기' : '창 확장';
-        }, { signal });
         this.dialog.addEventListener('cancel', event => { event.preventDefault(); this.close(); }, { signal });
         this.dialog.addEventListener('click', event => {
             if (event.target !== this.dialog) return;
@@ -164,7 +156,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.launch.hidden = true;
         this.resizeCanvas();
         this.draw();
-        if (!this.callActive) void this.begin();
+        if (!this.callActive && !this.config?.designPreview) void this.begin();
         this.endButton.focus();
     }
 
@@ -302,7 +294,14 @@ export class DaynizeVoiceTutor extends HTMLElement {
 
     toggleDrawer(id, selector) {
         const panel = this.shadowRoot.getElementById(id);
-        panel.hidden = !panel.hidden;
+        const opening = panel.hidden;
+        for (const [otherId, otherSelector] of [['text-drawer', '.captions'], ['preferences-drawer', '.preferences']]) {
+            if (otherId !== id) {
+                this.shadowRoot.getElementById(otherId).hidden = true;
+                this.shadowRoot.querySelector(otherSelector).setAttribute('aria-expanded', 'false');
+            }
+        }
+        panel.hidden = !opening;
         this.shadowRoot.querySelector(selector).setAttribute('aria-expanded', String(!panel.hidden));
     }
 
@@ -383,32 +382,43 @@ export class DaynizeVoiceTutor extends HTMLElement {
         const context = this.canvasContext;
         const { width, height } = this.canvas.getBoundingClientRect();
         context.clearRect(0, 0, width, height);
-        const { input, output } = this.audio.levels();
         const phase = performance.now() / 650;
         const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
         const timestamp = performance.now();
-        const orbLevels = [input, output].map(bins => bins ? Math.sqrt(bins.reduce((sum, value) => sum + value * value, 0) / bins.length) / 255 : 0);
-        this.orb.render({ timestamp, input: orbLevels[0], output: this.audio.speakerMuted ? 0 : orbLevels[1], state: this.dataset.state, reduced });
+        const delta = Math.min(0.05, Math.max(0, (timestamp - (this.lastVisualTimestamp ?? timestamp - 16.67)) / 1000));
+        this.lastVisualTimestamp = timestamp;
+        const voiceLevels = [this.audio.inputVolume(), this.audio.outputVolume()].map(volume => Math.min(1, Math.max(0, (volume - 0.003) * 14)));
+        this.orb.render({ timestamp, input: voiceLevels[0], output: voiceLevels[1], state: this.dataset.state, reduced });
         this.waveLevels ??= [0, 0];
-        for (const [channel, bins] of [input, output].entries()) {
-            const level = bins ? Math.sqrt(bins.reduce((sum, value) => sum + value * value, 0) / bins.length) / 255 : 0;
-            this.waveLevels[channel] += (level - this.waveLevels[channel]) * 0.18;
-            const amplitude = Math.min(42, height * 0.28, this.waveLevels[channel] * 260);
-            const center = height * (channel ? 0.67 : 0.34);
-            for (let layer = 0; layer < 3; layer++) {
-                context.beginPath();
-                context.strokeStyle = channel ? '#CD8756' : '#319278';
-                context.globalAlpha = layer === 0 ? 0.95 : 0.18;
-                context.lineWidth = layer === 0 ? 2.5 : 1.5;
-                for (let position = 0; position <= width; position += 2) {
-                    const progress = position / Math.max(width, 1);
-                    const envelope = Math.sin(progress * Math.PI) ** 2;
-                    const wave = Math.sin(progress * Math.PI * (6 + layer * 2) - (reduced ? 0 : phase) + channel);
-                    const vertical = center + wave * amplitude * envelope * (1 - layer * 0.22);
-                    if (position === 0) context.moveTo(position, vertical); else context.lineTo(position, vertical);
-                }
-                context.stroke();
+        for (const [channel, level] of voiceLevels.entries()) {
+            const response = 1 - Math.exp(-delta / (level > this.waveLevels[channel] ? 0.045 : 0.18));
+            this.waveLevels[channel] += (level - this.waveLevels[channel]) * response;
+        }
+        const activity = this.config?.designPreview ? 0.45 : Math.max(...this.waveLevels);
+        const amplitude = height * 0.38 * activity;
+        const drift = reduced ? 0 : phase * 0.45;
+        context.lineCap = 'round';
+        context.lineJoin = 'round';
+        for (let layer = 0; layer < 12; layer++) {
+            const gradient = context.createLinearGradient(0, 0, Math.max(width, 1), 0);
+            gradient.addColorStop(0, 'rgba(117,220,171,0.04)');
+            gradient.addColorStop(0.18, '#76dcb0');
+            gradient.addColorStop(0.48, layer % 3 === 0 ? '#75adcf' : '#70cfbd');
+            gradient.addColorStop(0.76, '#d5c48b');
+            gradient.addColorStop(1, 'rgba(224,209,158,0.04)');
+            context.strokeStyle = gradient;
+            context.globalAlpha = layer % 4 === 0 ? 0.7 : 0.22;
+            context.lineWidth = layer % 4 === 0 ? 1.05 : 0.65;
+            context.beginPath();
+            for (let position = 0; position <= width; position += 1.5) {
+                const progress = position / Math.max(width, 1);
+                const envelope = Math.sin(progress * Math.PI) ** 1.4;
+                const wave = Math.sin(progress * Math.PI * 4 - drift + layer * 0.16);
+                const secondary = Math.sin(progress * Math.PI * 6 + drift * 0.35 + layer * 0.12) * 0.16;
+                const vertical = height / 2 + (wave * 0.8 + secondary) * amplitude * envelope * (0.74 + layer * 0.02);
+                if (position === 0) context.moveTo(position, vertical); else context.lineTo(position, vertical);
             }
+            context.stroke();
         }
         context.globalAlpha = 1;
         this.frame = requestAnimationFrame(() => this.draw());
