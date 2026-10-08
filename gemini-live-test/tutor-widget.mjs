@@ -362,7 +362,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         for (const [channel, bins] of [input, output].entries()) {
             const level = bins ? Math.sqrt(bins.reduce((sum, value) => sum + value * value, 0) / bins.length) / 255 : 0;
             this.waveLevels[channel] += (level - this.waveLevels[channel]) * 0.18;
-            const amplitude = Math.min(42, this.waveLevels[channel] * 260);
+            const amplitude = Math.min(42, height * 0.28, this.waveLevels[channel] * 260);
             const center = height * (channel ? 0.67 : 0.34);
             for (let layer = 0; layer < 3; layer++) {
                 context.beginPath();
