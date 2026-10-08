@@ -1,0 +1,1218 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalVideoDurationFrames": 2140,
+  "timingNote": "구간 길이는 ffprobe로 측정한 M4A를 프레임화합니다. 단어 시점은 동일 보이스의 단어별 합성 길이를 문장 길이에 정규화한 추정치이며 forced alignment는 아닙니다.",
+  "items": [
+    {
+      "id": "lesson_01",
+      "lessonNumber": 1,
+      "original": "당신의 행복은 당신 스스로 책임지는 것입니다.",
+      "koreanOrder": "당신의 행복은 당신의 책임입니다",
+      "english": "Your happiness is your business.",
+      "chunks": [
+        {
+          "ko": "당신의 행복은",
+          "en": "Your happiness",
+          "color": "#FF6B6B",
+          "alignedHighlightStartFrame": 181,
+          "alignedHighlightEndFrame": 220
+        },
+        {
+          "ko": "당신의 책임입니다",
+          "en": "is your business.",
+          "color": "#FFD166",
+          "alignedHighlightStartFrame": 220,
+          "alignedHighlightEndFrame": 260
+        }
+      ],
+      "buildUp": [
+        [
+          "당신의 행복은"
+        ],
+        [
+          "당신의 행복은",
+          "당신의 책임입니다"
+        ]
+      ],
+      "startFrame": 0,
+      "introWaitFrames": 15,
+      "buildIntervalFrames": 24,
+      "flipStaggerFrames": 2.4,
+      "stackPulseIntervalFrames": 2,
+      "introAudioStartFrame": 15,
+      "buildStartFrame": 120,
+      "buildupEndFrame": 144,
+      "sparkleStartFrame": 144,
+      "alignedAudioStartFrame": 181,
+      "flipStartFrame": 260,
+      "flipDurationFrames": 39,
+      "englishAudioStartFrame": 299,
+      "endFrame": 350,
+      "durationInFrames": 350,
+      "audio": {
+        "intro": {
+          "src": "public/audio/lesson_01_seg_1.m4a",
+          "durationMs": 3483,
+          "durationInFrames": 105,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "당신의",
+              "startMs": 0,
+              "endMs": 594
+            },
+            {
+              "word": "행복은",
+              "startMs": 632,
+              "endMs": 1182
+            },
+            {
+              "word": "당신",
+              "startMs": 1220,
+              "endMs": 1669
+            },
+            {
+              "word": "스스로",
+              "startMs": 1707,
+              "endMs": 2160
+            },
+            {
+              "word": "책임지는",
+              "startMs": 2198,
+              "endMs": 2935
+            },
+            {
+              "word": "것입니다.",
+              "startMs": 2973,
+              "endMs": 3483
+            }
+          ],
+          "startFrame": 15
+        },
+        "aligned": {
+          "src": "public/audio/lesson_01_seg_2.m4a",
+          "durationMs": 2601,
+          "durationInFrames": 79,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "당신의",
+              "startMs": 0,
+              "endMs": 630
+            },
+            {
+              "word": "행복은",
+              "startMs": 668,
+              "endMs": 1252
+            },
+            {
+              "word": "당신의",
+              "startMs": 1290,
+              "endMs": 1920
+            },
+            {
+              "word": "책임입니다",
+              "startMs": 1958,
+              "endMs": 2601
+            }
+          ],
+          "startFrame": 181
+        },
+        "english": {
+          "src": "public/audio/lesson_01_seg_3.m4a",
+          "durationMs": 1672,
+          "durationInFrames": 51,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "Your",
+              "startMs": 0,
+              "endMs": 252,
+              "startFrame": 299,
+              "endFrame": 307
+            },
+            {
+              "word": "happiness",
+              "startMs": 290,
+              "endMs": 734,
+              "startFrame": 307,
+              "endFrame": 322
+            },
+            {
+              "word": "is",
+              "startMs": 772,
+              "endMs": 1005,
+              "startFrame": 322,
+              "endFrame": 330
+            },
+            {
+              "word": "your",
+              "startMs": 1043,
+              "endMs": 1294,
+              "startFrame": 330,
+              "endFrame": 339
+            },
+            {
+              "word": "business.",
+              "startMs": 1332,
+              "endMs": 1672,
+              "startFrame": 339,
+              "endFrame": 350
+            }
+          ],
+          "startFrame": 299
+        }
+      },
+      "stackSfxEvents": [
+        {
+          "startFrame": 120,
+          "repeatCount": 1,
+          "sources": [
+            "public/audio/card_flip_cascade_2.m4a"
+          ]
+        },
+        {
+          "startFrame": 144,
+          "repeatCount": 2,
+          "sources": [
+            "public/audio/card_flip_cascade_2.m4a",
+            "public/audio/card_flip_cascade_2.m4a"
+          ]
+        }
+      ],
+      "sparkle": {
+        "src": "public/audio/card_flip_cascade_2.m4a",
+        "startFrame": 144,
+        "durationInFrames": 7
+      },
+      "flipSfx": {
+        "src": "public/audio/card_flip_cascade_2.m4a",
+        "startFrame": 260
+      },
+      "transition": {
+        "startFrame": 350,
+        "durationInFrames": 24
+      }
+    },
+    {
+      "id": "lesson_02",
+      "lessonNumber": 2,
+      "original": "자신에게 투자하세요, 후회하지 않을 것입니다.",
+      "koreanOrder": "투자하세요 당신 자신에게 당신은 후회하지 않을 것입니다",
+      "english": "Invest in yourself you won't regret it.",
+      "chunks": [
+        {
+          "ko": "투자하세요",
+          "en": "Invest",
+          "color": "#FFD166",
+          "alignedHighlightStartFrame": 566,
+          "alignedHighlightEndFrame": 585
+        },
+        {
+          "ko": "당신 자신에게",
+          "en": "in yourself",
+          "color": "#06D6A0",
+          "alignedHighlightStartFrame": 585,
+          "alignedHighlightEndFrame": 622
+        },
+        {
+          "ko": "당신은 후회하지 않을 것입니다",
+          "en": "you won't regret it.",
+          "color": "#4CC9F0",
+          "alignedHighlightStartFrame": 622,
+          "alignedHighlightEndFrame": 690
+        }
+      ],
+      "buildUp": [
+        [
+          "투자하세요"
+        ],
+        [
+          "투자하세요",
+          "당신 자신에게"
+        ],
+        [
+          "투자하세요",
+          "당신 자신에게",
+          "당신은 후회하지 않을 것입니다"
+        ]
+      ],
+      "startFrame": 362,
+      "introWaitFrames": 15,
+      "buildIntervalFrames": 24,
+      "flipStaggerFrames": 2.4,
+      "stackPulseIntervalFrames": 2,
+      "introAudioStartFrame": 377,
+      "buildStartFrame": 478,
+      "buildupEndFrame": 526,
+      "sparkleStartFrame": 526,
+      "alignedAudioStartFrame": 566,
+      "flipStartFrame": 690,
+      "flipDurationFrames": 39,
+      "englishAudioStartFrame": 729,
+      "endFrame": 791,
+      "durationInFrames": 429,
+      "audio": {
+        "intro": {
+          "src": "public/audio/lesson_02_seg_1.m4a",
+          "durationMs": 3344,
+          "durationInFrames": 101,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "자신에게",
+              "startMs": 0,
+              "endMs": 764
+            },
+            {
+              "word": "투자하세요,",
+              "startMs": 802,
+              "endMs": 1522
+            },
+            {
+              "word": "후회하지",
+              "startMs": 1632,
+              "endMs": 2307
+            },
+            {
+              "word": "않을",
+              "startMs": 2345,
+              "endMs": 2670
+            },
+            {
+              "word": "것입니다.",
+              "startMs": 2708,
+              "endMs": 3344
+            }
+          ],
+          "startFrame": 377
+        },
+        "aligned": {
+          "src": "public/audio/lesson_02_seg_2.m4a",
+          "durationMs": 4133,
+          "durationInFrames": 124,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "투자하세요",
+              "startMs": 0,
+              "endMs": 628
+            },
+            {
+              "word": "당신",
+              "startMs": 666,
+              "endMs": 1154
+            },
+            {
+              "word": "자신에게",
+              "startMs": 1192,
+              "endMs": 1859
+            },
+            {
+              "word": "당신은",
+              "startMs": 1897,
+              "endMs": 2592
+            },
+            {
+              "word": "후회하지",
+              "startMs": 2630,
+              "endMs": 3219
+            },
+            {
+              "word": "않을",
+              "startMs": 3257,
+              "endMs": 3540
+            },
+            {
+              "word": "것입니다",
+              "startMs": 3578,
+              "endMs": 4133
+            }
+          ],
+          "startFrame": 566
+        },
+        "english": {
+          "src": "public/audio/lesson_02_seg_3.m4a",
+          "durationMs": 2043,
+          "durationInFrames": 62,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "Invest",
+              "startMs": 0,
+              "endMs": 358,
+              "startFrame": 729,
+              "endFrame": 740
+            },
+            {
+              "word": "in",
+              "startMs": 396,
+              "endMs": 587,
+              "startFrame": 741,
+              "endFrame": 747
+            },
+            {
+              "word": "yourself",
+              "startMs": 625,
+              "endMs": 1006,
+              "startFrame": 747,
+              "endFrame": 760
+            },
+            {
+              "word": "you",
+              "startMs": 1044,
+              "endMs": 1227,
+              "startFrame": 760,
+              "endFrame": 767
+            },
+            {
+              "word": "won't",
+              "startMs": 1265,
+              "endMs": 1519,
+              "startFrame": 767,
+              "endFrame": 776
+            },
+            {
+              "word": "regret",
+              "startMs": 1557,
+              "endMs": 1867,
+              "startFrame": 776,
+              "endFrame": 786
+            },
+            {
+              "word": "it.",
+              "startMs": 1905,
+              "endMs": 2043,
+              "startFrame": 786,
+              "endFrame": 791
+            }
+          ],
+          "startFrame": 729
+        }
+      },
+      "stackSfxEvents": [
+        {
+          "startFrame": 478,
+          "repeatCount": 1,
+          "sources": [
+            "public/audio/card_flip_cascade_3.m4a"
+          ]
+        },
+        {
+          "startFrame": 502,
+          "repeatCount": 2,
+          "sources": [
+            "public/audio/card_flip_cascade_3.m4a",
+            "public/audio/card_flip_cascade_3.m4a"
+          ]
+        },
+        {
+          "startFrame": 526,
+          "repeatCount": 3,
+          "sources": [
+            "public/audio/card_flip_cascade_3.m4a",
+            "public/audio/card_flip_cascade_3.m4a",
+            "public/audio/card_flip_cascade_3.m4a"
+          ]
+        }
+      ],
+      "sparkle": {
+        "src": "public/audio/card_flip_cascade_3.m4a",
+        "startFrame": 526,
+        "durationInFrames": 10
+      },
+      "flipSfx": {
+        "src": "public/audio/card_flip_cascade_3.m4a",
+        "startFrame": 690
+      },
+      "transition": {
+        "startFrame": 791,
+        "durationInFrames": 24
+      }
+    },
+    {
+      "id": "lesson_03",
+      "lessonNumber": 3,
+      "original": "하나의 계획 대신 항상 플랜 B(차선책)를 준비하세요.",
+      "koreanOrder": "항상 준비하세요 백업 계획들을 하나의 계획 대신에",
+      "english": "Always have backup plans instead of a plan.",
+      "chunks": [
+        {
+          "ko": "항상 준비하세요",
+          "en": "Always have",
+          "color": "#06D6A0",
+          "alignedHighlightStartFrame": 1030,
+          "alignedHighlightEndFrame": 1070
+        },
+        {
+          "ko": "백업 계획들을",
+          "en": "backup plans",
+          "color": "#4CC9F0",
+          "alignedHighlightStartFrame": 1070,
+          "alignedHighlightEndFrame": 1102
+        },
+        {
+          "ko": "하나의 계획 대신에",
+          "en": "instead of a plan.",
+          "color": "#C77DFF",
+          "alignedHighlightStartFrame": 1102,
+          "alignedHighlightEndFrame": 1145
+        }
+      ],
+      "buildUp": [
+        [
+          "항상 준비하세요"
+        ],
+        [
+          "항상 준비하세요",
+          "백업 계획들을"
+        ],
+        [
+          "항상 준비하세요",
+          "백업 계획들을",
+          "하나의 계획 대신에"
+        ]
+      ],
+      "startFrame": 803,
+      "introWaitFrames": 15,
+      "buildIntervalFrames": 24,
+      "flipStaggerFrames": 2.4,
+      "stackPulseIntervalFrames": 2,
+      "introAudioStartFrame": 818,
+      "buildStartFrame": 942,
+      "buildupEndFrame": 990,
+      "sparkleStartFrame": 990,
+      "alignedAudioStartFrame": 1030,
+      "flipStartFrame": 1145,
+      "flipDurationFrames": 39,
+      "englishAudioStartFrame": 1184,
+      "endFrame": 1261,
+      "durationInFrames": 458,
+      "audio": {
+        "intro": {
+          "src": "public/audio/lesson_03_seg_1.m4a",
+          "durationMs": 4133,
+          "durationInFrames": 124,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "하나의",
+              "startMs": 0,
+              "endMs": 381
+            },
+            {
+              "word": "계획",
+              "startMs": 419,
+              "endMs": 792
+            },
+            {
+              "word": "대신",
+              "startMs": 830,
+              "endMs": 1363
+            },
+            {
+              "word": "항상",
+              "startMs": 1401,
+              "endMs": 1897
+            },
+            {
+              "word": "플랜",
+              "startMs": 1935,
+              "endMs": 2304
+            },
+            {
+              "word": "B(차선책)를",
+              "startMs": 2342,
+              "endMs": 3321
+            },
+            {
+              "word": "준비하세요.",
+              "startMs": 3359,
+              "endMs": 4133
+            }
+          ],
+          "startFrame": 818
+        },
+        "aligned": {
+          "src": "public/audio/lesson_03_seg_2.m4a",
+          "durationMs": 3808,
+          "durationInFrames": 115,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "항상",
+              "startMs": 0,
+              "endMs": 492
+            },
+            {
+              "word": "준비하세요",
+              "startMs": 530,
+              "endMs": 1300
+            },
+            {
+              "word": "백업",
+              "startMs": 1338,
+              "endMs": 1725
+            },
+            {
+              "word": "계획들을",
+              "startMs": 1763,
+              "endMs": 2371
+            },
+            {
+              "word": "하나의",
+              "startMs": 2409,
+              "endMs": 2787
+            },
+            {
+              "word": "계획",
+              "startMs": 2825,
+              "endMs": 3196
+            },
+            {
+              "word": "대신에",
+              "startMs": 3234,
+              "endMs": 3808
+            }
+          ],
+          "startFrame": 1030
+        },
+        "english": {
+          "src": "public/audio/lesson_03_seg_3.m4a",
+          "durationMs": 2554,
+          "durationInFrames": 77,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "Always",
+              "startMs": 0,
+              "endMs": 355,
+              "startFrame": 1184,
+              "endFrame": 1195
+            },
+            {
+              "word": "have",
+              "startMs": 393,
+              "endMs": 632,
+              "startFrame": 1195,
+              "endFrame": 1204
+            },
+            {
+              "word": "backup",
+              "startMs": 670,
+              "endMs": 1004,
+              "startFrame": 1204,
+              "endFrame": 1215
+            },
+            {
+              "word": "plans",
+              "startMs": 1042,
+              "endMs": 1379,
+              "startFrame": 1215,
+              "endFrame": 1226
+            },
+            {
+              "word": "instead",
+              "startMs": 1417,
+              "endMs": 1784,
+              "startFrame": 1226,
+              "endFrame": 1238
+            },
+            {
+              "word": "of",
+              "startMs": 1822,
+              "endMs": 1988,
+              "startFrame": 1238,
+              "endFrame": 1244
+            },
+            {
+              "word": "a",
+              "startMs": 2026,
+              "endMs": 2238,
+              "startFrame": 1245,
+              "endFrame": 1252
+            },
+            {
+              "word": "plan.",
+              "startMs": 2276,
+              "endMs": 2554,
+              "startFrame": 1252,
+              "endFrame": 1261
+            }
+          ],
+          "startFrame": 1184
+        }
+      },
+      "stackSfxEvents": [
+        {
+          "startFrame": 942,
+          "repeatCount": 1,
+          "sources": [
+            "public/audio/card_flip_cascade_3.m4a"
+          ]
+        },
+        {
+          "startFrame": 966,
+          "repeatCount": 2,
+          "sources": [
+            "public/audio/card_flip_cascade_3.m4a",
+            "public/audio/card_flip_cascade_3.m4a"
+          ]
+        },
+        {
+          "startFrame": 990,
+          "repeatCount": 3,
+          "sources": [
+            "public/audio/card_flip_cascade_3.m4a",
+            "public/audio/card_flip_cascade_3.m4a",
+            "public/audio/card_flip_cascade_3.m4a"
+          ]
+        }
+      ],
+      "sparkle": {
+        "src": "public/audio/card_flip_cascade_3.m4a",
+        "startFrame": 990,
+        "durationInFrames": 10
+      },
+      "flipSfx": {
+        "src": "public/audio/card_flip_cascade_3.m4a",
+        "startFrame": 1145
+      },
+      "transition": {
+        "startFrame": 1261,
+        "durationInFrames": 24
+      }
+    },
+    {
+      "id": "lesson_04",
+      "lessonNumber": 4,
+      "original": "혼자 있는 법을 배우고, 그 시간을 사랑하세요.",
+      "koreanOrder": "배우세요 혼자 있는 법을 그리고 사랑하세요 그것을",
+      "english": "Learn to be alone and love it.",
+      "chunks": [
+        {
+          "ko": "배우세요",
+          "en": "Learn",
+          "color": "#4CC9F0",
+          "alignedHighlightStartFrame": 1499,
+          "alignedHighlightEndFrame": 1517
+        },
+        {
+          "ko": "혼자 있는 법을",
+          "en": "to be alone",
+          "color": "#C77DFF",
+          "alignedHighlightStartFrame": 1517,
+          "alignedHighlightEndFrame": 1563
+        },
+        {
+          "ko": "그리고 사랑하세요",
+          "en": "and love",
+          "color": "#FF6B6B",
+          "alignedHighlightStartFrame": 1563,
+          "alignedHighlightEndFrame": 1603
+        },
+        {
+          "ko": "그것을",
+          "en": "it.",
+          "color": "#FFD166",
+          "alignedHighlightStartFrame": 1603,
+          "alignedHighlightEndFrame": 1621
+        }
+      ],
+      "buildUp": [
+        [
+          "배우세요"
+        ],
+        [
+          "배우세요",
+          "혼자 있는 법을"
+        ],
+        [
+          "배우세요",
+          "혼자 있는 법을",
+          "그리고 사랑하세요"
+        ],
+        [
+          "배우세요",
+          "혼자 있는 법을",
+          "그리고 사랑하세요",
+          "그것을"
+        ]
+      ],
+      "startFrame": 1273,
+      "introWaitFrames": 15,
+      "buildIntervalFrames": 24,
+      "flipStaggerFrames": 2.4,
+      "stackPulseIntervalFrames": 2,
+      "introAudioStartFrame": 1288,
+      "buildStartFrame": 1385,
+      "buildupEndFrame": 1457,
+      "sparkleStartFrame": 1457,
+      "alignedAudioStartFrame": 1499,
+      "flipStartFrame": 1621,
+      "flipDurationFrames": 39,
+      "englishAudioStartFrame": 1660,
+      "endFrame": 1705,
+      "durationInFrames": 432,
+      "audio": {
+        "intro": {
+          "src": "public/audio/lesson_04_seg_1.m4a",
+          "durationMs": 3204,
+          "durationInFrames": 97,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "혼자",
+              "startMs": 0,
+              "endMs": 407
+            },
+            {
+              "word": "있는",
+              "startMs": 445,
+              "endMs": 836
+            },
+            {
+              "word": "법을",
+              "startMs": 874,
+              "endMs": 1213
+            },
+            {
+              "word": "배우고,",
+              "startMs": 1251,
+              "endMs": 1625
+            },
+            {
+              "word": "그",
+              "startMs": 1735,
+              "endMs": 2001
+            },
+            {
+              "word": "시간을",
+              "startMs": 2039,
+              "endMs": 2521
+            },
+            {
+              "word": "사랑하세요.",
+              "startMs": 2559,
+              "endMs": 3204
+            }
+          ],
+          "startFrame": 1288
+        },
+        "aligned": {
+          "src": "public/audio/lesson_04_seg_2.m4a",
+          "durationMs": 4040,
+          "durationInFrames": 122,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "배우세요",
+              "startMs": 0,
+              "endMs": 579
+            },
+            {
+              "word": "혼자",
+              "startMs": 617,
+              "endMs": 1120
+            },
+            {
+              "word": "있는",
+              "startMs": 1158,
+              "endMs": 1643
+            },
+            {
+              "word": "법을",
+              "startMs": 1681,
+              "endMs": 2101
+            },
+            {
+              "word": "그리고",
+              "startMs": 2139,
+              "endMs": 2591
+            },
+            {
+              "word": "사랑하세요",
+              "startMs": 2629,
+              "endMs": 3427
+            },
+            {
+              "word": "그것을",
+              "startMs": 3465,
+              "endMs": 4040
+            }
+          ],
+          "startFrame": 1499
+        },
+        "english": {
+          "src": "public/audio/lesson_04_seg_3.m4a",
+          "durationMs": 1486,
+          "durationInFrames": 45,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "Learn",
+              "startMs": 0,
+              "endMs": 205,
+              "startFrame": 1660,
+              "endFrame": 1667
+            },
+            {
+              "word": "to",
+              "startMs": 243,
+              "endMs": 424,
+              "startFrame": 1667,
+              "endFrame": 1673
+            },
+            {
+              "word": "be",
+              "startMs": 462,
+              "endMs": 613,
+              "startFrame": 1673,
+              "endFrame": 1679
+            },
+            {
+              "word": "alone",
+              "startMs": 651,
+              "endMs": 881,
+              "startFrame": 1679,
+              "endFrame": 1687
+            },
+            {
+              "word": "and",
+              "startMs": 919,
+              "endMs": 1108,
+              "startFrame": 1687,
+              "endFrame": 1694
+            },
+            {
+              "word": "love",
+              "startMs": 1146,
+              "endMs": 1328,
+              "startFrame": 1694,
+              "endFrame": 1701
+            },
+            {
+              "word": "it.",
+              "startMs": 1366,
+              "endMs": 1486,
+              "startFrame": 1701,
+              "endFrame": 1705
+            }
+          ],
+          "startFrame": 1660
+        }
+      },
+      "stackSfxEvents": [
+        {
+          "startFrame": 1385,
+          "repeatCount": 1,
+          "sources": [
+            "public/audio/card_flip_cascade_4.m4a"
+          ]
+        },
+        {
+          "startFrame": 1409,
+          "repeatCount": 2,
+          "sources": [
+            "public/audio/card_flip_cascade_4.m4a",
+            "public/audio/card_flip_cascade_4.m4a"
+          ]
+        },
+        {
+          "startFrame": 1433,
+          "repeatCount": 3,
+          "sources": [
+            "public/audio/card_flip_cascade_4.m4a",
+            "public/audio/card_flip_cascade_4.m4a",
+            "public/audio/card_flip_cascade_4.m4a"
+          ]
+        },
+        {
+          "startFrame": 1457,
+          "repeatCount": 4,
+          "sources": [
+            "public/audio/card_flip_cascade_4.m4a",
+            "public/audio/card_flip_cascade_4.m4a",
+            "public/audio/card_flip_cascade_4.m4a",
+            "public/audio/card_flip_cascade_4.m4a"
+          ]
+        }
+      ],
+      "sparkle": {
+        "src": "public/audio/card_flip_cascade_4.m4a",
+        "startFrame": 1457,
+        "durationInFrames": 12
+      },
+      "flipSfx": {
+        "src": "public/audio/card_flip_cascade_4.m4a",
+        "startFrame": 1621
+      },
+      "transition": {
+        "startFrame": 1705,
+        "durationInFrames": 24
+      }
+    },
+    {
+      "id": "lesson_05",
+      "lessonNumber": 5,
+      "original": "열심을 다해 일하고 늘 겸손하세요.",
+      "koreanOrder": "일하세요 열심히 그리고 유지하세요 겸손함을",
+      "english": "Work hard and stay humble.",
+      "chunks": [
+        {
+          "ko": "일하세요",
+          "en": "Work",
+          "color": "#C77DFF",
+          "alignedHighlightStartFrame": 1952,
+          "alignedHighlightEndFrame": 1971
+        },
+        {
+          "ko": "열심히",
+          "en": "hard",
+          "color": "#FF6B6B",
+          "alignedHighlightStartFrame": 1971,
+          "alignedHighlightEndFrame": 1992
+        },
+        {
+          "ko": "그리고",
+          "en": "and",
+          "color": "#FFD166",
+          "alignedHighlightStartFrame": 1992,
+          "alignedHighlightEndFrame": 2007
+        },
+        {
+          "ko": "유지하세요",
+          "en": "stay",
+          "color": "#06D6A0",
+          "alignedHighlightStartFrame": 2007,
+          "alignedHighlightEndFrame": 2031
+        },
+        {
+          "ko": "겸손함을",
+          "en": "humble.",
+          "color": "#4CC9F0",
+          "alignedHighlightStartFrame": 2032,
+          "alignedHighlightEndFrame": 2056
+        }
+      ],
+      "buildUp": [
+        [
+          "일하세요"
+        ],
+        [
+          "일하세요",
+          "열심히"
+        ],
+        [
+          "일하세요",
+          "열심히",
+          "그리고"
+        ],
+        [
+          "일하세요",
+          "열심히",
+          "그리고",
+          "유지하세요"
+        ],
+        [
+          "일하세요",
+          "열심히",
+          "그리고",
+          "유지하세요",
+          "겸손함을"
+        ]
+      ],
+      "startFrame": 1717,
+      "introWaitFrames": 15,
+      "buildIntervalFrames": 24,
+      "flipStaggerFrames": 2.4,
+      "stackPulseIntervalFrames": 2,
+      "introAudioStartFrame": 1732,
+      "buildStartFrame": 1811,
+      "buildupEndFrame": 1907,
+      "sparkleStartFrame": 1907,
+      "alignedAudioStartFrame": 1952,
+      "flipStartFrame": 2056,
+      "flipDurationFrames": 39,
+      "englishAudioStartFrame": 2095,
+      "endFrame": 2140,
+      "durationInFrames": 423,
+      "audio": {
+        "intro": {
+          "src": "public/audio/lesson_05_seg_1.m4a",
+          "durationMs": 2601,
+          "durationInFrames": 79,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "열심을",
+              "startMs": 0,
+              "endMs": 513
+            },
+            {
+              "word": "다해",
+              "startMs": 551,
+              "endMs": 918
+            },
+            {
+              "word": "일하고",
+              "startMs": 956,
+              "endMs": 1424
+            },
+            {
+              "word": "늘",
+              "startMs": 1462,
+              "endMs": 1815
+            },
+            {
+              "word": "겸손하세요.",
+              "startMs": 1853,
+              "endMs": 2601
+            }
+          ],
+          "startFrame": 1732
+        },
+        "aligned": {
+          "src": "public/audio/lesson_05_seg_2.m4a",
+          "durationMs": 3437,
+          "durationInFrames": 104,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "일하세요",
+              "startMs": 0,
+              "endMs": 610
+            },
+            {
+              "word": "열심히",
+              "startMs": 648,
+              "endMs": 1291
+            },
+            {
+              "word": "그리고",
+              "startMs": 1329,
+              "endMs": 1808
+            },
+            {
+              "word": "유지하세요",
+              "startMs": 1846,
+              "endMs": 2607
+            },
+            {
+              "word": "겸손함을",
+              "startMs": 2645,
+              "endMs": 3437
+            }
+          ],
+          "startFrame": 1952
+        },
+        "english": {
+          "src": "public/audio/lesson_05_seg_3.m4a",
+          "durationMs": 1486,
+          "durationInFrames": 45,
+          "timingNote": "동일 macOS 보이스로 단어별 시험 합성한 길이를 문장 M4A의 ffprobe 실측 길이에 정규화하고 문장부호 휴지를 반영한 추정 타이밍입니다. 실제 파형 forced alignment는 아닙니다.",
+          "wordTimings": [
+            {
+              "word": "Work",
+              "startMs": 0,
+              "endMs": 251,
+              "startFrame": 2095,
+              "endFrame": 2103
+            },
+            {
+              "word": "hard",
+              "startMs": 289,
+              "endMs": 542,
+              "startFrame": 2103,
+              "endFrame": 2112
+            },
+            {
+              "word": "and",
+              "startMs": 580,
+              "endMs": 813,
+              "startFrame": 2112,
+              "endFrame": 2120
+            },
+            {
+              "word": "stay",
+              "startMs": 851,
+              "endMs": 1165,
+              "startFrame": 2120,
+              "endFrame": 2131
+            },
+            {
+              "word": "humble.",
+              "startMs": 1203,
+              "endMs": 1486,
+              "startFrame": 2131,
+              "endFrame": 2140
+            }
+          ],
+          "startFrame": 2095
+        }
+      },
+      "stackSfxEvents": [
+        {
+          "startFrame": 1811,
+          "repeatCount": 1,
+          "sources": [
+            "public/audio/card_flip_cascade_5.m4a"
+          ]
+        },
+        {
+          "startFrame": 1835,
+          "repeatCount": 2,
+          "sources": [
+            "public/audio/card_flip_cascade_5.m4a",
+            "public/audio/card_flip_cascade_5.m4a"
+          ]
+        },
+        {
+          "startFrame": 1859,
+          "repeatCount": 3,
+          "sources": [
+            "public/audio/card_flip_cascade_5.m4a",
+            "public/audio/card_flip_cascade_5.m4a",
+            "public/audio/card_flip_cascade_5.m4a"
+          ]
+        },
+        {
+          "startFrame": 1883,
+          "repeatCount": 4,
+          "sources": [
+            "public/audio/card_flip_cascade_5.m4a",
+            "public/audio/card_flip_cascade_5.m4a",
+            "public/audio/card_flip_cascade_5.m4a",
+            "public/audio/card_flip_cascade_5.m4a"
+          ]
+        },
+        {
+          "startFrame": 1907,
+          "repeatCount": 5,
+          "sources": [
+            "public/audio/card_flip_cascade_5.m4a",
+            "public/audio/card_flip_cascade_5.m4a",
+            "public/audio/card_flip_cascade_5.m4a",
+            "public/audio/card_flip_cascade_5.m4a",
+            "public/audio/card_flip_cascade_5.m4a"
+          ]
+        }
+      ],
+      "sparkle": {
+        "src": "public/audio/card_flip_cascade_5.m4a",
+        "startFrame": 1907,
+        "durationInFrames": 15
+      },
+      "flipSfx": {
+        "src": "public/audio/card_flip_cascade_5.m4a",
+        "startFrame": 2056
+      },
+      "transition": {
+        "startFrame": 2140,
+        "durationInFrames": 24
+      }
+    }
+  ]
+}

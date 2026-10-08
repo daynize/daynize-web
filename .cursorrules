@@ -1,0 +1,12 @@
+# DAYNIZE Exit - Quiz Generator Rules
+
+When writing code for exit - intent modals or quiz features:
+1. Parse the user's `watchedVerbs` array from state or localStorage.
+2. Structure the AI prompt to return a strict JSON object:
+- popupTitle: Witty, friendly headline(e.g., "🚨 잠시만요! 그냥 가시게요?")
+    - popupSubtitle: Short encouraging sentence
+        - question: Multiple choice question based on watched verbs
+            - options: Array of 4 choices(including 1 humorous wrong option)
+                - answerIndex: Integer(0 to 3)
+                    - explanation: Friendly Korean breakdown
+3. Keep the tone warm, encouraging, and clear for adult and senior learners.

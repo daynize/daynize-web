@@ -1,0 +1,23 @@
+{
+  "name": "word-order-shift",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "audio": "node scripts/generate-audio.mjs",
+    "dev": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts WordOrderShift-Main out/word_order_shift_all.mp4",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "gsap": "^3.15.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.7.2"
+  }
+}

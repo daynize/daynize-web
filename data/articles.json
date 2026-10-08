@@ -1,0 +1,102 @@
+[
+    {
+        "id": "pop-01",
+        "episode": "01회차",
+        "category": "팝송",
+        "title": "FOREVER 속의 WILL",
+        "subtitle": "팝송 가사로 배우는 조동사 would와 will의 차이",
+        "readTime": "5분",
+        "coverImage": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=88",
+        "story": [
+            "핀란드의 밴드 스트라토바리우스(Stratovarius)가 1996년도에 발표한 ‘Forever’는 드라마 OST로 사용되면서 한국에서 엄청난 인기를 끌었던 명곡입니다. 요즘에도 가을만 되면 라디오에서 결코 빠지지 않죠."
+        ],
+        "lyricsSection": {
+            "title": "♪ 가사 속 핵심 문장",
+            "items": [
+                {
+                    "en": "Would you wait for me forever?",
+                    "kr": "나를 영원히 기다려 줄 건가요?",
+                    "highlight": "Would"
+                },
+                {
+                    "en": "Will you wait for me forever?",
+                    "kr": "나를 영원히 기다려 줄 거죠?",
+                    "highlight": "Will"
+                }
+            ]
+        },
+        "explanationSection": {
+            "title": "왜 처음엔 Would를 썼다가, 나중엔 Will로 바뀌었을까요?",
+            "content": "조동사가 다르면 문장에서의 역할과 느낌이 완전히 달라집니다.\n우리가 배운 조동사의 과거형(would, should, could, might)은 사실 과거뿐만 아니라 '상대방의 마음을 잘 모르거나 조심스러울 때(불확실할 때)' 많이 사용합니다.\n\n그래서 처음에는 상대가 나를 기다려줄지 확신이 없어서 조심스럽게 'Would you wait~?'라고 물었던 것입니다.\n\n하지만 노래가 클라이맥스로 가면서 상대방을 향한 확신과 강한 바램을 담아 'Will you wait~?'라고 다시 묻는 것이죠! (will, can, may 같은 기본 조동사는 확신이 있거나 명확할 때 씁니다.)"
+        },
+        "quizSection": {
+            "question": "실생활 응용! '제 수업을 구독해 주실 거죠?' 하고 확신과 기대감을 담아 말할 때는 어떤 표현이 어울릴까요?",
+            "answer": "Will you subscribe to my class?",
+            "explanation": "상대방에게 자신감 있게 물을 땐 Will을, '혹시 해주실 수 있나요?' 하고 조심스럽게 부탁할 땐 Would를 쓰시면 완벽합니다!"
+        }
+    },
+    {
+        "id": "pop-02",
+        "episode": "02회차",
+        "category": "Pop & Culture",
+        "type": "culture-essay",
+        "title": "크리스마스 시즌마다 찾아오는 그 가사: \"Once bitten, twice shy\"",
+        "subtitle": "Wham!의 Last Christmas에 담긴 상처와 조심스러운 용기",
+        "readTime": "6분",
+        "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/4a/f9/eb4af984-fc68-56ab-7b89-1d070c04e1dd/5099765318524.jpg/1200x1200bb.jpg",
+        "audio": {
+            "title": "Last Christmas (Single Version)",
+            "artist": "Wham!",
+            "album": "Last Christmas - Single",
+            "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cc/10/d3/cc10d319-d2b2-1e51-84f2-d81bb2d7b7fc/mzaf_11693662218518924489.plus.aac.p.m4a",
+            "trackUrl": "https://music.apple.com/us/album/last-christmas-single-version/202117886?i=202117984"
+        },
+        "introduction": "매년 12월이 되면 길거리와 카페에서 어김없이 흘러나오는 노래, Wham!의 <Last Christmas>입니다. 경쾌하고 따뜻한 멜로디 덕분에 신나는 연말 노래처럼 들리지만, 사실 가사를 자세히 들여다보면 이보다 씁쓸하고 솔직한 상처의 고백이 없습니다.",
+        "focusQuote": {
+            "en": "Once bitten, twice shy",
+            "translation": "한 번 물리면 두 번은 수줍어진다. 한 번 데이면 그다음엔 조심하게 된다.",
+            "proverb": "자라 보고 놀란 가슴 솥뚜껑 보고 놀란다"
+        },
+        "sections": [
+            {
+                "eyebrow": "THE STORY IN THE SONG",
+                "title": "가사 속 이야기 · 마음을 베인 사람의 방어기제",
+                "paragraphs": [
+                    "<Last Christmas>의 주인공은 작년 크리스마스에 자신의 전부였던 마음을 선물했지만, 상대방은 겨우 하루 만에 그 마음을 내팽개쳐 버렸습니다. 1년이 지난 지금, 다시 찾아온 연말 속에서 주인공은 다짐합니다."
+                ],
+                "points": [
+                    {
+                        "term": "Once bitten",
+                        "gloss": "한 번 상처받았으니",
+                        "description": "지난날 배신당했던 아픈 기억."
+                    },
+                    {
+                        "term": "Twice shy",
+                        "gloss": "두 번은 조심하겠다",
+                        "description": "다시는 같은 실수를 반복하지 않기 위해 거리를 두고 내 마음을 지키겠다는 다짐."
+                    }
+                ],
+                "closing": "이 구절 뒤에 바로 \"I keep my distance, but you still catch my eye\"라는 가사가 이어집니다. 상처받기 싫어서 단단히 벽을 세웠지만, 그럼에도 미련과 미움, 미련한 설렘이 얽혀 있는 인간의 복잡한 감정을 잘 보여줍니다."
+            },
+            {
+                "eyebrow": "CULTURAL FOOTNOTES",
+                "title": "문화적 배경 · ‘Once bitten, twice shy’는 어디서 왔을까?",
+                "paragraphs": [
+                    "이 표현은 18-19세기 영국 문학 작품과 대중 속담에서 널리 쓰이기 시작했습니다. 개나 동물에게 한 번 물려본 사람은 비슷한 동물만 봐도 움찔하며 경계하게 된다는 인간의 자연스러운 본능적 방어기제를 뜻합니다.",
+                    "대중문화에서도 70년대 록 밴드 Ian Hunter의 명곡 제목이자 Great White의 커버곡으로 유명하며, 영화나 드라마에서 과거의 상처 때문에 망설이는 주인공의 대사로 자주 등장합니다."
+                ]
+            },
+            {
+                "eyebrow": "CULTURE INSIGHT",
+                "title": "상처가 남긴 ‘주저함’을 안고 살아가는 우리들에게",
+                "paragraphs": [
+                    "우리는 누구나 삶의 어떤 순간에 \"Once bitten\"을 경험합니다. 믿었던 사람에게 배신당했을 때, 열정을 다했던 프로젝트에서 쓰라린 실패를 맛보았을 때 가슴속에 깊은 흉터를 남깁니다. 그리고 그 흉터는 다음 기회가 찾아왔을 때 우리를 \"Twice shy\"하게 만듭니다.",
+                    "하지만 가사 후반부에서 주인공은 말합니다. \"Now I've found a real love, you'll never fool me again\"",
+                    "비록 한 번 데여서 조심스러워졌지만, 결국 그는 ‘진짜 사랑’을 다시 찾아 나섭니다.",
+                    "상처받은 적이 있다는 것은 내가 그만큼 무언가에 진심이었다는 증거입니다. 한 번 데여서 조금 조심스러워진 것은 겁쟁이가 된 게 아니라, 내 마음을 더 소중히 다루는 법을 배운 것입니다."
+                ],
+                "closingQuote": "상처는 마음을 닫으라는 명령이 아니라, 내 마음을 더 소중히 돌보라는 배움일지도 모릅니다."
+            }
+        ]
+    }
+]

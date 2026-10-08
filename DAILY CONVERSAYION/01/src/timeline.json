@@ -1,0 +1,1656 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalVideoDurationFrames": 3204,
+  "transitionFrames": 24,
+  "timingNote": "Word startMs/endMs are estimated by proportional distribution of segment duration weighted by character count. They are NOT forced alignment or Whisper output. Scene boundaries are audio-driven: they extend when TTS is longer than the nominal marks. Item scenes/segments/sfx frames are item-local; item startFrame/endFrame are global.",
+  "items": [
+    {
+      "id": "s1",
+      "startDelayFrames": 15,
+      "totalFrames": 735,
+      "texts": {
+        "koOriginal": "당신은 내면의 가치를 지키며 성장에 집중하는 삶을 산다.",
+        "koShifted": "당신은 산다 삶을 집중하는 개인적인 성장에 지키면서 내면의 가치들을",
+        "enFinal": "You live a life focusing on personal growth while staying true to your inner values."
+      },
+      "chunks": [
+        {
+          "ko": "당신은",
+          "en": "You"
+        },
+        {
+          "ko": "산다",
+          "en": "live"
+        },
+        {
+          "ko": "삶을",
+          "en": "a life"
+        },
+        {
+          "ko": "집중하는",
+          "en": "focusing on"
+        },
+        {
+          "ko": "개인적인 성장에",
+          "en": "personal growth"
+        },
+        {
+          "ko": "지키면서",
+          "en": "while staying true"
+        },
+        {
+          "ko": "내면의 가치들을",
+          "en": "to your inner values"
+        }
+      ],
+      "scenes": {
+        "intro": {
+          "startFrame": 15,
+          "endFrame": 149
+        },
+        "building": {
+          "startFrame": 149,
+          "endFrame": 536,
+          "stepFrames": 24
+        },
+        "flip": {
+          "startFrame": 536,
+          "endFrame": 575,
+          "staggerFrames": 2.4
+        },
+        "outro": {
+          "startFrame": 575,
+          "endFrame": 735
+        }
+      },
+      "sfx": {
+        "stack": {
+          "file": "audio/sfx_stack.m4a",
+          "durationInFrames": 6,
+          "hits": [
+            {
+              "startFrame": 149,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 173,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 175,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 197,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 199,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 201,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 221,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 223,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 225,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 227,
+              "playbackRate": 1.36
+            },
+            {
+              "startFrame": 245,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 247,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 249,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 251,
+              "playbackRate": 1.36
+            },
+            {
+              "startFrame": 253,
+              "playbackRate": 1.48
+            },
+            {
+              "startFrame": 269,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 271,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 273,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 275,
+              "playbackRate": 1.36
+            },
+            {
+              "startFrame": 277,
+              "playbackRate": 1.48
+            },
+            {
+              "startFrame": 279,
+              "playbackRate": 1.6
+            },
+            {
+              "startFrame": 293,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 295,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 297,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 299,
+              "playbackRate": 1.36
+            },
+            {
+              "startFrame": 301,
+              "playbackRate": 1.48
+            },
+            {
+              "startFrame": 303,
+              "playbackRate": 1.6
+            },
+            {
+              "startFrame": 305,
+              "playbackRate": 1.72
+            }
+          ]
+        },
+        "sparkle": {
+          "file": "audio/magical_sparkle.m4a",
+          "durationInFrames": 44,
+          "startFrame": 307
+        },
+        "flip": {
+          "file": "audio/card_flip_cascade_7.m4a",
+          "durationInFrames": 32,
+          "startFrame": 536
+        }
+      },
+      "segments": [
+        {
+          "id": "seg_1",
+          "role": "intro",
+          "voiceName": "Jian",
+          "lang": "ko",
+          "text": "당신은 내면의 가치를 지키며 성장에 집중하는 삶을 산다.",
+          "voice": "Jian (Enhanced)",
+          "file": "audio/s1_seg_1.m4a",
+          "durationSec": 4.179592,
+          "durationInFrames": 126,
+          "words": [
+            {
+              "word": "당신은",
+              "startMs": 0,
+              "endMs": 545
+            },
+            {
+              "word": "내면의",
+              "startMs": 545,
+              "endMs": 1090
+            },
+            {
+              "word": "가치를",
+              "startMs": 1090,
+              "endMs": 1635
+            },
+            {
+              "word": "지키며",
+              "startMs": 1635,
+              "endMs": 2181
+            },
+            {
+              "word": "성장에",
+              "startMs": 2181,
+              "endMs": 2726
+            },
+            {
+              "word": "집중하는",
+              "startMs": 2726,
+              "endMs": 3453
+            },
+            {
+              "word": "삶을",
+              "startMs": 3453,
+              "endMs": 3816
+            },
+            {
+              "word": "산다.",
+              "startMs": 3816,
+              "endMs": 4180
+            }
+          ],
+          "startFrame": 15,
+          "endFrame": 141
+        },
+        {
+          "id": "seg_2",
+          "role": "shifted",
+          "voiceName": "Jian",
+          "lang": "ko",
+          "text": "당신은 산다 삶을 집중하는 개인적인 성장에 지키면서 내면의 가치들을",
+          "voice": "Jian (Enhanced)",
+          "file": "audio/s1_seg_2.m4a",
+          "durationSec": 4.87619,
+          "durationInFrames": 147,
+          "words": [
+            {
+              "word": "당신은",
+              "startMs": 0,
+              "endMs": 504
+            },
+            {
+              "word": "산다",
+              "startMs": 504,
+              "endMs": 841
+            },
+            {
+              "word": "삶을",
+              "startMs": 841,
+              "endMs": 1177
+            },
+            {
+              "word": "집중하는",
+              "startMs": 1177,
+              "endMs": 1850
+            },
+            {
+              "word": "개인적인",
+              "startMs": 1850,
+              "endMs": 2522
+            },
+            {
+              "word": "성장에",
+              "startMs": 2522,
+              "endMs": 3027
+            },
+            {
+              "word": "지키면서",
+              "startMs": 3027,
+              "endMs": 3699
+            },
+            {
+              "word": "내면의",
+              "startMs": 3699,
+              "endMs": 4204
+            },
+            {
+              "word": "가치들을",
+              "startMs": 4204,
+              "endMs": 4876
+            }
+          ],
+          "startFrame": 381,
+          "endFrame": 528
+        },
+        {
+          "id": "seg_3",
+          "role": "outro",
+          "voiceName": "Samantha",
+          "lang": "en",
+          "text": "You live a life focusing on personal growth while staying true to your inner values.",
+          "voice": "Samantha",
+          "file": "audio/s1_seg_3.m4a",
+          "durationSec": 4.504671,
+          "durationInFrames": 136,
+          "words": [
+            {
+              "word": "You",
+              "startMs": 0,
+              "endMs": 196
+            },
+            {
+              "word": "live",
+              "startMs": 196,
+              "endMs": 457
+            },
+            {
+              "word": "a",
+              "startMs": 457,
+              "endMs": 522
+            },
+            {
+              "word": "life",
+              "startMs": 522,
+              "endMs": 783
+            },
+            {
+              "word": "focusing",
+              "startMs": 783,
+              "endMs": 1306
+            },
+            {
+              "word": "on",
+              "startMs": 1306,
+              "endMs": 1436
+            },
+            {
+              "word": "personal",
+              "startMs": 1436,
+              "endMs": 1959
+            },
+            {
+              "word": "growth",
+              "startMs": 1959,
+              "endMs": 2350
+            },
+            {
+              "word": "while",
+              "startMs": 2350,
+              "endMs": 2677
+            },
+            {
+              "word": "staying",
+              "startMs": 2677,
+              "endMs": 3134
+            },
+            {
+              "word": "true",
+              "startMs": 3134,
+              "endMs": 3395
+            },
+            {
+              "word": "to",
+              "startMs": 3395,
+              "endMs": 3525
+            },
+            {
+              "word": "your",
+              "startMs": 3525,
+              "endMs": 3787
+            },
+            {
+              "word": "inner",
+              "startMs": 3787,
+              "endMs": 4113
+            },
+            {
+              "word": "values.",
+              "startMs": 4113,
+              "endMs": 4505
+            }
+          ],
+          "startFrame": 575,
+          "endFrame": 711
+        }
+      ],
+      "startFrame": 0,
+      "endFrame": 735
+    },
+    {
+      "id": "s2",
+      "startDelayFrames": 15,
+      "totalFrames": 571,
+      "texts": {
+        "koOriginal": "당신은 외부의 결과나 타인의 시선에 휘둘리지 않는다.",
+        "koShifted": "당신은 휘둘리지 않는다 외부의 결과나 타인의 시선에",
+        "enFinal": "You are not swayed by external results or others' opinions."
+      },
+      "chunks": [
+        {
+          "ko": "당신은",
+          "en": "You"
+        },
+        {
+          "ko": "휘둘리지 않는다",
+          "en": "are not swayed"
+        },
+        {
+          "ko": "외부의 결과나",
+          "en": "by external results"
+        },
+        {
+          "ko": "타인의 시선에",
+          "en": "or others' opinions"
+        }
+      ],
+      "scenes": {
+        "intro": {
+          "startFrame": 15,
+          "endFrame": 135
+        },
+        "building": {
+          "startFrame": 135,
+          "endFrame": 410,
+          "stepFrames": 24
+        },
+        "flip": {
+          "startFrame": 410,
+          "endFrame": 449,
+          "staggerFrames": 2.4
+        },
+        "outro": {
+          "startFrame": 449,
+          "endFrame": 571
+        }
+      },
+      "sfx": {
+        "stack": {
+          "file": "audio/sfx_stack.m4a",
+          "durationInFrames": 6,
+          "hits": [
+            {
+              "startFrame": 135,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 159,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 161,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 183,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 185,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 187,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 207,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 209,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 211,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 213,
+              "playbackRate": 1.36
+            }
+          ]
+        },
+        "sparkle": {
+          "file": "audio/magical_sparkle.m4a",
+          "durationInFrames": 44,
+          "startFrame": 215
+        },
+        "flip": {
+          "file": "audio/card_flip_cascade_4.m4a",
+          "durationInFrames": 28,
+          "startFrame": 410
+        }
+      },
+      "segments": [
+        {
+          "id": "seg_1",
+          "role": "intro",
+          "voiceName": "Jian",
+          "lang": "ko",
+          "text": "당신은 외부의 결과나 타인의 시선에 휘둘리지 않는다.",
+          "voice": "Jian (Enhanced)",
+          "file": "audio/s2_seg_1.m4a",
+          "durationSec": 3.715193,
+          "durationInFrames": 112,
+          "words": [
+            {
+              "word": "당신은",
+              "startMs": 0,
+              "endMs": 507
+            },
+            {
+              "word": "외부의",
+              "startMs": 507,
+              "endMs": 1013
+            },
+            {
+              "word": "결과나",
+              "startMs": 1013,
+              "endMs": 1520
+            },
+            {
+              "word": "타인의",
+              "startMs": 1520,
+              "endMs": 2026
+            },
+            {
+              "word": "시선에",
+              "startMs": 2026,
+              "endMs": 2533
+            },
+            {
+              "word": "휘둘리지",
+              "startMs": 2533,
+              "endMs": 3209
+            },
+            {
+              "word": "않는다.",
+              "startMs": 3209,
+              "endMs": 3715
+            }
+          ],
+          "startFrame": 15,
+          "endFrame": 127
+        },
+        {
+          "id": "seg_2",
+          "role": "shifted",
+          "voiceName": "Jian",
+          "lang": "ko",
+          "text": "당신은 휘둘리지 않는다 외부의 결과나 타인의 시선에",
+          "voice": "Jian (Enhanced)",
+          "file": "audio/s2_seg_2.m4a",
+          "durationSec": 3.761633,
+          "durationInFrames": 113,
+          "words": [
+            {
+              "word": "당신은",
+              "startMs": 0,
+              "endMs": 513
+            },
+            {
+              "word": "휘둘리지",
+              "startMs": 513,
+              "endMs": 1197
+            },
+            {
+              "word": "않는다",
+              "startMs": 1197,
+              "endMs": 1710
+            },
+            {
+              "word": "외부의",
+              "startMs": 1710,
+              "endMs": 2223
+            },
+            {
+              "word": "결과나",
+              "startMs": 2223,
+              "endMs": 2736
+            },
+            {
+              "word": "타인의",
+              "startMs": 2736,
+              "endMs": 3249
+            },
+            {
+              "word": "시선에",
+              "startMs": 3249,
+              "endMs": 3762
+            }
+          ],
+          "startFrame": 289,
+          "endFrame": 402
+        },
+        {
+          "id": "seg_3",
+          "role": "outro",
+          "voiceName": "Samantha",
+          "lang": "en",
+          "text": "You are not swayed by external results or others' opinions.",
+          "voice": "Samantha",
+          "file": "audio/s2_seg_3.m4a",
+          "durationSec": 3.250794,
+          "durationInFrames": 98,
+          "words": [
+            {
+              "word": "You",
+              "startMs": 0,
+              "endMs": 203
+            },
+            {
+              "word": "are",
+              "startMs": 203,
+              "endMs": 406
+            },
+            {
+              "word": "not",
+              "startMs": 406,
+              "endMs": 610
+            },
+            {
+              "word": "swayed",
+              "startMs": 610,
+              "endMs": 1016
+            },
+            {
+              "word": "by",
+              "startMs": 1016,
+              "endMs": 1151
+            },
+            {
+              "word": "external",
+              "startMs": 1151,
+              "endMs": 1693
+            },
+            {
+              "word": "results",
+              "startMs": 1693,
+              "endMs": 2167
+            },
+            {
+              "word": "or",
+              "startMs": 2167,
+              "endMs": 2303
+            },
+            {
+              "word": "others'",
+              "startMs": 2303,
+              "endMs": 2709
+            },
+            {
+              "word": "opinions.",
+              "startMs": 2709,
+              "endMs": 3251
+            }
+          ],
+          "startFrame": 449,
+          "endFrame": 547
+        }
+      ],
+      "startFrame": 735,
+      "endFrame": 1306
+    },
+    {
+      "id": "s3",
+      "startDelayFrames": 15,
+      "totalFrames": 596,
+      "texts": {
+        "koOriginal": "당신은 매 순간 마음을 열고 배움과 성장을 선택한다.",
+        "koShifted": "당신은 선택한다 배움과 성장을 마음을 열고 매 순간",
+        "enFinal": "You choose learning and growth with an open heart at every moment."
+      },
+      "chunks": [
+        {
+          "ko": "당신은",
+          "en": "You"
+        },
+        {
+          "ko": "선택한다",
+          "en": "choose"
+        },
+        {
+          "ko": "배움과 성장을",
+          "en": "learning and growth"
+        },
+        {
+          "ko": "마음을 열고",
+          "en": "with an open heart"
+        },
+        {
+          "ko": "매 순간",
+          "en": "at every moment"
+        }
+      ],
+      "scenes": {
+        "intro": {
+          "startFrame": 15,
+          "endFrame": 142
+        },
+        "building": {
+          "startFrame": 142,
+          "endFrame": 442,
+          "stepFrames": 24
+        },
+        "flip": {
+          "startFrame": 442,
+          "endFrame": 481,
+          "staggerFrames": 2.4
+        },
+        "outro": {
+          "startFrame": 481,
+          "endFrame": 596
+        }
+      },
+      "sfx": {
+        "stack": {
+          "file": "audio/sfx_stack.m4a",
+          "durationInFrames": 6,
+          "hits": [
+            {
+              "startFrame": 142,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 166,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 168,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 190,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 192,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 194,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 214,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 216,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 218,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 220,
+              "playbackRate": 1.36
+            },
+            {
+              "startFrame": 238,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 240,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 242,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 244,
+              "playbackRate": 1.36
+            },
+            {
+              "startFrame": 246,
+              "playbackRate": 1.48
+            }
+          ]
+        },
+        "sparkle": {
+          "file": "audio/magical_sparkle.m4a",
+          "durationInFrames": 44,
+          "startFrame": 248
+        },
+        "flip": {
+          "file": "audio/card_flip_cascade_5.m4a",
+          "durationInFrames": 29,
+          "startFrame": 442
+        }
+      },
+      "segments": [
+        {
+          "id": "seg_1",
+          "role": "intro",
+          "voiceName": "Jian",
+          "lang": "ko",
+          "text": "당신은 매 순간 마음을 열고 배움과 성장을 선택한다.",
+          "voice": "Jian (Enhanced)",
+          "file": "audio/s3_seg_1.m4a",
+          "durationSec": 3.947392,
+          "durationInFrames": 119,
+          "words": [
+            {
+              "word": "당신은",
+              "startMs": 0,
+              "endMs": 564
+            },
+            {
+              "word": "매",
+              "startMs": 564,
+              "endMs": 752
+            },
+            {
+              "word": "순간",
+              "startMs": 752,
+              "endMs": 1128
+            },
+            {
+              "word": "마음을",
+              "startMs": 1128,
+              "endMs": 1692
+            },
+            {
+              "word": "열고",
+              "startMs": 1692,
+              "endMs": 2068
+            },
+            {
+              "word": "배움과",
+              "startMs": 2068,
+              "endMs": 2632
+            },
+            {
+              "word": "성장을",
+              "startMs": 2632,
+              "endMs": 3196
+            },
+            {
+              "word": "선택한다.",
+              "startMs": 3196,
+              "endMs": 3947
+            }
+          ],
+          "startFrame": 15,
+          "endFrame": 134
+        },
+        {
+          "id": "seg_2",
+          "role": "shifted",
+          "voiceName": "Jian",
+          "lang": "ko",
+          "text": "당신은 선택한다 배움과 성장을 마음을 열고 매 순간",
+          "voice": "Jian (Enhanced)",
+          "file": "audio/s3_seg_2.m4a",
+          "durationSec": 3.715193,
+          "durationInFrames": 112,
+          "words": [
+            {
+              "word": "당신은",
+              "startMs": 0,
+              "endMs": 531
+            },
+            {
+              "word": "선택한다",
+              "startMs": 531,
+              "endMs": 1238
+            },
+            {
+              "word": "배움과",
+              "startMs": 1238,
+              "endMs": 1769
+            },
+            {
+              "word": "성장을",
+              "startMs": 1769,
+              "endMs": 2300
+            },
+            {
+              "word": "마음을",
+              "startMs": 2300,
+              "endMs": 2831
+            },
+            {
+              "word": "열고",
+              "startMs": 2831,
+              "endMs": 3184
+            },
+            {
+              "word": "매",
+              "startMs": 3184,
+              "endMs": 3361
+            },
+            {
+              "word": "순간",
+              "startMs": 3361,
+              "endMs": 3715
+            }
+          ],
+          "startFrame": 322,
+          "endFrame": 434
+        },
+        {
+          "id": "seg_3",
+          "role": "outro",
+          "voiceName": "Samantha",
+          "lang": "en",
+          "text": "You choose learning and growth with an open heart at every moment.",
+          "voice": "Samantha",
+          "file": "audio/s3_seg_3.m4a",
+          "durationSec": 3.018594,
+          "durationInFrames": 91,
+          "words": [
+            {
+              "word": "You",
+              "startMs": 0,
+              "endMs": 168
+            },
+            {
+              "word": "choose",
+              "startMs": 168,
+              "endMs": 503
+            },
+            {
+              "word": "learning",
+              "startMs": 503,
+              "endMs": 950
+            },
+            {
+              "word": "and",
+              "startMs": 950,
+              "endMs": 1118
+            },
+            {
+              "word": "growth",
+              "startMs": 1118,
+              "endMs": 1453
+            },
+            {
+              "word": "with",
+              "startMs": 1453,
+              "endMs": 1677
+            },
+            {
+              "word": "an",
+              "startMs": 1677,
+              "endMs": 1789
+            },
+            {
+              "word": "open",
+              "startMs": 1789,
+              "endMs": 2012
+            },
+            {
+              "word": "heart",
+              "startMs": 2012,
+              "endMs": 2292
+            },
+            {
+              "word": "at",
+              "startMs": 2292,
+              "endMs": 2404
+            },
+            {
+              "word": "every",
+              "startMs": 2404,
+              "endMs": 2683
+            },
+            {
+              "word": "moment.",
+              "startMs": 2683,
+              "endMs": 3019
+            }
+          ],
+          "startFrame": 481,
+          "endFrame": 572
+        }
+      ],
+      "startFrame": 1306,
+      "endFrame": 1902
+    },
+    {
+      "id": "s4",
+      "startDelayFrames": 15,
+      "totalFrames": 600,
+      "texts": {
+        "koOriginal": "당신은 결과에 집착하지 않고 삶의 과정을 즐긴다.",
+        "koShifted": "당신은 즐긴다 삶의 과정을 집착하지 않고 결과에",
+        "enFinal": "You enjoy the process of life without clinging to results."
+      },
+      "chunks": [
+        {
+          "ko": "당신은",
+          "en": "You"
+        },
+        {
+          "ko": "즐긴다",
+          "en": "enjoy"
+        },
+        {
+          "ko": "삶의 과정을",
+          "en": "the process of life"
+        },
+        {
+          "ko": "집착하지 않고",
+          "en": "without clinging"
+        },
+        {
+          "ko": "결과에",
+          "en": "to results"
+        }
+      ],
+      "scenes": {
+        "intro": {
+          "startFrame": 15,
+          "endFrame": 136
+        },
+        "building": {
+          "startFrame": 136,
+          "endFrame": 436,
+          "stepFrames": 24
+        },
+        "flip": {
+          "startFrame": 436,
+          "endFrame": 475,
+          "staggerFrames": 2.4
+        },
+        "outro": {
+          "startFrame": 475,
+          "endFrame": 600
+        }
+      },
+      "sfx": {
+        "stack": {
+          "file": "audio/sfx_stack.m4a",
+          "durationInFrames": 6,
+          "hits": [
+            {
+              "startFrame": 136,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 160,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 162,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 184,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 186,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 188,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 208,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 210,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 212,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 214,
+              "playbackRate": 1.36
+            },
+            {
+              "startFrame": 232,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 234,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 236,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 238,
+              "playbackRate": 1.36
+            },
+            {
+              "startFrame": 240,
+              "playbackRate": 1.48
+            }
+          ]
+        },
+        "sparkle": {
+          "file": "audio/magical_sparkle.m4a",
+          "durationInFrames": 44,
+          "startFrame": 242
+        },
+        "flip": {
+          "file": "audio/card_flip_cascade_5.m4a",
+          "durationInFrames": 29,
+          "startFrame": 436
+        }
+      },
+      "segments": [
+        {
+          "id": "seg_1",
+          "role": "intro",
+          "voiceName": "Jian",
+          "lang": "ko",
+          "text": "당신은 결과에 집착하지 않고 삶의 과정을 즐긴다.",
+          "voice": "Jian (Enhanced)",
+          "file": "audio/s4_seg_1.m4a",
+          "durationSec": 3.761633,
+          "durationInFrames": 113,
+          "words": [
+            {
+              "word": "당신은",
+              "startMs": 0,
+              "endMs": 564
+            },
+            {
+              "word": "결과에",
+              "startMs": 564,
+              "endMs": 1128
+            },
+            {
+              "word": "집착하지",
+              "startMs": 1128,
+              "endMs": 1881
+            },
+            {
+              "word": "않고",
+              "startMs": 1881,
+              "endMs": 2257
+            },
+            {
+              "word": "삶의",
+              "startMs": 2257,
+              "endMs": 2633
+            },
+            {
+              "word": "과정을",
+              "startMs": 2633,
+              "endMs": 3197
+            },
+            {
+              "word": "즐긴다.",
+              "startMs": 3197,
+              "endMs": 3762
+            }
+          ],
+          "startFrame": 15,
+          "endFrame": 128
+        },
+        {
+          "id": "seg_2",
+          "role": "shifted",
+          "voiceName": "Jian",
+          "lang": "ko",
+          "text": "당신은 즐긴다 삶의 과정을 집착하지 않고 결과에",
+          "voice": "Jian (Enhanced)",
+          "file": "audio/s4_seg_2.m4a",
+          "durationSec": 3.715193,
+          "durationInFrames": 112,
+          "words": [
+            {
+              "word": "당신은",
+              "startMs": 0,
+              "endMs": 557
+            },
+            {
+              "word": "즐긴다",
+              "startMs": 557,
+              "endMs": 1115
+            },
+            {
+              "word": "삶의",
+              "startMs": 1115,
+              "endMs": 1486
+            },
+            {
+              "word": "과정을",
+              "startMs": 1486,
+              "endMs": 2043
+            },
+            {
+              "word": "집착하지",
+              "startMs": 2043,
+              "endMs": 2786
+            },
+            {
+              "word": "않고",
+              "startMs": 2786,
+              "endMs": 3158
+            },
+            {
+              "word": "결과에",
+              "startMs": 3158,
+              "endMs": 3715
+            }
+          ],
+          "startFrame": 316,
+          "endFrame": 428
+        },
+        {
+          "id": "seg_3",
+          "role": "outro",
+          "voiceName": "Samantha",
+          "lang": "en",
+          "text": "You enjoy the process of life without clinging to results.",
+          "voice": "Samantha",
+          "file": "audio/s4_seg_3.m4a",
+          "durationSec": 3.343673,
+          "durationInFrames": 101,
+          "words": [
+            {
+              "word": "You",
+              "startMs": 0,
+              "endMs": 209
+            },
+            {
+              "word": "enjoy",
+              "startMs": 209,
+              "endMs": 557
+            },
+            {
+              "word": "the",
+              "startMs": 557,
+              "endMs": 766
+            },
+            {
+              "word": "process",
+              "startMs": 766,
+              "endMs": 1254
+            },
+            {
+              "word": "of",
+              "startMs": 1254,
+              "endMs": 1393
+            },
+            {
+              "word": "life",
+              "startMs": 1393,
+              "endMs": 1672
+            },
+            {
+              "word": "without",
+              "startMs": 1672,
+              "endMs": 2159
+            },
+            {
+              "word": "clinging",
+              "startMs": 2159,
+              "endMs": 2717
+            },
+            {
+              "word": "to",
+              "startMs": 2717,
+              "endMs": 2856
+            },
+            {
+              "word": "results.",
+              "startMs": 2856,
+              "endMs": 3344
+            }
+          ],
+          "startFrame": 475,
+          "endFrame": 576
+        }
+      ],
+      "startFrame": 1902,
+      "endFrame": 2502
+    },
+    {
+      "id": "s5",
+      "startDelayFrames": 15,
+      "totalFrames": 702,
+      "texts": {
+        "koOriginal": "당신은 매일 자신에게 감사하며 스스로를 진심으로 믿어준다.",
+        "koShifted": "당신은 믿어준다 스스로를 진심으로 감사하며 자신에게 매일",
+        "enFinal": "You trust yourself sincerely while thanking yourself every day."
+      },
+      "chunks": [
+        {
+          "ko": "당신은",
+          "en": "You"
+        },
+        {
+          "ko": "믿어준다",
+          "en": "trust"
+        },
+        {
+          "ko": "스스로를",
+          "en": "yourself"
+        },
+        {
+          "ko": "진심으로",
+          "en": "sincerely"
+        },
+        {
+          "ko": "감사하며",
+          "en": "while thanking"
+        },
+        {
+          "ko": "자신에게",
+          "en": "yourself"
+        },
+        {
+          "ko": "매일",
+          "en": "every day"
+        }
+      ],
+      "scenes": {
+        "intro": {
+          "startFrame": 15,
+          "endFrame": 154
+        },
+        "building": {
+          "startFrame": 154,
+          "endFrame": 535,
+          "stepFrames": 24
+        },
+        "flip": {
+          "startFrame": 535,
+          "endFrame": 574,
+          "staggerFrames": 2.4
+        },
+        "outro": {
+          "startFrame": 574,
+          "endFrame": 702
+        }
+      },
+      "sfx": {
+        "stack": {
+          "file": "audio/sfx_stack.m4a",
+          "durationInFrames": 6,
+          "hits": [
+            {
+              "startFrame": 154,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 178,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 180,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 202,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 204,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 206,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 226,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 228,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 230,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 232,
+              "playbackRate": 1.36
+            },
+            {
+              "startFrame": 250,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 252,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 254,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 256,
+              "playbackRate": 1.36
+            },
+            {
+              "startFrame": 258,
+              "playbackRate": 1.48
+            },
+            {
+              "startFrame": 274,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 276,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 278,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 280,
+              "playbackRate": 1.36
+            },
+            {
+              "startFrame": 282,
+              "playbackRate": 1.48
+            },
+            {
+              "startFrame": 284,
+              "playbackRate": 1.6
+            },
+            {
+              "startFrame": 298,
+              "playbackRate": 1
+            },
+            {
+              "startFrame": 300,
+              "playbackRate": 1.12
+            },
+            {
+              "startFrame": 302,
+              "playbackRate": 1.24
+            },
+            {
+              "startFrame": 304,
+              "playbackRate": 1.36
+            },
+            {
+              "startFrame": 306,
+              "playbackRate": 1.48
+            },
+            {
+              "startFrame": 308,
+              "playbackRate": 1.6
+            },
+            {
+              "startFrame": 310,
+              "playbackRate": 1.72
+            }
+          ]
+        },
+        "sparkle": {
+          "file": "audio/magical_sparkle.m4a",
+          "durationInFrames": 44,
+          "startFrame": 312
+        },
+        "flip": {
+          "file": "audio/card_flip_cascade_7.m4a",
+          "durationInFrames": 32,
+          "startFrame": 535
+        }
+      },
+      "segments": [
+        {
+          "id": "seg_1",
+          "role": "intro",
+          "voiceName": "Jian",
+          "lang": "ko",
+          "text": "당신은 매일 자신에게 감사하며 스스로를 진심으로 믿어준다.",
+          "voice": "Jian (Enhanced)",
+          "file": "audio/s5_seg_1.m4a",
+          "durationSec": 4.365351,
+          "durationInFrames": 131,
+          "words": [
+            {
+              "word": "당신은",
+              "startMs": 0,
+              "endMs": 524
+            },
+            {
+              "word": "매일",
+              "startMs": 524,
+              "endMs": 873
+            },
+            {
+              "word": "자신에게",
+              "startMs": 873,
+              "endMs": 1572
+            },
+            {
+              "word": "감사하며",
+              "startMs": 1572,
+              "endMs": 2270
+            },
+            {
+              "word": "스스로를",
+              "startMs": 2270,
+              "endMs": 2968
+            },
+            {
+              "word": "진심으로",
+              "startMs": 2968,
+              "endMs": 3667
+            },
+            {
+              "word": "믿어준다.",
+              "startMs": 3667,
+              "endMs": 4365
+            }
+          ],
+          "startFrame": 15,
+          "endFrame": 146
+        },
+        {
+          "id": "seg_2",
+          "role": "shifted",
+          "voiceName": "Jian",
+          "lang": "ko",
+          "text": "당신은 믿어준다 스스로를 진심으로 감사하며 자신에게 매일",
+          "voice": "Jian (Enhanced)",
+          "file": "audio/s5_seg_2.m4a",
+          "durationSec": 4.690431,
+          "durationInFrames": 141,
+          "words": [
+            {
+              "word": "당신은",
+              "startMs": 0,
+              "endMs": 563
+            },
+            {
+              "word": "믿어준다",
+              "startMs": 563,
+              "endMs": 1313
+            },
+            {
+              "word": "스스로를",
+              "startMs": 1313,
+              "endMs": 2064
+            },
+            {
+              "word": "진심으로",
+              "startMs": 2064,
+              "endMs": 2814
+            },
+            {
+              "word": "감사하며",
+              "startMs": 2814,
+              "endMs": 3565
+            },
+            {
+              "word": "자신에게",
+              "startMs": 3565,
+              "endMs": 4315
+            },
+            {
+              "word": "매일",
+              "startMs": 4315,
+              "endMs": 4690
+            }
+          ],
+          "startFrame": 386,
+          "endFrame": 527
+        },
+        {
+          "id": "seg_3",
+          "role": "outro",
+          "voiceName": "Samantha",
+          "lang": "en",
+          "text": "You trust yourself sincerely while thanking yourself every day.",
+          "voice": "Samantha",
+          "file": "audio/s5_seg_3.m4a",
+          "durationSec": 3.436553,
+          "durationInFrames": 104,
+          "words": [
+            {
+              "word": "You",
+              "startMs": 0,
+              "endMs": 191
+            },
+            {
+              "word": "trust",
+              "startMs": 191,
+              "endMs": 509
+            },
+            {
+              "word": "yourself",
+              "startMs": 509,
+              "endMs": 1018
+            },
+            {
+              "word": "sincerely",
+              "startMs": 1018,
+              "endMs": 1591
+            },
+            {
+              "word": "while",
+              "startMs": 1591,
+              "endMs": 1909
+            },
+            {
+              "word": "thanking",
+              "startMs": 1909,
+              "endMs": 2418
+            },
+            {
+              "word": "yourself",
+              "startMs": 2418,
+              "endMs": 2927
+            },
+            {
+              "word": "every",
+              "startMs": 2927,
+              "endMs": 3246
+            },
+            {
+              "word": "day.",
+              "startMs": 3246,
+              "endMs": 3437
+            }
+          ],
+          "startFrame": 574,
+          "endFrame": 678
+        }
+      ],
+      "startFrame": 2502,
+      "endFrame": 3204
+    }
+  ]
+}

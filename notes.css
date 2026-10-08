@@ -1,0 +1,410 @@
+/* 나만의 복습 노트 */
+.notes-dialog {
+    width: min(980px, calc(100vw - 24px));
+    height: min(86dvh, 780px);
+    max-height: calc(100dvh - 24px);
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--line, #deded5);
+    border-radius: 22px;
+    background: var(--paper, #f8f7f2);
+    color: var(--ink, #202b27);
+    box-shadow: var(--shadow, 0 18px 55px rgba(44, 54, 46, .18));
+    overflow: hidden;
+    font-family: var(--sans, "Noto Sans KR", sans-serif);
+}
+
+.notes-dialog[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-dialog::backdrop,
+.notes-confirm::backdrop {
+    background: rgba(32, 43, 39, .6);
+}
+
+.notes-view {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    flex-direction: column;
+}
+
+.notes-view[hidden],
+.notes-toolbar[hidden],
+.notes-editor-trash[hidden] {
+    display: none;
+}
+
+.notes-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 28px 28px 8px;
+}
+
+.notes-head h2 {
+    margin: 0 0 4px;
+    font-family: var(--serif, "Noto Serif KR", Georgia, serif);
+    font-size: clamp(26px, 4.5vw, 34px);
+    line-height: 1.3;
+    color: var(--sage, #345d4d);
+}
+
+.notes-head p {
+    margin: 0;
+    color: var(--muted, #59635d);
+    font-size: 18px;
+}
+
+.notes-close {
+    flex: none;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--sage-soft, #e7eee8);
+    color: var(--sage, #345d4d);
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.notes-close:hover,
+.notes-close:focus-visible {
+    background: var(--sage, #345d4d);
+    color: #fff;
+}
+
+.notes-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 28px 16px;
+    border-bottom: 1px solid var(--line, #deded5);
+}
+
+.notes-count {
+    color: var(--muted, #59635d);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.notes-btn {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border: 1px solid var(--sage, #345d4d);
+    border-radius: 999px;
+    background: var(--sage, #345d4d);
+    color: #fff;
+    font: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .15s, transform .15s;
+}
+
+.notes-btn:hover,
+.notes-btn:focus-visible {
+    background: #284a3b;
+    transform: translateY(-1px);
+}
+
+.notes-btn.secondary {
+    background: transparent;
+    color: var(--sage, #345d4d);
+}
+
+.notes-btn.secondary:hover,
+.notes-btn.secondary:focus-visible {
+    background: var(--sage-soft, #e7eee8);
+}
+
+.notes-btn.danger {
+    border-color: #c2553f;
+    background: #c2553f;
+}
+
+.notes-btn.danger:hover {
+    background: #a8432f;
+}
+
+.notes-btn.big {
+    min-height: 64px;
+    padding: 12px 36px;
+    font-size: 22px;
+}
+
+.notes-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 22px 28px 28px;
+}
+
+.notes-empty {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 24px 12px;
+    text-align: center;
+}
+
+.notes-empty[hidden] {
+    display: none;
+}
+
+.notes-empty-icon {
+    font-size: 64px;
+    line-height: 1;
+}
+
+.notes-empty strong {
+    font-family: var(--serif, "Noto Serif KR", Georgia, serif);
+    font-size: 26px;
+}
+
+.notes-empty p {
+    margin: 0 0 12px;
+    color: var(--muted, #59635d);
+    font-size: 19px;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.note-card {
+    position: relative;
+    display: flex;
+    min-height: 200px;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 20px 18px;
+    border: 1px solid var(--line, #deded5);
+    border-top: 5px solid var(--gold, #b68b4c);
+    border-radius: 14px;
+    background: var(--white, #fffefa);
+    box-shadow: 0 6px 20px rgba(44, 54, 46, .06);
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.note-card:hover,
+.note-card:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(44, 54, 46, .12);
+    outline: none;
+}
+
+.note-card h3 {
+    margin: 0;
+    padding-right: 44px;
+    font-size: 21px;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+}
+
+.note-card time {
+    color: var(--muted, #59635d);
+    font-size: 15px;
+}
+
+.note-card p {
+    margin: 4px 0 0;
+    color: #3d4a44;
+    font-size: 17px;
+    line-height: 1.6;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    white-space: pre-line;
+}
+
+.note-card p.is-muted {
+    color: #8a948e;
+}
+
+.note-trash,
+.notes-editor-trash {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #8a948e;
+    cursor: pointer;
+}
+
+.note-trash {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+}
+
+.note-trash:hover,
+.note-trash:focus-visible,
+.notes-editor-trash:hover,
+.notes-editor-trash:focus-visible {
+    background: #fbeeea;
+    color: #c2553f;
+}
+
+.note-trash svg,
+.notes-editor-trash svg {
+    width: 24px;
+    height: 24px;
+}
+
+.notes-editor-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line, #deded5);
+    background: var(--white, #fffefa);
+}
+
+.notes-editor-head .spacer {
+    flex: 1;
+}
+
+.notes-status {
+    color: var(--muted, #59635d);
+    font-size: 15px;
+}
+
+.notes-editor-scroll {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 24px 32px 28px;
+    background: var(--white, #fffefa);
+}
+
+.notes-title-input {
+    width: 100%;
+    padding: 6px 0 12px;
+    border: 0;
+    border-bottom: 2px solid var(--line, #deded5);
+    background: transparent;
+    color: var(--ink, #202b27);
+    font-family: var(--serif, "Noto Serif KR", Georgia, serif);
+    font-size: 30px;
+    font-weight: 700;
+    outline: none;
+}
+
+.notes-title-input:focus {
+    border-bottom-color: var(--sage, #345d4d);
+}
+
+.notes-date {
+    margin: 10px 0 14px;
+    color: var(--muted, #59635d);
+    font-size: 15px;
+}
+
+.notes-body {
+    flex: 1;
+    min-height: 320px;
+    padding: 0;
+    outline: none;
+    background-image: repeating-linear-gradient(transparent 0, transparent 37px, #ecebe3 37px, #ecebe3 38px);
+    background-attachment: local;
+    font-size: 21px;
+    line-height: 38px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.notes-body.is-empty::before {
+    content: attr(data-placeholder);
+    color: #9aa39d;
+    pointer-events: none;
+}
+
+.notes-body a {
+    color: #1f6fb2;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.notes-confirm {
+    width: min(440px, calc(100vw - 32px));
+    padding: 28px;
+    border: 1px solid var(--line, #deded5);
+    border-radius: 18px;
+    background: var(--white, #fffefa);
+    color: var(--ink, #202b27);
+    font-family: var(--sans, "Noto Sans KR", sans-serif);
+}
+
+.notes-confirm h3 {
+    margin: 0 0 8px;
+    font-size: 24px;
+}
+
+.notes-confirm p {
+    margin: 0 0 22px;
+    color: var(--muted, #59635d);
+    font-size: 18px;
+    word-break: break-word;
+}
+
+.notes-confirm-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+@media (max-width: 640px) {
+    .notes-dialog {
+        width: 100vw;
+        height: 100dvh;
+        max-height: 100dvh;
+        border-radius: 0;
+    }
+
+    .notes-head,
+    .notes-toolbar,
+    .notes-scroll {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .notes-editor-scroll {
+        padding: 18px;
+    }
+
+    .notes-title-input {
+        font-size: 26px;
+    }
+
+    .notes-status {
+        display: none;
+    }
+}

@@ -487,13 +487,26 @@
         "thumbnail": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=85",
         "lessons": [
             {
-                "id": "culture-01",
-                "title": "팝송 제목으로 배우는 Let it be",
-                "desc": "명곡의 배경과 핵심 문장 구조를 알아봅니다.",
-                "duration": "10분",
+                "id": "pop-01",
+                "articleId": "pop-01",
+                "title": "FOREVER 속의 WILL",
+                "desc": "팝송 가사로 배우는 조동사 would와 will의 차이",
+                "duration": "5분",
+                "thumbnail": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=85",
                 "videoUrl": null,
-                "keyPhrase": "Let it be.",
-                "explanation": "let과 목적어, 동사 원형으로 이루어진 표현으로 ‘그대로 두다’의 뜻을 살펴봅니다."
+                "keyPhrase": "Would you wait for me forever?",
+                "explanation": "would와 will이 문장에 더하는 조심스러움과 확신의 차이를 살펴봅니다."
+            },
+            {
+                "id": "pop-02",
+                "articleId": "pop-02",
+                "title": "크리스마스 시즌마다 찾아오는 그 가사",
+                "desc": "Wham!의 Last Christmas와 Once bitten, twice shy",
+                "duration": "6분",
+                "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/4a/f9/eb4af984-fc68-56ab-7b89-1d070c04e1dd/5099765318524.jpg/600x600bb.jpg",
+                "videoUrl": null,
+                "keyPhrase": "Once bitten, twice shy.",
+                "explanation": "한 번의 상처가 다음 마음을 조심스럽게 만드는 표현을 살펴봅니다."
             },
             {
                 "id": "culture-02",
