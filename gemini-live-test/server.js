@@ -12,7 +12,7 @@ const FILES = new Map([
     ['/index.html', ['index.html', 'text/html; charset=utf-8']],
     ['/audio.mjs', ['audio.mjs', 'text/javascript; charset=utf-8']],
     ['/pcm-worklet.mjs', ['pcm-worklet.mjs', 'text/javascript; charset=utf-8']],
-    ...['live-service.mjs', 'audio-engine.mjs', 'tutor-widget.mjs', 'daynize-tutor.mjs'].map(file => [`/${file}`, [file, 'text/javascript; charset=utf-8']]),
+    ...['live-service.mjs', 'audio-engine.mjs', 'ambient-orb.mjs', 'tutor-widget.mjs', 'daynize-tutor.mjs'].map(file => [`/${file}`, [file, 'text/javascript; charset=utf-8']]),
     ['/tutor.css', ['tutor.css', 'text/css; charset=utf-8']],
     ['/daynize-logo.png', ['../DAYNIZE LOGO ONLY.png', 'image/png']],
     ...['mic', 'mic-off', 'phone-off', 'x', 'volume-2', 'rotate-ccw', 'volume-x', 'message-square', 'settings-2'].map(icon => [`/icons/${icon}.svg`, [`icons/${icon}.svg`, 'image/svg+xml']])

@@ -1,5 +1,6 @@
 import { AudioEngine } from './audio-engine.mjs';
 import { LiveService } from './live-service.mjs';
+import { AmbientOrb } from './ambient-orb.mjs';
 
 const asset = name => new URL(name, import.meta.url).href;
 const STATES = {
@@ -39,7 +40,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
                 <div class="spotlight-bar">
                     <section class="identity">
                         <div class="traffic-lights"><button class="traffic close" type="button" aria-label="닫기" title="닫기">${icon('x')}</button><button class="traffic minimize" type="button" aria-label="최소화" title="최소화"><span aria-hidden="true">−</span></button><button class="traffic expand" type="button" aria-label="창 확장" title="창 확장" aria-pressed="false"><span aria-hidden="true">↗</span></button></div>
-                        <div class="tutor-profile"><span class="avatar" aria-hidden="true">G</span><div><h2 id="tutor-title">Gemini 튜터</h2><div class="status-line" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span class="status-label"></span></div></div></div>
+                        <div class="tutor-profile"><canvas class="ambient-orb" width="64" height="64" aria-hidden="true"></canvas><div><h2 id="tutor-title">Gemini 튜터</h2><div class="status-line" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span class="status-label"></span></div></div></div>
                     </section>
                     <canvas class="visualizer" aria-label="마이크와 선생님 음성의 실시간 파형" role="img"></canvas>
                     <div class="icon-tray">
@@ -70,8 +71,9 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.messageElement = query('.message');
         this.statusElement = query('.status-label');
         this.timeElement = query('.time');
-        this.canvas = query('canvas');
+        this.canvas = query('.visualizer');
         this.canvasContext = this.canvas.getContext('2d');
+        this.orb = new AmbientOrb(query('.ambient-orb'));
         this.resize = new ResizeObserver(() => this.resizeCanvas());
         this.resize.observe(this.canvas);
         this.launch.addEventListener('click', () => this.open(), { signal });
@@ -348,6 +350,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.canvas.width = Math.round(rect.width * ratio);
         this.canvas.height = Math.round(rect.height * ratio);
         this.canvasContext.setTransform(ratio, 0, 0, ratio, 0, 0);
+        this.orb?.resize();
     }
 
     draw() {
@@ -358,6 +361,9 @@ export class DaynizeVoiceTutor extends HTMLElement {
         const { input, output } = this.audio.levels();
         const phase = performance.now() / 650;
         const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const timestamp = performance.now();
+        const orbLevels = [input, output].map(bins => bins ? Math.sqrt(bins.reduce((sum, value) => sum + value * value, 0) / bins.length) / 255 : 0);
+        this.orb.render({ timestamp, input: orbLevels[0], output: this.audio.speakerMuted ? 0 : orbLevels[1], state: this.dataset.state, reduced });
         this.waveLevels ??= [0, 0];
         for (const [channel, bins] of [input, output].entries()) {
             const level = bins ? Math.sqrt(bins.reduce((sum, value) => sum + value * value, 0) / bins.length) / 255 : 0;

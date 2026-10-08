@@ -45,7 +45,7 @@ export class AudioEngine extends EventTarget {
             this.outputAnalyser = context.createAnalyser();
             for (const analyser of [this.inputAnalyser, this.outputAnalyser]) {
                 analyser.fftSize = 256;
-                analyser.smoothingTimeConstant = 0.82;
+                analyser.smoothingTimeConstant = 0.94;
             }
             this.inputBins = new Uint8Array(this.inputAnalyser.frequencyBinCount);
             this.outputBins = new Uint8Array(this.outputAnalyser.frequencyBinCount);

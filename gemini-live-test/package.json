@@ -7,7 +7,7 @@
         "start": "node server.js",
         "test": "node --test test/*.test.*",
         "test:browser": "playwright test",
-        "check": "node --check server.js && node --check live-service.mjs && node --check audio-engine.mjs && node --check tutor-widget.mjs && node --check daynize-tutor.mjs && node --check audio.mjs && node --check pcm-worklet.mjs"
+        "check": "node --check server.js && node --check live-service.mjs && node --check audio-engine.mjs && node --check ambient-orb.mjs && node --check tutor-widget.mjs && node --check daynize-tutor.mjs && node --check audio.mjs && node --check pcm-worklet.mjs"
     },
     "engines": {
         "node": ">=20"

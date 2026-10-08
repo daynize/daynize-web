@@ -471,17 +471,14 @@ dialog.expanded .visualizer {
     margin-top: 14px;
 }
 
-.avatar {
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
+.ambient-orb {
+    display: block;
+    width: 64px;
+    height: 64px;
     flex-shrink: 0;
-    border-radius: 14px;
-    color: #2D5A43;
-    background: #e0ebe2;
-    border: 1px solid #cddcd1;
-    font: 600 23px Georgia, serif;
+    border-radius: 50%;
+    background: transparent;
+    pointer-events: none;
 }
 
 #spotlight-modal h2 {
@@ -731,22 +728,15 @@ dialog.expanded .visualizer {
     }
 
     .identity {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr;
         align-items: center;
-        justify-content: space-between;
-        gap: 14px;
+        gap: 8px;
     }
 
     .tutor-profile {
         margin-top: 0;
         gap: 8px;
-    }
-
-    .avatar {
-        width: 36px;
-        height: 36px;
-        border-radius: 11px;
-        font-size: 20px;
     }
 
     #spotlight-modal h2 {
