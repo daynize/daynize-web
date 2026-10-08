@@ -104,7 +104,11 @@ This deliberately puts a key in browser memory and the WebSocket URL. Use only a
 
 ## Production Backend Checklist
 
-GitHub Pages publishes static browser assets only; pushing this repository does not start `server.js` or provision `api.daynize.co.kr`. Until the API host is deployed, the homepage loader's `data-test-url` opens the temporary tunnel in a separate tab. Basic Auth has been removed, so no login is required and anyone who can reach the URL can consume API quota. Origin validation is not user authentication. The Mac and both server/tunnel processes must remain running; update this URL if the tunnel is recreated. After deploying the production backend, remove `data-test-url` and use `data-endpoint` for the real API service. The temporary launcher does not provide in-page production voice service.
+GitHub Pages publishes static browser assets only; pushing this repository does not start `server.js` or provision `api.daynize.co.kr`. The homepage loader uses `data-test-url` to derive the temporary tunnel's WSS endpoint, opening the tutor in the current page without navigation. Run the relay with `ALLOWED_ORIGINS=https://www.daynize.co.kr,https://daynize.co.kr` to accept those browser origins. Basic Auth has been removed; anyone who can reach the endpoint can consume API quota. Origin validation is not user authentication. The Mac and both server/tunnel processes must remain running; update the URL if the tunnel is recreated. After deploying the production backend, remove `data-test-url` and use `data-endpoint` for the real API service.
+
+## Finder Window Controls
+
+The 18px floating window uses native dialog focus containment and a translucent title bar. Red closes the dialog and releases the voice session; clicking the backdrop or pressing Escape does the same. Yellow minimizes to the bottom-right launcher without stopping audio or timers; the launcher shows the current call state and restores the same session. Green toggles a larger in-page window, not browser fullscreen. Input/output curves are driven by smoothed analyser RMS levels; idle curves remain flat and reduced-motion preferences suppress wave phase motion. Minimized calls continue transmitting microphone audio until muted or ended.
 
 The implementation is integration-ready, not an already provisioned `api.daynize.co.kr` service. A temporary Cloudflare tunnel is not production hosting. Before public rollout:
 

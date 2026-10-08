@@ -36,7 +36,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
             <link rel="stylesheet" href="${asset('tutor.css')}">
             <button class="launch" type="button" aria-haspopup="dialog">${icon('mic', true)}<span>AI 음성 회화 시작하기</span></button>
             <dialog aria-labelledby="tutor-title" aria-describedby="privacy">
-                <header class="head"><div><p class="brand">DAYNIZE · 데이나이즈</p><h2 id="tutor-title">AI 영어 회화</h2></div><button class="icon-button close" type="button" aria-label="닫기" title="닫기">${icon('x')}</button></header>
+                <header class="head"><div class="traffic-lights"><button class="traffic close" type="button" aria-label="닫기" title="닫기">${icon('x')}</button><button class="traffic minimize" type="button" aria-label="최소화" title="최소화"><span aria-hidden="true">−</span></button><button class="traffic expand" type="button" aria-label="창 확장" title="창 확장" aria-pressed="false"><span aria-hidden="true">↗</span></button></div><h2 id="tutor-title">Daynize AI Live Tutor - 음성 회화</h2><span class="window-mark" aria-hidden="true">DAYNIZE</span></header>
                 <section class="body">
                     <div class="status-line" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span class="status-label"></span></div>
                     <p class="message"></p>
@@ -67,6 +67,13 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.resize.observe(this.canvas);
         this.launch.addEventListener('click', () => this.open(), { signal });
         query('.close').addEventListener('click', () => this.close(), { signal });
+        query('.minimize').addEventListener('click', () => this.minimize(), { signal });
+        query('.expand').addEventListener('click', () => {
+            const expanded = this.dialog.classList.toggle('expanded');
+            query('.expand').setAttribute('aria-pressed', String(expanded));
+            query('.expand').setAttribute('aria-label', expanded ? '창 원래 크기' : '창 확장');
+            query('.expand').title = expanded ? '창 원래 크기' : '창 확장';
+        }, { signal });
         this.dialog.addEventListener('cancel', event => { event.preventDefault(); this.close(); }, { signal });
         this.dialog.addEventListener('click', event => {
             if (event.target !== this.dialog) return;
@@ -115,29 +122,34 @@ export class DaynizeVoiceTutor extends HTMLElement {
     }
 
     open() {
-        if (this.config?.launchUrl) {
-            const url = new URL(this.config.launchUrl);
-            if (url.protocol !== 'https:' || url.username || url.password) {
-                this.config.launchUrl = undefined;
-                this.open();
-                this.setState('error', '외부 음성 대화 주소를 확인해주세요.');
-                return;
-            }
-            window.open(url.href, '_blank', 'noopener,noreferrer');
-            return;
-        }
         if (this.dialog.open) return;
+        this.minimized = false;
         this.dialog.showModal();
         this.launch.hidden = true;
         this.resizeCanvas();
         this.draw();
-        this.startButton.focus();
+        (this.callActive ? this.endButton : this.startButton).focus();
+    }
+
+    minimize() {
+        this.minimized = true;
+        this.dialog.close();
+        this.launch.hidden = false;
+        cancelAnimationFrame(this.frame);
+        this.updateLauncher();
+        this.launch.focus();
+    }
+
+    updateLauncher() {
+        this.launch.querySelector('span').textContent = this.minimized ? `AI 음성 회화${this.callActive ? ` · ${STATES[this.dataset.state][0]}` : ''}` : 'AI 음성 회화 시작하기';
     }
 
     close() {
+        this.minimized = false;
         this.end();
         this.dialog.close();
         this.launch.hidden = false;
+        this.updateLauncher();
         cancelAnimationFrame(this.frame);
         this.launch.focus();
     }
@@ -260,6 +272,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.dataset.state = state;
         this.statusElement.textContent = STATES[state][0];
         this.messageElement.textContent = message || STATES[state][1];
+        this.updateLauncher();
         this.dispatchEvent(new CustomEvent('tutor-state', { detail: { state, message }, bubbles: true, composed: true }));
     }
 
@@ -277,25 +290,30 @@ export class DaynizeVoiceTutor extends HTMLElement {
         const { width, height } = this.canvas.getBoundingClientRect();
         context.clearRect(0, 0, width, height);
         const { input, output } = this.audio.levels();
-        const count = 36;
-        const gap = 4;
-        const barWidth = Math.max(2, (width - gap * count) / count);
-        for (let index = 0; index < count; index++) {
-            const bin = Math.floor(index / count * 64);
-            const inputLevel = (input?.[bin] || 0) / 255;
-            const outputLevel = (output?.[bin] || 0) / 255;
-            const top = 3 + inputLevel * 46;
-            const bottom = 3 + outputLevel * 46;
-            const position = index * (barWidth + gap) + gap / 2;
-            context.fillStyle = inputLevel ? '#4A7C59' : '#E8E2D5';
-            context.beginPath();
-            context.roundRect(position, height / 2 - top - 2, barWidth, top, 3);
-            context.fill();
-            context.fillStyle = outputLevel ? '#D97706' : '#E8E2D5';
-            context.beginPath();
-            context.roundRect(position, height / 2 + 2, barWidth, bottom, 3);
-            context.fill();
+        const phase = performance.now() / 650;
+        const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        this.waveLevels ??= [0, 0];
+        for (const [channel, bins] of [input, output].entries()) {
+            const level = bins ? Math.sqrt(bins.reduce((sum, value) => sum + value * value, 0) / bins.length) / 255 : 0;
+            this.waveLevels[channel] += (level - this.waveLevels[channel]) * 0.18;
+            const amplitude = Math.min(42, this.waveLevels[channel] * 260);
+            const center = height * (channel ? 0.67 : 0.34);
+            for (let layer = 0; layer < 3; layer++) {
+                context.beginPath();
+                context.strokeStyle = channel ? '#CD8756' : '#319278';
+                context.globalAlpha = layer === 0 ? 0.95 : 0.18;
+                context.lineWidth = layer === 0 ? 2.5 : 1.5;
+                for (let position = 0; position <= width; position += 2) {
+                    const progress = position / Math.max(width, 1);
+                    const envelope = Math.sin(progress * Math.PI) ** 2;
+                    const wave = Math.sin(progress * Math.PI * (6 + layer * 2) - (reduced ? 0 : phase) + channel);
+                    const vertical = center + wave * amplitude * envelope * (1 - layer * 0.22);
+                    if (position === 0) context.moveTo(position, vertical); else context.lineTo(position, vertical);
+                }
+                context.stroke();
+            }
         }
+        context.globalAlpha = 1;
         this.frame = requestAnimationFrame(() => this.draw());
     }
 

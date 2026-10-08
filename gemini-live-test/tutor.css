@@ -80,14 +80,14 @@ dialog {
     inset: 0;
     padding: 0;
     margin: auto;
-    width: min(540px, calc(100% - 32px));
+    width: min(760px, calc(100% - 32px));
     max-height: calc(100dvh - 40px);
     overflow: auto;
     border: 1px solid var(--border);
-    border-radius: 24px;
+    border-radius: 18px;
     background: var(--base);
     color: var(--text);
-    box-shadow: 0 32px 100px #1f293736;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px #ffffff90;
 }
 
 dialog::backdrop {
@@ -100,13 +100,19 @@ dialog[open] {
 }
 
 .head {
-    display: flex;
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr) 100px;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding: 24px 28px;
+    padding: 18px 20px;
     border-bottom: 1px solid var(--border);
-    background: var(--surface);
+    background: rgba(236, 236, 231, .82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .brand {
@@ -118,8 +124,9 @@ dialog[open] {
 
 h2 {
     margin: 0;
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
     line-height: 1.4;
 }
 
@@ -139,7 +146,7 @@ h2 {
 }
 
 .body {
-    padding: 30px 28px 20px;
+    padding: 38px 40px 16px;
     text-align: center;
 }
 
@@ -185,7 +192,7 @@ h2 {
 
 .visualizer {
     width: 100%;
-    height: 124px;
+    height: 166px;
     display: block;
 }
 
@@ -212,7 +219,7 @@ h2 {
 }
 
 .legend span:last-child i {
-    background: var(--amber);
+    background: #CD8756;
 }
 
 .time {
@@ -264,9 +271,9 @@ h2 {
 }
 
 .foot {
-    padding: 16px 28px;
+    padding: 12px 28px;
     border-top: 1px solid var(--border);
-    background: var(--cream);
+    background: #f0f1ec;
     text-align: center;
     font-size: 12px;
     line-height: 1.7;
@@ -275,6 +282,84 @@ h2 {
 
 .foot p {
     margin: 0;
+}
+
+.speaker {
+    margin: 0 auto;
+}
+
+.traffic-lights {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.traffic {
+    width: 28px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    position: relative;
+    border-radius: 8px;
+}
+
+.traffic::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #00000012;
+}
+
+.traffic.close::before {
+    background: #ff6058;
+}
+
+.traffic.minimize::before {
+    background: #ffbd2e;
+}
+
+.traffic.expand::before {
+    background: #28c840;
+}
+
+.traffic .icon,
+.traffic span {
+    width: 10px;
+    height: 10px;
+    font-size: 12px;
+    line-height: 10px;
+    z-index: 1;
+    opacity: 0;
+}
+
+.traffic-lights:hover .icon,
+.traffic-lights:hover span,
+.traffic:focus-visible .icon,
+.traffic:focus-visible span {
+    opacity: .8;
+}
+
+.window-mark {
+    font-size: 10px;
+    color: #6B7280;
+    text-align: right;
+}
+
+dialog.expanded {
+    width: min(1120px, calc(100% - 32px));
+}
+
+dialog.expanded .visualizer {
+    height: 240px;
+}
+
+.transport {
+    margin: 8px 0 0;
 }
 
 @keyframes enter {
@@ -305,7 +390,13 @@ h2 {
     }
 
     .head {
-        padding: 20px;
+        padding: 12px;
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .window-mark {
+        display: none;
     }
 
     .body {
@@ -313,7 +404,7 @@ h2 {
     }
 
     h2 {
-        font-size: 22px;
+        font-size: 12px;
     }
 
     .message {

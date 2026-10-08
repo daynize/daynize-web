@@ -88,7 +88,7 @@ test('invalid model names and duplicate prefixes are rejected', () => {
 
 test('public access needs no password but validates websocket origin and protects private files', { timeout: 5000 }, async context => {
     assert.throws(() => createRelayServer({ publicOrigin: 'http://test.example' }), /requires/);
-    const relay = createRelayServer({ apiKey: '', publicOrigin: 'https://test.example' });
+    const relay = createRelayServer({ apiKey: '', publicOrigin: 'https://test.example', allowedOrigins: ['https://www.daynize.co.kr'] });
     relay.server.listen(0, '127.0.0.1');
     await once(relay.server, 'listening');
     context.after(() => relay.close());
@@ -104,6 +104,9 @@ test('public access needs no password but validates websocket origin and protect
     const accepted = new WebSocket(address.replace('http:', 'ws:'), { origin: 'https://test.example', headers: { host: 'test.example' } });
     assert.match((await nextMessage(accepted)).error.message, /GEMINI_API_KEY is missing/);
     await once(accepted, 'close');
+    const homepage = new WebSocket(address.replace('http:', 'ws:') + '/ws/gemini-live', { origin: 'https://www.daynize.co.kr', headers: { host: 'test.example' } });
+    assert.match((await nextMessage(homepage)).error.message, /GEMINI_API_KEY is missing/);
+    await once(homepage, 'close');
 });
 
 test('missing key returns an actionable error without contacting Gemini', { timeout: 5000 }, async context => {
