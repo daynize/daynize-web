@@ -15,7 +15,7 @@ const FILES = new Map([
     ...['live-service.mjs', 'audio-engine.mjs', 'tutor-widget.mjs', 'daynize-tutor.mjs'].map(file => [`/${file}`, [file, 'text/javascript; charset=utf-8']]),
     ['/tutor.css', ['tutor.css', 'text/css; charset=utf-8']],
     ['/daynize-logo.png', ['../DAYNIZE LOGO ONLY.png', 'image/png']],
-    ...['mic', 'mic-off', 'phone-off', 'x', 'volume-2', 'rotate-ccw'].map(icon => [`/icons/${icon}.svg`, [`icons/${icon}.svg`, 'image/svg+xml']])
+    ...['mic', 'mic-off', 'phone-off', 'x', 'volume-2', 'rotate-ccw', 'volume-x', 'message-square', 'settings-2'].map(icon => [`/icons/${icon}.svg`, [`icons/${icon}.svg`, 'image/svg+xml']])
 ]);
 
 function createRelayServer(options = {}) {
@@ -77,6 +77,12 @@ function createRelayServer(options = {}) {
     });
     const clients = new WebSocketServer({ noServer: true, maxPayload: 64 * 1024 });
     server.on('upgrade', (request, socket, head) => {
+        const requestUrl = new URL(request.url, 'http://localhost');
+        const requestedVoice = requestUrl.searchParams.get('voice') || voice;
+        if (!['Kore', 'Puck'].includes(requestedVoice)) {
+            socket.end('HTTP/1.1 400 Bad Request\r\nConnection: close\r\n\r\n');
+            return;
+        }
         const port = server.address()?.port;
         const localHosts = [`localhost:${port}`, `127.0.0.1:${port}`, `[::1]:${port}`];
         const allowedOrigins = localHosts.map(host => `http://${host}`);
@@ -89,7 +95,7 @@ function createRelayServer(options = {}) {
             socket.end('HTTP/1.1 401 Unauthorized\r\nConnection: close\r\n\r\n');
             return;
         }
-        if (!['/', '/ws/gemini-live'].includes(request.url) || !localHosts.includes(request.headers.host) ||
+        if (!['/', '/ws/gemini-live'].includes(requestUrl.pathname) || !localHosts.includes(request.headers.host) ||
             (request.headers.origin && !allowedOrigins.includes(request.headers.origin))) {
             socket.end('HTTP/1.1 403 Forbidden\r\nConnection: close\r\n\r\n');
             return;
@@ -98,10 +104,10 @@ function createRelayServer(options = {}) {
             socket.end('HTTP/1.1 429 Too Many Requests\r\nConnection: close\r\n\r\n');
             return;
         }
-        clients.handleUpgrade(request, socket, head, client => clients.emit('connection', client));
+        clients.handleUpgrade(request, socket, head, client => clients.emit('connection', client, requestedVoice));
     });
 
-    clients.on('connection', client => {
+    clients.on('connection', (client, requestedVoice) => {
         let upstream;
         let ready = false;
         let ended = false;
@@ -153,7 +159,7 @@ function createRelayServer(options = {}) {
             try {
                 const { createSetup } = await import('./live-service.mjs');
                 if (ended) return stopUpstream();
-                upstream.send(JSON.stringify(createSetup(model, voice)));
+                upstream.send(JSON.stringify(createSetup(model, requestedVoice)));
             } catch {
                 fail('Unable to initialize the voice tutor session.');
             }

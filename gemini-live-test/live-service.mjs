@@ -9,6 +9,8 @@ export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voic
                 speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } } }
             },
             systemInstruction: { parts: [{ text: TUTOR_INSTRUCTION }] },
+            inputAudioTranscription: {},
+            outputAudioTranscription: {},
             realtimeInputConfig: {
                 automaticActivityDetection: {
                     disabled: false,
@@ -53,6 +55,8 @@ export class LiveService extends EventTarget {
                 if (this.options.mode === 'direct') {
                     if (!this.options.apiKey) throw new Error('직접 테스트 모드에는 임시 테스트 키가 필요합니다.');
                     url.searchParams.set('key', this.options.apiKey);
+                } else {
+                    url.searchParams.set('voice', this.options.voice);
                 }
                 this.socket = new this.Socket(url.toString());
             } catch (error) { reject(error); return; }
@@ -102,6 +106,8 @@ export class LiveService extends EventTarget {
                         this.emit('state', 'ready');
                     }
                     const content = message.serverContent;
+                    if (content?.inputTranscription?.text) this.emit('transcript', { speaker: 'user', ...content.inputTranscription });
+                    if (content?.outputTranscription?.text) this.emit('transcript', { speaker: 'tutor', ...content.outputTranscription });
                     if (content?.interrupted) this.emit('interrupted');
                     for (const part of content?.modelTurn?.parts || []) {
                         if (part.inlineData?.mimeType?.startsWith('audio/pcm')) this.emit('audio', part.inlineData);

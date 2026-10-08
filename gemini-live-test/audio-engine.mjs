@@ -11,6 +11,8 @@ export class AudioEngine extends EventTarget {
         this.muted = false;
         this.streaming = false;
         this.nextPlayback = 0;
+        this.speakerMuted = false;
+        this.playbackRate = 1;
     }
 
     emit(type, detail) { this.dispatchEvent(new CustomEvent(type, { detail })); }
@@ -47,7 +49,9 @@ export class AudioEngine extends EventTarget {
             }
             this.inputBins = new Uint8Array(this.inputAnalyser.frequencyBinCount);
             this.outputBins = new Uint8Array(this.outputAnalyser.frequencyBinCount);
-            this.outputAnalyser.connect(context.destination);
+            this.outputGain = context.createGain();
+            this.outputGain.gain.value = this.speakerMuted ? 0 : 1;
+            this.outputAnalyser.connect(this.outputGain).connect(context.destination);
             this.microphone = context.createMediaStreamSource(stream);
             this.processor = new AudioWorkletNode(context, 'microphone-pcm', {
                 channelCount: 1, channelCountMode: 'explicit', outputChannelCount: [1]
@@ -78,6 +82,17 @@ export class AudioEngine extends EventTarget {
     }
 
     setStreaming(enabled) { this.streaming = enabled; }
+
+    setSpeakerMuted(muted) {
+        this.speakerMuted = muted;
+        if (this.outputGain && this.context) this.outputGain.gain.setTargetAtTime(muted ? 0 : 1, this.context.currentTime, 0.015);
+    }
+
+    setPlaybackRate(rate) {
+        if (!Number.isFinite(rate) || rate < 0.8 || rate > 1.2) throw new Error('재생 속도 범위를 확인해주세요.');
+        this.playbackRate = rate;
+        if (this.sources.size) this.interrupt();
+    }
 
     async testSpeaker() {
         const ownsContext = !this.context || this.context.state === 'closed';
@@ -126,6 +141,8 @@ export class AudioEngine extends EventTarget {
         const source = context.createBufferSource();
         const gain = context.createGain();
         source.buffer = buffer;
+        if (source.playbackRate) source.playbackRate.value = this.playbackRate;
+        const duration = buffer.duration / this.playbackRate;
         source.connect(gain).connect(this.outputAnalyser);
         const start = Math.max(this.nextPlayback, context.currentTime + (this.sources.size ? 0.005 : 0.04));
         if (!this.sources.size) {
@@ -139,7 +156,7 @@ export class AudioEngine extends EventTarget {
             gain.disconnect();
             if (this.sources.delete(entry) && !this.sources.size) this.emit('drained');
         };
-        this.nextPlayback = start + buffer.duration;
+        this.nextPlayback = start + duration;
         source.start(start);
         this.emit('playing');
     }
@@ -176,9 +193,11 @@ export class AudioEngine extends EventTarget {
         this.silence?.disconnect();
         this.inputAnalyser?.disconnect();
         this.outputAnalyser?.disconnect();
+        this.outputGain?.disconnect();
         this.stream?.getTracks().forEach(track => { track.onended = null; track.stop(); });
         this.context?.close().catch(() => { });
         this.context = this.stream = this.microphone = this.processor = this.silence = undefined;
         this.inputAnalyser = this.outputAnalyser = this.inputBins = this.outputBins = undefined;
+        this.outputGain = undefined;
     }
 }

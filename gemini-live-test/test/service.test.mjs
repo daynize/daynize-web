@@ -13,6 +13,8 @@ class MockSocket {
 
 test('setup includes tutor voice and protocol waits for setupComplete', async () => {
     const setup = createSetup();
+    assert.deepEqual(setup.setup.inputAudioTranscription, {});
+    assert.deepEqual(setup.setup.outputAudioTranscription, {});
     assert.equal(setup.setup.generationConfig.speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName, 'Kore');
     assert.match(setup.setup.systemInstruction.parts[0].text, /senior learners/);
     assert.deepEqual(setup.setup.realtimeInputConfig.automaticActivityDetection, {
@@ -25,6 +27,7 @@ test('setup includes tutor voice and protocol waits for setupComplete', async ()
     const service = new LiveService({ endpoint: 'wss://example.test/ws', WebSocketClass: MockSocket });
     const started = service.start();
     const socket = service.socket;
+    assert.match(socket.url, /voice=Kore/);
     assert.equal(service.sendAudio('AAA='), false);
     await socket.message({ setupComplete: {} });
     await started;
@@ -37,6 +40,10 @@ test('setup includes tutor voice and protocol waits for setupComplete', async ()
     service.addEventListener('interrupted', () => { interrupted = true; });
     await socket.message({ serverContent: { interrupted: true } });
     assert.equal(interrupted, true);
+    const transcripts = [];
+    service.addEventListener('transcript', event => transcripts.push(event.detail));
+    await socket.message({ serverContent: { inputTranscription: { text: 'Hello' }, outputTranscription: { text: 'Welcome!' } } });
+    assert.deepEqual(transcripts.map(item => [item.speaker, item.text]), [['user', 'Hello'], ['tutor', 'Welcome!']]);
     service.stop();
 });
 

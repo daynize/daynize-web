@@ -70,11 +70,14 @@ test('setup gates audio; PCM and replies relay both ways; disconnect closes upst
     prefixedRelay.server.listen(0, '127.0.0.1');
     await once(prefixedRelay.server, 'listening');
     const prefixedConnection = once(upstream, 'connection');
-    const prefixedClient = new WebSocket(`ws://127.0.0.1:${prefixedRelay.server.address().port}`);
+    const prefixedClient = new WebSocket(`ws://127.0.0.1:${prefixedRelay.server.address().port}/ws/gemini-live?voice=Puck`);
     context.after(() => prefixedClient.terminate());
     const [prefixedGemini] = await prefixedConnection;
     const prefixedSetup = await nextMessage(prefixedGemini);
     assert.equal(prefixedSetup.setup.model, 'models/gemini-2.0-flash-exp');
+    assert.equal(prefixedSetup.setup.generationConfig.speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName, 'Puck');
+    assert.deepEqual(prefixedSetup.setup.inputAudioTranscription, {});
+    assert.deepEqual(prefixedSetup.setup.outputAudioTranscription, {});
     const prefixedClosed = once(prefixedGemini, 'close');
     prefixedClient.close();
     await prefixedClosed;
@@ -107,6 +110,8 @@ test('public access needs no password but validates websocket origin and protect
     const homepage = new WebSocket(address.replace('http:', 'ws:') + '/ws/gemini-live', { origin: 'https://www.daynize.co.kr', headers: { host: 'test.example' } });
     assert.match((await nextMessage(homepage)).error.message, /GEMINI_API_KEY is missing/);
     await once(homepage, 'close');
+    const invalidVoice = new WebSocket(address.replace('http:', 'ws:') + '/ws/gemini-live?voice=invalid');
+    assert.match((await once(invalidVoice, 'error'))[0].message, /400/);
 });
 
 test('missing key returns an actionable error without contacting Gemini', { timeout: 5000 }, async context => {
