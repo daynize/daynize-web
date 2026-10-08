@@ -60,6 +60,19 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 375, height: 812 
     });
 }
 
+test('static website launcher opens authenticated test separately without starting a call', async ({ page }) => {
+    await page.goto('/');
+    await page.evaluate(() => {
+        const widget = document.querySelector('daynize-voice-tutor');
+        widget.config.launchUrl = 'https://test.example/';
+        window.open = (...args) => { window.launchArguments = args; };
+    });
+    await page.getByRole('button', { name: 'AI 음성 회화 시작하기' }).click();
+    expect(await page.evaluate(() => window.launchArguments)).toEqual(['https://test.example/', '_blank', 'noopener,noreferrer']);
+    expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').callActive)).toBe(false);
+    await expect(page.getByRole('dialog')).not.toBeVisible();
+});
+
 test('real AudioWorklet PCM, playback, barge-in, mute, reconnect and cleanup', async ({ page }) => {
     await page.goto('/');
     await installAudioMocks(page);

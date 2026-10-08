@@ -15,7 +15,7 @@ export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voic
                     startOfSpeechSensitivity: 'START_SENSITIVITY_LOW',
                     endOfSpeechSensitivity: 'END_SENSITIVITY_HIGH',
                     prefixPaddingMs: 200,
-                    silenceDurationMs: 700
+                    silenceDurationMs: 450
                 }
             },
             sessionResumption: {},

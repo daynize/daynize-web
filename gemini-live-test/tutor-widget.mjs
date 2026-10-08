@@ -115,6 +115,17 @@ export class DaynizeVoiceTutor extends HTMLElement {
     }
 
     open() {
+        if (this.config?.launchUrl) {
+            const url = new URL(this.config.launchUrl);
+            if (url.protocol !== 'https:' || url.username || url.password) {
+                this.config.launchUrl = undefined;
+                this.open();
+                this.setState('error', '외부 음성 대화 주소를 확인해주세요.');
+                return;
+            }
+            window.open(url.href, '_blank', 'noopener,noreferrer');
+            return;
+        }
         if (this.dialog.open) return;
         this.dialog.showModal();
         this.launch.hidden = true;

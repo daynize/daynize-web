@@ -5,4 +5,5 @@ const sameOriginTest = location.hostname.endsWith('.trycloudflare.com') || ['loc
 const endpoint = loader?.dataset.endpoint || (sameOriginTest
     ? `${location.protocol === 'https:' ? 'wss:' : 'ws:'}//${location.host}/ws/gemini-live`
     : 'wss://api.daynize.co.kr/ws/gemini-live');
-if (!document.querySelector('daynize-voice-tutor')) mountVoiceTutor({ endpoint });
+const launchUrl = sameOriginTest ? undefined : loader?.dataset.testUrl;
+if (!document.querySelector('daynize-voice-tutor')) mountVoiceTutor({ endpoint, launchUrl });

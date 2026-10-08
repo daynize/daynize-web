@@ -82,7 +82,7 @@ The modules do not access browser globals until loaded in the browser. The custo
 
 ## Tutor Configuration
 
-Automatic activity detection uses low start-of-speech sensitivity, high end-of-speech sensitivity, 200ms prefix padding and 700ms silence duration. This favors fewer background-triggered starts and earlier turn completion. The silence duration is not a total response-latency guarantee: continuous radio speech can still prevent silence detection and quieter users may need a closer microphone. Restart existing conversations to apply setup changes.
+Automatic activity detection uses low start-of-speech sensitivity, high end-of-speech sensitivity, 200ms prefix padding and 450ms silence duration. This favors fewer background-triggered starts and earlier turn completion, but short pauses while thinking may end a turn sooner. The silence duration is not a total response-latency guarantee: continuous radio speech can still prevent silence detection and quieter users may need a closer microphone. Restart existing conversations to apply setup changes.
 
 The proxy owns model, voice and system instruction, not the browser. Set `GEMINI_MODEL=gemini-2.5-flash-native-audio-latest` and optionally `GEMINI_VOICE=Kore` or `Puck` in the server environment. The original `gemini-2.0-flash-exp` constant is retained as the requested fallback, but was rejected by the actual Live API during testing. Use a currently supported Live audio model.
 
@@ -103,6 +103,8 @@ const widget = mountVoiceTutor({
 This deliberately puts a key in browser memory and the WebSocket URL. Use only an ephemeral/restricted disposable test credential in a private local session. Never put a long-lived key in public source, localStorage, committed configuration, URLs you share or a production widget. Production uses the proxy; no API key reaches the browser.
 
 ## Production Backend Checklist
+
+GitHub Pages publishes static browser assets only; pushing this repository does not start `server.js` or provision `api.daynize.co.kr`. Until the API host is deployed, the homepage loader's `data-test-url` opens the authenticated temporary tunnel in a separate tab. This avoids cross-site authentication/cookie restrictions without exposing credentials or disabling authentication. The Mac and both server/tunnel processes must remain running; update this URL if the tunnel is recreated. After deploying the production backend, remove `data-test-url` and use `data-endpoint` for the real API service. The temporary launcher does not provide in-page production voice service.
 
 The implementation is integration-ready, not an already provisioned `api.daynize.co.kr` service. A temporary Cloudflare tunnel is not production hosting. Before public rollout:
 
