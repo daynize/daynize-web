@@ -32,9 +32,9 @@ Then start the server in another terminal with the exact HTTPS URL printed by th
 PUBLIC_ORIGIN=https://YOUR-TUNNEL.trycloudflare.com node server.js
 ```
 
-Public mode requires authentication on both HTTP and WebSocket requests. On its first launch it generates `.access-password`, a private local file containing `live:YOUR_PASSWORD`. Enter `live` as the browser login username and the value after the colon as the password. Do not use or share your Gemini API key as the login password. The password file is ignored by Git and never served. Authenticated HTTPS responses issue an HttpOnly, Secure, SameSite cookie for the same-origin WebSocket. Only the configured public origin and local origins are accepted.
+Public mode no longer uses Basic Auth or password cookies. No login is required. `LIVE_ACCESS_PASSWORD` and any existing `.access-password` file are ignored by the server. Private files remain excluded from Git and are not served. WebSocket origins and hosts are still checked, but origin checks are not authentication: non-browser clients can forge headers.
 
-Keep this Mac awake and keep both processes running. This is a temporary test URL, not permanent hosting: stopping or restarting the tunnel invalidates or changes it. Stop both processes with Ctrl+C to disable external access. Anyone you give the login credentials to can consume your Gemini API quota. Do not commit or publicly share the password or API key. To rotate the login password, stop the server, delete `.access-password`, and restart public mode.
+Keep this Mac awake and keep both processes running. This is a temporary test URL, not permanent hosting: stopping or restarting the tunnel invalidates or changes it. Stop both processes with Ctrl+C to disable external access. Anyone who can reach the URL can consume your Gemini API quota. The eight-connection and 15-minute session caps are not per-user billing controls. Configure gateway rate limits and API budgets before broad sharing. Never publish your API key. Production application authentication can still be supplied through `authorizeRequest`.
 
 ## Model Compatibility
 

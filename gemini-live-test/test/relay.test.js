@@ -86,24 +86,22 @@ test('invalid model names and duplicate prefixes are rejected', () => {
     }
 });
 
-test('public access requires authentication and validates websocket origin', { timeout: 5000 }, async context => {
-    assert.throws(() => createRelayServer({ publicOrigin: 'https://test.example', accessPassword: '' }), /requires/);
-    const relay = createRelayServer({ apiKey: '', publicOrigin: 'https://test.example', accessPassword: 'live:test-password' });
+test('public access needs no password but validates websocket origin and protects private files', { timeout: 5000 }, async context => {
+    assert.throws(() => createRelayServer({ publicOrigin: 'http://test.example' }), /requires/);
+    const relay = createRelayServer({ apiKey: '', publicOrigin: 'https://test.example' });
     relay.server.listen(0, '127.0.0.1');
     await once(relay.server, 'listening');
     context.after(() => relay.close());
     const address = `http://127.0.0.1:${relay.server.address().port}`;
-    assert.equal((await fetch(address)).status, 401);
-    const authorization = `Basic ${Buffer.from('live:test-password').toString('base64')}`;
-    const page = await fetch(address, { headers: { authorization } });
+    const page = await fetch(address);
     assert.equal(page.status, 200);
-    assert.match(page.headers.get('set-cookie'), /HttpOnly; Secure; SameSite=Strict/);
-    assert.equal((await fetch(`${address}/.access-password`, { headers: { authorization } })).status, 404);
-    const rejected = new WebSocket(address.replace('http:', 'ws:'), { origin: 'https://test.example' });
-    assert.match((await once(rejected, 'error'))[0].message, /401/);
-    const wrongOrigin = new WebSocket(address.replace('http:', 'ws:'), { origin: 'https://evil.example', headers: { cookie: 'live_access=live:test-password' } });
+    assert.equal(page.headers.get('set-cookie'), null);
+    assert.equal(page.headers.get('www-authenticate'), null);
+    assert.equal((await fetch(`${address}/.access-password`)).status, 404);
+    assert.equal((await fetch(`${address}/.env`)).status, 404);
+    const wrongOrigin = new WebSocket(address.replace('http:', 'ws:'), { origin: 'https://evil.example' });
     assert.match((await once(wrongOrigin, 'error'))[0].message, /403/);
-    const accepted = new WebSocket(address.replace('http:', 'ws:'), { origin: 'https://test.example', headers: { cookie: 'live_access=live:test-password', host: 'test.example' } });
+    const accepted = new WebSocket(address.replace('http:', 'ws:'), { origin: 'https://test.example', headers: { host: 'test.example' } });
     assert.match((await nextMessage(accepted)).error.message, /GEMINI_API_KEY is missing/);
     await once(accepted, 'close');
 });

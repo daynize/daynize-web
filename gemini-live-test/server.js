@@ -1,8 +1,6 @@
 const http = require('node:http');
 const fs = require('node:fs/promises');
 const path = require('node:path');
-const crypto = require('node:crypto');
-const syncFs = require('node:fs');
 const { WebSocket, WebSocketServer } = require('ws');
 require('dotenv').config({ path: path.join(__dirname, '.env'), quiet: true });
 
@@ -35,7 +33,6 @@ function createRelayServer(options = {}) {
         if (new URL(origin).origin !== origin || !origin.startsWith('https://')) throw new Error('ALLOWED_ORIGINS must contain exact HTTPS origins.');
     }
     const publicOrigin = options.publicOrigin ?? process.env.PUBLIC_ORIGIN;
-    const accessPassword = options.accessPassword ?? process.env.LIVE_ACCESS_PASSWORD;
     const authorizeRequest = options.authorizeRequest;
     const maxConnections = options.maxConnections ?? 8;
     const maxSessionMs = options.maxSessionMs ?? 15 * 60 * 1000;
@@ -43,29 +40,20 @@ function createRelayServer(options = {}) {
         throw new Error('Invalid connection or session limits.');
     }
     if (authorizeRequest && typeof authorizeRequest !== 'function') throw new TypeError('authorizeRequest must be a synchronous function.');
-    if (publicOrigin && ((!accessPassword && !authorizeRequest) || new URL(publicOrigin).protocol !== 'https:')) {
-        throw new Error('Public access requires an HTTPS PUBLIC_ORIGIN and LIVE_ACCESS_PASSWORD.');
+    if (publicOrigin && new URL(publicOrigin).protocol !== 'https:') {
+        throw new Error('Public access requires an HTTPS PUBLIC_ORIGIN.');
     }
-    const matchesSecret = value => crypto.timingSafeEqual(
-        crypto.createHash('sha256').update(value).digest(),
-        crypto.createHash('sha256').update(accessPassword || '').digest()
-    );
     const authorized = request => {
         if (authorizeRequest) {
             try { return authorizeRequest(request) === true; } catch { return false; }
         }
-        if (!publicOrigin) return true;
-        const cookie = request.headers.cookie?.split(';').map(item => item.trim()).find(item => item.startsWith('live_access='));
-        if (cookie && matchesSecret(cookie.slice('live_access='.length))) return true;
-        const header = request.headers.authorization || '';
-        return header.startsWith('Basic ') && matchesSecret(Buffer.from(header.slice(6), 'base64').toString());
+        return true;
     };
     const server = http.createServer(async (request, response) => {
         if (!authorized(request)) {
-            response.writeHead(401, { 'WWW-Authenticate': 'Basic realm="Gemini Live Test", charset="UTF-8"', 'Cache-Control': 'no-store' }).end('Authentication required');
+            response.writeHead(401, { 'Cache-Control': 'no-store' }).end('Authentication required');
             return;
         }
-        if (publicOrigin && accessPassword && !authorizeRequest) response.setHeader('Set-Cookie', `live_access=${accessPassword}; HttpOnly; Secure; SameSite=Strict; Path=/`);
         if (!['GET', 'HEAD'].includes(request.method)) {
             response.writeHead(405).end();
             return;
@@ -237,11 +225,6 @@ function createRelayServer(options = {}) {
 }
 
 if (require.main === module) {
-    if (process.env.PUBLIC_ORIGIN && !process.env.LIVE_ACCESS_PASSWORD) {
-        const passwordFile = path.join(__dirname, '.access-password');
-        if (!syncFs.existsSync(passwordFile)) syncFs.writeFileSync(passwordFile, `live:${crypto.randomBytes(24).toString('hex')}`, { mode: 0o600 });
-        process.env.LIVE_ACCESS_PASSWORD = syncFs.readFileSync(passwordFile, 'utf8').trim();
-    }
     const relay = createRelayServer();
     relay.server.on('error', error => {
         console.error(error.code === 'EADDRINUSE'
