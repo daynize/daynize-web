@@ -538,9 +538,34 @@
     transition: transform .18s ease, background .18s ease;
 }
 
-.pop-holiday-play:hover {
+.pop-holiday-play:hover:not(:disabled) {
     transform: scale(1.06);
     background: #25483b;
+}
+
+.pop-holiday-play:disabled,
+.pop-card-preview-unavailable:disabled {
+    opacity: .42;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.pop-card-preview-unavailable {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: #315946;
+    color: #fffdf8;
+    font: inherit;
+    font-size: 19px;
+}
+
+.pop-holiday-progress input:disabled {
+    opacity: .42;
+    cursor: not-allowed;
 }
 
 .pop-holiday-progress {

@@ -16,7 +16,10 @@ async function startSession(page) {
                 window.safetyTest.sockets.push(this);
                 queueMicrotask(() => this.onmessage?.({ data: JSON.stringify({ setupComplete: {} }) }));
             }
-            send() { }
+            send(data) {
+                const message = JSON.parse(data);
+                if (message.type === 'ping') queueMicrotask(() => this.onmessage?.({ data: JSON.stringify({ type: 'pong', id: message.id }) }));
+            }
             close() { this.readyState = 3; }
         }
         window.WebSocket = MockSocket;
@@ -49,6 +52,24 @@ test('10-minute wall-clock limit closes minimized session despite ongoing sound'
     expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').callActive)).toBe(false);
     expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').messageElement.textContent)).toBe('오늘의 튜터링 시간이 완료되었습니다!');
     expect(await page.evaluate(() => window.safetyTest.sockets.every(socket => socket.readyState === 3))).toBe(true);
+});
+
+test('reconnection beyond 30 seconds does not trigger silence termination', async ({ page }) => {
+    await startSession(page);
+    await page.evaluate(() => {
+        const service = document.querySelector('daynize-voice-tutor').service;
+        service.options.retryDelay = service.options.maxRetryDelay = 60000;
+        service.socket.onerror();
+    });
+    await expect(page.locator('.status-line')).toHaveText('다시 연결 중');
+    await page.clock.fastForward(31000);
+    expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').callActive)).toBe(true);
+    await expect(page.locator('.safety-notice')).not.toBeVisible();
+    expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').dataset.connectionState)).toBe('RECONNECTING');
+    await page.clock.fastForward(30000);
+    await expect(page.locator('.status-line')).toHaveText('듣고 있어요...');
+    expect(await page.evaluate(() => window.safetyTest.sockets.length)).toBe(2);
+    await page.keyboard.press('Escape');
 });
 
 for (const width of [1280, 375]) {

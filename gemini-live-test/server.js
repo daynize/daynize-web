@@ -26,6 +26,11 @@ function createRelayServer(options = {}) {
     }
     const model = rawModel.startsWith('models/') ? rawModel : `models/${rawModel}`;
     const upstreamUrl = options.upstreamUrl ?? GEMINI_ENDPOINT;
+    const wsUrl = options.wsUrl ?? process.env.NEXT_PUBLIC_WS_URL ?? process.env.WS_URL;
+    if (wsUrl) {
+        const configured = new URL(wsUrl);
+        if (!['ws:', 'wss:'].includes(configured.protocol) || configured.username || configured.password || configured.hash) throw new Error('Invalid public WebSocket URL.');
+    }
     const voice = options.voice ?? process.env.GEMINI_VOICE ?? 'Kore';
     if (!['Kore', 'Puck'].includes(voice)) throw new Error('GEMINI_VOICE must be Kore or Puck.');
     const trustedOrigins = options.allowedOrigins ?? (process.env.ALLOWED_ORIGINS || '').split(',').filter(Boolean);
@@ -58,7 +63,13 @@ function createRelayServer(options = {}) {
             response.writeHead(405).end();
             return;
         }
-        const asset = FILES.get(request.url.split('?')[0]);
+        const pathname = request.url.split('?')[0];
+        if (pathname === '/runtime-config.json') {
+            response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
+            response.end(request.method === 'HEAD' ? undefined : JSON.stringify({ wsUrl: wsUrl || null }));
+            return;
+        }
+        const asset = FILES.get(pathname);
         if (!asset) {
             response.writeHead(404).end('Not found');
             return;
@@ -118,7 +129,7 @@ function createRelayServer(options = {}) {
             if (!alive) return client.terminate();
             alive = false;
             if (client.readyState === WebSocket.OPEN) client.ping();
-        }, 30000);
+        }, 20000);
         sessionTimer.unref();
         heartbeat.unref();
         client.on('pong', () => { alive = true; });
@@ -186,13 +197,18 @@ function createRelayServer(options = {}) {
             client.close(1000, 'Gemini session completed');
         });
         client.on('message', (data, isBinary) => {
+            let message;
+            try { message = isBinary ? null : JSON.parse(data.toString()); }
+            catch { message = null; }
+            if (message?.type === 'ping' && Number.isSafeInteger(message.id) && message.id > 0) {
+                alive = true;
+                send({ type: 'pong', id: message.id });
+                return;
+            }
             if (!ready || upstream.readyState !== WebSocket.OPEN) {
                 send({ error: { message: 'Wait for setupComplete before sending audio.' } });
                 return;
             }
-            let message;
-            try { message = isBinary ? null : JSON.parse(data.toString()); }
-            catch { message = null; }
             const content = message?.clientContent;
             const text = content?.turns?.[0]?.parts?.[0]?.text;
             if (content?.turnComplete === true && content.turns?.length === 1 && content.turns[0].role === 'user' &&

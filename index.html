@@ -2423,6 +2423,7 @@
                     return null;
                 }
             };
+            const unavailablePreviewMessage = '저작권 문제로 샘플곡을 재생할 수 없습니다.';
             const notesApp = NotesApp.init({
                 onChange: (count) => document.querySelectorAll('[data-notes-count]').forEach((el) => { el.textContent = `내 노트 ${count}개`; })
             });
@@ -2490,14 +2491,23 @@
                     copy.append(meta, watch);
                     if (article?.audio) {
                         const previewLabel = makeElement('p', 'pop-card-audio-label', article.audio.label || '공식 미리듣기');
-                        const preview = makeElement('audio', 'pop-card-audio');
-                        preview.controls = true;
-                        preview.preload = 'none';
-                        preview.src = article.audio.previewUrl;
-                        preview.setAttribute('aria-label', `${article.audio.title} · ${previewLabel.textContent}`);
                         const previewStatus = makeElement('p', 'pop-card-audio-status');
                         previewStatus.setAttribute('role', 'status');
-                        preview.addEventListener('error', () => { previewStatus.textContent = '샘플을 불러오지 못했어요. 읽어 보기에서 음원 서비스 링크를 이용해 주세요.'; });
+                        const previewUrl = safeHttpUrl(article.audio.previewUrl);
+                        const preview = makeElement(previewUrl ? 'audio' : 'button', previewUrl ? 'pop-card-audio' : 'pop-card-preview-unavailable');
+                        if (previewUrl) {
+                            preview.controls = true;
+                            preview.preload = 'none';
+                            preview.src = previewUrl.href;
+                            preview.setAttribute('aria-label', `${article.audio.title} · ${previewLabel.textContent}`);
+                            preview.addEventListener('error', () => { previewStatus.textContent = '샘플을 불러오지 못했어요. 읽어 보기에서 음원 서비스 링크를 이용해 주세요.'; });
+                        } else {
+                            preview.type = 'button';
+                            preview.disabled = true;
+                            preview.textContent = '▶';
+                            preview.setAttribute('aria-label', `${article.audio.title} 미리듣기 재생 불가`);
+                            previewStatus.textContent = unavailablePreviewMessage;
+                        }
                         copy.append(previewLabel, preview, previewStatus);
                     }
                     card.append(image, copy);
@@ -2585,14 +2595,20 @@
                 document.querySelector('#pop-holiday-proverb').textContent = article.focusQuote.proverb;
                 const audio = document.querySelector('#pop-holiday-audio');
                 audio.pause();
-                audio.src = article.audio.previewUrl;
+                const previewUrl = safeHttpUrl(article.audio.previewUrl);
+                audio.removeAttribute('src');
+                if (previewUrl) audio.src = previewUrl.href;
                 audio.load();
                 document.querySelector('.pop-holiday-player').classList.remove('is-fallback');
-                document.querySelector('#pop-holiday-status').textContent = article.audio.credit || '';
+                document.querySelector('.pop-holiday-player').classList.toggle('is-unavailable', !previewUrl);
+                document.querySelector('#pop-holiday-status').textContent = previewUrl ? (article.audio.credit || '') : unavailablePreviewMessage;
                 const playButton = document.querySelector('#pop-holiday-play');
+                playButton.disabled = !previewUrl;
+                playButton.setAttribute('aria-describedby', 'pop-holiday-status');
                 playButton.textContent = '▶';
-                playButton.setAttribute('aria-label', `${article.audio.title} 미리듣기 재생`);
+                playButton.setAttribute('aria-label', `${article.audio.title} 미리듣기 ${previewUrl ? '재생' : '재생 불가'}`);
                 const seek = document.querySelector('#pop-holiday-seek');
+                seek.disabled = !previewUrl;
                 seek.value = '0';
                 document.querySelector('#pop-holiday-time').textContent = article.audio.label || '공식 미리듣기';
                 const sections = document.querySelector('#pop-holiday-sections');
@@ -2851,6 +2867,7 @@
                 return `${Math.floor(wholeSeconds / 60)}:${String(wholeSeconds % 60).padStart(2, '0')}`;
             };
             const syncHolidayPlayer = () => {
+                if (holidayPlayer.classList.contains('is-unavailable')) return;
                 const isPlaying = !holidayAudio.paused && !holidayAudio.ended;
                 holidayPlayButton.textContent = isPlaying ? 'Ⅱ' : '▶';
                 const title = selectedArticle?.audio?.title || '곡';
@@ -2860,6 +2877,7 @@
                 holidayTime.textContent = duration ? `${formatAudioTime(holidayAudio.currentTime)} / ${formatAudioTime(duration)}` : (selectedArticle?.audio?.label || '공식 미리듣기');
             };
             holidayPlayButton.addEventListener('click', async () => {
+                if (holidayPlayButton.disabled || !safeHttpUrl(selectedArticle?.audio?.previewUrl)) return;
                 holidayStatus.textContent = selectedArticle?.audio?.credit || '';
                 if (holidayPlayer.classList.contains('is-fallback') && selectedArticle) {
                     window.open(selectedArticle.audio.trackUrl, '_blank', 'noopener,noreferrer');
@@ -2876,6 +2894,7 @@
             holidayAudio.addEventListener('loadedmetadata', syncHolidayPlayer);
             holidayAudio.addEventListener('error', () => {
                 if (!selectedArticle || selectedArticle.type !== 'culture-essay') return;
+                if (!safeHttpUrl(selectedArticle.audio.previewUrl)) return;
                 holidayPlayer.classList.add('is-fallback');
                 holidayPlayButton.textContent = '↗';
                 holidayPlayButton.setAttribute('aria-label', `음원 서비스에서 ${selectedArticle.audio.title} 듣기`);
@@ -3147,8 +3166,7 @@
             }, { once: true });
         })();
     </script>
-    <script type="module" src="./gemini-live-test/daynize-tutor.mjs" data-daynize-tutor
-        data-endpoint="wss://elizabeth-miss-turner-settled.trycloudflare.com/ws/gemini-live"></script>
+    <script type="module" src="./gemini-live-test/daynize-tutor.mjs" data-daynize-tutor></script>
 </body>
 
 </html>

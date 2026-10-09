@@ -1,5 +1,5 @@
 import { AudioEngine } from './audio-engine.mjs';
-import { LiveService } from './live-service.mjs';
+import { LiveService, resolveWebSocketUrl } from './live-service.mjs';
 import { AmbientOrb } from './ambient-orb.mjs';
 import { SessionSafety } from './session-safety.mjs';
 
@@ -143,9 +143,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
     }
 
     get endpoint() {
-        return this.config?.endpoint || this.getAttribute('endpoint') ||
-            (location.port === '8080' ? `${location.protocol === 'https:' ? 'wss:' : 'ws:'}//${location.host}/ws/gemini-live`
-                : 'wss://api.daynize.co.kr/ws/gemini-live');
+        return resolveWebSocketUrl({ endpoint: this.config?.endpoint || this.getAttribute('endpoint') });
     }
 
     open() {
@@ -224,16 +222,19 @@ export class DaynizeVoiceTutor extends HTMLElement {
             if (this.callActive) this.setState(this.audio.muted ? 'muted' : 'listening');
         });
         service.addEventListener('turnComplete', () => { this.bargeIn = false; this.transcriptRows = {}; });
-        service.addEventListener('state', event => {
+        service.addEventListener('connectionstate', event => {
             if (generation !== this.generation) return;
-            const state = event.detail;
-            this.audio.setStreaming(state === 'ready');
-            if (state === 'reconnecting') {
+            const { state, attempt, delay } = event.detail;
+            this.dataset.connectionState = state;
+            this.audio.setStreaming(state === 'CONNECTED');
+            if (state === 'RECONNECTING') {
+                clearTimeout(this.responseTimer);
                 this.audio.interrupt();
                 this.bargeIn = false;
                 this.muteButton.disabled = true;
-                this.setState('reconnecting');
-            } else if (state === 'ready') {
+                this.setState('reconnecting', `${Math.ceil(delay / 1000)}초 후 다시 연결합니다. (${attempt}/${service.options.maxRetries})`);
+            } else if (state === 'CONNECTED') {
+                this.safety.lastSoundAt = performance.now();
                 this.muteButton.disabled = false;
                 this.setState(this.audio.muted ? 'muted' : 'listening');
                 if (!this.clock) this.clock = setInterval(() => {
@@ -258,7 +259,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
                 }, 15000);
             }
         } catch (error) {
-            if (generation !== this.generation || !this.callActive || service.retryTimer) return;
+            if (generation !== this.generation || !this.callActive) return;
             this.fail(error);
         }
     }
@@ -278,6 +279,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
 
     checkSafety() {
         if (!this.callActive || !this.safety) return;
+        if (this.service?.active && !this.service.ready) this.safety.lastSoundAt = performance.now();
         const result = this.safety.check(performance.now(), this.audio.inputVolume());
         const notice = this.shadowRoot.querySelector('.safety-notice');
         if (result.reason) {

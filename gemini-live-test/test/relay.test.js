@@ -37,10 +37,18 @@ test('setup gates audio; PCM and replies relay both ways; disconnect closes upst
     const ready = nextMessage(client);
     gemini.send(JSON.stringify({ setupComplete: {} }));
     assert.deepEqual(await ready, { setupComplete: {} });
+    const pong = nextMessage(client);
+    let forwardedPing = false;
+    const inspectHeartbeat = data => { if (JSON.parse(data.toString()).type === 'ping') forwardedPing = true; };
+    gemini.on('message', inspectHeartbeat);
+    client.send(JSON.stringify({ type: 'ping', id: 1 }));
+    assert.deepEqual(await pong, { type: 'pong', id: 1 });
     const audio = { realtimeInput: { audio: { data: 'AAA=', mimeType: 'audio/pcm;rate=16000' } } };
     const received = nextMessage(gemini);
     client.send(JSON.stringify(audio));
     assert.deepEqual(await received, audio);
+    assert.equal(forwardedPing, false);
+    gemini.off('message', inspectHeartbeat);
     const legacyReceived = nextMessage(gemini);
     client.send(JSON.stringify({ realtime_input: { media_chunks: [{ mime_type: 'audio/pcm;rate=16000', data: 'AAA=' }] } }));
     assert.deepEqual(await legacyReceived, audio);
@@ -87,6 +95,17 @@ test('invalid model names and duplicate prefixes are rejected', () => {
     for (const model of ['', 'models/', 'models/models/gemini-2.0-flash-exp', 123, ' gemini-2.0-flash-exp']) {
         assert.throws(() => createRelayServer({ model }), /GEMINI_MODEL/);
     }
+});
+
+test('runtime configuration exposes only the public WebSocket URL', async context => {
+    const relay = createRelayServer({ apiKey: 'private-test-key', wsUrl: 'wss://stable.example/ws/gemini-live' });
+    context.after(() => relay.close());
+    relay.server.listen(0, '127.0.0.1');
+    await once(relay.server, 'listening');
+    const response = await fetch(`http://127.0.0.1:${relay.server.address().port}/runtime-config.json`);
+    assert.equal(response.headers.get('cache-control'), 'no-store');
+    assert.deepEqual(await response.json(), { wsUrl: 'wss://stable.example/ws/gemini-live' });
+    assert.throws(() => createRelayServer({ wsUrl: 'https://invalid.example' }), /WebSocket/);
 });
 
 test('public access needs no password but validates websocket origin and protects private files', { timeout: 5000 }, async context => {

@@ -18,7 +18,11 @@ The server listens only on the loopback interface, at port 8080. Both HTTP asset
 
 ## Temporary External Access
 
-External microphone access requires HTTPS. The frontend uses the current page host and upgrades its WebSocket to WSS automatically on HTTPS.
+External microphone access requires HTTPS. Localhost and tunnel pages use the current page host and upgrade WebSocket to WSS automatically on HTTPS. Production pages default to `wss://api.daynize.co.kr/ws/gemini-live`, which must be separately deployed.
+
+Set `NEXT_PUBLIC_WS_URL` (or `WS_URL`) in the relay environment to override the public endpoint. The loader reads only this public setting from `/runtime-config.json`; API keys remain private. On static hosts such as GitHub Pages, configure `globalThis.DAYNIZE_CONFIG.wsUrl` before the loader or set its `data-endpoint` attribute, since Node environment variables are not available in plain browser modules. A stable domain/named tunnel is required for production: retries cannot restore an expired temporary tunnel hostname.
+
+Network failures automatically retry with delays of 1, 2, 4, 8, 16 and up to 30 seconds, at most 10 consecutive retries, resetting after successful setup. Setup has a 20-second deadline. Proxy heartbeats run every 20 seconds with a 10-second pong deadline. The UI shows reconnect progress without releasing the microphone; user stop, fatal authorization/configuration errors and the ten-minute safety limit still end the call. Proxy reconnection starts a new conversation rather than restoring history. See [INTEGRATION.md](INTEGRATION.md) for options and connection-state events.
 
 Start the temporary tunnel in one terminal:
 

@@ -6,12 +6,13 @@ import { fileURLToPath } from 'node:url';
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const episodes = JSON.parse(readFileSync(join(root, 'src/data/pop-culture-episodes.json'), 'utf8'));
+const selectedIds = process.argv.slice(2);
 const output = join(root, 'audio/pop-culture');
 const temporary = mkdtempSync(join(tmpdir(), 'daynize-pop-audio-'));
 mkdirSync(output, { recursive: true });
 
 try {
-    for (const episode of episodes) {
+    for (const episode of episodes.filter((item) => !selectedIds.length || selectedIds.includes(item.id))) {
         for (const [index, sentence] of episode.practice.entries()) {
             const name = `${episode.id}-${index + 1}`;
             const source = join(temporary, `${name}.aiff`);

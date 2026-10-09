@@ -512,34 +512,34 @@
                 "id": "pop-03",
                 "articleId": "pop-03",
                 "title": "Yesterday가 들려주는 과거 이야기",
-                "desc": "The Beatles - Yesterday로 익히는 시제와 회상의 뉘앙스",
+                "desc": "The Beatles - wouldn't의 거부와 long for의 그리움",
                 "duration": "6분",
                 "thumbnail": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
                 "videoUrl": null,
-                "keyPhrase": "I listened to this song yesterday.",
-                "explanation": "과거형과 현재완료로 끝난 시점과 지금까지 이어진 경험을 구분합니다."
+                "keyPhrase": "He wouldn't answer my question.",
+                "explanation": "wouldn't의 과거 거부와 추측 용법을 구분하고, 동사 long for로 지금의 갈망을 어순대로 읽습니다."
             },
             {
                 "id": "pop-04",
                 "articleId": "pop-04",
                 "title": "Dancing Queen으로 배우는 활기찬 동작 표현",
-                "desc": "ABBA - Dancing Queen 속의 현재분사와 라이프스타일",
+                "desc": "ABBA - digging으로 읽는 진심으로 즐기는 마음",
                 "duration": "5분",
                 "thumbnail": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
                 "videoUrl": null,
-                "keyPhrase": "We are dancing together.",
-                "explanation": "현재분사의 수식 역할과 be동사 + -ing 진행형, 즐거움을 전하는 관용 표현을 배웁니다."
+                "keyPhrase": "I dig this music.",
+                "explanation": "digging의 구어체 의미인 좋아하고 즐기는 마음을 배우고, 행동 다음에 대상을 읽는 어순을 익힙니다."
             },
             {
                 "id": "pop-05",
                 "articleId": "pop-05",
                 "title": "Hotel California가 전하는 신비로운 서사",
-                "desc": "Eagles - Hotel California 속의 묘사와 관사 사용법",
+                "desc": "Eagles - Such a lovely place로 배우는 감탄의 어순",
                 "duration": "7분",
                 "thumbnail": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
                 "videoUrl": null,
-                "keyPhrase": "We found a hotel. The hotel was peaceful.",
-                "explanation": "형용사로 풍경을 묘사하고 a와 the로 처음 소개한 대상과 특정 대상을 구분합니다."
+                "keyPhrase": "This is such a peaceful garden.",
+                "explanation": "such + a/an + 형용사 + 단수 명사로 감탄을 만들고, such와 so의 차이를 배웁니다."
             },
             {
                 "id": "pop-06",
@@ -578,12 +578,12 @@
                 "id": "pop-09",
                 "articleId": "pop-09",
                 "title": "Take Me Home, Country Roads와 고향의 정취",
-                "desc": "John Denver - Country Roads 속의 명령문과 관계사 표현",
+                "desc": "John Denver - belong과 belong to로 읽는 소속감",
                 "duration": "6분",
                 "thumbnail": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
                 "videoUrl": null,
-                "keyPhrase": "This is the town where I grew up.",
-                "explanation": "take me home과 take me to의 방향 표현, 장소를 설명하는 관계부사 where를 익힙니다."
+                "keyPhrase": "This bag belongs to Mina.",
+                "explanation": "belong to의 소유·소속 관계와 to의 연결 감각을 배우고, 원곡의 장소 소속감에는 to가 없음을 구분합니다."
             },
             {
                 "id": "culture-09",

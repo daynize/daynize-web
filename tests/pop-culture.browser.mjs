@@ -51,13 +51,22 @@ test('pop culture modals and listening audio on desktop and mobile', { timeout: 
         for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
             const page = await browser.newPage({ viewport });
             const errors = [];
+            const previewRequests = [];
             page.on('pageerror', (error) => errors.push(error.message));
+            page.on('request', (request) => {
+                if (request.resourceType() === 'media') previewRequests.push(request.url());
+            });
             await page.goto(baseURL);
             await page.locator('[data-category-id="culture"]').click();
             assert.equal(await page.locator('#lesson-grid [data-article-id]').count(), 9);
-            assert.equal(await page.locator('#lesson-grid audio').count(), 8);
+            assert.equal(await page.locator('#lesson-grid audio').count(), 4);
+            assert.equal(await page.locator('#lesson-grid .pop-card-preview-unavailable:disabled').count(), 4);
             for (const episode of episodes) {
                 const card = page.locator('.grid-lesson').filter({ has: page.locator(`[data-article-id="${episode.id}"]`) });
+                if (!episode.audio.previewUrl) {
+                    assert.equal(await card.locator('.pop-card-preview-unavailable').isDisabled(), true);
+                    assert.equal(await card.locator('.pop-card-audio-status').textContent(), '저작권 문제로 샘플곡을 재생할 수 없습니다.');
+                }
                 assert.equal(await card.locator('img').getAttribute('src'), episodes.find((item) => item.id === episode.id).coverImage.replace('w=1200&q=88', 'w=800&q=80'));
                 await card.locator('[data-article-id]').click();
                 assert.equal(await page.locator('#pop-article-title').textContent(), episode.title);
@@ -69,6 +78,20 @@ test('pop culture modals and listening audio on desktop and mobile', { timeout: 
                 assert.equal(await page.locator('#pop-article-answer').isVisible(), false);
                 assert.equal(await page.locator('.pop-holiday-track-label').textContent(), episode.audio.label);
                 assert.equal(await page.locator('#pop-holiday-audio').getAttribute('src'), episode.audio.previewUrl);
+                assert.equal(await page.locator('#pop-holiday-play').isDisabled(), !episode.audio.previewUrl);
+                assert.equal(await page.locator('#pop-holiday-seek').isDisabled(), !episode.audio.previewUrl);
+                if (!episode.audio.previewUrl) {
+                    assert.equal(await page.locator('#pop-holiday-play').isVisible(), true);
+                    assert.equal(await page.locator('.pop-holiday-progress').isVisible(), true);
+                    assert.equal(await page.locator('#pop-holiday-status').textContent(), '저작권 문제로 샘플곡을 재생할 수 없습니다.');
+                    assert.ok(Number(await page.locator('#pop-holiday-play').evaluate((button) => getComputedStyle(button).opacity)) < 0.5);
+                    const requestCount = previewRequests.length;
+                    await page.locator('#pop-holiday-play').evaluate((button) => button.click());
+                    assert.equal(await page.locator('#pop-holiday-audio').evaluate((audio) => audio.paused), true);
+                    assert.equal(previewRequests.length, requestCount);
+                    assert.ok(!(await page.locator('.pop-holiday-player').getAttribute('class')).includes('is-fallback'));
+                    assert.equal(await page.locator('#pop-holiday-quote').textContent(), `“${episode.focusQuote.en}”`);
+                }
                 if (episode.id === 'pop-08') {
                     await page.locator('#pop-holiday-play').click();
                     await page.waitForFunction(() => document.querySelector('#pop-holiday-audio').currentTime > 0);
@@ -97,7 +120,7 @@ test('pop culture modals and listening audio on desktop and mobile', { timeout: 
                     return progress.bottom > status.top;
                 });
                 assert.equal(playerOverlap, false);
-                if (episode.id === 'pop-06') {
+                if (episode.id === 'pop-06' || episode.id === 'pop-03') {
                     await page.locator('.pop-article-scroll').evaluate((element) => { element.scrollTop = 0; });
                     const path = join(screenshots, `${episode.id}-${viewport.width}.png`);
                     await page.screenshot({ path, animations: 'disabled' });
@@ -129,7 +152,7 @@ test('pop culture modals and listening audio on desktop and mobile', { timeout: 
             assert.equal(await page.locator('#pop-article-answer').isVisible(), false);
             await page.locator('[data-article-note]').click();
             const stored = await page.evaluate(() => Object.keys(localStorage).map((key) => localStorage.getItem(key)).join('\n'));
-            assert.ok(stored.includes('This is the town where I grew up.'));
+            assert.ok(stored.includes('This bag belongs to Mina.'));
             assert.deepEqual(errors, []);
             await page.close();
         }
