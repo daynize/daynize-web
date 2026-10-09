@@ -85,7 +85,10 @@ export class DaynizeVoiceTutor extends HTMLElement {
             const rect = this.dialog.getBoundingClientRect();
             if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) this.close();
         }, { signal });
-        this.startButton.addEventListener('click', () => this.begin(), { signal });
+        this.startButton.addEventListener('click', () => {
+            if (this.callActive) this.service?.retryNow();
+            else void this.begin();
+        }, { signal });
         this.muteButton.addEventListener('click', () => this.toggleMute(), { signal });
         this.endButton.addEventListener('click', () => this.close(), { signal });
         query('.captions').addEventListener('click', () => this.toggleDrawer('text-drawer', '.captions'), { signal });
@@ -232,8 +235,13 @@ export class DaynizeVoiceTutor extends HTMLElement {
                 this.audio.interrupt();
                 this.bargeIn = false;
                 this.muteButton.disabled = true;
+                this.startButton.hidden = false;
+                this.startButton.disabled = delay === 0;
+                this.startButton.querySelector('span').textContent = '지금 다시 연결';
                 this.setState('reconnecting', `${Math.ceil(delay / 1000)}초 후 다시 연결합니다. (${attempt}/${service.options.maxRetries})`);
             } else if (state === 'CONNECTED') {
+                this.startButton.hidden = true;
+                this.startButton.disabled = false;
                 this.safety.lastSoundAt = performance.now();
                 this.muteButton.disabled = false;
                 this.setState(this.audio.muted ? 'muted' : 'listening');
@@ -346,6 +354,8 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.clock = undefined;
         if (!this.initialized) return;
         this.startButton.hidden = true;
+        this.startButton.disabled = false;
+        this.dataset.connectionState = 'DISCONNECTED';
         this.startButton.querySelector('span').textContent = '다시 대화하기';
         this.muteButton.disabled = true;
         this.muteButton.setAttribute('aria-pressed', 'false');

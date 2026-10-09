@@ -34,7 +34,7 @@ export function resolveWebSocketUrl({ endpoint, env = globalThis.process?.env, c
     const local = ['localhost', '127.0.0.1', '[::1]'].includes(page?.hostname);
     const fallback = local || page?.hostname?.endsWith('.trycloudflare.com')
         ? `${page.protocol === 'https:' ? 'wss:' : 'ws:'}//${page.host}/ws/gemini-live`
-        : (page && page.protocol !== 'file:') || env?.NODE_ENV === 'production' ? 'wss://api.daynize.co.kr/ws/gemini-live' : 'ws://localhost:8080/ws/gemini-live';
+        : (page && page.protocol !== 'file:') || env?.NODE_ENV === 'production' ? 'wss://daynize-relay-api.fly.dev/ws/gemini-live' : 'ws://localhost:8080/ws/gemini-live';
     const url = new URL(configured || fallback);
     if (!['ws:', 'wss:'].includes(url.protocol) || url.username || url.password || url.hash) throw new Error('WebSocket 주소를 확인해주세요.');
     if (page?.protocol === 'https:' && url.protocol !== 'wss:') throw new Error('HTTPS 페이지에는 보안 WebSocket(WSS) 주소가 필요합니다.');
@@ -42,10 +42,11 @@ export function resolveWebSocketUrl({ endpoint, env = globalThis.process?.env, c
 }
 
 export class LiveService extends EventTarget {
-    constructor({ endpoint, mode = 'proxy', apiKey, model, voice = 'Kore', protocol = 'audio', maxRetries = 10, retryDelay = 1000, maxRetryDelay = 30000, timeout = 20000, heartbeatInterval = 20000, heartbeatTimeout = 10000, onConnectionState, WebSocketClass = globalThis.WebSocket } = {}) {
+    constructor({ endpoint, mode = 'proxy', apiKey, model, voice = 'Kore', protocol = 'audio', maxRetries = 10, retryDelay = 1000, maxRetryDelay = 30000, timeout = 20000, recoveryTimeout = 60000, stableConnectionTime = 30000, heartbeatInterval = 20000, heartbeatTimeout = 10000, onConnectionState, WebSocketClass = globalThis.WebSocket } = {}) {
         super();
         if (!Number.isInteger(maxRetries) || maxRetries < 0 || [retryDelay, maxRetryDelay, timeout, heartbeatInterval, heartbeatTimeout].some(value => !Number.isFinite(value) || value <= 0)) throw new TypeError('Invalid connection retry or timeout options.');
-        this.options = { endpoint, mode, apiKey, model, voice, protocol, maxRetries, retryDelay, maxRetryDelay, timeout, heartbeatInterval, heartbeatTimeout };
+        if ([recoveryTimeout, stableConnectionTime].some(value => !Number.isFinite(value) || value <= 0)) throw new TypeError('Invalid recovery timeout options.');
+        this.options = { endpoint, mode, apiKey, model, voice, protocol, maxRetries, retryDelay, maxRetryDelay, timeout, recoveryTimeout, stableConnectionTime, heartbeatInterval, heartbeatTimeout };
         this.onConnectionState = onConnectionState;
         this.connectionState = CONNECTION_STATES.DISCONNECTED;
         this.Socket = WebSocketClass;
@@ -61,7 +62,33 @@ export class LiveService extends EventTarget {
     setConnectionState(state, detail = {}) {
         this.connectionState = state;
         this.emit('connectionstate', { state, attempt: this.retries, ...detail });
-        this.onConnectionState?.({ state, attempt: this.retries, ...detail });
+        try { this.onConnectionState?.({ state, attempt: this.retries, ...detail }); }
+        catch (error) { this.emit('callbackerror', error); }
+    }
+
+    armRecoveryDeadline() {
+        if (this.recoveryTimer) return;
+        this.recoveryTimer = setTimeout(() => {
+            if (!this.active) return;
+            const error = new Error('음성 서버 연결을 복구하지 못했습니다. 네트워크와 서버 주소를 확인한 뒤 다시 연결해주세요.');
+            this.stop();
+            this.emit('error', error);
+        }, this.options.recoveryTimeout);
+    }
+
+    sendMessage(message) {
+        if (!this.ready || this.socket?.readyState !== this.Socket.OPEN) return false;
+        try { this.socket.send(JSON.stringify(message)); return true; }
+        catch { this.disconnectSocket?.('Message send failed'); return false; }
+    }
+
+    retryNow() {
+        if (!this.active || this.connectionState !== CONNECTION_STATES.RECONNECTING || !this.retryTimer) return false;
+        clearTimeout(this.retryTimer);
+        this.retryTimer = undefined;
+        this.setConnectionState(CONNECTION_STATES.RECONNECTING, { delay: 0 });
+        this.open(this.generation).catch(() => { });
+        return true;
     }
 
     clearHeartbeat() {
@@ -75,6 +102,8 @@ export class LiveService extends EventTarget {
         this.stop();
         this.active = true;
         this.retries = 0;
+        this.sessionId = globalThis.crypto.randomUUID();
+        this.armRecoveryDeadline();
         this.setConnectionState(CONNECTION_STATES.CONNECTING);
         return new Promise((resolve, reject) => {
             this.resolveStart = resolve;
@@ -93,10 +122,13 @@ export class LiveService extends EventTarget {
                     url.searchParams.set('key', this.options.apiKey);
                 } else {
                     url.searchParams.set('voice', this.options.voice);
+                    url.searchParams.set('session', this.sessionId);
                 }
                 this.socket = new this.Socket(url.toString());
             } catch (error) {
                 this.active = false;
+                clearTimeout(this.recoveryTimer);
+                this.recoveryTimer = undefined;
                 this.setConnectionState(CONNECTION_STATES.DISCONNECTED);
                 this.rejectStart?.(error);
                 this.resolveStart = this.rejectStart = undefined;
@@ -123,15 +155,19 @@ export class LiveService extends EventTarget {
             this.cancelPending = () => settle(new Error('연결이 취소되었습니다.'));
             const current = () => !closed && this.active && generation === this.generation && socket === this.socket;
             const disconnect = reason => {
+                if (!current()) return;
                 try { socket.close(4001, reason); }
+                catch { }
                 finally { socket.onclose({ code: 4001 }); }
             };
+            this.disconnectSocket = disconnect;
             socket.onopen = () => {
                 if (!current()) return;
                 if (this.options.mode === 'direct') {
                     const setup = createSetup(this.options.model, this.options.voice);
                     if (this.resumeHandle) setup.setup.sessionResumption.handle = this.resumeHandle;
-                    socket.send(JSON.stringify(setup));
+                    try { socket.send(JSON.stringify(setup)); }
+                    catch { disconnect('Setup send failed'); }
                 }
             };
             socket.onmessage = async event => {
@@ -160,6 +196,12 @@ export class LiveService extends EventTarget {
                         if (this.ready) return;
                         this.ready = true;
                         this.retries = 0;
+                        clearTimeout(this.stableTimer);
+                        this.stableTimer = setTimeout(() => {
+                            if (!current()) return;
+                            clearTimeout(this.recoveryTimer);
+                            this.recoveryTimer = undefined;
+                        }, this.options.stableConnectionTime);
                         settle();
                         this.resolveStart?.();
                         this.resolveStart = this.rejectStart = undefined;
@@ -184,10 +226,10 @@ export class LiveService extends EventTarget {
                         if (part.inlineData?.mimeType?.startsWith('audio/pcm')) this.emit('audio', part.inlineData);
                     }
                     if (content?.turnComplete) this.emit('turnComplete');
-                    if (message.sessionResumptionUpdate?.resumable) this.resumeHandle = message.sessionResumptionUpdate.newHandle;
+                    if (message.sessionResumptionUpdate) this.resumeHandle = message.sessionResumptionUpdate.resumable ? message.sessionResumptionUpdate.newHandle : undefined;
                     if (message.goAway) {
                         this.reconnectRequested = true;
-                        socket.close(1000, 'Session renewal');
+                        disconnect('Session renewal');
                     }
                 } catch (error) {
                     fatal = true;
@@ -208,6 +250,8 @@ export class LiveService extends EventTarget {
                 closed = true;
                 this.ready = false;
                 this.clearHeartbeat();
+                clearTimeout(this.stableTimer);
+                this.armRecoveryDeadline();
                 settle(connectionError || new Error('음성 연결이 끊어졌습니다.'));
                 this.reconnectRequested = false;
                 if (!fatal && event.code !== 1008 && this.retries < this.options.maxRetries) {
@@ -216,10 +260,15 @@ export class LiveService extends EventTarget {
                     this.emit('state', 'reconnecting');
                     this.retryTimer = setTimeout(() => {
                         this.retryTimer = undefined;
-                        if (this.active && generation === this.generation) this.open(generation).catch(() => { });
+                        if (this.active && generation === this.generation) {
+                            this.setConnectionState(CONNECTION_STATES.RECONNECTING, { delay: 0 });
+                            this.open(generation).catch(() => { });
+                        }
                     }, delay);
                 } else {
                     this.active = false;
+                    clearTimeout(this.recoveryTimer);
+                    this.recoveryTimer = undefined;
                     const error = connectionError || new Error('연결이 종료되었습니다. 다시 시작해주세요.');
                     this.rejectStart?.(error);
                     this.resolveStart = this.rejectStart = undefined;
@@ -234,30 +283,28 @@ export class LiveService extends EventTarget {
     sendAudio(data) {
         if (!this.ready || this.socket?.readyState !== this.Socket.OPEN) return false;
         if (this.socket.bufferedAmount > 256 * 1024) {
-            this.socket.close(4001, 'Audio backpressure');
+            this.disconnectSocket?.('Audio backpressure');
             return false;
         }
         const audio = { mimeType: 'audio/pcm;rate=16000', data };
         const message = this.options.protocol === 'media_chunks'
             ? { realtime_input: { media_chunks: [{ mime_type: audio.mimeType, data }] } }
             : { realtimeInput: { audio } };
-        this.socket.send(JSON.stringify(message));
-        return true;
+        return this.sendMessage(message);
     }
 
     endAudio() {
-        if (this.ready) this.socket.send(JSON.stringify({ realtimeInput: { audioStreamEnd: true } }));
+        return this.sendMessage({ realtimeInput: { audioStreamEnd: true } });
     }
 
     requestGreeting() {
         if (!this.ready || this.socket?.readyState !== this.Socket.OPEN) return false;
-        this.socket.send(JSON.stringify({
+        return this.sendMessage({
             clientContent: {
                 turns: [{ role: 'user', parts: [{ text: 'Please greet me warmly in one short English sentence, then wait for me to speak.' }] }],
                 turnComplete: true
             }
-        }));
-        return true;
+        });
     }
 
     stop() {
@@ -265,6 +312,10 @@ export class LiveService extends EventTarget {
         this.generation++;
         clearTimeout(this.retryTimer);
         this.retryTimer = undefined;
+        clearTimeout(this.recoveryTimer);
+        clearTimeout(this.stableTimer);
+        this.recoveryTimer = this.stableTimer = undefined;
+        this.disconnectSocket = undefined;
         this.clearHeartbeat();
         this.cancelPending?.();
         this.cancelPending = undefined;
@@ -274,7 +325,9 @@ export class LiveService extends EventTarget {
         this.reconnectRequested = false;
         const socket = this.socket;
         this.socket = undefined;
-        if (socket && socket.readyState < 2) socket.close(1000, 'User ended call');
+        if (socket && socket.readyState < 2) {
+            try { socket.close(1000, 'User ended call'); } catch { }
+        }
         if (this.connectionState !== CONNECTION_STATES.DISCONNECTED) {
             this.setConnectionState(CONNECTION_STATES.DISCONNECTED);
             this.emit('state', 'closed');

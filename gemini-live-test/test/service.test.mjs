@@ -11,6 +11,58 @@ class MockSocket {
     close(code = 1000) { this.readyState = 3; this.onclose?.({ code }); }
 }
 
+test('recovery deadline exits repeated setup stalls and cancels every timer', async context => {
+    context.mock.timers.enable({ apis: ['setTimeout', 'setInterval'] });
+    const service = new LiveService({ endpoint: 'wss://example.test/ws', recoveryTimeout: 1000, timeout: 100, retryDelay: 10, maxRetries: 100, WebSocketClass: MockSocket });
+    const failures = [];
+    service.addEventListener('error', event => failures.push(event.detail));
+    const rejected = assert.rejects(service.start());
+    context.mock.timers.tick(1000);
+    await rejected;
+    assert.equal(service.connectionState, 'DISCONNECTED');
+    assert.equal(service.active, false);
+    assert.equal(service.retryTimer, undefined);
+    assert.equal(service.recoveryTimer, undefined);
+    assert.match(failures.at(-1).message, /복구하지 못/);
+    const count = MockSocket.instances.length;
+    context.mock.timers.tick(60000);
+    assert.equal(MockSocket.instances.length, count);
+});
+
+test('manual retry keeps session identity and a throwing send enters recovery', async context => {
+    context.mock.timers.enable({ apis: ['setTimeout', 'setInterval'] });
+    const service = new LiveService({ endpoint: 'wss://example.test/ws', WebSocketClass: MockSocket });
+    context.after(() => service.stop());
+    const started = service.start();
+    await service.socket.message({ setupComplete: {} });
+    await started;
+    const sessionId = new URL(service.socket.url).searchParams.get('session');
+    service.socket.send = () => { throw new Error('Transport lost'); };
+    assert.equal(service.sendAudio('AAA='), false);
+    assert.equal(service.connectionState, 'RECONNECTING');
+    assert.equal(service.retryNow(), true);
+    assert.equal(service.retryNow(), false);
+    assert.equal(new URL(service.socket.url).searchParams.get('session'), sessionId);
+    await service.socket.message({ setupComplete: {} });
+    assert.equal(service.sendAudio('AAA='), true);
+    assert.equal(service.connectionState, 'CONNECTED');
+});
+
+test('a stable connection clears the recovery deadline and future outages get a fresh deadline', async context => {
+    context.mock.timers.enable({ apis: ['setTimeout', 'setInterval'] });
+    const service = new LiveService({ endpoint: 'wss://example.test/ws', recoveryTimeout: 1000, stableConnectionTime: 100, WebSocketClass: MockSocket });
+    context.after(() => service.stop());
+    const started = service.start();
+    await service.socket.message({ setupComplete: {} });
+    await started;
+    context.mock.timers.tick(100);
+    assert.equal(service.recoveryTimer, undefined);
+    service.socket.close(1006);
+    assert.ok(service.recoveryTimer);
+    context.mock.timers.tick(1000);
+    assert.equal(service.connectionState, 'DISCONNECTED');
+});
+
 test('setup includes tutor voice and protocol waits for setupComplete', async () => {
     const setup = createSetup();
     assert.deepEqual(setup.setup.generationConfig.thinkingConfig, { thinkingBudget: 0 });
@@ -118,8 +170,8 @@ test('retryable upstream error and backpressure use browser-safe close codes', a
 test('URL configuration is explicit, environment-aware and secure on HTTPS', () => {
     const page = { hostname: 'www.daynize.co.kr', host: 'www.daynize.co.kr', protocol: 'https:' };
     assert.equal(resolveWebSocketUrl({ env: {}, config: {}, page: null }), 'ws://localhost:8080/ws/gemini-live');
-    assert.equal(resolveWebSocketUrl({ env: { NODE_ENV: 'production' }, config: {}, page: null }), 'wss://api.daynize.co.kr/ws/gemini-live');
-    assert.equal(resolveWebSocketUrl({ env: {}, config: {}, page }), 'wss://api.daynize.co.kr/ws/gemini-live');
+    assert.equal(resolveWebSocketUrl({ env: { NODE_ENV: 'production' }, config: {}, page: null }), 'wss://daynize-relay-api.fly.dev/ws/gemini-live');
+    assert.equal(resolveWebSocketUrl({ env: {}, config: {}, page }), 'wss://daynize-relay-api.fly.dev/ws/gemini-live');
     assert.equal(resolveWebSocketUrl({ env: { NEXT_PUBLIC_WS_URL: 'wss://relay.example/ws' }, config: {}, page }), 'wss://relay.example/ws');
     assert.equal(resolveWebSocketUrl({ endpoint: 'wss://override.example/ws', env: { WS_URL: 'wss://env.example/ws' }, page }), 'wss://override.example/ws');
     assert.equal(resolveWebSocketUrl({ config: { wsUrl: 'wss://runtime.example/ws' }, page }), 'wss://runtime.example/ws');

@@ -1,0 +1,152 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Verify voice reconnection",
+			"type": "shell",
+			"command": "node --test gemini-live-test/test/service.test.mjs",
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify voice service and relay",
+			"type": "shell",
+			"command": "node --test gemini-live-test/test/service.test.mjs gemini-live-test/test/relay.test.js",
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify reconnection regressions",
+			"type": "shell",
+			"command": "node --test gemini-live-test/test/service.test.mjs gemini-live-test/test/relay.test.js && npm --prefix gemini-live-test run test:browser -- browser-tests/safety.spec.mjs",
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify complete voice regression",
+			"type": "shell",
+			"command": "npm --prefix gemini-live-test run check && npm --prefix gemini-live-test test && npm --prefix gemini-live-test run test:browser",
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify upstream heartbeat",
+			"type": "shell",
+			"command": "node --test gemini-live-test/test/relay.test.js",
+			"problemMatcher": []
+		},
+		{
+			"label": "Final voice and pop verification",
+			"type": "shell",
+			"command": "npm --prefix gemini-live-test run check && npm --prefix gemini-live-test test && npm --prefix gemini-live-test run test:browser && node --test tests/pop-culture.test.mjs",
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect existing relay deployment",
+			"type": "shell",
+			"command": "node -e 'const fs=require(\"node:fs\"); const dotenv=require(\"./gemini-live-test/node_modules/dotenv\"); const env=dotenv.parse(fs.readFileSync(\"gemini-live-test/.env\")); for(const [key,value] of Object.entries(env)) { if(/KEY|TOKEN|SECRET|PASSWORD|CREDENTIAL/i.test(key)) console.log(key+\": \"+(value?\"configured\":\"empty\")); else if(/ORIGIN|WS_URL|HOST|PORT|TUNNEL/.test(key)) console.log(key+\": \"+value); else console.log(key+\": present\"); }' && command -v cloudflared; lsof -nP -iTCP:8080 -sTCP:LISTEN",
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify minimal relay launch commands",
+			"type": "shell",
+			"command": "node --check gemini-live-test/scripts/start-tunnel.mjs && npm --prefix gemini-live-test run start:tunnel",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run production-origin Node relay",
+			"type": "shell",
+			"command": "npm --prefix gemini-live-test run start:relay",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Probe running relay setup and heartbeat",
+			"type": "shell",
+			"command": "node -e 'const {WebSocket}=require(\"./gemini-live-test/node_modules/ws\"); const socket=new WebSocket(\"ws://127.0.0.1:8080/ws/gemini-live\",{origin:\"https://www.daynize.co.kr\",headers:{host:\"api.daynize.co.kr\"}}); const timer=setTimeout(()=>{console.error(\"Relay setup timeout\");socket.terminate();process.exitCode=1;},25000); socket.on(\"message\",data=>{const message=JSON.parse(data.toString()); if(message.error){console.error(\"Relay setup rejected: \"+message.error.message);socket.close();process.exitCode=1;} if(message.setupComplete){console.log(\"Gemini setupComplete received; production Host/Origin accepted\");socket.send(JSON.stringify({type:\"ping\",id:1}));} if(message.type===\"pong\"){console.log(\"Relay heartbeat pong received\");socket.close(1000,\"User ended call\");}});socket.on(\"error\",()=>{console.error(\"Relay connection failed\");process.exitCode=1;});socket.on(\"close\",()=>clearTimeout(timer));'",
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify launch configuration and public DNS",
+			"type": "shell",
+			"command": "node --check gemini-live-test/scripts/start-tunnel.mjs && node -e 'const p=require(\"./gemini-live-test/package.json\"); if(!p.scripts[\"start:relay\"]||!p.scripts[\"start:tunnel\"])process.exit(1); require(\"node:dns\").promises.lookup(\"api.daynize.co.kr\").then(result=>console.log(\"API DNS resolved: \"+result.address)).catch(error=>console.log(\"API DNS: \"+error.code));'",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run existing authenticated Cloudflare Tunnel",
+			"type": "shell",
+			"command": "npm --prefix gemini-live-test run start:tunnel",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Tunnel token configuration safely",
+			"type": "shell",
+			"command": "node --input-type=module -e 'import fs from \"node:fs\"; import dotenv from \"./gemini-live-test/node_modules/dotenv/lib/main.js\"; const env=dotenv.parse(fs.readFileSync(\"gemini-live-test/.env\")); const fileToken=env.TUNNEL_TOKEN||env.CLOUDFLARE_TUNNEL_TOKEN; const inherited=process.env.TUNNEL_TOKEN||process.env.CLOUDFLARE_TUNNEL_TOKEN; const effective=inherited||fileToken; let format=\"not-a-tunnel-run-token\"; try {const parsed=JSON.parse(Buffer.from(effective||\"\",\"base64\").toString(\"utf8\")); if(typeof parsed.a===\"string\"&&typeof parsed.t===\"string\"&&typeof parsed.s===\"string\")format=\"tunnel-run-token-shape\";}catch{} console.log(JSON.stringify({fileConfigured:Boolean(fileToken),inheritedConfigured:Boolean(inherited),source:inherited?\"inherited-environment\":\"private-env-file\",inheritedDiffers:Boolean(inherited&&fileToken&&inherited!==fileToken),outerWhitespace:Boolean(effective&&effective!==effective.trim()),format}));'",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run updated authenticated Cloudflare Tunnel",
+			"type": "shell",
+			"command": "npm --prefix gemini-live-test run start:tunnel",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check authenticated Tunnel public route",
+			"type": "shell",
+			"command": "node --input-type=module -e 'import {lookup} from \"node:dns/promises\"; for(const host of [\"api.daynize.co.kr\"]){try{const result=await lookup(host);console.log(JSON.stringify({host,address:result.address}));}catch(error){console.log(JSON.stringify({host,error:error.code}));}} for(const url of [\"http://127.0.0.1:8080/runtime-config.json\",\"https://api.daynize.co.kr/runtime-config.json\"]){try{const response=await fetch(url,{signal:AbortSignal.timeout(10000)});console.log(JSON.stringify({url,status:response.status,contentType:response.headers.get(\"content-type\")}));}catch(error){console.log(JSON.stringify({url,error:error.cause?.code||error.name}));}}'",
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify real Gemini automatic reconnect",
+			"type": "shell",
+			"command": "node --input-type=module -e 'import assert from \"node:assert/strict\"; import {WebSocket} from \"./gemini-live-test/node_modules/ws/wrapper.mjs\"; import {LiveService} from \"./gemini-live-test/live-service.mjs\"; class Socket {static OPEN=1; constructor(url){this.raw=new WebSocket(url,{origin:\"https://www.daynize.co.kr\",headers:{host:\"api.daynize.co.kr\"}});this.raw.on(\"open\",()=>this.onopen?.());this.raw.on(\"message\",data=>this.onmessage?.({data:data.toString()}));this.raw.on(\"error\",()=>this.onerror?.());this.raw.on(\"close\",code=>this.onclose?.({code}));}get readyState(){return this.raw.readyState;}get bufferedAmount(){return this.raw.bufferedAmount;}send(value){this.raw.send(value);}close(code,reason){this.raw.close(code,reason);}} const service=new LiveService({endpoint:\"ws://127.0.0.1:8080/ws/gemini-live\",WebSocketClass:Socket,retryDelay:1000,timeout:15000});let connections=0;let session;let first;const deadline=setTimeout(()=>{console.error(\"Real reconnect probe timeout\");service.stop();process.exitCode=1;},25000);service.addEventListener(\"error\",event=>{console.error(event.detail.message);clearTimeout(deadline);service.stop();process.exitCode=1;});service.addEventListener(\"connectionstate\",event=>{console.log(JSON.stringify(event.detail));if(event.detail.state!==\"CONNECTED\")return;connections++;if(connections===1){session=service.sessionId;first=service.socket;setTimeout(()=>first.raw.terminate(),1000);}else{assert.equal(service.sessionId,session);assert.notEqual(service.socket,first);assert.equal(service.sendAudio(\"AAA=\"),true);console.log(\"PASS: real Gemini setup restored after forced disconnect, same session ID, audio send enabled\");clearTimeout(deadline);service.stop();}});await service.start().catch(()=>{});'",
+			"problemMatcher": []
+		},
+		{
+			"label": "Check new public API DNS and route",
+			"type": "shell",
+			"command": "node --input-type=module -e 'try{const response=await fetch(\"https://api.daynize.co.kr/runtime-config.json\",{signal:AbortSignal.timeout(10000)});console.log(JSON.stringify({status:response.status,contentType:response.headers.get(\"content-type\")}));}catch(error){console.log(JSON.stringify({error:error.cause?.code||error.name}));}'",
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify configured public Tunnel endpoint",
+			"type": "shell",
+			"command": "node --input-type=module -e 'import {resolveNs} from \"node:dns/promises\";console.log(JSON.stringify({nameservers:await resolveNs(\"daynize.co.kr\")}));try{const response=await fetch(\"https://api.daynize.co.kr/runtime-config.json\",{signal:AbortSignal.timeout(12000)});console.log(JSON.stringify({status:response.status,contentType:response.headers.get(\"content-type\"),config:response.ok?await response.json():null}));}catch(error){console.log(JSON.stringify({error:error.cause?.code||error.name}));}'",
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify public Gemini Tunnel reconnect",
+			"type": "shell",
+			"command": "node --input-type=module -e 'import assert from \"node:assert/strict\";import https from \"node:https\";import {WebSocket} from \"./gemini-live-test/node_modules/ws/wrapper.mjs\";import {LiveService} from \"./gemini-live-test/live-service.mjs\";const dns=await (await fetch(\"https://cloudflare-dns.com/dns-query?name=api.daynize.co.kr&type=A\",{headers:{accept:\"application/dns-json\"}})).json();const address=dns.Answer?.find(item=>item.type===1)?.data;assert.ok(address);const lookup=(host,options,callback)=>callback(null,options.all?[{address,family:4}]:address,4);await new Promise((resolve,reject)=>{https.get(\"https://api.daynize.co.kr/runtime-config.json\",{lookup},response=>{console.log(\"Public HTTPS status: \"+response.statusCode);response.resume();response.on(\"end\",resolve);}).on(\"error\",reject);});class Socket{static OPEN=1;constructor(url){this.raw=new WebSocket(url,{lookup,origin:\"https://www.daynize.co.kr\"});this.raw.on(\"open\",()=>this.onopen?.());this.raw.on(\"message\",data=>this.onmessage?.({data:data.toString()}));this.raw.on(\"error\",()=>this.onerror?.());this.raw.on(\"close\",code=>this.onclose?.({code}));}get readyState(){return this.raw.readyState;}get bufferedAmount(){return this.raw.bufferedAmount;}send(data){this.raw.send(data);}close(code,reason){this.raw.close(code,reason);}}const service=new LiveService({endpoint:\"wss://api.daynize.co.kr/ws/gemini-live\",WebSocketClass:Socket,timeout:15000});let ready=0;let session;const deadline=setTimeout(()=>{console.error(\"Public reconnect probe timed out\");service.stop();process.exitCode=1;},35000);service.addEventListener(\"error\",event=>{console.error(event.detail.message);clearTimeout(deadline);service.stop();process.exitCode=1;});service.addEventListener(\"connectionstate\",event=>{console.log(JSON.stringify(event.detail));if(event.detail.state!==\"CONNECTED\")return;if(++ready===1){session=service.sessionId;setTimeout(()=>service.socket.raw.terminate(),1000);}else{assert.equal(service.sessionId,session);assert.equal(service.sendAudio(\"AAA=\"),true);console.log(\"PASS: public WSS Gemini auto-reconnect, same session, audio send enabled\");clearTimeout(deadline);service.stop();}});await service.start().catch(()=>{});'",
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect macOS relay autostart prerequisites",
+			"type": "shell",
+			"command": "node -e 'console.log(JSON.stringify({node:process.execPath,uid:process.getuid(),home:require(\"node:os\").homedir()}))' && lsof -nP -iTCP:8080 -sTCP:LISTEN && ps -axo pid,ppid,comm | grep -E 'cloudflared|node' && ls -ld \"$HOME/Library/LaunchAgents\"",
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate macOS LaunchAgents",
+			"type": "shell",
+			"command": "node --check gemini-live-test/scripts/autostart.mjs && node gemini-live-test/scripts/autostart.mjs prepare",
+			"problemMatcher": []
+		},
+		{
+			"label": "Switch relay and Tunnel to launchd",
+			"type": "shell",
+			"command": "node -e 'const {execFileSync}=require(\"node:child_process\");for(const [pid,script]of [[99872,\"server.js\"],[1204,\"scripts/start-tunnel.mjs\"]]){let command;try{command=execFileSync(\"/bin/ps\",[\"-p\",String(pid),\"-o\",\"command=\"],{encoding:\"utf8\"});}catch{continue;}if(!command.includes(script))throw new Error(\"PID ownership check failed for \"+pid);process.kill(pid,\"SIGTERM\");console.log(\"Stopped verified manual process \"+pid);}' && npm --prefix gemini-live-test run autostart:install && npm --prefix gemini-live-test run autostart:status",
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify launchd restart and public session recovery",
+			"type": "shell",
+			"command": "node --input-type=module -e 'import assert from \"node:assert/strict\";import {execFileSync} from \"node:child_process\";import {WebSocket} from \"./gemini-live-test/node_modules/ws/wrapper.mjs\";import {LiveService} from \"./gemini-live-test/live-service.mjs\";const domain=\"gui/\"+process.getuid();const names=[\"kr.co.daynize.relay\",\"kr.co.daynize.tunnel\"];const pid=name=>execFileSync(\"/bin/launchctl\",[\"print\",domain+\"/\"+name],{encoding:\"utf8\"}).match(/^\\s*pid = (\\d+)$/m)?.[1];const original=names.map(pid);class Socket{static OPEN=1;constructor(url){this.raw=new WebSocket(url,{origin:\"https://www.daynize.co.kr\"});this.raw.on(\"open\",()=>this.onopen?.());this.raw.on(\"message\",data=>this.onmessage?.({data:data.toString()}));this.raw.on(\"error\",()=>this.onerror?.());this.raw.on(\"close\",code=>this.onclose?.({code}));}get readyState(){return this.raw.readyState;}get bufferedAmount(){return this.raw.bufferedAmount;}send(data){this.raw.send(data);}close(code,reason){this.raw.close(code,reason);}}const service=new LiveService({endpoint:\"wss://api.daynize.co.kr/ws/gemini-live\",WebSocketClass:Socket,timeout:10000,recoveryTimeout:90000});let ready=0;const deadline=setTimeout(()=>{console.error(\"Restart verification timeout\");service.stop();process.exitCode=1;},90000);service.addEventListener(\"error\",event=>{console.error(event.detail.message);clearTimeout(deadline);service.stop();process.exitCode=1;});service.addEventListener(\"connectionstate\",event=>{console.log(JSON.stringify(event.detail));if(event.detail.state!==\"CONNECTED\")return;if(++ready===1){for(const name of names)execFileSync(\"/bin/launchctl\",[\"kill\",\"SIGTERM\",domain+\"/\"+name]);console.log(\"Sent SIGTERM to both managed services\");}else{const current=names.map(pid);assert.ok(current.every((value,index)=>value&&value!==original[index]));assert.equal(service.sendAudio(\"AAA=\"),true);console.log(JSON.stringify({result:\"PASS: both services restarted and public Gemini session recovered\",oldPids:original,newPids:current}));clearTimeout(deadline);service.stop();}});await service.start().catch(()=>{});' && npm --prefix gemini-live-test run autostart:status",
+			"problemMatcher": []
+		},
+		{
+			"label": "Final autostart state verification",
+			"type": "shell",
+			"command": "node --check gemini-live-test/scripts/autostart.mjs && npm --prefix gemini-live-test run autostart:status && node --input-type=module -e 'const response=await fetch(\"https://api.daynize.co.kr/runtime-config.json\",{signal:AbortSignal.timeout(10000)});console.log(\"Public relay HTTPS: \"+response.status);if(!response.ok)process.exitCode=1;'",
+			"problemMatcher": []
+		}
+	]
+}

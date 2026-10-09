@@ -5,7 +5,7 @@ const { WebSocket, WebSocketServer } = require('ws');
 require('dotenv').config({ path: path.join(__dirname, '.env'), quiet: true });
 
 const GEMINI_ENDPOINT = 'wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent';
-const DEFAULT_MODEL = 'gemini-2.0-flash-exp';
+const DEFAULT_MODEL = 'gemini-2.5-flash-native-audio-latest';
 const MAX_BUFFER = 1024 * 1024;
 const FILES = new Map([
     ['/', ['index.html', 'text/html; charset=utf-8']],
@@ -41,6 +41,8 @@ function createRelayServer(options = {}) {
     const authorizeRequest = options.authorizeRequest;
     const maxConnections = options.maxConnections ?? 8;
     const maxSessionMs = options.maxSessionMs ?? 10 * 60 * 1000;
+    const heartbeatInterval = options.heartbeatInterval ?? 20000;
+    if (!Number.isFinite(heartbeatInterval) || heartbeatInterval <= 0) throw new Error('Invalid heartbeat interval.');
     if (!Number.isInteger(maxConnections) || maxConnections < 1 || !Number.isFinite(maxSessionMs) || maxSessionMs < 1000) {
         throw new Error('Invalid connection or session limits.');
     }
@@ -87,9 +89,15 @@ function createRelayServer(options = {}) {
         }
     });
     const clients = new WebSocketServer({ noServer: true, maxPayload: 64 * 1024 });
+    const resumableSessions = new Map();
     server.on('upgrade', (request, socket, head) => {
         const requestUrl = new URL(request.url, 'http://localhost');
         const requestedVoice = requestUrl.searchParams.get('voice') || voice;
+        const sessionId = requestUrl.searchParams.get('session');
+        if (sessionId && !/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(sessionId)) {
+            socket.end('HTTP/1.1 400 Bad Request\r\nConnection: close\r\n\r\n');
+            return;
+        }
         if (!['Kore', 'Puck'].includes(requestedVoice)) {
             socket.end('HTTP/1.1 400 Bad Request\r\nConnection: close\r\n\r\n');
             return;
@@ -115,21 +123,30 @@ function createRelayServer(options = {}) {
             socket.end('HTTP/1.1 429 Too Many Requests\r\nConnection: close\r\n\r\n');
             return;
         }
-        clients.handleUpgrade(request, socket, head, client => clients.emit('connection', client, requestedVoice));
+        clients.handleUpgrade(request, socket, head, client => clients.emit('connection', client, requestedVoice, sessionId));
     });
 
-    clients.on('connection', (client, requestedVoice) => {
+    clients.on('connection', (client, requestedVoice, sessionId) => {
+        for (const [key, session] of resumableSessions) if (session.expiresAt <= Date.now()) resumableSessions.delete(key);
+        const resumeKey = sessionId ? `${sessionId}:${requestedVoice}` : undefined;
+        const resumeHandle = resumableSessions.get(resumeKey)?.handle;
         let upstream;
         let ready = false;
         let ended = false;
         let setupTimer;
         let alive = true;
+        let upstreamAlive = true;
         const sessionTimer = setTimeout(() => fail('Your conversation time limit was reached. Start a new session.'), maxSessionMs);
         const heartbeat = setInterval(() => {
             if (!alive) return client.terminate();
             alive = false;
             if (client.readyState === WebSocket.OPEN) client.ping();
-        }, 20000);
+            if (upstream?.readyState === WebSocket.OPEN) {
+                if (!upstreamAlive) return fail('Gemini heartbeat timed out. Reconnecting.', true);
+                upstreamAlive = false;
+                upstream.ping();
+            }
+        }, heartbeatInterval);
         sessionTimer.unref();
         heartbeat.unref();
         client.on('pong', () => { alive = true; });
@@ -151,9 +168,10 @@ function createRelayServer(options = {}) {
             stopUpstream();
         };
         client.on('error', stopUpstream);
-        client.on('close', () => {
+        client.on('close', (code, reason) => {
             clearTimeout(sessionTimer);
             clearInterval(heartbeat);
+            if (code === 1000 && reason.toString() === 'User ended call') resumableSessions.delete(resumeKey);
             ended = true;
             stopUpstream();
         });
@@ -165,12 +183,15 @@ function createRelayServer(options = {}) {
         const url = new URL(upstreamUrl);
         url.searchParams.set('key', apiKey);
         upstream = new WebSocket(url, { handshakeTimeout: 10000, maxPayload: 4 * MAX_BUFFER });
+        upstream.on('pong', () => { upstreamAlive = true; });
         setupTimer = setTimeout(() => fail('Gemini setup timed out. Check your key and model availability.', true), 15000);
         upstream.on('open', async () => {
             try {
                 const { createSetup } = await import('./live-service.mjs');
                 if (ended) return stopUpstream();
-                upstream.send(JSON.stringify(createSetup(model, requestedVoice)));
+                const setup = createSetup(model, requestedVoice);
+                if (resumeHandle) setup.setup.sessionResumption.handle = resumeHandle;
+                upstream.send(JSON.stringify(setup));
             } catch {
                 fail('Unable to initialize the voice tutor session.');
             }
@@ -180,17 +201,35 @@ function createRelayServer(options = {}) {
             let message;
             try { message = JSON.parse(data.toString()); }
             catch { return fail('Gemini returned an invalid JSON message.'); }
-            if (message.error) return fail(message.error.message || 'Gemini API error');
+            if (message.error) {
+                if (resumeHandle && !ready) {
+                    resumableSessions.delete(resumeKey);
+                    return fail('Previous session could not be resumed. Starting a fresh session.', true);
+                }
+                return fail(message.error.message || 'Gemini API error', [429, 500, 502, 503, 504].includes(Number(message.error.code)));
+            }
+            const resumption = message.sessionResumptionUpdate;
+            if (resumeKey && resumption) {
+                if (resumption.resumable && typeof resumption.newHandle === 'string' && resumption.newHandle.length <= 8192) {
+                    resumableSessions.delete(resumeKey);
+                    resumableSessions.set(resumeKey, { handle: resumption.newHandle, expiresAt: Date.now() + 120000 });
+                    while (resumableSessions.size > 100) resumableSessions.delete(resumableSessions.keys().next().value);
+                } else resumableSessions.delete(resumeKey);
+            }
             if (message.setupComplete) {
                 ready = true;
                 clearTimeout(setupTimer);
             }
-            if (client.bufferedAmount > MAX_BUFFER) return fail('Audio playback connection is too slow. Reconnect.');
+            if (client.bufferedAmount > MAX_BUFFER) return fail('Audio playback connection is too slow. Reconnect.', true);
             send(message);
         });
         upstream.on('error', () => fail('Gemini connection failed. Check the API key, network, and model availability.', true));
         upstream.on('close', (code, reason) => {
             if (ended) return;
+            if (resumeHandle && !ready) {
+                resumableSessions.delete(resumeKey);
+                return fail('Previous session could not be resumed. Starting a fresh session.', true);
+            }
             if (code !== 1000) return fail(`Gemini closed the session (${code}): ${redact(reason.toString()) || 'Check model availability and API permissions.'}`, [1001, 1006, 1011, 1012, 1013].includes(code));
             ended = true;
             clearTimeout(setupTimer);
@@ -213,7 +252,7 @@ function createRelayServer(options = {}) {
             const text = content?.turns?.[0]?.parts?.[0]?.text;
             if (content?.turnComplete === true && content.turns?.length === 1 && content.turns[0].role === 'user' &&
                 content.turns[0].parts?.length === 1 && typeof text === 'string' && text.length > 0 && text.length <= 500) {
-                if (upstream.bufferedAmount > MAX_BUFFER) return fail('Gemini connection is too slow. Reconnect.');
+                if (upstream.bufferedAmount > MAX_BUFFER) return fail('Gemini connection is too slow. Reconnect.', true);
                 upstream.send(JSON.stringify({ clientContent: { turns: [{ role: 'user', parts: [{ text }] }], turnComplete: true } }));
                 return;
             }
@@ -228,7 +267,7 @@ function createRelayServer(options = {}) {
                 send({ error: { message: 'Expected 16 kHz PCM Base64 audio or audioStreamEnd.' } });
                 return;
             }
-            if (upstream.bufferedAmount > MAX_BUFFER) return fail('Gemini connection is too slow. Reconnect.');
+            if (upstream.bufferedAmount > MAX_BUFFER) return fail('Gemini connection is too slow. Reconnect.', true);
             upstream.send(JSON.stringify({
                 realtimeInput: validAudio
                     ? { audio: { mimeType: audio.mimeType, data: audio.data } }
@@ -239,6 +278,7 @@ function createRelayServer(options = {}) {
 
     return {
         server, clients, close: async () => {
+            resumableSessions.clear();
             for (const client of clients.clients) client.terminate();
             await new Promise(resolve => clients.close(resolve));
             if (server.listening) await new Promise(resolve => server.close(resolve));
@@ -248,14 +288,16 @@ function createRelayServer(options = {}) {
 
 if (require.main === module) {
     const relay = createRelayServer();
+    const port = Number(process.env.PORT) || 8080;
+    const host = process.env.HOST || (process.env.NODE_ENV === 'production' ? '0.0.0.0' : '127.0.0.1');
     relay.server.on('error', error => {
         console.error(error.code === 'EADDRINUSE'
-            ? 'Port 8080 is in use. Stop that process before running this test server.'
+            ? `Port ${port} is in use. Stop that process before running this server.`
             : `Server failed: ${error.code || 'unknown error'}`);
         process.exitCode = 1;
     });
-    relay.server.listen(8080, '127.0.0.1', () => {
-        console.log('Gemini Live test: http://localhost:8080 (WebSocket: ws://localhost:8080)');
+    relay.server.listen(port, host, () => {
+        console.log(`Gemini Live relay listening on ${host}:${port}`);
         if (!process.env.GEMINI_API_KEY?.trim()) console.warn('Set GEMINI_API_KEY in gemini-live-test/.env before starting a conversation.');
     });
     for (const signal of ['SIGINT', 'SIGTERM']) process.once(signal, () => relay.close());

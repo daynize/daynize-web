@@ -20,9 +20,58 @@ The server listens only on the loopback interface, at port 8080. Both HTTP asset
 
 External microphone access requires HTTPS. Localhost and tunnel pages use the current page host and upgrade WebSocket to WSS automatically on HTTPS. Production pages default to `wss://api.daynize.co.kr/ws/gemini-live`, which must be separately deployed.
 
+### Existing Named Tunnel
+
+macOS login autostart is installed with two user LaunchAgents,
+`kr.co.daynize.relay` and `kr.co.daynize.tunnel`. They run independently of VS Code
+terminals, start after this user logs in, and restart after process exit.
+
+```sh
+npm --prefix gemini-live-test run autostart:status
+npm --prefix gemini-live-test run autostart:install
+npm --prefix gemini-live-test run autostart:stop
+```
+
+`install` enables/reloads both services; `stop` stops and disables both until
+reinstalled. Do not run the manual commands below while LaunchAgents are active.
+Plists are under `~/Library/LaunchAgents`, and stdout/stderr logs are under
+`~/Library/Logs/Daynize`. Tokens remain in the private `.env`, not the plists.
+Moving the project or Node executable requires reinstalling. This is login
+autostart, not a system daemon: it does not serve before login, during sleep,
+or while the Mac is powered off. Actual reboot testing is not automated;
+process termination/restart and public Gemini recovery were verified.
+
+Run the existing relay and Tunnel in separate terminals from the repository root:
+
+```sh
+npm --prefix gemini-live-test run start:relay
+npm --prefix gemini-live-test run start:tunnel
+```
+
+`start:relay` sets the public origin, permitted website origins and public WSS URL
+for `api.daynize.co.kr`, using the existing private Gemini settings. `start:tunnel`
+uses the bundled cloudflared executable and existing credentials only; it does
+not create a new tunnel, temporary hostname or DNS record. Set `TUNNEL_TOKEN`
+in the private `.env` directly, or `CLOUDFLARE_TUNNEL_CONFIG` to an existing
+locally managed Tunnel configuration file. Never commit credentials or send
+them in chat. The token is passed through the child environment, not command arguments.
+
+In the existing Cloudflare Tunnel dashboard, map public hostname
+`api.daynize.co.kr` to `http://localhost:8080`. If the connector runs on another
+machine, localhost must refer to the machine running this Node relay. Set the
+HTTP Host Header override to `api.daynize.co.kr`. The corresponding proxied DNS
+CNAME is `api` -> `<existing-tunnel-UUID>.cfargotunnel.com`, normally created by
+the dashboard. Do not put a URL, port, private IP or workers.dev hostname into
+that Tunnel CNAME. Both processes must stay running. A Pages deployment alone
+cannot run `server.js`, create this record or authenticate the connector.
+
+The frontend already defaults to `wss://api.daynize.co.kr/ws/gemini-live`, so no
+replacement URL is necessary once the existing Tunnel route is active. Verify
+DNS and Gemini setup before claiming public voice connectivity. A successful
+setup/heartbeat probe alone does not verify audible microphone conversation.
 Set `NEXT_PUBLIC_WS_URL` (or `WS_URL`) in the relay environment to override the public endpoint. The loader reads only this public setting from `/runtime-config.json`; API keys remain private. On static hosts such as GitHub Pages, configure `globalThis.DAYNIZE_CONFIG.wsUrl` before the loader or set its `data-endpoint` attribute, since Node environment variables are not available in plain browser modules. A stable domain/named tunnel is required for production: retries cannot restore an expired temporary tunnel hostname.
 
-Network failures automatically retry with delays of 1, 2, 4, 8, 16 and up to 30 seconds, at most 10 consecutive retries, resetting after successful setup. Setup has a 20-second deadline. Proxy heartbeats run every 20 seconds with a 10-second pong deadline. The UI shows reconnect progress without releasing the microphone; user stop, fatal authorization/configuration errors and the ten-minute safety limit still end the call. Proxy reconnection starts a new conversation rather than restoring history. See [INTEGRATION.md](INTEGRATION.md) for options and connection-state events.
+Network failures automatically retry with delays of 1, 2, 4, 8, 16 and up to 30 seconds, at most 10 consecutive retries, resetting after successful setup. Setup has a 20-second deadline. An overall 60-second recovery deadline prevents endless reconnect/flapping; 30 seconds of stable readiness clears it. `지금 다시 연결` skips backoff without replacing the microphone/session. After terminal failure, `다시 연결하기` restarts a call. Proxy heartbeats run every 20 seconds with a 10-second browser pong deadline, and the relay also checks native Gemini pong. User stop, fatal authorization/configuration errors and the ten-minute safety limit still end the call. Proxy reconnection restores a Gemini-provided handle when available in the same relay process (two-minute cache); unavailable/rejected handles fall back to a fresh conversation. Audio lost during an outage is not replayed. See [INTEGRATION.md](INTEGRATION.md) for options, token security and scaling limitations.
 
 Start the temporary tunnel in one terminal:
 

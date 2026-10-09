@@ -1,0 +1,11 @@
+fly.toml
+**
+!Dockerfile
+!gemini-live-test/
+!gemini-live-test/**
+gemini-live-test/.env
+gemini-live-test/.access-password
+gemini-live-test/node_modules/
+gemini-live-test/test-results/
+gemini-live-test/.tools/
+!DAYNIZE LOGO ONLY.png

@@ -83,7 +83,10 @@ export class AudioEngine extends EventTarget {
         }
     }
 
-    setStreaming(enabled) { this.streaming = enabled; }
+    setStreaming(enabled) {
+        if (this.streaming !== enabled) this.processor?.port.postMessage({ type: 'reset' });
+        this.streaming = enabled;
+    }
 
     inputVolume() {
         if (this.muted || !this.inputAnalyser || !this.inputSamples) return 0;

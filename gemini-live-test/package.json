@@ -5,6 +5,11 @@
     "description": "Standalone local Gemini Live PCM audio relay",
     "scripts": {
         "start": "node server.js",
+        "start:relay": "PUBLIC_ORIGIN=https://daynize-relay-api.fly.dev ALLOWED_ORIGINS=https://www.daynize.co.kr,https://daynize.co.kr NEXT_PUBLIC_WS_URL=wss://daynize-relay-api.fly.dev/ws/gemini-live node server.js",
+        "start:tunnel": "node scripts/start-tunnel.mjs",
+        "autostart:install": "node scripts/autostart.mjs install",
+        "autostart:status": "node scripts/autostart.mjs status",
+        "autostart:stop": "node scripts/autostart.mjs stop",
         "test": "node --test test/*.test.*",
         "test:browser": "playwright test",
         "check": "node --check server.js && node --check session-safety.mjs && node --check live-service.mjs && node --check audio-engine.mjs && node --check ambient-orb.mjs && node --check tutor-widget.mjs && node --check daynize-tutor.mjs && node --check audio.mjs && node --check pcm-worklet.mjs"

@@ -97,6 +97,51 @@ test('invalid model names and duplicate prefixes are rejected', () => {
     }
 });
 
+test('proxy reconnect restores Gemini handle for the same session and voice only', { timeout: 5000 }, async context => {
+    const upstream = new WebSocketServer({ port: 0, host: '127.0.0.1' });
+    await once(upstream, 'listening');
+    const relay = createRelayServer({ apiKey: 'test-key', upstreamUrl: `ws://127.0.0.1:${upstream.address().port}` });
+    context.after(async () => {
+        await relay.close();
+        for (const socket of upstream.clients) socket.terminate();
+        await new Promise(resolve => upstream.close(resolve));
+    });
+    relay.server.listen(0, '127.0.0.1');
+    await once(relay.server, 'listening');
+    const session = '55aeb789-d879-4355-90aa-145a2112a70a';
+    const address = `ws://127.0.0.1:${relay.server.address().port}/ws/gemini-live?session=${session}`;
+    const connect = async voice => {
+        const connection = once(upstream, 'connection');
+        const client = new WebSocket(`${address}&voice=${voice}`);
+        const [gemini] = await connection;
+        const setup = await nextMessage(gemini);
+        return { client, gemini, setup };
+    };
+    const first = await connect('Kore');
+    assert.equal(first.setup.setup.sessionResumption.handle, undefined);
+    const ready = nextMessage(first.client);
+    first.gemini.send(JSON.stringify({ setupComplete: {} }));
+    await ready;
+    const handle = nextMessage(first.client);
+    first.gemini.send(JSON.stringify({ sessionResumptionUpdate: { resumable: true, newHandle: 'cached-gemini-handle' } }));
+    await handle;
+    const closed = once(first.gemini, 'close');
+    first.client.close();
+    await closed;
+    const resumed = await connect('Kore');
+    assert.equal(resumed.setup.setup.sessionResumption.handle, 'cached-gemini-handle');
+    const discarded = nextMessage(resumed.client);
+    resumed.gemini.send(JSON.stringify({ error: { code: 400, message: 'Invalid resumption handle' } }));
+    assert.equal((await discarded).error.retryable, true);
+    await once(resumed.client, 'close');
+    const fresh = await connect('Kore');
+    assert.equal(fresh.setup.setup.sessionResumption.handle, undefined);
+    fresh.client.close();
+    const otherVoice = await connect('Puck');
+    assert.equal(otherVoice.setup.setup.sessionResumption.handle, undefined);
+    otherVoice.client.close();
+});
+
 test('runtime configuration exposes only the public WebSocket URL', async context => {
     const relay = createRelayServer({ apiKey: 'private-test-key', wsUrl: 'wss://stable.example/ws/gemini-live' });
     context.after(() => relay.close());
@@ -106,6 +151,27 @@ test('runtime configuration exposes only the public WebSocket URL', async contex
     assert.equal(response.headers.get('cache-control'), 'no-store');
     assert.deepEqual(await response.json(), { wsUrl: 'wss://stable.example/ws/gemini-live' });
     assert.throws(() => createRelayServer({ wsUrl: 'https://invalid.example' }), /WebSocket/);
+});
+
+test('missing upstream native pong terminates the stale relay with a retryable error', { timeout: 5000 }, async context => {
+    const upstream = new WebSocketServer({ port: 0, host: '127.0.0.1', autoPong: false });
+    await once(upstream, 'listening');
+    const relay = createRelayServer({ apiKey: 'test-key', heartbeatInterval: 100, upstreamUrl: `ws://127.0.0.1:${upstream.address().port}` });
+    context.after(async () => {
+        await relay.close();
+        for (const socket of upstream.clients) socket.terminate();
+        await new Promise(resolve => upstream.close(resolve));
+    });
+    relay.server.listen(0, '127.0.0.1');
+    await once(relay.server, 'listening');
+    const connected = once(upstream, 'connection');
+    const client = new WebSocket(`ws://127.0.0.1:${relay.server.address().port}`);
+    const [gemini] = await connected;
+    await nextMessage(gemini);
+    const failure = await nextMessage(client);
+    assert.equal(failure.error.retryable, true);
+    assert.match(failure.error.message, /heartbeat timed out/);
+    await once(client, 'close');
 });
 
 test('public access needs no password but validates websocket origin and protects private files', { timeout: 5000 }, async context => {

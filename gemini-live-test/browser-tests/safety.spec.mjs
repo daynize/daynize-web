@@ -1,11 +1,12 @@
 import { test, expect } from '@playwright/test';
 
-async function startSession(page) {
+async function startSession(page, config = {}) {
     await page.clock.install();
     await page.goto('/');
-    await page.evaluate(() => {
+    await page.evaluate(config => {
         window.safetyTest = { rms: 0, sockets: [] };
         const widget = document.querySelector('daynize-voice-tutor');
+        widget.config = { ...widget.config, ...config };
         widget.audio.start = async () => { };
         widget.audio.inputVolume = () => window.safetyTest.rms;
         class MockSocket {
@@ -23,7 +24,7 @@ async function startSession(page) {
             close() { this.readyState = 3; }
         }
         window.WebSocket = MockSocket;
-    });
+    }, config);
     await page.getByRole('button', { name: 'AI 음성 회화 시작하기' }).click();
     await page.waitForFunction(() => document.querySelector('daynize-voice-tutor').service?.ready);
 }
@@ -55,7 +56,7 @@ test('10-minute wall-clock limit closes minimized session despite ongoing sound'
 });
 
 test('reconnection beyond 30 seconds does not trigger silence termination', async ({ page }) => {
-    await startSession(page);
+    await startSession(page, { recoveryTimeout: 90000 });
     await page.evaluate(() => {
         const service = document.querySelector('daynize-voice-tutor').service;
         service.options.retryDelay = service.options.maxRetryDelay = 60000;
@@ -69,6 +70,35 @@ test('reconnection beyond 30 seconds does not trigger silence termination', asyn
     await page.clock.fastForward(30000);
     await expect(page.locator('.status-line')).toHaveText('듣고 있어요...');
     expect(await page.evaluate(() => window.safetyTest.sockets.length)).toBe(2);
+    await page.keyboard.press('Escape');
+});
+
+test('manual retry restores microphone controls without replacing the session', async ({ page }) => {
+    await startSession(page);
+    const sessionId = await page.evaluate(() => document.querySelector('daynize-voice-tutor').service.sessionId);
+    await page.evaluate(() => document.querySelector('daynize-voice-tutor').service.socket.onerror());
+    await expect(page.getByRole('button', { name: '마이크 끄기', exact: true })).toBeDisabled();
+    await page.getByRole('button', { name: '지금 다시 연결', exact: true }).click();
+    await expect(page.locator('.status-line')).toHaveText('듣고 있어요...');
+    await expect(page.getByRole('button', { name: '마이크 끄기', exact: true })).toBeEnabled();
+    expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').service.sessionId)).toBe(sessionId);
+    await expect(page.getByRole('button', { name: '지금 다시 연결', exact: true })).not.toBeVisible();
+    await page.keyboard.press('Escape');
+});
+
+test('recovery timeout shows enabled fallback and manual restart succeeds', async ({ page }) => {
+    await startSession(page, { recoveryTimeout: 1000 });
+    await page.evaluate(() => {
+        const service = document.querySelector('daynize-voice-tutor').service;
+        service.options.retryDelay = 5000;
+        service.socket.onerror();
+    });
+    await page.clock.fastForward(1001);
+    await expect(page.locator('.status-line')).toHaveText('연결 확인 필요');
+    await expect(page.getByRole('button', { name: '다시 연결하기', exact: true })).toBeEnabled();
+    expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').dataset.connectionState)).toBe('DISCONNECTED');
+    await page.getByRole('button', { name: '다시 연결하기', exact: true }).click();
+    await expect(page.getByRole('button', { name: '마이크 끄기', exact: true })).toBeEnabled();
     await page.keyboard.press('Escape');
 });
 
