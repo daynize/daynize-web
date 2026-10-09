@@ -509,67 +509,81 @@
                 "explanation": "한 번의 상처가 다음 마음을 조심스럽게 만드는 표현을 살펴봅니다."
             },
             {
-                "id": "culture-02",
+                "id": "pop-03",
+                "articleId": "pop-03",
                 "title": "Yesterday가 들려주는 과거 이야기",
-                "desc": "익숙한 노래 제목으로 과거 표현을 익힙니다.",
-                "duration": "9분",
+                "desc": "The Beatles - Yesterday로 익히는 시제와 회상의 뉘앙스",
+                "duration": "6분",
+                "thumbnail": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
                 "videoUrl": null,
-                "keyPhrase": "I remember yesterday.",
-                "explanation": "remember 뒤에 기억하는 일을 이어 말하는 문장 구조를 연습합니다."
+                "keyPhrase": "I listened to this song yesterday.",
+                "explanation": "과거형과 현재완료로 끝난 시점과 지금까지 이어진 경험을 구분합니다."
             },
             {
-                "id": "culture-03",
-                "title": "영화관에서 자주 듣는 한마디",
-                "desc": "영화 대화에서 쓰는 일상 표현을 배웁니다.",
-                "duration": "9분",
+                "id": "pop-04",
+                "articleId": "pop-04",
+                "title": "Dancing Queen으로 배우는 활기찬 동작 표현",
+                "desc": "ABBA - Dancing Queen 속의 현재분사와 라이프스타일",
+                "duration": "5분",
+                "thumbnail": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
                 "videoUrl": null,
-                "keyPhrase": "That sounds like a good idea.",
-                "explanation": "상대방의 제안에 동의하며 좋은 생각이라고 말하는 자연스러운 표현입니다."
+                "keyPhrase": "We are dancing together.",
+                "explanation": "현재분사의 수식 역할과 be동사 + -ing 진행형, 즐거움을 전하는 관용 표현을 배웁니다."
             },
             {
-                "id": "culture-04",
-                "title": "옛날 라디오와 신청곡 표현",
-                "desc": "음악을 신청하고 감상을 나누는 표현입니다.",
-                "duration": "8분",
+                "id": "pop-05",
+                "articleId": "pop-05",
+                "title": "Hotel California가 전하는 신비로운 서사",
+                "desc": "Eagles - Hotel California 속의 묘사와 관사 사용법",
+                "duration": "7분",
+                "thumbnail": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
                 "videoUrl": null,
-                "keyPhrase": "This song brings back memories.",
-                "explanation": "bring back memories는 추억을 떠올리게 한다는 뜻입니다."
+                "keyPhrase": "We found a hotel. The hotel was peaceful.",
+                "explanation": "형용사로 풍경을 묘사하고 a와 the로 처음 소개한 대상과 특정 대상을 구분합니다."
             },
             {
-                "id": "culture-05",
-                "title": "공연장에서 박수와 감탄 전하기",
-                "desc": "공연을 보고 느낀 감동을 표현합니다.",
-                "duration": "8분",
+                "id": "pop-06",
+                "articleId": "pop-06",
+                "title": "Bridge Over Troubled Water의 따뜻한 위로",
+                "desc": "Simon & Garfunkel이 건네는 전치사의 힘",
+                "duration": "6분",
+                "thumbnail": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80",
                 "videoUrl": null,
-                "keyPhrase": "What a wonderful performance!",
-                "explanation": "What a...! 형태로 공연이 정말 훌륭했다는 감탄을 나타냅니다."
+                "keyPhrase": "You are like family to me.",
+                "explanation": "over의 위치와 이동, like의 비유를 통해 동행과 위로의 말을 익힙니다."
             },
             {
-                "id": "culture-06",
-                "title": "흑백 영화 속 정중한 말투",
-                "desc": "옛 영화 장면으로 공손한 부탁을 익힙니다.",
-                "duration": "10분",
+                "id": "pop-07",
+                "articleId": "pop-07",
+                "title": "Let It Be가 말해주는 마음의 평화",
+                "desc": "The Beatles - Let It Be 속 사역동사 let과 순응의 영어",
+                "duration": "5분",
+                "thumbnail": "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=80",
                 "videoUrl": null,
-                "keyPhrase": "Would you care to join us?",
-                "explanation": "함께하겠느냐고 격식 있고 정중하게 권하는 표현입니다."
+                "keyPhrase": "Let me help you.",
+                "explanation": "let + 목적어 + 동사원형으로 허락과 제안을 표현하고 Let's의 쓰임을 구분합니다."
             },
             {
-                "id": "culture-07",
-                "title": "뮤지컬에서 배우는 감정 표현",
-                "desc": "기쁨과 놀라움을 담은 감탄 표현입니다.",
-                "duration": "9분",
+                "id": "pop-08",
+                "articleId": "pop-08",
+                "title": "Top of the World로 느끼는 최고의 행복",
+                "desc": "Carpenters - Top of the World 속의 최상급과 비교 표현",
+                "duration": "5분",
+                "thumbnail": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
                 "videoUrl": null,
-                "keyPhrase": "I am so glad to be here.",
-                "explanation": "glad to 뒤에 반가운 이유나 상황을 연결할 수 있습니다."
+                "keyPhrase": "This is the happiest day of the year.",
+                "explanation": "happier와 happiest, on top of the world의 관용적인 행복 표현을 배웁니다."
             },
             {
-                "id": "culture-08",
-                "title": "세대가 함께 나누는 음악 취향",
-                "desc": "좋아하는 가수와 음악을 소개합니다.",
-                "duration": "8분",
+                "id": "pop-09",
+                "articleId": "pop-09",
+                "title": "Take Me Home, Country Roads와 고향의 정취",
+                "desc": "John Denver - Country Roads 속의 명령문과 관계사 표현",
+                "duration": "6분",
+                "thumbnail": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
                 "videoUrl": null,
-                "keyPhrase": "I grew up listening to this music.",
-                "explanation": "grow up listening to로 자라면서 즐겨 들은 음악을 설명합니다."
+                "keyPhrase": "This is the town where I grew up.",
+                "explanation": "take me home과 take me to의 방향 표현, 장소를 설명하는 관계부사 where를 익힙니다."
             },
             {
                 "id": "culture-09",

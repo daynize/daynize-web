@@ -467,7 +467,7 @@
     align-items: center;
     gap: 16px;
     margin: 0 auto 26px;
-    padding: 16px 18px 36px;
+    padding: 16px 18px;
     border: 1px solid rgba(255, 255, 255, .9);
     border-radius: 8px;
     background: rgba(255, 255, 255, .68);
@@ -544,11 +544,8 @@
 }
 
 .pop-holiday-progress {
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
-    left: 115px;
     display: flex;
+    grid-column: 1 / -1;
     align-items: center;
     gap: 12px;
 }
@@ -568,11 +565,99 @@
 }
 
 .pop-holiday-status {
-    position: absolute;
-    right: 20px;
-    bottom: -26px;
+    grid-column: 1 / -1;
     color: #8b493f;
     font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.pop-holiday-status:empty {
+    display: none;
+}
+
+.pop-episode-cover {
+    margin: 0 0 28px;
+}
+
+.pop-episode-cover img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.pop-episode-cover[hidden],
+.pop-episode-practice[hidden],
+#pop-episode-quiz-audio[hidden] {
+    display: none;
+}
+
+.pop-episode-practice {
+    margin-top: 30px;
+}
+
+.pop-episode-practice h3 {
+    color: var(--article-ink);
+    font-size: 23px;
+    line-height: 1.5;
+}
+
+.pop-episode-sentence {
+    padding: 22px 0;
+    border-top: 1px solid #ccd7ce;
+}
+
+.pop-episode-sentence p {
+    margin: 0 0 10px;
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.pop-episode-sentence .pop-episode-sentence-en {
+    color: var(--article-green);
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.pop-episode-sentence .pop-episode-tip {
+    color: var(--article-muted);
+    font-size: 16px;
+}
+
+.pop-card-audio,
+.pop-episode-sentence audio,
+#pop-episode-quiz-audio {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 54px;
+}
+
+.grid-lesson-copy .pop-card-audio-label,
+.grid-lesson-copy .pop-card-audio-status,
+.pop-card-audio-status {
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.pop-card-audio-status:empty {
+    display: none;
+}
+
+.pop-holiday-track-copy strong {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.pop-holiday-progress span {
+    max-width: 48%;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 .pop-holiday-player.is-fallback .pop-holiday-progress {
@@ -891,7 +976,7 @@
         grid-template-columns: 62px minmax(0, 1fr) 46px;
         gap: 10px;
         margin-bottom: 22px;
-        padding: 12px 12px 34px;
+        padding: 12px;
     }
 
     .pop-holiday-player>img {
@@ -914,11 +999,6 @@
     .pop-holiday-play {
         width: 44px;
         height: 44px;
-    }
-
-    .pop-holiday-progress {
-        right: 14px;
-        left: 84px;
     }
 
     .pop-holiday-focus {

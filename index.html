@@ -1945,6 +1945,9 @@
                             <p class="pop-article-subtitle" id="pop-article-subtitle"></p>
                             <p class="pop-article-readtime" id="pop-article-readtime"></p>
                         </header>
+                        <figure class="pop-episode-cover" id="pop-episode-cover" hidden>
+                            <img id="pop-episode-image" alt="" loading="lazy">
+                        </figure>
                         <div class="pop-article-holiday" id="pop-article-holiday" hidden>
                             <section class="pop-holiday-introduction" aria-label="서론">
                                 <p class="pop-article-section-label">DECEMBER LISTENING NOTES</p>
@@ -1980,6 +1983,12 @@
                                 </figcaption>
                             </figure>
                             <div class="pop-holiday-sections" id="pop-holiday-sections"></div>
+                            <section class="pop-episode-practice" id="pop-episode-practice" hidden
+                                aria-labelledby="pop-episode-practice-title">
+                                <p class="pop-article-section-label">EVERYDAY ENGLISH</p>
+                                <h3 id="pop-episode-practice-title">오늘의 마음을 담은 세 문장</h3>
+                                <div id="pop-episode-sentences"></div>
+                            </section>
                         </div>
                         <section class="pop-article-story" aria-label="이야기">
                             <figure class="pop-article-cover">
@@ -2001,6 +2010,10 @@
                         <section class="pop-article-quiz" aria-labelledby="pop-article-quiz-title">
                             <p class="pop-article-section-label">YOUR TURN</p>
                             <h3 id="pop-article-quiz-title">한 문장, 직접 골라 볼까요?</h3>
+                            <p id="pop-episode-quiz-prompt" hidden></p>
+                            <audio id="pop-episode-quiz-audio" controls preload="none" hidden
+                                aria-label="영어 듣기 퀴즈 문장"></audio>
+                            <p id="pop-episode-quiz-status" role="status" hidden></p>
                             <p id="pop-article-quiz-question"></p>
                             <button class="pop-article-answer-toggle" id="pop-article-answer-toggle" type="button"
                                 aria-expanded="false" aria-controls="pop-article-answer">정답 확인하기</button>
@@ -2451,6 +2464,7 @@
                 });
             };
             const renderLessons = (category) => {
+                pausePopAudio();
                 lessonGrid.replaceChildren();
                 category.lessons.forEach((lesson, index) => {
                     const card = makeElement('article', 'grid-lesson');
@@ -2474,6 +2488,18 @@
                     if (article) watch.dataset.articleId = article.id;
                     watch.append(document.createTextNode(article ? '읽어 보기 ' : '시청하기 '), makeElement('span', '', '→'));
                     copy.append(meta, watch);
+                    if (article?.audio) {
+                        const previewLabel = makeElement('p', 'pop-card-audio-label', article.audio.label || '공식 미리듣기');
+                        const preview = makeElement('audio', 'pop-card-audio');
+                        preview.controls = true;
+                        preview.preload = 'none';
+                        preview.src = article.audio.previewUrl;
+                        preview.setAttribute('aria-label', `${article.audio.title} · ${previewLabel.textContent}`);
+                        const previewStatus = makeElement('p', 'pop-card-audio-status');
+                        previewStatus.setAttribute('role', 'status');
+                        preview.addEventListener('error', () => { previewStatus.textContent = '샘플을 불러오지 못했어요. 읽어 보기에서 음원 서비스 링크를 이용해 주세요.'; });
+                        copy.append(previewLabel, preview, previewStatus);
+                    }
                     card.append(image, copy);
                     lessonGrid.append(card);
                 });
@@ -2487,6 +2513,7 @@
                 container.append(document.createTextNode(text.slice(start + highlight.length)));
             };
             const openArticle = (article) => {
+                pausePopAudio();
                 selectedArticle = article;
                 articleOpenedFromCategory = categoryDialog.open;
                 if (articleOpenedFromCategory) categoryDialog.close();
@@ -2496,8 +2523,8 @@
                 document.querySelector('.pop-article-story').hidden = isHolidayEssay;
                 document.querySelector('.pop-article-lyrics').hidden = isHolidayEssay;
                 document.querySelector('.pop-article-explanation').hidden = isHolidayEssay;
-                document.querySelector('.pop-article-quiz').hidden = isHolidayEssay;
-                document.querySelector('.pop-article-kicker').textContent = isHolidayEssay ? 'POP & CULTURE · WINTER ESSAY' : 'POP & CULTURE · ENGLISH JOURNAL';
+                document.querySelector('.pop-article-quiz').hidden = isHolidayEssay && !article.quizSection;
+                document.querySelector('.pop-article-kicker').textContent = isHolidayEssay ? (article.practice ? 'POP & CULTURE · LISTENING ESSAY' : 'POP & CULTURE · WINTER ESSAY') : 'POP & CULTURE · ENGLISH JOURNAL';
                 document.querySelector('#pop-article-tag').textContent = `${article.episode}  |  ${article.category}`;
                 document.querySelector('#pop-article-title').textContent = article.title;
                 document.querySelector('#pop-article-subtitle').textContent = article.subtitle;
@@ -2507,6 +2534,7 @@
                 cover.alt = `${article.title}의 음악과 시대를 떠올리게 하는 이미지`;
                 cover.onerror = () => { cover.onerror = null; cover.src = selectedCategory?.thumbnail || defaultThumbnail; };
                 if (isHolidayEssay) renderHolidayEssay(article);
+                if (isHolidayEssay && article.quizSection) renderArticleQuiz(article);
                 const story = document.querySelector('#pop-article-story');
                 if (!isHolidayEssay) {
                     story.replaceChildren(...article.story.map((paragraph) => makeElement('p', '', paragraph)));
@@ -2524,13 +2552,7 @@
                     document.querySelector('#pop-article-explanation-title').textContent = article.explanationSection.title;
                     const explanation = document.querySelector('#pop-article-explanation-copy');
                     explanation.replaceChildren(...article.explanationSection.content.split(/\n\s*\n/).map((paragraph) => makeElement('p', '', paragraph)));
-                    document.querySelector('#pop-article-quiz-question').textContent = article.quizSection.question;
-                    document.querySelector('.pop-article-answer-text').textContent = article.quizSection.answer;
-                    document.querySelector('.pop-article-answer-explanation').textContent = article.quizSection.explanation;
-                    const answerToggle = document.querySelector('#pop-article-answer-toggle');
-                    answerToggle.setAttribute('aria-expanded', 'false');
-                    answerToggle.textContent = '정답 확인하기';
-                    document.querySelector('#pop-article-answer').hidden = true;
+                    renderArticleQuiz(article);
                 }
                 const completeButton = articleDialog.querySelector('[data-article-complete]');
                 const isComplete = readCompletedArticles().includes(article.id);
@@ -2543,8 +2565,18 @@
             };
             const renderHolidayEssay = (article) => {
                 document.querySelector('#pop-holiday-introduction').textContent = article.introduction;
+                document.querySelector('.pop-holiday-introduction .pop-article-section-label').textContent = article.practice ? 'SONGS & EVERYDAY MEMORIES' : 'DECEMBER LISTENING NOTES';
+                document.querySelector('.pop-holiday-track-label').textContent = article.audio.label || 'WINTER RECORD · PREVIEW';
+                document.querySelector('.pop-holiday-proverb span').textContent = article.practice ? '오늘의 마음에 남길 말' : '우리말 속담으로';
+                document.querySelector('.pop-holiday-focus').setAttribute('aria-label', article.practice ? '핵심 표현과 오늘의 생각' : '핵심 표현과 한국 속담');
+                const episodeCover = document.querySelector('#pop-episode-cover');
+                episodeCover.hidden = !article.practice;
+                const episodeImage = document.querySelector('#pop-episode-image');
+                episodeImage.src = article.coverImage;
+                episodeImage.alt = article.imageAlt || `${article.audio.title}의 분위기를 담은 이미지`;
+                episodeImage.onerror = () => { episodeImage.onerror = null; episodeImage.src = defaultThumbnail; };
                 document.querySelector('#pop-holiday-cover').src = article.coverImage;
-                document.querySelector('#pop-holiday-cover').alt = `${article.audio.artist}의 ${article.audio.title} 앨범 아트`;
+                document.querySelector('#pop-holiday-cover').alt = article.imageAlt || `${article.audio.artist}의 ${article.audio.title} 앨범 아트`;
                 document.querySelector('#pop-holiday-track-title').textContent = article.audio.title;
                 document.querySelector('#pop-holiday-track-artist').textContent = `${article.audio.artist} · ${article.audio.album}`;
                 document.querySelector('#pop-holiday-track-link').href = article.audio.trackUrl;
@@ -2556,13 +2588,13 @@
                 audio.src = article.audio.previewUrl;
                 audio.load();
                 document.querySelector('.pop-holiday-player').classList.remove('is-fallback');
-                document.querySelector('#pop-holiday-status').textContent = '';
+                document.querySelector('#pop-holiday-status').textContent = article.audio.credit || '';
                 const playButton = document.querySelector('#pop-holiday-play');
                 playButton.textContent = '▶';
                 playButton.setAttribute('aria-label', `${article.audio.title} 미리듣기 재생`);
                 const seek = document.querySelector('#pop-holiday-seek');
                 seek.value = '0';
-                document.querySelector('#pop-holiday-time').textContent = '공식 미리듣기';
+                document.querySelector('#pop-holiday-time').textContent = article.audio.label || '공식 미리듣기';
                 const sections = document.querySelector('#pop-holiday-sections');
                 sections.replaceChildren();
                 article.sections.forEach((item, index) => {
@@ -2585,6 +2617,50 @@
                     if (item.closingQuote) section.append(makeElement('blockquote', 'pop-holiday-closing-quote', item.closingQuote));
                     sections.append(section);
                 });
+                const practice = document.querySelector('#pop-episode-practice');
+                practice.hidden = !article.practice;
+                const sentences = document.querySelector('#pop-episode-sentences');
+                sentences.replaceChildren();
+                (article.practice || []).forEach((item, index) => {
+                    const row = makeElement('div', 'pop-episode-sentence');
+                    const english = makeElement('p', 'pop-episode-sentence-en', item.en);
+                    english.lang = 'en';
+                    const sample = makeElement('audio');
+                    sample.controls = true;
+                    sample.preload = 'none';
+                    sample.src = `audio/pop-culture/${article.id}-${index + 1}.m4a`;
+                    sample.setAttribute('aria-label', `연습 문장 ${index + 1} 듣기`);
+                    const status = makeElement('p', 'pop-card-audio-status');
+                    status.setAttribute('role', 'status');
+                    sample.addEventListener('error', () => { status.textContent = '문장 음성을 불러오지 못했어요. 영어 문장을 천천히 읽어 보세요.'; });
+                    row.append(english, makeElement('p', '', item.kr), makeElement('p', 'pop-episode-tip', item.tip), sample, status);
+                    sentences.append(row);
+                });
+            };
+            const renderArticleQuiz = (article) => {
+                document.querySelector('#pop-article-quiz-question').textContent = article.quizSection.question;
+                const answer = document.querySelector('.pop-article-answer-text');
+                answer.textContent = article.quizSection.answer;
+                answer.lang = article.practice ? 'ko' : 'en';
+                document.querySelector('.pop-article-answer-explanation').textContent = article.quizSection.explanation;
+                const answerToggle = document.querySelector('#pop-article-answer-toggle');
+                answerToggle.setAttribute('aria-expanded', 'false');
+                answerToggle.textContent = '정답 확인하기';
+                document.querySelector('#pop-article-answer').hidden = true;
+                const prompt = document.querySelector('#pop-episode-quiz-prompt');
+                prompt.hidden = !article.practice;
+                prompt.textContent = article.quizSection.prompt || '';
+                const audio = document.querySelector('#pop-episode-quiz-audio');
+                audio.hidden = !article.practice;
+                const status = document.querySelector('#pop-episode-quiz-status');
+                status.hidden = !article.practice;
+                status.textContent = '';
+                audio.removeAttribute('src');
+                if (article.practice) {
+                    const index = article.practice.findIndex((item) => item.en === article.quizSection.audioText);
+                    audio.src = `audio/pop-culture/${article.id}-${index + 1}.m4a`;
+                }
+                audio.load();
             };
             const openCategory = (category) => {
                 selectedCategory = category;
@@ -2707,7 +2783,7 @@
                 if (!selectedArticle) return;
                 let noteBody;
                 if (selectedArticle.type === 'culture-essay') {
-                    noteBody = [selectedArticle.introduction, `${selectedArticle.focusQuote.en}\n${selectedArticle.focusQuote.translation}\n${selectedArticle.focusQuote.proverb}`, ...selectedArticle.sections.flatMap((section) => [section.title, ...section.paragraphs, ...(section.points || []).map((point) => `${point.term}: ${point.gloss}. ${point.description}`), section.closing, section.closingQuote].filter(Boolean))].join('\n\n');
+                    noteBody = [selectedArticle.introduction, `${selectedArticle.focusQuote.en}\n${selectedArticle.focusQuote.translation}\n${selectedArticle.focusQuote.proverb}`, ...selectedArticle.sections.flatMap((section) => [section.title, ...section.paragraphs, ...(section.points || []).map((point) => `${point.term}: ${point.gloss}. ${point.description}`), section.closing, section.closingQuote].filter(Boolean)), ...(selectedArticle.practice || []).map((item) => `${item.en}\n${item.kr}\n${item.tip}`), selectedArticle.quizSection?.answer].filter(Boolean).join('\n\n');
                 } else {
                     const quoteText = selectedArticle.lyricsSection.items.map((item) => `${item.en}\n${item.kr}`).join('\n\n');
                     noteBody = `${selectedArticle.title}\n${selectedArticle.subtitle}\n\n${quoteText}\n\n오늘의 응용\n${selectedArticle.quizSection.answer}`;
@@ -2753,6 +2829,22 @@
             const holidayTime = document.querySelector('#pop-holiday-time');
             const holidayStatus = document.querySelector('#pop-holiday-status');
             const holidayPlayer = document.querySelector('.pop-holiday-player');
+            const pausePopAudio = (except) => {
+                [...lessonGrid.querySelectorAll('audio'), ...articleDialog.querySelectorAll('audio')].forEach((audio) => {
+                    if (audio !== except) audio.pause();
+                });
+            };
+            const exclusivePlayback = (event) => {
+                if (event.target instanceof HTMLAudioElement) pausePopAudio(event.target);
+            };
+            lessonGrid.addEventListener('play', exclusivePlayback, true);
+            articleDialog.addEventListener('play', exclusivePlayback, true);
+            categoryDialog.addEventListener('close', () => {
+                if (!categoryDialog.open) lessonGrid.querySelectorAll('audio').forEach((audio) => audio.pause());
+            });
+            document.querySelector('#pop-episode-quiz-audio').addEventListener('error', () => {
+                if (selectedArticle?.practice) document.querySelector('#pop-episode-quiz-status').textContent = '문장 음성을 불러오지 못했어요. 정답 해설과 연습 문장으로 복습해 주세요.';
+            });
             const formatAudioTime = (seconds) => {
                 if (!Number.isFinite(seconds)) return '0:00';
                 const wholeSeconds = Math.floor(seconds);
@@ -2761,13 +2853,14 @@
             const syncHolidayPlayer = () => {
                 const isPlaying = !holidayAudio.paused && !holidayAudio.ended;
                 holidayPlayButton.textContent = isPlaying ? 'Ⅱ' : '▶';
-                holidayPlayButton.setAttribute('aria-label', isPlaying ? 'Last Christmas 미리듣기 일시정지' : 'Last Christmas 미리듣기 재생');
+                const title = selectedArticle?.audio?.title || '곡';
+                holidayPlayButton.setAttribute('aria-label', `${title} 미리듣기 ${isPlaying ? '일시정지' : '재생'}`);
                 const duration = Number.isFinite(holidayAudio.duration) ? holidayAudio.duration : 0;
                 holidaySeek.value = duration ? String(Math.round((holidayAudio.currentTime / duration) * 100)) : '0';
-                holidayTime.textContent = duration ? `${formatAudioTime(holidayAudio.currentTime)} / ${formatAudioTime(duration)}` : '공식 미리듣기';
+                holidayTime.textContent = duration ? `${formatAudioTime(holidayAudio.currentTime)} / ${formatAudioTime(duration)}` : (selectedArticle?.audio?.label || '공식 미리듣기');
             };
             holidayPlayButton.addEventListener('click', async () => {
-                holidayStatus.textContent = '';
+                holidayStatus.textContent = selectedArticle?.audio?.credit || '';
                 if (holidayPlayer.classList.contains('is-fallback') && selectedArticle) {
                     window.open(selectedArticle.audio.trackUrl, '_blank', 'noopener,noreferrer');
                     return;
@@ -2785,13 +2878,17 @@
                 if (!selectedArticle || selectedArticle.type !== 'culture-essay') return;
                 holidayPlayer.classList.add('is-fallback');
                 holidayPlayButton.textContent = '↗';
-                holidayPlayButton.setAttribute('aria-label', 'Apple Music에서 Last Christmas 듣기');
-                holidayStatus.textContent = '이 브라우저는 미리듣기를 지원하지 않아 Apple Music에서 들을 수 있어요.';
+                holidayPlayButton.setAttribute('aria-label', `음원 서비스에서 ${selectedArticle.audio.title} 듣기`);
+                holidayStatus.textContent = '미리듣기를 불러오지 못했어요. 음원 서비스 링크에서 원곡을 찾아보세요.';
             });
             holidaySeek.addEventListener('input', () => {
                 if (Number.isFinite(holidayAudio.duration) && holidayAudio.duration > 0) holidayAudio.currentTime = holidayAudio.duration * (Number(holidaySeek.value) / 100);
             });
-            articleDialog.addEventListener('close', () => holidayAudio.pause());
+            articleDialog.addEventListener('close', () => {
+                if (articleDialog.open) return;
+                pausePopAudio();
+                document.querySelector('#pop-episode-cover').hidden = true;
+            });
             const quiz = ExitQuiz.init({
                 getItems: () => courseCategories.flatMap((category) => category.lessons),
                 triggerSelector: '.logo-link, .category-card, #video-dialog [data-close-dialog]',
@@ -2803,7 +2900,9 @@
                     selectedCategory = category;
                     document.querySelector('#lessons')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     if (videoDialog.open) videoDialog.close();
-                    openLesson(lesson);
+                    const article = lesson.articleId && popArticles.find((item) => item.id === lesson.articleId);
+                    if (article) openArticle(article);
+                    else openLesson(lesson);
                 }
             });
             Promise.all([
@@ -2814,12 +2913,17 @@
                 fetch(new URL('data/articles.json', document.baseURI)).then((response) => {
                     if (!response.ok) throw new Error(`아티클 데이터 요청 실패 (${response.status})`);
                     return response.json();
+                }),
+                fetch(new URL('src/data/pop-culture-episodes.json', document.baseURI)).then((response) => {
+                    if (!response.ok) throw new Error(`팝 회차 데이터 요청 실패 (${response.status})`);
+                    return response.json();
                 })
             ])
-                .then(([data, articleData]) => {
+                .then(([data, articleData, episodes]) => {
                     if (!Array.isArray(data) || data.length === 0) throw new Error('강의 데이터 형식을 확인해 주세요.');
                     if (!Array.isArray(articleData)) throw new Error('아티클 데이터 형식을 확인해 주세요.');
-                    popArticles = articleData;
+                    if (!Array.isArray(episodes)) throw new Error('팝 회차 데이터 형식을 확인해 주세요.');
+                    popArticles = [...articleData, ...episodes];
                     courseCategories = data.filter((category) => category && category.categoryId && category.categoryName && Array.isArray(category.lessons));
                     if (!courseCategories.length) throw new Error('표시할 강의 카테고리가 없습니다.');
                     renderCategories();
