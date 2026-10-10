@@ -2118,12 +2118,14 @@
                 <div>
                     <div class="flip-card" id="conversation-card" role="button" tabindex="0" aria-pressed="false"
                         aria-label="카드를 뒤집어 영어 표현 보기">
-                        <div class="flip-face flip-front"><span class="face-label">상황 · 카페에서</span>
-                            <h3>“따뜻한 차 한 잔<br>부탁드려요.”</h3><span class="flip-hint">카드를 누르면 영어 표현이 보여요</span>
+                        <div class="flip-face flip-front"><span class="face-label"
+                                id="today-conversation-situation">상황</span>
+                            <h3 id="today-ko-expression">오늘의 한국어 표현</h3><span class="flip-hint">카드를 누르면 영어 표현이
+                                보여요</span>
                         </div>
                         <div class="flip-face flip-back"><span class="face-label">ENGLISH · 천천히 읽어 보세요</span>
-                            <h3 lang="en">Could I have a cup of tea, please?</h3><span class="flip-hint">Could I have…?
-                                는 정중하게 무언가를 부탁할 때 쓰는 표현이에요.</span>
+                            <h3 lang="en" id="today-en-expression">Today's English expression</h3><span
+                                class="flip-hint" id="today-conversation-explanation">상황에 맞는 뿌리동사의 쓰임을 살펴보세요.</span>
                         </div>
                     </div>
                     <div class="conversation-actions">
@@ -2132,9 +2134,11 @@
                         <button class="text-button" type="button" id="speak-phrase">영어 발음 듣기</button>
                     </div>
                     <div class="translation-panel" id="translation-panel" hidden>
-                        <p><strong>한국어</strong> 따뜻한 차 한 잔 부탁드려요.</p>
-                        <p><strong>영어</strong> <span lang="en">Could I have a cup of tea, please?</span></p>
-                        <p><strong>말의 느낌</strong> “주세요”보다 부드럽고 정중하게 부탁하는 표현입니다. 마지막 please를 또렷하게 말해 보세요.</p>
+                        <p><strong>한국어</strong> <span id="today-translation-ko">오늘의 한국어 표현</span></p>
+                        <p><strong>영어</strong> <span lang="en" id="today-translation-en">Today's English
+                                expression</span></p>
+                        <p><strong>해설</strong> <span id="today-translation-explanation">상황에 맞는 뿌리동사의 쓰임을 살펴보세요.</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -2150,8 +2154,10 @@
                 <div class="voice-layout">
                     <div class="voice-panel glass">
                         <h3>오늘 연습할 문장</h3>
-                        <p class="practice-line" id="practice-phrase" lang="en">Could I have a cup of tea, please?</p>
-                        <p class="practice-translation">따뜻한 차 한 잔 부탁드려요.</p>
+                        <p class="practice-context" id="today-practice-situation">오늘의 상황</p>
+                        <p class="practice-line" id="practice-phrase" lang="en">Today's English expression</p>
+                        <p class="practice-translation" id="today-practice-translation">오늘의 한국어 표현</p>
+                        <p class="practice-explanation" id="today-practice-explanation">상황에 맞는 뿌리동사의 쓰임을 살펴보세요.</p>
                         <div class="voice-controls">
                             <button class="button" type="button" id="tts-button"><span aria-hidden="true">▶</span> 영어 발음
                                 듣기</button>
@@ -3112,6 +3118,7 @@
                     if (!Array.isArray(articleData)) throw new Error('아티클 데이터 형식을 확인해 주세요.');
                     if (!Array.isArray(episodes)) throw new Error('팝 회차 데이터 형식을 확인해 주세요.');
                     if (!Array.isArray(rootVerbDialogues)) throw new Error('뿌리동사 대화 데이터 형식을 확인해 주세요.');
+                    updateTodaySentence(rootVerbDialogues);
                     popArticles = [...articleData, ...episodes];
                     const speakingCategory = data.find((category) => category?.categoryId === 'speaking');
                     const dailyCategory = data.find((category) => category?.categoryId === 'daily');
@@ -3210,9 +3217,95 @@
             });
 
             const phraseElement = document.querySelector('#practice-phrase');
-            const phrase = phraseElement.textContent.trim();
-            const koreanPhrase = '따뜻한 차 한 잔 부탁드려요.';
+            let phrase = '';
+            let koreanPhrase = '';
+            let todaySentencePool = [];
+            let todaySentence = null;
+            let todaySentenceTimer = null;
             const voiceStatus = document.querySelector('#voice-status');
+
+            const rootVerbMeanings = {
+                get: '얻다·도착하다·상태가 변하다', take: '가져가다·선택하다', care: '관심을 두고 돌보다',
+                bring: '상대가 있는 곳으로 가져오다', catch: '붙잡다·놓치지 않다', check: '확인하다',
+                clear: '치우다·분명하게 하다', come: '화자 쪽으로 오다', give: '건네다·제공하다',
+                keep: '계속 유지하다', hold: '붙잡다·지연시키다', put: '특정 위치에 놓다',
+                run: '달리다·운영하다', set: '정해진 위치에 두다·설정하다', stand: '서다·입장을 지키다',
+                turn: '방향을 돌리다·상태를 바꾸다', look: '보다·~하게 보이다', feel: '감각이나 기분을 느끼다',
+                make: '만들다·어떤 상태가 되게 하다', pass: '건네다·전달하다', drop: '떨어뜨리다·내려 주다',
+                go: '가다·진행하다', pick: '고르다·집어 들다'
+            };
+            const rootVerbForms = {
+                get: ['get', 'gets', 'got', 'gotten', 'getting'], take: ['take', 'takes', 'took', 'taken', 'taking'],
+                care: ['care', 'cares', 'cared', 'caring'], bring: ['bring', 'brings', 'brought', 'bringing'],
+                catch: ['catch', 'catches', 'caught', 'catching'], check: ['check', 'checks', 'checked', 'checking'],
+                clear: ['clear', 'clears', 'cleared', 'clearing'], come: ['come', 'comes', 'came', 'coming'],
+                give: ['give', 'gives', 'gave', 'given', 'giving'], keep: ['keep', 'keeps', 'kept', 'keeping'],
+                hold: ['hold', 'holds', 'held', 'holding'], put: ['put', 'puts', 'putting'],
+                run: ['run', 'runs', 'ran', 'running'], set: ['set', 'sets', 'setting'],
+                stand: ['stand', 'stands', 'stood', 'standing'], turn: ['turn', 'turns', 'turned', 'turning'],
+                look: ['look', 'looks', 'looked', 'looking'], feel: ['feel', 'feels', 'felt', 'feeling'],
+                make: ['make', 'makes', 'made', 'making'], pass: ['pass', 'passes', 'passed', 'passing'],
+                drop: ['drop', 'drops', 'dropped', 'dropping'], go: ['go', 'goes', 'went', 'gone', 'going'],
+                pick: ['pick', 'picks', 'picked', 'picking']
+            };
+            const getTodayIndex = (length, date = new Date()) => {
+                const dayNumber = Math.floor(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) / 86400000);
+                return ((dayNumber % length) + length) % length;
+            };
+            const describeTodaySentence = (sentence) => {
+                const words = new Set(sentence.en_text.toLowerCase().match(/[a-z]+(?:'[a-z]+)?/g) || []);
+                const matchedRoots = sentence.root_verbs_used.filter((verb) =>
+                    (rootVerbForms[verb] || [verb]).some((form) => words.has(form))
+                );
+                const matchedKeywords = sentence.colloquial_keywords.filter((keyword) => sentence.ko_text.includes(keyword));
+                const keywordNote = matchedKeywords.length
+                    ? `한국어의 “${matchedKeywords.join('”, “')}” 뉘앙스를 영어로 자연스럽게 옮긴 표현입니다.`
+                    : `‘${sentence.situation}’ 맥락에서 자연스럽게 쓰는 표현입니다.`;
+                const verbNote = matchedRoots.length
+                    ? `핵심 뿌리동사 ${matchedRoots.map((verb) => `${verb}(${rootVerbMeanings[verb]})`).join(', ')}의 쓰임을 살펴보세요.`
+                    : `대화 상황에 맞는 표현과 어순을 함께 익혀 보세요.`;
+                return `${keywordNote} ${verbNote}`;
+            };
+            const renderTodaySentence = () => {
+                if (!todaySentencePool.length) return;
+                todaySentence = todaySentencePool[getTodayIndex(todaySentencePool.length)];
+                phrase = todaySentence.en_text;
+                koreanPhrase = todaySentence.ko_text;
+                const explanation = describeTodaySentence(todaySentence);
+
+                document.querySelector('#today-conversation-situation').textContent = `상황 · ${todaySentence.situation}`;
+                document.querySelector('#today-ko-expression').textContent = `“${todaySentence.ko_text}”`;
+                document.querySelector('#today-en-expression').textContent = todaySentence.en_text;
+                document.querySelector('#today-conversation-explanation').textContent = explanation;
+                document.querySelector('#today-translation-ko').textContent = todaySentence.ko_text;
+                document.querySelector('#today-translation-en').textContent = todaySentence.en_text;
+                document.querySelector('#today-translation-explanation').textContent = explanation;
+                document.querySelector('#today-practice-situation').textContent = `상황 · ${todaySentence.situation}`;
+                phraseElement.textContent = todaySentence.en_text;
+                document.querySelector('#today-practice-translation').textContent = todaySentence.ko_text;
+                document.querySelector('#today-practice-explanation').textContent = explanation;
+            };
+            const scheduleTodaySentenceRefresh = () => {
+                if (todaySentenceTimer) clearTimeout(todaySentenceTimer);
+                const now = new Date();
+                const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1).getTime();
+                todaySentenceTimer = setTimeout(() => {
+                    renderTodaySentence();
+                    scheduleTodaySentenceRefresh();
+                }, Math.max(1000, nextMidnight - Date.now() + 50));
+            };
+            const updateTodaySentence = (scenarios) => {
+                todaySentencePool = scenarios.flatMap((scenario) => scenario.dialogue_lines.map((line) => ({
+                    ...line,
+                    situation: scenario.title,
+                    root_verbs_used: scenario.root_verbs_used,
+                    colloquial_keywords: scenario.colloquial_keywords
+                })));
+                if (!todaySentencePool.length) return;
+                renderTodaySentence();
+                scheduleTodaySentenceRefresh();
+            };
+
             let availableVoices = window.speechSynthesis?.getVoices() || [];
             window.speechSynthesis?.addEventListener('voiceschanged', () => {
                 availableVoices = window.speechSynthesis.getVoices();
@@ -3254,6 +3347,14 @@
             let finalizedTranscript = '';
             let isRecording = false;
             let recognitionCanRestart = true;
+            let recognitionFailureMessage = '';
+
+            const renderTranscript = (interimText = '') => {
+                const recognizedText = `${finalizedTranscript}${interimText ? ` ${interimText}` : ''}`.trim();
+                transcript.textContent = recognizedText || (isRecording
+                    ? '음성을 듣고 있습니다. 영어로 말씀해 주세요.'
+                    : '인식된 문장이 없습니다. 다시 녹음해 주세요.');
+            };
 
             const stopRecognition = () => {
                 if (recognition) {
@@ -3278,10 +3379,16 @@
                     playback.src = URL.createObjectURL(blob);
                     playback.hidden = false;
                     playbackButton.disabled = false;
-                    voiceStatus.textContent = '녹음이 저장되었어요. 내 발음 들어보기를 눌러 확인해 보세요.';
+                    voiceStatus.textContent = recognitionFailureMessage
+                        ? `${recognitionFailureMessage} 녹음 파일은 저장되었어요.`
+                        : '녹음이 저장되었어요. 내 발음 들어보기를 눌러 확인해 보세요.';
                 } else {
                     voiceStatus.textContent = '녹음 파일을 만들지 못했어요. 브라우저의 녹음 지원 여부를 확인해 주세요.';
                 }
+                isRecording = false;
+                recordingIndicator.hidden = true;
+                transcript.classList.remove('is-listening');
+                renderTranscript();
                 if (mediaStream) mediaStream.getTracks().forEach((track) => track.stop());
                 mediaStream = null;
                 recorder = null;
@@ -3290,6 +3397,9 @@
             };
             const startRecognition = () => {
                 if (!SpeechRecognition) {
+                    recognitionCanRestart = false;
+                    recognitionFailureMessage = '이 브라우저는 음성 인식을 지원하지 않습니다.';
+                    transcript.textContent = '이 브라우저에서는 음성 인식 결과를 표시할 수 없습니다. 녹음 파일은 계속 저장됩니다.';
                     voiceStatus.textContent = '녹음 중이에요. 이 브라우저는 음성 인식(STT)을 지원하지 않지만, 녹음 후 내 발음을 들을 수 있어요.';
                     return;
                 }
@@ -3298,40 +3408,98 @@
                 recognition.continuous = true;
                 recognition.interimResults = true;
                 recognitionCanRestart = true;
+                recognition.onstart = () => {
+                    if (isRecording) voiceStatus.textContent = '음성을 듣고 있어요. 영어 문장을 편하게 읽어 주세요.';
+                };
                 recognition.onresult = (event) => {
                     let interim = '';
                     for (let index = event.resultIndex; index < event.results.length; index += 1) {
-                        const text = event.results[index][0].transcript;
-                        if (event.results[index].isFinal) finalizedTranscript += `${text.trim()} `;
-                        else interim += text;
+                        const text = event.results[index][0].transcript.trim();
+                        if (!text) continue;
+                        if (event.results[index].isFinal) finalizedTranscript += `${text} `;
+                        else interim += `${text} `;
                     }
-                    transcript.textContent = `${finalizedTranscript}${interim}`.trim() || '말씀하신 내용이 여기에 표시됩니다.';
+                    renderTranscript(interim.trim());
+                    if (interim.trim()) voiceStatus.textContent = '말씀하시는 문장을 실시간으로 표시하고 있어요.';
                 };
                 recognition.onerror = (event) => {
                     if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
                         recognitionCanRestart = false;
+                        recognitionFailureMessage = '마이크 또는 음성 인식 권한이 거부되었습니다.';
+                        transcript.textContent = finalizedTranscript.trim() || recognitionFailureMessage;
                         voiceStatus.textContent = '마이크 또는 음성 인식 권한을 허용해 주세요. 녹음 자체는 계속 진행할 수 있습니다.';
+                    } else if (event.error === 'no-speech') {
+                        renderTranscript();
+                        voiceStatus.textContent = '아직 음성이 들리지 않아요. 마이크에 가까이 대고 영어로 말씀해 주세요.';
+                    } else if (event.error === 'aborted' && !isRecording) {
+                        renderTranscript();
                     } else if (event.error !== 'no-speech' && event.error !== 'aborted') {
                         recognitionCanRestart = false;
-                        voiceStatus.textContent = '음성 인식 연결이 원활하지 않아요. 녹음은 계속되니 천천히 말씀해 주세요.';
+                        recognitionFailureMessage = '음성 인식 연결에 문제가 생겼습니다.';
+                        transcript.textContent = finalizedTranscript.trim() || recognitionFailureMessage;
+                        voiceStatus.textContent = '음성 인식 연결이 원활하지 않아요. 녹음은 계속되며, 녹음 파일은 저장됩니다.';
                     }
                 };
                 recognition.onend = () => {
                     if (isRecording && recognitionCanRestart) {
-                        try { recognition.start(); } catch (_) { /* Keep the audio recording even if STT cannot restart. */ }
+                        try {
+                            recognition.start();
+                        } catch (_) {
+                            recognitionCanRestart = false;
+                            recognitionFailureMessage = '음성 인식이 중지되었습니다. 녹음을 다시 시작해 주세요.';
+                            transcript.textContent = finalizedTranscript.trim() || recognitionFailureMessage;
+                            voiceStatus.textContent = `${recognitionFailureMessage} 진행 중인 녹음은 계속됩니다.`;
+                        }
+                    } else if (!isRecording) {
+                        renderTranscript();
                     }
                 };
-                try { recognition.start(); } catch (_) { voiceStatus.textContent = '녹음 중이에요. 음성 인식은 현재 사용할 수 없어 녹음 후 재생으로 확인해 주세요.'; }
+                try {
+                    recognition.start();
+                } catch (_) {
+                    recognitionCanRestart = false;
+                    recognitionFailureMessage = '음성 인식을 시작하지 못했습니다.';
+                    transcript.textContent = recognitionFailureMessage;
+                    voiceStatus.textContent = `${recognitionFailureMessage} 녹음 파일은 계속 저장됩니다.`;
+                }
             };
             const startRecording = async () => {
                 if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
+                    transcript.textContent = '이 브라우저에서는 음성 녹음을 시작할 수 없습니다.';
                     voiceStatus.textContent = '이 브라우저는 음성 녹음을 지원하지 않습니다. 최신 Chrome, Edge 또는 Safari를 이용해 주세요.';
                     return;
                 }
                 recordButton.disabled = true;
+                recordLabel.textContent = '마이크 연결 중';
+                transcript.textContent = '마이크 권한을 확인하고 있습니다...';
+                recognitionFailureMessage = '';
+                recognitionCanRestart = true;
                 voiceStatus.textContent = '마이크 권한을 확인하고 있어요. 브라우저 안내가 나오면 허용해 주세요.';
                 try {
-                    mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    if (navigator.permissions?.query) {
+                        const permissionState = await Promise.race([
+                            navigator.permissions.query({ name: 'microphone' }).then((permission) => permission.state),
+                            new Promise((resolve) => setTimeout(() => resolve('unknown'), 750))
+                        ]);
+                        if (permissionState === 'denied') {
+                            throw new DOMException('Microphone access is blocked for this site.', 'NotAllowedError');
+                        }
+                    }
+
+                    let permissionTimeout;
+                    const permissionRequest = navigator.mediaDevices.getUserMedia({ audio: true });
+                    const permissionDeadline = new Promise((_, reject) => {
+                        permissionTimeout = setTimeout(() => {
+                            const error = new Error('The browser did not resolve the microphone permission request.');
+                            error.name = 'PermissionPromptTimeoutError';
+                            reject(error);
+                        }, 10000);
+                    });
+                    try {
+                        mediaStream = await Promise.race([permissionRequest, permissionDeadline]);
+                    } finally {
+                        clearTimeout(permissionTimeout);
+                    }
                     const mimeType = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4'].find((type) => MediaRecorder.isTypeSupported(type));
                     recorder = mimeType ? new MediaRecorder(mediaStream, { mimeType }) : new MediaRecorder(mediaStream);
                     recordingChunks = [];
@@ -3346,13 +3514,29 @@
                     recordLabel.textContent = '녹음 중지';
                     recordingIndicator.hidden = false;
                     transcript.classList.add('is-listening');
+                    renderTranscript();
                     voiceStatus.textContent = '녹음 중이에요. 영어 문장을 천천히 읽어 주세요.';
                     startRecognition();
                 } catch (error) {
+                    isRecording = false;
                     if (mediaStream) mediaStream.getTracks().forEach((track) => track.stop());
                     mediaStream = null;
                     recordButton.disabled = false;
-                    voiceStatus.textContent = error.name === 'NotAllowedError' ? '마이크 권한이 허용되지 않았어요. 주소창 왼쪽의 사이트 설정에서 마이크를 허용해 주세요.' : '마이크에 연결할 수 없어요. 마이크가 연결되어 있는지 확인해 주세요.';
+                    recordLabel.textContent = '녹음 시작';
+                    recordingIndicator.hidden = true;
+                    transcript.classList.remove('is-listening');
+                    const permissionDenied = error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError';
+                    const permissionTimedOut = error.name === 'PermissionPromptTimeoutError';
+                    transcript.textContent = permissionDenied
+                        ? '마이크 권한이 차단되어 있어 음성을 인식할 수 없습니다. 브라우저의 사이트 설정에서 마이크를 허용한 뒤 다시 시도해 주세요.'
+                        : permissionTimedOut
+                            ? '마이크 권한 응답이 없어 음성을 시작하지 못했습니다. 사이트 설정에서 마이크를 허용하고 다시 시도해 주세요.'
+                            : '마이크에 연결하지 못했습니다. 장치 연결을 확인해 주세요.';
+                    voiceStatus.textContent = permissionDenied
+                        ? '이 사이트의 마이크 권한이 차단되어 있어요. 주소창의 사이트 설정에서 마이크를 허용하고 페이지를 새로고침해 주세요.'
+                        : permissionTimedOut
+                            ? '마이크 권한 요청이 응답 없이 대기해 취소했어요. 주소창의 사이트 설정에서 권한을 확인해 주세요.'
+                            : '마이크에 연결할 수 없어요. 마이크 연결과 시스템 입력 설정을 확인해 주세요.';
                 }
             };
             recordButton.addEventListener('click', () => { if (isRecording) stopRecording(); else startRecording(); });

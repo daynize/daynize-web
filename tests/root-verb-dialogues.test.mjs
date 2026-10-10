@@ -37,6 +37,7 @@ const formsOf = (verb) => {
 test('20 dialogue scenarios have at least ten alternating bilingual turns', () => {
     assert.equal(scenarios.length, 20);
     assert.equal(new Set(scenarios.map((scenario) => scenario.scenario_id)).size, 20);
+    assert.equal(scenarios.reduce((count, scenario) => count + scenario.dialogue_lines.length, 0), 200);
 
     for (const scenario of scenarios) {
         assert.equal(scenario.categoryName, '뿌리동사 활용하기');
@@ -83,4 +84,9 @@ test('homepage loads dialogue data and renders bilingual dialogue turns', () => 
     assert.match(homepage, /categoryName: '뿌리동사 활용하기'/);
     assert.match(homepage, /speakingCategory\.lessons = \[\.\.\.verbLessons, \.\.\.retainedLessons, \.\.\.migratedLessons\]/);
     assert.match(homepage, /data\.splice\(situationsIndex < 0 \? 1 : situationsIndex, 0, dialogueCategory\)/);
+    assert.match(homepage, /getTodayIndex\(todaySentencePool\.length\)/);
+    assert.match(homepage, /scheduleTodaySentenceRefresh/);
+    assert.match(homepage, /today-conversation-situation/);
+    assert.match(homepage, /today-practice-situation/);
+    assert.doesNotMatch(homepage, /따뜻한 차 한 잔 부탁드려요\./);
 });
