@@ -748,7 +748,7 @@
 
         .grid-lesson img {
             width: 100%;
-            aspect-ratio: 16 / 10;
+            aspect-ratio: 16 / 9;
             object-fit: cover;
             background: #e7ece6;
         }
@@ -830,6 +830,10 @@
             color: white;
         }
 
+        #video-frame[hidden] {
+            display: none;
+        }
+
         .video-frame iframe,
         .video-frame video {
             width: 100%;
@@ -877,6 +881,72 @@
             color: #4f5952;
             font-size: 17px;
             line-height: 1.7;
+        }
+
+        .lesson-dialogue {
+            margin-bottom: 20px;
+        }
+
+        .lesson-dialogue h3 {
+            margin: 0 0 8px;
+            color: #34483a;
+            font-family: var(--serif);
+            font-size: 20px;
+        }
+
+        .lesson-dialogue-lines {
+            display: grid;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .dialogue-turn {
+            padding: 14px 0;
+            border-bottom: 1px solid #e2e6df;
+        }
+
+        .dialogue-text-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .dialogue-ko,
+        .dialogue-en {
+            margin: 4px 0;
+            color: var(--ink);
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        .dialogue-en {
+            color: #59635d;
+        }
+
+        .dialogue-play {
+            display: grid;
+            width: 36px;
+            height: 36px;
+            flex: 0 0 36px;
+            place-items: center;
+            margin-top: 2px;
+            border: 1px solid #d9dfd8;
+            border-radius: 50%;
+            background: #fff;
+            color: var(--sage);
+            cursor: pointer;
+        }
+
+        .dialogue-play:hover,
+        .dialogue-play[aria-pressed="true"] {
+            border-color: var(--sage);
+            background: var(--sage-soft);
+        }
+
+        .dialogue-play:disabled {
+            cursor: wait;
+            opacity: .6;
         }
 
         /* Conversation */
@@ -1921,8 +1991,12 @@
                 <button class="course-close" type="button" data-close-dialog aria-label="강의 영상 닫기">×</button>
             </div>
             <div class="video-dialog-body">
+                <section class="lesson-dialogue" id="lesson-dialogue" aria-label="한글·영어 대화 대본" hidden>
+                    <h3>상황 대화</h3>
+                    <ol class="lesson-dialogue-lines" id="lesson-dialogue-lines"></ol>
+                </section>
                 <div class="video-frame" id="video-frame"></div>
-                <div class="lesson-study-notes">
+                <div class="lesson-study-notes" id="lesson-study-notes">
                     <h3>오늘의 핵심 문장</h3>
                     <p id="lesson-key-phrase" lang="en"></p>
                     <p id="lesson-explanation"></p>
@@ -2407,6 +2481,8 @@
             let popArticles = [];
             let selectedArticle = null;
             let articleOpenedFromCategory = false;
+            let activeDialogueAudio = null;
+            let activeDialogueAudioButton = null;
 
             const makeElement = (tagName, className, text) => {
                 const element = document.createElement(tagName);
@@ -2437,23 +2513,18 @@
             const renderCategories = () => {
                 categoryTrack.replaceChildren();
                 courseCategories.forEach((category) => {
-                    const isSpeakingCourse = category.categoryId === 'speaking';
                     const isNotes = category.categoryId === 'review';
-                    const button = makeElement(isSpeakingCourse ? 'a' : 'button', 'category-card');
-                    if (isSpeakingCourse) {
-                        button.href = 'courses/speaking/';
-                    } else {
-                        button.type = 'button';
-                        button.dataset.categoryId = category.categoryId;
-                        button.setAttribute('aria-haspopup', 'dialog');
-                    }
+                    const button = makeElement('button', 'category-card');
+                    button.type = 'button';
+                    button.dataset.categoryId = category.categoryId;
+                    button.setAttribute('aria-haspopup', 'dialog');
                     const image = document.createElement('img');
                     image.src = category.thumbnail || category.lessons.find((lesson) => lesson.thumbnail)?.thumbnail || defaultThumbnail;
                     image.alt = '';
                     image.loading = 'lazy';
                     image.onerror = () => { image.onerror = null; image.src = defaultThumbnail; };
                     const copy = makeElement('span', 'category-copy');
-                    const countLabel = makeElement('span', 'category-count', isSpeakingCourse ? '동사별 영상 강의' : isNotes ? `내 노트 ${notesApp.count()}개` : `강의 ${category.lessons.length}편`);
+                    const countLabel = makeElement('span', 'category-count', isNotes ? `내 노트 ${notesApp.count()}개` : `학습 콘텐츠 ${category.lessons.length}편`);
                     if (isNotes) countLabel.dataset.notesCount = '';
                     copy.append(
                         countLabel,
@@ -2487,7 +2558,7 @@
                     watch.type = 'button';
                     watch.dataset.lessonId = lesson.id;
                     if (article) watch.dataset.articleId = article.id;
-                    watch.append(document.createTextNode(article ? '읽어 보기 ' : '시청하기 '), makeElement('span', '', '→'));
+                    watch.append(document.createTextNode(article ? '읽어 보기 ' : lesson.dialogue_lines ? '대화 보기 ' : '시청하기 '), makeElement('span', '', '→'));
                     copy.append(meta, watch);
                     if (article?.audio) {
                         const previewLabel = makeElement('p', 'pop-card-audio-label', article.audio.label || '공식 미리듣기');
@@ -2697,6 +2768,7 @@
             };
             const renderVideoSource = (lesson) => {
                 videoFrame.replaceChildren();
+                if (Array.isArray(lesson.dialogue_lines)) return;
                 const url = safeHttpUrl(normalizeVideoPath(lesson.videoPath || lesson.videoUrl, selectedCategory?.categoryId));
                 if (!url) {
                     const placeholder = makeElement('div', 'video-placeholder');
@@ -2744,10 +2816,53 @@
             };
             const openLesson = (lesson) => {
                 quiz.markWatched(lesson.id);
+                const isDialogue = Array.isArray(lesson.dialogue_lines);
                 document.querySelector('#video-dialog-title').textContent = lesson.title;
                 document.querySelector('#video-dialog-description').textContent = `${selectedCategory.categoryName} · ${lesson.duration || '시간 미정'}`;
-                document.querySelector('#lesson-key-phrase').textContent = lesson.keyPhrase || '핵심 문장을 준비하고 있습니다.';
-                document.querySelector('#lesson-explanation').textContent = lesson.explanation || lesson.desc;
+                const dialogueSection = document.querySelector('#lesson-dialogue');
+                const dialogueLines = document.querySelector('#lesson-dialogue-lines');
+                const videoFrameElement = document.querySelector('#video-frame');
+                const studyNotes = document.querySelector('#lesson-study-notes');
+                const keyPhrase = document.querySelector('#lesson-key-phrase');
+                dialogueSection.hidden = !isDialogue;
+                videoFrameElement.hidden = isDialogue;
+                studyNotes.querySelector('h3').textContent = isDialogue ? '대화에서 쓰인 뿌리동사' : '오늘의 핵심 문장';
+                keyPhrase.textContent = isDialogue ? lesson.root_verbs_used.join(' · ') : lesson.keyPhrase || '핵심 문장을 준비하고 있습니다.';
+                keyPhrase.lang = 'en';
+                document.querySelector('#lesson-explanation').textContent = isDialogue
+                    ? `상황 표현: ${lesson.colloquial_keywords.join(' · ')}`
+                    : lesson.explanation || lesson.desc;
+                dialogueLines.replaceChildren();
+                if (isDialogue) {
+                    lesson.dialogue_lines.forEach((line) => {
+                        const item = makeElement('li', 'dialogue-turn');
+                        const korean = makeElement('p', 'dialogue-ko', line.ko_text);
+                        korean.lang = 'ko';
+                        const english = makeElement('p', 'dialogue-en', line.en_text);
+                        english.lang = 'en';
+                        const koreanRow = makeElement('div', 'dialogue-text-row');
+                        const koreanPlay = makeElement('button', 'dialogue-play', '▶');
+                        koreanPlay.type = 'button';
+                        koreanPlay.dataset.audioSrc = line.ko_audio || '';
+                        koreanPlay.dataset.language = '한국어';
+                        koreanPlay.dataset.lineNumber = String(line.line_number);
+                        koreanPlay.setAttribute('aria-label', `한국어 ${line.line_number}번 문장 듣기`);
+                        koreanPlay.setAttribute('aria-pressed', 'false');
+                        koreanRow.append(korean, koreanPlay);
+
+                        const englishRow = makeElement('div', 'dialogue-text-row');
+                        const englishPlay = makeElement('button', 'dialogue-play', '▶');
+                        englishPlay.type = 'button';
+                        englishPlay.dataset.audioSrc = line.en_audio || '';
+                        englishPlay.dataset.language = '영어';
+                        englishPlay.dataset.lineNumber = String(line.line_number);
+                        englishPlay.setAttribute('aria-label', `영어 ${line.line_number}번 문장 듣기`);
+                        englishPlay.setAttribute('aria-pressed', 'false');
+                        englishRow.append(english, englishPlay);
+                        item.append(koreanRow, englishRow);
+                        dialogueLines.append(item);
+                    });
+                }
                 renderVideoSource(lesson);
                 videoDialog.showModal();
                 videoFrame.querySelector('video')?.play().catch(() => { });
@@ -2759,6 +2874,56 @@
                 const category = courseCategories.find((item) => item.categoryId === button.dataset.categoryId);
                 if (category && category.categoryId === 'review') { notesApp.open(); return; }
                 if (category) openCategory(category);
+            });
+            videoDialog.addEventListener('click', async (event) => {
+                const button = event.target.closest('[data-audio-src]');
+                if (!button) return;
+                event.stopPropagation();
+                if (!button.dataset.audioSrc) {
+                    button.title = '음성 파일을 아직 사용할 수 없습니다.';
+                    return;
+                }
+
+                if (activeDialogueAudioButton === button && activeDialogueAudio && !activeDialogueAudio.paused) {
+                    activeDialogueAudio.pause();
+                    button.textContent = '▶';
+                    button.setAttribute('aria-pressed', 'false');
+                    return;
+                }
+
+                if (activeDialogueAudio) activeDialogueAudio.pause();
+                if (activeDialogueAudioButton) {
+                    activeDialogueAudioButton.textContent = '▶';
+                    activeDialogueAudioButton.setAttribute('aria-pressed', 'false');
+                }
+
+                activeDialogueAudioButton = button;
+                activeDialogueAudio = new Audio(new URL(button.dataset.audioSrc, document.baseURI).href);
+                activeDialogueAudio.addEventListener('ended', () => {
+                    button.textContent = '▶';
+                    button.setAttribute('aria-pressed', 'false');
+                }, { once: true });
+                activeDialogueAudio.addEventListener('error', () => {
+                    button.textContent = '▶';
+                    button.setAttribute('aria-pressed', 'false');
+                    button.title = '음성을 불러오지 못했습니다. 다시 눌러 주세요.';
+                }, { once: true });
+                try {
+                    await activeDialogueAudio.play();
+                    button.textContent = 'Ⅱ';
+                    button.setAttribute('aria-pressed', 'true');
+                } catch (_) {
+                    button.title = '음성을 재생하지 못했습니다. 다시 눌러 주세요.';
+                }
+            });
+            videoDialog.addEventListener('close', () => {
+                activeDialogueAudio?.pause();
+                activeDialogueAudio = null;
+                if (activeDialogueAudioButton) {
+                    activeDialogueAudioButton.textContent = '▶';
+                    activeDialogueAudioButton.setAttribute('aria-pressed', 'false');
+                    activeDialogueAudioButton = null;
+                }
             });
             categoryTrack.addEventListener('keydown', (event) => {
                 if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
@@ -2936,16 +3101,88 @@
                 fetch(new URL('src/data/pop-culture-episodes.json', document.baseURI)).then((response) => {
                     if (!response.ok) throw new Error(`팝 회차 데이터 요청 실패 (${response.status})`);
                     return response.json();
+                }),
+                fetch(new URL('data/root-verb-dialogues.json', document.baseURI)).then((response) => {
+                    if (!response.ok) throw new Error(`뿌리동사 대화 데이터 요청 실패 (${response.status})`);
+                    return response.json();
                 })
             ])
-                .then(([data, articleData, episodes]) => {
+                .then(([data, articleData, episodes, rootVerbDialogues]) => {
                     if (!Array.isArray(data) || data.length === 0) throw new Error('강의 데이터 형식을 확인해 주세요.');
                     if (!Array.isArray(articleData)) throw new Error('아티클 데이터 형식을 확인해 주세요.');
                     if (!Array.isArray(episodes)) throw new Error('팝 회차 데이터 형식을 확인해 주세요.');
+                    if (!Array.isArray(rootVerbDialogues)) throw new Error('뿌리동사 대화 데이터 형식을 확인해 주세요.');
                     popArticles = [...articleData, ...episodes];
+                    const speakingCategory = data.find((category) => category?.categoryId === 'speaking');
+                    const dailyCategory = data.find((category) => category?.categoryId === 'daily');
+                    if (speakingCategory && dailyCategory) {
+                        const existingVideoLessons = speakingCategory.lessons.filter((lesson) => lesson.videoUrl);
+                        const existingByUrl = new Map(existingVideoLessons.map((lesson) => [lesson.videoUrl, lesson]));
+                        const verbLessons = [
+                            ['care', '돌보다 · 신경 쓰다'], ['bring', '가져오다 · 데려오다'],
+                            ['catch', '잡다 · 알아듣다'], ['check', '확인하다 · 살펴보다'],
+                            ['clear', '치우다 · 분명히 하다'], ['come', '오다 · 도착하다'],
+                            ['get', '얻다 · 도착하다'], ['give', '주다 · 건네다'],
+                            ['go', '가다 · 진행하다'], ['hold', '잡다 · 유지하다'],
+                            ['look', '보다 · 살펴보다'], ['make', '만들다 · 하게 하다'],
+                            ['pick', '고르다 · 집어 들다'], ['put', '놓다 · 두다'],
+                            ['run', '달리다 · 운영하다'], ['set', '놓다 · 설정하다'],
+                            ['take', '가져가다 · 데려가다'], ['turn', '돌다 · 바꾸다']
+                        ].map(([word, meaning], index) => {
+                            const videoUrl = `VIDEOS/verbs/${word}.mp4`;
+                            const existingLesson = existingByUrl.get(videoUrl);
+                            if (existingLesson) {
+                                return {
+                                    ...existingLesson,
+                                    thumbnail: existingLesson.thumbnail || dailyCategory.lessons.find((lesson) => lesson.thumbnail)?.thumbnail || speakingCategory.thumbnail
+                                };
+                            }
+                            return {
+                                id: word,
+                                title: `I ${word} · ${meaning}`,
+                                desc: `${word}의 기본 의미와 다양한 쓰임을 익혀 봅니다.`,
+                                duration: '약 2분',
+                                videoUrl,
+                                keyPhrase: `I ${word}.`,
+                                explanation: meaning,
+                                thumbnail: dailyCategory.lessons[index % dailyCategory.lessons.length]?.thumbnail || speakingCategory.thumbnail
+                            };
+                        });
+                        const migratedLessons = dailyCategory.lessons.map((lesson) => ({ ...lesson }));
+                        const dialogueLessons = rootVerbDialogues.map((scenario, index) => ({
+                            id: `root-dialogue-${String(scenario.scenario_id).padStart(2, '0')}`,
+                            title: scenario.title,
+                            desc: `핵심 동사 ${scenario.root_verbs_used.join(', ')}를 실제 대화에서 익힙니다.`,
+                            duration: `${scenario.dialogue_lines.length}턴 대화`,
+                            videoUrl: null,
+                            keyPhrase: scenario.dialogue_lines[0]?.en_text || '',
+                            explanation: `상황 표현: ${scenario.colloquial_keywords.join(' · ')}`,
+                            thumbnail: migratedLessons[index % migratedLessons.length]?.thumbnail || speakingCategory.thumbnail,
+                            dialogue_lines: scenario.dialogue_lines,
+                            root_verbs_used: scenario.root_verbs_used,
+                            colloquial_keywords: scenario.colloquial_keywords
+                        }));
+                        const retainedLessons = existingVideoLessons.filter((lesson) => !verbLessons.some((verb) => verb.id === lesson.id));
+                        speakingCategory.categoryName = '뿌리동사 익히기';
+                        speakingCategory.categoryDesc = '뿌리동사의 핵심 뜻과 다양한 쓰임을 짧은 영상으로 익혀 보세요.';
+                        speakingCategory.lessons = [...verbLessons, ...retainedLessons, ...migratedLessons];
+                        const dialogueCategory = {
+                            categoryId: 'root-verb-usage',
+                            categoryName: '뿌리동사 활용하기',
+                            categoryDesc: '뿌리동사를 일상 속 자연스러운 대화에서 활용해 보세요.',
+                            thumbnail: migratedLessons[0]?.thumbnail || speakingCategory.thumbnail,
+                            lessons: dialogueLessons
+                        };
+                        data = data.filter((category) => category.categoryId !== 'daily' && category.categoryId !== dialogueCategory.categoryId);
+                        const situationsIndex = data.findIndex((category) => category.categoryId === 'situations');
+                        data.splice(situationsIndex < 0 ? 1 : situationsIndex, 0, dialogueCategory);
+                    }
                     courseCategories = data.filter((category) => category && category.categoryId && category.categoryName && Array.isArray(category.lessons));
                     if (!courseCategories.length) throw new Error('표시할 강의 카테고리가 없습니다.');
                     renderCategories();
+                    const requestedCategoryId = new URLSearchParams(window.location.search).get('category');
+                    const requestedCategory = courseCategories.find((category) => category.categoryId === requestedCategoryId);
+                    if (requestedCategory) openCategory(requestedCategory);
                 })
                 .catch((error) => {
                     categoryTrack.replaceChildren(makeElement('p', 'courses-message', `${error.message} 웹 서버로 페이지를 열고 courses.json 파일이 함께 배포됐는지 확인해 주세요.`));

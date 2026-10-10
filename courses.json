@@ -1,8 +1,8 @@
 [
     {
         "categoryId": "speaking",
-        "categoryName": "영어 말하는 법",
-        "categoryDesc": "학습 원리와 문장 구조를 익혀 내 문장으로 말해 봅니다.",
+        "categoryName": "뿌리동사 익히기",
+        "categoryDesc": "짧은 영상과 실제 대화로 뿌리동사의 핵심 뜻과 쓰임을 익혀 봅니다.",
         "thumbnail": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=85",
         "lessons": [
             {

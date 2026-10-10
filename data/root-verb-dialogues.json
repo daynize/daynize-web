@@ -1,0 +1,2387 @@
+[
+    {
+        "scenario_id": 1,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "식사 약속 및 메뉴 정하기",
+        "root_verbs_used": [
+            "go",
+            "get",
+            "check",
+            "make",
+            "feel"
+        ],
+        "colloquial_keywords": [
+            "굳이",
+            "딱히",
+            "입가심"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "오늘 굳이 멀리까지 가서 먹어야 할까? 퇴근길도 꽤 막힐 텐데.",
+                "en_text": "Do we really need to go all the way across town for dinner? Traffic will be rough after work.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-01-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-01-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "딱히 당기는 메뉴가 없으면 근처에서 해결하자. 새로 생긴 곳도 있더라.",
+                "en_text": "If nothing in particular sounds good, let's get something nearby. I saw a new place just opened.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-01-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-01-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "메뉴 좀 확인해 볼게. 파스타 말고도 선택지가 있으면 좋겠어.",
+                "en_text": "I'll check the menu. It'd be nice to have a few options besides pasta.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-01-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-01-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "샐러드랑 생선 요리도 있네. 오늘은 가볍게 먹고 싶었어.",
+                "en_text": "They have salads and fish, too. I feel like having something lighter tonight.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-01-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-01-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "좋다. 금요일인데 예약까지 굳이 해야 할까?",
+                "en_text": "That works. Do we really need to make a reservation on a Friday?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-01-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-01-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "혹시 모르니까 자리 있는지 내가 전화해서 확인할게.",
+                "en_text": "I'll call and check if they have a table, just in case.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-01-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-01-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "난 생선으로 할게. 오늘은 너무 무거운 음식은 별로야.",
+                "en_text": "I'll get the fish. I don't feel like having anything too heavy tonight.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-01-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-01-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "난 수프랑 샐러드로 할게. 나눠 먹을 것도 하나 시키자.",
+                "en_text": "I'll go with the soup and salad. Let's get something to share, too.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-01-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-01-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "배부르면 디저트는 건너뛰고 커피로 입가심하자.",
+                "en_text": "If we're full, we can skip dessert and just get coffee to finish.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-01-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-01-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "완벽해. 그럼 내가 예약하고 시간 맞춰 갈게.",
+                "en_text": "Perfect. I'll make the reservation, and we can meet there on time.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-01-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-01-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 2,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "연애 및 친구 관계",
+        "root_verbs_used": [
+            "get",
+            "catch",
+            "look",
+            "feel",
+            "give",
+            "keep"
+        ],
+        "colloquial_keywords": [
+            "꽁냥꽁냥",
+            "눈치채다",
+            "썸타다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "너 요즘 민지랑 자주 보더라. 둘이 썸타는 거야?",
+                "en_text": "You and Minji have been hanging out a lot lately. Are you two seeing each other?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-02-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-02-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "아직 그런 사이는 아니야. 그냥 서로 알아가는 중이지.",
+                "en_text": "We're not quite there yet. We're just getting to know each other.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-02-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-02-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "다들 벌써 눈치챈 것 같던데? 같이 있으면 표정이 달라.",
+                "en_text": "I think everyone has caught on. You look different when you're together.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-02-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-02-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "그렇게 티가 났어? 괜히 꽁냥꽁냥한다고 놀림받겠네.",
+                "en_text": "Was it that obvious? Now everyone's going to tease us for being all lovey-dovey.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-02-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-02-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "놀리는 게 아니라 보기 좋다는 거야. 너도 편해 보이고.",
+                "en_text": "I'm not teasing. It's nice to see, and you seem more at ease.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-02-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-02-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "그 친구랑 있으면 말이 없어도 편하긴 해.",
+                "en_text": "I feel comfortable around her, even when we don't have much to say.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-02-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-02-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "그럼 천천히 가 봐. 괜히 서두를 필요 없잖아.",
+                "en_text": "Then take it slow. There's no need to rush into anything.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-02-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-02-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "맞아. 이번 주말에 같이 전시 보러 가기로 했어.",
+                "en_text": "Exactly. We made plans to see an exhibit together this weekend.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-02-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-02-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "잘됐네. 다음에 만나면 어떻게 됐는지 꼭 얘기해 줘.",
+                "en_text": "That's great. Give me the full story next time we meet.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-02-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-02-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "알았어. 아직은 우리끼리만 알고 있어 줘.",
+                "en_text": "I will. Just keep it between us for now.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-02-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-02-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 3,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "피부 및 뷰티 관리",
+        "root_verbs_used": [
+            "look",
+            "get",
+            "check",
+            "feel",
+            "clear",
+            "keep"
+        ],
+        "colloquial_keywords": [
+            "지성 피부",
+            "뽀송하다",
+            "트러블"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "새 파운데이션 써 봤어? 오후인데도 피부가 꽤 뽀송해 보여.",
+                "en_text": "Have you tried a new foundation? Your skin still looks pretty matte this late in the day.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-03-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-03-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "응, 지성 피부용으로 바꿨어. 전에는 점심만 지나면 번들거렸거든.",
+                "en_text": "I switched to one for oily skin. I used to get shiny by lunchtime.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-03-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-03-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "커버력은 어때? 트러블도 잘 가려져?",
+                "en_text": "How's the coverage? Does it cover blemishes well, too?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-03-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-03-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "웬만한 건 가려지는데 턱 쪽에는 아직 조금 올라와.",
+                "en_text": "It covers most things, but I'm still breaking out a little around my chin.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-03-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-03-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "새 제품이 안 맞을 수도 있으니까 성분을 한번 확인해 봐.",
+                "en_text": "The new product might not agree with you, so check the ingredients.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-03-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-03-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "그러게. 향이 강해서 그런지 피부가 좀 예민해진 느낌이야.",
+                "en_text": "Good point. My skin feels a little irritated, maybe because the fragrance is strong.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-03-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-03-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "며칠은 쓰지 말고 피부가 가라앉는지 보자.",
+                "en_text": "Stop using it for a few days and see if your skin clears up.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-03-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-03-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "일단 보습만 꾸준히 할게. 괜히 이것저것 더 바르면 악화될 것 같아.",
+                "en_text": "I'll just keep up with moisturizer for now. Adding more products might make it worse.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-03-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-03-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "좋은 생각이야. 계속 트러블이 나면 피부과에 가 보는 게 낫겠어.",
+                "en_text": "That sounds sensible. If you keep breaking out, you should probably see a dermatologist.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-03-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-03-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "맞아. 뽀송한 것도 좋지만 피부가 편안한 게 먼저지.",
+                "en_text": "Exactly. A matte finish is nice, but comfortable skin comes first.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-03-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-03-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 4,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "걱정과 말조심",
+        "root_verbs_used": [
+            "keep",
+            "get",
+            "check",
+            "make",
+            "give",
+            "put"
+        ],
+        "colloquial_keywords": [
+            "말이 씨가 된다",
+            "초 치다",
+            "재뿌리다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "발표 잘될 거야. 시작하기도 전에 망할 거라고 계속 말하지 마.",
+                "en_text": "Your presentation will go fine. Don't keep saying it'll be a disaster before it even starts.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-04-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-04-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "알아. 말이 씨가 된다고 하잖아. 나도 괜히 불안해져서 그래.",
+                "en_text": "I know. They say you can speak things into existence. I'm just getting in my own head.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-04-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-04-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "걱정은 이해하지만 준비 많이 했잖아. 핵심만 차분히 짚으면 돼.",
+                "en_text": "I get why you're worried, but you've prepared well. Just take the main points one at a time.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-04-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-04-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "예상 못 한 질문이 나오면 어떡하지? 그게 제일 걸려.",
+                "en_text": "What if they bring up something I haven't prepared for? That's what worries me most.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-04-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-04-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "모르는 건 확인하고 답하겠다고 하면 돼. 괜히 아는 척할 필요 없어.",
+                "en_text": "You can say you'll check and get back to them. There's no need to pretend you know everything.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-04-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-04-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "그 말 들으니 좀 낫다. 내가 혼자 일을 너무 크게 만들었네.",
+                "en_text": "That makes me feel better. I was making it bigger than it needed to be.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-04-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-04-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "그러니까 시작도 전에 초 치지 말자. 아직 일어나지도 않았어.",
+                "en_text": "So don't rain on your own parade before it starts. It hasn't even happened yet.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-04-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-04-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "맞아. 팀원들 앞에서 괜히 재뿌리는 말은 안 할게.",
+                "en_text": "Right. I'll stop putting a damper on things in front of the team.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-04-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-04-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "끝나고 커피 마시면서 어땠는지 같이 정리해 보자. 잠깐 숨 돌릴 시간도 갖고.",
+                "en_text": "After it's over, let's get coffee, give ourselves a chance to decompress, and talk through how it went.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-04-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-04-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "좋아. 최악을 상상하기보다 내가 준비한 걸 믿어 볼게.",
+                "en_text": "Deal. I'll trust the work I put in instead of imagining the worst.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-04-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-04-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 5,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "옷 쇼핑 및 스타일링",
+        "root_verbs_used": [
+            "look",
+            "get",
+            "bring",
+            "make",
+            "keep"
+        ],
+        "colloquial_keywords": [
+            "딱 맞아",
+            "찰떡이다",
+            "핏이 살다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "그 재킷 입어 봐. 어깨선이 네 체형에 딱 맞을 것 같아.",
+                "en_text": "Try that jacket on. The shoulders look like they'd work perfectly on you.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-05-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-05-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "입어 보니까 허리는 딱 맞는데 소매가 조금 길어.",
+                "en_text": "The waist fits just right, but the sleeves are a little long.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-05-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-05-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "그래도 핏이 살아. 어깨가 정리돼 보여서 훨씬 세련됐어.",
+                "en_text": "It still gives you a great shape. The clean shoulders make it look much sharper.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-05-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-05-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "이 셔츠랑도 찰떡이네. 새 바지를 살 필요는 없겠다.",
+                "en_text": "It goes perfectly with this shirt, too. I don't need to get new trousers after all.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-05-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-05-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "평소 입는 바지 가져왔어. 색도 잘 맞는지 같이 보자.",
+                "en_text": "I brought the trousers you usually wear. Let's see how the colors look together.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-05-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-05-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "가격은 좀 있네. 세일할 때까지 기다릴까?",
+                "en_text": "It's a bit pricey, though. Maybe I should wait for a sale.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-05-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-05-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "자주 입을 거면 괜찮은 투자일 수도 있어. 소재도 확인해 봐.",
+                "en_text": "If you'll wear it a lot, it might be worth the investment. Check the fabric, too.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-05-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-05-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "울 혼방이네. 오래 입어도 모양이 잘 유지될 것 같아.",
+                "en_text": "It's a wool blend. I think it'll keep its shape well.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-05-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-05-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "소매 수선도 가능한지 물어봐. 줄이면 완벽하겠다.",
+                "en_text": "Ask if they can alter the sleeves. A shorter length would make it perfect.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-05-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-05-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "그럼 한 번 더 입어 보고 결정할게. 확실히 잘 어울리긴 해.",
+                "en_text": "I'll try it on once more and decide. It definitely looks good on me.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-05-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-05-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 6,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "타이밍과 뒷북",
+        "root_verbs_used": [
+            "come",
+            "pass",
+            "get",
+            "catch",
+            "check",
+            "take",
+            "give"
+        ],
+        "colloquial_keywords": [
+            "그런 걸 진작 말했어야지",
+            "뒷북치다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "회의실 예약이 바뀌었다며? 우리 이제 다른 층으로 가야 해.",
+                "en_text": "I heard the meeting room changed. We have to go to another floor now.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-06-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-06-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "응, 공지가 아침에 왔어. 내가 전달하는 걸 깜빡했네.",
+                "en_text": "Yeah, the notice came this morning. I forgot to pass it along.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-06-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-06-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "그런 걸 진작 말했어야지. 자료까지 다 여기로 가져왔잖아.",
+                "en_text": "You should've told me earlier. I brought all the materials over here.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-06-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-06-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "미안해. 다른 일에 정신이 팔려서 완전히 놓쳤어.",
+                "en_text": "I'm sorry. I got caught up with something else and completely missed it.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-06-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-06-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "지금이라도 알았으니 옮기면 돼. 새 방 위치는 확인했어?",
+                "en_text": "At least we know now. Did you check where the new room is?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-06-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-06-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "응, 5층이야. 엘리베이터에서 내리면 바로 보여.",
+                "en_text": "It's on the fifth floor. It'll be easy to find when we get off the elevator.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-06-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-06-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "다음부터 공지 오면 바로 공유해 줘. 막판에 알면 준비가 꼬여.",
+                "en_text": "Next time, pass the notice along as soon as it comes in. Last-minute changes throw everything off.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-06-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-06-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "맞아. 지금 얘기해 봤자 뒷북이지만 캘린더도 확인해 둘게.",
+                "en_text": "You're right. It's a little late to bring it up now, but I'll check the calendar, too.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-06-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-06-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "그럼 노트북은 내가 들게. 너는 프린트물을 챙겨.",
+                "en_text": "I'll take the laptop. You grab the printouts.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-06-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-06-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "알았어. 다음엔 먼저 알려서 이런 일 없게 할게.",
+                "en_text": "Got it. I'll give you a heads-up next time so this doesn't happen again.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-06-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-06-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 7,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "약속 시간 지연과 지각",
+        "root_verbs_used": [
+            "run",
+            "get",
+            "take",
+            "hold",
+            "give",
+            "come"
+        ],
+        "colloquial_keywords": [
+            "차가 꼼짝도 안 해",
+            "발이 묶이다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "어디쯤이야? 예약 시간까지 10분밖에 안 남았어.",
+                "en_text": "Where are you? We only have ten minutes before the reservation.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-07-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-07-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "미안, 차가 꼼짝도 안 해. 사고 때문에 도로가 완전히 막혔어.",
+                "en_text": "I'm sorry, traffic isn't moving at all. An accident has brought the road to a standstill.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-07-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-07-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "택시도 같은 길로 오면 늦겠네. 다른 경로로 갈 수 있는지 봤어?",
+                "en_text": "A cab will be late if it takes the same route. Have you checked for another way?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-07-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-07-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "우회로는 찾았는데 차가 꼼짝도 안 해서 아직 발이 묶였어.",
+                "en_text": "The app found a detour, but traffic is still holding me up.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-07-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-07-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "식당에 전화해서 15분 늦는다고 말해 둘게.",
+                "en_text": "I'll call the restaurant and let them know we'll be fifteen minutes late.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-07-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-07-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "고마워. 차가 움직이기 시작하면 바로 연락하고 곧 갈게.",
+                "en_text": "Thanks. I'll give you a call and come straight over as soon as traffic starts moving.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-07-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-07-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "늦는다고 무리해서 운전하지 마. 안전하게 와.",
+                "en_text": "Don't rush or drive recklessly. I know you're running late, but get here safely.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-07-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-07-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "알았어. 앱에는 7시 20분쯤 도착한다고 나와.",
+                "en_text": "I will. The app says I'll get there around 7:20.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-07-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-07-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "그럼 내가 먼저 들어가서 자리를 잡아 둘게.",
+                "en_text": "Then I'll go in first and get us a table.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-07-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-07-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "고마워. 도착하면 음료부터 주문해도 돼.",
+                "en_text": "Thanks. Feel free to get a drink before I arrive.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-07-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-07-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 8,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "카페 주문 및 취향",
+        "root_verbs_used": [
+            "get",
+            "feel",
+            "keep",
+            "make",
+            "check",
+            "go"
+        ],
+        "colloquial_keywords": [
+            "얼죽아",
+            "디카페인",
+            "입가심"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "이 날씨에도 아이스커피 마실 거야? 진짜 얼죽아네.",
+                "en_text": "You're getting iced coffee in this weather? You really are committed to iced drinks.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-08-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-08-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "응, 따뜻한 건 딱히 당기지 않아. 얼음 많이 넣어 달라고 할게.",
+                "en_text": "Yeah, I don't feel like having anything hot. I'll ask them to make it extra iced.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-08-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-08-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "난 디카페인 라테로 할게. 오후에 마시면 잠이 안 오더라.",
+                "en_text": "I'll get a decaf latte. Caffeine in the afternoon keeps me up.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-08-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-08-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "우유는 일반 우유로 괜찮아? 대체 우유도 있던데.",
+                "en_text": "Are you okay with regular milk? They have alternatives, too.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-08-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-08-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "오늘은 괜찮아. 시럽은 빼고 만들어 달라고 할게.",
+                "en_text": "Regular is fine today. I'll ask them to make it without syrup.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-08-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-08-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "케이크도 하나 시킬까? 나눠 먹으면 달콤하게 입가심하기 좋겠다.",
+                "en_text": "Should we get a slice of cake, too? We could share it as a little something sweet.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-08-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-08-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "좋아. 너무 달지 않은 걸로 골라 보자.",
+                "en_text": "Sure. Let's go with something that's not too sweet.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-08-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-08-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "이 레몬 타르트는 어때? 리뷰를 확인했는데 평이 좋네.",
+                "en_text": "How about this lemon tart? I checked the reviews, and people seem to love it.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-08-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-08-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "그걸로 하자. 커피랑도 잘 맞을 것 같아.",
+                "en_text": "Let's get that one. It should go well with the coffee.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-08-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-08-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "내가 주문할게. 자리 잡고 있어.",
+                "en_text": "I'll place the order. Go ahead and get us a table.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-08-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-08-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 9,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "집안일과 귀찮음",
+        "root_verbs_used": [
+            "keep",
+            "clear",
+            "take",
+            "get",
+            "make",
+            "put"
+        ],
+        "colloquial_keywords": [
+            "귀찮아 죽겠다",
+            "손 하나 안 까딱하다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "싱크대에 설거지가 계속 쌓이네. 오늘은 같이 치우자.",
+                "en_text": "The dishes keep piling up in the sink. Let's clear them out together today.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-09-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-09-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "귀찮아 죽겠어. 하루 종일 회의해서 아무것도 하기 싫어.",
+                "en_text": "I'm so over it. I've been in meetings all day and don't feel like doing a thing.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-09-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-09-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "나도 피곤해. 그래도 손 하나 안 까딱하면 내일 더 힘들어져.",
+                "en_text": "I'm tired, too. But if neither of us lifts a finger, it'll be worse tomorrow.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-09-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-09-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "그럼 내가 설거지할게. 너는 음식물 쓰레기만 버려 줘.",
+                "en_text": "Then I'll do the dishes. Could you just take out the food waste?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-09-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-09-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "좋아. 끝나면 바닥도 한번 쓸자. 부스러기가 꽤 보여.",
+                "en_text": "Sure. Let's clear the crumbs off the floor afterward. There are quite a few.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-09-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-09-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "바닥은 주말에 하자. 오늘은 꼭 필요한 것만 끝내자.",
+                "en_text": "Let's leave the floor for the weekend. We can just get the essentials done tonight.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-09-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-09-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "알았어. 세제도 거의 다 썼으니 장바구니에 넣어 둘게.",
+                "en_text": "Okay. We're almost out of detergent, so I'll put it on the shopping list.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-09-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-09-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "고마워. 끝나면 내가 간단히 저녁 만들어 볼게.",
+                "en_text": "Thanks. Once we're done, I'll make us something simple for dinner.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-09-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-09-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "그 말 들으니 힘이 나네. 음악 틀어 놓고 빨리 끝내자.",
+                "en_text": "That gives me a little motivation. Let's put some music on and get it over with.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-09-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-09-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "좋아. 20분만 집중하면 집이 훨씬 깔끔해질 거야.",
+                "en_text": "Deal. If we focus for twenty minutes, the place will feel much cleaner.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-09-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-09-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 10,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "건강 및 컨디션",
+        "root_verbs_used": [
+            "feel",
+            "get",
+            "keep",
+            "take",
+            "look",
+            "check"
+        ],
+        "colloquial_keywords": [
+            "몸이 찌뿌둥하다",
+            "몸살 기운이 있다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "오늘 몸이 좀 찌뿌둥해 보여. 잠은 제대로 잤어?",
+                "en_text": "You look a little stiff and out of sorts today. Did you sleep okay?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-10-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-10-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "몸살 기운이 있는 것 같아. 어젯밤부터 몸이 으슬으슬했어.",
+                "en_text": "I think I'm coming down with something. I've had chills since last night.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-10-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-10-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "열은 재 봤어? 그냥 피곤한 건지 확인해 보자.",
+                "en_text": "Have you checked your temperature? Let's see if it's more than just fatigue.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-10-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-10-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "아직 안 쟀어. 목도 조금 아픈 것 같아.",
+                "en_text": "Not yet. I think my throat is starting to hurt, too.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-10-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-10-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "일단 물 마시고 따뜻하게 있어. 오늘 운동은 쉬는 게 낫겠다.",
+                "en_text": "Drink some water and keep warm for now. You should probably skip your workout today.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-10-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-10-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "맞아. 무리하면 더 오래 갈 것 같아.",
+                "en_text": "You're right. If I push myself, I might be sick for longer.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-10-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-10-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "필요하면 병원 예약 잡아 줄게. 증상이 심해지는지도 봐.",
+                "en_text": "I can make a doctor's appointment if you need one. Keep an eye on your symptoms.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-10-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-10-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "고마워. 점심 지나도 열이 나면 바로 갈게.",
+                "en_text": "Thanks. If I still have a fever after lunch, I'll go in.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-10-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-10-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "오늘 회의는 내가 대신 들어갈게. 넌 일찍 들어가서 쉬어.",
+                "en_text": "I'll take the meeting for you. Head home early and get some rest.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-10-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-10-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "정말 고마워. 쉬고 나서 상태 알려 줄게.",
+                "en_text": "I really appreciate it. I'll let you know how I feel after I rest.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-10-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-10-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 11,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "가성비와 지출",
+        "root_verbs_used": [
+            "look",
+            "check",
+            "get",
+            "take",
+            "make",
+            "keep"
+        ],
+        "colloquial_keywords": [
+            "바가지 쓰다",
+            "가성비 갑"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "이 이어폰 괜찮아 보이는데 가격이 생각보다 높네.",
+                "en_text": "These earbuds look decent, but they're more expensive than I expected.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-11-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-11-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "리뷰부터 확인하자. 급하게 사면 바가지 쓰기 쉬워.",
+                "en_text": "Let's check the reviews first. It's easy to overpay when you rush into a purchase.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-11-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-11-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "평점은 좋은데 배터리가 오래 안 간다는 말이 꽤 있어.",
+                "en_text": "The rating is good, but quite a few people say the battery doesn't last.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-11-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-11-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "그럼 다른 모델도 보자. 할인 코드까지 적용되는 곳이 있네.",
+                "en_text": "Then let's look at another model. One store even takes a discount code.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-11-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-11-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "이건 가격이 조금 낮고 보증 기간도 길어서 오래 쓸 수 있겠어.",
+                "en_text": "This one's cheaper, comes with a longer warranty, and should keep working for years.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-11-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-11-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "기능도 충분해서 가격 대비 가성비가 정말 좋네. 굳이 비싼 걸 살 필요 없겠다.",
+                "en_text": "It has all the features we need, which makes it excellent value. No point paying more.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-11-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-11-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "배송비도 확인해 봐. 결제 단계에서 붙는 경우가 있더라.",
+                "en_text": "Check the shipping cost, too. Sometimes they add it at checkout.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-11-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-11-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "무료 배송이래. 둘이 같이 사면 더 할인받을 수도 있어.",
+                "en_text": "Shipping is free. We might get an additional discount if we buy two.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-11-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-11-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "난 하나면 충분해. 필요 이상으로 사면 결국 돈만 나가.",
+                "en_text": "One is enough for me. Buying more than we need just wastes money.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-11-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-11-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "동의해. 가격 비교까지 했으니 이제 안심하고 주문하자.",
+                "en_text": "Agreed. We've compared prices, so let's go ahead and get them.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-11-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-11-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 12,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "스마트폰과 전자기기 오류",
+        "root_verbs_used": [
+            "get",
+            "keep",
+            "turn",
+            "check",
+            "clear",
+            "hold"
+        ],
+        "colloquial_keywords": [
+            "먹통이 되다",
+            "버벅거리다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "휴대폰이 또 먹통이야? 화면이 아예 안 켜지네.",
+                "en_text": "Did your phone get stuck again? The screen won't turn on at all.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-12-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-12-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "응, 앱도 계속 버벅거려. 저장 공간이 꽉 찬 것 같아.",
+                "en_text": "Yeah, the apps keep lagging, too. I think the storage is full.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-12-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-12-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "최근에 업데이트했어? 업데이트 뒤부터 이러는 것 같아.",
+                "en_text": "Did you update it recently? It seems to have started after the update.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-12-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-12-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "어제 했어. 재부팅하면 잠깐 괜찮다가 다시 느려져.",
+                "en_text": "I did yesterday. Restarting helps for a bit, then it slows down again.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-12-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-12-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "사진 백업부터 확인하고 불필요한 파일을 지워 보자.",
+                "en_text": "Let's check that your photos are backed up and clear out files you don't need.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-12-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-12-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "좋아. 그런데 전원 버튼도 가끔 반응이 없어.",
+                "en_text": "Okay. The power button sometimes stops responding, too.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-12-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-12-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "전원 버튼을 길게 눌러 봐. 강제로 재시작될 수도 있어.",
+                "en_text": "Try holding the power button down. It might force a restart.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-12-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-12-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "보증 기간이 남았는지 확인할게. 무상 수리면 좋겠다.",
+                "en_text": "I'll check whether it's still under warranty. Hopefully the repair is covered.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-12-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-12-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "수리 맡기기 전에 중요한 자료는 따로 저장해 둬.",
+                "en_text": "Save your important files somewhere else before you take it in for repair.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-12-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-12-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "알았어. 당분간은 필요한 앱만 켜서 써야겠다.",
+                "en_text": "Will do. I'll keep only the apps I need open for now.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-12-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-12-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 13,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "모임 정산과 더치페이",
+        "root_verbs_used": [
+            "get",
+            "give",
+            "keep",
+            "take",
+            "make"
+        ],
+        "colloquial_keywords": [
+            "N분의 1 하자",
+            "내가 쏜다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "영수증 받았어? 오늘은 각자 먹은 것만 계산하면 될까?",
+                "en_text": "Did you get the receipt? Should we each pay for what we ordered?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-13-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-13-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "다 같이 나눠 먹었으니까 그냥 똑같이 나누자.",
+                "en_text": "Since we shared everything, let's split the bill evenly.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-13-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-13-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "좋아. 내가 계산하고 각자 정산 금액을 단체 채팅방에 알려 줄게.",
+                "en_text": "Works for me. I'll take care of the bill and give everyone a breakdown of what they owe in the group chat.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-13-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-13-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "잠깐, 오늘은 내가 쏜다고 했잖아. 승진 축하 자리니까.",
+                "en_text": "Wait, I said dinner was on me tonight. We're celebrating my promotion.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-13-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-13-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "고맙긴 한데 금액이 꽤 나왔어. 정말 괜찮겠어?",
+                "en_text": "That's generous of you, but this is a pretty big bill. Are you sure?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-13-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-13-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "괜찮아. 오늘은 내가 내고 다음에 네가 커피 사.",
+                "en_text": "It's fine. I'll cover dinner, and you can get coffee next time.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-13-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-13-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "그럼 음료 값은 내가 낼게. 그 정도는 받아 줘.",
+                "en_text": "Then let me take care of the drinks. At least let me do that.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-13-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-13-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "좋아. 대신 영수증은 내가 챙길게.",
+                "en_text": "All right. I'll keep the receipt, then.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-13-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-13-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "정산은 깔끔해졌네. 다음 모임 계획도 세우자.",
+                "en_text": "That settles it. Let's make a plan for the next get-together, too.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-13-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-13-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "좋지. 다음엔 부담 없이 각자 계산하자.",
+                "en_text": "Sounds good. Next time, let's keep it simple and pay our own way.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-13-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-13-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 14,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "날씨와 옷차림",
+        "root_verbs_used": [
+            "feel",
+            "bring",
+            "check",
+            "take",
+            "turn"
+        ],
+        "colloquial_keywords": [
+            "후텁지근하다",
+            "일교차가 크다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "오늘 후텁지근하네. 비 오기 직전처럼 공기가 무거워.",
+                "en_text": "It's muggy today. The air feels heavy, like it's about to rain.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-14-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-14-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "아침엔 선선해서 긴팔 입었는데 지금은 너무 덥다.",
+                "en_text": "It was cool this morning, so I wore long sleeves. Now I'm overheating.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-14-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-14-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "요즘 일교차가 크니까 겉옷 하나 챙기는 게 낫겠어.",
+                "en_text": "The temperature swings a lot these days, so it's worth bringing a light jacket.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-14-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-14-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "맞아. 해가 지면 날씨가 금방 쌀쌀해지더라.",
+                "en_text": "Exactly. It tends to turn chilly by the time I leave work.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-14-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-14-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "일기예보 확인했어? 저녁에 소나기 온대.",
+                "en_text": "Did you check the forecast? It says there'll be a shower this evening.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-14-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-14-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "안 봤어. 우산도 안 가져왔는데 큰일이네.",
+                "en_text": "I didn't. I haven't brought an umbrella, either. That's not ideal.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-14-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-14-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "내 여분 우산 가져가. 대신 내일 돌려줘.",
+                "en_text": "Take my spare umbrella. Just bring it back tomorrow.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-14-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-14-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "고마워. 퇴근길에 편의점에서 하나 더 사 둘게.",
+                "en_text": "Thanks. I'll pick one up at the convenience store on my way home.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-14-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-14-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "바람이 불기 시작하네. 밖에 나갈 때 조심해.",
+                "en_text": "The wind is picking up. Be careful when you head out.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-14-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-14-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "응. 날씨가 갑자기 바뀌니까 겹쳐 입는 게 답이야.",
+                "en_text": "I will. With the weather changing so quickly, layering is the way to go.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-14-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-14-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 15,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "소문과 비밀 유지",
+        "root_verbs_used": [
+            "keep",
+            "give",
+            "come",
+            "catch",
+            "pass",
+            "check"
+        ],
+        "colloquial_keywords": [
+            "귀가 얇다",
+            "너만 알고 있어"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "새 팀장 온다는 소문 들었어? 아직 공식 발표는 없대.",
+                "en_text": "Have you heard the rumor about a new team lead? Apparently, nothing's official yet.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-15-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-15-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "들었는데 확인되기 전까지는 믿지 않으려고.",
+                "en_text": "I have, but I'm trying not to believe it until someone checks the facts.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-15-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-15-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "나도 귀가 얇아서 누가 말하면 금방 믿게 돼. 가끔은 나도 내가 그러는 걸 알아차려.",
+                "en_text": "I'm pretty gullible when it comes to rumors; I catch myself believing whatever I hear.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-15-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-15-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "그러니까. 출처가 어딘지 확인하고 괜히 퍼뜨리지 말자.",
+                "en_text": "Exactly. Let's check where it came from and not pass it around for no reason.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-15-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-15-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "사실 인사팀에서 먼저 얘기해 줬어. 너만 알고 있어.",
+                "en_text": "Actually, HR gave me a heads-up first. Keep it to yourself for now.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-15-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-15-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "알았어. 더 자세한 얘기는 아직 안 나온 거지?",
+                "en_text": "Got it. They haven't shared any more details yet, right?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-15-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-15-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "응, 확정된 일정만 들었어. 이름은 아직 모르고.",
+                "en_text": "Right. I only heard the confirmed timeline. I don't know who it is yet.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-15-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-15-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "그럼 아무한테도 말 안 할게. 잘못 전해지면 곤란하니까.",
+                "en_text": "Then I won't tell anyone. It could get messy if the story gets distorted.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-15-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-15-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "고마워. 공식 공지가 나오면 그때 같이 확인하자.",
+                "en_text": "Thanks. Let's check together once the official announcement comes out.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-15-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-15-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "좋아. 그전엔 소문에 휘둘리지 말고 조용히 있자.",
+                "en_text": "Sounds good. Let's keep quiet and not get carried away by speculation.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-15-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-15-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 16,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "운동 의지와 작심삼일",
+        "root_verbs_used": [
+            "keep",
+            "get",
+            "make",
+            "run",
+            "stand",
+            "feel",
+            "set"
+        ],
+        "colloquial_keywords": [
+            "작심삼일",
+            "폼이 나오다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "운동 등록했다며? 이번엔 작심삼일로 끝나는 거 아니지?",
+                "en_text": "I heard you joined a gym. This isn't going to be another three-day phase, is it?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-16-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-16-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "이번엔 주 3회만 꾸준히 가려고. 그 계획은 끝까지 지킬 거야.",
+                "en_text": "I'm aiming for three times a week, and I'll stand by that plan. If I overdo it, I won't keep it up.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-16-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-16-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "좋은 계획이네. 같이 가면 서로 꾸준히 하게 도와줄 수 있겠다.",
+                "en_text": "That's a solid plan. We could help each other stick with it if we go together.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-16-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-16-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "그러자. 러닝머신만 뛰면 지루하니까 근력 운동도 섞을 거야.",
+                "en_text": "Let's do that. Running on a treadmill gets boring, so I'll mix in strength training.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-16-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-16-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "운동복 입으니까 벌써 좀 폼이 나는데?",
+                "en_text": "You've got the look already just wearing the workout gear.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-16-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-16-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "겉모습만 그래. 스쿼트 몇 개 하면 바로 힘들걸.",
+                "en_text": "That's just the outfit. A few squats and I'll be struggling.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-16-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-16-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "첫날부터 기록 세우려 하지 말고 자세부터 잡자.",
+                "en_text": "Don't try to set records on day one. Let's focus on getting your form right.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-16-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-16-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "알았어. 운동 끝나면 스트레칭도 빼먹지 말아야지.",
+                "en_text": "Got it. I'll make sure not to skip the stretching afterward.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-16-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-16-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "맞아. 통증이 날카롭게 느껴지면 바로 멈춰.",
+                "en_text": "Right. Stop if you feel any sharp pain.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-16-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-16-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "좋아. 이번엔 기록보다 꾸준히 하는 걸 목표로 할게.",
+                "en_text": "Deal. This time, I'll focus on consistency, not hitting a number.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-16-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-16-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 17,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "대중교통과 택시",
+        "root_verbs_used": [
+            "catch",
+            "get",
+            "take",
+            "drop",
+            "run",
+            "come"
+        ],
+        "colloquial_keywords": [
+            "막차 타다",
+            "중간에 내려주다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "벌써 11시 반이야. 우리 막차 탈 수 있을까?",
+                "en_text": "It's already half past eleven. Do you think we can still catch the last train?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-17-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-17-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "앱에는 5분 뒤에 온다고 나와. 서두르면 탈 수 있을 것 같아.",
+                "en_text": "The app says it's due in five minutes. We can make it if we hurry.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-17-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-17-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "역까지 뛰어가진 말자. 계단에서 넘어지면 더 곤란해.",
+                "en_text": "Let's not run all the way to the station. We don't need anyone falling on the stairs.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-17-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-17-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "맞아. 놓치면 택시를 타야 하는데 요금이 꽤 나올 거야.",
+                "en_text": "True. If we miss it, we'll need to take a cab, and it'll cost a lot.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-17-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-17-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "택시 부를게. 기사님께 중간에 편의점 앞에서 내려 달라고 하면 돼.",
+                "en_text": "I'll book a cab. We can ask the driver to drop us off by the convenience store on the way.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-17-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-17-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "좋아. 거기서 집까지는 걸어서 금방이야.",
+                "en_text": "Good. It's just a short walk home from there.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-17-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-17-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "차가 곧 온대. 큰길 쪽으로 나가서 기다리자.",
+                "en_text": "The cab is coming. Let's wait out by the main road.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-17-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-17-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "기사님한테 정확한 위치를 보냈어?",
+                "en_text": "Did you send the driver the exact pickup location?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-17-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-17-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "응, 출구 번호까지 보냈어. 여기로 바로 올 거야.",
+                "en_text": "I did, including the exit number. They should come straight here.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-17-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-17-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "다행이다. 다음엔 막차 시간 전에 먼저 확인하자.",
+                "en_text": "Good. Next time, let's check the last-train schedule before it gets this late.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-17-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-17-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 18,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "성격과 취향",
+        "root_verbs_used": [
+            "look",
+            "get",
+            "make",
+            "keep",
+            "feel",
+            "pick"
+        ],
+        "colloquial_keywords": [
+            "까탈스럽다",
+            "취향저격"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "선물 고르는 거 도와줄래? 그 친구 취향이 좀 까탈스러워.",
+                "en_text": "Can you help me pick a gift? They're pretty particular about what they like.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-18-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-18-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "지난번에 좋아한 건 뭐였어? 그걸 기준으로 보면 되지.",
+                "en_text": "What did they like last time? We can use that as a starting point.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-18-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-18-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "작은 독립 서점에서 산 노트를 정말 좋아했어.",
+                "en_text": "They loved the notebook I got from that little independent bookstore.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-18-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-18-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "그럼 문구류나 책갈피가 취향저격일 수 있겠다.",
+                "en_text": "Then stationery or a bookmark might be right up their alley.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-18-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-18-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "너무 뻔한 선물처럼 보이지 않을까?",
+                "en_text": "Wouldn't that feel a little too predictable?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-18-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-18-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "손으로 만든 책갈피를 찾아봐. 특별하면서도 부담스럽지 않을 거야.",
+                "en_text": "Look for a handmade bookmark. It'll feel thoughtful without being over the top.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-18-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-18-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "좋네. 색은 차분한 걸로 고르면 되겠다.",
+                "en_text": "That's a good idea. I can keep the color understated.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-18-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-18-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "포장도 같이 해 주는지 확인해 봐. 선물 느낌이 더 살 거야.",
+                "en_text": "Check if they offer gift wrapping. It'll make it feel more special.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-18-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-18-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "가격도 괜찮고, 진짜 마음에 들어 할 것 같아.",
+                "en_text": "It's reasonably priced, and I think they'll genuinely love it.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-18-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-18-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "그럼 그걸로 하자. 네가 골라서 더 의미 있겠다.",
+                "en_text": "Then go with that. It'll mean more because you picked it out.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-18-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-18-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 19,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "택배와 온라인 쇼핑",
+        "root_verbs_used": [
+            "get",
+            "put",
+            "check",
+            "bring",
+            "take",
+            "drop"
+        ],
+        "colloquial_keywords": [
+            "문 앞에 두다",
+            "반품 처리하다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "택배 도착 알림 왔어? 오늘 꼭 받아야 하는데.",
+                "en_text": "Did you get a delivery notification? I really need that package today.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-19-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-19-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "응, 배송 완료래. 택배 기사가 문 앞에 두고 갔다고 나와.",
+                "en_text": "Yeah, it says the courier put it by the front door and dropped it off.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-19-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-19-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "사진도 있어? 가끔 옆집 문 앞에 두고 가더라.",
+                "en_text": "Is there a delivery photo? Sometimes they leave it at the neighbor's door.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-19-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-19-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "사진 보니까 우리 집 맞아. 내가 내려가서 가져올게.",
+                "en_text": "The photo looks like our place. I'll go down and bring it up.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-19-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-19-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "고마워. 상자 찌그러졌는지도 확인해 줘.",
+                "en_text": "Thanks. Could you check whether the box is damaged, too?",
+                "ko_audio": "audio/root-verb-dialogues/scenario-19-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-19-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "겉은 괜찮아 보여. 안에 있는 물건도 확인해 볼게.",
+                "en_text": "The outside looks fine. I'll check the item inside, too.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-19-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-19-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "색이 주문한 거랑 다르면 바로 반품 처리해야 해.",
+                "en_text": "If the color doesn't match what we ordered, we'll have to arrange a return right away.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-19-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-19-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "다행히 맞네. 그래도 구성품이 하나 빠진 것 같아.",
+                "en_text": "Luckily, the color is right. But I think one of the accessories is missing.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-19-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-19-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "구매 내역이랑 포장 목록을 확인해 보자. 고객센터에 연락할 수도 있어.",
+                "en_text": "Let's check the order details and packing list. We may need to contact customer service.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-19-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-19-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "사진 찍어서 문의 남길게. 답변 오면 같이 확인하자.",
+                "en_text": "I'll take a photo and send them a message. We can check their reply together.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-19-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-19-line-10-en.mp3"
+            }
+        ]
+    },
+    {
+        "scenario_id": 20,
+        "categoryName": "뿌리동사 활용하기",
+        "title": "주말 휴식과 집콕",
+        "root_verbs_used": [
+            "keep",
+            "get",
+            "feel",
+            "catch",
+            "put",
+            "make",
+            "take"
+        ],
+        "colloquial_keywords": [
+            "방콕하다",
+            "늘어지게 자다"
+        ],
+        "dialogue_lines": [
+            {
+                "line_number": 1,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "이번 주말엔 뭐 할 거야? 날씨도 괜찮다던데.",
+                "en_text": "What are you doing this weekend? I heard the weather should be nice.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-20-line-01-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-20-line-01-en.mp3"
+            },
+            {
+                "line_number": 2,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "아무 계획 없어. 이번 주는 너무 바빠서 그냥 방콕하고 싶어.",
+                "en_text": "I have no plans. This week was exhausting, so I just want to stay in.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-20-line-02-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-20-line-02-en.mp3"
+            },
+            {
+                "line_number": 3,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "가끔은 그게 최고지. 알람 없이 늘어지게 자고 싶다.",
+                "en_text": "A slow morning feels like exactly what I need. I'd love to sleep in with no alarm.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-20-line-03-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-20-line-03-en.mp3"
+            },
+            {
+                "line_number": 4,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "나도. 늦게 일어나서 배달 음식 시켜 먹고 싶어.",
+                "en_text": "Same here. I want to get up late and order something in.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-20-line-04-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-20-line-04-en.mp3"
+            },
+            {
+                "line_number": 5,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "밀린 드라마도 보고 휴대폰은 좀 내려놓자.",
+                "en_text": "We could catch up on that series and put our phones away for a while.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-20-line-05-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-20-line-05-en.mp3"
+            },
+            {
+                "line_number": 6,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "좋아. 소파에서 담요 덮고 하루 종일 있어도 되겠다.",
+                "en_text": "Perfect. We can stay on the couch under a blanket all day.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-20-line-06-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-20-line-06-en.mp3"
+            },
+            {
+                "line_number": 7,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "집이 너무 어질러져 있으면 쉬는 기분이 안 나니까 가볍게 치우자.",
+                "en_text": "Let's do a quick tidy-up first. I can't relax when the place is too messy.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-20-line-07-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-20-line-07-en.mp3"
+            },
+            {
+                "line_number": 8,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "정리는 딱 10분만 하고 그다음엔 아무것도 안 하는 걸로.",
+                "en_text": "Let's keep the cleanup to ten minutes, and then we're officially doing nothing.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-20-line-08-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-20-line-08-en.mp3"
+            },
+            {
+                "line_number": 9,
+                "speaker": "A",
+                "ko_voice": "지안(프리미엄)",
+                "en_voice": "Samantha",
+                "ko_text": "좋아. 커피 내려 놓을 테니 너는 간식 좀 골라 줘.",
+                "en_text": "Deal. I'll make coffee, and you pick out some snacks.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-20-line-09-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-20-line-09-en.mp3"
+            },
+            {
+                "line_number": 10,
+                "speaker": "B",
+                "ko_voice": "민수(고품질)",
+                "en_voice": "Samantha",
+                "ko_text": "완벽한 주말이네. 월요일에 다시 기운 차리면 되지.",
+                "en_text": "That sounds like a perfect weekend. Let's take it easy and recharge before Monday.",
+                "ko_audio": "audio/root-verb-dialogues/scenario-20-line-10-ko.mp3",
+                "en_audio": "audio/root-verb-dialogues/scenario-20-line-10-en.mp3"
+            }
+        ]
+    }
+]
