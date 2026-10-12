@@ -407,106 +407,28 @@
         }
 
         .hero-art {
-            position: relative;
-            min-height: 480px;
-        }
-
-        .hero-photo {
-            position: absolute;
-            top: 30px;
-            right: 35px;
-            width: min(78%, 405px);
-            padding: 13px 13px 48px;
-            background: #fff;
-            box-shadow: 0 20px 45px rgba(30, 41, 34, .16);
-            transform: rotate(3deg);
-        }
-
-        .hero-photo img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-        }
-
-        .photo-caption {
-            position: absolute;
-            right: 0;
-            bottom: 7px;
-            left: 0;
-            color: #4d554f;
-            font-family: var(--serif);
-            font-size: 18px;
-            text-align: center;
-        }
-
-        .pin {
-            position: absolute;
-            top: -11px;
-            left: 48%;
-            width: 19px;
-            height: 19px;
-            border: 4px solid #f8f7f2;
-            border-radius: 50%;
-            background: #ba8e56;
-            box-shadow: 0 2px 5px #0003;
-        }
-
-        .note {
-            position: absolute;
-            z-index: 2;
-            padding: 19px 21px;
-            background: #f4e9c9;
-            box-shadow: 0 12px 28px rgba(50, 45, 30, .12);
-            color: #4d493e;
-            font-family: var(--serif);
-        }
-
-        .note-one {
-            top: 18px;
-            left: -5px;
-            width: 188px;
-            transform: rotate(-7deg);
-        }
-
-        .note-two {
-            right: -5px;
-            bottom: 10px;
-            width: 200px;
-            background: #e9efe8;
-            transform: rotate(5deg);
-        }
-
-        .note small {
-            display: block;
-            margin-bottom: 5px;
-            color: #687068;
-            font-family: var(--sans);
-            font-size: 13px;
-        }
-
-        .note strong {
-            display: block;
-            font-size: 19px;
-            font-weight: 500;
-            line-height: 1.5;
-        }
-
-        .date-stamp {
-            position: absolute;
-            right: 8px;
-            bottom: 98px;
-            z-index: 3;
-            width: 88px;
-            height: 88px;
             display: grid;
-            place-content: center;
-            border: 1px solid #b68b4c;
-            border-radius: 50%;
-            color: #8f6932;
-            font-size: 13px;
-            line-height: 1.35;
-            text-align: center;
-            transform: rotate(-12deg);
+            width: 100%;
+            min-width: 0;
+            place-items: center;
+            isolation: isolate;
+            background: var(--paper);
+            -webkit-mask-image: radial-gradient(ellipse closest-side, #000 65%, transparent 100%);
+            mask-image: radial-gradient(ellipse closest-side, #000 65%, transparent 100%);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+        }
+
+        .hero-art img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 2528 / 1696;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
         }
 
         /* Small brand statement */
@@ -1749,49 +1671,6 @@
                 font-size: 18px;
             }
 
-            .hero-art {
-                min-height: 390px;
-            }
-
-            .hero-photo {
-                top: 38px;
-                right: 15px;
-                width: 76%;
-                padding: 9px 9px 43px;
-            }
-
-            .hero-photo img {
-                height: 280px;
-            }
-
-            .note {
-                padding: 13px 14px;
-            }
-
-            .note-one {
-                top: 8px;
-                left: 0;
-                width: 155px;
-            }
-
-            .note-two {
-                right: 0;
-                bottom: 5px;
-                width: 165px;
-            }
-
-            .note strong {
-                font-size: 16px;
-            }
-
-            .date-stamp {
-                right: 2px;
-                bottom: 85px;
-                width: 72px;
-                height: 72px;
-                font-size: 11px;
-            }
-
             .archive-inner {
                 flex-wrap: wrap;
                 gap: 8px 13px;
@@ -1938,6 +1817,7 @@
                 <a href="#lessons">동영상 강의</a>
                 <a href="#conversation">오늘의 회화</a>
                 <a href="#voice">음성 스튜디오</a>
+                <a href="kecho/">K-ECHO</a>
                 <a class="nav-cta" href="#register">수강 신청</a>
             </nav>
         </div>
@@ -1956,16 +1836,9 @@
                         <a class="button secondary" href="#conversation">오늘의 회화 보기</a>
                     </div>
                 </div>
-                <div class="hero-art" aria-label="영어를 함께 배우는 따뜻한 순간을 담은 사진 콜라주">
-                    <div class="note note-one"><small>나의 배움 기록</small><strong>한 문장씩,<br>내 것이 되는 중</strong></div>
-                    <figure class="hero-photo">
-                        <span class="pin" aria-hidden="true"></span>
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
-                            alt="노트북 화면을 가리키며 함께 공부하는 손" fetchpriority="high">
-                        <figcaption class="photo-caption">A little better, every week.</figcaption>
-                    </figure>
-                    <div class="date-stamp" aria-hidden="true">WEEKLY<br>JOURNAL<br>2026</div>
-                    <div class="note note-two"><small>오늘의 마음</small><strong>배움에는<br>늦은 때가 없어요.</strong></div>
+                <div class="hero-art">
+                    <img src="./great things take time.png" width="2528" height="1696"
+                        alt="Great things take time. 좋은 일에는 시간이 필요합니다." fetchpriority="high" decoding="async">
                 </div>
             </div>
         </section>
@@ -2797,6 +2670,8 @@
             // 경로 안의 마지막 알려진 폴더를 우선하고, 없으면 카테고리 ID로 폴더를 정한다.
             const normalizeVideoPath = (raw, categoryId) => {
                 if (typeof raw !== 'string' || !raw.trim() || /^https?:/i.test(raw.trim())) return raw;
+                const localPath = raw.trim().replace(/^(?:\.?\/)+/, '');
+                if (/^VIDEOS\/basic-course-21\/renders\/basic-(?:0[1-9]|1\d|2[01])\.mp4$/i.test(localPath)) return localPath;
                 const parts = raw.trim().replace(/^(?:\.?\/)+/, '').split('/').filter(Boolean);
                 const file = parts.pop().replace(/\.mp4$/i, '') + '.mp4';
                 const folder = [...parts].reverse().find((part) => VIDEO_FOLDERS.includes(part.toLowerCase()))?.toLowerCase() || CATEGORY_FOLDER[categoryId] || 'verbs';
@@ -2841,6 +2716,7 @@
                     video.playsInline = true;
                     video.autoplay = true;
                     video.preload = 'auto';
+                    if (selectedCategory?.categoryId === 'basic-course' && lesson.thumbnail) video.poster = lesson.thumbnail;
                     video.setAttribute('aria-label', lesson.title);
                     video.addEventListener('error', () => {
                         videoFrame.replaceChildren(makeElement('div', 'video-placeholder', `영상을 불러오지 못했습니다. (${url.pathname})`));
@@ -3374,42 +3250,62 @@
             let mediaStream = null;
             let recordingChunks = [];
             let recognition = null;
-            let recognitionRestartTimer = null;
             let finalizedTranscript = '';
+            let interimTranscript = '';
             let isRecording = false;
-            let recognitionCanRestart = true;
+            let recognitionEnded = true;
+            let resolveRecognitionEnd = null;
             let recognitionFailureMessage = '';
             const mobileUserAgent = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)
                 || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
             const iosUserAgent = /iPhone|iPad|iPod/i.test(navigator.userAgent)
                 || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
-            const renderTranscript = (interimText = '') => {
-                const recognizedText = `${finalizedTranscript}${interimText ? ` ${interimText}` : ''}`.trim();
-                transcript.textContent = recognizedText || (isRecording
+            const renderTranscript = () => {
+                const recognizedText = `${finalizedTranscript} ${interimTranscript}`.trim();
+                transcript.textContent = recognizedText || recognitionFailureMessage || (isRecording
                     ? '음성을 듣고 있습니다. 영어로 말씀해 주세요.'
                     : '인식된 문장이 없습니다. 다시 녹음해 주세요.');
             };
 
-            const stopRecognition = () => {
-                if (recognitionRestartTimer) {
-                    clearTimeout(recognitionRestartTimer);
-                    recognitionRestartTimer = null;
-                }
-                if (recognition) {
-                    try { recognition.stop(); } catch (_) { /* The recognition session may already have ended. */ }
-                }
+            const stopRecognition = async () => {
+                const activeRecognition = recognition;
+                if (!activeRecognition || recognitionEnded) return;
+                await new Promise((resolve) => setTimeout(resolve, 1500));
+                if (recognition !== activeRecognition || recognitionEnded) return;
+                await new Promise((resolve) => {
+                    const timeout = setTimeout(() => {
+                        resolveRecognitionEnd = null;
+                        resolve();
+                    }, 1500);
+                    resolveRecognitionEnd = () => {
+                        clearTimeout(timeout);
+                        resolveRecognitionEnd = null;
+                        resolve();
+                    };
+                    try {
+                        activeRecognition.stop();
+                    } catch (error) {
+                        console.error('[Pronunciation STT] stop failed', error);
+                        resolveRecognitionEnd?.();
+                    }
+                });
             };
-            const stopRecording = () => {
+            const stopRecording = async () => {
                 if (!isRecording) return;
                 isRecording = false;
                 recordButton.disabled = true;
                 recordLabel.textContent = '녹음 정리 중';
                 recordingIndicator.hidden = true;
                 transcript.classList.remove('is-listening');
-                stopRecognition();
-                if (recorder && recorder.state !== 'inactive') recorder.stop();
-                else finishRecording();
+                const recordingStopped = new Promise((resolve) => {
+                    if (recorder && recorder.state !== 'inactive') {
+                        recorder.onstop = resolve;
+                        recorder.stop();
+                    } else resolve();
+                });
+                await Promise.all([recordingStopped, stopRecognition()]);
+                finishRecording();
             };
             const finishRecording = () => {
                 if (recordingChunks.length) {
@@ -3431,85 +3327,79 @@
                 if (mediaStream) mediaStream.getTracks().forEach((track) => track.stop());
                 mediaStream = null;
                 recorder = null;
+                recognition = null;
                 recordLabel.textContent = '녹음 시작';
                 recordButton.disabled = false;
             };
-            const startRecognition = (restartDelay = 0) => {
+            const startRecognition = () => {
                 if (!SpeechRecognition) {
-                    recognitionCanRestart = false;
-                    recognitionFailureMessage = '이 브라우저는 음성 인식을 지원하지 않습니다.';
-                    const mobileHelp = mobileUserAgent ? '사파리/크롬 설정에서 마이크 및 음성 인식을 허용해 주세요. ' : '';
-                    transcript.textContent = `${mobileHelp}이 브라우저에서는 음성 인식 결과를 표시할 수 없습니다. 녹음 파일은 계속 저장됩니다.`;
-                    voiceStatus.textContent = `${mobileHelp}녹음은 계속되며, 저장한 음성을 재생할 수 있어요.`;
+                    recognitionFailureMessage = '이 브라우저는 음성 인식을 지원하지 않습니다. 인앱 브라우저 대신 Safari 또는 Chrome에서 열어 주세요. 녹음과 재생은 계속 사용할 수 있어요.';
+                    renderTranscript();
+                    voiceStatus.textContent = recognitionFailureMessage;
                     return;
                 }
-                if (recognitionRestartTimer) clearTimeout(recognitionRestartTimer);
-                recognitionRestartTimer = setTimeout(() => {
-                    recognitionRestartTimer = null;
-                    if (!isRecording || !recognitionCanRestart) return;
+                try {
                     const activeRecognition = new SpeechRecognition();
                     recognition = activeRecognition;
                     activeRecognition.lang = 'en-US';
-                    activeRecognition.continuous = !mobileUserAgent;
-                    activeRecognition.interimResults = !iosUserAgent;
+                    activeRecognition.continuous = false;
+                    activeRecognition.interimResults = true;
                     activeRecognition.maxAlternatives = 1;
                     attachRecognitionHandlers(activeRecognition);
-                    try {
-                        activeRecognition.start();
-                    } catch (_) {
-                        handleRecognitionFailure('start-failed');
-                    }
-                }, restartDelay);
+                    recognitionEnded = false;
+                    activeRecognition.start();
+                } catch (error) {
+                    recognitionEnded = true;
+                    handleRecognitionFailure(error.name === 'NotAllowedError' ? 'not-allowed' : 'start-failed', error);
+                }
             };
-            const handleRecognitionFailure = (errorCode) => {
-                recognitionCanRestart = false;
-                const permissionMessage = '사파리/크롬 설정에서 마이크 및 음성 인식을 허용해 주세요.';
-                const mobileHelp = mobileUserAgent ? `${permissionMessage} ` : '';
-                const isPermissionError = ['not-allowed', 'service-not-allowed', 'audio-capture'].includes(errorCode);
-                recognitionFailureMessage = isPermissionError
-                    ? (mobileUserAgent ? permissionMessage : '마이크 또는 음성 인식 권한이 거부되었습니다.')
-                    : '음성 인식 연결에 문제가 생겼습니다.';
-                transcript.textContent = finalizedTranscript.trim() || `${mobileHelp}${recognitionFailureMessage}`;
-                voiceStatus.textContent = isPermissionError
-                    ? `${mobileHelp}${mobileUserAgent ? '' : '브라우저 설정에서 마이크와 음성 인식을 허용한 뒤 다시 녹음해 주세요. '}녹음 자체는 계속됩니다.`
-                    : `${mobileHelp}음성 인식을 다시 시작할 수 없어요. 녹음은 계속되며 파일은 저장됩니다.`;
+            const handleRecognitionFailure = (errorCode, error) => {
+                console.error('[Pronunciation STT]', errorCode, error);
+                const permissionMessage = iosUserAgent
+                    ? 'Safari의 사이트 마이크 권한을 허용해 주세요. iPhone/iPad 설정에서 일반 > 키보드 > 받아쓰기 활성화와 Siri 설정도 확인해 주세요. 인앱 브라우저라면 Safari에서 열어 주세요.'
+                    : mobileUserAgent
+                        ? 'Chrome의 사이트 마이크 권한과 기기의 앱 마이크 권한을 허용해 주세요. 인앱 브라우저라면 Chrome에서 열어 주세요.'
+                        : '브라우저 설정에서 마이크와 음성 인식을 허용한 뒤 다시 녹음해 주세요.';
+                const messages = {
+                    'not-allowed': permissionMessage,
+                    'service-not-allowed': permissionMessage,
+                    'audio-capture': '음성 인식이 마이크를 사용할 수 없습니다. 다른 통화나 녹음 앱을 닫고 다시 시도해 주세요.',
+                    'no-speech': '음성이 감지되지 않았어요. 마이크에 가까이 대고 녹음 시작을 다시 눌러 영어 문장을 읽어 주세요.',
+                    network: '음성 인식 서버에 연결하지 못했어요. 인터넷 연결을 확인하고 다시 녹음해 주세요.',
+                    aborted: '음성 인식이 중단되었어요. 녹음 시작을 다시 눌러 주세요.'
+                };
+                recognitionFailureMessage = messages[errorCode] || '음성 인식을 시작하지 못했어요. Safari 또는 Chrome에서 권한을 확인하고 다시 시도해 주세요.';
+                renderTranscript();
+                voiceStatus.textContent = `${recognitionFailureMessage} 녹음 파일은 계속 저장됩니다.`;
             };
             const attachRecognitionHandlers = (activeRecognition) => {
-                recognitionCanRestart = true;
                 activeRecognition.onstart = () => {
-                    if (isRecording) voiceStatus.textContent = '음성을 듣고 있어요. 영어 문장을 편하게 읽어 주세요.';
+                    if (recognition === activeRecognition && isRecording) voiceStatus.textContent = '음성을 듣고 있어요. 영어 문장을 편하게 읽어 주세요.';
                 };
                 activeRecognition.onresult = (event) => {
-                    let interim = '';
-                    for (let index = event.resultIndex; index < event.results.length; index += 1) {
+                    if (recognition !== activeRecognition) return;
+                    finalizedTranscript = '';
+                    interimTranscript = '';
+                    for (let index = 0; index < event.results.length; index += 1) {
                         const text = event.results[index][0].transcript.trim();
                         if (!text) continue;
                         if (event.results[index].isFinal) finalizedTranscript += `${text} `;
-                        else interim += `${text} `;
+                        else interimTranscript += `${text} `;
                     }
-                    renderTranscript(interim.trim());
-                    if (interim.trim()) voiceStatus.textContent = '말씀하시는 문장을 실시간으로 표시하고 있어요.';
+                    renderTranscript();
+                    if (!recognitionFailureMessage) voiceStatus.textContent = '인식된 영어 문장을 발음 노트에 표시하고 있어요.';
                 };
                 activeRecognition.onerror = (event) => {
-                    if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
-                        handleRecognitionFailure(event.error);
-                    } else if (event.error === 'audio-capture') {
-                        handleRecognitionFailure(event.error);
-                    } else if (event.error === 'no-speech') {
-                        renderTranscript();
-                        voiceStatus.textContent = '아직 음성이 들리지 않아요. 마이크에 가까이 대고 영어로 말씀해 주세요.';
-                    } else if (event.error === 'aborted' && !isRecording) {
-                        renderTranscript();
-                    } else if (event.error !== 'no-speech' && event.error !== 'aborted') {
-                        handleRecognitionFailure(event.error);
-                    }
+                    if (recognition !== activeRecognition) return;
+                    if (event.error === 'aborted' && !isRecording) return;
+                    handleRecognitionFailure(event.error, event);
                 };
                 activeRecognition.onend = () => {
-                    if (isRecording && recognitionCanRestart) {
-                        startRecognition(mobileUserAgent ? 250 : 0);
-                    } else if (!isRecording) {
-                        renderTranscript();
-                    }
+                    if (recognition !== activeRecognition) return;
+                    recognitionEnded = true;
+                    resolveRecognitionEnd?.();
+                    renderTranscript();
+                    if (isRecording && !recognitionFailureMessage) voiceStatus.textContent = '한 문장 인식이 완료되었어요. 녹음 중지를 눌러 발음을 저장해 주세요.';
                 };
             };
             const startRecording = async () => {
@@ -3522,21 +3412,19 @@
                 recordLabel.textContent = '마이크 연결 중';
                 transcript.textContent = '마이크 권한을 확인하고 있습니다...';
                 recognitionFailureMessage = '';
-                recognitionCanRestart = true;
+                finalizedTranscript = '';
+                interimTranscript = '';
+                isRecording = true;
+                window.speechSynthesis?.cancel();
                 voiceStatus.textContent = '마이크 권한을 확인하고 있어요. 브라우저 안내가 나오면 허용해 주세요.';
+                startRecognition();
+                let permissionAbandoned = false;
                 try {
-                    if (navigator.permissions?.query) {
-                        const permissionState = await Promise.race([
-                            navigator.permissions.query({ name: 'microphone' }).then((permission) => permission.state),
-                            new Promise((resolve) => setTimeout(() => resolve('unknown'), 750))
-                        ]);
-                        if (permissionState === 'denied') {
-                            throw new DOMException('Microphone access is blocked for this site.', 'NotAllowedError');
-                        }
-                    }
-
                     let permissionTimeout;
-                    const permissionRequest = navigator.mediaDevices.getUserMedia({ audio: true });
+                    const permissionRequest = navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+                        if (permissionAbandoned) stream.getTracks().forEach((track) => track.stop());
+                        return stream;
+                    });
                     const permissionDeadline = new Promise((_, reject) => {
                         permissionTimeout = setTimeout(() => {
                             const error = new Error('The browser did not resolve the microphone permission request.');
@@ -3552,11 +3440,9 @@
                     const mimeType = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4'].find((type) => MediaRecorder.isTypeSupported(type));
                     recorder = mimeType ? new MediaRecorder(mediaStream, { mimeType }) : new MediaRecorder(mediaStream);
                     recordingChunks = [];
-                    finalizedTranscript = '';
-                    transcript.textContent = '말씀하시는 동안 인식된 문장이 표시됩니다.';
                     recorder.ondataavailable = (event) => { if (event.data.size > 0) recordingChunks.push(event.data); };
                     recorder.onerror = () => { voiceStatus.textContent = '녹음 중 문제가 생겼어요. 마이크 권한을 확인하고 다시 시도해 주세요.'; stopRecording(); };
-                    recorder.onstop = finishRecording;
+                    recorder.onstop = () => { if (isRecording) stopRecording(); };
                     recorder.start(250);
                     isRecording = true;
                     recordButton.disabled = false;
@@ -3564,10 +3450,14 @@
                     recordingIndicator.hidden = false;
                     transcript.classList.add('is-listening');
                     renderTranscript();
-                    voiceStatus.textContent = '녹음 중이에요. 영어 문장을 천천히 읽어 주세요.';
-                    startRecognition();
+                    if (recognitionFailureMessage) voiceStatus.textContent = `${recognitionFailureMessage} 녹음 파일은 계속 저장됩니다.`;
                 } catch (error) {
+                    permissionAbandoned = true;
                     isRecording = false;
+                    const failedRecognition = recognition;
+                    recognition = null;
+                    try { failedRecognition?.abort(); } catch (abortError) { console.error('[Pronunciation STT] abort failed', abortError); }
+                    console.error('[Pronunciation recording]', error);
                     if (mediaStream) mediaStream.getTracks().forEach((track) => track.stop());
                     mediaStream = null;
                     recordButton.disabled = false;
