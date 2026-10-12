@@ -763,6 +763,10 @@
             max-height: calc(100dvh - 24px);
         }
 
+        .video-dialog.is-numbers {
+            width: min(900px, calc(100% - 32px));
+        }
+
         .video-dialog-body {
             overflow-y: auto;
             padding: 22px 30px 30px;
@@ -831,6 +835,95 @@
             color: #4f5952;
             font-size: 17px;
             line-height: 1.7;
+        }
+
+        .numbers-study-content {
+            max-width: 760px;
+            margin-inline: auto;
+        }
+
+        .numbers-study-content>h3,
+        .numbers-concept h4 {
+            margin: 0;
+            color: #34483a;
+            font-family: var(--serif);
+            font-size: 21px;
+        }
+
+        .numbers-concept {
+            margin: 0 0 24px;
+            padding: 18px 20px;
+            border-left: 3px solid var(--gold);
+            background: #f4f1e8;
+        }
+
+        .numbers-concept p,
+        .numbers-example p {
+            margin: 8px 0 0;
+            color: #4f5952;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .numbers-example-list {
+            display: grid;
+            gap: 12px;
+            margin: 14px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .numbers-example {
+            min-width: 0;
+            padding: 15px 16px;
+            border: 1px solid #e2e6df;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .numbers-example-number {
+            color: var(--sage);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .numbers-example .numbers-example-ko {
+            color: var(--ink);
+            font-family: var(--serif);
+            font-size: 18px;
+        }
+
+        .numbers-example-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .numbers-example-actions .button {
+            min-height: 42px;
+            padding: 8px 13px;
+            font-size: 14px;
+        }
+
+        .numbers-example-answer {
+            margin-top: 12px;
+            padding-top: 11px;
+            border-top: 1px solid #e5e7e0;
+        }
+
+        .numbers-example-answer[hidden] {
+            display: none;
+        }
+
+        .numbers-example .numbers-example-en {
+            color: #34483a;
+            font-family: var(--serif);
+            font-size: 19px;
+        }
+
+        .numbers-example .numbers-example-explanation {
+            font-size: 15px;
         }
 
         .lesson-dialogue {
@@ -1718,6 +1811,14 @@
                 padding: 17px;
             }
 
+            .numbers-concept {
+                padding: 15px;
+            }
+
+            .numbers-example {
+                padding: 13px;
+            }
+
             .course-close {
                 width: 44px;
                 height: 44px;
@@ -1893,6 +1994,14 @@
                 <button class="course-close" type="button" data-close-dialog aria-label="강의 영상 닫기">×</button>
             </div>
             <div class="video-dialog-body">
+                <section class="numbers-study-content" id="numbers-study-content" hidden>
+                    <div class="numbers-concept">
+                        <h3>1단계 · 한국어 개념 이해</h3>
+                        <p id="numbers-lesson-concept"></p>
+                    </div>
+                    <h3>2단계 · 실전 예문 10개 체화</h3>
+                    <ol class="numbers-example-list" id="numbers-example-list"></ol>
+                </section>
                 <section class="lesson-dialogue" id="lesson-dialogue" aria-label="한글·영어 대화 대본" hidden>
                     <h3>상황 대화</h3>
                     <ol class="lesson-dialogue-lines" id="lesson-dialogue-lines"></ol>
@@ -2330,6 +2439,7 @@
 
     <script src="exit-quiz.js"></script>
     <script src="notes.js"></script>
+    <script src="src/data/numbersCourseData.js"></script>
     <script>
         (() => {
             const menuButton = document.querySelector('.menu-toggle');
@@ -2386,6 +2496,7 @@
             const defaultThumbnail = 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=85';
             let courseCategories = [];
             let selectedCategory = null;
+            let selectedLesson = null;
             let popArticles = [];
             let selectedArticle = null;
             let articleOpenedFromCategory = false;
@@ -2456,7 +2567,7 @@
                     image.onerror = () => { image.onerror = null; image.src = defaultThumbnail; };
                     const copy = makeElement('div', 'grid-lesson-copy');
                     copy.append(
-                        makeElement('span', 'lesson-episode', `${String(index + 1).padStart(2, '0')}회차`),
+                        makeElement('span', 'lesson-episode', category.categoryId === 'numbers' ? `LESSON ${index + 1}` : `${String(index + 1).padStart(2, '0')}회차`),
                         makeElement('h3', '', lesson.title),
                         makeElement('p', '', lesson.desc)
                     );
@@ -2466,7 +2577,7 @@
                     watch.type = 'button';
                     watch.dataset.lessonId = lesson.id;
                     if (article) watch.dataset.articleId = article.id;
-                    watch.append(document.createTextNode(article ? '읽어 보기 ' : lesson.dialogue_lines ? '대화 보기 ' : '시청하기 '), makeElement('span', '', '→'));
+                    watch.append(document.createTextNode(article ? '읽어 보기 ' : lesson.dialogue_lines ? '대화 보기 ' : category.categoryId === 'numbers' ? '학습 시작 ' : '시청하기 '), makeElement('span', '', '→'));
                     copy.append(meta, watch);
                     if (article?.audio) {
                         const previewLabel = makeElement('p', 'pop-card-audio-label', article.audio.label || '공식 미리듣기');
@@ -2726,17 +2837,23 @@
                 videoFrame.append(makeElement('div', 'video-placeholder', '지원하는 YouTube 또는 MP4 영상 주소가 아닙니다.'));
             };
             const openLesson = (lesson) => {
+                selectedLesson = lesson;
                 quiz.markWatched(lesson.id);
                 const isDialogue = Array.isArray(lesson.dialogue_lines);
+                const isNumbers = selectedCategory?.categoryId === 'numbers' && Array.isArray(lesson.examples);
+                const numbersContent = document.querySelector('#numbers-study-content');
                 document.querySelector('#video-dialog-title').textContent = lesson.title;
                 document.querySelector('#video-dialog-description').textContent = `${selectedCategory.categoryName} · ${lesson.duration || '시간 미정'}`;
+                videoDialog.classList.toggle('is-numbers', isNumbers);
+                numbersContent.hidden = !isNumbers;
                 const dialogueSection = document.querySelector('#lesson-dialogue');
                 const dialogueLines = document.querySelector('#lesson-dialogue-lines');
                 const videoFrameElement = document.querySelector('#video-frame');
                 const studyNotes = document.querySelector('#lesson-study-notes');
                 const keyPhrase = document.querySelector('#lesson-key-phrase');
                 dialogueSection.hidden = !isDialogue;
-                videoFrameElement.hidden = isDialogue;
+                videoFrameElement.hidden = isDialogue || isNumbers;
+                studyNotes.hidden = isDialogue || isNumbers;
                 studyNotes.querySelector('h3').textContent = isDialogue ? '대화에서 쓰인 뿌리동사' : '오늘의 핵심 문장';
                 keyPhrase.textContent = isDialogue ? lesson.root_verbs_used.join(' · ') : lesson.keyPhrase || '핵심 문장을 준비하고 있습니다.';
                 keyPhrase.lang = 'en';
@@ -2774,7 +2891,43 @@
                         dialogueLines.append(item);
                     });
                 }
-                renderVideoSource(lesson);
+                if (isNumbers) {
+                    document.querySelector('#numbers-lesson-concept').textContent = lesson.concept;
+                    const examples = document.querySelector('#numbers-example-list');
+                    examples.replaceChildren();
+                    lesson.examples.forEach((example, index) => {
+                        const item = makeElement('li', 'numbers-example');
+                        item.append(
+                            makeElement('span', 'numbers-example-number', `EXAMPLE ${String(index + 1).padStart(2, '0')}`),
+                            makeElement('p', 'numbers-example-ko', example.ko)
+                        );
+                        const actions = makeElement('div', 'numbers-example-actions');
+                        const listen = makeElement('button', 'button secondary', '영어 발음 듣기');
+                        listen.type = 'button';
+                        listen.dataset.numbersSpeak = String(index);
+                        const reveal = makeElement('button', 'button secondary', '영어 문장 확인');
+                        reveal.type = 'button';
+                        reveal.dataset.numbersReveal = String(index);
+                        reveal.setAttribute('aria-expanded', 'false');
+                        actions.append(listen, reveal);
+                        item.append(actions);
+                        const answer = makeElement('div', 'numbers-example-answer');
+                        answer.hidden = true;
+                        answer.append(
+                            makeElement('p', 'numbers-example-en', example.en),
+                            makeElement('p', 'numbers-example-explanation', example.explanation)
+                        );
+                        const practice = makeElement('button', 'button numbers-voice-practice', 'Voice Studio에서 연습 →');
+                        practice.type = 'button';
+                        practice.dataset.numbersVoice = String(index);
+                        answer.append(practice);
+                        item.append(answer);
+                        examples.append(item);
+                    });
+                    videoFrameElement.replaceChildren();
+                } else {
+                    renderVideoSource(lesson);
+                }
                 videoDialog.showModal();
                 videoFrame.querySelector('video')?.play().catch(() => { });
             };
@@ -2787,6 +2940,35 @@
                 if (category) openCategory(category);
             });
             videoDialog.addEventListener('click', async (event) => {
+                const speakExample = event.target.closest('[data-numbers-speak]');
+                if (speakExample && selectedLesson?.examples) {
+                    speak(selectedLesson.examples[Number(speakExample.dataset.numbersSpeak)].en, 'en-US');
+                    return;
+                }
+                const revealExample = event.target.closest('[data-numbers-reveal]');
+                if (revealExample) {
+                    const answer = revealExample.closest('.numbers-example').querySelector('.numbers-example-answer');
+                    answer.hidden = !answer.hidden;
+                    revealExample.setAttribute('aria-expanded', String(!answer.hidden));
+                    revealExample.textContent = answer.hidden ? '영어 문장 확인' : '영어 문장 숨기기';
+                    return;
+                }
+                const practiceExample = event.target.closest('[data-numbers-voice]');
+                if (practiceExample && selectedLesson?.examples) {
+                    const example = selectedLesson.examples[Number(practiceExample.dataset.numbersVoice)];
+                    setVoicePractice(example, selectedLesson);
+                    const scrollToVoiceStudio = () => setTimeout(() => {
+                        const voiceStudio = document.querySelector('#voice');
+                        const top = voiceStudio.getBoundingClientRect().top + document.scrollingElement.scrollTop;
+                        document.scrollingElement.scrollTop = top;
+                    }, 50);
+                    const hasCategoryDialog = categoryDialog.open;
+                    if (hasCategoryDialog) categoryDialog.addEventListener('close', scrollToVoiceStudio, { once: true });
+                    videoDialog.close();
+                    if (hasCategoryDialog) categoryDialog.close();
+                    else setTimeout(scrollToVoiceStudio, 50);
+                    return;
+                }
                 const button = event.target.closest('[data-audio-src]');
                 if (!button) return;
                 event.stopPropagation();
@@ -2854,7 +3036,10 @@
                 const lesson = selectedCategory.lessons.find((item) => item.id === button.dataset.lessonId);
                 const article = button.dataset.articleId && popArticles.find((item) => item.id === button.dataset.articleId);
                 if (article) openArticle(article);
-                else if (lesson) openLesson(lesson);
+                else if (lesson) {
+                    selectedLesson = lesson;
+                    openLesson(lesson);
+                }
             });
             articleDialog.querySelector('[data-article-back]').addEventListener('click', () => {
                 articleDialog.close();
@@ -3023,6 +3208,18 @@
                     if (!Array.isArray(articleData)) throw new Error('아티클 데이터 형식을 확인해 주세요.');
                     if (!Array.isArray(episodes)) throw new Error('팝 회차 데이터 형식을 확인해 주세요.');
                     if (!Array.isArray(rootVerbDialogues)) throw new Error('뿌리동사 대화 데이터 형식을 확인해 주세요.');
+                    const numbersCategory = data.find((category) => category?.categoryId === 'numbers');
+                    const numbersLessons = window.NUMBERS_COURSE_DATA?.lessons;
+                    if (!numbersCategory || !Array.isArray(numbersLessons) || numbersLessons.length !== 8
+                        || numbersLessons.some((lesson) => !Array.isArray(lesson.examples) || lesson.examples.length !== 10)) {
+                        throw new Error('NUMBERS 코스 데이터 형식 또는 8강·강의별 예문 10개 조건을 확인해 주세요.');
+                    }
+                    numbersCategory.lessons = numbersLessons.map((lesson, index) => ({
+                        ...numbersCategory.lessons[index],
+                        ...lesson,
+                        duration: `Lesson ${index + 1} · 예문 10개`,
+                        videoUrl: null
+                    }));
                     updateTodaySentence(rootVerbDialogues);
                     popArticles = [...articleData, ...episodes];
                     const speakingCategory = data.find((category) => category?.categoryId === 'speaking');
@@ -3086,8 +3283,9 @@
                             lessons: dialogueLessons
                         };
                         data = data.filter((category) => category.categoryId !== 'daily' && category.categoryId !== dialogueCategory.categoryId);
+                        const numbersIndex = data.findIndex((category) => category.categoryId === 'numbers');
                         const situationsIndex = data.findIndex((category) => category.categoryId === 'situations');
-                        data.splice(situationsIndex < 0 ? 1 : situationsIndex, 0, dialogueCategory);
+                        data.splice(numbersIndex >= 0 ? numbersIndex : situationsIndex < 0 ? 1 : situationsIndex, 0, dialogueCategory);
                     }
                     courseCategories = data.filter((category) => category && category.categoryId && category.categoryName && Array.isArray(category.lessons));
                     if (!courseCategories.length) throw new Error('표시할 강의 카테고리가 없습니다.');
@@ -3128,6 +3326,16 @@
             let todaySentence = null;
             let todaySentenceTimer = null;
             const voiceStatus = document.querySelector('#voice-status');
+            const setVoicePractice = (example, lesson) => {
+                phrase = example.en;
+                koreanPhrase = example.ko;
+                phraseElement.lang = 'en-US';
+                phraseElement.textContent = example.en;
+                document.querySelector('#today-practice-situation').textContent = `NUMBERS · ${lesson.title}`;
+                document.querySelector('#today-practice-translation').textContent = example.ko;
+                document.querySelector('#today-practice-explanation').textContent = example.explanation;
+                voiceStatus.textContent = '선택한 NUMBERS 예문입니다. 발음을 듣거나 녹음을 시작해 따라 읽어 보세요.';
+            };
 
             const rootVerbMeanings = {
                 get: '얻다·도착하다·상태가 변하다', take: '가져가다·선택하다', care: '관심을 두고 돌보다',

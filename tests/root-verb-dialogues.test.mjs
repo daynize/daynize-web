@@ -83,7 +83,8 @@ test('homepage loads dialogue data and renders bilingual dialogue turns', () => 
     assert.match(homepage, /categoryId: 'root-verb-usage'/);
     assert.match(homepage, /categoryName: '뿌리동사 활용하기'/);
     assert.match(homepage, /speakingCategory\.lessons = \[\.\.\.verbLessons, \.\.\.retainedLessons, \.\.\.migratedLessons\]/);
-    assert.match(homepage, /data\.splice\(situationsIndex < 0 \? 1 : situationsIndex, 0, dialogueCategory\)/);
+    assert.match(homepage, /const numbersIndex = data\.findIndex\(\(category\) => category\.categoryId === 'numbers'\)/);
+    assert.match(homepage, /data\.splice\(numbersIndex >= 0 \? numbersIndex : situationsIndex < 0 \? 1 : situationsIndex, 0, dialogueCategory\)/);
     assert.match(homepage, /getTodayIndex\(todaySentencePool\.length\)/);
     assert.match(homepage, /scheduleTodaySentenceRefresh/);
     assert.match(homepage, /today-conversation-situation/);

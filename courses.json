@@ -1859,6 +1859,86 @@
         ]
     },
     {
+        "categoryId": "numbers",
+        "categoryName": "NUMBERS",
+        "categoryDesc": "기수·서수, 가산·불가산 단위부터 할인율, 큰 숫자, 경제 뉴스 속 숫자까지 한 번에 정복하는 코스입니다.",
+        "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85",
+        "lessons": [
+            {
+                "id": "numbers-01",
+                "title": "기수와 서수, 숫자 읽기",
+                "desc": "수량을 세는 기수와 순서를 나타내는 서수를 구분해 읽습니다.",
+                "duration": "영상 준비 중",
+                "videoUrl": null,
+                "keyPhrase": "There are twenty students.",
+                "explanation": "기수는 개수를, 서수는 순서를 나타냅니다."
+            },
+            {
+                "id": "numbers-02",
+                "title": "가산·불가산과 단위 표현",
+                "desc": "셀 수 있는 명사와 단위가 필요한 양을 정확하게 말합니다.",
+                "duration": "영상 준비 중",
+                "videoUrl": null,
+                "keyPhrase": "A piece of advice can make a difference.",
+                "explanation": "불가산명사는 piece, bottle 같은 단위 표현으로 수량을 셉니다."
+            },
+            {
+                "id": "numbers-03",
+                "title": "가격과 수량 말하기",
+                "desc": "물건의 가격과 필요한 수량을 자연스럽게 묻고 답합니다.",
+                "duration": "영상 준비 중",
+                "videoUrl": null,
+                "keyPhrase": "How much is this, and how many do you need?",
+                "explanation": "가격이나 양은 how much, 셀 수 있는 개수는 how many로 묻습니다."
+            },
+            {
+                "id": "numbers-04",
+                "title": "분수와 소수 읽기",
+                "desc": "비율과 측정값에 쓰이는 분수와 소수를 읽습니다.",
+                "duration": "영상 준비 중",
+                "videoUrl": null,
+                "keyPhrase": "The price increased by 2.5 percent.",
+                "explanation": "소수점 아래 숫자와 분수의 분자·분모 읽는 법을 익힙니다."
+            },
+            {
+                "id": "numbers-05",
+                "title": "할인율과 세일 표현",
+                "desc": "할인율과 할인 후 가격을 숫자로 설명합니다.",
+                "duration": "영상 준비 중",
+                "videoUrl": null,
+                "keyPhrase": "It's 30 percent off.",
+                "explanation": "퍼센트 할인과 할인된 최종 가격을 구분해 말합니다."
+            },
+            {
+                "id": "numbers-06",
+                "title": "큰 숫자와 자릿수",
+                "desc": "천, 백만, 십억 단위의 큰 숫자를 읽고 자릿수를 파악합니다.",
+                "duration": "영상 준비 중",
+                "videoUrl": null,
+                "keyPhrase": "The city has a population of 2.4 million.",
+                "explanation": "영어의 큰 수 단위와 세 자리마다 끊어 읽는 방식을 익힙니다."
+            },
+            {
+                "id": "numbers-07",
+                "title": "경제 뉴스 속 숫자",
+                "desc": "금리, 물가, 성장률 등 경제 뉴스의 수치를 이해합니다.",
+                "duration": "영상 준비 중",
+                "videoUrl": null,
+                "keyPhrase": "Inflation rose by 3 percent this year.",
+                "explanation": "경제 지표의 수치와 증감 표현을 문맥에 맞게 해석합니다."
+            },
+            {
+                "id": "numbers-08",
+                "title": "차트와 숫자 변화 읽기",
+                "desc": "표와 차트에서 추세, 차이, 변화를 숫자로 설명합니다.",
+                "duration": "영상 준비 중",
+                "videoUrl": null,
+                "keyPhrase": "Sales increased from 12 to 18 percent.",
+                "explanation": "수치가 오르거나 내린 폭과 비교 결과를 간결하게 전달합니다."
+            }
+        ]
+    },
+    {
         "categoryId": "situations",
         "categoryName": "분야별 영어",
         "categoryDesc": "공항, 카페, 병원 등 실제 상황에서 바로 쓰는 영어입니다.",
