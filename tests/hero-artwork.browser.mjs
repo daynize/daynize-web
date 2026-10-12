@@ -12,9 +12,9 @@ try {
         if (process.env.HERO_LOCAL === '1') {
             const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
             await page.route('https://www.daynize.co.kr/?release=ac4c5fe1', route => route.fulfill({ contentType: 'text/html', body: html }));
-            const artwork = await readFile(new URL('../IMAGE/hero-great-things-v2.jpg', import.meta.url));
+            const artwork = await readFile(new URL('../IMAGE/hero-great-things-cutout-v3.webp', import.meta.url));
             assert.ok(artwork.length < 500000);
-            await page.route('https://www.daynize.co.kr/IMAGE/hero-great-things-v2.jpg', route => route.fulfill({ contentType: 'image/jpeg', body: artwork }));
+            await page.route('https://www.daynize.co.kr/IMAGE/hero-great-things-cutout-v3.webp', route => route.fulfill({ contentType: 'image/webp', body: artwork }));
         }
         await page.goto('https://www.daynize.co.kr/?release=ac4c5fe1');
         const image = page.locator('.hero-art img');
@@ -41,10 +41,27 @@ try {
                 webkitMask: getComputedStyle(element.parentElement).webkitMaskImage,
             };
         });
-        assert.ok(info.src.includes('/IMAGE/hero-great-things-v2.jpg'));
-        assert.equal(info.width, 1264);
-        assert.equal(info.height, 848);
-        assert.ok(Math.abs(info.ratio - 2528 / 1696) < 0.001);
+        assert.ok(info.src.includes('/IMAGE/hero-great-things-cutout-v3.webp'));
+        assert.equal(info.width, 1200);
+        assert.equal(info.height, 896);
+        assert.ok(Math.abs(info.ratio - 1200 / 896) < 0.001);
+        const alpha = await image.evaluate(async element => {
+            const response = await fetch(element.currentSrc);
+            const bitmap = await createImageBitmap(await response.blob());
+            const canvas = document.createElement('canvas');
+            canvas.width = bitmap.width;
+            canvas.height = bitmap.height;
+            const context = canvas.getContext('2d');
+            context.drawImage(bitmap, 0, 0);
+            const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
+            let transparent = 0;
+            for (let index = 3; index < pixels.length; index += 4) {
+                if (pixels[index] === 0) transparent++;
+            }
+            return { corner: pixels[3], transparentFraction: transparent / (canvas.width * canvas.height) };
+        });
+        assert.equal(alpha.corner, 0);
+        assert.ok(alpha.transparentFraction > 0.35);
         assert.equal(info.fit, 'contain');
         assert.equal(info.blend, 'normal');
         assert.equal(info.opacity, '1');
