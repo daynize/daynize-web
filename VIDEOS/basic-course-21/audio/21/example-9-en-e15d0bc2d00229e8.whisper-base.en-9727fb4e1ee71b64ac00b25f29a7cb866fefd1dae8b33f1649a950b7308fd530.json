@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,260"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2260
+			},
+			"text": " This result is worse than yesterday's result.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998786,
+					"t_dtw": -1
+				},
+				{
+					"text": " This",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,230"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 230
+					},
+					"id": 770,
+					"p": 0.689344,
+					"t_dtw": -1
+				},
+				{
+					"text": " result",
+					"timestamps": {
+						"from": "00:00:00,230",
+						"to": "00:00:00,540"
+					},
+					"offsets": {
+						"from": 230,
+						"to": 540
+					},
+					"id": 1255,
+					"p": 0.997756,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:00,590",
+						"to": "00:00:00,690"
+					},
+					"offsets": {
+						"from": 590,
+						"to": 690
+					},
+					"id": 318,
+					"p": 0.999133,
+					"t_dtw": -1
+				},
+				{
+					"text": " worse",
+					"timestamps": {
+						"from": "00:00:00,690",
+						"to": "00:00:00,920"
+					},
+					"offsets": {
+						"from": 690,
+						"to": 920
+					},
+					"id": 4785,
+					"p": 0.992718,
+					"t_dtw": -1
+				},
+				{
+					"text": " than",
+					"timestamps": {
+						"from": "00:00:01,020",
+						"to": "00:00:01,210"
+					},
+					"offsets": {
+						"from": 1020,
+						"to": 1210
+					},
+					"id": 621,
+					"p": 0.988783,
+					"t_dtw": -1
+				},
+				{
+					"text": " yesterday",
+					"timestamps": {
+						"from": "00:00:01,210",
+						"to": "00:00:01,730"
+					},
+					"offsets": {
+						"from": 1210,
+						"to": 1730
+					},
+					"id": 7415,
+					"p": 0.990442,
+					"t_dtw": -1
+				},
+				{
+					"text": "'s",
+					"timestamps": {
+						"from": "00:00:01,730",
+						"to": "00:00:01,840"
+					},
+					"offsets": {
+						"from": 1730,
+						"to": 1840
+					},
+					"id": 338,
+					"p": 0.960636,
+					"t_dtw": -1
+				},
+				{
+					"text": " result",
+					"timestamps": {
+						"from": "00:00:01,840",
+						"to": "00:00:02,160"
+					},
+					"offsets": {
+						"from": 1840,
+						"to": 2160
+					},
+					"id": 1255,
+					"p": 0.99254,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,260",
+						"to": "00:00:02,260"
+					},
+					"offsets": {
+						"from": 2260,
+						"to": 2260
+					},
+					"id": 13,
+					"p": 0.850604,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_113]",
+					"timestamps": {
+						"from": "00:00:02,260",
+						"to": "00:00:02,260"
+					},
+					"offsets": {
+						"from": 2260,
+						"to": 2260
+					},
+					"id": 50476,
+					"p": 0.0732313,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,36 @@
+{
+  "episode": 20,
+  "title": "지금의 가정과 과거의 가정을 나누기",
+  "inputHash": "8f55627656fa61ba7d1ef15f0df12f7967a6261b2e2d352bb120bae52ce22b88",
+  "output": "renders/basic-20.mp4",
+  "contact": "renders/basic-20-contact.png",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "duration": "130.000000",
+        "nb_frames": "3900"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "130.000000",
+        "nb_frames": "6095"
+      }
+    ],
+    "format": {
+      "duration": "130.000000",
+      "size": "8591955"
+    }
+  },
+  "audioPeakDb": -1.8,
+  "browserCheck": true,
+  "listeningReviewed": false
+}

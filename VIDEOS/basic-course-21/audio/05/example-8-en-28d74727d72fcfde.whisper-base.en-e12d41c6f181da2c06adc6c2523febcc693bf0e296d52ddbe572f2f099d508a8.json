@@ -1,0 +1,227 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,400"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2400
+			},
+			"text": " the staff were made to leave during the fire drill.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998146,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,150"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 150
+					},
+					"id": 262,
+					"p": 0.3962,
+					"t_dtw": -1
+				},
+				{
+					"text": " staff",
+					"timestamps": {
+						"from": "00:00:00,220",
+						"to": "00:00:00,390"
+					},
+					"offsets": {
+						"from": 220,
+						"to": 390
+					},
+					"id": 3085,
+					"p": 0.984038,
+					"t_dtw": -1
+				},
+				{
+					"text": " were",
+					"timestamps": {
+						"from": "00:00:00,480",
+						"to": "00:00:00,680"
+					},
+					"offsets": {
+						"from": 480,
+						"to": 680
+					},
+					"id": 547,
+					"p": 0.999624,
+					"t_dtw": -1
+				},
+				{
+					"text": " made",
+					"timestamps": {
+						"from": "00:00:00,680",
+						"to": "00:00:00,810"
+					},
+					"offsets": {
+						"from": 680,
+						"to": 810
+					},
+					"id": 925,
+					"p": 0.998601,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,900",
+						"to": "00:00:01,020"
+					},
+					"offsets": {
+						"from": 900,
+						"to": 1020
+					},
+					"id": 284,
+					"p": 0.999657,
+					"t_dtw": -1
+				},
+				{
+					"text": " leave",
+					"timestamps": {
+						"from": "00:00:01,020",
+						"to": "00:00:01,300"
+					},
+					"offsets": {
+						"from": 1020,
+						"to": 1300
+					},
+					"id": 2666,
+					"p": 0.998683,
+					"t_dtw": -1
+				},
+				{
+					"text": " during",
+					"timestamps": {
+						"from": "00:00:01,300",
+						"to": "00:00:01,620"
+					},
+					"offsets": {
+						"from": 1300,
+						"to": 1620
+					},
+					"id": 1141,
+					"p": 0.9991,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,730",
+						"to": "00:00:01,810"
+					},
+					"offsets": {
+						"from": 1730,
+						"to": 1810
+					},
+					"id": 262,
+					"p": 0.996959,
+					"t_dtw": -1
+				},
+				{
+					"text": " fire",
+					"timestamps": {
+						"from": "00:00:01,810",
+						"to": "00:00:02,020"
+					},
+					"offsets": {
+						"from": 1810,
+						"to": 2020
+					},
+					"id": 2046,
+					"p": 0.974877,
+					"t_dtw": -1
+				},
+				{
+					"text": " drill",
+					"timestamps": {
+						"from": "00:00:02,070",
+						"to": "00:00:02,350"
+					},
+					"offsets": {
+						"from": 2070,
+						"to": 2350
+					},
+					"id": 16007,
+					"p": 0.68877,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,360",
+						"to": "00:00:02,360"
+					},
+					"offsets": {
+						"from": 2360,
+						"to": 2360
+					},
+					"id": 13,
+					"p": 0.917917,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_120]",
+					"timestamps": {
+						"from": "00:00:02,400",
+						"to": "00:00:02,400"
+					},
+					"offsets": {
+						"from": 2400,
+						"to": 2400
+					},
+					"id": 50483,
+					"p": 0.158495,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

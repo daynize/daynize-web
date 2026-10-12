@@ -1,0 +1,1215 @@
+{
+  "id": "basic-01",
+  "episode": 1,
+  "title": "나 혼자서 할 수 있는 동사",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 9.403945666666667,
+      "text": "나는 잔다. 이 말은 누구를, 무엇을 덧붙이지 않아도 완성되죠. 오늘은 완전자동사를 배웁니다.",
+      "screen": "I sleep. / 주어 + 동사",
+      "visual": "인물이 잠드는 동작. sleep 발화에 동사 영역 강조.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 잔다. 이 말은 누구를, 무엇을 덧붙이지 않아도 완성되죠. 오늘은 완전자동사를 배웁니다.",
+          "actualStart": 0.2,
+          "actualEnd": 7.350068,
+          "rate": 185,
+          "cacheKey": "0b41aa50cc8ef1b6a41c465a167b2357f565dbea98db7eaa220529b1dafa0ecb",
+          "file": "audio/01/concept-1-ko-0b41aa50cc8ef1b6.wav",
+          "duration": 7.150068
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 9.403945666666667,
+      "end": 19.492880333333336,
+      "text": "완전자동사는 주어와 동사만으로 문장의 뼈대가 완성돼요. 목적어나 주어를 설명하는 보어를 요구하지 않죠.",
+      "screen": "목적어 없이 완성",
+      "visual": "주어와 동사 두 칸만 연결. 실제로 혼자 하는 행동이라는 뜻으로 묘사하지 않는다.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "완전자동사는 주어와 동사만으로 문장의 뼈대가 완성돼요. 목적어나 주어를 설명하는 보어를 요구하지 않죠.",
+          "actualStart": 9.603945666666666,
+          "actualEnd": 17.439002666666667,
+          "rate": 185,
+          "cacheKey": "0dd0b7d0fc429b9a21a995e43959fea06febe04c0dfb9f01327d33ef5a603dd8",
+          "file": "audio/01/concept-2-ko-0dd0b7d0fc429b9a.wav",
+          "duration": 7.835057
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 19.492880333333336,
+      "end": 29.783402000000002,
+      "text": "그렇다고 사람 혼자 하는 행동만 뜻하지는 않아요. 비가 내리고, 사고가 발생하는 일도 같은 구조로 표현할 수 있어요.",
+      "screen": "행동 · 상태 · 사건",
+      "visual": "lie, sleep → dream, wake up → crawl, stand → walk, run, fly → live, die, laugh, cry → arrive, leave → happen, occur, exist. 자동사 용법이라는 주석과 함께 순차 노출.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그렇다고 사람 혼자 하는 행동만 뜻하지는 않아요. 비가 내리고, 사고가 발생하는 일도 같은 구조로 표현할 수 있어요.",
+          "actualStart": 19.692880333333335,
+          "actualEnd": 27.729524333333337,
+          "rate": 185,
+          "cacheKey": "0b245bf99867016ac15fd36a482f3ac0e89e64517b0349bf00ce4629eaa115aa",
+          "file": "audio/01/concept-3-ko-0b245bf99867016a.wav",
+          "duration": 8.036644
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 29.783402000000002,
+      "end": 44.56390066666666,
+      "text": "침대에서 잔다고 침대를 동사 바로 뒤에 붙이면 틀려요. 잠자는 문장은 이미 완성됐고, 장소는 전치사로 연결합니다. 한국어 조사보다 영어 동사의 쓰임을 보세요.",
+      "screen": "❌ I sleep the bed. / ⭕ I sleep. / ⭕ I sleep on the bed.",
+      "visual": "sleep과 bed 사이에 on 연결. 첫 예문 재사용, 별도 영어 발화 없음.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "침대에서 잔다고 침대를 동사 바로 뒤에 붙이면 틀려요. 잠자는 문장은 이미 완성됐고, 장소는 전치사로 연결합니다. 한국어 조사보다 영어 동사의 쓰임을 보세요.",
+          "actualStart": 29.983402,
+          "actualEnd": 42.510023000000004,
+          "rate": 185,
+          "cacheKey": "03063c8eecd4c4c9fedf2a617c8a6291cca088379e71c1ee8e8b5c910c4603d2",
+          "file": "audio/01/concept-4-ko-03063c8eecd4c4c9.wav",
+          "duration": 12.526621
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 44.56390066666666,
+      "end": 50.152381333333324,
+      "ko": "나는 침대 위에서 자요.",
+      "en": "I sleep on the bed.",
+      "wrong": "I sleep the bed.",
+      "focus": [
+        "sleep",
+        "on"
+      ],
+      "note": "장소는 목적어가 아니다.",
+      "visual": "침대 위 접촉면을 on과 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 침대 위에서 자요.",
+          "actualStart": 44.763900666666665,
+          "actualEnd": 46.37600966666666,
+          "rate": 185,
+          "cacheKey": "1b766371c0927cf6f47e8de42e01d69ddd364e3b08dcba81a2a83239a153cc61",
+          "file": "audio/01/example-1-ko-1b766371c0927cf6.wav",
+          "duration": 1.612109
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I sleep on the bed.",
+          "actualStart": 46.72600966666666,
+          "actualEnd": 47.848503666666666,
+          "rate": 155,
+          "cacheKey": "553f123e0b913da968ec82909748fe207ed6d8d0a16f15d7d87258f1d6e680fe",
+          "file": "audio/01/example-1-en-553f123e0b913da9.wav",
+          "duration": 1.122494
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "sleep",
+            "actualStart": 46.79600966666666,
+            "actualEnd": 47.146009666666664
+          },
+          {
+            "text": "on",
+            "actualStart": 47.216009666666665,
+            "actualEnd": 47.326009666666664
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "I",
+          "start": 46.73600966666666,
+          "end": 46.79600966666666
+        },
+        {
+          "text": "sleep",
+          "start": 46.79600966666666,
+          "end": 47.146009666666664
+        },
+        {
+          "text": "on",
+          "start": 47.216009666666665,
+          "end": 47.326009666666664
+        },
+        {
+          "text": "the",
+          "start": 47.326009666666664,
+          "end": 47.55600966666666
+        },
+        {
+          "text": "bed.",
+          "start": 47.55600966666666,
+          "end": 47.756009666666664
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 50.152381333333324,
+      "end": 56.590929999999986,
+      "ko": "그 아기는 밤에 자주 울어요.",
+      "en": "The baby often cries at night.",
+      "wrong": "The baby often cries the night.",
+      "focus": [
+        "cries",
+        "at night"
+      ],
+      "note": "시간은 추가 정보다.",
+      "visual": "밤의 시간 표시와 동사 뼈대를 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 아기는 밤에 자주 울어요.",
+          "actualStart": 50.35238133333333,
+          "actualEnd": 52.27637233333333,
+          "rate": 185,
+          "cacheKey": "d51a4780cf09eccf188c47194f87919601509d64378c274cc38d93d6ec89e610",
+          "file": "audio/01/example-2-ko-d51a4780cf09eccf.wav",
+          "duration": 1.923991
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The baby often cries at night.",
+          "actualStart": 52.62637233333333,
+          "actualEnd": 54.28705233333333,
+          "rate": 155,
+          "cacheKey": "30375b50bd35272419ad08b22e809cd063dfeccde925a8baf1112099b7f2443b",
+          "file": "audio/01/example-2-en-30375b50bd352724.wav",
+          "duration": 1.66068
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "cries",
+            "actualStart": 53.39637233333333,
+            "actualEnd": 53.70637233333333
+          },
+          {
+            "text": "at night",
+            "actualStart": 53.75637233333333,
+            "actualEnd": 54.16637233333333
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "The",
+          "start": 52.63637233333333,
+          "end": 52.81637233333333
+        },
+        {
+          "text": "baby",
+          "start": 52.81637233333333,
+          "end": 53.07637233333333
+        },
+        {
+          "text": "often",
+          "start": 53.07637233333333,
+          "end": 53.39637233333333
+        },
+        {
+          "text": "cries",
+          "start": 53.39637233333333,
+          "end": 53.70637233333333
+        },
+        {
+          "text": "at",
+          "start": 53.75637233333333,
+          "end": 53.83637233333333
+        },
+        {
+          "text": "night.",
+          "start": 53.83637233333333,
+          "end": 54.16637233333333
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 56.590929999999986,
+      "end": 62.80036366666665,
+      "ko": "우리는 그 농담을 듣고 웃었어요.",
+      "en": "We laughed at the joke.",
+      "wrong": "We laughed the joke.",
+      "focus": [
+        "laughed",
+        "at"
+      ],
+      "note": "웃음의 대상은 at으로 연결한다.",
+      "visual": "웃는 인물에서 농담 말풍선으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 그 농담을 듣고 웃었어요.",
+          "actualStart": 56.79092999999999,
+          "actualEnd": 59.07605499999999,
+          "rate": 185,
+          "cacheKey": "65883fde45f518fc2a5b6535c179536a72c805f6b2ea3d2f39249dfdfd9669ae",
+          "file": "audio/01/example-3-ko-65883fde45f518fc.wav",
+          "duration": 2.285125
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We laughed at the joke.",
+          "actualStart": 59.42605499999999,
+          "actualEnd": 60.49648599999999,
+          "rate": 155,
+          "cacheKey": "b202fb8195d10635ef436bbaa3528537c89392a5a24006b85b2c9437b93169a5",
+          "file": "audio/01/example-3-en-b202fb8195d10635.wav",
+          "duration": 1.070431
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "laughed",
+            "actualStart": 59.53605499999999,
+            "actualEnd": 59.89605499999999
+          },
+          {
+            "text": "at",
+            "actualStart": 59.97605499999999,
+            "actualEnd": 60.02605499999999
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "We",
+          "start": 59.43605499999999,
+          "end": 59.53605499999999
+        },
+        {
+          "text": "laughed",
+          "start": 59.53605499999999,
+          "end": 59.89605499999999
+        },
+        {
+          "text": "at",
+          "start": 59.97605499999999,
+          "end": 60.02605499999999
+        },
+        {
+          "text": "the",
+          "start": 60.02605499999999,
+          "end": 60.18605499999999
+        },
+        {
+          "text": "joke.",
+          "start": 60.18605499999999,
+          "end": 60.36605499999999
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 62.80036366666665,
+      "end": 69.74975133333332,
+      "ko": "그 아기는 바닥을 기어 다녔어요.",
+      "en": "The baby crawled across the floor.",
+      "wrong": "The baby crawled at across the floor.",
+      "focus": [
+        "crawled",
+        "across"
+      ],
+      "note": "한국어 바닥을이 영어 직접 목적어라는 뜻은 아니다.",
+      "visual": "바닥을 가로지르는 경로.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 아기는 바닥을 기어 다녔어요.",
+          "actualStart": 63.00036366666665,
+          "actualEnd": 65.26104366666665,
+          "rate": 185,
+          "cacheKey": "662ea7e2f026d414616952c455d41282aa91669bedf1aaa5497e7aa13eba687d",
+          "file": "audio/01/example-4-ko-662ea7e2f026d414.wav",
+          "duration": 2.26068
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The baby crawled across the floor.",
+          "actualStart": 65.61104366666665,
+          "actualEnd": 67.44587366666664,
+          "rate": 155,
+          "cacheKey": "8188ea32b805dd2e4035a87979351ef212a13ed0b5e6fc77d691630e8d76412a",
+          "file": "audio/01/example-4-en-8188ea32b805dd2e.wav",
+          "duration": 1.83483
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "crawled",
+            "actualStart": 66.11104366666665,
+            "actualEnd": 66.47104366666665
+          },
+          {
+            "text": "across",
+            "actualStart": 66.47104366666665,
+            "actualEnd": 66.81104366666665
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "The",
+          "start": 65.62104366666665,
+          "end": 65.79104366666665
+        },
+        {
+          "text": "baby",
+          "start": 65.79104366666665,
+          "end": 66.03104366666665
+        },
+        {
+          "text": "crawled",
+          "start": 66.11104366666665,
+          "end": 66.47104366666665
+        },
+        {
+          "text": "across",
+          "start": 66.47104366666665,
+          "end": 66.81104366666665
+        },
+        {
+          "text": "the",
+          "start": 66.90104366666665,
+          "end": 66.98104366666665
+        },
+        {
+          "text": "floor.",
+          "start": 67.08104366666664,
+          "end": 67.37104366666665
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69.74975133333332,
+      "end": 76.55682599999999,
+      "ko": "나는 매일 아침 공원에서 달려요.",
+      "en": "I run in the park every morning.",
+      "wrong": "I run at in the park every morning.",
+      "focus": [
+        "run",
+        "in"
+      ],
+      "note": "장소 관계에 맞는 전치사를 선택한다.",
+      "visual": "공원 경계 안에서 달리는 인물.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 매일 아침 공원에서 달려요.",
+          "actualStart": 69.94975133333332,
+          "actualEnd": 72.31650833333333,
+          "rate": 185,
+          "cacheKey": "8916168328028fda0a791a81b235be7c0bb00cc1ef17c6a643f59693a869b616",
+          "file": "audio/01/example-5-ko-8916168328028fda.wav",
+          "duration": 2.366757
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I run in the park every morning.",
+          "actualStart": 72.66650833333333,
+          "actualEnd": 74.25294833333332,
+          "rate": 155,
+          "cacheKey": "802d26cf9d0f1c88d6903af1af5213a6eccb621b204e6eda83f04da24660b83f",
+          "file": "audio/01/example-5-en-802d26cf9d0f1c88.wav",
+          "duration": 1.58644
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "run",
+            "actualStart": 72.72650833333333,
+            "actualEnd": 72.90650833333332
+          },
+          {
+            "text": "in",
+            "actualStart": 72.90650833333332,
+            "actualEnd": 73.02650833333333
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "I",
+          "start": 72.67650833333333,
+          "end": 72.72650833333333
+        },
+        {
+          "text": "run",
+          "start": 72.72650833333333,
+          "end": 72.90650833333332
+        },
+        {
+          "text": "in",
+          "start": 72.90650833333332,
+          "end": 73.02650833333333
+        },
+        {
+          "text": "the",
+          "start": 73.02650833333333,
+          "end": 73.15650833333332
+        },
+        {
+          "text": "park",
+          "start": 73.26650833333332,
+          "end": 73.41650833333333
+        },
+        {
+          "text": "every",
+          "start": 73.50650833333333,
+          "end": 73.74650833333332
+        },
+        {
+          "text": "morning.",
+          "start": 73.74650833333332,
+          "end": 74.17650833333333
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 76.55682599999999,
+      "end": 84.10748366666665,
+      "ko": "그들은 해가 진 뒤 역에 도착했어요.",
+      "en": "They arrived at the station after sunset.",
+      "wrong": "They arrived the station after sunset.",
+      "focus": [
+        "arrived",
+        "at"
+      ],
+      "note": "arrive 뒤에 장소를 직접 목적어로 붙이지 않는다.",
+      "visual": "도착 지점과 시점 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그들은 해가 진 뒤 역에 도착했어요.",
+          "actualStart": 76.75682599999999,
+          "actualEnd": 79.24916199999998,
+          "rate": 185,
+          "cacheKey": "5e3473b4b35f9a574f290090f2468b58498b25c0143874d2aaed867e388a62bb",
+          "file": "audio/01/example-6-ko-5e3473b4b35f9a57.wav",
+          "duration": 2.492336
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "They arrived at the station after sunset.",
+          "actualStart": 79.59916199999998,
+          "actualEnd": 81.80360599999997,
+          "rate": 155,
+          "cacheKey": "314d647f086c45316bc04c3e74bb3e5a5decc4df96ce33ff0ac7145b64df6ea6",
+          "file": "audio/01/example-6-en-314d647f086c4531.wav",
+          "duration": 2.204444
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "arrived",
+            "actualStart": 79.83916199999997,
+            "actualEnd": 80.26916199999998
+          },
+          {
+            "text": "at",
+            "actualStart": 80.26916199999998,
+            "actualEnd": 80.38916199999998
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "They",
+          "start": 79.61916199999997,
+          "end": 79.83916199999997
+        },
+        {
+          "text": "arrived",
+          "start": 79.83916199999997,
+          "end": 80.26916199999998
+        },
+        {
+          "text": "at",
+          "start": 80.26916199999998,
+          "end": 80.38916199999998
+        },
+        {
+          "text": "the",
+          "start": 80.45916199999998,
+          "end": 80.56916199999998
+        },
+        {
+          "text": "station",
+          "start": 80.56916199999998,
+          "end": 80.94916199999997
+        },
+        {
+          "text": "after",
+          "start": 81.05916199999997,
+          "end": 81.30916199999997
+        },
+        {
+          "text": "sunset.",
+          "start": 81.30916199999997,
+          "end": 81.68916199999998
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 84.10748366666665,
+      "end": 91.97238233333333,
+      "ko": "그녀는 거의 십 년 동안 해외에서 살았어요.",
+      "en": "She lived abroad for nearly ten years.",
+      "wrong": "She lived in abroad for nearly ten years.",
+      "focus": [
+        "lived",
+        "abroad"
+      ],
+      "note": "abroad는 장소 부사이므로 in을 붙이지 않는다.",
+      "visual": "삶의 기간을 시간선에 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 거의 십 년 동안 해외에서 살았어요.",
+          "actualStart": 84.30748366666666,
+          "actualEnd": 87.24204166666665,
+          "rate": 185,
+          "cacheKey": "181618f40ade2d82887dc0a88c3352be4bda226e6d88551afe555d342f7c74a9",
+          "file": "audio/01/example-7-ko-181618f40ade2d82.wav",
+          "duration": 2.934558
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She lived abroad for nearly ten years.",
+          "actualStart": 87.59204166666665,
+          "actualEnd": 89.66850466666665,
+          "rate": 155,
+          "cacheKey": "d70080fa20ed741c77c40681504efa565eba1bc3943ba409a1d5ed03040d9b60",
+          "file": "audio/01/example-7-en-d70080fa20ed741c.wav",
+          "duration": 2.076463
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "lived",
+            "actualStart": 87.76204166666665,
+            "actualEnd": 87.95204166666664
+          },
+          {
+            "text": "abroad",
+            "actualStart": 88.05204166666664,
+            "actualEnd": 88.38204166666665
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "She",
+          "start": 87.64204166666664,
+          "end": 87.76204166666665
+        },
+        {
+          "text": "lived",
+          "start": 87.76204166666665,
+          "end": 87.95204166666664
+        },
+        {
+          "text": "abroad",
+          "start": 88.05204166666664,
+          "end": 88.38204166666665
+        },
+        {
+          "text": "for",
+          "start": 88.48204166666665,
+          "end": 88.57204166666665
+        },
+        {
+          "text": "nearly",
+          "start": 88.57204166666665,
+          "end": 88.92204166666664
+        },
+        {
+          "text": "ten",
+          "start": 88.92204166666664,
+          "end": 89.27204166666665
+        },
+        {
+          "text": "years.",
+          "start": 89.27204166666665,
+          "end": 89.50204166666664
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 91.97238233333333,
+      "end": 101.721135,
+      "ko": "의사가 도착하기 전에 그 환자는 폐렴으로 사망했어요.",
+      "en": "The patient died of pneumonia before the doctor arrived.",
+      "wrong": "The patient died pneumonia before the doctor arrived.",
+      "focus": [
+        "died",
+        "of"
+      ],
+      "note": "사망 원인은 직접 목적어가 아니다.",
+      "visual": "선정적 묘사 없이 원인과 시간선만 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "의사가 도착하기 전에 그 환자는 폐렴으로 사망했어요.",
+          "actualStart": 92.17238233333333,
+          "actualEnd": 96.16430933333334,
+          "rate": 185,
+          "cacheKey": "88ccf014e5032c4195934786b13ebbcd5487a464a7bfcd37c7122096dbc0a4a5",
+          "file": "audio/01/example-8-ko-88ccf014e5032c41.wav",
+          "duration": 3.991927
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The patient died of pneumonia before the doctor arrived.",
+          "actualStart": 96.51430933333333,
+          "actualEnd": 99.41725733333332,
+          "rate": 155,
+          "cacheKey": "d3a7b4eca2ea5d68e65e9383b5d96c86815aececdbfb6ef8149366fbdb203bec",
+          "file": "audio/01/example-8-en-d3a7b4eca2ea5d68.wav",
+          "duration": 2.902948
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "died",
+            "actualStart": 97.09430933333333,
+            "actualEnd": 97.32430933333333
+          },
+          {
+            "text": "of",
+            "actualStart": 97.32430933333333,
+            "actualEnd": 97.43430933333333
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "The",
+          "start": 96.52430933333333,
+          "end": 96.58430933333332
+        },
+        {
+          "text": "patient",
+          "start": 96.69430933333334,
+          "end": 97.00430933333332
+        },
+        {
+          "text": "died",
+          "start": 97.09430933333333,
+          "end": 97.32430933333333
+        },
+        {
+          "text": "of",
+          "start": 97.32430933333333,
+          "end": 97.43430933333333
+        },
+        {
+          "text": "pneumonia",
+          "start": 97.43430933333333,
+          "end": 97.93430933333333
+        },
+        {
+          "text": "before",
+          "start": 97.97430933333332,
+          "end": 98.31430933333333
+        },
+        {
+          "text": "the",
+          "start": 98.31430933333333,
+          "end": 98.43430933333333
+        },
+        {
+          "text": "doctor",
+          "start": 98.48430933333333,
+          "end": 98.83430933333332
+        },
+        {
+          "text": "arrived.",
+          "start": 98.83430933333332,
+          "end": 99.26430933333333
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 101.721135,
+      "end": 112.02358366666667,
+      "ko": "아무도 다치지 않았지만 교차로에서 사고가 발생했어요.",
+      "en": "An accident happened at the intersection, but nobody was injured.",
+      "wrong": "An accident happened the intersection, but nobody was injured.",
+      "focus": [
+        "happened",
+        "at"
+      ],
+      "note": "사건도 목적어 없이 성립한다.",
+      "visual": "사건 발생 위치와 동사 영역을 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "아무도 다치지 않았지만 교차로에서 사고가 발생했어요.",
+          "actualStart": 101.921135,
+          "actualEnd": 105.866849,
+          "rate": 185,
+          "cacheKey": "d5f0ad471533765c5912048b2018148295a22e0cd67299502b8d5e01c070566e",
+          "file": "audio/01/example-9-ko-d5f0ad471533765c.wav",
+          "duration": 3.945714
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "An accident happened at the intersection, but nobody was injured.",
+          "actualStart": 106.216849,
+          "actualEnd": 109.719706,
+          "rate": 155,
+          "cacheKey": "991dec573e7e636543d595938aadfe2db8d9c8433be624ec23bb4d1e01107da6",
+          "file": "audio/01/example-9-en-991dec573e7e6365.wav",
+          "duration": 3.502857
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "happened",
+            "actualStart": 106.906849,
+            "actualEnd": 107.326849
+          },
+          {
+            "text": "at",
+            "actualStart": 107.416849,
+            "actualEnd": 107.45684899999999
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "An",
+          "start": 106.226849,
+          "end": 106.336849
+        },
+        {
+          "text": "accident",
+          "start": 106.336849,
+          "end": 106.826849
+        },
+        {
+          "text": "happened",
+          "start": 106.906849,
+          "end": 107.326849
+        },
+        {
+          "text": "at",
+          "start": 107.416849,
+          "end": 107.45684899999999
+        },
+        {
+          "text": "the",
+          "start": 107.45684899999999,
+          "end": 107.62684899999999
+        },
+        {
+          "text": "intersection,",
+          "start": 107.62684899999999,
+          "end": 108.276849
+        },
+        {
+          "text": "but",
+          "start": 108.53684899999999,
+          "end": 108.716849
+        },
+        {
+          "text": "nobody",
+          "start": 108.716849,
+          "end": 109.06684899999999
+        },
+        {
+          "text": "was",
+          "start": 109.06684899999999,
+          "end": 109.20684899999999
+        },
+        {
+          "text": "injured.",
+          "start": 109.246849,
+          "end": 109.616849
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 112.02358366666667,
+      "end": 121.72222233333333,
+      "ko": "우리가 아직 찾지 못했지만 해결책이 존재할 수도 있어요.",
+      "en": "A solution may exist even if we haven't found it yet.",
+      "wrong": "A solution may exists even if we haven't found it yet.",
+      "focus": [
+        "may exist",
+        "solution"
+      ],
+      "note": "exist는 자동사다. 조동사 뒤에는 원형을 쓴다.",
+      "visual": "해결책의 존재와 발견 여부를 서로 다른 표시로 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리가 아직 찾지 못했지만 해결책이 존재할 수도 있어요.",
+          "actualStart": 112.22358366666667,
+          "actualEnd": 116.05306166666666,
+          "rate": 185,
+          "cacheKey": "205ac9b77536ff67b3a1ff6bb36fef60e69d13b6ccfaa092f30e670f9e9246a8",
+          "file": "audio/01/example-10-ko-205ac9b77536ff67.wav",
+          "duration": 3.829478
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "A solution may exist even if we haven't found it yet.",
+          "actualStart": 116.40306166666666,
+          "actualEnd": 119.41834466666666,
+          "rate": 155,
+          "cacheKey": "e0f0dddae61c1298c376f214d9be1edd460d76ba5c7feec42c97d43052f81ff3",
+          "file": "audio/01/example-10-en-e0f0dddae61c1298.wav",
+          "duration": 3.015283
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "may exist",
+            "actualStart": 116.97306166666665,
+            "actualEnd": 117.48306166666666
+          },
+          {
+            "text": "solution",
+            "actualStart": 116.46306166666666,
+            "actualEnd": 116.97306166666665
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "A",
+          "start": 116.40306166666666,
+          "end": 116.46306166666666
+        },
+        {
+          "text": "solution",
+          "start": 116.46306166666666,
+          "end": 116.97306166666665
+        },
+        {
+          "text": "may",
+          "start": 116.97306166666665,
+          "end": 117.16306166666666
+        },
+        {
+          "text": "exist",
+          "start": 117.16306166666666,
+          "end": 117.48306166666666
+        },
+        {
+          "text": "even",
+          "start": 117.48306166666666,
+          "end": 117.73306166666666
+        },
+        {
+          "text": "if",
+          "start": 117.73306166666666,
+          "end": 117.86306166666665
+        },
+        {
+          "text": "we",
+          "start": 117.86306166666665,
+          "end": 117.96306166666666
+        },
+        {
+          "text": "haven't",
+          "start": 118.05306166666666,
+          "end": 118.43306166666666
+        },
+        {
+          "text": "found",
+          "start": 118.43306166666666,
+          "end": 118.75306166666665
+        },
+        {
+          "text": "it",
+          "start": 118.75306166666665,
+          "end": 118.88306166666666
+        },
+        {
+          "text": "yet.",
+          "start": 118.88306166666666,
+          "end": 119.07306166666666
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 121.72222233333333,
+      "end": 130,
+      "text": "완전자동사는 목적어 없이 완성돼요. 추가 정보는 그에 맞는 표현으로 연결하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "완전자동사는 목적어 없이 완성돼요. 추가 정보는 그에 맞는 표현으로 연결하세요.",
+          "actualStart": 121.92222233333334,
+          "actualEnd": 127.94612233333334,
+          "rate": 185,
+          "cacheKey": "ca7b8c80f1330794ce334397bf23db7da3a25c4aa63b5e99d7962206f5da7750",
+          "file": "audio/01/summary-ko-ca7b8c80f1330794.wav",
+          "duration": 6.0239
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 108.191835,
+  "sourceHash": "576a62f85204e8cdbd492edfea2464fd445005fd980bc5f9829ab11c9c4b1b67",
+  "audioFile": "audio/01/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "576a62f85204e8cdbd492edfea2464fd445005fd980bc5f9829ab11c9c4b1b67",
+    "clipHashes": {
+      "example-1-en": "aa19468798275ee8e2ae2a27e70fbd03614bb920e4878dcc3702f890eae9b899",
+      "example-2-en": "8cf01efc9c6e480387e6994492be47a2fd73925054dc24427cb5b993386aa474",
+      "example-3-en": "582b310e22068c48a0d1864c0a5c3e161f58fb94e3aa7ab95fce2616f1608da3",
+      "example-4-en": "49b8c8daee6ac727c7517540e730e6d7ef3017792d5133b7cc8eb34454ab7adb",
+      "example-5-en": "12a2b989154b77c815e865c62d32ea43520dbb532a40b5eeb949dad445bdca8d",
+      "example-6-en": "90cba5637e3a530047f5be6cd0615c1425b2e54bd086dafa119078bb3b22bb51",
+      "example-7-en": "4854c1f6c3e20a0366e975cf395327ee0891632f2c770a3b17345d789826fd4a",
+      "example-8-en": "eff804657590cd150985c6000e61d25e6220b2871eba6ec2939604935c4c7c24",
+      "example-9-en": "77d0c71605b4a2a3d56eff8f9735181f41e56ab76ee24c1be749a1c41a35b3b8",
+      "example-10-en": "defc7582d9c15cab71d05a39ea8fa85a0b6042026c432a2eabf08fe8934d9054"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

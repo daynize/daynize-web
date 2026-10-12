@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,000"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2000
+			},
+			"text": " she has to submit the form by tonight.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997013,
+					"t_dtw": -1
+				},
+				{
+					"text": " she",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,200"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 200
+					},
+					"id": 673,
+					"p": 0.0725778,
+					"t_dtw": -1
+				},
+				{
+					"text": " has",
+					"timestamps": {
+						"from": "00:00:00,200",
+						"to": "00:00:00,340"
+					},
+					"offsets": {
+						"from": 200,
+						"to": 340
+					},
+					"id": 468,
+					"p": 0.998892,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,440",
+						"to": "00:00:00,530"
+					},
+					"offsets": {
+						"from": 440,
+						"to": 530
+					},
+					"id": 284,
+					"p": 0.999508,
+					"t_dtw": -1
+				},
+				{
+					"text": " submit",
+					"timestamps": {
+						"from": "00:00:00,530",
+						"to": "00:00:00,860"
+					},
+					"offsets": {
+						"from": 530,
+						"to": 860
+					},
+					"id": 9199,
+					"p": 0.998015,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,940",
+						"to": "00:00:01,120"
+					},
+					"offsets": {
+						"from": 940,
+						"to": 1120
+					},
+					"id": 262,
+					"p": 0.997874,
+					"t_dtw": -1
+				},
+				{
+					"text": " form",
+					"timestamps": {
+						"from": "00:00:01,120",
+						"to": "00:00:01,360"
+					},
+					"offsets": {
+						"from": 1120,
+						"to": 1360
+					},
+					"id": 1296,
+					"p": 0.813206,
+					"t_dtw": -1
+				},
+				{
+					"text": " by",
+					"timestamps": {
+						"from": "00:00:01,380",
+						"to": "00:00:01,510"
+					},
+					"offsets": {
+						"from": 1380,
+						"to": 1510
+					},
+					"id": 416,
+					"p": 0.998003,
+					"t_dtw": -1
+				},
+				{
+					"text": " tonight",
+					"timestamps": {
+						"from": "00:00:01,510",
+						"to": "00:00:01,910"
+					},
+					"offsets": {
+						"from": 1510,
+						"to": 1910
+					},
+					"id": 9975,
+					"p": 0.986325,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,000",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 2000,
+						"to": 2000
+					},
+					"id": 13,
+					"p": 0.900418,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_100]",
+					"timestamps": {
+						"from": "00:00:02,000",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 2000,
+						"to": 2000
+					},
+					"id": 50463,
+					"p": 0.148204,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,080"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2080
+			},
+			"text": " This information is useful for our trip.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998282,
+					"t_dtw": -1
+				},
+				{
+					"text": " This",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,230"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 230
+					},
+					"id": 770,
+					"p": 0.764412,
+					"t_dtw": -1
+				},
+				{
+					"text": " information",
+					"timestamps": {
+						"from": "00:00:00,230",
+						"to": "00:00:00,860"
+					},
+					"offsets": {
+						"from": 230,
+						"to": 860
+					},
+					"id": 1321,
+					"p": 0.995501,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:00,860",
+						"to": "00:00:00,960"
+					},
+					"offsets": {
+						"from": 860,
+						"to": 960
+					},
+					"id": 318,
+					"p": 0.999417,
+					"t_dtw": -1
+				},
+				{
+					"text": " useful",
+					"timestamps": {
+						"from": "00:00:00,960",
+						"to": "00:00:01,310"
+					},
+					"offsets": {
+						"from": 960,
+						"to": 1310
+					},
+					"id": 4465,
+					"p": 0.997653,
+					"t_dtw": -1
+				},
+				{
+					"text": " for",
+					"timestamps": {
+						"from": "00:00:01,310",
+						"to": "00:00:01,480"
+					},
+					"offsets": {
+						"from": 1310,
+						"to": 1480
+					},
+					"id": 329,
+					"p": 0.999279,
+					"t_dtw": -1
+				},
+				{
+					"text": " our",
+					"timestamps": {
+						"from": "00:00:01,480",
+						"to": "00:00:01,650"
+					},
+					"offsets": {
+						"from": 1480,
+						"to": 1650
+					},
+					"id": 674,
+					"p": 0.998687,
+					"t_dtw": -1
+				},
+				{
+					"text": " trip",
+					"timestamps": {
+						"from": "00:00:01,650",
+						"to": "00:00:01,880"
+					},
+					"offsets": {
+						"from": 1650,
+						"to": 1880
+					},
+					"id": 5296,
+					"p": 0.970386,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,880",
+						"to": "00:00:02,050"
+					},
+					"offsets": {
+						"from": 1880,
+						"to": 2050
+					},
+					"id": 13,
+					"p": 0.824552,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_104]",
+					"timestamps": {
+						"from": "00:00:02,080",
+						"to": "00:00:02,080"
+					},
+					"offsets": {
+						"from": 2080,
+						"to": 2080
+					},
+					"id": 50467,
+					"p": 0.119537,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

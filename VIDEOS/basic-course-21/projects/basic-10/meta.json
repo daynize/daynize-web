@@ -1,0 +1,14 @@
+{
+  "id": "basic-10",
+  "episode": 10,
+  "title": "먹을 것과 먹으러 가는 이유",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "835d682e9f345d5e1690006a22c949f4c8cb04881019db45cbfc014c30865de2",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

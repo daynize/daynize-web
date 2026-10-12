@@ -1,0 +1,171 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,400"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1400
+			},
+			"text": " She gave me a new notebook.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.994965,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,030",
+						"to": "00:00:00,170"
+					},
+					"offsets": {
+						"from": 30,
+						"to": 170
+					},
+					"id": 1375,
+					"p": 0.925625,
+					"t_dtw": -1
+				},
+				{
+					"text": " gave",
+					"timestamps": {
+						"from": "00:00:00,170",
+						"to": "00:00:00,400"
+					},
+					"offsets": {
+						"from": 170,
+						"to": 400
+					},
+					"id": 2921,
+					"p": 0.991522,
+					"t_dtw": -1
+				},
+				{
+					"text": " me",
+					"timestamps": {
+						"from": "00:00:00,400",
+						"to": "00:00:00,510"
+					},
+					"offsets": {
+						"from": 400,
+						"to": 510
+					},
+					"id": 502,
+					"p": 0.998586,
+					"t_dtw": -1
+				},
+				{
+					"text": " a",
+					"timestamps": {
+						"from": "00:00:00,510",
+						"to": "00:00:00,560"
+					},
+					"offsets": {
+						"from": 510,
+						"to": 560
+					},
+					"id": 257,
+					"p": 0.99709,
+					"t_dtw": -1
+				},
+				{
+					"text": " new",
+					"timestamps": {
+						"from": "00:00:00,560",
+						"to": "00:00:00,730"
+					},
+					"offsets": {
+						"from": 560,
+						"to": 730
+					},
+					"id": 649,
+					"p": 0.996434,
+					"t_dtw": -1
+				},
+				{
+					"text": " notebook",
+					"timestamps": {
+						"from": "00:00:00,730",
+						"to": "00:00:01,190"
+					},
+					"offsets": {
+						"from": 730,
+						"to": 1190
+					},
+					"id": 20922,
+					"p": 0.985787,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,190",
+						"to": "00:00:01,330"
+					},
+					"offsets": {
+						"from": 1190,
+						"to": 1330
+					},
+					"id": 13,
+					"p": 0.842567,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_70]",
+					"timestamps": {
+						"from": "00:00:01,400",
+						"to": "00:00:01,400"
+					},
+					"offsets": {
+						"from": 1400,
+						"to": 1400
+					},
+					"id": 50433,
+					"p": 0.0148873,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

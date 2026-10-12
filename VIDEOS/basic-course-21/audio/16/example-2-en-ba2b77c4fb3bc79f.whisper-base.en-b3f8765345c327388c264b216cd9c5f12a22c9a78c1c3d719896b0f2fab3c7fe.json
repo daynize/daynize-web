@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,340"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2340
+			},
+			"text": " The baby was named Rose after her grandmother.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998492,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 180
+					},
+					"id": 383,
+					"p": 0.729475,
+					"t_dtw": -1
+				},
+				{
+					"text": " baby",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,420"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 420
+					},
+					"id": 5156,
+					"p": 0.985628,
+					"t_dtw": -1
+				},
+				{
+					"text": " was",
+					"timestamps": {
+						"from": "00:00:00,420",
+						"to": "00:00:00,550"
+					},
+					"offsets": {
+						"from": 420,
+						"to": 550
+					},
+					"id": 373,
+					"p": 0.99942,
+					"t_dtw": -1
+				},
+				{
+					"text": " named",
+					"timestamps": {
+						"from": "00:00:00,610",
+						"to": "00:00:00,890"
+					},
+					"offsets": {
+						"from": 610,
+						"to": 890
+					},
+					"id": 3706,
+					"p": 0.998666,
+					"t_dtw": -1
+				},
+				{
+					"text": " Rose",
+					"timestamps": {
+						"from": "00:00:00,900",
+						"to": "00:00:01,100"
+					},
+					"offsets": {
+						"from": 900,
+						"to": 1100
+					},
+					"id": 8049,
+					"p": 0.925638,
+					"t_dtw": -1
+				},
+				{
+					"text": " after",
+					"timestamps": {
+						"from": "00:00:01,160",
+						"to": "00:00:01,440"
+					},
+					"offsets": {
+						"from": 1160,
+						"to": 1440
+					},
+					"id": 706,
+					"p": 0.995023,
+					"t_dtw": -1
+				},
+				{
+					"text": " her",
+					"timestamps": {
+						"from": "00:00:01,440",
+						"to": "00:00:01,620"
+					},
+					"offsets": {
+						"from": 1440,
+						"to": 1620
+					},
+					"id": 607,
+					"p": 0.999072,
+					"t_dtw": -1
+				},
+				{
+					"text": " grandmother",
+					"timestamps": {
+						"from": "00:00:01,620",
+						"to": "00:00:02,300"
+					},
+					"offsets": {
+						"from": 1620,
+						"to": 2300
+					},
+					"id": 18410,
+					"p": 0.996892,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,320",
+						"to": "00:00:02,320"
+					},
+					"offsets": {
+						"from": 2320,
+						"to": 2320
+					},
+					"id": 13,
+					"p": 0.577551,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_117]",
+					"timestamps": {
+						"from": "00:00:02,340",
+						"to": "00:00:02,340"
+					},
+					"offsets": {
+						"from": 2340,
+						"to": 2340
+					},
+					"id": 50480,
+					"p": 0.185709,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

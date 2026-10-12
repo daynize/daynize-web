@@ -1,0 +1,1265 @@
+{
+  "id": "basic-19",
+  "episode": 19,
+  "title": "장소·시간·이유·방법을 연결하기",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10.291110733333332,
+      "text": "장소와 시간, 이유를 설명할 때는 관계부사를 쓸 수 있어요. 뒤 문장에서 어떤 정보가 비었는지 보세요.",
+      "screen": "장소 where / 시간 when / 이유 why",
+      "visual": "장소·시간·이유의 빈칸을 서로 다른 표식으로 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "장소와 시간, 이유를 설명할 때는 관계부사를 쓸 수 있어요. 뒤 문장에서 어떤 정보가 비었는지 보세요.",
+          "actualStart": 0.2,
+          "actualEnd": 8.007527999999999,
+          "rate": 185,
+          "cacheKey": "ba1fbad394ba20089ba8b465f3eed87afcba30149a3512f2e4d52352e8687f7a",
+          "file": "audio/19/concept-1-ko-ba1fbad394ba2008.wav",
+          "duration": 7.807528
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10.291110733333332,
+      "end": 20.563264466666663,
+      "text": "웨어는 그곳에서라는 연결이에요. 장소 명사라도 뒤 동사의 주어나 목적어라면 위치나 댓을 써야 하죠.",
+      "screen": "where: 장소 정보 / which: 명사 자리",
+      "visual": "첫 예문의 we met 뒤 장소 빈칸과 명사 빈칸을 대조.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "웨어는 그곳에서라는 연결이에요. 장소 명사라도 뒤 동사의 주어나 목적어라면 위치나 댓을 써야 하죠.",
+          "actualStart": 10.49111073333333,
+          "actualEnd": 18.27968173333333,
+          "rate": 185,
+          "cacheKey": "a2012180a631541250809ac0a0ef940da53932ed1dbf71ec028e3e2b752287d3",
+          "file": "audio/19/concept-2-ko-a2012180a6315412.wav",
+          "duration": 7.788571
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20.563264466666663,
+      "end": 30.067119199999993,
+      "text": "방법은 하우로 연결하거나 더 웨이로 표현해요. 표준 영어에서는 더 웨이 하우를 함께 쓰지 않아요.",
+      "screen": "how / the way / the way in which",
+      "visual": "방법 표현 세 경로를 나란히 두고 way how 결합 차단.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "방법은 하우로 연결하거나 더 웨이로 표현해요. 표준 영어에서는 더 웨이 하우를 함께 쓰지 않아요.",
+          "actualStart": 20.763264466666662,
+          "actualEnd": 27.78353646666666,
+          "rate": 185,
+          "cacheKey": "11209708b15e8bbce4c970847d621a6e88a544c58a8b53fade4d914514880474",
+          "file": "audio/19/concept-3-ko-11209708b15e8bbc.wav",
+          "duration": 7.020272
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30.067119199999993,
+      "end": 40.277867933333326,
+      "text": "관계부사로 연결한 정보는 뒤에서 또 반복하지 마세요. 장소, 시간, 이유의 중복을 확인하세요.",
+      "screen": "연결한 부사 정보는 한 번만",
+      "visual": "where와 there, when과 then의 중복 연결선을 제거.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "관계부사로 연결한 정보는 뒤에서 또 반복하지 마세요. 장소, 시간, 이유의 중복을 확인하세요.",
+          "actualStart": 30.267119199999993,
+          "actualEnd": 37.99428519999999,
+          "rate": 185,
+          "cacheKey": "ea0f2bb9943ca54e5426f1de9f632e73bde0eb8b9b5c5f365ab7f80ec4a1a504",
+          "file": "audio/19/concept-4-ko-ea0f2bb9943ca54e.wav",
+          "duration": 7.727166
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40.277867933333326,
+      "end": 47.711699666666654,
+      "ko": "이곳은 우리가 처음 만난 카페예요.",
+      "en": "This is the cafe where we first met.",
+      "wrong": "This is the cafe where we first met there.",
+      "focus": [
+        "where",
+        "met"
+      ],
+      "note": "where가 만난 장소를 이미 연결하므로 there를 같은 장소 뜻으로 반복하지 않는다.",
+      "visual": "cafe와 met의 장소 빈칸 연결, there 중복 제거.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이곳은 우리가 처음 만난 카페예요.",
+          "actualStart": 40.47786793333333,
+          "actualEnd": 42.832833933333326,
+          "rate": 185,
+          "cacheKey": "116faf524680f8512dbc1ab2a578545e59d603a4a943c9276a2b70d0f4b6120c",
+          "file": "audio/19/example-1-ko-116faf524680f851.wav",
+          "duration": 2.354966
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This is the cafe where we first met.",
+          "actualStart": 43.18283393333333,
+          "actualEnd": 45.17811693333333,
+          "rate": 155,
+          "cacheKey": "df24c19943ae0e669ed10b1d165ae9100e8f2a0d068af238b4b3dd5d69703afa",
+          "file": "audio/19/example-1-en-df24c19943ae0e66.wav",
+          "duration": 1.995283
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "where",
+            "actualStart": 44.052833933333325,
+            "actualEnd": 44.39283393333333
+          },
+          {
+            "text": "met",
+            "actualStart": 44.86283393333333,
+            "actualEnd": 45.052833933333325
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "This",
+          "start": 43.20283393333333,
+          "end": 43.45283393333333
+        },
+        {
+          "text": "is",
+          "start": 43.45283393333333,
+          "end": 43.582833933333326
+        },
+        {
+          "text": "the",
+          "start": 43.582833933333326,
+          "end": 43.78283393333333
+        },
+        {
+          "text": "cafe",
+          "start": 43.78283393333333,
+          "end": 44.052833933333325
+        },
+        {
+          "text": "where",
+          "start": 44.052833933333325,
+          "end": 44.39283393333333
+        },
+        {
+          "text": "we",
+          "start": 44.39283393333333,
+          "end": 44.45283393333333
+        },
+        {
+          "text": "first",
+          "start": 44.552833933333325,
+          "end": 44.86283393333333
+        },
+        {
+          "text": "met.",
+          "start": 44.86283393333333,
+          "end": 45.052833933333325
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47.711699666666654,
+      "end": 55.31764039999999,
+      "ko": "나는 우리가 처음 만난 날을 기억해요.",
+      "en": "I remember the day when we first met.",
+      "wrong": "I remember the day when we first met then.",
+      "focus": [
+        "when",
+        "met"
+      ],
+      "note": "when이 그날이라는 시간 정보를 연결하므로 같은 시간의 then을 중복하지 않는다.",
+      "visual": "day와 만남의 시간점 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 우리가 처음 만난 날을 기억해요.",
+          "actualStart": 47.91169966666666,
+          "actualEnd": 50.48743666666665,
+          "rate": 185,
+          "cacheKey": "435a55409174f53c9c7aa8232b8c2f343e8006a0c5d6edd46e46a2e68e1c74b8",
+          "file": "audio/19/example-2-ko-435a55409174f53c.wav",
+          "duration": 2.575737
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I remember the day when we first met.",
+          "actualStart": 50.837436666666655,
+          "actualEnd": 52.784057666666655,
+          "rate": 155,
+          "cacheKey": "7af47bb3200fcb99b9ebf86ff6cca90aeaeff236d3c752116a6ac02270c3f8d2",
+          "file": "audio/19/example-2-en-7af47bb3200fcb99.wav",
+          "duration": 1.946621
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "when",
+            "actualStart": 51.78743666666666,
+            "actualEnd": 52.03743666666666
+          },
+          {
+            "text": "met",
+            "actualStart": 52.477436666666655,
+            "actualEnd": 52.66743666666665
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "I",
+          "start": 50.84743666666665,
+          "end": 50.89743666666666
+        },
+        {
+          "text": "remember",
+          "start": 50.89743666666666,
+          "end": 51.39743666666666
+        },
+        {
+          "text": "the",
+          "start": 51.39743666666666,
+          "end": 51.59743666666665
+        },
+        {
+          "text": "day",
+          "start": 51.59743666666665,
+          "end": 51.78743666666666
+        },
+        {
+          "text": "when",
+          "start": 51.78743666666666,
+          "end": 52.03743666666666
+        },
+        {
+          "text": "we",
+          "start": 52.03743666666666,
+          "end": 52.05743666666665
+        },
+        {
+          "text": "first",
+          "start": 52.157436666666655,
+          "end": 52.477436666666655
+        },
+        {
+          "text": "met.",
+          "start": 52.477436666666655,
+          "end": 52.66743666666665
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 55.31764039999999,
+      "end": 62.756960133333315,
+      "ko": "그것이 내가 일찍 떠난 이유예요.",
+      "en": "That is the reason why I left early.",
+      "wrong": "That is the reason why did I leave early.",
+      "focus": [
+        "why",
+        "left"
+      ],
+      "note": "이 관계절은 의문문이 아니므로 주어 I 뒤에 left를 두며 의문문 도치를 하지 않는다.",
+      "visual": "why 뒤 평서문 어순 I → left 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그것이 내가 일찍 떠난 이유예요.",
+          "actualStart": 55.51764039999999,
+          "actualEnd": 58.087073399999994,
+          "rate": 185,
+          "cacheKey": "a68d626f841e1200c1793af773cc6b08e61c6ca5392a2753816e6f42a0f1c972",
+          "file": "audio/19/example-3-ko-a68d626f841e1200.wav",
+          "duration": 2.569433
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "That is the reason why I left early.",
+          "actualStart": 58.437073399999996,
+          "actualEnd": 60.2233774,
+          "rate": 155,
+          "cacheKey": "5ef295aa680985bd1df5205b84adf5cb292d14b8dec441b25644f31b0c572cdd",
+          "file": "audio/19/example-3-en-5ef295aa680985bd.wav",
+          "duration": 1.786304
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "why",
+            "actualStart": 59.3570734,
+            "actualEnd": 59.5370734
+          },
+          {
+            "text": "left",
+            "actualStart": 59.59707339999999,
+            "actualEnd": 59.84707339999999
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "That",
+          "start": 58.4570734,
+          "end": 58.6770734
+        },
+        {
+          "text": "is",
+          "start": 58.767073399999994,
+          "end": 58.80707339999999
+        },
+        {
+          "text": "the",
+          "start": 58.80707339999999,
+          "end": 58.98707339999999
+        },
+        {
+          "text": "reason",
+          "start": 58.98707339999999,
+          "end": 59.3570734
+        },
+        {
+          "text": "why",
+          "start": 59.3570734,
+          "end": 59.5370734
+        },
+        {
+          "text": "I",
+          "start": 59.5370734,
+          "end": 59.59707339999999
+        },
+        {
+          "text": "left",
+          "start": 59.59707339999999,
+          "end": 59.84707339999999
+        },
+        {
+          "text": "early.",
+          "start": 59.84707339999999,
+          "end": 60.1470734
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 62.756960133333315,
+      "end": 70.46739186666666,
+      "ko": "나는 그녀가 그 문제를 해결한 방식을 알아요.",
+      "en": "I know how she solved the problem.",
+      "wrong": "I know the way how she solved the problem.",
+      "focus": [
+        "how",
+        "solved"
+      ],
+      "note": "표준 영어에서는 how 앞에 the way를 함께 놓지 않는다. how 또는 the way를 선택한다.",
+      "visual": "how 경로와 the way 경로를 나누고 중복 경로 차단.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그녀가 그 문제를 해결한 방식을 알아요.",
+          "actualStart": 62.95696013333332,
+          "actualEnd": 65.74167713333331,
+          "rate": 185,
+          "cacheKey": "2c5bf8699983fab44a9624e936a7f1bd8906b3e84a09c2a2f6d32f181e1b1a95",
+          "file": "audio/19/example-4-ko-2c5bf8699983fab4.wav",
+          "duration": 2.784717
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I know how she solved the problem.",
+          "actualStart": 66.0916771333333,
+          "actualEnd": 67.93380913333331,
+          "rate": 155,
+          "cacheKey": "39f32aa2c77b07df1b7c7c6a749d936468c4a64ee0b0a8cf11223d2e032517e2",
+          "file": "audio/19/example-4-en-39f32aa2c77b07df.wav",
+          "duration": 1.842132
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "how",
+            "actualStart": 66.4116771333333,
+            "actualEnd": 66.6116771333333
+          },
+          {
+            "text": "solved",
+            "actualStart": 66.8116771333333,
+            "actualEnd": 67.13167713333331
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "I",
+          "start": 66.10167713333331,
+          "end": 66.15167713333331
+        },
+        {
+          "text": "know",
+          "start": 66.15167713333331,
+          "end": 66.4116771333333
+        },
+        {
+          "text": "how",
+          "start": 66.4116771333333,
+          "end": 66.6116771333333
+        },
+        {
+          "text": "she",
+          "start": 66.6116771333333,
+          "end": 66.8116771333333
+        },
+        {
+          "text": "solved",
+          "start": 66.8116771333333,
+          "end": 67.13167713333331
+        },
+        {
+          "text": "the",
+          "start": 67.2516771333333,
+          "end": 67.32167713333331
+        },
+        {
+          "text": "problem.",
+          "start": 67.4116771333333,
+          "end": 67.8616771333333
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 70.46739186666666,
+      "end": 78.9438086,
+      "ko": "나는 그녀가 그 문제를 해결한 방식이 마음에 들어요.",
+      "en": "I like the way she solved the problem.",
+      "wrong": "I like the way how she solved the problem.",
+      "focus": [
+        "the way",
+        "solved"
+      ],
+      "note": "the way 뒤에는 이처럼 바로 절을 붙일 수 있다. 표준형에서는 how를 덧붙이지 않는다.",
+      "visual": "the way 뒤 solved절을 직접 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그녀가 그 문제를 해결한 방식이 마음에 들어요.",
+          "actualStart": 70.66739186666666,
+          "actualEnd": 74.13709686666667,
+          "rate": 185,
+          "cacheKey": "4683abd3eb075de56fbfc40b6f7449755ea07789bc9dd22d21cc3276359202e7",
+          "file": "audio/19/example-5-ko-4683abd3eb075de5.wav",
+          "duration": 3.469705
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I like the way she solved the problem.",
+          "actualStart": 74.48709686666666,
+          "actualEnd": 76.41022586666666,
+          "rate": 155,
+          "cacheKey": "909f4950b1b01fdd3c291f83d0ef930c00d094a74dea11696418dbb49b8e2a36",
+          "file": "audio/19/example-5-en-909f4950b1b01fdd.wav",
+          "duration": 1.923129
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "the way",
+            "actualStart": 74.86709686666666,
+            "actualEnd": 75.20709686666666
+          },
+          {
+            "text": "solved",
+            "actualStart": 75.40709686666666,
+            "actualEnd": 75.78709686666666
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "I",
+          "start": 74.49709686666667,
+          "end": 74.54709686666666
+        },
+        {
+          "text": "like",
+          "start": 74.54709686666666,
+          "end": 74.76709686666666
+        },
+        {
+          "text": "the",
+          "start": 74.86709686666666,
+          "end": 75.00709686666666
+        },
+        {
+          "text": "way",
+          "start": 75.00709686666666,
+          "end": 75.20709686666666
+        },
+        {
+          "text": "she",
+          "start": 75.20709686666666,
+          "end": 75.40709686666666
+        },
+        {
+          "text": "solved",
+          "start": 75.40709686666666,
+          "end": 75.78709686666666
+        },
+        {
+          "text": "the",
+          "start": 75.88709686666667,
+          "end": 75.99709686666667
+        },
+        {
+          "text": "problem.",
+          "start": 75.99709686666667,
+          "end": 76.33709686666666
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 78.9438086,
+      "end": 88.01260733333334,
+      "ko": "나는 그가 일을 정리하는 방식이 감탄스러워요.",
+      "en": "I admire the way in which he organizes his work.",
+      "wrong": "I admire the way in how he organizes his work.",
+      "focus": [
+        "in which",
+        "organizes"
+      ],
+      "note": "the way와 전치사로 연결할 때는 in which이며 in how가 아니다.",
+      "visual": "way → in which → organizes 구조 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그가 일을 정리하는 방식이 감탄스러워요.",
+          "actualStart": 79.1438086,
+          "actualEnd": 82.3929246,
+          "rate": 185,
+          "cacheKey": "6f261ae6a87e617e5f17961eaf90d89dc8bc76d78247606704c3c019d0f15e44",
+          "file": "audio/19/example-6-ko-6f261ae6a87e617e.wav",
+          "duration": 3.249116
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I admire the way in which he organizes his work.",
+          "actualStart": 82.7429246,
+          "actualEnd": 85.47902459999999,
+          "rate": 155,
+          "cacheKey": "04083b340432946cff6ced004dd01c0d6d5d0d005904db8e52c3a24e596d32c9",
+          "file": "audio/19/example-6-en-04083b340432946c.wav",
+          "duration": 2.7361
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "in which",
+            "actualStart": 83.6129246,
+            "actualEnd": 84.0829246
+          },
+          {
+            "text": "organizes",
+            "actualStart": 84.2129246,
+            "actualEnd": 84.8229246
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "I",
+          "start": 82.7529246,
+          "end": 82.8029246
+        },
+        {
+          "text": "admire",
+          "start": 82.8029246,
+          "end": 83.2129246
+        },
+        {
+          "text": "the",
+          "start": 83.2129246,
+          "end": 83.4129246
+        },
+        {
+          "text": "way",
+          "start": 83.4129246,
+          "end": 83.6129246
+        },
+        {
+          "text": "in",
+          "start": 83.6129246,
+          "end": 83.7429246
+        },
+        {
+          "text": "which",
+          "start": 83.7429246,
+          "end": 84.0829246
+        },
+        {
+          "text": "he",
+          "start": 84.0829246,
+          "end": 84.2129246
+        },
+        {
+          "text": "organizes",
+          "start": 84.2129246,
+          "end": 84.8229246
+        },
+        {
+          "text": "his",
+          "start": 84.8229246,
+          "end": 85.01292459999999
+        },
+        {
+          "text": "work.",
+          "start": 85.01292459999999,
+          "end": 85.34292459999999
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 88.01260733333334,
+      "end": 95.75546406666668,
+      "ko": "그곳은 내가 가방을 두고 온 역이에요.",
+      "en": "That is the station where I left my bag.",
+      "wrong": "That is the station where I left my bag at.",
+      "focus": [
+        "where",
+        "left"
+      ],
+      "note": "where가 역에서라는 장소 관계를 담당하므로 이 구조에서는 at을 뒤에 남기지 않는다.",
+      "visual": "where의 장소 연결과 중복 at을 대비.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그곳은 내가 가방을 두고 온 역이에요.",
+          "actualStart": 88.21260733333334,
+          "actualEnd": 90.76049833333335,
+          "rate": 185,
+          "cacheKey": "f355790d72ed9f7a038d799cf861990e89d45c7e5f5530df2440e791d50b33ea",
+          "file": "audio/19/example-7-ko-f355790d72ed9f7a.wav",
+          "duration": 2.547891
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "That is the station where I left my bag.",
+          "actualStart": 91.11049833333334,
+          "actualEnd": 93.22188133333334,
+          "rate": 155,
+          "cacheKey": "78c14c4b2808c0cb9fda160b4dac06af0c3ba38a329307318288289016ba665d",
+          "file": "audio/19/example-7-en-78c14c4b2808c0cb.wav",
+          "duration": 2.111383
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "where",
+            "actualStart": 92.14049833333334,
+            "actualEnd": 92.46049833333333
+          },
+          {
+            "text": "left",
+            "actualStart": 92.52049833333334,
+            "actualEnd": 92.78049833333334
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "That",
+          "start": 91.13049833333334,
+          "end": 91.35049833333333
+        },
+        {
+          "text": "is",
+          "start": 91.44049833333334,
+          "end": 91.50049833333334
+        },
+        {
+          "text": "the",
+          "start": 91.50049833333334,
+          "end": 91.69049833333334
+        },
+        {
+          "text": "station",
+          "start": 91.69049833333334,
+          "end": 92.14049833333334
+        },
+        {
+          "text": "where",
+          "start": 92.14049833333334,
+          "end": 92.46049833333333
+        },
+        {
+          "text": "I",
+          "start": 92.46049833333333,
+          "end": 92.52049833333334
+        },
+        {
+          "text": "left",
+          "start": 92.52049833333334,
+          "end": 92.78049833333334
+        },
+        {
+          "text": "my",
+          "start": 92.78049833333334,
+          "end": 92.91049833333334
+        },
+        {
+          "text": "bag.",
+          "start": 92.91049833333334,
+          "end": 93.13049833333334
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 95.75546406666668,
+      "end": 104.47460280000001,
+      "ko": "지난달 문을 연 식당은 항상 붐벼요.",
+      "en": "The restaurant which opened last month is always busy.",
+      "wrong": "The restaurant where opened last month is always busy.",
+      "focus": [
+        "which",
+        "opened"
+      ],
+      "note": "opened의 주어가 필요한 자리이므로 which를 쓴다. where는 주어 역할을 할 수 없다.",
+      "visual": "restaurant → opened의 주어 빈칸 연결, 장소 칸과 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "지난달 문을 연 식당은 항상 붐벼요.",
+          "actualStart": 95.95546406666668,
+          "actualEnd": 98.74612206666667,
+          "rate": 185,
+          "cacheKey": "241403e40ebfdc21447ca5b02f144ee15f0a0910625c939086ee8032cd1a4985",
+          "file": "audio/19/example-8-ko-241403e40ebfdc21.wav",
+          "duration": 2.790658
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The restaurant which opened last month is always busy.",
+          "actualStart": 99.09612206666667,
+          "actualEnd": 101.94102006666667,
+          "rate": 155,
+          "cacheKey": "be05c057957e8a9d1d0ffda8b4156ed91affaf60f46c6b21f02dd09616649343",
+          "file": "audio/19/example-8-en-be05c057957e8a9d.wav",
+          "duration": 2.844898
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "which",
+            "actualStart": 99.89612206666666,
+            "actualEnd": 100.17612206666666
+          },
+          {
+            "text": "opened",
+            "actualStart": 100.25612206666666,
+            "actualEnd": 100.57612206666667
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "The",
+          "start": 99.10612206666667,
+          "end": 99.27612206666667
+        },
+        {
+          "text": "restaurant",
+          "start": 99.27612206666667,
+          "end": 99.89612206666666
+        },
+        {
+          "text": "which",
+          "start": 99.89612206666666,
+          "end": 100.17612206666666
+        },
+        {
+          "text": "opened",
+          "start": 100.25612206666666,
+          "end": 100.57612206666667
+        },
+        {
+          "text": "last",
+          "start": 100.57612206666667,
+          "end": 100.81612206666667
+        },
+        {
+          "text": "month",
+          "start": 100.81612206666667,
+          "end": 101.12612206666667
+        },
+        {
+          "text": "is",
+          "start": 101.12612206666667,
+          "end": 101.24612206666667
+        },
+        {
+          "text": "always",
+          "start": 101.24612206666667,
+          "end": 101.61612206666666
+        },
+        {
+          "text": "busy.",
+          "start": 101.61612206666666,
+          "end": 101.87612206666667
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104.47460280000001,
+      "end": 112.81619053333336,
+      "ko": "우리가 금요일에 방문한 박물관은 무료예요.",
+      "en": "The museum which we visited on Friday is free.",
+      "wrong": "The museum where we visited on Friday is free.",
+      "focus": [
+        "which",
+        "visited"
+      ],
+      "note": "visit은 여기서 방문 대상을 목적어로 요구한다. 장소 부사 where로 그 목적어를 채우지 않는다.",
+      "visual": "visited 뒤의 목적어 빈칸을 museum과 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리가 금요일에 방문한 박물관은 무료예요.",
+          "actualStart": 104.67460280000002,
+          "actualEnd": 107.45922880000002,
+          "rate": 185,
+          "cacheKey": "26a92014650837b50301df7bc502313716ffd3a93090b24012be463d486d1794",
+          "file": "audio/19/example-9-ko-26a92014650837b5.wav",
+          "duration": 2.784626
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The museum which we visited on Friday is free.",
+          "actualStart": 107.80922880000001,
+          "actualEnd": 110.28260780000001,
+          "rate": 155,
+          "cacheKey": "582a86cad72777bc4b91d6b59c0e5df05e538efee88469064a5736fbf9287548",
+          "file": "audio/19/example-9-en-582a86cad72777bc.wav",
+          "duration": 2.473379
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "which",
+            "actualStart": 108.38922880000001,
+            "actualEnd": 108.70922880000002
+          },
+          {
+            "text": "visited",
+            "actualStart": 108.83922880000001,
+            "actualEnd": 109.29922880000001
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "The",
+          "start": 107.81922880000002,
+          "end": 107.99922880000001
+        },
+        {
+          "text": "museum",
+          "start": 107.99922880000001,
+          "end": 108.38922880000001
+        },
+        {
+          "text": "which",
+          "start": 108.38922880000001,
+          "end": 108.70922880000002
+        },
+        {
+          "text": "we",
+          "start": 108.70922880000002,
+          "end": 108.83922880000001
+        },
+        {
+          "text": "visited",
+          "start": 108.83922880000001,
+          "end": 109.29922880000001
+        },
+        {
+          "text": "on",
+          "start": 109.29922880000001,
+          "end": 109.32922880000001
+        },
+        {
+          "text": "Friday",
+          "start": 109.42922880000002,
+          "end": 109.81922880000002
+        },
+        {
+          "text": "is",
+          "start": 109.81922880000002,
+          "end": 109.86922880000002
+        },
+        {
+          "text": "free.",
+          "start": 109.97922880000002,
+          "end": 110.20922880000002
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 112.81619053333336,
+      "end": 120.7082992666667,
+      "ko": "그것이 모든 일이 바뀐 순간이었어요.",
+      "en": "That was the moment when everything changed.",
+      "wrong": "That was the moment when did everything change.",
+      "focus": [
+        "when",
+        "changed"
+      ],
+      "note": "시간 관계절은 everything changed라는 평서문 어순이다. did로 의문문 도치를 하지 않는다.",
+      "visual": "moment에서 시간선의 변화 지점 연결, 절 어순 유지.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그것이 모든 일이 바뀐 순간이었어요.",
+          "actualStart": 113.01619053333336,
+          "actualEnd": 115.67850353333336,
+          "rate": 185,
+          "cacheKey": "497177644b06f92ada8fecc3a2ef772584bf6473b0edde07948e25890bc060e9",
+          "file": "audio/19/example-10-ko-497177644b06f92a.wav",
+          "duration": 2.662313
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "That was the moment when everything changed.",
+          "actualStart": 116.02850353333335,
+          "actualEnd": 118.17471653333335,
+          "rate": 155,
+          "cacheKey": "e4ce8383f97f53f723596e69d41ce791028506422621ce13e8891a2c35ef6baf",
+          "file": "audio/19/example-10-en-e4ce8383f97f53f7.wav",
+          "duration": 2.146213
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "when",
+            "actualStart": 116.89850353333335,
+            "actualEnd": 117.08850353333335
+          },
+          {
+            "text": "changed",
+            "actualStart": 117.61850353333335,
+            "actualEnd": 118.02850353333335
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "That",
+          "start": 116.04850353333335,
+          "end": 116.23850353333334
+        },
+        {
+          "text": "was",
+          "start": 116.23850353333334,
+          "end": 116.32850353333335
+        },
+        {
+          "text": "the",
+          "start": 116.41850353333335,
+          "end": 116.55850353333335
+        },
+        {
+          "text": "moment",
+          "start": 116.55850353333335,
+          "end": 116.82850353333335
+        },
+        {
+          "text": "when",
+          "start": 116.89850353333335,
+          "end": 117.08850353333335
+        },
+        {
+          "text": "everything",
+          "start": 117.08850353333335,
+          "end": 117.61850353333335
+        },
+        {
+          "text": "changed.",
+          "start": 117.61850353333335,
+          "end": 118.02850353333335
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 120.7082992666667,
+      "end": 130,
+      "text": "관계절의 빈자리를 확인하고, 장소·시간·이유와 방법에 맞는 연결 표현을 고르세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "관계절의 빈자리를 확인하고, 장소·시간·이유와 방법에 맞는 연결 표현을 고르세요.",
+          "actualStart": 120.9082992666667,
+          "actualEnd": 127.7164172666667,
+          "rate": 185,
+          "cacheKey": "f5e6a76600362f04e3f8a98d333c7687127b9560d4c013d74aa3d5eb00a11548",
+          "file": "audio/19/summary-ko-f5e6a76600362f04.wav",
+          "duration": 6.808118
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 104.74625900000001,
+  "sourceHash": "010274dd0e3b879434123b543946ea5b11df1120606471a3b100400b13489106",
+  "audioFile": "audio/19/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "010274dd0e3b879434123b543946ea5b11df1120606471a3b100400b13489106",
+    "clipHashes": {
+      "example-1-en": "e491c6d06a479457d74def4c23989cfa618cd57e66f012879435e356f2b47df6",
+      "example-2-en": "1280686698b7917070bde53846dc46f73577af3969262438f947fec7616a01e0",
+      "example-3-en": "d351442d00ed0b8729c86a27ea66736097da71e4bab76c4b8c6abed107a5d5c1",
+      "example-4-en": "efb0b6a733093ada954dc95c227dfb3dbff6306fbf1715f155d6b2bdfe9b4a77",
+      "example-5-en": "12557607459c014d2ebeded1928ae8dfea74fb099b62027b731443b689fed787",
+      "example-6-en": "9f04fbdcac80d35e16f67969c02c2565b6ec4726b90c40dd586a2bfda81d8cd2",
+      "example-7-en": "248039d25c95ab4110dcd21261f19e1670db9b40d4601fb4e7233410b000e48b",
+      "example-8-en": "aa5b446fbd4441cd2a630afcda266cedbaf663664c43233434692b5b87232a58",
+      "example-9-en": "2a93ab519c53f3674c868b739cca61a2785e0b132130f02e014d337cb3c2ec26",
+      "example-10-en": "970eaaaed5f71c9d96a1e5cc16af655909e73daabb91b5fa40e22919b1e06e5f"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

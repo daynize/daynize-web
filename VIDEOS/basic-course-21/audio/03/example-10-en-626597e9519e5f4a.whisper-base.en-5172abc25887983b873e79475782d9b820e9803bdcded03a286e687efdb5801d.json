@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,880"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2880
+			},
+			"text": " She taught the beginners some basic guitar chords.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998571,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,030",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 30,
+						"to": 180
+					},
+					"id": 1375,
+					"p": 0.94227,
+					"t_dtw": -1
+				},
+				{
+					"text": " taught",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,530"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 530
+					},
+					"id": 7817,
+					"p": 0.993947,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,530",
+						"to": "00:00:00,710"
+					},
+					"offsets": {
+						"from": 530,
+						"to": 710
+					},
+					"id": 262,
+					"p": 0.993009,
+					"t_dtw": -1
+				},
+				{
+					"text": " beginners",
+					"timestamps": {
+						"from": "00:00:00,710",
+						"to": "00:00:01,240"
+					},
+					"offsets": {
+						"from": 710,
+						"to": 1240
+					},
+					"id": 31729,
+					"p": 0.855246,
+					"t_dtw": -1
+				},
+				{
+					"text": " some",
+					"timestamps": {
+						"from": "00:00:01,240",
+						"to": "00:00:01,440"
+					},
+					"offsets": {
+						"from": 1240,
+						"to": 1440
+					},
+					"id": 617,
+					"p": 0.997809,
+					"t_dtw": -1
+				},
+				{
+					"text": " basic",
+					"timestamps": {
+						"from": "00:00:01,510",
+						"to": "00:00:01,760"
+					},
+					"offsets": {
+						"from": 1510,
+						"to": 1760
+					},
+					"id": 4096,
+					"p": 0.994385,
+					"t_dtw": -1
+				},
+				{
+					"text": " guitar",
+					"timestamps": {
+						"from": "00:00:01,830",
+						"to": "00:00:02,130"
+					},
+					"offsets": {
+						"from": 1830,
+						"to": 2130
+					},
+					"id": 10047,
+					"p": 0.984253,
+					"t_dtw": -1
+				},
+				{
+					"text": " chords",
+					"timestamps": {
+						"from": "00:00:02,130",
+						"to": "00:00:02,490"
+					},
+					"offsets": {
+						"from": 2130,
+						"to": 2490
+					},
+					"id": 34211,
+					"p": 0.991664,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,490",
+						"to": "00:00:02,540"
+					},
+					"offsets": {
+						"from": 2490,
+						"to": 2540
+					},
+					"id": 13,
+					"p": 0.849688,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_144]",
+					"timestamps": {
+						"from": "00:00:02,880",
+						"to": "00:00:02,880"
+					},
+					"offsets": {
+						"from": 2880,
+						"to": 2880
+					},
+					"id": 50507,
+					"p": 0.00929576,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

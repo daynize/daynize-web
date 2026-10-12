@@ -1,0 +1,26 @@
+export const lesson = {
+    id: 'basic-course-01',
+    title: '자동사 뒤에는 무엇이 올까?',
+    duration: 130,
+    fps: 30,
+    voices: { ko: 'Jian (Premium)', en: 'Samantha' },
+    intro: [
+        { title: '의자에 앉았다', subtitle: '한국어 조사만 보고 만들면?', text: '영어는 한국어 조사만 보고 만들면 틀리기 쉬워요. 의자에 앉았다에서 의자를 동사 바로 뒤에 놓으면 될까요?', graphic: 'chair' },
+        { title: '동작은 이미 완성', subtitle: '장소는 전치사로 연결', text: '앉는 동작은 그 자체로 성립해요. 어디에 앉았는지 덧붙일 때는 전치사가 연결해 줍니다. 의자 위라면 온을 쓰죠.', graphic: 'comparison' },
+        { title: '1형식 · S + V', subtitle: '전치사구는 장소 같은 추가 정보', text: '이것이 일 형식이에요. 주어와 동사가 뼈대이고, 전치사구는 장소 같은 정보를 더해요. 전치사 뒤의 명사는 동사의 목적어가 아닙니다.', graphic: 'structure' },
+        { title: '2형식 · S + V + C', subtitle: '보어는 주어의 상태를 설명', text: '이 형식은 달라요. 그녀는 행복해 보인다에서 행복하다는 말은 주어의 상태를 설명하는 보어예요. 동사 뒤에서 무엇을 설명하는지 보세요.', graphic: 'complement' },
+    ],
+    examples: [
+        { ko: '나는 의자에 앉았어요.', en: 'I sat on the chair.', wrong: 'I sat the chair.', emphasis: ['sat', 'on'], note: '의자는 목적어가 아닌 장소', pattern: 'S + V + 전치사구', level: '기본' },
+        { ko: '우리는 버스를 기다렸어요.', en: 'We waited for the bus.', wrong: 'We waited the bus.', emphasis: ['waited', 'for'], note: '기다리는 대상은 for로 연결', pattern: 'S + V + 전치사구', level: '기본' },
+        { ko: '그녀는 행복해 보여요.', en: 'She looks happy.', wrong: 'She looks happily.', emphasis: ['looks', 'happy'], note: '주어의 상태는 형용사 보어', pattern: 'S + V + C', level: '기본' },
+        { ko: '그는 정오 전에 역에 도착했어요.', en: 'He arrived at the station before noon.', wrong: 'He arrived the station before noon.', emphasis: ['arrived', 'at'], note: '도착 장소는 at으로 연결', pattern: 'S + V + 전치사구', level: '중급' },
+        { ko: '그녀는 그 설명을 주의 깊게 들었어요.', en: 'She listened carefully to the explanation.', wrong: 'She listened carefully the explanation.', emphasis: ['listened', 'to'], note: 'carefully가 있어도 to는 필요', pattern: 'S + V + 전치사구', level: '중급' },
+        { ko: '회의가 시작된 뒤 방 안이 조용해졌어요.', en: 'The room became quiet after the meeting began.', wrong: 'The room became quietly after the meeting began.', emphasis: ['became', 'quiet'], note: '방의 바뀐 상태를 설명', pattern: 'S + V + C', level: '중급' },
+        { ko: '이 수프는 내 입맛에는 짜게 느껴져요.', en: 'This soup tastes salty to me.', wrong: 'This soup tastes saltily to me.', emphasis: ['tastes', 'salty'], note: 'salty는 성질 · to me는 추가 정보', pattern: 'S + V + C', level: '중급' },
+        { ko: '계획이 갑자기 바뀌었는데도 그 관리자는 침착함을 유지했어요.', en: 'The manager remained calm despite the sudden change in plans.', wrong: 'The manager remained calmly despite the sudden change in plans.', emphasis: ['remained', 'calm'], note: '뒤가 길어져도 핵심은 S + V + C', pattern: 'S + V + C', level: '고급' },
+        { ko: '그녀는 밤새 일해서 피곤해 보여요.', en: 'She seems tired after working all night.', wrong: 'She seems tiredly after working all night.', emphasis: ['seems', 'tired'], note: '주어의 상태를 먼저 찾기', pattern: 'S + V + C', level: '고급' },
+        { ko: '경보가 울렸을 때 모두 자리에 앉은 채 침착함을 유지했어요.', en: 'When the alarm rang, everyone stayed calm in their seats.', wrong: 'When the alarm rang, everyone stayed calmly in their seats.', emphasis: ['stayed', 'calm'], note: 'calm은 상태 · in their seats는 장소', pattern: 'S + V + C', level: '고급' },
+    ],
+    summary: '전치사구는 상황을 더하고, 이 형식 보어는 주어를 설명합니다.',
+};

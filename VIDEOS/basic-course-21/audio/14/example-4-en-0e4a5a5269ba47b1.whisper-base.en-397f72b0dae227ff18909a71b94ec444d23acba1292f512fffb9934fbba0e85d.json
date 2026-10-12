@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,000"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2000
+			},
+			"text": " I am confused about the new rules now.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.9978,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.953581,
+					"t_dtw": -1
+				},
+				{
+					"text": " am",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,190"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 190
+					},
+					"id": 716,
+					"p": 0.975554,
+					"t_dtw": -1
+				},
+				{
+					"text": " confused",
+					"timestamps": {
+						"from": "00:00:00,190",
+						"to": "00:00:00,720"
+					},
+					"offsets": {
+						"from": 190,
+						"to": 720
+					},
+					"id": 10416,
+					"p": 0.998645,
+					"t_dtw": -1
+				},
+				{
+					"text": " about",
+					"timestamps": {
+						"from": "00:00:00,720",
+						"to": "00:00:01,050"
+					},
+					"offsets": {
+						"from": 720,
+						"to": 1050
+					},
+					"id": 546,
+					"p": 0.999316,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,050",
+						"to": "00:00:01,250"
+					},
+					"offsets": {
+						"from": 1050,
+						"to": 1250
+					},
+					"id": 262,
+					"p": 0.987313,
+					"t_dtw": -1
+				},
+				{
+					"text": " new",
+					"timestamps": {
+						"from": "00:00:01,250",
+						"to": "00:00:01,450"
+					},
+					"offsets": {
+						"from": 1250,
+						"to": 1450
+					},
+					"id": 649,
+					"p": 0.935498,
+					"t_dtw": -1
+				},
+				{
+					"text": " rules",
+					"timestamps": {
+						"from": "00:00:01,450",
+						"to": "00:00:01,780"
+					},
+					"offsets": {
+						"from": 1450,
+						"to": 1780
+					},
+					"id": 3173,
+					"p": 0.997569,
+					"t_dtw": -1
+				},
+				{
+					"text": " now",
+					"timestamps": {
+						"from": "00:00:01,780",
+						"to": "00:00:01,980"
+					},
+					"offsets": {
+						"from": 1780,
+						"to": 1980
+					},
+					"id": 783,
+					"p": 0.995015,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,990",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 1990,
+						"to": 2000
+					},
+					"id": 13,
+					"p": 0.743988,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_100]",
+					"timestamps": {
+						"from": "00:00:02,000",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 2000,
+						"to": 2000
+					},
+					"id": 50463,
+					"p": 0.199815,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

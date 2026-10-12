@@ -1,0 +1,171 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,580"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1580
+			},
+			"text": " I have been to Paris before.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997098,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,070"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 70
+					},
+					"id": 314,
+					"p": 0.937678,
+					"t_dtw": -1
+				},
+				{
+					"text": " have",
+					"timestamps": {
+						"from": "00:00:00,070",
+						"to": "00:00:00,260"
+					},
+					"offsets": {
+						"from": 70,
+						"to": 260
+					},
+					"id": 423,
+					"p": 0.972201,
+					"t_dtw": -1
+				},
+				{
+					"text": " been",
+					"timestamps": {
+						"from": "00:00:00,350",
+						"to": "00:00:00,600"
+					},
+					"offsets": {
+						"from": 350,
+						"to": 600
+					},
+					"id": 587,
+					"p": 0.999133,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,700",
+						"to": "00:00:00,750"
+					},
+					"offsets": {
+						"from": 700,
+						"to": 750
+					},
+					"id": 284,
+					"p": 0.998683,
+					"t_dtw": -1
+				},
+				{
+					"text": " Paris",
+					"timestamps": {
+						"from": "00:00:00,750",
+						"to": "00:00:01,090"
+					},
+					"offsets": {
+						"from": 750,
+						"to": 1090
+					},
+					"id": 6342,
+					"p": 0.998821,
+					"t_dtw": -1
+				},
+				{
+					"text": " before",
+					"timestamps": {
+						"from": "00:00:01,090",
+						"to": "00:00:01,510"
+					},
+					"offsets": {
+						"from": 1090,
+						"to": 1510
+					},
+					"id": 878,
+					"p": 0.998595,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,570",
+						"to": "00:00:01,570"
+					},
+					"offsets": {
+						"from": 1570,
+						"to": 1570
+					},
+					"id": 13,
+					"p": 0.719357,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_79]",
+					"timestamps": {
+						"from": "00:00:01,580",
+						"to": "00:00:01,580"
+					},
+					"offsets": {
+						"from": 1580,
+						"to": 1580
+					},
+					"id": 50442,
+					"p": 0.0897555,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

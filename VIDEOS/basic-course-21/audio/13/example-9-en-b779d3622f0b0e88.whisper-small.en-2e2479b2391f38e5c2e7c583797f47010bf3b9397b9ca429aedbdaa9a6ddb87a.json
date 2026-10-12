@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,440"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2440
+			},
+			"text": " The documents written in pencil are hard to read.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997634,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 180
+					},
+					"id": 383,
+					"p": 0.36855,
+					"t_dtw": -1
+				},
+				{
+					"text": " documents",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,720"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 720
+					},
+					"id": 4963,
+					"p": 0.996685,
+					"t_dtw": -1
+				},
+				{
+					"text": " written",
+					"timestamps": {
+						"from": "00:00:00,720",
+						"to": "00:00:01,140"
+					},
+					"offsets": {
+						"from": 720,
+						"to": 1140
+					},
+					"id": 3194,
+					"p": 0.997864,
+					"t_dtw": -1
+				},
+				{
+					"text": " in",
+					"timestamps": {
+						"from": "00:00:01,140",
+						"to": "00:00:01,260"
+					},
+					"offsets": {
+						"from": 1140,
+						"to": 1260
+					},
+					"id": 287,
+					"p": 0.592294,
+					"t_dtw": -1
+				},
+				{
+					"text": " pencil",
+					"timestamps": {
+						"from": "00:00:01,260",
+						"to": "00:00:01,620"
+					},
+					"offsets": {
+						"from": 1260,
+						"to": 1620
+					},
+					"id": 21613,
+					"p": 0.984764,
+					"t_dtw": -1
+				},
+				{
+					"text": " are",
+					"timestamps": {
+						"from": "00:00:01,620",
+						"to": "00:00:01,800"
+					},
+					"offsets": {
+						"from": 1620,
+						"to": 1800
+					},
+					"id": 389,
+					"p": 0.994696,
+					"t_dtw": -1
+				},
+				{
+					"text": " hard",
+					"timestamps": {
+						"from": "00:00:01,800",
+						"to": "00:00:02,040"
+					},
+					"offsets": {
+						"from": 1800,
+						"to": 2040
+					},
+					"id": 1327,
+					"p": 0.997231,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:02,040",
+						"to": "00:00:02,160"
+					},
+					"offsets": {
+						"from": 2040,
+						"to": 2160
+					},
+					"id": 284,
+					"p": 0.997271,
+					"t_dtw": -1
+				},
+				{
+					"text": " read",
+					"timestamps": {
+						"from": "00:00:02,160",
+						"to": "00:00:02,370"
+					},
+					"offsets": {
+						"from": 2160,
+						"to": 2370
+					},
+					"id": 1100,
+					"p": 0.999596,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 13,
+					"p": 0.932469,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_122]",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 50485,
+					"p": 0.137737,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

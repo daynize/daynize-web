@@ -1,0 +1,950 @@
+{
+  "id": "basic-course-01",
+  "fps": 30,
+  "duration": 130,
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "kind": "intro",
+      "title": "의자에 앉았다",
+      "subtitle": "한국어 조사만 보고 만들면?",
+      "text": "영어는 한국어 조사만 보고 만들면 틀리기 쉬워요. 의자에 앉았다에서 의자를 동사 바로 뒤에 놓으면 될까요?",
+      "graphic": "chair",
+      "clips": [
+        {
+          "id": "intro-1",
+          "text": "영어는 한국어 조사만 보고 만들면 틀리기 쉬워요. 의자에 앉았다에서 의자를 동사 바로 뒤에 놓으면 될까요?",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/intro-1.wav",
+          "duration": 8.008707,
+          "start": 0.2,
+          "end": 8.208706999999999
+        }
+      ],
+      "minimum": 8.608706999999999,
+      "id": "scene-1",
+      "start": 0,
+      "duration": 10.413335933333332
+    },
+    {
+      "kind": "intro",
+      "title": "동작은 이미 완성",
+      "subtitle": "장소는 전치사로 연결",
+      "text": "앉는 동작은 그 자체로 성립해요. 어디에 앉았는지 덧붙일 때는 전치사가 연결해 줍니다. 의자 위라면 온을 쓰죠.",
+      "graphic": "comparison",
+      "clips": [
+        {
+          "id": "intro-2",
+          "text": "앉는 동작은 그 자체로 성립해요. 어디에 앉았는지 덧붙일 때는 전치사가 연결해 줍니다. 의자 위라면 온을 쓰죠.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/intro-2.wav",
+          "duration": 8.369116,
+          "start": 10.613335933333332,
+          "end": 18.98245193333333
+        }
+      ],
+      "minimum": 8.969116,
+      "id": "scene-2",
+      "start": 10.413335933333332,
+      "duration": 10.773744933333333
+    },
+    {
+      "kind": "intro",
+      "title": "1형식 · S + V",
+      "subtitle": "전치사구는 장소 같은 추가 정보",
+      "text": "이것이 일 형식이에요. 주어와 동사가 뼈대이고, 전치사구는 장소 같은 정보를 더해요. 전치사 뒤의 명사는 동사의 목적어가 아닙니다.",
+      "graphic": "structure",
+      "clips": [
+        {
+          "id": "intro-3",
+          "text": "이것이 일 형식이에요. 주어와 동사가 뼈대이고, 전치사구는 장소 같은 정보를 더해요. 전치사 뒤의 명사는 동사의 목적어가 아닙니다.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/intro-3.wav",
+          "duration": 10.062494,
+          "start": 21.387080866666665,
+          "end": 31.449574866666666
+        }
+      ],
+      "minimum": 10.662493999999999,
+      "id": "scene-3",
+      "start": 21.187080866666665,
+      "duration": 12.467122933333332
+    },
+    {
+      "kind": "intro",
+      "title": "2형식 · S + V + C",
+      "subtitle": "보어는 주어의 상태를 설명",
+      "text": "이 형식은 달라요. 그녀는 행복해 보인다에서 행복하다는 말은 주어의 상태를 설명하는 보어예요. 동사 뒤에서 무엇을 설명하는지 보세요.",
+      "graphic": "complement",
+      "clips": [
+        {
+          "id": "intro-4",
+          "text": "이 형식은 달라요. 그녀는 행복해 보인다에서 행복하다는 말은 주어의 상태를 설명하는 보어예요. 동사 뒤에서 무엇을 설명하는지 보세요.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/intro-4.wav",
+          "duration": 10.064172,
+          "start": 33.8542038,
+          "end": 43.9183758
+        }
+      ],
+      "minimum": 10.664171999999999,
+      "id": "scene-4",
+      "start": 33.6542038,
+      "duration": 12.468800933333332
+    },
+    {
+      "kind": "example",
+      "number": 1,
+      "ko": "나는 의자에 앉았어요.",
+      "en": "I sat on the chair.",
+      "wrong": "I sat the chair.",
+      "emphasis": [
+        "sat",
+        "on"
+      ],
+      "note": "의자는 목적어가 아닌 장소",
+      "pattern": "S + V + 전치사구",
+      "level": "기본",
+      "clips": [
+        {
+          "id": "example-1-ko",
+          "text": "나는 의자에 앉았어요.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/example-1-ko.wav",
+          "duration": 1.658549,
+          "start": 46.323004733333335,
+          "end": 47.981553733333335
+        },
+        {
+          "id": "example-1-en",
+          "text": "I sat on the chair.",
+          "lang": "en",
+          "voice": "Samantha",
+          "file": "assets/audio/example-1-en.wav",
+          "duration": 1.052834,
+          "start": 48.33155373333334,
+          "end": 49.384387733333334
+        }
+      ],
+      "minimum": 3.861383,
+      "id": "scene-5",
+      "start": 46.12300473333333,
+      "duration": 5.666011933333333,
+      "words": [
+        {
+          "text": "I",
+          "start": 48.341553733333335,
+          "end": 48.40155373333334,
+          "emphasis": false
+        },
+        {
+          "text": "sat",
+          "start": 48.40155373333334,
+          "end": 48.61155373333334,
+          "emphasis": true
+        },
+        {
+          "text": "on",
+          "start": 48.61155373333334,
+          "end": 48.75155373333334,
+          "emphasis": true
+        },
+        {
+          "text": "the",
+          "start": 48.75155373333334,
+          "end": 48.96155373333334,
+          "emphasis": false
+        },
+        {
+          "text": "chair.",
+          "start": 48.96155373333334,
+          "end": 49.32155373333334,
+          "emphasis": false
+        }
+      ]
+    },
+    {
+      "kind": "example",
+      "number": 2,
+      "ko": "우리는 버스를 기다렸어요.",
+      "en": "We waited for the bus.",
+      "wrong": "We waited the bus.",
+      "emphasis": [
+        "waited",
+        "for"
+      ],
+      "note": "기다리는 대상은 for로 연결",
+      "pattern": "S + V + 전치사구",
+      "level": "기본",
+      "clips": [
+        {
+          "id": "example-2-ko",
+          "text": "우리는 버스를 기다렸어요.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/example-2-ko.wav",
+          "duration": 1.797868,
+          "start": 51.98901666666667,
+          "end": 53.78688466666667
+        },
+        {
+          "id": "example-2-en",
+          "text": "We waited for the bus.",
+          "lang": "en",
+          "voice": "Samantha",
+          "file": "assets/audio/example-2-en.wav",
+          "duration": 1.221406,
+          "start": 54.136884666666674,
+          "end": 55.358290666666676
+        }
+      ],
+      "minimum": 4.169274,
+      "id": "scene-6",
+      "start": 51.78901666666667,
+      "duration": 5.973902933333333,
+      "words": [
+        {
+          "text": "We",
+          "start": 54.14688466666667,
+          "end": 54.26688466666668,
+          "emphasis": false
+        },
+        {
+          "text": "waited",
+          "start": 54.26688466666668,
+          "end": 54.58688466666668,
+          "emphasis": true
+        },
+        {
+          "text": "for",
+          "start": 54.68688466666667,
+          "end": 54.876884666666676,
+          "emphasis": true
+        },
+        {
+          "text": "the",
+          "start": 54.876884666666676,
+          "end": 55.07688466666667,
+          "emphasis": false
+        },
+        {
+          "text": "bus.",
+          "start": 55.07688466666667,
+          "end": 55.18688466666667,
+          "emphasis": false
+        }
+      ]
+    },
+    {
+      "kind": "example",
+      "number": 3,
+      "ko": "그녀는 행복해 보여요.",
+      "en": "She looks happy.",
+      "wrong": "She looks happily.",
+      "emphasis": [
+        "looks",
+        "happy"
+      ],
+      "note": "주어의 상태는 형용사 보어",
+      "pattern": "S + V + C",
+      "level": "기본",
+      "clips": [
+        {
+          "id": "example-3-ko",
+          "text": "그녀는 행복해 보여요.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/example-3-ko.wav",
+          "duration": 1.749025,
+          "start": 57.962919600000006,
+          "end": 59.71194460000001
+        },
+        {
+          "id": "example-3-en",
+          "text": "She looks happy.",
+          "lang": "en",
+          "voice": "Samantha",
+          "file": "assets/audio/example-3-en.wav",
+          "duration": 0.950295,
+          "start": 60.06194460000001,
+          "end": 61.01223960000001
+        }
+      ],
+      "minimum": 3.84932,
+      "id": "scene-7",
+      "start": 57.762919600000004,
+      "duration": 5.653948933333334,
+      "words": [
+        {
+          "text": "She",
+          "start": 60.11194460000001,
+          "end": 60.27194460000001,
+          "emphasis": false
+        },
+        {
+          "text": "looks",
+          "start": 60.27194460000001,
+          "end": 60.62194460000001,
+          "emphasis": true
+        },
+        {
+          "text": "happy.",
+          "start": 60.62194460000001,
+          "end": 60.941944600000014,
+          "emphasis": true
+        }
+      ]
+    },
+    {
+      "kind": "example",
+      "number": 4,
+      "ko": "그는 정오 전에 역에 도착했어요.",
+      "en": "He arrived at the station before noon.",
+      "wrong": "He arrived the station before noon.",
+      "emphasis": [
+        "arrived",
+        "at"
+      ],
+      "note": "도착 장소는 at으로 연결",
+      "pattern": "S + V + 전치사구",
+      "level": "중급",
+      "clips": [
+        {
+          "id": "example-4-ko",
+          "text": "그는 정오 전에 역에 도착했어요.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/example-4-ko.wav",
+          "duration": 2.194286,
+          "start": 63.61686853333334,
+          "end": 65.81115453333334
+        },
+        {
+          "id": "example-4-en",
+          "text": "He arrived at the station before noon.",
+          "lang": "en",
+          "voice": "Samantha",
+          "file": "assets/audio/example-4-en.wav",
+          "duration": 1.992834,
+          "start": 66.16115453333333,
+          "end": 68.15398853333333
+        }
+      ],
+      "minimum": 5.3371200000000005,
+      "id": "scene-8",
+      "start": 63.416868533333336,
+      "duration": 7.141748933333334,
+      "words": [
+        {
+          "text": "He",
+          "start": 66.20115453333334,
+          "end": 66.28115453333334,
+          "emphasis": false
+        },
+        {
+          "text": "arrived",
+          "start": 66.28115453333334,
+          "end": 66.71115453333333,
+          "emphasis": true
+        },
+        {
+          "text": "at",
+          "start": 66.71115453333333,
+          "end": 66.76115453333333,
+          "emphasis": true
+        },
+        {
+          "text": "the",
+          "start": 66.83115453333333,
+          "end": 66.96115453333333,
+          "emphasis": false
+        },
+        {
+          "text": "station",
+          "start": 67.04115453333333,
+          "end": 67.44115453333333,
+          "emphasis": false
+        },
+        {
+          "text": "before",
+          "start": 67.44115453333333,
+          "end": 67.81115453333334,
+          "emphasis": false
+        },
+        {
+          "text": "noon.",
+          "start": 67.81115453333334,
+          "end": 68.07115453333333,
+          "emphasis": false
+        }
+      ]
+    },
+    {
+      "kind": "example",
+      "number": 5,
+      "ko": "그녀는 그 설명을 주의 깊게 들었어요.",
+      "en": "She listened carefully to the explanation.",
+      "wrong": "She listened carefully the explanation.",
+      "emphasis": [
+        "listened",
+        "to"
+      ],
+      "note": "carefully가 있어도 to는 필요",
+      "pattern": "S + V + 전치사구",
+      "level": "중급",
+      "clips": [
+        {
+          "id": "example-5-ko",
+          "text": "그녀는 그 설명을 주의 깊게 들었어요.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/example-5-ko.wav",
+          "duration": 2.638685,
+          "start": 70.75861746666668,
+          "end": 73.39730246666667
+        },
+        {
+          "id": "example-5-en",
+          "text": "She listened carefully to the explanation.",
+          "lang": "en",
+          "voice": "Samantha",
+          "file": "assets/audio/example-5-en.wav",
+          "duration": 2.331882,
+          "start": 73.74730246666667,
+          "end": 76.07918446666666
+        }
+      ],
+      "minimum": 6.120566999999999,
+      "id": "scene-9",
+      "start": 70.55861746666667,
+      "duration": 7.925195933333333,
+      "words": [
+        {
+          "text": "She",
+          "start": 73.79730246666666,
+          "end": 73.93730246666667,
+          "emphasis": false
+        },
+        {
+          "text": "listened",
+          "start": 73.93730246666667,
+          "end": 74.43730246666667,
+          "emphasis": true
+        },
+        {
+          "text": "carefully",
+          "start": 74.43730246666667,
+          "end": 74.99730246666667,
+          "emphasis": false
+        },
+        {
+          "text": "to",
+          "start": 74.99730246666667,
+          "end": 75.11730246666667,
+          "emphasis": true
+        },
+        {
+          "text": "the",
+          "start": 75.11730246666667,
+          "end": 75.26730246666666,
+          "emphasis": false
+        },
+        {
+          "text": "explanation.",
+          "start": 75.33730246666667,
+          "end": 76.00730246666667,
+          "emphasis": false
+        }
+      ]
+    },
+    {
+      "kind": "example",
+      "number": 6,
+      "ko": "회의가 시작된 뒤 방 안이 조용해졌어요.",
+      "en": "The room became quiet after the meeting began.",
+      "wrong": "The room became quietly after the meeting began.",
+      "emphasis": [
+        "became",
+        "quiet"
+      ],
+      "note": "방의 바뀐 상태를 설명",
+      "pattern": "S + V + C",
+      "level": "중급",
+      "clips": [
+        {
+          "id": "example-6-ko",
+          "text": "회의가 시작된 뒤 방 안이 조용해졌어요.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/example-6-ko.wav",
+          "duration": 2.993379,
+          "start": 78.6838134,
+          "end": 81.67719240000001
+        },
+        {
+          "id": "example-6-en",
+          "text": "The room became quiet after the meeting began.",
+          "lang": "en",
+          "voice": "Samantha",
+          "file": "assets/audio/example-6-en.wav",
+          "duration": 2.531429,
+          "start": 82.0271924,
+          "end": 84.5586214
+        }
+      ],
+      "minimum": 6.6748080000000005,
+      "id": "scene-10",
+      "start": 78.4838134,
+      "duration": 8.479436933333334,
+      "words": [
+        {
+          "text": "The",
+          "start": 82.03719240000001,
+          "end": 82.20719240000001,
+          "emphasis": false
+        },
+        {
+          "text": "room",
+          "start": 82.20719240000001,
+          "end": 82.45719240000001,
+          "emphasis": false
+        },
+        {
+          "text": "became",
+          "start": 82.45719240000001,
+          "end": 82.78719240000001,
+          "emphasis": true
+        },
+        {
+          "text": "quiet",
+          "start": 82.8771924,
+          "end": 83.1371924,
+          "emphasis": true
+        },
+        {
+          "text": "after",
+          "start": 83.1371924,
+          "end": 83.3471924,
+          "emphasis": false
+        },
+        {
+          "text": "the",
+          "start": 83.45719240000001,
+          "end": 83.6271924,
+          "emphasis": false
+        },
+        {
+          "text": "meeting",
+          "start": 83.6271924,
+          "end": 84.06719240000001,
+          "emphasis": false
+        },
+        {
+          "text": "began.",
+          "start": 84.06719240000001,
+          "end": 84.42719240000001,
+          "emphasis": false
+        }
+      ]
+    },
+    {
+      "kind": "example",
+      "number": 7,
+      "ko": "이 수프는 내 입맛에는 짜게 느껴져요.",
+      "en": "This soup tastes salty to me.",
+      "wrong": "This soup tastes saltily to me.",
+      "emphasis": [
+        "tastes",
+        "salty"
+      ],
+      "note": "salty는 성질 · to me는 추가 정보",
+      "pattern": "S + V + C",
+      "level": "중급",
+      "clips": [
+        {
+          "id": "example-7-ko",
+          "text": "이 수프는 내 입맛에는 짜게 느껴져요.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/example-7-ko.wav",
+          "duration": 2.620907,
+          "start": 87.16325033333334,
+          "end": 89.78415733333334
+        },
+        {
+          "id": "example-7-en",
+          "text": "This soup tastes salty to me.",
+          "lang": "en",
+          "voice": "Samantha",
+          "file": "assets/audio/example-7-en.wav",
+          "duration": 1.751474,
+          "start": 90.13415733333333,
+          "end": 91.88563133333334
+        }
+      ],
+      "minimum": 5.522380999999999,
+      "id": "scene-11",
+      "start": 86.96325033333333,
+      "duration": 7.327009933333333,
+      "words": [
+        {
+          "text": "This",
+          "start": 90.15415733333333,
+          "end": 90.42415733333334,
+          "emphasis": false
+        },
+        {
+          "text": "soup",
+          "start": 90.42415733333334,
+          "end": 90.71415733333333,
+          "emphasis": false
+        },
+        {
+          "text": "tastes",
+          "start": 90.71415733333333,
+          "end": 91.15415733333333,
+          "emphasis": true
+        },
+        {
+          "text": "salty",
+          "start": 91.15415733333333,
+          "end": 91.52415733333333,
+          "emphasis": true
+        },
+        {
+          "text": "to",
+          "start": 91.52415733333333,
+          "end": 91.66415733333334,
+          "emphasis": false
+        },
+        {
+          "text": "me.",
+          "start": 91.66415733333334,
+          "end": 91.80415733333334,
+          "emphasis": false
+        }
+      ]
+    },
+    {
+      "kind": "example",
+      "number": 8,
+      "ko": "계획이 갑자기 바뀌었는데도 그 관리자는 침착함을 유지했어요.",
+      "en": "The manager remained calm despite the sudden change in plans.",
+      "wrong": "The manager remained calmly despite the sudden change in plans.",
+      "emphasis": [
+        "remained",
+        "calm"
+      ],
+      "note": "뒤가 길어져도 핵심은 S + V + C",
+      "pattern": "S + V + C",
+      "level": "고급",
+      "clips": [
+        {
+          "id": "example-8-ko",
+          "text": "계획이 갑자기 바뀌었는데도 그 관리자는 침착함을 유지했어요.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/example-8-ko.wav",
+          "duration": 4.535374,
+          "start": 94.49026026666667,
+          "end": 99.02563426666667
+        },
+        {
+          "id": "example-8-en",
+          "text": "The manager remained calm despite the sudden change in plans.",
+          "lang": "en",
+          "voice": "Samantha",
+          "file": "assets/audio/example-8-en.wav",
+          "duration": 3.204807,
+          "start": 99.37563426666667,
+          "end": 102.58044126666667
+        }
+      ],
+      "minimum": 8.890181,
+      "id": "scene-12",
+      "start": 94.29026026666666,
+      "duration": 10.694809933333334,
+      "words": [
+        {
+          "text": "The",
+          "start": 99.38563426666667,
+          "end": 99.55563426666667,
+          "emphasis": false
+        },
+        {
+          "text": "manager",
+          "start": 99.55563426666667,
+          "end": 99.98563426666666,
+          "emphasis": false
+        },
+        {
+          "text": "remained",
+          "start": 99.98563426666666,
+          "end": 100.47563426666666,
+          "emphasis": true
+        },
+        {
+          "text": "calm",
+          "start": 100.47563426666666,
+          "end": 100.71563426666667,
+          "emphasis": true
+        },
+        {
+          "text": "despite",
+          "start": 100.71563426666667,
+          "end": 101.14563426666666,
+          "emphasis": false
+        },
+        {
+          "text": "the",
+          "start": 101.14563426666666,
+          "end": 101.32563426666667,
+          "emphasis": false
+        },
+        {
+          "text": "sudden",
+          "start": 101.32563426666667,
+          "end": 101.69563426666666,
+          "emphasis": false
+        },
+        {
+          "text": "change",
+          "start": 101.69563426666666,
+          "end": 102.00563426666666,
+          "emphasis": false
+        },
+        {
+          "text": "in",
+          "start": 102.10563426666667,
+          "end": 102.18563426666667,
+          "emphasis": false
+        },
+        {
+          "text": "plans.",
+          "start": 102.18563426666667,
+          "end": 102.43563426666667,
+          "emphasis": false
+        }
+      ]
+    },
+    {
+      "kind": "example",
+      "number": 9,
+      "ko": "그녀는 밤새 일해서 피곤해 보여요.",
+      "en": "She seems tired after working all night.",
+      "wrong": "She seems tiredly after working all night.",
+      "emphasis": [
+        "seems",
+        "tired"
+      ],
+      "note": "주어의 상태를 먼저 찾기",
+      "pattern": "S + V + C",
+      "level": "고급",
+      "clips": [
+        {
+          "id": "example-9-ko",
+          "text": "그녀는 밤새 일해서 피곤해 보여요.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/example-9-ko.wav",
+          "duration": 2.255556,
+          "start": 105.1850702,
+          "end": 107.4406262
+        },
+        {
+          "id": "example-9-en",
+          "text": "She seems tired after working all night.",
+          "lang": "en",
+          "voice": "Samantha",
+          "file": "assets/audio/example-9-en.wav",
+          "duration": 2.204172,
+          "start": 107.79062619999999,
+          "end": 109.99479819999999
+        }
+      ],
+      "minimum": 5.6097280000000005,
+      "id": "scene-13",
+      "start": 104.9850702,
+      "duration": 7.414356933333334,
+      "words": [
+        {
+          "text": "She",
+          "start": 107.82062619999999,
+          "end": 107.98062619999999,
+          "emphasis": false
+        },
+        {
+          "text": "seems",
+          "start": 107.98062619999999,
+          "end": 108.3006262,
+          "emphasis": true
+        },
+        {
+          "text": "tired",
+          "start": 108.42062619999999,
+          "end": 108.62062619999999,
+          "emphasis": true
+        },
+        {
+          "text": "after",
+          "start": 108.62062619999999,
+          "end": 108.86062619999998,
+          "emphasis": false
+        },
+        {
+          "text": "working",
+          "start": 108.9606262,
+          "end": 109.3806262,
+          "emphasis": false
+        },
+        {
+          "text": "all",
+          "start": 109.3806262,
+          "end": 109.57062619999999,
+          "emphasis": false
+        },
+        {
+          "text": "night.",
+          "start": 109.57062619999999,
+          "end": 109.87062619999999,
+          "emphasis": false
+        }
+      ]
+    },
+    {
+      "kind": "example",
+      "number": 10,
+      "ko": "경보가 울렸을 때 모두 자리에 앉은 채 침착함을 유지했어요.",
+      "en": "When the alarm rang, everyone stayed calm in their seats.",
+      "wrong": "When the alarm rang, everyone stayed calmly in their seats.",
+      "emphasis": [
+        "stayed",
+        "calm"
+      ],
+      "note": "calm은 상태 · in their seats는 장소",
+      "pattern": "S + V + C",
+      "level": "고급",
+      "clips": [
+        {
+          "id": "example-10-ko",
+          "text": "경보가 울렸을 때 모두 자리에 앉은 채 침착함을 유지했어요.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/example-10-ko.wav",
+          "duration": 4.534603,
+          "start": 112.59942713333334,
+          "end": 117.13403013333334
+        },
+        {
+          "id": "example-10-en",
+          "text": "When the alarm rang, everyone stayed calm in their seats.",
+          "lang": "en",
+          "voice": "Samantha",
+          "file": "assets/audio/example-10-en.wav",
+          "duration": 3.194603,
+          "start": 117.48403013333333,
+          "end": 120.67863313333334
+        }
+      ],
+      "minimum": 8.879206,
+      "id": "scene-14",
+      "start": 112.39942713333333,
+      "duration": 10.683834933333333,
+      "words": [
+        {
+          "text": "When",
+          "start": 117.50403013333333,
+          "end": 117.76403013333334,
+          "emphasis": false
+        },
+        {
+          "text": "the",
+          "start": 117.76403013333334,
+          "end": 117.97403013333333,
+          "emphasis": false
+        },
+        {
+          "text": "alarm",
+          "start": 117.97403013333333,
+          "end": 118.32403013333334,
+          "emphasis": false
+        },
+        {
+          "text": "rang,",
+          "start": 118.32403013333334,
+          "end": 118.52403013333334,
+          "emphasis": false
+        },
+        {
+          "text": "everyone",
+          "start": 118.77403013333334,
+          "end": 119.24403013333334,
+          "emphasis": false
+        },
+        {
+          "text": "stayed",
+          "start": 119.26403013333334,
+          "end": 119.53403013333333,
+          "emphasis": true
+        },
+        {
+          "text": "calm",
+          "start": 119.65403013333334,
+          "end": 119.88403013333334,
+          "emphasis": true
+        },
+        {
+          "text": "in",
+          "start": 119.88403013333334,
+          "end": 120.00403013333333,
+          "emphasis": false
+        },
+        {
+          "text": "their",
+          "start": 120.00403013333333,
+          "end": 120.31403013333333,
+          "emphasis": false
+        },
+        {
+          "text": "seats.",
+          "start": 120.31403013333333,
+          "end": 120.44403013333333,
+          "emphasis": false
+        }
+      ]
+    },
+    {
+      "kind": "summary",
+      "clips": [
+        {
+          "id": "summary",
+          "text": "전치사구는 상황을 더하고, 이 형식 보어는 주어를 설명합니다.",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "file": "assets/audio/summary.wav",
+          "duration": 4.312109,
+          "start": 123.28326206666667,
+          "end": 127.59537106666667
+        }
+      ],
+      "minimum": 5.112109,
+      "id": "scene-15",
+      "start": 123.08326206666666,
+      "duration": 6.916737933333334
+    }
+  ],
+  "alignment": {
+    "engine": "whisper.cpp base.en token offsets",
+    "source": "per-sentence original audio",
+    "reviewed": false,
+    "note": "ASR timing is approximate; frame-accurate perceptual synchronization requires listening review."
+  }
+}

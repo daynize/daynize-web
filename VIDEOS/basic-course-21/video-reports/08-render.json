@@ -1,0 +1,36 @@
+{
+  "episode": 8,
+  "title": "할 수 있다, 해야 한다, 안 해도 된다",
+  "inputHash": "3638127f97f4c3c5bd799d74afd77df8627096db6c602eba9afdc915016c1053",
+  "output": "renders/basic-08.mp4",
+  "contact": "renders/basic-08-contact.png",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "duration": "130.000000",
+        "nb_frames": "3900"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "130.000000",
+        "nb_frames": "6095"
+      }
+    ],
+    "format": {
+      "duration": "130.000000",
+      "size": "7615847"
+    }
+  },
+  "audioPeakDb": -1.9,
+  "browserCheck": true,
+  "listeningReviewed": false
+}

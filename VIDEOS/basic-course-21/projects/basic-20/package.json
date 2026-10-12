@@ -1,0 +1,13 @@
+{
+  "name": "basic-20",
+  "private": true,
+  "version": "1.0.0",
+  "devDependencies": {
+    "hyperframes": "0.8.149"
+  },
+  "scripts": {
+    "lint": "npx hyperframes@0.8.149 lint .",
+    "check": "npx hyperframes@0.8.149 check .",
+    "render": "npx hyperframes@0.8.149 render ."
+  }
+}

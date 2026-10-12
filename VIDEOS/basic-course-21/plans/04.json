@@ -1,0 +1,656 @@
+{
+  "id": "basic-04",
+  "episode": 4,
+  "title": "그 사람을 무엇으로, 어떤 상태로?",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "그 소식이 나를 행복하게 했어요. 나를 뒤에 행복한 상태까지 붙여야, 무엇이 달라졌는지 전해지죠.",
+      "screen": "The news made me happy.",
+      "visual": "me 인물의 표정이 바뀌고 happy를 인물에 연결, 목적어와 상태 칸 분리.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 소식이 나를 행복하게 했어요. 나를 뒤에 행복한 상태까지 붙여야, 무엇이 달라졌는지 전해지죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "이때 행복하다는 목적어인 나를 설명하는 보어예요. 주어가 아니라 목적어의 상태나 정체를 설명해요.",
+      "screen": "동사 + 목적어 + 목적격 보어",
+      "visual": "주어 칸은 고정하고 보어에서 목적어로만 되돌아가는 연결선 표시.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이때 행복하다는 목적어인 나를 설명하는 보어예요. 주어가 아니라 목적어의 상태나 정체를 설명해요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "상태는 형용사로, 이름이나 역할은 명사로 나타낼 수 있어요. 누군가를 팀장으로 뽑는 표현도 이 구조예요.",
+      "screen": "상태: happy / 역할: team leader",
+      "visual": "목적어 뒤 보어 칸을 상태 카드와 역할 명패로 각각 교체.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "상태는 형용사로, 이름이나 역할은 명사로 나타낼 수 있어요. 누군가를 팀장으로 뽑는 표현도 이 구조예요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "다만 동사마다 허용하는 보어가 달라요. 깨끗하게 유지한다는 말과 청소하게 한다는 말을 같은 구조로 만들지 마세요.",
+      "screen": "keep it clean / make someone clean it",
+      "visual": "상태 clean에는 형용사 표시, 행동 clean it에는 동사 표시로 대비.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "다만 동사마다 허용하는 보어가 달라요. 깨끗하게 유지한다는 말과 청소하게 한다는 말을 같은 구조로 만들지 마세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "그 좋은 소식이 나를 행복하게 했어요.",
+      "en": "The good news made me happy.",
+      "wrong": "The good news made me happily.",
+      "focus": [
+        "made",
+        "happy"
+      ],
+      "note": "나의 상태를 설명하므로 부사 happily가 아니라 형용사 happy가 필요하다.",
+      "visual": "me와 happy를 등호로 연결하고 happily의 부사 꼬리 표시 삭제.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 좋은 소식이 나를 행복하게 했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The good news made me happy.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "made",
+            "actualStart": null
+          },
+          {
+            "text": "happy",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "매일 네 방을 깨끗하게 유지해.",
+      "en": "Keep your room clean every day.",
+      "wrong": "Keep your room cleanly every day.",
+      "focus": [
+        "your room",
+        "clean"
+      ],
+      "note": "방의 상태를 설명하는 형용사 clean을 쓴다.",
+      "visual": "방 칸 뒤에 깨끗한 상태 막대를 놓고 clean으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "매일 네 방을 깨끗하게 유지해.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Keep your room clean every day.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "your room",
+            "actualStart": null
+          },
+          {
+            "text": "clean",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "우리는 그 영화를 꽤 지루하다고 느꼈어요.",
+      "en": "We found the film quite boring.",
+      "wrong": "We found the film quite boringly.",
+      "focus": [
+        "found",
+        "boring"
+      ],
+      "note": "영화가 지루하다고 평가하는 형용사 보어이며 발견 방식의 부사가 아니다.",
+      "visual": "영화에서 boring 평가표로 연결하고 동작 방식 화살표와 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 그 영화를 꽤 지루하다고 느꼈어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We found the film quite boring.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "found",
+            "actualStart": null
+          },
+          {
+            "text": "boring",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "그들은 새 강아지를 모치라고 불러요.",
+      "en": "They call their new puppy Mochi.",
+      "wrong": "They call their new puppy is Mochi.",
+      "focus": [
+        "call",
+        "Mochi"
+      ],
+      "note": "이름 명사 보어 앞에 별도의 정동사 is를 넣지 않는다.",
+      "visual": "강아지 칸에 Mochi 명패를 연결하고 중간 is에 오류 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그들은 새 강아지를 모치라고 불러요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "They call their new puppy Mochi.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "call",
+            "actualStart": null
+          },
+          {
+            "text": "Mochi",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "우리는 지난달 마야를 팀장으로 뽑았어요.",
+      "en": "We elected Maya team leader last month.",
+      "wrong": "We elected Maya is team leader last month.",
+      "focus": [
+        "elected",
+        "team leader"
+      ],
+      "note": "elect 목적어 직책의 구조이며 독립 문장처럼 is를 추가하지 않는다.",
+      "visual": "Maya 인물에 team leader 직책 명패 부착, 시간 정보는 아래 띠에 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 지난달 마야를 팀장으로 뽑았어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We elected Maya team leader last month.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "elected",
+            "actualStart": null
+          },
+          {
+            "text": "team leader",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "이 큰 창문이 주방을 밝게 해 줘요.",
+      "en": "This large window makes the kitchen bright.",
+      "wrong": "This large window makes the kitchen brightly.",
+      "focus": [
+        "the kitchen",
+        "bright"
+      ],
+      "note": "주방의 결과 상태는 형용사 bright로 설명한다.",
+      "visual": "창문에서 들어오는 빛과 밝아진 주방을 결과 상태 화살표로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이 큰 창문이 주방을 밝게 해 줘요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This large window makes the kitchen bright.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "the kitchen",
+            "actualStart": null
+          },
+          {
+            "text": "bright",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "토론하는 동안 문을 열어 두세요.",
+      "en": "Please keep the door open during the discussion.",
+      "wrong": "Please keep the door openly during the discussion.",
+      "focus": [
+        "keep",
+        "open"
+      ],
+      "note": "문의 열린 상태를 유지한다는 뜻이므로 open을 쓰며 openly는 방식 부사다.",
+      "visual": "문이 열린 상태로 고정되고 discussion 시간 막대가 이어지도록 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "토론하는 동안 문을 열어 두세요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Please keep the door open during the discussion.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "keep",
+            "actualStart": null
+          },
+          {
+            "text": "open",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "그들은 새 규칙이 이해하기 어렵다고 느꼈어요.",
+      "en": "They found the new rules difficult to understand.",
+      "wrong": "They found the new rules difficultly to understand.",
+      "focus": [
+        "difficult",
+        "to understand"
+      ],
+      "note": "difficult는 규칙에 대한 평가 보어이고 to understand는 어려움의 내용을 보충한다.",
+      "visual": "rules → difficult → to understand를 상태와 보충 내용의 두 층으로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그들은 새 규칙이 이해하기 어렵다고 느꼈어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "They found the new rules difficult to understand.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "difficult",
+            "actualStart": null
+          },
+          {
+            "text": "to understand",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "나는 그 경험을 소중한 교훈으로 여겨요.",
+      "en": "I consider that experience a valuable lesson.",
+      "wrong": "I consider that experience a valuably lesson.",
+      "focus": [
+        "that experience",
+        "a valuable lesson"
+      ],
+      "note": "명사 보어 a valuable lesson에서 lesson을 꾸미는 말은 형용사 valuable이다. consider 뒤에 절을 쓰는 구조도 가능하다.",
+      "visual": "경험과 교훈을 등호로 연결하고 valuable에서 lesson으로 수식 화살표 표시.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 그 경험을 소중한 교훈으로 여겨요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I consider that experience a valuable lesson.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "that experience",
+            "actualStart": null
+          },
+          {
+            "text": "a valuable lesson",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "아이들이 일어날까 봐 텔레비전 소리를 작게 해 두세요.",
+      "en": "Keep the television quiet so the children can sleep.",
+      "wrong": "Keep the television quietly so the children can sleep.",
+      "focus": [
+        "quiet",
+        "can sleep"
+      ],
+      "note": "유지하는 것은 텔레비전의 조용한 상태이며 quietly로 keep의 방식만 나타내지 않는다.",
+      "visual": "텔레비전 음량을 낮은 상태에 고정하고 수면 목적의 절을 별도 띠로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "아이들이 일어날까 봐 텔레비전 소리를 작게 해 두세요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Keep the television quiet so the children can sleep.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "quiet",
+            "actualStart": null
+          },
+          {
+            "text": "can sleep",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "목적격 보어는 목적어의 상태나 정체를 설명하며 결합 형태는 동사에 맞게 고르세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "목적격 보어는 목적어의 상태나 정체를 설명하며 결합 형태는 동사에 맞게 고르세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

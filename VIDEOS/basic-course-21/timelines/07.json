@@ -1,0 +1,1240 @@
+{
+  "id": "basic-07",
+  "episode": 7,
+  "title": "과거의 일이 지금과 이어질 때",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10.452553466666668,
+      "text": "현재완료는 과거의 일을 지금과 연결해서 말해요. 경험이 있거나, 결과가 남거나, 지금까지 이어지는 경우죠.",
+      "screen": "과거 → 지금 / have·has + 과거분사",
+      "visual": "과거 사건에서 현재까지 연결된 시간선에 경험·결과·지속 세 갈래 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "현재완료는 과거의 일을 지금과 연결해서 말해요. 경험이 있거나, 결과가 남거나, 지금까지 이어지는 경우죠.",
+          "actualStart": 0.2,
+          "actualEnd": 8.451701,
+          "rate": 185,
+          "cacheKey": "c738a768888aa19f9fd11dd8cf9699ae8b477cc28f30b3b249552c33371b3a60",
+          "file": "audio/07/concept-1-ko-c738a768888aa19f.wav",
+          "duration": 8.251701
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10.452553466666668,
+      "end": 21.147645933333333,
+      "text": "가 본 적이 있는지, 벌써 끝냈는지, 아직 안 했는지 말할 때 자주 써요. 에버, 올레디, 옛이 단서가 되죠.",
+      "screen": "ever / already / yet",
+      "visual": "경험 목록·완료 체크·미완료 체크에 세 단어를 각각 붙이기.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "가 본 적이 있는지, 벌써 끝냈는지, 아직 안 했는지 말할 때 자주 써요. 에버, 올레디, 옛이 단서가 되죠.",
+          "actualStart": 10.652553466666667,
+          "actualEnd": 19.146793466666665,
+          "rate": 185,
+          "cacheKey": "551f525933e2ef221fe94c1d4586c31890d267408fffa7c0eb4e15d07a7385d8",
+          "file": "audio/07/concept-2-ko-551f525933e2ef22.wav",
+          "duration": 8.49424
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 21.147645933333333,
+      "end": 31.4438724,
+      "text": "지금까지 이어지는 일은 시작점을 신스로, 기간을 포로 연결해요. 갔다 온 경험과 가서 없는 상태도 구분해요.",
+      "screen": "since Monday / for three days / been·gone",
+      "visual": "시작점과 길이 괄호를 분리하고 been은 왕복, gone은 현재 부재로 표시.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "지금까지 이어지는 일은 시작점을 신스로, 기간을 포로 연결해요. 갔다 온 경험과 가서 없는 상태도 구분해요.",
+          "actualStart": 21.347645933333332,
+          "actualEnd": 29.443019933333332,
+          "rate": 185,
+          "cacheKey": "ae77edcd017255a80e4f9e95c52c92cd0e0ca344a448c6cd86a46d71b0d878b0",
+          "file": "audio/07/concept-3-ko-ae77edcd017255a8.wav",
+          "duration": 8.095374
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 31.4438724,
+      "end": 42.17279786666667,
+      "text": "어제처럼 끝난 과거 시점을 지정하면 보통 과거형을 써요. 현재완료의 해브 뒤에는 동사 원형이 아니라 과거분사예요.",
+      "screen": "yesterday → 과거형 / have finished",
+      "visual": "닫힌 yesterday 구간과 현재 연결선을 대비하고 finished 형태를 확대.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "어제처럼 끝난 과거 시점을 지정하면 보통 과거형을 써요. 현재완료의 해브 뒤에는 동사 원형이 아니라 과거분사예요.",
+          "actualStart": 31.6438724,
+          "actualEnd": 40.1719454,
+          "rate": 185,
+          "cacheKey": "b05ddb455243f5fcaa468b1f4e7bd0708d2ed2f6dd07247775bccbcbced353d5",
+          "file": "audio/07/concept-4-ko-b05ddb455243f5fc.wav",
+          "duration": 8.528073
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 42.17279786666667,
+      "end": 49.56566833333334,
+      "ko": "나는 살면서 파리에 가 본 적이 있어요.",
+      "en": "I have been to Paris before.",
+      "wrong": "I have be to Paris before.",
+      "focus": [
+        "have been",
+        "before"
+      ],
+      "note": "have 뒤에는 be의 과거분사 been을 쓰며 방문 경험을 말한다.",
+      "visual": "과거 방문 체크가 현재 경험 목록에 남도록 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 살면서 파리에 가 본 적이 있어요.",
+          "actualStart": 42.37279786666667,
+          "actualEnd": 45.389713866666675,
+          "rate": 185,
+          "cacheKey": "9763d75e5940678f7a8e9a6d811386e9f65050e1d0b1a0318aeff3a5b8cb960b",
+          "file": "audio/07/example-1-ko-9763d75e5940678f.wav",
+          "duration": 3.016916
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I have been to Paris before.",
+          "actualStart": 45.739713866666676,
+          "actualEnd": 47.31481586666668,
+          "rate": 155,
+          "cacheKey": "d1ee8d3ea5e1e07bcbfadb3a7096e8e42a7441b922fc3c19887ea8d3dc09a727",
+          "file": "audio/07/example-1-en-d1ee8d3ea5e1e07b.wav",
+          "duration": 1.575102
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "have been",
+            "actualStart": 45.80971386666668,
+            "actualEnd": 46.33971386666668
+          },
+          {
+            "text": "before",
+            "actualStart": 46.82971386666668,
+            "actualEnd": 47.249713866666674
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "I",
+          "start": 45.749713866666674,
+          "end": 45.80971386666668
+        },
+        {
+          "text": "have",
+          "start": 45.80971386666668,
+          "end": 45.999713866666674
+        },
+        {
+          "text": "been",
+          "start": 46.08971386666668,
+          "end": 46.33971386666668
+        },
+        {
+          "text": "to",
+          "start": 46.43971386666668,
+          "end": 46.489713866666676
+        },
+        {
+          "text": "Paris",
+          "start": 46.489713866666676,
+          "end": 46.82971386666668
+        },
+        {
+          "text": "before.",
+          "start": 46.82971386666668,
+          "end": 47.249713866666674
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 49.56566833333334,
+      "end": 56.45935580000001,
+      "ko": "너는 낫토를 먹어 본 적이 있니?",
+      "en": "Have you ever tried natto before?",
+      "wrong": "Have you ever try natto before?",
+      "focus": [
+        "ever",
+        "tried"
+      ],
+      "note": "경험을 묻는 have 뒤에는 과거분사 tried가 필요하다.",
+      "visual": "경험 질문 상자에서 ever와 tried 두 칸 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "너는 낫토를 먹어 본 적이 있니?",
+          "actualStart": 49.765668333333345,
+          "actualEnd": 51.94666633333335,
+          "rate": 185,
+          "cacheKey": "75a2298d221810b11fcad8d458dfd58ad6901340d2d38f576d7d256874b79c2c",
+          "file": "audio/07/example-2-ko-75a2298d221810b1.wav",
+          "duration": 2.180998
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Have you ever tried natto before?",
+          "actualStart": 52.29666633333335,
+          "actualEnd": 54.20850333333335,
+          "rate": 155,
+          "cacheKey": "21941b51af20cb36e625d2e7a31b7e822818c9b2cec773b680e65210647994fd",
+          "file": "audio/07/example-2-en-21941b51af20cb36.wav",
+          "duration": 1.911837
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "ever",
+            "actualStart": 52.75666633333335,
+            "actualEnd": 52.916666333333346
+          },
+          {
+            "text": "tried",
+            "actualStart": 53.04666633333335,
+            "actualEnd": 53.346666333333346
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "Have",
+          "start": 52.346666333333346,
+          "end": 52.55666633333335
+        },
+        {
+          "text": "you",
+          "start": 52.55666633333335,
+          "end": 52.75666633333335
+        },
+        {
+          "text": "ever",
+          "start": 52.75666633333335,
+          "end": 52.916666333333346
+        },
+        {
+          "text": "tried",
+          "start": 53.04666633333335,
+          "end": 53.346666333333346
+        },
+        {
+          "text": "natto",
+          "start": 53.346666333333346,
+          "end": 53.65666633333335
+        },
+        {
+          "text": "before?",
+          "start": 53.65666633333335,
+          "end": 54.05666633333335
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 56.45935580000001,
+      "end": 63.48043526666668,
+      "ko": "그녀는 이미 숙제를 끝냈어요.",
+      "en": "She has already finished her homework.",
+      "wrong": "She has already finish her homework.",
+      "focus": [
+        "already",
+        "finished"
+      ],
+      "note": "has와 과거분사 finished로 지금의 완료 상태를 표현한다.",
+      "visual": "숙제 완료 체크가 현재 칸으로 이동하고 has finished 묶기.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 이미 숙제를 끝냈어요.",
+          "actualStart": 56.659355800000014,
+          "actualEnd": 58.83794980000001,
+          "rate": 185,
+          "cacheKey": "ebde73d4fe4739be898f8baf922a40116e68a830023a67ce6320509ae7fded62",
+          "file": "audio/07/example-3-ko-ebde73d4fe4739be.wav",
+          "duration": 2.178594
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She has already finished her homework.",
+          "actualStart": 59.18794980000001,
+          "actualEnd": 61.22958280000001,
+          "rate": 155,
+          "cacheKey": "87ae186bd7733d2b97f32a09031708d8047bec450472410669d2eed51df07f04",
+          "file": "audio/07/example-3-en-87ae186bd7733d2b.wav",
+          "duration": 2.041633
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "already",
+            "actualStart": 59.57794980000001,
+            "actualEnd": 59.97794980000001
+          },
+          {
+            "text": "finished",
+            "actualStart": 59.97794980000001,
+            "actualEnd": 60.387949800000015
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "She",
+          "start": 59.23794980000001,
+          "end": 59.36794980000001
+        },
+        {
+          "text": "has",
+          "start": 59.36794980000001,
+          "end": 59.537949800000014
+        },
+        {
+          "text": "already",
+          "start": 59.57794980000001,
+          "end": 59.97794980000001
+        },
+        {
+          "text": "finished",
+          "start": 59.97794980000001,
+          "end": 60.387949800000015
+        },
+        {
+          "text": "her",
+          "start": 60.497949800000015,
+          "end": 60.64794980000001
+        },
+        {
+          "text": "homework.",
+          "start": 60.64794980000001,
+          "end": 61.08794980000001
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 63.48043526666668,
+      "end": 70.65892973333334,
+      "ko": "우리는 아직 답장을 받지 못했어요.",
+      "en": "We have not received a reply yet.",
+      "wrong": "We have not receive a reply yet.",
+      "focus": [
+        "received",
+        "yet"
+      ],
+      "note": "부정문이어도 have 뒤에는 과거분사 received를 쓰며 yet는 지금까지의 미완료를 나타낸다.",
+      "visual": "받은 편지함이 비어 있는 현재까지의 시간선 끝에 yet 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 아직 답장을 받지 못했어요.",
+          "actualStart": 63.680435266666684,
+          "actualEnd": 66.12846226666669,
+          "rate": 185,
+          "cacheKey": "63a8ab926ebc99fa5e5416961632a2f36a60f8595c5b0a88e5192627794f4e54",
+          "file": "audio/07/example-4-ko-63a8ab926ebc99fa.wav",
+          "duration": 2.448027
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We have not received a reply yet.",
+          "actualStart": 66.47846226666668,
+          "actualEnd": 68.40807726666668,
+          "rate": 155,
+          "cacheKey": "d04dc4bdbf0eb3c484bfcf947c947cc5e19b19b7464f4d147d3813d7714f1130",
+          "file": "audio/07/example-4-en-d04dc4bdbf0eb3c4.wav",
+          "duration": 1.929615
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "received",
+            "actualStart": 67.07846226666668,
+            "actualEnd": 67.62846226666669
+          },
+          {
+            "text": "yet",
+            "actualStart": 68.02846226666668,
+            "actualEnd": 68.27846226666668
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "We",
+          "start": 66.48846226666669,
+          "end": 66.60846226666668
+        },
+        {
+          "text": "have",
+          "start": 66.60846226666668,
+          "end": 66.87846226666669
+        },
+        {
+          "text": "not",
+          "start": 66.87846226666669,
+          "end": 67.07846226666668
+        },
+        {
+          "text": "received",
+          "start": 67.07846226666668,
+          "end": 67.62846226666669
+        },
+        {
+          "text": "a",
+          "start": 67.62846226666669,
+          "end": 67.68846226666668
+        },
+        {
+          "text": "reply",
+          "start": 67.68846226666668,
+          "end": 68.02846226666668
+        },
+        {
+          "text": "yet.",
+          "start": 68.02846226666668,
+          "end": 68.27846226666668
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 70.65892973333334,
+      "end": 79.3382862,
+      "ko": "그는 2021년부터 여기에서 살고 있어요.",
+      "en": "He has lived here since 2021.",
+      "wrong": "He has lived here for 2021.",
+      "focus": [
+        "has lived",
+        "since 2021"
+      ],
+      "note": "2021년은 기간의 길이가 아니라 시작점이므로 since를 쓴다.",
+      "visual": "2021 점에서 현재까지 선을 그리고 시작점에 since 깃발 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그는 2021년부터 여기에서 살고 있어요.",
+          "actualStart": 70.85892973333334,
+          "actualEnd": 74.32663973333334,
+          "rate": 185,
+          "cacheKey": "0b0237df60b745f68f21c46ce07953d0f821219a3e9d67266827188019d6ba9d",
+          "file": "audio/07/example-5-ko-0b0237df60b745f6.wav",
+          "duration": 3.46771
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He has lived here since 2021.",
+          "actualStart": 74.67663973333333,
+          "actualEnd": 77.08743373333333,
+          "rate": 155,
+          "cacheKey": "6b0518a121de472b80b1c7e0ac2b46f12dff39d8bf3c20d6f7dc69fd01b61be1",
+          "file": "audio/07/example-5-en-6b0518a121de472b.wav",
+          "duration": 2.410794
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "has lived",
+            "actualStart": 74.82663973333334,
+            "actualEnd": 75.42663973333333
+          },
+          {
+            "text": "since 2021",
+            "actualStart": 75.72663973333333,
+            "actualEnd": 77.01663973333334
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "He",
+          "start": 74.71663973333334,
+          "end": 74.82663973333334
+        },
+        {
+          "text": "has",
+          "start": 74.82663973333334,
+          "end": 75.04663973333334
+        },
+        {
+          "text": "lived",
+          "start": 75.04663973333334,
+          "end": 75.42663973333333
+        },
+        {
+          "text": "here",
+          "start": 75.42663973333333,
+          "end": 75.71663973333334
+        },
+        {
+          "text": "since",
+          "start": 75.72663973333333,
+          "end": 76.10663973333334
+        },
+        {
+          "text": "2021.",
+          "start": 76.10663973333334,
+          "end": 77.01663973333334
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 79.3382862,
+      "end": 86.38285766666667,
+      "ko": "나는 그를 십 년 동안 알고 지냈어요.",
+      "en": "I have known him for ten years.",
+      "wrong": "I have known him since ten years.",
+      "focus": [
+        "have known",
+        "for ten years"
+      ],
+      "note": "ten years는 기간이므로 for가 필요하며 since ten years ago는 시작점 표현으로 가능하다.",
+      "visual": "십 년 길이의 괄호에 for를 붙이고 since 시작점과 비교.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그를 십 년 동안 알고 지냈어요.",
+          "actualStart": 79.5382862,
+          "actualEnd": 82.1720732,
+          "rate": 185,
+          "cacheKey": "643d9914bd5333307bdcc330412a7448f741b881d96035f3eb62469e385e28ea",
+          "file": "audio/07/example-6-ko-643d9914bd533330.wav",
+          "duration": 2.633787
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I have known him for ten years.",
+          "actualStart": 82.5220732,
+          "actualEnd": 84.1320052,
+          "rate": 155,
+          "cacheKey": "bd65415ea6d12327f3e15acdca1c226aa1a51e19b652f1fe71069aeea04664ed",
+          "file": "audio/07/example-6-en-bd65415ea6d12327.wav",
+          "duration": 1.609932
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "have known",
+            "actualStart": 82.57207319999999,
+            "actualEnd": 83.0820732
+          },
+          {
+            "text": "for ten years",
+            "actualStart": 83.3120732,
+            "actualEnd": 83.9720732
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "I",
+          "start": 82.5320732,
+          "end": 82.57207319999999
+        },
+        {
+          "text": "have",
+          "start": 82.57207319999999,
+          "end": 82.7720732
+        },
+        {
+          "text": "known",
+          "start": 82.82207319999999,
+          "end": 83.0820732
+        },
+        {
+          "text": "him",
+          "start": 83.0820732,
+          "end": 83.23207319999999
+        },
+        {
+          "text": "for",
+          "start": 83.3120732,
+          "end": 83.3920732
+        },
+        {
+          "text": "ten",
+          "start": 83.4920732,
+          "end": 83.76207319999999
+        },
+        {
+          "text": "years.",
+          "start": 83.76207319999999,
+          "end": 83.9720732
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 86.38285766666667,
+      "end": 94.50715713333332,
+      "ko": "나는 어제 고객에게 그 보고서를 보냈어요.",
+      "en": "I sent the report to the client yesterday.",
+      "wrong": "I have sent the report to the client yesterday.",
+      "focus": [
+        "sent",
+        "yesterday"
+      ],
+      "note": "보낸 사건을 끝난 시점 yesterday로 직접 지정하므로 표준 용법에서는 과거형 sent를 쓴다.",
+      "visual": "보낸 사건을 닫힌 어제 칸 안에 고정하고 현재완료 연결과 대비.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 어제 고객에게 그 보고서를 보냈어요.",
+          "actualStart": 86.58285766666667,
+          "actualEnd": 89.62299366666667,
+          "rate": 185,
+          "cacheKey": "28c1acc73a1f1622b46edf998793dd90da14af1170290c9d589f99e6687c4a98",
+          "file": "audio/07/example-7-ko-28c1acc73a1f1622.wav",
+          "duration": 3.040136
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I sent the report to the client yesterday.",
+          "actualStart": 89.97299366666667,
+          "actualEnd": 92.25630466666667,
+          "rate": 155,
+          "cacheKey": "868efa9a63e49d7f89349611c69cb4c69ee831f7ea108e534a22758c8627a48d",
+          "file": "audio/07/example-7-en-868efa9a63e49d7f.wav",
+          "duration": 2.283311
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "sent",
+            "actualStart": 90.03299366666667,
+            "actualEnd": 90.29299366666666
+          },
+          {
+            "text": "yesterday",
+            "actualStart": 91.58299366666667,
+            "actualEnd": 92.18299366666666
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "I",
+          "start": 89.98299366666667,
+          "end": 90.03299366666667
+        },
+        {
+          "text": "sent",
+          "start": 90.03299366666667,
+          "end": 90.29299366666666
+        },
+        {
+          "text": "the",
+          "start": 90.29299366666666,
+          "end": 90.48299366666667
+        },
+        {
+          "text": "report",
+          "start": 90.48299366666667,
+          "end": 90.84299366666667
+        },
+        {
+          "text": "to",
+          "start": 90.91299366666667,
+          "end": 91.00299366666667
+        },
+        {
+          "text": "the",
+          "start": 91.00299366666667,
+          "end": 91.10299366666666
+        },
+        {
+          "text": "client",
+          "start": 91.22299366666667,
+          "end": 91.51299366666667
+        },
+        {
+          "text": "yesterday.",
+          "start": 91.58299366666667,
+          "end": 92.18299366666666
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94.50715713333332,
+      "end": 102.56152459999998,
+      "ko": "그녀는 약국에 가서 지금 여기 없어요.",
+      "en": "She has gone to the pharmacy and is not here.",
+      "wrong": "She has went to the pharmacy and is not here.",
+      "focus": [
+        "has gone",
+        "not here"
+      ],
+      "note": "go의 과거분사는 gone이며 이 문맥에서는 약국에 가서 아직 부재임을 나타낸다.",
+      "visual": "인물의 현재 위치를 약국 쪽에 놓고 출발지에는 부재 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 약국에 가서 지금 여기 없어요.",
+          "actualStart": 94.70715713333333,
+          "actualEnd": 97.65201013333332,
+          "rate": 185,
+          "cacheKey": "ddfb3911d96f0c0821b7492623b38a37c3df2a663af090272dd684b7feb555c2",
+          "file": "audio/07/example-8-ko-ddfb3911d96f0c08.wav",
+          "duration": 2.944853
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She has gone to the pharmacy and is not here.",
+          "actualStart": 98.00201013333331,
+          "actualEnd": 100.31067213333331,
+          "rate": 155,
+          "cacheKey": "6d5e54411aaaf7a04b03a626db331f2b30180591ae042f57529246791c4de03f",
+          "file": "audio/07/example-8-en-6d5e54411aaaf7a0.wav",
+          "duration": 2.308662
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "has gone",
+            "actualStart": 98.19201013333331,
+            "actualEnd": 98.64201013333332
+          },
+          {
+            "text": "not here",
+            "actualStart": 99.80201013333331,
+            "actualEnd": 100.23201013333332
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "She",
+          "start": 98.05201013333331,
+          "end": 98.19201013333331
+        },
+        {
+          "text": "has",
+          "start": 98.19201013333331,
+          "end": 98.35201013333331
+        },
+        {
+          "text": "gone",
+          "start": 98.46201013333331,
+          "end": 98.64201013333332
+        },
+        {
+          "text": "to",
+          "start": 98.64201013333332,
+          "end": 98.77201013333331
+        },
+        {
+          "text": "the",
+          "start": 98.77201013333331,
+          "end": 98.89201013333332
+        },
+        {
+          "text": "pharmacy",
+          "start": 98.99201013333331,
+          "end": 99.48201013333332
+        },
+        {
+          "text": "and",
+          "start": 99.48201013333332,
+          "end": 99.67201013333332
+        },
+        {
+          "text": "is",
+          "start": 99.67201013333332,
+          "end": 99.80201013333331
+        },
+        {
+          "text": "not",
+          "start": 99.80201013333331,
+          "end": 99.92201013333332
+        },
+        {
+          "text": "here.",
+          "start": 100.00201013333331,
+          "end": 100.23201013333332
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 102.56152459999998,
+      "end": 111.85820506666664,
+      "ko": "나는 그 박물관에 가 봤지만 그는 가 본 적 없어요.",
+      "en": "I have been to that museum, but he has never visited.",
+      "wrong": "I have went to that museum, but he has never visited.",
+      "focus": [
+        "have been",
+        "never visited"
+      ],
+      "note": "방문 경험은 have been to로 표현하고 have went는 과거분사 형태가 틀렸다.",
+      "visual": "두 사람의 방문 경험 목록을 나란히 놓고 경험 있음·없음 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그 박물관에 가 봤지만 그는 가 본 적 없어요.",
+          "actualStart": 102.76152459999999,
+          "actualEnd": 106.42859959999998,
+          "rate": 185,
+          "cacheKey": "e3bdb18db391dbc096f57b72303995ba93e433a4301e11076f9e5007b51294bd",
+          "file": "audio/07/example-9-ko-e3bdb18db391dbc0.wav",
+          "duration": 3.667075
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I have been to that museum, but he has never visited.",
+          "actualStart": 106.77859959999998,
+          "actualEnd": 109.60735259999998,
+          "rate": 155,
+          "cacheKey": "71aefe3fe41bbe909b3f8c8bde7be0649d6d42c066a1b2af651e28f929843043",
+          "file": "audio/07/example-9-en-71aefe3fe41bbe90.wav",
+          "duration": 2.828753
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "have been",
+            "actualStart": 106.83859959999998,
+            "actualEnd": 107.33859959999998
+          },
+          {
+            "text": "never visited",
+            "actualStart": 108.70859959999999,
+            "actualEnd": 109.50859959999998
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "I",
+          "start": 106.78859959999998,
+          "end": 106.83859959999998
+        },
+        {
+          "text": "have",
+          "start": 106.83859959999998,
+          "end": 107.03859959999998
+        },
+        {
+          "text": "been",
+          "start": 107.13859959999998,
+          "end": 107.33859959999998
+        },
+        {
+          "text": "to",
+          "start": 107.33859959999998,
+          "end": 107.45859959999999
+        },
+        {
+          "text": "that",
+          "start": 107.45859959999999,
+          "end": 107.70859959999999
+        },
+        {
+          "text": "museum,",
+          "start": 107.70859959999999,
+          "end": 108.08859959999998
+        },
+        {
+          "text": "but",
+          "start": 108.36859959999998,
+          "end": 108.39859959999998
+        },
+        {
+          "text": "he",
+          "start": 108.39859959999998,
+          "end": 108.51859959999997
+        },
+        {
+          "text": "has",
+          "start": 108.51859959999997,
+          "end": 108.70859959999999
+        },
+        {
+          "text": "never",
+          "start": 108.70859959999999,
+          "end": 109.02859959999998
+        },
+        {
+          "text": "visited.",
+          "start": 109.02859959999998,
+          "end": 109.50859959999998
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 111.85820506666664,
+      "end": 120.92903453333331,
+      "ko": "우리는 열쇠를 잃어버려서 지금 들어갈 수 없어요.",
+      "en": "We have lost our keys, so we cannot get in now.",
+      "wrong": "We have lose our keys, so we cannot get in now.",
+      "focus": [
+        "have lost",
+        "now"
+      ],
+      "note": "현재 남은 결과와 연결하며 lose의 과거분사 lost를 쓴다.",
+      "visual": "과거 열쇠 분실에서 현재 잠긴 문까지 결과 화살표 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 열쇠를 잃어버려서 지금 들어갈 수 없어요.",
+          "actualStart": 112.05820506666664,
+          "actualEnd": 115.42342006666665,
+          "rate": 185,
+          "cacheKey": "1a1e69a60f89211939c0ce1452ba294c6868eec3af6d7b9316fcf7b37b9d74dd",
+          "file": "audio/07/example-10-ko-1a1e69a60f892119.wav",
+          "duration": 3.365215
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We have lost our keys, so we cannot get in now.",
+          "actualStart": 115.77342006666665,
+          "actualEnd": 118.67818206666665,
+          "rate": 155,
+          "cacheKey": "a25cb21540d3a9cdaf7b396f728a4813db760b8f9371f0fe9d7a2106dd6d61ea",
+          "file": "audio/07/example-10-en-a25cb21540d3a9cd.wav",
+          "duration": 2.904762
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "have lost",
+            "actualStart": 115.92342006666665,
+            "actualEnd": 116.53342006666665
+          },
+          {
+            "text": "now",
+            "actualStart": 118.37342006666664,
+            "actualEnd": 118.59342006666664
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "We",
+          "start": 115.78342006666665,
+          "end": 115.92342006666665
+        },
+        {
+          "text": "have",
+          "start": 115.92342006666665,
+          "end": 116.23342006666664
+        },
+        {
+          "text": "lost",
+          "start": 116.23342006666664,
+          "end": 116.53342006666665
+        },
+        {
+          "text": "our",
+          "start": 116.65342006666664,
+          "end": 116.77342006666665
+        },
+        {
+          "text": "keys,",
+          "start": 116.77342006666665,
+          "end": 116.91342006666665
+        },
+        {
+          "text": "so",
+          "start": 117.30342006666665,
+          "end": 117.38342006666664
+        },
+        {
+          "text": "we",
+          "start": 117.38342006666664,
+          "end": 117.53342006666665
+        },
+        {
+          "text": "cannot",
+          "start": 117.53342006666665,
+          "end": 117.89342006666665
+        },
+        {
+          "text": "get",
+          "start": 117.99342006666664,
+          "end": 118.22342006666665
+        },
+        {
+          "text": "in",
+          "start": 118.22342006666665,
+          "end": 118.37342006666664
+        },
+        {
+          "text": "now.",
+          "start": 118.37342006666664,
+          "end": 118.59342006666664
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 120.92903453333331,
+      "end": 130,
+      "text": "현재와의 연결은 현재완료로, 끝난 과거 시점을 지정한 사건은 보통 과거형으로 말하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "현재와의 연결은 현재완료로, 끝난 과거 시점을 지정한 사건은 보통 과거형으로 말하세요.",
+          "actualStart": 121.12903453333331,
+          "actualEnd": 127.99914753333331,
+          "rate": 185,
+          "cacheKey": "fc060183d5f455b2a24f3fc14c1d284ed39d954f9ce42a84fb2eea1d167dc66b",
+          "file": "audio/07/summary-ko-fc060183d5f455b2.wav",
+          "duration": 6.870113
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 108.98721299999998,
+  "sourceHash": "92d920735c73bd901a14c811e922a00b34587c236afbd3cfea7e5e73286c3de7",
+  "audioFile": "audio/07/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "92d920735c73bd901a14c811e922a00b34587c236afbd3cfea7e5e73286c3de7",
+    "clipHashes": {
+      "example-1-en": "29cb5aad2675ff2c14193bb444e899d0fbd239a363f4ea98d0bd66a5108365ca",
+      "example-2-en": "64872ed8e90f551938bce5619048980340c452740a29427e44c3e0e91aff1215",
+      "example-3-en": "89880e8f447302a4342154a1894aa7da5cd10865fb23563f2a15d9b3606f3876",
+      "example-4-en": "c6637c1f80545201365bf69f05da5ce0943ff6856918bb0172e2d4cc327ba53e",
+      "example-5-en": "27dfd764c9dc8ee99b4911af5f542630888b52955e520b6fb729aec3cdac6883",
+      "example-6-en": "39abebdb06650a7e4c658dfacaa6d4604b878817764a0d1b4e5e5930fb27d0be",
+      "example-7-en": "ff7c1312f4f45e1fe8a6a87e359abcf5f3883c31871fb4bec0ec5e5920405358",
+      "example-8-en": "7380df58f5d34ddcb9e0affde816b3d8fb969f557f724f54039ad47919838302",
+      "example-9-en": "71522f38f77d0e4dd3248b51aeac72d4a50a247a6844c85205be8b6f04b4ba85",
+      "example-10-en": "2176014dc57d2b3388fe5146996415a26ec10889ba48e72e00899e2e12b67eab"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,880"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1880
+			},
+			"text": " She asked me to close the window.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.99785,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,200"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 200
+					},
+					"id": 1375,
+					"p": 0.938119,
+					"t_dtw": -1
+				},
+				{
+					"text": " asked",
+					"timestamps": {
+						"from": "00:00:00,200",
+						"to": "00:00:00,360"
+					},
+					"offsets": {
+						"from": 200,
+						"to": 360
+					},
+					"id": 1965,
+					"p": 0.984649,
+					"t_dtw": -1
+				},
+				{
+					"text": " me",
+					"timestamps": {
+						"from": "00:00:00,540",
+						"to": "00:00:00,670"
+					},
+					"offsets": {
+						"from": 540,
+						"to": 670
+					},
+					"id": 502,
+					"p": 0.994063,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,670",
+						"to": "00:00:00,800"
+					},
+					"offsets": {
+						"from": 670,
+						"to": 800
+					},
+					"id": 284,
+					"p": 0.999051,
+					"t_dtw": -1
+				},
+				{
+					"text": " close",
+					"timestamps": {
+						"from": "00:00:00,800",
+						"to": "00:00:01,140"
+					},
+					"offsets": {
+						"from": 800,
+						"to": 1140
+					},
+					"id": 1969,
+					"p": 0.997196,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,140",
+						"to": "00:00:01,340"
+					},
+					"offsets": {
+						"from": 1140,
+						"to": 1340
+					},
+					"id": 262,
+					"p": 0.999554,
+					"t_dtw": -1
+				},
+				{
+					"text": " window",
+					"timestamps": {
+						"from": "00:00:01,340",
+						"to": "00:00:01,740"
+					},
+					"offsets": {
+						"from": 1340,
+						"to": 1740
+					},
+					"id": 4324,
+					"p": 0.999462,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,820",
+						"to": "00:00:01,820"
+					},
+					"offsets": {
+						"from": 1820,
+						"to": 1820
+					},
+					"id": 13,
+					"p": 0.93603,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_94]",
+					"timestamps": {
+						"from": "00:00:01,880",
+						"to": "00:00:01,880"
+					},
+					"offsets": {
+						"from": 1880,
+						"to": 1880
+					},
+					"id": 50457,
+					"p": 0.032849,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

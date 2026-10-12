@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,840"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1840
+			},
+			"text": " what we ordered has not arrived yet.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998676,
+					"t_dtw": -1
+				},
+				{
+					"text": " what",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,240"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 240
+					},
+					"id": 644,
+					"p": 0.460672,
+					"t_dtw": -1
+				},
+				{
+					"text": " we",
+					"timestamps": {
+						"from": "00:00:00,240",
+						"to": "00:00:00,360"
+					},
+					"offsets": {
+						"from": 240,
+						"to": 360
+					},
+					"id": 356,
+					"p": 0.985708,
+					"t_dtw": -1
+				},
+				{
+					"text": " ordered",
+					"timestamps": {
+						"from": "00:00:00,360",
+						"to": "00:00:00,790"
+					},
+					"offsets": {
+						"from": 360,
+						"to": 790
+					},
+					"id": 6149,
+					"p": 0.998643,
+					"t_dtw": -1
+				},
+				{
+					"text": " has",
+					"timestamps": {
+						"from": "00:00:00,790",
+						"to": "00:00:00,970"
+					},
+					"offsets": {
+						"from": 790,
+						"to": 970
+					},
+					"id": 468,
+					"p": 0.99613,
+					"t_dtw": -1
+				},
+				{
+					"text": " not",
+					"timestamps": {
+						"from": "00:00:00,970",
+						"to": "00:00:01,150"
+					},
+					"offsets": {
+						"from": 970,
+						"to": 1150
+					},
+					"id": 407,
+					"p": 0.999256,
+					"t_dtw": -1
+				},
+				{
+					"text": " arrived",
+					"timestamps": {
+						"from": "00:00:01,150",
+						"to": "00:00:01,580"
+					},
+					"offsets": {
+						"from": 1150,
+						"to": 1580
+					},
+					"id": 5284,
+					"p": 0.998378,
+					"t_dtw": -1
+				},
+				{
+					"text": " yet",
+					"timestamps": {
+						"from": "00:00:01,580",
+						"to": "00:00:01,760"
+					},
+					"offsets": {
+						"from": 1580,
+						"to": 1760
+					},
+					"id": 1865,
+					"p": 0.998881,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,840",
+						"to": "00:00:01,840"
+					},
+					"offsets": {
+						"from": 1840,
+						"to": 1840
+					},
+					"id": 13,
+					"p": 0.889664,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_92]",
+					"timestamps": {
+						"from": "00:00:01,840",
+						"to": "00:00:01,840"
+					},
+					"offsets": {
+						"from": 1840,
+						"to": 1840
+					},
+					"id": 50455,
+					"p": 0.0502681,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

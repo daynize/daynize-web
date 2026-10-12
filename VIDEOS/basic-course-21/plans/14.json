@@ -1,0 +1,656 @@
+{
+  "id": "basic-14",
+  "episode": 14,
+  "title": "감정을 일으키는 쪽과 느끼는 쪽",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "흥미롭다는 말과 흥미를 느낀다는 말은 달라요. 감정을 일으키는 쪽과 느끼는 쪽을 먼저 나눠 보세요.",
+      "screen": "원인 → 감정을 느끼는 대상",
+      "visual": "책에서 독자로 향하는 감정 화살표.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "흥미롭다는 말과 흥미를 느낀다는 말은 달라요. 감정을 일으키는 쪽과 느끼는 쪽을 먼저 나눠 보세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "책이 흥미를 일으키면 현재분사형을 써요. 내가 그 책에 관심을 느끼면 과거분사형을 쓰죠.",
+      "screen": "interesting / interested",
+      "visual": "첫 예문의 독자에 interested, 책 쪽에 interesting 표시.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "책이 흥미를 일으키면 현재분사형을 써요. 내가 그 책에 관심을 느끼면 과거분사형을 쓰죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "지루함, 놀람, 혼란도 같은 방향으로 보세요. 끝모양보다 누가 감정을 느끼는지를 확인하는 거예요.",
+      "screen": "boring / bored · surprising / surprised · confusing / confused",
+      "visual": "각 쌍을 원인과 경험자 열에 정렬.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "지루함, 놀람, 혼란도 같은 방향으로 보세요. 끝모양보다 누가 감정을 느끼는지를 확인하는 거예요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "사람이라고 항상 과거분사형은 아니에요. 사람도 남을 지루하게 할 수 있으니, 뜻에 맞춰 고르세요.",
+      "screen": "사물·사람이 아니라 감정의 방향",
+      "visual": "사람 그림도 원인 열과 경험자 열 양쪽에 배치.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "사람이라고 항상 과거분사형은 아니에요. 사람도 남을 지루하게 할 수 있으니, 뜻에 맞춰 고르세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "나는 이 역사책에 관심이 있어요.",
+      "en": "I am interested in this history book.",
+      "wrong": "I am interesting in this history book.",
+      "focus": [
+        "interested",
+        "in"
+      ],
+      "note": "책에 관심을 느끼는 나는 interested in으로 표현한다. interesting은 흥미를 일으킨다는 뜻이다.",
+      "visual": "책 → 나 화살표에서 감정을 느끼는 나 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 이 역사책에 관심이 있어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I am interested in this history book.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "interested",
+            "actualStart": null
+          },
+          {
+            "text": "in",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "그 학생들은 긴 회의 중에 지루해했어요.",
+      "en": "The students were bored during the long meeting.",
+      "wrong": "The students were boring during the long meeting.",
+      "focus": [
+        "were",
+        "bored"
+      ],
+      "note": "boring도 문법적으로 가능하지만 학생들이 남을 지루하게 했다는 뜻이다. 학생들이 느낀 지루함은 bored다.",
+      "visual": "학생들의 표정에 감정 표시, 원인인 회의와 분리.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 학생들은 긴 회의 중에 지루해했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The students were bored during the long meeting.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were",
+            "actualStart": null
+          },
+          {
+            "text": "bored",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "나는 갑작스러운 소식에 놀랐어요.",
+      "en": "I was surprised by the sudden news.",
+      "wrong": "I was surprising by the sudden news.",
+      "focus": [
+        "surprised",
+        "by"
+      ],
+      "note": "소식 때문에 놀란 경험자는 surprised이며, surprising by로 수동 감정을 표현하지 않는다.",
+      "visual": "소식에서 나에게 전달되는 놀람 화살표.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 갑작스러운 소식에 놀랐어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I was surprised by the sudden news.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "surprised",
+            "actualStart": null
+          },
+          {
+            "text": "by",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "나는 지금 새 규칙 때문에 혼란스러워요.",
+      "en": "I am confused about the new rules now.",
+      "wrong": "I am confusing about the new rules now.",
+      "focus": [
+        "confused",
+        "about"
+      ],
+      "note": "규칙을 이해하지 못해 혼란을 느끼는 나는 confused about으로 표현한다.",
+      "visual": "규칙을 보는 사람의 혼란 상태 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 지금 새 규칙 때문에 혼란스러워요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I am confused about the new rules now.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "confused",
+            "actualStart": null
+          },
+          {
+            "text": "about",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "이 책은 어린 독자들에게 흥미로워요.",
+      "en": "This book is interesting to young readers.",
+      "wrong": "This book is interested to young readers.",
+      "focus": [
+        "interesting",
+        "readers"
+      ],
+      "note": "독자에게 흥미를 일으키는 책은 interesting이다. interested는 관심을 느끼는 쪽을 설명한다.",
+      "visual": "책에서 여러 독자로 퍼지는 관심 연결선.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이 책은 어린 독자들에게 흥미로워요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This book is interesting to young readers.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "interesting",
+            "actualStart": null
+          },
+          {
+            "text": "readers",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "그 긴 회의는 모두에게 지루했어요.",
+      "en": "The long meeting was boring for everyone.",
+      "wrong": "The long meeting was bored for everyone.",
+      "focus": [
+        "was",
+        "boring"
+      ],
+      "note": "회의 자체가 지루함을 느낀 것이 아니라 참석자에게 지루함을 일으켰으므로 boring이다.",
+      "visual": "회의를 원인 칸에 놓고 참석자를 경험자 칸에 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 긴 회의는 모두에게 지루했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The long meeting was boring for everyone.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was",
+            "actualStart": null
+          },
+          {
+            "text": "boring",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "그 결과는 팀 전체에게 놀라웠어요.",
+      "en": "The result was surprising to the whole team.",
+      "wrong": "The result was surprised to the whole team.",
+      "focus": [
+        "surprising",
+        "team"
+      ],
+      "note": "결과가 팀을 놀라게 했다는 뜻은 surprising이며, 결과가 놀란다는 뜻이 아니다.",
+      "visual": "결과 → 팀의 놀람 방향 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 결과는 팀 전체에게 놀라웠어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The result was surprising to the whole team.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "surprising",
+            "actualStart": null
+          },
+          {
+            "text": "team",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "그는 듣는 사람들을 지루하게 만드는 지루한 발표자예요.",
+      "en": "He is a boring speaker who makes listeners sleepy.",
+      "wrong": "He is a bored speaker who makes listeners sleepy.",
+      "focus": [
+        "boring",
+        "makes"
+      ],
+      "note": "bored speaker도 가능하지만 발표자가 지루함을 느낀다는 뜻이다. 여기서는 청중을 지루하게 만드는 특성을 말한다.",
+      "visual": "발표자 → 졸린 청중 화살표로 감정 원인 강조.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그는 듣는 사람들을 지루하게 만드는 지루한 발표자예요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He is a boring speaker who makes listeners sleepy.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "boring",
+            "actualStart": null
+          },
+          {
+            "text": "makes",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "나는 설명을 듣고도 여전히 혼란스러웠어요.",
+      "en": "I was still confused after hearing the explanation.",
+      "wrong": "I was still confusing after hearing the explanation.",
+      "focus": [
+        "confused",
+        "hearing"
+      ],
+      "note": "confusing도 사람이 남을 혼란스럽게 한다는 뜻으로 가능하다. 설명을 듣고 내가 느낀 혼란에는 confused가 맞다.",
+      "visual": "설명을 받은 사람의 이해 상태를 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 설명을 듣고도 여전히 혼란스러웠어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I was still confused after hearing the explanation.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "confused",
+            "actualStart": null
+          },
+          {
+            "text": "hearing",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "서로 모순되는 지시들이 새 직원들을 혼란스럽게 했어요.",
+      "en": "The conflicting instructions were confusing for the new staff.",
+      "wrong": "The conflicting instructions were confused for the new staff.",
+      "focus": [
+        "confusing",
+        "instructions"
+      ],
+      "note": "confused instructions는 뒤섞이거나 정리가 안 된 지시라는 뜻도 가능하다. 여기서는 직원에게 혼란을 일으킨 효과를 말한다.",
+      "visual": "충돌하는 지시 → 직원의 혼란으로 효과의 방향 표시.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "서로 모순되는 지시들이 새 직원들을 혼란스럽게 했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The conflicting instructions were confusing for the new staff.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "confusing",
+            "actualStart": null
+          },
+          {
+            "text": "instructions",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "감정을 일으키는 원인인지 감정을 느끼는 대상인지 구분해서 분사 형용사를 고르세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "감정을 일으키는 원인인지 감정을 느끼는 대상인지 구분해서 분사 형용사를 고르세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

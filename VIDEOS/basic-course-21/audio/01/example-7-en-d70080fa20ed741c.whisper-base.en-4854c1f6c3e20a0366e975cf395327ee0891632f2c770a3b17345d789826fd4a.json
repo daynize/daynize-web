@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,000"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2000
+			},
+			"text": " She lived abroad for nearly 10 years.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997562,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,170"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 170
+					},
+					"id": 1375,
+					"p": 0.960668,
+					"t_dtw": -1
+				},
+				{
+					"text": " lived",
+					"timestamps": {
+						"from": "00:00:00,170",
+						"to": "00:00:00,360"
+					},
+					"offsets": {
+						"from": 170,
+						"to": 360
+					},
+					"id": 5615,
+					"p": 0.99847,
+					"t_dtw": -1
+				},
+				{
+					"text": " abroad",
+					"timestamps": {
+						"from": "00:00:00,460",
+						"to": "00:00:00,790"
+					},
+					"offsets": {
+						"from": 460,
+						"to": 790
+					},
+					"id": 10522,
+					"p": 0.999767,
+					"t_dtw": -1
+				},
+				{
+					"text": " for",
+					"timestamps": {
+						"from": "00:00:00,890",
+						"to": "00:00:00,980"
+					},
+					"offsets": {
+						"from": 890,
+						"to": 980
+					},
+					"id": 329,
+					"p": 0.998974,
+					"t_dtw": -1
+				},
+				{
+					"text": " nearly",
+					"timestamps": {
+						"from": "00:00:00,980",
+						"to": "00:00:01,330"
+					},
+					"offsets": {
+						"from": 980,
+						"to": 1330
+					},
+					"id": 3016,
+					"p": 0.99956,
+					"t_dtw": -1
+				},
+				{
+					"text": " 10",
+					"timestamps": {
+						"from": "00:00:01,330",
+						"to": "00:00:01,680"
+					},
+					"offsets": {
+						"from": 1330,
+						"to": 1680
+					},
+					"id": 838,
+					"p": 0.613044,
+					"t_dtw": -1
+				},
+				{
+					"text": " years",
+					"timestamps": {
+						"from": "00:00:01,680",
+						"to": "00:00:01,910"
+					},
+					"offsets": {
+						"from": 1680,
+						"to": 1910
+					},
+					"id": 812,
+					"p": 0.998584,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,990",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 1990,
+						"to": 2000
+					},
+					"id": 13,
+					"p": 0.919749,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_100]",
+					"timestamps": {
+						"from": "00:00:02,000",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 2000,
+						"to": 2000
+					},
+					"id": 50463,
+					"p": 0.134437,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

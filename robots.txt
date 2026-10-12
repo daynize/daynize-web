@@ -1,0 +1,7 @@
+# Primary origin: https://www.daynize.co.kr
+# Alias origin: https://daynize.co.kr redirects to the primary origin.
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://www.daynize.co.kr/sitemap.xml

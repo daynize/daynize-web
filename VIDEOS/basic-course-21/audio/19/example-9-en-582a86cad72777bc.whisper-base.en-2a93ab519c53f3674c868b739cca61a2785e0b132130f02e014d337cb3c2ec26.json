@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,440"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2440
+			},
+			"text": " The museum which we visited on Friday is free.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997838,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,190"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 190
+					},
+					"id": 383,
+					"p": 0.298946,
+					"t_dtw": -1
+				},
+				{
+					"text": " museum",
+					"timestamps": {
+						"from": "00:00:00,190",
+						"to": "00:00:00,580"
+					},
+					"offsets": {
+						"from": 190,
+						"to": 580
+					},
+					"id": 13257,
+					"p": 0.866463,
+					"t_dtw": -1
+				},
+				{
+					"text": " which",
+					"timestamps": {
+						"from": "00:00:00,580",
+						"to": "00:00:00,900"
+					},
+					"offsets": {
+						"from": 580,
+						"to": 900
+					},
+					"id": 543,
+					"p": 0.981824,
+					"t_dtw": -1
+				},
+				{
+					"text": " we",
+					"timestamps": {
+						"from": "00:00:00,900",
+						"to": "00:00:01,030"
+					},
+					"offsets": {
+						"from": 900,
+						"to": 1030
+					},
+					"id": 356,
+					"p": 0.9979,
+					"t_dtw": -1
+				},
+				{
+					"text": " visited",
+					"timestamps": {
+						"from": "00:00:01,030",
+						"to": "00:00:01,490"
+					},
+					"offsets": {
+						"from": 1030,
+						"to": 1490
+					},
+					"id": 8672,
+					"p": 0.991603,
+					"t_dtw": -1
+				},
+				{
+					"text": " on",
+					"timestamps": {
+						"from": "00:00:01,490",
+						"to": "00:00:01,520"
+					},
+					"offsets": {
+						"from": 1490,
+						"to": 1520
+					},
+					"id": 319,
+					"p": 0.977892,
+					"t_dtw": -1
+				},
+				{
+					"text": " Friday",
+					"timestamps": {
+						"from": "00:00:01,620",
+						"to": "00:00:02,010"
+					},
+					"offsets": {
+						"from": 1620,
+						"to": 2010
+					},
+					"id": 3217,
+					"p": 0.99151,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:02,010",
+						"to": "00:00:02,060"
+					},
+					"offsets": {
+						"from": 2010,
+						"to": 2060
+					},
+					"id": 318,
+					"p": 0.998015,
+					"t_dtw": -1
+				},
+				{
+					"text": " free",
+					"timestamps": {
+						"from": "00:00:02,170",
+						"to": "00:00:02,400"
+					},
+					"offsets": {
+						"from": 2170,
+						"to": 2400
+					},
+					"id": 1479,
+					"p": 0.994412,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 13,
+					"p": 0.869093,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_122]",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 50485,
+					"p": 0.153162,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

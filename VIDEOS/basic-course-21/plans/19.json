@@ -1,0 +1,656 @@
+{
+  "id": "basic-19",
+  "episode": 19,
+  "title": "장소·시간·이유·방법을 연결하기",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "장소와 시간, 이유를 설명할 때는 관계부사를 쓸 수 있어요. 뒤 문장에서 어떤 정보가 비었는지 보세요.",
+      "screen": "장소 where / 시간 when / 이유 why",
+      "visual": "장소·시간·이유의 빈칸을 서로 다른 표식으로 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "장소와 시간, 이유를 설명할 때는 관계부사를 쓸 수 있어요. 뒤 문장에서 어떤 정보가 비었는지 보세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "웨어는 그곳에서라는 연결이에요. 장소 명사라도 뒤 동사의 주어나 목적어라면 위치나 댓을 써야 하죠.",
+      "screen": "where: 장소 정보 / which: 명사 자리",
+      "visual": "첫 예문의 we met 뒤 장소 빈칸과 명사 빈칸을 대조.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "웨어는 그곳에서라는 연결이에요. 장소 명사라도 뒤 동사의 주어나 목적어라면 위치나 댓을 써야 하죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "방법은 하우로 연결하거나 더 웨이로 표현해요. 표준 영어에서는 더 웨이 하우를 함께 쓰지 않아요.",
+      "screen": "how / the way / the way in which",
+      "visual": "방법 표현 세 경로를 나란히 두고 way how 결합 차단.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "방법은 하우로 연결하거나 더 웨이로 표현해요. 표준 영어에서는 더 웨이 하우를 함께 쓰지 않아요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "관계부사로 연결한 정보는 뒤에서 또 반복하지 마세요. 장소, 시간, 이유의 중복을 확인하세요.",
+      "screen": "연결한 부사 정보는 한 번만",
+      "visual": "where와 there, when과 then의 중복 연결선을 제거.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "관계부사로 연결한 정보는 뒤에서 또 반복하지 마세요. 장소, 시간, 이유의 중복을 확인하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "이곳은 우리가 처음 만난 카페예요.",
+      "en": "This is the cafe where we first met.",
+      "wrong": "This is the cafe where we first met there.",
+      "focus": [
+        "where",
+        "met"
+      ],
+      "note": "where가 만난 장소를 이미 연결하므로 there를 같은 장소 뜻으로 반복하지 않는다.",
+      "visual": "cafe와 met의 장소 빈칸 연결, there 중복 제거.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이곳은 우리가 처음 만난 카페예요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This is the cafe where we first met.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "where",
+            "actualStart": null
+          },
+          {
+            "text": "met",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "나는 우리가 처음 만난 날을 기억해요.",
+      "en": "I remember the day when we first met.",
+      "wrong": "I remember the day when we first met then.",
+      "focus": [
+        "when",
+        "met"
+      ],
+      "note": "when이 그날이라는 시간 정보를 연결하므로 같은 시간의 then을 중복하지 않는다.",
+      "visual": "day와 만남의 시간점 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 우리가 처음 만난 날을 기억해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I remember the day when we first met.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "when",
+            "actualStart": null
+          },
+          {
+            "text": "met",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "그것이 내가 일찍 떠난 이유예요.",
+      "en": "That is the reason why I left early.",
+      "wrong": "That is the reason why did I leave early.",
+      "focus": [
+        "why",
+        "left"
+      ],
+      "note": "이 관계절은 의문문이 아니므로 주어 I 뒤에 left를 두며 의문문 도치를 하지 않는다.",
+      "visual": "why 뒤 평서문 어순 I → left 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그것이 내가 일찍 떠난 이유예요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "That is the reason why I left early.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "why",
+            "actualStart": null
+          },
+          {
+            "text": "left",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "나는 그녀가 그 문제를 해결한 방식을 알아요.",
+      "en": "I know how she solved the problem.",
+      "wrong": "I know the way how she solved the problem.",
+      "focus": [
+        "how",
+        "solved"
+      ],
+      "note": "표준 영어에서는 how 앞에 the way를 함께 놓지 않는다. how 또는 the way를 선택한다.",
+      "visual": "how 경로와 the way 경로를 나누고 중복 경로 차단.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그녀가 그 문제를 해결한 방식을 알아요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I know how she solved the problem.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "how",
+            "actualStart": null
+          },
+          {
+            "text": "solved",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "나는 그녀가 그 문제를 해결한 방식이 마음에 들어요.",
+      "en": "I like the way she solved the problem.",
+      "wrong": "I like the way how she solved the problem.",
+      "focus": [
+        "the way",
+        "solved"
+      ],
+      "note": "the way 뒤에는 이처럼 바로 절을 붙일 수 있다. 표준형에서는 how를 덧붙이지 않는다.",
+      "visual": "the way 뒤 solved절을 직접 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그녀가 그 문제를 해결한 방식이 마음에 들어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I like the way she solved the problem.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "the way",
+            "actualStart": null
+          },
+          {
+            "text": "solved",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "나는 그가 일을 정리하는 방식이 감탄스러워요.",
+      "en": "I admire the way in which he organizes his work.",
+      "wrong": "I admire the way in how he organizes his work.",
+      "focus": [
+        "in which",
+        "organizes"
+      ],
+      "note": "the way와 전치사로 연결할 때는 in which이며 in how가 아니다.",
+      "visual": "way → in which → organizes 구조 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그가 일을 정리하는 방식이 감탄스러워요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I admire the way in which he organizes his work.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "in which",
+            "actualStart": null
+          },
+          {
+            "text": "organizes",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "그곳은 내가 가방을 두고 온 역이에요.",
+      "en": "That is the station where I left my bag.",
+      "wrong": "That is the station where I left my bag at.",
+      "focus": [
+        "where",
+        "left"
+      ],
+      "note": "where가 역에서라는 장소 관계를 담당하므로 이 구조에서는 at을 뒤에 남기지 않는다.",
+      "visual": "where의 장소 연결과 중복 at을 대비.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그곳은 내가 가방을 두고 온 역이에요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "That is the station where I left my bag.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "where",
+            "actualStart": null
+          },
+          {
+            "text": "left",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "지난달 문을 연 식당은 항상 붐벼요.",
+      "en": "The restaurant which opened last month is always busy.",
+      "wrong": "The restaurant where opened last month is always busy.",
+      "focus": [
+        "which",
+        "opened"
+      ],
+      "note": "opened의 주어가 필요한 자리이므로 which를 쓴다. where는 주어 역할을 할 수 없다.",
+      "visual": "restaurant → opened의 주어 빈칸 연결, 장소 칸과 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "지난달 문을 연 식당은 항상 붐벼요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The restaurant which opened last month is always busy.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "which",
+            "actualStart": null
+          },
+          {
+            "text": "opened",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "우리가 금요일에 방문한 박물관은 무료예요.",
+      "en": "The museum which we visited on Friday is free.",
+      "wrong": "The museum where we visited on Friday is free.",
+      "focus": [
+        "which",
+        "visited"
+      ],
+      "note": "visit은 여기서 방문 대상을 목적어로 요구한다. 장소 부사 where로 그 목적어를 채우지 않는다.",
+      "visual": "visited 뒤의 목적어 빈칸을 museum과 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리가 금요일에 방문한 박물관은 무료예요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The museum which we visited on Friday is free.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "which",
+            "actualStart": null
+          },
+          {
+            "text": "visited",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "그것이 모든 일이 바뀐 순간이었어요.",
+      "en": "That was the moment when everything changed.",
+      "wrong": "That was the moment when did everything change.",
+      "focus": [
+        "when",
+        "changed"
+      ],
+      "note": "시간 관계절은 everything changed라는 평서문 어순이다. did로 의문문 도치를 하지 않는다.",
+      "visual": "moment에서 시간선의 변화 지점 연결, 절 어순 유지.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그것이 모든 일이 바뀐 순간이었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "That was the moment when everything changed.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "when",
+            "actualStart": null
+          },
+          {
+            "text": "changed",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "관계절의 빈자리를 확인하고, 장소·시간·이유와 방법에 맞는 연결 표현을 고르세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "관계절의 빈자리를 확인하고, 장소·시간·이유와 방법에 맞는 연결 표현을 고르세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

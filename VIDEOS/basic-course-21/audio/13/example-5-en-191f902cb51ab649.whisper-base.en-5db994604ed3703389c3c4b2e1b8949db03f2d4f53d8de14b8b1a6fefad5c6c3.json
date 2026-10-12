@@ -1,0 +1,171 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,200"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2200
+			},
+			"text": " The police found the stolen bike yesterday",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998501,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 180
+					},
+					"id": 383,
+					"p": 0.897219,
+					"t_dtw": -1
+				},
+				{
+					"text": " police",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,440"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 440
+					},
+					"id": 1644,
+					"p": 0.986577,
+					"t_dtw": -1
+				},
+				{
+					"text": " found",
+					"timestamps": {
+						"from": "00:00:00,540",
+						"to": "00:00:00,840"
+					},
+					"offsets": {
+						"from": 540,
+						"to": 840
+					},
+					"id": 1043,
+					"p": 0.999502,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,840",
+						"to": "00:00:01,020"
+					},
+					"offsets": {
+						"from": 840,
+						"to": 1020
+					},
+					"id": 262,
+					"p": 0.962919,
+					"t_dtw": -1
+				},
+				{
+					"text": " stolen",
+					"timestamps": {
+						"from": "00:00:01,020",
+						"to": "00:00:01,380"
+					},
+					"offsets": {
+						"from": 1020,
+						"to": 1380
+					},
+					"id": 9909,
+					"p": 0.966649,
+					"t_dtw": -1
+				},
+				{
+					"text": " bike",
+					"timestamps": {
+						"from": "00:00:01,380",
+						"to": "00:00:01,620"
+					},
+					"offsets": {
+						"from": 1380,
+						"to": 1620
+					},
+					"id": 7161,
+					"p": 0.977672,
+					"t_dtw": -1
+				},
+				{
+					"text": " yesterday",
+					"timestamps": {
+						"from": "00:00:01,620",
+						"to": "00:00:02,170"
+					},
+					"offsets": {
+						"from": 1620,
+						"to": 2170
+					},
+					"id": 7415,
+					"p": 0.999407,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_110]",
+					"timestamps": {
+						"from": "00:00:02,200",
+						"to": "00:00:02,200"
+					},
+					"offsets": {
+						"from": 2200,
+						"to": 2200
+					},
+					"id": 50473,
+					"p": 0.158904,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

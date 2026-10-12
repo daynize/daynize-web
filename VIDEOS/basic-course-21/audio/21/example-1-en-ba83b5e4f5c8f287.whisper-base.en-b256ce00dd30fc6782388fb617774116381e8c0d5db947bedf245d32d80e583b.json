@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,440"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2440
+			},
+			"text": " I do like this song, despite your doubts.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998163,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,070"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 70
+					},
+					"id": 314,
+					"p": 0.920448,
+					"t_dtw": -1
+				},
+				{
+					"text": " do",
+					"timestamps": {
+						"from": "00:00:00,070",
+						"to": "00:00:00,200"
+					},
+					"offsets": {
+						"from": 70,
+						"to": 200
+					},
+					"id": 466,
+					"p": 0.959723,
+					"t_dtw": -1
+				},
+				{
+					"text": " like",
+					"timestamps": {
+						"from": "00:00:00,200",
+						"to": "00:00:00,490"
+					},
+					"offsets": {
+						"from": 200,
+						"to": 490
+					},
+					"id": 588,
+					"p": 0.996276,
+					"t_dtw": -1
+				},
+				{
+					"text": " this",
+					"timestamps": {
+						"from": "00:00:00,490",
+						"to": "00:00:00,690"
+					},
+					"offsets": {
+						"from": 490,
+						"to": 690
+					},
+					"id": 428,
+					"p": 0.994681,
+					"t_dtw": -1
+				},
+				{
+					"text": " song",
+					"timestamps": {
+						"from": "00:00:00,770",
+						"to": "00:00:01,050"
+					},
+					"offsets": {
+						"from": 770,
+						"to": 1050
+					},
+					"id": 3496,
+					"p": 0.997973,
+					"t_dtw": -1
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:01,050",
+						"to": "00:00:01,140"
+					},
+					"offsets": {
+						"from": 1050,
+						"to": 1140
+					},
+					"id": 11,
+					"p": 0.928332,
+					"t_dtw": -1
+				},
+				{
+					"text": " despite",
+					"timestamps": {
+						"from": "00:00:01,390",
+						"to": "00:00:01,690"
+					},
+					"offsets": {
+						"from": 1390,
+						"to": 1690
+					},
+					"id": 3805,
+					"p": 0.970329,
+					"t_dtw": -1
+				},
+				{
+					"text": " your",
+					"timestamps": {
+						"from": "00:00:01,690",
+						"to": "00:00:01,960"
+					},
+					"offsets": {
+						"from": 1690,
+						"to": 1960
+					},
+					"id": 534,
+					"p": 0.996576,
+					"t_dtw": -1
+				},
+				{
+					"text": " doubts",
+					"timestamps": {
+						"from": "00:00:01,990",
+						"to": "00:00:02,230"
+					},
+					"offsets": {
+						"from": 1990,
+						"to": 2230
+					},
+					"id": 17188,
+					"p": 0.999664,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 13,
+					"p": 0.790047,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_122]",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 50485,
+					"p": 0.133593,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

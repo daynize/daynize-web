@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,080"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2080
+			},
+			"text": " This book is interesting to young readers.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998471,
+					"t_dtw": -1
+				},
+				{
+					"text": " This",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,170"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 170
+					},
+					"id": 770,
+					"p": 0.907526,
+					"t_dtw": -1
+				},
+				{
+					"text": " book",
+					"timestamps": {
+						"from": "00:00:00,260",
+						"to": "00:00:00,350"
+					},
+					"offsets": {
+						"from": 260,
+						"to": 350
+					},
+					"id": 1492,
+					"p": 0.991155,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:00,430",
+						"to": "00:00:00,520"
+					},
+					"offsets": {
+						"from": 430,
+						"to": 520
+					},
+					"id": 318,
+					"p": 0.998601,
+					"t_dtw": -1
+				},
+				{
+					"text": " interesting",
+					"timestamps": {
+						"from": "00:00:00,520",
+						"to": "00:00:01,120"
+					},
+					"offsets": {
+						"from": 520,
+						"to": 1120
+					},
+					"id": 3499,
+					"p": 0.940621,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:01,120",
+						"to": "00:00:01,180"
+					},
+					"offsets": {
+						"from": 1120,
+						"to": 1180
+					},
+					"id": 284,
+					"p": 0.998555,
+					"t_dtw": -1
+				},
+				{
+					"text": " young",
+					"timestamps": {
+						"from": "00:00:01,250",
+						"to": "00:00:01,490"
+					},
+					"offsets": {
+						"from": 1250,
+						"to": 1490
+					},
+					"id": 1862,
+					"p": 0.981231,
+					"t_dtw": -1
+				},
+				{
+					"text": " readers",
+					"timestamps": {
+						"from": "00:00:01,490",
+						"to": "00:00:01,860"
+					},
+					"offsets": {
+						"from": 1490,
+						"to": 1860
+					},
+					"id": 7183,
+					"p": 0.9995,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,860",
+						"to": "00:00:01,970"
+					},
+					"offsets": {
+						"from": 1860,
+						"to": 1970
+					},
+					"id": 13,
+					"p": 0.931185,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_104]",
+					"timestamps": {
+						"from": "00:00:02,080",
+						"to": "00:00:02,080"
+					},
+					"offsets": {
+						"from": 2080,
+						"to": 2080
+					},
+					"id": 50467,
+					"p": 0.125372,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

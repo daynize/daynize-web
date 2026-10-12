@@ -1,0 +1,171 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,020"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2020
+			},
+			"text": " We decided to enjoy the sunny weather",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.999029,
+					"t_dtw": -1
+				},
+				{
+					"text": " We",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,130"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 130
+					},
+					"id": 775,
+					"p": 0.892484,
+					"t_dtw": -1
+				},
+				{
+					"text": " decided",
+					"timestamps": {
+						"from": "00:00:00,130",
+						"to": "00:00:00,580"
+					},
+					"offsets": {
+						"from": 130,
+						"to": 580
+					},
+					"id": 3066,
+					"p": 0.998397,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,580",
+						"to": "00:00:00,650"
+					},
+					"offsets": {
+						"from": 580,
+						"to": 650
+					},
+					"id": 284,
+					"p": 0.999767,
+					"t_dtw": -1
+				},
+				{
+					"text": " enjoy",
+					"timestamps": {
+						"from": "00:00:00,730",
+						"to": "00:00:01,030"
+					},
+					"offsets": {
+						"from": 730,
+						"to": 1030
+					},
+					"id": 2883,
+					"p": 0.998936,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,030",
+						"to": "00:00:01,220"
+					},
+					"offsets": {
+						"from": 1030,
+						"to": 1220
+					},
+					"id": 262,
+					"p": 0.998393,
+					"t_dtw": -1
+				},
+				{
+					"text": " sunny",
+					"timestamps": {
+						"from": "00:00:01,220",
+						"to": "00:00:01,540"
+					},
+					"offsets": {
+						"from": 1220,
+						"to": 1540
+					},
+					"id": 27737,
+					"p": 0.995461,
+					"t_dtw": -1
+				},
+				{
+					"text": " weather",
+					"timestamps": {
+						"from": "00:00:01,540",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 1540,
+						"to": 2000
+					},
+					"id": 6193,
+					"p": 0.99972,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_101]",
+					"timestamps": {
+						"from": "00:00:02,020",
+						"to": "00:00:02,020"
+					},
+					"offsets": {
+						"from": 2020,
+						"to": 2020
+					},
+					"id": 50464,
+					"p": 0.230736,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

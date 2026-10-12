@@ -1,0 +1,241 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:03,480"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 3480
+			},
+			"text": " An accident happened at the intersection, but nobody was injured.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998271,
+					"t_dtw": -1
+				},
+				{
+					"text": " An",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,120"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 120
+					},
+					"id": 1052,
+					"p": 0.722177,
+					"t_dtw": -1
+				},
+				{
+					"text": " accident",
+					"timestamps": {
+						"from": "00:00:00,120",
+						"to": "00:00:00,610"
+					},
+					"offsets": {
+						"from": 120,
+						"to": 610
+					},
+					"id": 5778,
+					"p": 0.997497,
+					"t_dtw": -1
+				},
+				{
+					"text": " happened",
+					"timestamps": {
+						"from": "00:00:00,690",
+						"to": "00:00:01,110"
+					},
+					"offsets": {
+						"from": 690,
+						"to": 1110
+					},
+					"id": 3022,
+					"p": 0.999384,
+					"t_dtw": -1
+				},
+				{
+					"text": " at",
+					"timestamps": {
+						"from": "00:00:01,200",
+						"to": "00:00:01,240"
+					},
+					"offsets": {
+						"from": 1200,
+						"to": 1240
+					},
+					"id": 379,
+					"p": 0.999693,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,240",
+						"to": "00:00:01,410"
+					},
+					"offsets": {
+						"from": 1240,
+						"to": 1410
+					},
+					"id": 262,
+					"p": 0.998523,
+					"t_dtw": -1
+				},
+				{
+					"text": " intersection",
+					"timestamps": {
+						"from": "00:00:01,410",
+						"to": "00:00:02,060"
+					},
+					"offsets": {
+						"from": 1410,
+						"to": 2060
+					},
+					"id": 16246,
+					"p": 0.996072,
+					"t_dtw": -1
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:02,320",
+						"to": "00:00:02,320"
+					},
+					"offsets": {
+						"from": 2320,
+						"to": 2320
+					},
+					"id": 11,
+					"p": 0.950175,
+					"t_dtw": -1
+				},
+				{
+					"text": " but",
+					"timestamps": {
+						"from": "00:00:02,320",
+						"to": "00:00:02,500"
+					},
+					"offsets": {
+						"from": 2320,
+						"to": 2500
+					},
+					"id": 475,
+					"p": 0.977706,
+					"t_dtw": -1
+				},
+				{
+					"text": " nobody",
+					"timestamps": {
+						"from": "00:00:02,500",
+						"to": "00:00:02,850"
+					},
+					"offsets": {
+						"from": 2500,
+						"to": 2850
+					},
+					"id": 8168,
+					"p": 0.998492,
+					"t_dtw": -1
+				},
+				{
+					"text": " was",
+					"timestamps": {
+						"from": "00:00:02,850",
+						"to": "00:00:02,990"
+					},
+					"offsets": {
+						"from": 2850,
+						"to": 2990
+					},
+					"id": 373,
+					"p": 0.998877,
+					"t_dtw": -1
+				},
+				{
+					"text": " injured",
+					"timestamps": {
+						"from": "00:00:03,030",
+						"to": "00:00:03,400"
+					},
+					"offsets": {
+						"from": 3030,
+						"to": 3400
+					},
+					"id": 6686,
+					"p": 0.998458,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:03,480",
+						"to": "00:00:03,480"
+					},
+					"offsets": {
+						"from": 3480,
+						"to": 3480
+					},
+					"id": 13,
+					"p": 0.917086,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_174]",
+					"timestamps": {
+						"from": "00:00:03,480",
+						"to": "00:00:03,480"
+					},
+					"offsets": {
+						"from": 3480,
+						"to": 3480
+					},
+					"id": 50537,
+					"p": 0.102243,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

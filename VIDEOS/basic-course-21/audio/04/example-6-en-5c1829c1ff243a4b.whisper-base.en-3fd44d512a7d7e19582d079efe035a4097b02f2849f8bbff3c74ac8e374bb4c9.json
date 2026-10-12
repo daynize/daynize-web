@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,180"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2180
+			},
+			"text": " This large window makes the kitchen bright.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998412,
+					"t_dtw": -1
+				},
+				{
+					"text": " This",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,130"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 130
+					},
+					"id": 770,
+					"p": 0.84393,
+					"t_dtw": -1
+				},
+				{
+					"text": " large",
+					"timestamps": {
+						"from": "00:00:00,220",
+						"to": "00:00:00,470"
+					},
+					"offsets": {
+						"from": 220,
+						"to": 470
+					},
+					"id": 1588,
+					"p": 0.990964,
+					"t_dtw": -1
+				},
+				{
+					"text": " window",
+					"timestamps": {
+						"from": "00:00:00,490",
+						"to": "00:00:00,820"
+					},
+					"offsets": {
+						"from": 490,
+						"to": 820
+					},
+					"id": 4324,
+					"p": 0.998285,
+					"t_dtw": -1
+				},
+				{
+					"text": " makes",
+					"timestamps": {
+						"from": "00:00:00,820",
+						"to": "00:00:01,090"
+					},
+					"offsets": {
+						"from": 820,
+						"to": 1090
+					},
+					"id": 1838,
+					"p": 0.997388,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,090",
+						"to": "00:00:01,130"
+					},
+					"offsets": {
+						"from": 1090,
+						"to": 1130
+					},
+					"id": 262,
+					"p": 0.998559,
+					"t_dtw": -1
+				},
+				{
+					"text": " kitchen",
+					"timestamps": {
+						"from": "00:00:01,300",
+						"to": "00:00:01,640"
+					},
+					"offsets": {
+						"from": 1300,
+						"to": 1640
+					},
+					"id": 9592,
+					"p": 0.993517,
+					"t_dtw": -1
+				},
+				{
+					"text": " bright",
+					"timestamps": {
+						"from": "00:00:01,640",
+						"to": "00:00:01,970"
+					},
+					"offsets": {
+						"from": 1640,
+						"to": 1970
+					},
+					"id": 6016,
+					"p": 0.962952,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,970",
+						"to": "00:00:02,130"
+					},
+					"offsets": {
+						"from": 1970,
+						"to": 2130
+					},
+					"id": 13,
+					"p": 0.873588,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_109]",
+					"timestamps": {
+						"from": "00:00:02,180",
+						"to": "00:00:02,180"
+					},
+					"offsets": {
+						"from": 2180,
+						"to": 2180
+					},
+					"id": 50472,
+					"p": 0.0644322,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

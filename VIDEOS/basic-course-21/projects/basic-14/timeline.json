@@ -1,0 +1,1240 @@
+{
+  "id": "basic-14",
+  "episode": 14,
+  "title": "감정을 일으키는 쪽과 느끼는 쪽",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 9.762107666666664,
+      "text": "흥미롭다는 말과 흥미를 느낀다는 말은 달라요. 감정을 일으키는 쪽과 느끼는 쪽을 먼저 나눠 보세요.",
+      "screen": "원인 → 감정을 느끼는 대상",
+      "visual": "책에서 독자로 향하는 감정 화살표.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "흥미롭다는 말과 흥미를 느낀다는 말은 달라요. 감정을 일으키는 쪽과 느끼는 쪽을 먼저 나눠 보세요.",
+          "actualStart": 0.2,
+          "actualEnd": 7.309887,
+          "rate": 185,
+          "cacheKey": "e9dd3b0016801575b9565d6383a1bf4ac24c24b52e50bda5a4de54af56a1926a",
+          "file": "audio/14/concept-1-ko-e9dd3b0016801575.wav",
+          "duration": 7.109887
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 9.762107666666664,
+      "end": 18.875734333333327,
+      "text": "책이 흥미를 일으키면 현재분사형을 써요. 내가 그 책에 관심을 느끼면 과거분사형을 쓰죠.",
+      "screen": "interesting / interested",
+      "visual": "첫 예문의 독자에 interested, 책 쪽에 interesting 표시.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "책이 흥미를 일으키면 현재분사형을 써요. 내가 그 책에 관심을 느끼면 과거분사형을 쓰죠.",
+          "actualStart": 9.962107666666663,
+          "actualEnd": 16.423513666666665,
+          "rate": 185,
+          "cacheKey": "08c93788413391d7fd6909d3dffb84b3759415e073eaea7cb0c95d98c16b2968",
+          "file": "audio/14/concept-2-ko-08c93788413391d7.wav",
+          "duration": 6.461406
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 18.875734333333327,
+      "end": 28.407047999999993,
+      "text": "지루함, 놀람, 혼란도 같은 방향으로 보세요. 끝모양보다 누가 감정을 느끼는지를 확인하는 거예요.",
+      "screen": "boring / bored · surprising / surprised · confusing / confused",
+      "visual": "각 쌍을 원인과 경험자 열에 정렬.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "지루함, 놀람, 혼란도 같은 방향으로 보세요. 끝모양보다 누가 감정을 느끼는지를 확인하는 거예요.",
+          "actualStart": 19.075734333333326,
+          "actualEnd": 25.954827333333327,
+          "rate": 185,
+          "cacheKey": "3095dfd73e67a465f36a7f42be88e89c18564d86222c349da57c88b9bcd7315a",
+          "file": "audio/14/concept-3-ko-3095dfd73e67a465.wav",
+          "duration": 6.879093
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 28.407047999999993,
+      "end": 37.87192166666666,
+      "text": "사람이라고 항상 과거분사형은 아니에요. 사람도 남을 지루하게 할 수 있으니, 뜻에 맞춰 고르세요.",
+      "screen": "사물·사람이 아니라 감정의 방향",
+      "visual": "사람 그림도 원인 열과 경험자 열 양쪽에 배치.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "사람이라고 항상 과거분사형은 아니에요. 사람도 남을 지루하게 할 수 있으니, 뜻에 맞춰 고르세요.",
+          "actualStart": 28.607047999999992,
+          "actualEnd": 35.41970099999999,
+          "rate": 185,
+          "cacheKey": "c819dc2d8b0135070488fcefdaa4a65959eb733f87a04927b9d3a07119a35f8a",
+          "file": "audio/14/concept-4-ko-c819dc2d8b013507.wav",
+          "duration": 6.812653
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 37.87192166666666,
+      "end": 45.194164333333326,
+      "ko": "나는 이 역사책에 관심이 있어요.",
+      "en": "I am interested in this history book.",
+      "wrong": "I am interesting in this history book.",
+      "focus": [
+        "interested",
+        "in"
+      ],
+      "note": "책에 관심을 느끼는 나는 interested in으로 표현한다. interesting은 흥미를 일으킨다는 뜻이다.",
+      "visual": "책 → 나 화살표에서 감정을 느끼는 나 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 이 역사책에 관심이 있어요.",
+          "actualStart": 38.07192166666666,
+          "actualEnd": 40.28820266666666,
+          "rate": 185,
+          "cacheKey": "2879825b1c9042c53317d48aa90c3eb86e7478562c6ea856063d7b66316fed69",
+          "file": "audio/14/example-1-ko-2879825b1c9042c5.wav",
+          "duration": 2.216281
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I am interested in this history book.",
+          "actualStart": 40.638202666666665,
+          "actualEnd": 42.491943666666664,
+          "rate": 155,
+          "cacheKey": "ea29ae4a668293ce7ba702efc73ff545371425cb3e6dea82a4b070e845a88772",
+          "file": "audio/14/example-1-en-ea29ae4a668293ce.wav",
+          "duration": 1.853741
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "interested",
+            "actualStart": 40.818202666666664,
+            "actualEnd": 41.39820266666666
+          },
+          {
+            "text": "in",
+            "actualStart": 41.40820266666667,
+            "actualEnd": 41.528202666666665
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "I",
+          "start": 40.64820266666666,
+          "end": 40.69820266666667
+        },
+        {
+          "text": "am",
+          "start": 40.69820266666667,
+          "end": 40.818202666666664
+        },
+        {
+          "text": "interested",
+          "start": 40.818202666666664,
+          "end": 41.39820266666666
+        },
+        {
+          "text": "in",
+          "start": 41.40820266666667,
+          "end": 41.528202666666665
+        },
+        {
+          "text": "this",
+          "start": 41.528202666666665,
+          "end": 41.65820266666667
+        },
+        {
+          "text": "history",
+          "start": 41.76820266666667,
+          "end": 42.12820266666667
+        },
+        {
+          "text": "book.",
+          "start": 42.178202666666664,
+          "end": 42.358202666666664
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 45.194164333333326,
+      "end": 53.147926999999996,
+      "ko": "그 학생들은 긴 회의 중에 지루해했어요.",
+      "en": "The students were bored during the long meeting.",
+      "wrong": "The students were boring during the long meeting.",
+      "focus": [
+        "were",
+        "bored"
+      ],
+      "note": "boring도 문법적으로 가능하지만 학생들이 남을 지루하게 했다는 뜻이다. 학생들이 느낀 지루함은 bored다.",
+      "visual": "학생들의 표정에 감정 표시, 원인인 회의와 분리.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 학생들은 긴 회의 중에 지루해했어요.",
+          "actualStart": 45.39416433333333,
+          "actualEnd": 48.005457333333325,
+          "rate": 185,
+          "cacheKey": "c01dd91308f943c5068b298ff932cc01bee1f78c5a07d79152b0fc6cbf6036f4",
+          "file": "audio/14/example-2-ko-c01dd91308f943c5.wav",
+          "duration": 2.611293
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The students were bored during the long meeting.",
+          "actualStart": 48.35545733333333,
+          "actualEnd": 50.44570633333333,
+          "rate": 155,
+          "cacheKey": "0f5132b4a199987f0b07259a9b005879dfb70514fb0e4e57c857463c74540bf8",
+          "file": "audio/14/example-2-en-0f5132b4a199987f.wav",
+          "duration": 2.090249
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were",
+            "actualStart": 48.95545733333333,
+            "actualEnd": 49.08545733333332
+          },
+          {
+            "text": "bored",
+            "actualStart": 49.13545733333333,
+            "actualEnd": 49.31545733333333
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "The",
+          "start": 48.365457333333325,
+          "end": 48.505457333333325
+        },
+        {
+          "text": "students",
+          "start": 48.58545733333332,
+          "end": 48.83545733333332
+        },
+        {
+          "text": "were",
+          "start": 48.95545733333333,
+          "end": 49.08545733333332
+        },
+        {
+          "text": "bored",
+          "start": 49.13545733333333,
+          "end": 49.31545733333333
+        },
+        {
+          "text": "during",
+          "start": 49.38545733333333,
+          "end": 49.63545733333333
+        },
+        {
+          "text": "the",
+          "start": 49.63545733333333,
+          "end": 49.785457333333326
+        },
+        {
+          "text": "long",
+          "start": 49.785457333333326,
+          "end": 49.98545733333333
+        },
+        {
+          "text": "meeting.",
+          "start": 49.98545733333333,
+          "end": 50.34545733333333
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 53.147926999999996,
+      "end": 60.678877666666665,
+      "ko": "나는 갑작스러운 소식에 놀랐어요.",
+      "en": "I was surprised by the sudden news.",
+      "wrong": "I was surprising by the sudden news.",
+      "focus": [
+        "surprised",
+        "by"
+      ],
+      "note": "소식 때문에 놀란 경험자는 surprised이며, surprising by로 수동 감정을 표현하지 않는다.",
+      "visual": "소식에서 나에게 전달되는 놀람 화살표.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 갑작스러운 소식에 놀랐어요.",
+          "actualStart": 53.347927,
+          "actualEnd": 55.726748,
+          "rate": 185,
+          "cacheKey": "6d456540857fc3e68fc26a332bb80bc2f0c6eb6cf2053310fa75d5db65149b1b",
+          "file": "audio/14/example-3-ko-6d456540857fc3e6.wav",
+          "duration": 2.378821
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I was surprised by the sudden news.",
+          "actualStart": 56.076748,
+          "actualEnd": 57.976657,
+          "rate": 155,
+          "cacheKey": "eec722a191ed1a424f4afd77addec96ef76a758fa3156f120f6bdf419a2f97a3",
+          "file": "audio/14/example-3-en-eec722a191ed1a42.wav",
+          "duration": 1.899909
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "surprised",
+            "actualStart": 56.316748000000004,
+            "actualEnd": 56.796748
+          },
+          {
+            "text": "by",
+            "actualStart": 56.916748000000005,
+            "actualEnd": 56.966748
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "I",
+          "start": 56.086748,
+          "end": 56.136748000000004
+        },
+        {
+          "text": "was",
+          "start": 56.136748000000004,
+          "end": 56.316748000000004
+        },
+        {
+          "text": "surprised",
+          "start": 56.316748000000004,
+          "end": 56.796748
+        },
+        {
+          "text": "by",
+          "start": 56.916748000000005,
+          "end": 56.966748
+        },
+        {
+          "text": "the",
+          "start": 56.966748,
+          "end": 57.146748
+        },
+        {
+          "text": "sudden",
+          "start": 57.146748,
+          "end": 57.496748000000004
+        },
+        {
+          "text": "news.",
+          "start": 57.496748000000004,
+          "end": 57.736748
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 60.678877666666665,
+      "end": 68.81372833333333,
+      "ko": "나는 지금 새 규칙 때문에 혼란스러워요.",
+      "en": "I am confused about the new rules now.",
+      "wrong": "I am confusing about the new rules now.",
+      "focus": [
+        "confused",
+        "about"
+      ],
+      "note": "규칙을 이해하지 못해 혼란을 느끼는 나는 confused about으로 표현한다.",
+      "visual": "규칙을 보는 사람의 혼란 상태 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 지금 새 규칙 때문에 혼란스러워요.",
+          "actualStart": 60.87887766666667,
+          "actualEnd": 63.687176666666666,
+          "rate": 185,
+          "cacheKey": "8359e4989bc8abe3555ca58adb848972d91414fc17221a3a6d221cebf1c4ac43",
+          "file": "audio/14/example-4-ko-8359e4989bc8abe3.wav",
+          "duration": 2.808299
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I am confused about the new rules now.",
+          "actualStart": 64.03717666666667,
+          "actualEnd": 66.11150766666667,
+          "rate": 155,
+          "cacheKey": "0e4a5a5269ba47b135c68a2eb95ac949679997a89f592353a797f09bdafd6230",
+          "file": "audio/14/example-4-en-0e4a5a5269ba47b1.wav",
+          "duration": 2.074331
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "confused",
+            "actualStart": 64.22717666666667,
+            "actualEnd": 64.75717666666667
+          },
+          {
+            "text": "about",
+            "actualStart": 64.75717666666667,
+            "actualEnd": 65.08717666666666
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "I",
+          "start": 64.04717666666667,
+          "end": 64.09717666666667
+        },
+        {
+          "text": "am",
+          "start": 64.09717666666667,
+          "end": 64.22717666666667
+        },
+        {
+          "text": "confused",
+          "start": 64.22717666666667,
+          "end": 64.75717666666667
+        },
+        {
+          "text": "about",
+          "start": 64.75717666666667,
+          "end": 65.08717666666666
+        },
+        {
+          "text": "the",
+          "start": 65.08717666666666,
+          "end": 65.28717666666667
+        },
+        {
+          "text": "new",
+          "start": 65.28717666666667,
+          "end": 65.48717666666667
+        },
+        {
+          "text": "rules",
+          "start": 65.48717666666667,
+          "end": 65.81717666666667
+        },
+        {
+          "text": "now.",
+          "start": 65.81717666666667,
+          "end": 66.01717666666667
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 68.81372833333333,
+      "end": 76.72876099999999,
+      "ko": "이 책은 어린 독자들에게 흥미로워요.",
+      "en": "This book is interesting to young readers.",
+      "wrong": "This book is interested to young readers.",
+      "focus": [
+        "interesting",
+        "readers"
+      ],
+      "note": "독자에게 흥미를 일으키는 책은 interesting이다. interested는 관심을 느끼는 쪽을 설명한다.",
+      "visual": "책에서 여러 독자로 퍼지는 관심 연결선.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이 책은 어린 독자들에게 흥미로워요.",
+          "actualStart": 69.01372833333333,
+          "actualEnd": 71.56515733333333,
+          "rate": 185,
+          "cacheKey": "bd2c685ebba5456a4f526bc853b58430d42d7a89846e691f5be4cd3e2cb4fa60",
+          "file": "audio/14/example-5-ko-bd2c685ebba5456a.wav",
+          "duration": 2.551429
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This book is interesting to young readers.",
+          "actualStart": 71.91515733333333,
+          "actualEnd": 74.02654033333333,
+          "rate": 155,
+          "cacheKey": "c5f8a203aa9934567c7d13a79cf7c7d4e973dc8721d473b70bf4779ce0eb3aff",
+          "file": "audio/14/example-5-en-c5f8a203aa993456.wav",
+          "duration": 2.111383
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "interesting",
+            "actualStart": 72.43515733333332,
+            "actualEnd": 73.03515733333333
+          },
+          {
+            "text": "readers",
+            "actualStart": 73.40515733333332,
+            "actualEnd": 73.77515733333333
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "This",
+          "start": 71.93515733333332,
+          "end": 72.08515733333333
+        },
+        {
+          "text": "book",
+          "start": 72.17515733333333,
+          "end": 72.26515733333332
+        },
+        {
+          "text": "is",
+          "start": 72.34515733333333,
+          "end": 72.43515733333332
+        },
+        {
+          "text": "interesting",
+          "start": 72.43515733333332,
+          "end": 73.03515733333333
+        },
+        {
+          "text": "to",
+          "start": 73.03515733333333,
+          "end": 73.09515733333333
+        },
+        {
+          "text": "young",
+          "start": 73.16515733333333,
+          "end": 73.40515733333332
+        },
+        {
+          "text": "readers.",
+          "start": 73.40515733333332,
+          "end": 73.77515733333333
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 76.72876099999999,
+      "end": 84.36674166666666,
+      "ko": "그 긴 회의는 모두에게 지루했어요.",
+      "en": "The long meeting was boring for everyone.",
+      "wrong": "The long meeting was bored for everyone.",
+      "focus": [
+        "was",
+        "boring"
+      ],
+      "note": "회의 자체가 지루함을 느낀 것이 아니라 참석자에게 지루함을 일으켰으므로 boring이다.",
+      "visual": "회의를 원인 칸에 놓고 참석자를 경험자 칸에 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 긴 회의는 모두에게 지루했어요.",
+          "actualStart": 76.928761,
+          "actualEnd": 79.27071099999999,
+          "rate": 185,
+          "cacheKey": "f18229ca2770811ab3834fee3e60d9bda8e7e2a0993913b5de15688b8fc979ff",
+          "file": "audio/14/example-6-ko-f18229ca2770811a.wav",
+          "duration": 2.34195
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The long meeting was boring for everyone.",
+          "actualStart": 79.62071099999999,
+          "actualEnd": 81.66452099999998,
+          "rate": 155,
+          "cacheKey": "26e2a6d1c4bc54cf70565d47cf0fc2f2af38a912043295fc11a80d47b1f7fa33",
+          "file": "audio/14/example-6-en-26e2a6d1c4bc54cf.wav",
+          "duration": 2.04381
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was",
+            "actualStart": 80.51071099999999,
+            "actualEnd": 80.59071099999998
+          },
+          {
+            "text": "boring",
+            "actualStart": 80.59071099999998,
+            "actualEnd": 80.93071099999999
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "The",
+          "start": 79.63071099999999,
+          "end": 79.79071099999999
+        },
+        {
+          "text": "long",
+          "start": 79.79071099999999,
+          "end": 80.02071099999999
+        },
+        {
+          "text": "meeting",
+          "start": 80.02071099999999,
+          "end": 80.39071099999998
+        },
+        {
+          "text": "was",
+          "start": 80.51071099999999,
+          "end": 80.59071099999998
+        },
+        {
+          "text": "boring",
+          "start": 80.59071099999998,
+          "end": 80.93071099999999
+        },
+        {
+          "text": "for",
+          "start": 80.93071099999999,
+          "end": 81.10071099999999
+        },
+        {
+          "text": "everyone.",
+          "start": 81.10071099999999,
+          "end": 81.57071099999999
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 84.36674166666666,
+      "end": 92.40866733333333,
+      "ko": "그 결과는 팀 전체에게 놀라웠어요.",
+      "en": "The result was surprising to the whole team.",
+      "wrong": "The result was surprised to the whole team.",
+      "focus": [
+        "surprising",
+        "team"
+      ],
+      "note": "결과가 팀을 놀라게 했다는 뜻은 surprising이며, 결과가 놀란다는 뜻이 아니다.",
+      "visual": "결과 → 팀의 놀람 방향 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 결과는 팀 전체에게 놀라웠어요.",
+          "actualStart": 84.56674166666666,
+          "actualEnd": 87.12687766666666,
+          "rate": 185,
+          "cacheKey": "53c9f663f282b9d21c6704e6e2bfb1a91100168954a053d3be9922890a6c2d69",
+          "file": "audio/14/example-7-ko-53c9f663f282b9d2.wav",
+          "duration": 2.560136
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The result was surprising to the whole team.",
+          "actualStart": 87.47687766666665,
+          "actualEnd": 89.70644666666665,
+          "rate": 155,
+          "cacheKey": "49352e350aa81ea54713b4f3b6f734315256ac845e313f6f40baadfcae2b1e34",
+          "file": "audio/14/example-7-en-49352e350aa81ea5.wav",
+          "duration": 2.229569
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "surprising",
+            "actualStart": 88.19687766666665,
+            "actualEnd": 88.80687766666665
+          },
+          {
+            "text": "team",
+            "actualStart": 89.40687766666666,
+            "actualEnd": 89.63687766666665
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "The",
+          "start": 87.48687766666666,
+          "end": 87.65687766666666
+        },
+        {
+          "text": "result",
+          "start": 87.65687766666666,
+          "end": 88.01687766666666
+        },
+        {
+          "text": "was",
+          "start": 88.01687766666666,
+          "end": 88.19687766666665
+        },
+        {
+          "text": "surprising",
+          "start": 88.19687766666665,
+          "end": 88.80687766666665
+        },
+        {
+          "text": "to",
+          "start": 88.80687766666665,
+          "end": 88.92687766666666
+        },
+        {
+          "text": "the",
+          "start": 88.92687766666666,
+          "end": 89.10687766666665
+        },
+        {
+          "text": "whole",
+          "start": 89.10687766666665,
+          "end": 89.40687766666666
+        },
+        {
+          "text": "team.",
+          "start": 89.40687766666666,
+          "end": 89.63687766666665
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 92.40866733333333,
+      "end": 101.977487,
+      "ko": "그는 듣는 사람들을 지루하게 만드는 지루한 발표자예요.",
+      "en": "He is a boring speaker who makes listeners sleepy.",
+      "wrong": "He is a bored speaker who makes listeners sleepy.",
+      "focus": [
+        "boring",
+        "makes"
+      ],
+      "note": "bored speaker도 가능하지만 발표자가 지루함을 느낀다는 뜻이다. 여기서는 청중을 지루하게 만드는 특성을 말한다.",
+      "visual": "발표자 → 졸린 청중 화살표로 감정 원인 강조.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그는 듣는 사람들을 지루하게 만드는 지루한 발표자예요.",
+          "actualStart": 92.60866733333333,
+          "actualEnd": 96.16617333333333,
+          "rate": 185,
+          "cacheKey": "b0c803b14c7b19fdcfff24dd97bf70ac74965386f30044e0817a060bd1e3c5ca",
+          "file": "audio/14/example-8-ko-b0c803b14c7b19fd.wav",
+          "duration": 3.557506
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He is a boring speaker who makes listeners sleepy.",
+          "actualStart": 96.51617333333333,
+          "actualEnd": 99.27526633333332,
+          "rate": 155,
+          "cacheKey": "e4c4e2857909d85b2b1d204fb050b7c6ecec17a3d0e52ddbb3fffc5f14b86c56",
+          "file": "audio/14/example-8-en-e4c4e2857909d85b.wav",
+          "duration": 2.759093
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "boring",
+            "actualStart": 96.83617333333332,
+            "actualEnd": 97.22617333333332
+          },
+          {
+            "text": "makes",
+            "actualStart": 97.87617333333333,
+            "actualEnd": 98.07617333333333
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "He",
+          "start": 96.55617333333333,
+          "end": 96.64617333333332
+        },
+        {
+          "text": "is",
+          "start": 96.64617333333332,
+          "end": 96.75617333333332
+        },
+        {
+          "text": "a",
+          "start": 96.79617333333333,
+          "end": 96.83617333333332
+        },
+        {
+          "text": "boring",
+          "start": 96.83617333333332,
+          "end": 97.22617333333332
+        },
+        {
+          "text": "speaker",
+          "start": 97.22617333333332,
+          "end": 97.68617333333333
+        },
+        {
+          "text": "who",
+          "start": 97.68617333333333,
+          "end": 97.87617333333333
+        },
+        {
+          "text": "makes",
+          "start": 97.87617333333333,
+          "end": 98.07617333333333
+        },
+        {
+          "text": "listeners",
+          "start": 98.21617333333333,
+          "end": 98.70617333333333
+        },
+        {
+          "text": "sleepy.",
+          "start": 98.81617333333332,
+          "end": 99.19617333333333
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 101.977487,
+      "end": 110.99478766666667,
+      "ko": "나는 설명을 듣고도 여전히 혼란스러웠어요.",
+      "en": "I was still confused after hearing the explanation.",
+      "wrong": "I was still confusing after hearing the explanation.",
+      "focus": [
+        "confused",
+        "hearing"
+      ],
+      "note": "confusing도 사람이 남을 혼란스럽게 한다는 뜻으로 가능하다. 설명을 듣고 내가 느낀 혼란에는 confused가 맞다.",
+      "visual": "설명을 받은 사람의 이해 상태를 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 설명을 듣고도 여전히 혼란스러웠어요.",
+          "actualStart": 102.177487,
+          "actualEnd": 105.090367,
+          "rate": 185,
+          "cacheKey": "e31ffc71af4df9f62fd0951d0b3c85a2411a47312302c32e63cc3226d0337b99",
+          "file": "audio/14/example-9-ko-e31ffc71af4df9f6.wav",
+          "duration": 2.91288
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I was still confused after hearing the explanation.",
+          "actualStart": 105.440367,
+          "actualEnd": 108.29256699999999,
+          "rate": 155,
+          "cacheKey": "7333c8303caf5868e81903bc5ffe02d1bec9254c408e3bdfda439b498baaab1b",
+          "file": "audio/14/example-9-en-7333c8303caf5868.wav",
+          "duration": 2.8522
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "confused",
+            "actualStart": 106.060367,
+            "actualEnd": 106.450367
+          },
+          {
+            "text": "hearing",
+            "actualStart": 106.840367,
+            "actualEnd": 107.29036699999999
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "I",
+          "start": 105.450367,
+          "end": 105.500367
+        },
+        {
+          "text": "was",
+          "start": 105.500367,
+          "end": 105.68036699999999
+        },
+        {
+          "text": "still",
+          "start": 105.690367,
+          "end": 105.980367
+        },
+        {
+          "text": "confused",
+          "start": 106.060367,
+          "end": 106.450367
+        },
+        {
+          "text": "after",
+          "start": 106.530367,
+          "end": 106.840367
+        },
+        {
+          "text": "hearing",
+          "start": 106.840367,
+          "end": 107.29036699999999
+        },
+        {
+          "text": "the",
+          "start": 107.29036699999999,
+          "end": 107.470367
+        },
+        {
+          "text": "explanation.",
+          "start": 107.530367,
+          "end": 108.21036699999999
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 110.99478766666667,
+      "end": 121.30791533333334,
+      "ko": "서로 모순되는 지시들이 새 직원들을 혼란스럽게 했어요.",
+      "en": "The conflicting instructions were confusing for the new staff.",
+      "wrong": "The conflicting instructions were confused for the new staff.",
+      "focus": [
+        "confusing",
+        "instructions"
+      ],
+      "note": "confused instructions는 뒤섞이거나 정리가 안 된 지시라는 뜻도 가능하다. 여기서는 직원에게 혼란을 일으킨 효과를 말한다.",
+      "visual": "충돌하는 지시 → 직원의 혼란으로 효과의 방향 표시.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "서로 모순되는 지시들이 새 직원들을 혼란스럽게 했어요.",
+          "actualStart": 111.19478766666667,
+          "actualEnd": 115.08571766666667,
+          "rate": 185,
+          "cacheKey": "548aa8d725940aff07277759e9d9509bd4e52e61eeecfe450acec07020def14b",
+          "file": "audio/14/example-10-ko-548aa8d725940aff.wav",
+          "duration": 3.89093
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The conflicting instructions were confusing for the new staff.",
+          "actualStart": 115.43571766666666,
+          "actualEnd": 118.60569466666666,
+          "rate": 155,
+          "cacheKey": "dba4ebe9a3e6823d7a6c9be3a351cfa7e7b397bae142adf3e02a859c7fc883c3",
+          "file": "audio/14/example-10-en-dba4ebe9a3e6823d.wav",
+          "duration": 3.169977
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "confusing",
+            "actualStart": 117.11571766666667,
+            "actualEnd": 117.60571766666666
+          },
+          {
+            "text": "instructions",
+            "actualStart": 116.22571766666667,
+            "actualEnd": 116.89571766666666
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "The",
+          "start": 115.44571766666667,
+          "end": 115.60571766666666
+        },
+        {
+          "text": "conflicting",
+          "start": 115.60571766666666,
+          "end": 116.22571766666667
+        },
+        {
+          "text": "instructions",
+          "start": 116.22571766666667,
+          "end": 116.89571766666666
+        },
+        {
+          "text": "were",
+          "start": 116.89571766666666,
+          "end": 117.11571766666667
+        },
+        {
+          "text": "confusing",
+          "start": 117.11571766666667,
+          "end": 117.60571766666666
+        },
+        {
+          "text": "for",
+          "start": 117.68571766666666,
+          "end": 117.76571766666666
+        },
+        {
+          "text": "the",
+          "start": 117.79571766666666,
+          "end": 117.95571766666666
+        },
+        {
+          "text": "new",
+          "start": 117.95571766666666,
+          "end": 118.07571766666666
+        },
+        {
+          "text": "staff.",
+          "start": 118.11571766666667,
+          "end": 118.43571766666666
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 121.30791533333334,
+      "end": 130,
+      "text": "감정을 일으키는 원인인지 감정을 느끼는 대상인지 구분해서 분사 형용사를 고르세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "감정을 일으키는 원인인지 감정을 느끼는 대상인지 구분해서 분사 형용사를 고르세요.",
+          "actualStart": 121.50791533333334,
+          "actualEnd": 127.54777933333334,
+          "rate": 185,
+          "cacheKey": "5a5b4090eab90b72eed3ad0cd4390e20140ecfe0a3c43d556236d5e4e732957f",
+          "file": "audio/14/summary-ko-5a5b4090eab90b72.wav",
+          "duration": 6.039864
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 102.21669000000003,
+  "sourceHash": "3c9a089bca0dbbd72b5c6ad656616bb352b7a5027576dcdbcef7c91a1a638e4e",
+  "audioFile": "audio/14/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "3c9a089bca0dbbd72b5c6ad656616bb352b7a5027576dcdbcef7c91a1a638e4e",
+    "clipHashes": {
+      "example-1-en": "7f6fadb6de34aac366ab80f764cbbaf7c627ec4d22dd5ef400a42e247497b22b",
+      "example-2-en": "7c96835a49cd556758ec9f8b579ddc59fbe2d6ca4b6b0ed554451b1732a9d654",
+      "example-3-en": "c4c18ecd9c57046178e9ef5b70aa896d3faa6c9a28bf0a8318c3e22717a73cfd",
+      "example-4-en": "397f72b0dae227ff18909a71b94ec444d23acba1292f512fffb9934fbba0e85d",
+      "example-5-en": "e01af7532ce702d949b5791062c0949a5f1deb7f985b710cbd89c249eb3831b6",
+      "example-6-en": "1682430006ea209c54e4b3a26aa11c5cfbb60a3c87cb4dea7175a2f0fcaa4f35",
+      "example-7-en": "69826a6782e67884e5d98518424ae3c627d139a74aacc4ad3280160896320704",
+      "example-8-en": "598e0f241cbcd4fabec6f15e06c090ed7270d07856ff5dae7c4bc1771ae1af84",
+      "example-9-en": "b46bc67a7c92e439373ab4828258bbc18fddbb8c93afada7dc1819ada1e164f9",
+      "example-10-en": "9531b1f480dd687fd5abef79b1d72806df5ce1a85a9462a61d7f98faacf2ce18"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

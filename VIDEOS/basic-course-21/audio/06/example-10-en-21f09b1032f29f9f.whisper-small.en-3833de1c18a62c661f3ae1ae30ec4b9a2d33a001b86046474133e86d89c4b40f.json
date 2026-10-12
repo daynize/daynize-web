@@ -1,0 +1,255 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,920"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2920
+			},
+			"text": " The news is not bad, so we can continue the meeting.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.99582,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,200"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 200
+					},
+					"id": 383,
+					"p": 0.595378,
+					"t_dtw": -1
+				},
+				{
+					"text": " news",
+					"timestamps": {
+						"from": "00:00:00,200",
+						"to": "00:00:00,430"
+					},
+					"offsets": {
+						"from": 200,
+						"to": 430
+					},
+					"id": 1705,
+					"p": 0.983464,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:00,480",
+						"to": "00:00:00,600"
+					},
+					"offsets": {
+						"from": 480,
+						"to": 600
+					},
+					"id": 318,
+					"p": 0.998155,
+					"t_dtw": -1
+				},
+				{
+					"text": " not",
+					"timestamps": {
+						"from": "00:00:00,600",
+						"to": "00:00:00,800"
+					},
+					"offsets": {
+						"from": 600,
+						"to": 800
+					},
+					"id": 407,
+					"p": 0.994981,
+					"t_dtw": -1
+				},
+				{
+					"text": " bad",
+					"timestamps": {
+						"from": "00:00:00,800",
+						"to": "00:00:01,000"
+					},
+					"offsets": {
+						"from": 800,
+						"to": 1000
+					},
+					"id": 2089,
+					"p": 0.99947,
+					"t_dtw": -1
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:01,000",
+						"to": "00:00:01,030"
+					},
+					"offsets": {
+						"from": 1000,
+						"to": 1030
+					},
+					"id": 11,
+					"p": 0.904965,
+					"t_dtw": -1
+				},
+				{
+					"text": " so",
+					"timestamps": {
+						"from": "00:00:01,260",
+						"to": "00:00:01,260"
+					},
+					"offsets": {
+						"from": 1260,
+						"to": 1260
+					},
+					"id": 523,
+					"p": 0.986487,
+					"t_dtw": -1
+				},
+				{
+					"text": " we",
+					"timestamps": {
+						"from": "00:00:01,330",
+						"to": "00:00:01,380"
+					},
+					"offsets": {
+						"from": 1330,
+						"to": 1380
+					},
+					"id": 356,
+					"p": 0.998603,
+					"t_dtw": -1
+				},
+				{
+					"text": " can",
+					"timestamps": {
+						"from": "00:00:01,400",
+						"to": "00:00:01,590"
+					},
+					"offsets": {
+						"from": 1400,
+						"to": 1590
+					},
+					"id": 460,
+					"p": 0.998791,
+					"t_dtw": -1
+				},
+				{
+					"text": " continue",
+					"timestamps": {
+						"from": "00:00:01,590",
+						"to": "00:00:02,140"
+					},
+					"offsets": {
+						"from": 1590,
+						"to": 2140
+					},
+					"id": 2555,
+					"p": 0.996961,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:02,140",
+						"to": "00:00:02,340"
+					},
+					"offsets": {
+						"from": 2140,
+						"to": 2340
+					},
+					"id": 262,
+					"p": 0.996067,
+					"t_dtw": -1
+				},
+				{
+					"text": " meeting",
+					"timestamps": {
+						"from": "00:00:02,340",
+						"to": "00:00:02,880"
+					},
+					"offsets": {
+						"from": 2340,
+						"to": 2880
+					},
+					"id": 3249,
+					"p": 0.997501,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,920",
+						"to": "00:00:02,920"
+					},
+					"offsets": {
+						"from": 2920,
+						"to": 2920
+					},
+					"id": 13,
+					"p": 0.787471,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_146]",
+					"timestamps": {
+						"from": "00:00:02,920",
+						"to": "00:00:02,920"
+					},
+					"offsets": {
+						"from": 2920,
+						"to": 2920
+					},
+					"id": 50509,
+					"p": 0.134089,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

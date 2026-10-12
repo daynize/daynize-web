@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,400"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2400
+			},
+			"text": " We do not have much time before our appointment.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998324,
+					"t_dtw": -1
+				},
+				{
+					"text": " We",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,120"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 120
+					},
+					"id": 775,
+					"p": 0.766139,
+					"t_dtw": -1
+				},
+				{
+					"text": " do",
+					"timestamps": {
+						"from": "00:00:00,120",
+						"to": "00:00:00,240"
+					},
+					"offsets": {
+						"from": 120,
+						"to": 240
+					},
+					"id": 466,
+					"p": 0.995258,
+					"t_dtw": -1
+				},
+				{
+					"text": " not",
+					"timestamps": {
+						"from": "00:00:00,240",
+						"to": "00:00:00,420"
+					},
+					"offsets": {
+						"from": 240,
+						"to": 420
+					},
+					"id": 407,
+					"p": 0.999213,
+					"t_dtw": -1
+				},
+				{
+					"text": " have",
+					"timestamps": {
+						"from": "00:00:00,420",
+						"to": "00:00:00,660"
+					},
+					"offsets": {
+						"from": 420,
+						"to": 660
+					},
+					"id": 423,
+					"p": 0.999714,
+					"t_dtw": -1
+				},
+				{
+					"text": " much",
+					"timestamps": {
+						"from": "00:00:00,660",
+						"to": "00:00:00,870"
+					},
+					"offsets": {
+						"from": 660,
+						"to": 870
+					},
+					"id": 881,
+					"p": 0.994016,
+					"t_dtw": -1
+				},
+				{
+					"text": " time",
+					"timestamps": {
+						"from": "00:00:00,920",
+						"to": "00:00:01,140"
+					},
+					"offsets": {
+						"from": 920,
+						"to": 1140
+					},
+					"id": 640,
+					"p": 0.999634,
+					"t_dtw": -1
+				},
+				{
+					"text": " before",
+					"timestamps": {
+						"from": "00:00:01,140",
+						"to": "00:00:01,500"
+					},
+					"offsets": {
+						"from": 1140,
+						"to": 1500
+					},
+					"id": 878,
+					"p": 0.999464,
+					"t_dtw": -1
+				},
+				{
+					"text": " our",
+					"timestamps": {
+						"from": "00:00:01,500",
+						"to": "00:00:01,680"
+					},
+					"offsets": {
+						"from": 1500,
+						"to": 1680
+					},
+					"id": 674,
+					"p": 0.99838,
+					"t_dtw": -1
+				},
+				{
+					"text": " appointment",
+					"timestamps": {
+						"from": "00:00:01,680",
+						"to": "00:00:02,370"
+					},
+					"offsets": {
+						"from": 1680,
+						"to": 2370
+					},
+					"id": 12557,
+					"p": 0.999211,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,400",
+						"to": "00:00:02,400"
+					},
+					"offsets": {
+						"from": 2400,
+						"to": 2400
+					},
+					"id": 13,
+					"p": 0.849849,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_120]",
+					"timestamps": {
+						"from": "00:00:02,400",
+						"to": "00:00:02,400"
+					},
+					"offsets": {
+						"from": 2400,
+						"to": 2400
+					},
+					"id": 50483,
+					"p": 0.184561,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

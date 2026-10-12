@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,280"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2280
+			},
+			"text": " You do not have to complete the form today.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998425,
+					"t_dtw": -1
+				},
+				{
+					"text": " You",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,190"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 190
+					},
+					"id": 921,
+					"p": 0.852848,
+					"t_dtw": -1
+				},
+				{
+					"text": " do",
+					"timestamps": {
+						"from": "00:00:00,190",
+						"to": "00:00:00,310"
+					},
+					"offsets": {
+						"from": 190,
+						"to": 310
+					},
+					"id": 466,
+					"p": 0.993775,
+					"t_dtw": -1
+				},
+				{
+					"text": " not",
+					"timestamps": {
+						"from": "00:00:00,310",
+						"to": "00:00:00,490"
+					},
+					"offsets": {
+						"from": 310,
+						"to": 490
+					},
+					"id": 407,
+					"p": 0.998788,
+					"t_dtw": -1
+				},
+				{
+					"text": " have",
+					"timestamps": {
+						"from": "00:00:00,490",
+						"to": "00:00:00,670"
+					},
+					"offsets": {
+						"from": 490,
+						"to": 670
+					},
+					"id": 423,
+					"p": 0.999287,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,750",
+						"to": "00:00:00,820"
+					},
+					"offsets": {
+						"from": 750,
+						"to": 820
+					},
+					"id": 284,
+					"p": 0.999287,
+					"t_dtw": -1
+				},
+				{
+					"text": " complete",
+					"timestamps": {
+						"from": "00:00:00,910",
+						"to": "00:00:01,380"
+					},
+					"offsets": {
+						"from": 910,
+						"to": 1380
+					},
+					"id": 1844,
+					"p": 0.998894,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,380",
+						"to": "00:00:01,570"
+					},
+					"offsets": {
+						"from": 1380,
+						"to": 1570
+					},
+					"id": 262,
+					"p": 0.999003,
+					"t_dtw": -1
+				},
+				{
+					"text": " form",
+					"timestamps": {
+						"from": "00:00:01,570",
+						"to": "00:00:01,820"
+					},
+					"offsets": {
+						"from": 1570,
+						"to": 1820
+					},
+					"id": 1296,
+					"p": 0.987187,
+					"t_dtw": -1
+				},
+				{
+					"text": " today",
+					"timestamps": {
+						"from": "00:00:01,820",
+						"to": "00:00:02,170"
+					},
+					"offsets": {
+						"from": 1820,
+						"to": 2170
+					},
+					"id": 1909,
+					"p": 0.998325,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,240",
+						"to": "00:00:02,240"
+					},
+					"offsets": {
+						"from": 2240,
+						"to": 2240
+					},
+					"id": 13,
+					"p": 0.904278,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_114]",
+					"timestamps": {
+						"from": "00:00:02,280",
+						"to": "00:00:02,280"
+					},
+					"offsets": {
+						"from": 2280,
+						"to": 2280
+					},
+					"id": 50477,
+					"p": 0.0542668,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

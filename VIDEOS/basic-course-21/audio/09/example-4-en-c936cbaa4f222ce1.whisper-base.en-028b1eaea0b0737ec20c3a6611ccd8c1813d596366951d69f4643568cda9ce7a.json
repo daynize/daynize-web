@@ -1,0 +1,227 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,460"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2460
+			},
+			"text": " My goal is to open a small bookshop someday.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.99865,
+					"t_dtw": -1
+				},
+				{
+					"text": " My",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,130"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 130
+					},
+					"id": 2011,
+					"p": 0.939429,
+					"t_dtw": -1
+				},
+				{
+					"text": " goal",
+					"timestamps": {
+						"from": "00:00:00,130",
+						"to": "00:00:00,400"
+					},
+					"offsets": {
+						"from": 130,
+						"to": 400
+					},
+					"id": 3061,
+					"p": 0.998997,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:00,400",
+						"to": "00:00:00,500"
+					},
+					"offsets": {
+						"from": 400,
+						"to": 500
+					},
+					"id": 318,
+					"p": 0.999603,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,600",
+						"to": "00:00:00,660"
+					},
+					"offsets": {
+						"from": 600,
+						"to": 660
+					},
+					"id": 284,
+					"p": 0.999287,
+					"t_dtw": -1
+				},
+				{
+					"text": " open",
+					"timestamps": {
+						"from": "00:00:00,660",
+						"to": "00:00:00,930"
+					},
+					"offsets": {
+						"from": 660,
+						"to": 930
+					},
+					"id": 1280,
+					"p": 0.998801,
+					"t_dtw": -1
+				},
+				{
+					"text": " a",
+					"timestamps": {
+						"from": "00:00:00,930",
+						"to": "00:00:01,000"
+					},
+					"offsets": {
+						"from": 930,
+						"to": 1000
+					},
+					"id": 257,
+					"p": 0.998435,
+					"t_dtw": -1
+				},
+				{
+					"text": " small",
+					"timestamps": {
+						"from": "00:00:01,000",
+						"to": "00:00:01,340"
+					},
+					"offsets": {
+						"from": 1000,
+						"to": 1340
+					},
+					"id": 1402,
+					"p": 0.993807,
+					"t_dtw": -1
+				},
+				{
+					"text": " book",
+					"timestamps": {
+						"from": "00:00:01,340",
+						"to": "00:00:01,610"
+					},
+					"offsets": {
+						"from": 1340,
+						"to": 1610
+					},
+					"id": 1492,
+					"p": 0.955715,
+					"t_dtw": -1
+				},
+				{
+					"text": "shop",
+					"timestamps": {
+						"from": "00:00:01,610",
+						"to": "00:00:01,880"
+					},
+					"offsets": {
+						"from": 1610,
+						"to": 1880
+					},
+					"id": 24643,
+					"p": 0.971692,
+					"t_dtw": -1
+				},
+				{
+					"text": " someday",
+					"timestamps": {
+						"from": "00:00:01,880",
+						"to": "00:00:02,410"
+					},
+					"offsets": {
+						"from": 1880,
+						"to": 2410
+					},
+					"id": 25580,
+					"p": 0.870746,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,460",
+						"to": "00:00:02,460"
+					},
+					"offsets": {
+						"from": 2460,
+						"to": 2460
+					},
+					"id": 13,
+					"p": 0.532609,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_123]",
+					"timestamps": {
+						"from": "00:00:02,460",
+						"to": "00:00:02,460"
+					},
+					"offsets": {
+						"from": 2460,
+						"to": 2460
+					},
+					"id": 50486,
+					"p": 0.110164,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

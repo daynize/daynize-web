@@ -1,0 +1,171 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,600"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1600
+			},
+			"text": " This bag is lighter than yours.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.994962,
+					"t_dtw": -1
+				},
+				{
+					"text": " This",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,170"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 170
+					},
+					"id": 770,
+					"p": 0.805564,
+					"t_dtw": -1
+				},
+				{
+					"text": " bag",
+					"timestamps": {
+						"from": "00:00:00,260",
+						"to": "00:00:00,440"
+					},
+					"offsets": {
+						"from": 260,
+						"to": 440
+					},
+					"id": 6131,
+					"p": 0.993091,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:00,460",
+						"to": "00:00:00,560"
+					},
+					"offsets": {
+						"from": 460,
+						"to": 560
+					},
+					"id": 318,
+					"p": 0.998982,
+					"t_dtw": -1
+				},
+				{
+					"text": " lighter",
+					"timestamps": {
+						"from": "00:00:00,560",
+						"to": "00:00:01,000"
+					},
+					"offsets": {
+						"from": 560,
+						"to": 1000
+					},
+					"id": 14871,
+					"p": 0.983704,
+					"t_dtw": -1
+				},
+				{
+					"text": " than",
+					"timestamps": {
+						"from": "00:00:01,000",
+						"to": "00:00:01,250"
+					},
+					"offsets": {
+						"from": 1000,
+						"to": 1250
+					},
+					"id": 621,
+					"p": 0.997368,
+					"t_dtw": -1
+				},
+				{
+					"text": " yours",
+					"timestamps": {
+						"from": "00:00:01,250",
+						"to": "00:00:01,440"
+					},
+					"offsets": {
+						"from": 1250,
+						"to": 1440
+					},
+					"id": 12431,
+					"p": 0.997059,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,600",
+						"to": "00:00:01,600"
+					},
+					"offsets": {
+						"from": 1600,
+						"to": 1600
+					},
+					"id": 13,
+					"p": 0.799549,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_80]",
+					"timestamps": {
+						"from": "00:00:01,600",
+						"to": "00:00:01,600"
+					},
+					"offsets": {
+						"from": 1600,
+						"to": 1600
+					},
+					"id": 50443,
+					"p": 0.16547,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

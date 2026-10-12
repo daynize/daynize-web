@@ -1,0 +1,171 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,660"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1660
+			},
+			"text": " I opened the door after lunch.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.996071,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.967126,
+					"t_dtw": -1
+				},
+				{
+					"text": " opened",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,430"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 430
+					},
+					"id": 4721,
+					"p": 0.922032,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,460",
+						"to": "00:00:00,660"
+					},
+					"offsets": {
+						"from": 460,
+						"to": 660
+					},
+					"id": 262,
+					"p": 0.998706,
+					"t_dtw": -1
+				},
+				{
+					"text": " door",
+					"timestamps": {
+						"from": "00:00:00,660",
+						"to": "00:00:00,930"
+					},
+					"offsets": {
+						"from": 660,
+						"to": 930
+					},
+					"id": 3420,
+					"p": 0.998525,
+					"t_dtw": -1
+				},
+				{
+					"text": " after",
+					"timestamps": {
+						"from": "00:00:00,930",
+						"to": "00:00:01,270"
+					},
+					"offsets": {
+						"from": 930,
+						"to": 1270
+					},
+					"id": 706,
+					"p": 0.999251,
+					"t_dtw": -1
+				},
+				{
+					"text": " lunch",
+					"timestamps": {
+						"from": "00:00:01,270",
+						"to": "00:00:01,550"
+					},
+					"offsets": {
+						"from": 1270,
+						"to": 1550
+					},
+					"id": 9965,
+					"p": 0.780437,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,650",
+						"to": "00:00:01,650"
+					},
+					"offsets": {
+						"from": 1650,
+						"to": 1650
+					},
+					"id": 13,
+					"p": 0.886402,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_83]",
+					"timestamps": {
+						"from": "00:00:01,660",
+						"to": "00:00:01,660"
+					},
+					"offsets": {
+						"from": 1660,
+						"to": 1660
+					},
+					"id": 50446,
+					"p": 0.110186,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

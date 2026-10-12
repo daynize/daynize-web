@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,320"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2320
+			},
+			"text": " the fallen leaves lay motionless on the ground.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998216,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,080"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 80
+					},
+					"id": 262,
+					"p": 0.587014,
+					"t_dtw": -1
+				},
+				{
+					"text": " fallen",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,520"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 520
+					},
+					"id": 9292,
+					"p": 0.902515,
+					"t_dtw": -1
+				},
+				{
+					"text": " leaves",
+					"timestamps": {
+						"from": "00:00:00,520",
+						"to": "00:00:00,870"
+					},
+					"offsets": {
+						"from": 520,
+						"to": 870
+					},
+					"id": 5667,
+					"p": 0.995031,
+					"t_dtw": -1
+				},
+				{
+					"text": " lay",
+					"timestamps": {
+						"from": "00:00:00,870",
+						"to": "00:00:01,040"
+					},
+					"offsets": {
+						"from": 870,
+						"to": 1040
+					},
+					"id": 3830,
+					"p": 0.987772,
+					"t_dtw": -1
+				},
+				{
+					"text": " motion",
+					"timestamps": {
+						"from": "00:00:01,040",
+						"to": "00:00:01,390"
+					},
+					"offsets": {
+						"from": 1040,
+						"to": 1390
+					},
+					"id": 6268,
+					"p": 0.993189,
+					"t_dtw": -1
+				},
+				{
+					"text": "less",
+					"timestamps": {
+						"from": "00:00:01,390",
+						"to": "00:00:01,620"
+					},
+					"offsets": {
+						"from": 1390,
+						"to": 1620
+					},
+					"id": 1203,
+					"p": 0.998141,
+					"t_dtw": -1
+				},
+				{
+					"text": " on",
+					"timestamps": {
+						"from": "00:00:01,620",
+						"to": "00:00:01,730"
+					},
+					"offsets": {
+						"from": 1620,
+						"to": 1730
+					},
+					"id": 319,
+					"p": 0.999264,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,730",
+						"to": "00:00:01,850"
+					},
+					"offsets": {
+						"from": 1730,
+						"to": 1850
+					},
+					"id": 262,
+					"p": 0.99822,
+					"t_dtw": -1
+				},
+				{
+					"text": " ground",
+					"timestamps": {
+						"from": "00:00:01,920",
+						"to": "00:00:02,280"
+					},
+					"offsets": {
+						"from": 1920,
+						"to": 2280
+					},
+					"id": 2323,
+					"p": 0.999493,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,280",
+						"to": "00:00:02,290"
+					},
+					"offsets": {
+						"from": 2280,
+						"to": 2290
+					},
+					"id": 13,
+					"p": 0.554834,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_116]",
+					"timestamps": {
+						"from": "00:00:02,320",
+						"to": "00:00:02,320"
+					},
+					"offsets": {
+						"from": 2320,
+						"to": 2320
+					},
+					"id": 50479,
+					"p": 0.105575,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

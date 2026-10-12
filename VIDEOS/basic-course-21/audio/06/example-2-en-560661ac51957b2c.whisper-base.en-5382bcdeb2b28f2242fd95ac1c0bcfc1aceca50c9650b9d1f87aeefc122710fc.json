@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:03,080"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 3080
+			},
+			"text": " She gave me two useful pieces of advice.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997612,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,030",
+						"to": "00:00:00,210"
+					},
+					"offsets": {
+						"from": 30,
+						"to": 210
+					},
+					"id": 1375,
+					"p": 0.899657,
+					"t_dtw": -1
+				},
+				{
+					"text": " gave",
+					"timestamps": {
+						"from": "00:00:00,270",
+						"to": "00:00:00,540"
+					},
+					"offsets": {
+						"from": 270,
+						"to": 540
+					},
+					"id": 2921,
+					"p": 0.998039,
+					"t_dtw": -1
+				},
+				{
+					"text": " me",
+					"timestamps": {
+						"from": "00:00:00,540",
+						"to": "00:00:00,690"
+					},
+					"offsets": {
+						"from": 540,
+						"to": 690
+					},
+					"id": 502,
+					"p": 0.998081,
+					"t_dtw": -1
+				},
+				{
+					"text": " two",
+					"timestamps": {
+						"from": "00:00:00,740",
+						"to": "00:00:00,920"
+					},
+					"offsets": {
+						"from": 740,
+						"to": 920
+					},
+					"id": 734,
+					"p": 0.96272,
+					"t_dtw": -1
+				},
+				{
+					"text": " useful",
+					"timestamps": {
+						"from": "00:00:00,920",
+						"to": "00:00:01,320"
+					},
+					"offsets": {
+						"from": 920,
+						"to": 1320
+					},
+					"id": 4465,
+					"p": 0.996058,
+					"t_dtw": -1
+				},
+				{
+					"text": " pieces",
+					"timestamps": {
+						"from": "00:00:01,430",
+						"to": "00:00:01,860"
+					},
+					"offsets": {
+						"from": 1430,
+						"to": 1860
+					},
+					"id": 5207,
+					"p": 0.996164,
+					"t_dtw": -1
+				},
+				{
+					"text": " of",
+					"timestamps": {
+						"from": "00:00:01,860",
+						"to": "00:00:02,010"
+					},
+					"offsets": {
+						"from": 1860,
+						"to": 2010
+					},
+					"id": 286,
+					"p": 0.9993,
+					"t_dtw": -1
+				},
+				{
+					"text": " advice",
+					"timestamps": {
+						"from": "00:00:02,010",
+						"to": "00:00:02,350"
+					},
+					"offsets": {
+						"from": 2010,
+						"to": 2350
+					},
+					"id": 5608,
+					"p": 0.963731,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,520",
+						"to": "00:00:02,520"
+					},
+					"offsets": {
+						"from": 2520,
+						"to": 2520
+					},
+					"id": 13,
+					"p": 0.8984,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_154]",
+					"timestamps": {
+						"from": "00:00:03,080",
+						"to": "00:00:03,080"
+					},
+					"offsets": {
+						"from": 3080,
+						"to": 3080
+					},
+					"id": 50517,
+					"p": 0.00899319,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

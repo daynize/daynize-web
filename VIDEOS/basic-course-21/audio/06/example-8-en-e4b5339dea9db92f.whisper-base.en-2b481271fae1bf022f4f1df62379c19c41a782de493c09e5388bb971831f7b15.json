@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,640"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2640
+			},
+			"text": " The new equipment has already arrived at the office.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998432,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 180
+					},
+					"id": 383,
+					"p": 0.548743,
+					"t_dtw": -1
+				},
+				{
+					"text": " new",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,350"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 350
+					},
+					"id": 649,
+					"p": 0.997149,
+					"t_dtw": -1
+				},
+				{
+					"text": " equipment",
+					"timestamps": {
+						"from": "00:00:00,470",
+						"to": "00:00:00,900"
+					},
+					"offsets": {
+						"from": 470,
+						"to": 900
+					},
+					"id": 5112,
+					"p": 0.998702,
+					"t_dtw": -1
+				},
+				{
+					"text": " has",
+					"timestamps": {
+						"from": "00:00:00,900",
+						"to": "00:00:01,080"
+					},
+					"offsets": {
+						"from": 900,
+						"to": 1080
+					},
+					"id": 468,
+					"p": 0.997402,
+					"t_dtw": -1
+				},
+				{
+					"text": " already",
+					"timestamps": {
+						"from": "00:00:01,080",
+						"to": "00:00:01,500"
+					},
+					"offsets": {
+						"from": 1080,
+						"to": 1500
+					},
+					"id": 1541,
+					"p": 0.995687,
+					"t_dtw": -1
+				},
+				{
+					"text": " arrived",
+					"timestamps": {
+						"from": "00:00:01,500",
+						"to": "00:00:01,920"
+					},
+					"offsets": {
+						"from": 1500,
+						"to": 1920
+					},
+					"id": 5284,
+					"p": 0.999319,
+					"t_dtw": -1
+				},
+				{
+					"text": " at",
+					"timestamps": {
+						"from": "00:00:01,920",
+						"to": "00:00:02,040"
+					},
+					"offsets": {
+						"from": 1920,
+						"to": 2040
+					},
+					"id": 379,
+					"p": 0.999661,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:02,040",
+						"to": "00:00:02,220"
+					},
+					"offsets": {
+						"from": 2040,
+						"to": 2220
+					},
+					"id": 262,
+					"p": 0.997495,
+					"t_dtw": -1
+				},
+				{
+					"text": " office",
+					"timestamps": {
+						"from": "00:00:02,220",
+						"to": "00:00:02,510"
+					},
+					"offsets": {
+						"from": 2220,
+						"to": 2510
+					},
+					"id": 2607,
+					"p": 0.9953,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,610",
+						"to": "00:00:02,630"
+					},
+					"offsets": {
+						"from": 2610,
+						"to": 2630
+					},
+					"id": 13,
+					"p": 0.94748,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_132]",
+					"timestamps": {
+						"from": "00:00:02,640",
+						"to": "00:00:02,640"
+					},
+					"offsets": {
+						"from": 2640,
+						"to": 2640
+					},
+					"id": 50495,
+					"p": 0.197761,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

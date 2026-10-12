@@ -1,0 +1,171 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,020"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2020
+			},
+			"text": " The rising sun lit the eastern sky",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998049,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,210"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 210
+					},
+					"id": 383,
+					"p": 0.787082,
+					"t_dtw": -1
+				},
+				{
+					"text": " rising",
+					"timestamps": {
+						"from": "00:00:00,210",
+						"to": "00:00:00,640"
+					},
+					"offsets": {
+						"from": 210,
+						"to": 640
+					},
+					"id": 7396,
+					"p": 0.548108,
+					"t_dtw": -1
+				},
+				{
+					"text": " sun",
+					"timestamps": {
+						"from": "00:00:00,640",
+						"to": "00:00:00,850"
+					},
+					"offsets": {
+						"from": 640,
+						"to": 850
+					},
+					"id": 4252,
+					"p": 0.931839,
+					"t_dtw": -1
+				},
+				{
+					"text": " lit",
+					"timestamps": {
+						"from": "00:00:00,850",
+						"to": "00:00:01,060"
+					},
+					"offsets": {
+						"from": 850,
+						"to": 1060
+					},
+					"id": 6578,
+					"p": 0.951618,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,060",
+						"to": "00:00:01,270"
+					},
+					"offsets": {
+						"from": 1060,
+						"to": 1270
+					},
+					"id": 262,
+					"p": 0.995674,
+					"t_dtw": -1
+				},
+				{
+					"text": " eastern",
+					"timestamps": {
+						"from": "00:00:01,270",
+						"to": "00:00:01,770"
+					},
+					"offsets": {
+						"from": 1270,
+						"to": 1770
+					},
+					"id": 10183,
+					"p": 0.924306,
+					"t_dtw": -1
+				},
+				{
+					"text": " sky",
+					"timestamps": {
+						"from": "00:00:01,770",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 1770,
+						"to": 2000
+					},
+					"id": 6766,
+					"p": 0.999165,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_101]",
+					"timestamps": {
+						"from": "00:00:02,020",
+						"to": "00:00:02,020"
+					},
+					"offsets": {
+						"from": 2020,
+						"to": 2020
+					},
+					"id": 50464,
+					"p": 0.26343,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

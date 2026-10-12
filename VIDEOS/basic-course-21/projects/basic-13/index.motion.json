@@ -1,0 +1,19 @@
+{
+  "duration": 130,
+  "assertions": [
+    {
+      "kind": "keepsMoving",
+      "withinSelector": "#root",
+      "maxStaticSec": 10.558772933333334
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "#summary .summary-lines",
+      "bySec": 122.13818906666671
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": ".progress-rail"
+    }
+  ]
+}

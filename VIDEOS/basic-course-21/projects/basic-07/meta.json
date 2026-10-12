@@ -1,0 +1,14 @@
+{
+  "id": "basic-07",
+  "episode": 7,
+  "title": "과거의 일이 지금과 이어질 때",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "92d920735c73bd901a14c811e922a00b34587c236afbd3cfea7e5e73286c3de7",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

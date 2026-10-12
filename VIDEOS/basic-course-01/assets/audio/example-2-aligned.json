@@ -1,0 +1,157 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,180"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1180
+			},
+			"text": " We waited for the bus.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.996822,
+					"t_dtw": -1
+				},
+				{
+					"text": " We",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,130"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 130
+					},
+					"id": 775,
+					"p": 0.874958,
+					"t_dtw": -1
+				},
+				{
+					"text": " waited",
+					"timestamps": {
+						"from": "00:00:00,130",
+						"to": "00:00:00,450"
+					},
+					"offsets": {
+						"from": 130,
+						"to": 450
+					},
+					"id": 13488,
+					"p": 0.995038,
+					"t_dtw": -1
+				},
+				{
+					"text": " for",
+					"timestamps": {
+						"from": "00:00:00,550",
+						"to": "00:00:00,740"
+					},
+					"offsets": {
+						"from": 550,
+						"to": 740
+					},
+					"id": 329,
+					"p": 0.999481,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,740",
+						"to": "00:00:00,940"
+					},
+					"offsets": {
+						"from": 740,
+						"to": 940
+					},
+					"id": 262,
+					"p": 0.991546,
+					"t_dtw": -1
+				},
+				{
+					"text": " bus",
+					"timestamps": {
+						"from": "00:00:00,940",
+						"to": "00:00:01,050"
+					},
+					"offsets": {
+						"from": 940,
+						"to": 1050
+					},
+					"id": 1323,
+					"p": 0.989262,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,180",
+						"to": "00:00:01,180"
+					},
+					"offsets": {
+						"from": 1180,
+						"to": 1180
+					},
+					"id": 13,
+					"p": 0.899005,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_59]",
+					"timestamps": {
+						"from": "00:00:01,180",
+						"to": "00:00:01,180"
+					},
+					"offsets": {
+						"from": 1180,
+						"to": 1180
+					},
+					"id": 50422,
+					"p": 0.0502925,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "basic-14",
+  "episode": 14,
+  "title": "감정을 일으키는 쪽과 느끼는 쪽",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "3c9a089bca0dbbd72b5c6ad656616bb352b7a5027576dcdbcef7c91a1a638e4e",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

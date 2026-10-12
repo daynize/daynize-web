@@ -1,0 +1,241 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:03,000"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 3000
+			},
+			"text": " She wants to learn another language when she has free time.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998382,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 180
+					},
+					"id": 1375,
+					"p": 0.947918,
+					"t_dtw": -1
+				},
+				{
+					"text": " wants",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,400"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 400
+					},
+					"id": 3382,
+					"p": 0.998392,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,540",
+						"to": "00:00:00,600"
+					},
+					"offsets": {
+						"from": 540,
+						"to": 600
+					},
+					"id": 284,
+					"p": 0.999828,
+					"t_dtw": -1
+				},
+				{
+					"text": " learn",
+					"timestamps": {
+						"from": "00:00:00,600",
+						"to": "00:00:00,900"
+					},
+					"offsets": {
+						"from": 600,
+						"to": 900
+					},
+					"id": 2193,
+					"p": 0.999514,
+					"t_dtw": -1
+				},
+				{
+					"text": " another",
+					"timestamps": {
+						"from": "00:00:00,900",
+						"to": "00:00:01,330"
+					},
+					"offsets": {
+						"from": 900,
+						"to": 1330
+					},
+					"id": 1194,
+					"p": 0.994171,
+					"t_dtw": -1
+				},
+				{
+					"text": " language",
+					"timestamps": {
+						"from": "00:00:01,330",
+						"to": "00:00:01,820"
+					},
+					"offsets": {
+						"from": 1330,
+						"to": 1820
+					},
+					"id": 3303,
+					"p": 0.999729,
+					"t_dtw": -1
+				},
+				{
+					"text": " when",
+					"timestamps": {
+						"from": "00:00:01,820",
+						"to": "00:00:02,060"
+					},
+					"offsets": {
+						"from": 1820,
+						"to": 2060
+					},
+					"id": 618,
+					"p": 0.999127,
+					"t_dtw": -1
+				},
+				{
+					"text": " she",
+					"timestamps": {
+						"from": "00:00:02,060",
+						"to": "00:00:02,220"
+					},
+					"offsets": {
+						"from": 2060,
+						"to": 2220
+					},
+					"id": 673,
+					"p": 0.999464,
+					"t_dtw": -1
+				},
+				{
+					"text": " has",
+					"timestamps": {
+						"from": "00:00:02,340",
+						"to": "00:00:02,420"
+					},
+					"offsets": {
+						"from": 2340,
+						"to": 2420
+					},
+					"id": 468,
+					"p": 0.999737,
+					"t_dtw": -1
+				},
+				{
+					"text": " free",
+					"timestamps": {
+						"from": "00:00:02,420",
+						"to": "00:00:02,660"
+					},
+					"offsets": {
+						"from": 2420,
+						"to": 2660
+					},
+					"id": 1479,
+					"p": 0.987311,
+					"t_dtw": -1
+				},
+				{
+					"text": " time",
+					"timestamps": {
+						"from": "00:00:02,660",
+						"to": "00:00:02,950"
+					},
+					"offsets": {
+						"from": 2660,
+						"to": 2950
+					},
+					"id": 640,
+					"p": 0.999537,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,950",
+						"to": "00:00:02,960"
+					},
+					"offsets": {
+						"from": 2950,
+						"to": 2960
+					},
+					"id": 13,
+					"p": 0.758109,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_150]",
+					"timestamps": {
+						"from": "00:00:03,000",
+						"to": "00:00:03,000"
+					},
+					"offsets": {
+						"from": 3000,
+						"to": 3000
+					},
+					"id": 50513,
+					"p": 0.123323,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

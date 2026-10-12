@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,620"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1620
+			},
+			"text": " What I need is a warm blanket.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997342,
+					"t_dtw": -1
+				},
+				{
+					"text": " What",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,240"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 240
+					},
+					"id": 1867,
+					"p": 0.578964,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,240",
+						"to": "00:00:00,300"
+					},
+					"offsets": {
+						"from": 240,
+						"to": 300
+					},
+					"id": 314,
+					"p": 0.976639,
+					"t_dtw": -1
+				},
+				{
+					"text": " need",
+					"timestamps": {
+						"from": "00:00:00,300",
+						"to": "00:00:00,530"
+					},
+					"offsets": {
+						"from": 300,
+						"to": 530
+					},
+					"id": 761,
+					"p": 0.979423,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:00,540",
+						"to": "00:00:00,640"
+					},
+					"offsets": {
+						"from": 540,
+						"to": 640
+					},
+					"id": 318,
+					"p": 0.993585,
+					"t_dtw": -1
+				},
+				{
+					"text": " a",
+					"timestamps": {
+						"from": "00:00:00,690",
+						"to": "00:00:00,720"
+					},
+					"offsets": {
+						"from": 690,
+						"to": 720
+					},
+					"id": 257,
+					"p": 0.994677,
+					"t_dtw": -1
+				},
+				{
+					"text": " warm",
+					"timestamps": {
+						"from": "00:00:00,720",
+						"to": "00:00:00,960"
+					},
+					"offsets": {
+						"from": 720,
+						"to": 960
+					},
+					"id": 5814,
+					"p": 0.978002,
+					"t_dtw": -1
+				},
+				{
+					"text": " blanket",
+					"timestamps": {
+						"from": "00:00:00,960",
+						"to": "00:00:01,350"
+					},
+					"offsets": {
+						"from": 960,
+						"to": 1350
+					},
+					"id": 18447,
+					"p": 0.998205,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,400",
+						"to": "00:00:01,570"
+					},
+					"offsets": {
+						"from": 1400,
+						"to": 1570
+					},
+					"id": 13,
+					"p": 0.871623,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_81]",
+					"timestamps": {
+						"from": "00:00:01,620",
+						"to": "00:00:01,620"
+					},
+					"offsets": {
+						"from": 1620,
+						"to": 1620
+					},
+					"id": 50444,
+					"p": 0.0241163,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,656 @@
+{
+  "id": "basic-06",
+  "episode": 6,
+  "title": "정보 두 개를 영어로 세는 법",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "영어에서는 하나씩 세는 명사와 양으로 다루는 명사가 달라요. 정보나 조언은 보통 양으로 다루죠.",
+      "screen": "books / information / advice",
+      "visual": "책은 개별 상자로, 정보와 조언은 분리되지 않은 묶음 영역으로 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "영어에서는 하나씩 세는 명사와 양으로 다루는 명사가 달라요. 정보나 조언은 보통 양으로 다루죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "양으로 다루는 명사는 복수 표시를 바로 붙이지 않아요. 몇 개인지 말하려면 조각이나 컵 같은 단위를 써요.",
+      "screen": "two pieces of advice / two cups of coffee",
+      "visual": "advice 묶음을 pieces 두 칸으로 세고 coffee는 컵 두 개로 계량.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "양으로 다루는 명사는 복수 표시를 바로 붙이지 않아요. 몇 개인지 말하려면 조각이나 컵 같은 단위를 써요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "많은지 물을 때 세는 명사는 매니, 양으로 다루면 머치를 써요. 일상 평서문에서는 어 랏 오브도 자연스러워요.",
+      "screen": "many books / much information / a lot of",
+      "visual": "개수 눈금과 양 눈금을 분리하고 many·much를 해당 눈금에 연결.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "많은지 물을 때 세는 명사는 매니, 양으로 다루면 머치를 써요. 일상 평서문에서는 어 랏 오브도 자연스러워요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "동사도 주어의 수에 맞춰요. 정보 자체는 단수로 받지만, 정보 두 조각을 주어로 쓰면 단위가 복수예요.",
+      "screen": "The information is ... / Two pieces are ...",
+      "visual": "information → is, pieces → are 연결선을 그어 of 뒤 명사와 일치 주체 구분.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "동사도 주어의 수에 맞춰요. 정보 자체는 단수로 받지만, 정보 두 조각을 주어로 쓰면 단위가 복수예요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "이 정보는 우리 여행에 도움이 돼요.",
+      "en": "This information is useful for our trip.",
+      "wrong": "This information are useful for our trip.",
+      "focus": [
+        "information",
+        "is"
+      ],
+      "note": "일반적인 불가산 명사 information은 여기서 단수 동사 is를 받는다.",
+      "visual": "information 하나의 묶음과 is를 같은 색으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이 정보는 우리 여행에 도움이 돼요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This information is useful for our trip.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "information",
+            "actualStart": null
+          },
+          {
+            "text": "is",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "그녀는 나에게 유용한 조언 두 가지를 해 줬어요.",
+      "en": "She gave me two useful pieces of advice.",
+      "wrong": "She gave me two useful advices.",
+      "focus": [
+        "pieces",
+        "advice"
+      ],
+      "note": "advice에 s를 붙이지 않고 pieces of advice로 단위를 센다.",
+      "visual": "advice 영역 위에 pieces 두 개를 놓고 s 직접 부착 오류 비교.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀는 나에게 유용한 조언 두 가지를 해 줬어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She gave me two useful pieces of advice.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "pieces",
+            "actualStart": null
+          },
+          {
+            "text": "advice",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "너는 집에 책이 많이 있니?",
+      "en": "Do you have many books at home?",
+      "wrong": "Do you have much books at home?",
+      "focus": [
+        "many",
+        "books"
+      ],
+      "note": "books는 가산 복수이므로 개수를 묻는 many를 쓴다.",
+      "visual": "책 여러 권에 번호를 붙이고 many 개수 눈금 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "너는 집에 책이 많이 있니?",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Do you have many books at home?",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "many",
+            "actualStart": null
+          },
+          {
+            "text": "books",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "이 작은 방에는 가구가 많이 없어요.",
+      "en": "There is not much furniture in this small room.",
+      "wrong": "There is not many furniture in this small room.",
+      "focus": [
+        "much",
+        "furniture"
+      ],
+      "note": "furniture는 이 용법에서 불가산이며 much와 단수 is를 쓴다.",
+      "visual": "방 속 가구들을 furniture 전체 묶음으로 표시하고 much 양 막대 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이 작은 방에는 가구가 많이 없어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "There is not much furniture in this small room.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "much",
+            "actualStart": null
+          },
+          {
+            "text": "furniture",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "빵 한 조각이 아직 접시에 남아 있어요.",
+      "en": "One slice of bread is still on the plate.",
+      "wrong": "One slice of bread are still on the plate.",
+      "focus": [
+        "One slice",
+        "is"
+      ],
+      "note": "주어의 중심은 단수 slice이므로 is를 쓴다.",
+      "visual": "한 조각을 테두리로 묶고 slice에서 is로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "빵 한 조각이 아직 접시에 남아 있어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "One slice of bread is still on the plate.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "One slice",
+            "actualStart": null
+          },
+          {
+            "text": "is",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "내 책상에는 커피 두 잔이 있어요.",
+      "en": "Two cups of coffee are on my desk.",
+      "wrong": "Two cups of coffee is on my desk.",
+      "focus": [
+        "Two cups",
+        "are"
+      ],
+      "note": "coffee가 아니라 복수 단위 cups에 동사를 일치시킨다.",
+      "visual": "컵 두 개에서 are로 선을 긋고 coffee에는 내용물 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "내 책상에는 커피 두 잔이 있어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Two cups of coffee are on my desk.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "Two cups",
+            "actualStart": null
+          },
+          {
+            "text": "are",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "우리는 예약 전에 시간이 많이 남아 있지 않아요.",
+      "en": "We do not have much time before our appointment.",
+      "wrong": "We do not have many time before our appointment.",
+      "focus": [
+        "much",
+        "time"
+      ],
+      "note": "남아 있는 시간의 양은 불가산 time으로 말하므로 much가 맞다.",
+      "visual": "예약까지 남은 시간 막대에 much 표시, 횟수 times와 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 예약 전에 시간이 많이 남아 있지 않아요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We do not have much time before our appointment.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "much",
+            "actualStart": null
+          },
+          {
+            "text": "time",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "그 새 장비는 사무실에 이미 도착했어요.",
+      "en": "The new equipment has already arrived at the office.",
+      "wrong": "The new equipment have already arrived at the office.",
+      "focus": [
+        "equipment",
+        "has"
+      ],
+      "note": "equipment는 여러 장비를 가리켜도 이 용법에서 단수 has와 결합한다.",
+      "visual": "여러 장비를 equipment 한 묶음으로 감싸고 has 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 새 장비는 사무실에 이미 도착했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The new equipment has already arrived at the office.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "equipment",
+            "actualStart": null
+          },
+          {
+            "text": "has",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "그 두 가지 정보는 최신 자료가 아니에요.",
+      "en": "Those two pieces of information are not up to date.",
+      "wrong": "Those two pieces of information is not up to date.",
+      "focus": [
+        "pieces of information",
+        "are"
+      ],
+      "note": "정보 자체는 불가산이지만 주어의 중심 pieces가 복수라서 are를 쓴다.",
+      "visual": "pieces에 두 개 표시를 붙이고 of information은 아래 보충 칸으로 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 두 가지 정보는 최신 자료가 아니에요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Those two pieces of information are not up to date.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "pieces of information",
+            "actualStart": null
+          },
+          {
+            "text": "are",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "소식이 나쁘지 않아서 우리는 회의를 계속할 수 있어요.",
+      "en": "The news is not bad, so we can continue the meeting.",
+      "wrong": "The news are not bad, so we can continue the meeting.",
+      "focus": [
+        "news",
+        "is"
+      ],
+      "note": "news는 s로 끝나지만 이 뜻에서 단수 동사를 받는다.",
+      "visual": "news의 끝 s와 단수 is를 대비하고 복수 표지로 오해하는 연결선 차단.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "소식이 나쁘지 않아서 우리는 회의를 계속할 수 있어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The news is not bad, so we can continue the meeting.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "news",
+            "actualStart": null
+          },
+          {
+            "text": "is",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "명사의 용법에 맞게 양이나 단위로 세고 동사는 주어의 중심 명사의 수에 맞추세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "명사의 용법에 맞게 양이나 단위로 세고 동사는 주어의 중심 명사의 수에 맞추세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1245 @@
+{
+  "id": "basic-18",
+  "episode": 18,
+  "title": "누구의 것인지, 무엇인지를 연결하기",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 9.425550733333333,
+      "text": "누군가의 이름이나 물건을 설명할 때는 소유 관계를 연결해요. 후즈 뒤에 그 소유 대상인 명사를 놓죠.",
+      "screen": "사람 / whose + 소유 대상 명사",
+      "visual": "첫 예문의 woman에서 son으로 소유 연결선 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "누군가의 이름이나 물건을 설명할 때는 소유 관계를 연결해요. 후즈 뒤에 그 소유 대상인 명사를 놓죠.",
+          "actualStart": 0.2,
+          "actualEnd": 6.862222,
+          "rate": 185,
+          "cacheKey": "8a5b4f8989160c029443022116d9ac70edf91aac3361b6d20e514da5acbd5123",
+          "file": "audio/18/concept-1-ko-8a5b4f8989160c02.wav",
+          "duration": 6.662222
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 9.425550733333333,
+      "end": 18.46819946666667,
+      "text": "후즈 자체가 누구의라는 연결을 맡아요. 뒤에 그의나 그녀의에 해당하는 소유어를 또 넣지 마세요.",
+      "screen": "whose son / whose her son은 중복",
+      "visual": "첫 예문의 son 앞에 소유 자리 하나만 남기는 도식.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "후즈 자체가 누구의라는 연결을 맡아요. 뒤에 그의나 그녀의에 해당하는 소유어를 또 넣지 마세요.",
+          "actualStart": 9.625550733333332,
+          "actualEnd": 15.904870733333333,
+          "rate": 185,
+          "cacheKey": "be0890555c3b02fca232eab8233df60bb8bd9ffc70190f6c3f06897671e84d25",
+          "file": "audio/18/concept-2-ko-be0890555c3b02fc.wav",
+          "duration": 6.27932
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 18.46819946666667,
+      "end": 28.649306200000005,
+      "text": "왓은 무엇이라는 내용을 통째로 묶을 수 있어요. 앞에서 명사를 받고 꾸미는 일반 관계대명사와 달라요.",
+      "screen": "what절 = ~하는 것",
+      "visual": "what절 전체를 명사 자리 크기의 묶음으로 표시.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "왓은 무엇이라는 내용을 통째로 묶을 수 있어요. 앞에서 명사를 받고 꾸미는 일반 관계대명사와 달라요.",
+          "actualStart": 18.668199466666668,
+          "actualEnd": 26.08597746666667,
+          "rate": 185,
+          "cacheKey": "9a3157d3614176d5802821ce0b7bf4158a6c4aaa09b8114fc68e0b45b7e8b3a9",
+          "file": "audio/18/concept-3-ko-9a3157d3614176d5.wav",
+          "duration": 7.417778
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 28.649306200000005,
+      "end": 39.00814493333334,
+      "text": "관계절의 왓 앞에는 같은 뜻의 선행사 명사를 두지 않아요. 명사를 남기려면 댓이나 위치로 연결하세요.",
+      "screen": "what / the thing that",
+      "visual": "명사 포함 경로와 선행사 따로 두는 경로를 분리.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "관계절의 왓 앞에는 같은 뜻의 선행사 명사를 두지 않아요. 명사를 남기려면 댓이나 위치로 연결하세요.",
+          "actualStart": 28.849306200000004,
+          "actualEnd": 36.444816200000005,
+          "rate": 185,
+          "cacheKey": "75b98dc0394c60ba1674dcd82bdcf8d09d165a9cbef6dec34c5c7fd05aa66665",
+          "file": "audio/18/concept-4-ko-75b98dc0394c60ba.wav",
+          "duration": 7.59551
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 39.00814493333334,
+      "end": 46.603627666666675,
+      "ko": "나는 아들이 여기서 일하는 여자를 알아요.",
+      "en": "I know the woman whose son works here.",
+      "wrong": "I know the woman whose her son works here.",
+      "focus": [
+        "whose",
+        "works"
+      ],
+      "note": "whose가 소유 관계를 이미 나타내므로 her를 중복해서 넣지 않는다.",
+      "visual": "woman → whose son 소유 연결과 works 주어 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 아들이 여기서 일하는 여자를 알아요.",
+          "actualStart": 39.208144933333344,
+          "actualEnd": 41.575219933333344,
+          "rate": 185,
+          "cacheKey": "8e398e0f8e53ce9c45ec7fb066b339d2b94a413071fff4a19fbd8e65a306e39d",
+          "file": "audio/18/example-1-ko-8e398e0f8e53ce9c.wav",
+          "duration": 2.367075
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I know the woman whose son works here.",
+          "actualStart": 41.925219933333345,
+          "actualEnd": 43.79029893333335,
+          "rate": 155,
+          "cacheKey": "d47674c041a44c9744db502bb276252d781a0168d58e827c30cb30c8564ef074",
+          "file": "audio/18/example-1-en-d47674c041a44c97.wav",
+          "duration": 1.865079
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "whose",
+            "actualStart": 42.715219933333344,
+            "actualEnd": 43.00521993333334
+          },
+          {
+            "text": "works",
+            "actualStart": 43.18521993333334,
+            "actualEnd": 43.30521993333335
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "I",
+          "start": 41.93521993333334,
+          "end": 41.98521993333335
+        },
+        {
+          "text": "know",
+          "start": 41.98521993333335,
+          "end": 42.22521993333334
+        },
+        {
+          "text": "the",
+          "start": 42.22521993333334,
+          "end": 42.40521993333334
+        },
+        {
+          "text": "woman",
+          "start": 42.40521993333334,
+          "end": 42.68521993333334
+        },
+        {
+          "text": "whose",
+          "start": 42.715219933333344,
+          "end": 43.00521993333334
+        },
+        {
+          "text": "son",
+          "start": 43.00521993333334,
+          "end": 43.18521993333334
+        },
+        {
+          "text": "works",
+          "start": 43.18521993333334,
+          "end": 43.30521993333335
+        },
+        {
+          "text": "here.",
+          "start": 43.48521993333335,
+          "end": 43.72521993333334
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 46.603627666666675,
+      "end": 54.10428040000001,
+      "ko": "지붕이 파란 그 집은 비어 있어요.",
+      "en": "The house whose roof is blue is empty.",
+      "wrong": "The house whose its roof is blue is empty.",
+      "focus": [
+        "whose roof",
+        "is blue"
+      ],
+      "note": "사물에도 whose를 쓸 수 있으며 its를 덧붙이지 않는다.",
+      "visual": "집과 지붕을 소유 선으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "지붕이 파란 그 집은 비어 있어요.",
+          "actualStart": 46.80362766666668,
+          "actualEnd": 49.02485166666668,
+          "rate": 185,
+          "cacheKey": "0eebf5744bd8909499ec821f1878b36de41fc5f7e9cdc85a613c7975458092f6",
+          "file": "audio/18/example-2-ko-0eebf5744bd89094.wav",
+          "duration": 2.221224
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The house whose roof is blue is empty.",
+          "actualStart": 49.37485166666668,
+          "actualEnd": 51.29095166666668,
+          "rate": 155,
+          "cacheKey": "cca863235dde3e4a19e5ba0b6971029883883cb1cf9fe3fc1ca512a209d1920c",
+          "file": "audio/18/example-2-en-cca863235dde3e4a.wav",
+          "duration": 1.9161
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "whose roof",
+            "actualStart": 49.86485166666668,
+            "actualEnd": 50.354851666666676
+          },
+          {
+            "text": "is blue",
+            "actualStart": 50.46485166666668,
+            "actualEnd": 50.79485166666668
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "The",
+          "start": 49.38485166666668,
+          "end": 49.55485166666668
+        },
+        {
+          "text": "house",
+          "start": 49.55485166666668,
+          "end": 49.86485166666668
+        },
+        {
+          "text": "whose",
+          "start": 49.86485166666668,
+          "end": 50.174851666666676
+        },
+        {
+          "text": "roof",
+          "start": 50.174851666666676,
+          "end": 50.354851666666676
+        },
+        {
+          "text": "is",
+          "start": 50.46485166666668,
+          "end": 50.54485166666668
+        },
+        {
+          "text": "blue",
+          "start": 50.54485166666668,
+          "end": 50.79485166666668
+        },
+        {
+          "text": "is",
+          "start": 50.79485166666668,
+          "end": 50.91485166666668
+        },
+        {
+          "text": "empty.",
+          "start": 50.91485166666668,
+          "end": 51.21485166666668
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54.10428040000001,
+      "end": 61.68157713333334,
+      "ko": "내가 필요한 것은 따뜻한 담요예요.",
+      "en": "What I need is a warm blanket.",
+      "wrong": "The thing what I need is a warm blanket.",
+      "focus": [
+        "What",
+        "need"
+      ],
+      "note": "이 what절은 필요한 것을 포함해 나타낸다. 앞에 the thing을 두려면 what 대신 that 등을 쓴다.",
+      "visual": "What I need 전체를 주어 칸에 묶고 중복 선행사 제거.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "내가 필요한 것은 따뜻한 담요예요.",
+          "actualStart": 54.30428040000001,
+          "actualEnd": 56.83239840000001,
+          "rate": 185,
+          "cacheKey": "158841dbc841f898f9d2574309f7416ca292d3220cddbada1a0336a6a1633aa0",
+          "file": "audio/18/example-3-ko-158841dbc841f898.wav",
+          "duration": 2.528118
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "What I need is a warm blanket.",
+          "actualStart": 57.18239840000001,
+          "actualEnd": 58.86824840000001,
+          "rate": 155,
+          "cacheKey": "2e513b41a9279a07160333f382bbe02a22eff0a1d1388a9628e3ae3120c3a913",
+          "file": "audio/18/example-3-en-2e513b41a9279a07.wav",
+          "duration": 1.68585
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "What",
+            "actualStart": 57.19239840000001,
+            "actualEnd": 57.42239840000001
+          },
+          {
+            "text": "need",
+            "actualStart": 57.48239840000001,
+            "actualEnd": 57.71239840000001
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "What",
+          "start": 57.19239840000001,
+          "end": 57.42239840000001
+        },
+        {
+          "text": "I",
+          "start": 57.42239840000001,
+          "end": 57.48239840000001
+        },
+        {
+          "text": "need",
+          "start": 57.48239840000001,
+          "end": 57.71239840000001
+        },
+        {
+          "text": "is",
+          "start": 57.72239840000001,
+          "end": 57.82239840000001
+        },
+        {
+          "text": "a",
+          "start": 57.87239840000001,
+          "end": 57.90239840000001
+        },
+        {
+          "text": "warm",
+          "start": 57.90239840000001,
+          "end": 58.14239840000001
+        },
+        {
+          "text": "blanket.",
+          "start": 58.14239840000001,
+          "end": 58.53239840000001
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61.68157713333334,
+      "end": 69.66046186666667,
+      "ko": "나는 딸이 상을 받은 남자를 만났어요.",
+      "en": "I met the man whose daughter won the prize.",
+      "wrong": "I met the man who's daughter won the prize.",
+      "focus": [
+        "whose",
+        "won"
+      ],
+      "note": "딸과 남자의 소유 관계에는 whose를 쓴다. who’s는 소유격이 아니다.",
+      "visual": "whose와 who’s를 소유 연결과 축약 표기로 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 딸이 상을 받은 남자를 만났어요.",
+          "actualStart": 61.881577133333344,
+          "actualEnd": 64.34153213333335,
+          "rate": 185,
+          "cacheKey": "3b70674298af8f8f547bcc7172fba1198265bbb7cd17ec6866c9bd9e8c17bc32",
+          "file": "audio/18/example-4-ko-3b70674298af8f8f.wav",
+          "duration": 2.459955
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I met the man whose daughter won the prize.",
+          "actualStart": 64.69153213333334,
+          "actualEnd": 66.84713313333334,
+          "rate": 155,
+          "cacheKey": "dbdfca5580797231766587d6e8a1d040023243be626423e80ab513166c78ab36",
+          "file": "audio/18/example-4-en-dbdfca5580797231.wav",
+          "duration": 2.155601
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "whose",
+            "actualStart": 65.25153213333334,
+            "actualEnd": 65.54153213333333
+          },
+          {
+            "text": "won",
+            "actualStart": 66.00153213333334,
+            "actualEnd": 66.17153213333334
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "I",
+          "start": 64.70153213333334,
+          "end": 64.74153213333334
+        },
+        {
+          "text": "met",
+          "start": 64.74153213333334,
+          "end": 64.91153213333334
+        },
+        {
+          "text": "the",
+          "start": 64.91153213333334,
+          "end": 65.08153213333334
+        },
+        {
+          "text": "man",
+          "start": 65.08153213333334,
+          "end": 65.25153213333334
+        },
+        {
+          "text": "whose",
+          "start": 65.25153213333334,
+          "end": 65.54153213333333
+        },
+        {
+          "text": "daughter",
+          "start": 65.54153213333333,
+          "end": 66.00153213333334
+        },
+        {
+          "text": "won",
+          "start": 66.00153213333334,
+          "end": 66.17153213333334
+        },
+        {
+          "text": "the",
+          "start": 66.17153213333334,
+          "end": 66.26153213333333
+        },
+        {
+          "text": "prize.",
+          "start": 66.38153213333334,
+          "end": 66.69153213333334
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69.66046186666667,
+      "end": 78.69063859999999,
+      "ko": "우리는 이름이 최근에 바뀐 회사를 방문했어요.",
+      "en": "We visited the company whose name recently changed.",
+      "wrong": "We visited the company whose recently changed.",
+      "focus": [
+        "whose name",
+        "changed"
+      ],
+      "note": "whose 뒤에는 소유 대상인 명사 name이 필요하다.",
+      "visual": "company → name 관계를 표시하고 whose 뒤 명사 칸 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 이름이 최근에 바뀐 회사를 방문했어요.",
+          "actualStart": 69.86046186666667,
+          "actualEnd": 72.75012186666667,
+          "rate": 185,
+          "cacheKey": "329bf60512b70e32e6f272b35c8aeefde228d2869ddee673597fb80637341a09",
+          "file": "audio/18/example-5-ko-329bf60512b70e32.wav",
+          "duration": 2.88966
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We visited the company whose name recently changed.",
+          "actualStart": 73.10012186666667,
+          "actualEnd": 75.87730986666666,
+          "rate": 155,
+          "cacheKey": "a11d30ba0c7c37c40e8efa353a855b41c7462fa69914b7fbec700e07bf086a2c",
+          "file": "audio/18/example-5-en-a11d30ba0c7c37c4.wav",
+          "duration": 2.777188
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "whose name",
+            "actualStart": 74.26012186666667,
+            "actualEnd": 74.81012186666666
+          },
+          {
+            "text": "changed",
+            "actualStart": 75.30012186666667,
+            "actualEnd": 75.74012186666667
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "We",
+          "start": 73.11012186666667,
+          "end": 73.22012186666667
+        },
+        {
+          "text": "visited",
+          "start": 73.22012186666667,
+          "end": 73.62012186666666
+        },
+        {
+          "text": "the",
+          "start": 73.65012186666667,
+          "end": 73.83012186666667
+        },
+        {
+          "text": "company",
+          "start": 73.83012186666667,
+          "end": 74.26012186666667
+        },
+        {
+          "text": "whose",
+          "start": 74.26012186666667,
+          "end": 74.57012186666667
+        },
+        {
+          "text": "name",
+          "start": 74.57012186666667,
+          "end": 74.81012186666666
+        },
+        {
+          "text": "recently",
+          "start": 74.81012186666666,
+          "end": 75.30012186666667
+        },
+        {
+          "text": "changed.",
+          "start": 75.30012186666667,
+          "end": 75.74012186666667
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 78.69063859999999,
+      "end": 86.07569133333331,
+      "ko": "나는 그녀가 말한 것을 기억해요.",
+      "en": "I remember what she said yesterday.",
+      "wrong": "I remember what she said it yesterday.",
+      "focus": [
+        "remember",
+        "what"
+      ],
+      "note": "what이 said의 목적어 자리와 연결되므로 it을 또 넣지 않는다.",
+      "visual": "what절을 remember 목적어로 묶고 said 뒤 중복 제거.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 그녀가 말한 것을 기억해요.",
+          "actualStart": 78.89063859999999,
+          "actualEnd": 81.08184059999999,
+          "rate": 185,
+          "cacheKey": "7c4a644d9be843796136ed03ef4a95c281765078f091c1ce23a16199c8dd1302",
+          "file": "audio/18/example-6-ko-7c4a644d9be84379.wav",
+          "duration": 2.191202
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I remember what she said yesterday.",
+          "actualStart": 81.43184059999999,
+          "actualEnd": 83.26236259999999,
+          "rate": 155,
+          "cacheKey": "352884816e9d82c10ef740c0a0693ef9a918743e1dd1aa50bb88f888d1847b9f",
+          "file": "audio/18/example-6-en-352884816e9d82c1.wav",
+          "duration": 1.830522
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "remember",
+            "actualStart": 81.49184059999999,
+            "actualEnd": 81.98184059999998
+          },
+          {
+            "text": "what",
+            "actualStart": 81.98184059999998,
+            "actualEnd": 82.2218406
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "I",
+          "start": 81.44184059999999,
+          "end": 81.49184059999999
+        },
+        {
+          "text": "remember",
+          "start": 81.49184059999999,
+          "end": 81.98184059999998
+        },
+        {
+          "text": "what",
+          "start": 81.98184059999998,
+          "end": 82.2218406
+        },
+        {
+          "text": "she",
+          "start": 82.2218406,
+          "end": 82.39184059999998
+        },
+        {
+          "text": "said",
+          "start": 82.4718406,
+          "end": 82.64184059999998
+        },
+        {
+          "text": "yesterday.",
+          "start": 82.64184059999998,
+          "end": 83.18184059999999
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 86.07569133333331,
+      "end": 93.85212706666664,
+      "ko": "우리가 주문한 것이 아직 도착하지 않았어요.",
+      "en": "What we ordered has not arrived yet.",
+      "wrong": "The items what we ordered have not arrived yet.",
+      "focus": [
+        "What",
+        "ordered"
+      ],
+      "note": "what절 앞에 선행사 items를 두지 않는다. items를 남기려면 that/which 또는 목적격 생략형을 쓴다.",
+      "visual": "주문한 것 전체와 items + 관계절의 두 경로를 나눔.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리가 주문한 것이 아직 도착하지 않았어요.",
+          "actualStart": 86.27569133333331,
+          "actualEnd": 88.80557833333332,
+          "rate": 185,
+          "cacheKey": "d6a3c7c800f8a83686861646485d5cae6bf17ecba5269db0c8ec348562039424",
+          "file": "audio/18/example-7-ko-d6a3c7c800f8a836.wav",
+          "duration": 2.529887
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "What we ordered has not arrived yet.",
+          "actualStart": 89.15557833333331,
+          "actualEnd": 91.0387983333333,
+          "rate": 155,
+          "cacheKey": "4b693eddb9d78d8280e2d8243fa0a6b812139802397b87c658c8844af015610d",
+          "file": "audio/18/example-7-en-4b693eddb9d78d82.wav",
+          "duration": 1.88322
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "What",
+            "actualStart": 89.16557833333331,
+            "actualEnd": 89.3955783333333
+          },
+          {
+            "text": "ordered",
+            "actualStart": 89.51557833333331,
+            "actualEnd": 89.94557833333332
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "What",
+          "start": 89.16557833333331,
+          "end": 89.3955783333333
+        },
+        {
+          "text": "we",
+          "start": 89.3955783333333,
+          "end": 89.51557833333331
+        },
+        {
+          "text": "ordered",
+          "start": 89.51557833333331,
+          "end": 89.94557833333332
+        },
+        {
+          "text": "has",
+          "start": 89.94557833333332,
+          "end": 90.12557833333331
+        },
+        {
+          "text": "not",
+          "start": 90.12557833333331,
+          "end": 90.30557833333332
+        },
+        {
+          "text": "arrived",
+          "start": 90.30557833333332,
+          "end": 90.73557833333331
+        },
+        {
+          "text": "yet.",
+          "start": 90.73557833333331,
+          "end": 90.91557833333331
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 93.85212706666664,
+      "end": 102.52194079999997,
+      "ko": "나를 놀라게 한 것은 그녀의 차분한 대답이었어요.",
+      "en": "What surprised me was her calm answer.",
+      "wrong": "What it surprised me was her calm answer.",
+      "focus": [
+        "What",
+        "surprised"
+      ],
+      "note": "what이 surprised의 주어 역할을 하므로 it을 다시 넣지 않는다.",
+      "visual": "what에서 surprised로 주어 화살표 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나를 놀라게 한 것은 그녀의 차분한 대답이었어요.",
+          "actualStart": 94.05212706666664,
+          "actualEnd": 97.39412206666664,
+          "rate": 185,
+          "cacheKey": "39ab4e76595bbd08eaeabfbf9ae60567e0b060530807c062f4d833e066448399",
+          "file": "audio/18/example-8-ko-39ab4e76595bbd08.wav",
+          "duration": 3.341995
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "What surprised me was her calm answer.",
+          "actualStart": 97.74412206666663,
+          "actualEnd": 99.70861206666663,
+          "rate": 155,
+          "cacheKey": "cf310d6989257b284ea3ef18cd5dd463a95669ccbc91ea6cfb92f5b4ea5d5533",
+          "file": "audio/18/example-8-en-cf310d6989257b28.wav",
+          "duration": 1.96449
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "What",
+            "actualStart": 97.75412206666664,
+            "actualEnd": 97.88412206666663
+          },
+          {
+            "text": "surprised",
+            "actualStart": 98.00412206666664,
+            "actualEnd": 98.53412206666664
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "What",
+          "start": 97.75412206666664,
+          "end": 97.88412206666663
+        },
+        {
+          "text": "surprised",
+          "start": 98.00412206666664,
+          "end": 98.53412206666664
+        },
+        {
+          "text": "me",
+          "start": 98.53412206666664,
+          "end": 98.65412206666663
+        },
+        {
+          "text": "was",
+          "start": 98.65412206666663,
+          "end": 98.83412206666664
+        },
+        {
+          "text": "her",
+          "start": 98.83412206666664,
+          "end": 99.01412206666663
+        },
+        {
+          "text": "calm",
+          "start": 99.01412206666663,
+          "end": 99.25412206666664
+        },
+        {
+          "text": "answer.",
+          "start": 99.25412206666664,
+          "end": 99.62412206666663
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 102.52194079999997,
+      "end": 111.95851253333329,
+      "ko": "우리는 창문이 폭풍 때 깨진 그 집을 수리했어요.",
+      "en": "We repaired the house whose windows broke during the storm.",
+      "wrong": "We repaired the house which windows broke during the storm.",
+      "focus": [
+        "whose windows",
+        "broke"
+      ],
+      "note": "그 집의 창문이라는 소유 관계에는 whose windows가 필요하며 which windows로 연결하지 않는다.",
+      "visual": "house → windows의 소유 관계와 broke 동작을 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 창문이 폭풍 때 깨진 그 집을 수리했어요.",
+          "actualStart": 102.72194079999997,
+          "actualEnd": 105.91355079999997,
+          "rate": 185,
+          "cacheKey": "abf82f19dfcbc2b7855c520c17ff920aba3f9246118dbc4918acb3a1b57b6e2c",
+          "file": "audio/18/example-9-ko-abf82f19dfcbc2b7.wav",
+          "duration": 3.19161
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We repaired the house whose windows broke during the storm.",
+          "actualStart": 106.26355079999996,
+          "actualEnd": 109.14518379999996,
+          "rate": 155,
+          "cacheKey": "6150ce92986aacf6512937f5cad2a989d6dd189d14d6d7910702f4356d7f7dfd",
+          "file": "audio/18/example-9-en-6150ce92986aacf6.wav",
+          "duration": 2.881633
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "whose windows",
+            "actualStart": 107.27355079999997,
+            "actualEnd": 107.84355079999996
+          },
+          {
+            "text": "broke",
+            "actualStart": 107.96355079999996,
+            "actualEnd": 108.13355079999997
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "We",
+          "start": 106.27355079999997,
+          "end": 106.37355079999996
+        },
+        {
+          "text": "repaired",
+          "start": 106.37355079999996,
+          "end": 106.82355079999996
+        },
+        {
+          "text": "the",
+          "start": 106.82355079999996,
+          "end": 106.98355079999996
+        },
+        {
+          "text": "house",
+          "start": 107.00355079999996,
+          "end": 107.15355079999996
+        },
+        {
+          "text": "whose",
+          "start": 107.27355079999997,
+          "end": 107.55355079999997
+        },
+        {
+          "text": "windows",
+          "start": 107.55355079999997,
+          "end": 107.84355079999996
+        },
+        {
+          "text": "broke",
+          "start": 107.96355079999996,
+          "end": 108.13355079999997
+        },
+        {
+          "text": "during",
+          "start": 108.24355079999997,
+          "end": 108.56355079999996
+        },
+        {
+          "text": "the",
+          "start": 108.56355079999996,
+          "end": 108.63355079999997
+        },
+        {
+          "text": "storm.",
+          "start": 108.73355079999996,
+          "end": 109.06355079999996
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 111.95851253333329,
+      "end": 121.00379126666662,
+      "ko": "나는 그가 약속한 것과 전달한 것을 비교했어요.",
+      "en": "I compared what he promised with what he delivered.",
+      "wrong": "I compared the things what he promised with what he delivered.",
+      "focus": [
+        "promised",
+        "delivered"
+      ],
+      "note": "각 what절이 비교 대상을 이룬다. 첫 what 앞에 같은 선행사 the things를 중복하지 않는다.",
+      "visual": "두 what절을 compared와 with 양쪽 비교 칸에 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 그가 약속한 것과 전달한 것을 비교했어요.",
+          "actualStart": 112.1585125333333,
+          "actualEnd": 115.44105253333329,
+          "rate": 185,
+          "cacheKey": "98b830d20bf855b52a8d866decc6bac76d28d1c68094dfb275920701a2a39a34",
+          "file": "audio/18/example-10-ko-98b830d20bf855b5.wav",
+          "duration": 3.28254
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I compared what he promised with what he delivered.",
+          "actualStart": 115.79105253333329,
+          "actualEnd": 118.19046253333329,
+          "rate": 155,
+          "cacheKey": "21249f78d6b6f36765e8a706728033fac0ad5548d59982ece8ce4be44ca95e5c",
+          "file": "audio/18/example-10-en-21249f78d6b6f367.wav",
+          "duration": 2.39941
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "promised",
+            "actualStart": 116.61105253333328,
+            "actualEnd": 117.05105253333329
+          },
+          {
+            "text": "delivered",
+            "actualStart": 117.60105253333329,
+            "actualEnd": 118.10105253333329
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "I",
+          "start": 115.80105253333329,
+          "end": 115.84105253333328
+        },
+        {
+          "text": "compared",
+          "start": 115.84105253333328,
+          "end": 116.28105253333328
+        },
+        {
+          "text": "what",
+          "start": 116.28105253333328,
+          "end": 116.50105253333328
+        },
+        {
+          "text": "he",
+          "start": 116.50105253333328,
+          "end": 116.61105253333328
+        },
+        {
+          "text": "promised",
+          "start": 116.61105253333328,
+          "end": 117.05105253333329
+        },
+        {
+          "text": "with",
+          "start": 117.05105253333329,
+          "end": 117.27105253333329
+        },
+        {
+          "text": "what",
+          "start": 117.35105253333329,
+          "end": 117.49105253333329
+        },
+        {
+          "text": "he",
+          "start": 117.49105253333329,
+          "end": 117.60105253333329
+        },
+        {
+          "text": "delivered.",
+          "start": 117.60105253333329,
+          "end": 118.10105253333329
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 121.00379126666662,
+      "end": 130,
+      "text": "후즈 뒤에는 소유 대상 명사를 두고, 관계절의 왓에는 선행사 명사를 따로 붙이지 마세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "후즈 뒤에는 소유 대상 명사를 두고, 관계절의 왓에는 선행사 명사를 따로 붙이지 마세요.",
+          "actualStart": 121.20379126666663,
+          "actualEnd": 127.43667126666662,
+          "rate": 185,
+          "cacheKey": "0638d6bf918a28ca9c1708abf40f6e7d45b5d688c3faa9377b021809d449e400",
+          "file": "audio/18/summary-ko-0638d6bf918a28ca.wav",
+          "duration": 6.23288
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 100.55006900000001,
+  "sourceHash": "c97f8988f6bb65423d3b84b1cf89e6d41d8e6b944b3b1195620c6a474eb6b0be",
+  "audioFile": "audio/18/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "c97f8988f6bb65423d3b84b1cf89e6d41d8e6b944b3b1195620c6a474eb6b0be",
+    "clipHashes": {
+      "example-1-en": "f2a2ecd73e859e8388084255625eef25d44f784b201b8ea9b0db6644844ef7c1",
+      "example-2-en": "ba51efe0ea8c38ab6ff92e14f215c5c04bd0f3cd6a71e9898d06d8255e3f0891",
+      "example-3-en": "c9596efc875873fc1b2f5d88bdf99842d4b28bdb961305f0390da519850cf67f",
+      "example-4-en": "b2c4eac72ece8dd128561f74b7f63104114dd5a2fec850651367b9120fb3196f",
+      "example-5-en": "8c5e14a4031746ec7806cbd284512fcef2fc76c100f3354edc9bb794ad8bef80",
+      "example-6-en": "64ff7a4f5f983fd7df4a8d1059777eb7a1fcbd94eb91164b40478456013929bc",
+      "example-7-en": "2c790eaaf2464fe60756f108d971e7679675f9da6a7920220adc19bf25a7c006",
+      "example-8-en": "81e642d7ec7a415de5a7620191b506ef0ac5d533f7ac6e58224b3de27a5bd760",
+      "example-9-en": "922c2b2198ebcdf935786ce199884604c99a6ac5756bbdb6452d213628410693",
+      "example-10-en": "5e82c584e0da13b65ffb7efb6780904c52dbe2ef137316c0b5baa65bd21405c8"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

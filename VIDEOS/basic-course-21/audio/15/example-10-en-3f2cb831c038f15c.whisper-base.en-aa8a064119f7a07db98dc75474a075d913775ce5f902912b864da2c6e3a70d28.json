@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,200"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2200
+			},
+			"text": " Each guest was given a room key on arrival.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997423,
+					"t_dtw": -1
+				},
+				{
+					"text": " Each",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 180
+					},
+					"id": 5501,
+					"p": 0.959091,
+					"t_dtw": -1
+				},
+				{
+					"text": " guest",
+					"timestamps": {
+						"from": "00:00:00,250",
+						"to": "00:00:00,560"
+					},
+					"offsets": {
+						"from": 250,
+						"to": 560
+					},
+					"id": 8319,
+					"p": 0.99411,
+					"t_dtw": -1
+				},
+				{
+					"text": " was",
+					"timestamps": {
+						"from": "00:00:00,560",
+						"to": "00:00:00,750"
+					},
+					"offsets": {
+						"from": 560,
+						"to": 750
+					},
+					"id": 373,
+					"p": 0.999561,
+					"t_dtw": -1
+				},
+				{
+					"text": " given",
+					"timestamps": {
+						"from": "00:00:00,750",
+						"to": "00:00:01,060"
+					},
+					"offsets": {
+						"from": 750,
+						"to": 1060
+					},
+					"id": 1813,
+					"p": 0.999592,
+					"t_dtw": -1
+				},
+				{
+					"text": " a",
+					"timestamps": {
+						"from": "00:00:01,060",
+						"to": "00:00:01,120"
+					},
+					"offsets": {
+						"from": 1060,
+						"to": 1120
+					},
+					"id": 257,
+					"p": 0.997556,
+					"t_dtw": -1
+				},
+				{
+					"text": " room",
+					"timestamps": {
+						"from": "00:00:01,120",
+						"to": "00:00:01,290"
+					},
+					"offsets": {
+						"from": 1120,
+						"to": 1290
+					},
+					"id": 2119,
+					"p": 0.862533,
+					"t_dtw": -1
+				},
+				{
+					"text": " key",
+					"timestamps": {
+						"from": "00:00:01,380",
+						"to": "00:00:01,560"
+					},
+					"offsets": {
+						"from": 1380,
+						"to": 1560
+					},
+					"id": 1994,
+					"p": 0.94182,
+					"t_dtw": -1
+				},
+				{
+					"text": " on",
+					"timestamps": {
+						"from": "00:00:01,560",
+						"to": "00:00:01,680"
+					},
+					"offsets": {
+						"from": 1560,
+						"to": 1680
+					},
+					"id": 319,
+					"p": 0.9993,
+					"t_dtw": -1
+				},
+				{
+					"text": " arrival",
+					"timestamps": {
+						"from": "00:00:01,680",
+						"to": "00:00:02,130"
+					},
+					"offsets": {
+						"from": 1680,
+						"to": 2130
+					},
+					"id": 10325,
+					"p": 0.861751,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,200",
+						"to": "00:00:02,200"
+					},
+					"offsets": {
+						"from": 2200,
+						"to": 2200
+					},
+					"id": 13,
+					"p": 0.881172,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_110]",
+					"timestamps": {
+						"from": "00:00:02,200",
+						"to": "00:00:02,200"
+					},
+					"offsets": {
+						"from": 2200,
+						"to": 2200
+					},
+					"id": 50473,
+					"p": 0.110856,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

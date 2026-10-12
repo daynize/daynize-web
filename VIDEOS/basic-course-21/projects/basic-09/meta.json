@@ -1,0 +1,14 @@
+{
+  "id": "basic-09",
+  "episode": 9,
+  "title": "하는 것을 문장의 한 자리에 넣기",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "9d0812c4712d78f1a793b20f72e030e8ac18b33799a912516bdc50c04577d838",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

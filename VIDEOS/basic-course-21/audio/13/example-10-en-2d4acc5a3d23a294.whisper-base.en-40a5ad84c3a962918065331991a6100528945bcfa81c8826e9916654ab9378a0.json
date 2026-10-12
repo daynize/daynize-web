@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,300"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2300
+			},
+			"text": " the design chosen by the team costs less.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998238,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,200"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 200
+					},
+					"id": 262,
+					"p": 0.462019,
+					"t_dtw": -1
+				},
+				{
+					"text": " design",
+					"timestamps": {
+						"from": "00:00:00,200",
+						"to": "00:00:00,600"
+					},
+					"offsets": {
+						"from": 200,
+						"to": 600
+					},
+					"id": 1486,
+					"p": 0.994071,
+					"t_dtw": -1
+				},
+				{
+					"text": " chosen",
+					"timestamps": {
+						"from": "00:00:00,610",
+						"to": "00:00:01,020"
+					},
+					"offsets": {
+						"from": 610,
+						"to": 1020
+					},
+					"id": 7147,
+					"p": 0.999489,
+					"t_dtw": -1
+				},
+				{
+					"text": " by",
+					"timestamps": {
+						"from": "00:00:01,020",
+						"to": "00:00:01,150"
+					},
+					"offsets": {
+						"from": 1020,
+						"to": 1150
+					},
+					"id": 416,
+					"p": 0.999378,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,150",
+						"to": "00:00:01,350"
+					},
+					"offsets": {
+						"from": 1150,
+						"to": 1350
+					},
+					"id": 262,
+					"p": 0.997535,
+					"t_dtw": -1
+				},
+				{
+					"text": " team",
+					"timestamps": {
+						"from": "00:00:01,350",
+						"to": "00:00:01,620"
+					},
+					"offsets": {
+						"from": 1350,
+						"to": 1620
+					},
+					"id": 1074,
+					"p": 0.985353,
+					"t_dtw": -1
+				},
+				{
+					"text": " costs",
+					"timestamps": {
+						"from": "00:00:01,620",
+						"to": "00:00:01,960"
+					},
+					"offsets": {
+						"from": 1620,
+						"to": 1960
+					},
+					"id": 3484,
+					"p": 0.985923,
+					"t_dtw": -1
+				},
+				{
+					"text": " less",
+					"timestamps": {
+						"from": "00:00:01,960",
+						"to": "00:00:02,160"
+					},
+					"offsets": {
+						"from": 1960,
+						"to": 2160
+					},
+					"id": 1342,
+					"p": 0.999758,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,270",
+						"to": "00:00:02,280"
+					},
+					"offsets": {
+						"from": 2270,
+						"to": 2280
+					},
+					"id": 13,
+					"p": 0.701759,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_115]",
+					"timestamps": {
+						"from": "00:00:02,300",
+						"to": "00:00:02,300"
+					},
+					"offsets": {
+						"from": 2300,
+						"to": 2300
+					},
+					"id": 50478,
+					"p": 0.0714131,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

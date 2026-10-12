@@ -1,0 +1,656 @@
+{
+  "id": "basic-11",
+  "episode": 11,
+  "title": "누가 그 행동을 하기를 바라나요?",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "나는 가고 싶다에서는 내가 가요. 나는 네가 가기를 바란다에서는 네가 가죠. 행동 주체를 따로 밝혀야 해요.",
+      "screen": "I want to go. / I want you to go.",
+      "visual": "각 문장에서 go로 향하는 화살표를 I와 you에 각각 연결.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 가고 싶다에서는 내가 가요. 나는 네가 가기를 바란다에서는 네가 가죠. 행동 주체를 따로 밝혀야 해요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "원하다, 부탁하다, 허락하다 같은 동사는 사람 뒤에 투와 원형을 붙여요. 그 사람이 뒤의 행동을 하는 구조예요.",
+      "screen": "want / ask / allow + 사람 + to do",
+      "visual": "동사 → 사람 → to do 배열에서 사람이 행동 주체임을 아래 화살표로 표시.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "원하다, 부탁하다, 허락하다 같은 동사는 사람 뒤에 투와 원형을 붙여요. 그 사람이 뒤의 행동을 하는 구조예요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "가능하게 하다, 격려하다, 경고하다도 이런 결합을 쓸 수 있어요. 시키는 말이라고 원형만 붙이지 마세요.",
+      "screen": "enable / encourage / warn + 사람 + to do",
+      "visual": "세 동사의 가능·격려·경고 표지를 구분하고 공통 to 연결 칸 강조.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "가능하게 하다, 격려하다, 경고하다도 이런 결합을 쓸 수 있어요. 시키는 말이라고 원형만 붙이지 마세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "하지 말라고 할 때는 투 앞에 낫을 놓아요. 다만 모든 동사가 이 구조를 받지는 않으니 동사별로 익혀야 해요.",
+      "screen": "ask someone not to do / warn someone not to do",
+      "visual": "not을 to do 묶음 앞에 배치하고 행동 금지 범위 괄호 표시.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "하지 말라고 할 때는 투 앞에 낫을 놓아요. 다만 모든 동사가 이 구조를 받지는 않으니 동사별로 익혀야 해요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "나는 네가 오늘 저녁에 머물기를 바라요.",
+      "en": "I want you to stay this evening.",
+      "wrong": "I want you stay this evening.",
+      "focus": [
+        "you",
+        "to stay"
+      ],
+      "note": "머무는 사람은 you이며 want 사람 to 동사 구조로 연결한다.",
+      "visual": "you에서 stay 행동으로 화살표를 그어 I의 행동과 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 네가 오늘 저녁에 머물기를 바라요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I want you to stay this evening.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "you",
+            "actualStart": null
+          },
+          {
+            "text": "to stay",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "그녀는 나에게 그 창문을 닫아 달라고 부탁했어요.",
+      "en": "She asked me to close the window.",
+      "wrong": "She asked me close the window.",
+      "focus": [
+        "asked me",
+        "to close"
+      ],
+      "note": "부탁을 받은 me가 닫는 구조이므로 ask 사람 to close를 쓴다.",
+      "visual": "부탁 말풍선에서 me로, me에서 닫기 행동으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 나에게 그 창문을 닫아 달라고 부탁했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She asked me to close the window.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "asked me",
+            "actualStart": null
+          },
+          {
+            "text": "to close",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "그들은 우리가 여기에서 기다리도록 허락했어요.",
+      "en": "They allowed us to wait here.",
+      "wrong": "They allowed us wait here.",
+      "focus": [
+        "allowed us",
+        "to wait"
+      ],
+      "note": "allow 사람 to 동사 구조이며 사역 let의 원형 구조와 다르다.",
+      "visual": "allowed us to wait와 let us wait를 평행 배열로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그들은 우리가 여기에서 기다리도록 허락했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "They allowed us to wait here.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "allowed us",
+            "actualStart": null
+          },
+          {
+            "text": "to wait",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "이 앱은 사용자가 자기 진행 상황을 확인할 수 있게 해 줘요.",
+      "en": "This app enables users to track their progress.",
+      "wrong": "This app enables users track their progress.",
+      "focus": [
+        "enables users",
+        "to track"
+      ],
+      "note": "가능하게 하는 enable 뒤에 행동 주체 users와 to track을 놓는다.",
+      "visual": "앱 기능에서 사용자와 진행 기록 화면으로 단계별 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이 앱은 사용자가 자기 진행 상황을 확인할 수 있게 해 줘요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This app enables users to track their progress.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "enables users",
+            "actualStart": null
+          },
+          {
+            "text": "to track",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "선생님은 학생들에게 질문하도록 격려했어요.",
+      "en": "The teacher encouraged the students to ask questions.",
+      "wrong": "The teacher encouraged the students ask questions.",
+      "focus": [
+        "encouraged",
+        "to ask"
+      ],
+      "note": "격려를 받은 학생들의 행동을 to ask로 연결하며 원형만 쓰지 않는다.",
+      "visual": "교사의 격려 표시에서 학생 질문 말풍선으로 화살표 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "선생님은 학생들에게 질문하도록 격려했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The teacher encouraged the students to ask questions.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "encouraged",
+            "actualStart": null
+          },
+          {
+            "text": "to ask",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "의사는 나에게 며칠 동안 쉬라고 경고했어요.",
+      "en": "The doctor warned me to rest for a few days.",
+      "wrong": "The doctor warned me rest for a few days.",
+      "focus": [
+        "warned me",
+        "to rest"
+      ],
+      "note": "경고·강한 주의의 내용을 warn 사람 to 동사로 연결한다.",
+      "visual": "의사의 주의 표지와 me의 휴식 행동을 to로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "의사는 나에게 며칠 동안 쉬라고 경고했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The doctor warned me to rest for a few days.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "warned me",
+            "actualStart": null
+          },
+          {
+            "text": "to rest",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "그녀는 우리에게 도서관에서 소음을 내지 말라고 부탁했어요.",
+      "en": "She asked us not to make noise in the library.",
+      "wrong": "She asked us not make noise in the library.",
+      "focus": [
+        "asked us",
+        "not to make"
+      ],
+      "note": "하지 말라는 요청은 ask 사람 not to 원형이며 to를 빼지 않는다.",
+      "visual": "not이 make noise 전체를 부정하는 괄호를 그리고 library 장소 칸 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 우리에게 도서관에서 소음을 내지 말라고 부탁했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She asked us not to make noise in the library.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "asked us",
+            "actualStart": null
+          },
+          {
+            "text": "not to make",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "안내자는 방문객들에게 동물에게 먹이를 주지 말라고 경고했어요.",
+      "en": "The guide warned visitors not to feed the animals.",
+      "wrong": "The guide warned visitors not feed the animals.",
+      "focus": [
+        "warned visitors",
+        "not to feed"
+      ],
+      "note": "경고의 부정 행동은 not to feed로 연결한다; warned visitors against feeding도 가능하다.",
+      "visual": "방문객 행동 칸에 not to feed 표시와 동물 먹이 금지 표지 연결.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "안내자는 방문객들에게 동물에게 먹이를 주지 말라고 경고했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The guide warned visitors not to feed the animals.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "warned visitors",
+            "actualStart": null
+          },
+          {
+            "text": "not to feed",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "우리 관리자는 직원들이 필요할 때 재택근무하도록 허락해요.",
+      "en": "Our manager allows employees to work from home when needed.",
+      "wrong": "Our manager allows employees work from home when needed.",
+      "focus": [
+        "allows employees",
+        "to work"
+      ],
+      "note": "행동 주체 employees 뒤에는 to work가 필요하며 원형 work만 붙이지 않는다.",
+      "visual": "허락 범위 안에 직원 재택근무 장면을 놓고 when needed 조건 띠 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리 관리자는 직원들이 필요할 때 재택근무하도록 허락해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Our manager allows employees to work from home when needed.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "allows employees",
+            "actualStart": null
+          },
+          {
+            "text": "to work",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "그 교육은 신입 직원들이 일을 더 안전하게 처리할 수 있게 했어요.",
+      "en": "The training enabled new employees to handle tasks more safely.",
+      "wrong": "The training enabled new employees handle tasks more safely.",
+      "focus": [
+        "enabled",
+        "to handle"
+      ],
+      "note": "교육의 효과로 가능해진 직원들의 행동을 to handle로 나타내며 more safely는 처리 방식이다.",
+      "visual": "교육 → 직원 → 안전한 업무 처리 연결, to handle과 방식 부사를 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 교육은 신입 직원들이 일을 더 안전하게 처리할 수 있게 했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The training enabled new employees to handle tasks more safely.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "enabled",
+            "actualStart": null
+          },
+          {
+            "text": "to handle",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "목적어가 할 행동은 해당 동사의 결합에 맞춰 to부정사로 연결하고 부정은 보통 not to로 나타내세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "목적어가 할 행동은 해당 동사의 결합에 맞춰 to부정사로 연결하고 부정은 보통 not to로 나타내세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

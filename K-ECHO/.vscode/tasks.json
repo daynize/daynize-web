@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "K-ECHO Frontend Preview",
+			"type": "shell",
+			"command": "npm --prefix kecho-frontend run dev -- --host 127.0.0.1 --port 5174",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "K-ECHO DB Search API",
+			"type": "shell",
+			"command": "kecho-backend/.venv/bin/uvicorn api:app --app-dir kecho-backend --host 127.0.0.1 --port 8000",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

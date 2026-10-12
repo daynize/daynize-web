@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,960"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1960
+			},
+			"text": " I was given a map after the meeting.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998299,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.791325,
+					"t_dtw": -1
+				},
+				{
+					"text": " was",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,240"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 240
+					},
+					"id": 373,
+					"p": 0.99919,
+					"t_dtw": -1
+				},
+				{
+					"text": " given",
+					"timestamps": {
+						"from": "00:00:00,350",
+						"to": "00:00:00,570"
+					},
+					"offsets": {
+						"from": 350,
+						"to": 570
+					},
+					"id": 1813,
+					"p": 0.998911,
+					"t_dtw": -1
+				},
+				{
+					"text": " a",
+					"timestamps": {
+						"from": "00:00:00,570",
+						"to": "00:00:00,630"
+					},
+					"offsets": {
+						"from": 570,
+						"to": 630
+					},
+					"id": 257,
+					"p": 0.996696,
+					"t_dtw": -1
+				},
+				{
+					"text": " map",
+					"timestamps": {
+						"from": "00:00:00,630",
+						"to": "00:00:00,820"
+					},
+					"offsets": {
+						"from": 630,
+						"to": 820
+					},
+					"id": 3975,
+					"p": 0.960221,
+					"t_dtw": -1
+				},
+				{
+					"text": " after",
+					"timestamps": {
+						"from": "00:00:00,820",
+						"to": "00:00:01,100"
+					},
+					"offsets": {
+						"from": 820,
+						"to": 1100
+					},
+					"id": 706,
+					"p": 0.999192,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,180",
+						"to": "00:00:01,320"
+					},
+					"offsets": {
+						"from": 1180,
+						"to": 1320
+					},
+					"id": 262,
+					"p": 0.998294,
+					"t_dtw": -1
+				},
+				{
+					"text": " meeting",
+					"timestamps": {
+						"from": "00:00:01,350",
+						"to": "00:00:01,790"
+					},
+					"offsets": {
+						"from": 1350,
+						"to": 1790
+					},
+					"id": 3249,
+					"p": 0.998645,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,790",
+						"to": "00:00:01,810"
+					},
+					"offsets": {
+						"from": 1790,
+						"to": 1810
+					},
+					"id": 13,
+					"p": 0.86824,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_98]",
+					"timestamps": {
+						"from": "00:00:01,960",
+						"to": "00:00:01,960"
+					},
+					"offsets": {
+						"from": 1960,
+						"to": 1960
+					},
+					"id": 50461,
+					"p": 0.0188983,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

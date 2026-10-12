@@ -1,0 +1,656 @@
+{
+  "id": "basic-18",
+  "episode": 18,
+  "title": "누구의 것인지, 무엇인지를 연결하기",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "누군가의 이름이나 물건을 설명할 때는 소유 관계를 연결해요. 후즈 뒤에 그 소유 대상인 명사를 놓죠.",
+      "screen": "사람 / whose + 소유 대상 명사",
+      "visual": "첫 예문의 woman에서 son으로 소유 연결선 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "누군가의 이름이나 물건을 설명할 때는 소유 관계를 연결해요. 후즈 뒤에 그 소유 대상인 명사를 놓죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "후즈 자체가 누구의라는 연결을 맡아요. 뒤에 그의나 그녀의에 해당하는 소유어를 또 넣지 마세요.",
+      "screen": "whose son / whose her son은 중복",
+      "visual": "첫 예문의 son 앞에 소유 자리 하나만 남기는 도식.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "후즈 자체가 누구의라는 연결을 맡아요. 뒤에 그의나 그녀의에 해당하는 소유어를 또 넣지 마세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "왓은 무엇이라는 내용을 통째로 묶을 수 있어요. 앞에서 명사를 받고 꾸미는 일반 관계대명사와 달라요.",
+      "screen": "what절 = ~하는 것",
+      "visual": "what절 전체를 명사 자리 크기의 묶음으로 표시.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "왓은 무엇이라는 내용을 통째로 묶을 수 있어요. 앞에서 명사를 받고 꾸미는 일반 관계대명사와 달라요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "관계절의 왓 앞에는 같은 뜻의 선행사 명사를 두지 않아요. 명사를 남기려면 댓이나 위치로 연결하세요.",
+      "screen": "what / the thing that",
+      "visual": "명사 포함 경로와 선행사 따로 두는 경로를 분리.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "관계절의 왓 앞에는 같은 뜻의 선행사 명사를 두지 않아요. 명사를 남기려면 댓이나 위치로 연결하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "나는 아들이 여기서 일하는 여자를 알아요.",
+      "en": "I know the woman whose son works here.",
+      "wrong": "I know the woman whose her son works here.",
+      "focus": [
+        "whose",
+        "works"
+      ],
+      "note": "whose가 소유 관계를 이미 나타내므로 her를 중복해서 넣지 않는다.",
+      "visual": "woman → whose son 소유 연결과 works 주어 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 아들이 여기서 일하는 여자를 알아요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I know the woman whose son works here.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "whose",
+            "actualStart": null
+          },
+          {
+            "text": "works",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "지붕이 파란 그 집은 비어 있어요.",
+      "en": "The house whose roof is blue is empty.",
+      "wrong": "The house whose its roof is blue is empty.",
+      "focus": [
+        "whose roof",
+        "is blue"
+      ],
+      "note": "사물에도 whose를 쓸 수 있으며 its를 덧붙이지 않는다.",
+      "visual": "집과 지붕을 소유 선으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "지붕이 파란 그 집은 비어 있어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The house whose roof is blue is empty.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "whose roof",
+            "actualStart": null
+          },
+          {
+            "text": "is blue",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "내가 필요한 것은 따뜻한 담요예요.",
+      "en": "What I need is a warm blanket.",
+      "wrong": "The thing what I need is a warm blanket.",
+      "focus": [
+        "What",
+        "need"
+      ],
+      "note": "이 what절은 필요한 것을 포함해 나타낸다. 앞에 the thing을 두려면 what 대신 that 등을 쓴다.",
+      "visual": "What I need 전체를 주어 칸에 묶고 중복 선행사 제거.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "내가 필요한 것은 따뜻한 담요예요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "What I need is a warm blanket.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "What",
+            "actualStart": null
+          },
+          {
+            "text": "need",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "나는 딸이 상을 받은 남자를 만났어요.",
+      "en": "I met the man whose daughter won the prize.",
+      "wrong": "I met the man who's daughter won the prize.",
+      "focus": [
+        "whose",
+        "won"
+      ],
+      "note": "딸과 남자의 소유 관계에는 whose를 쓴다. who’s는 소유격이 아니다.",
+      "visual": "whose와 who’s를 소유 연결과 축약 표기로 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 딸이 상을 받은 남자를 만났어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I met the man whose daughter won the prize.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "whose",
+            "actualStart": null
+          },
+          {
+            "text": "won",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "우리는 이름이 최근에 바뀐 회사를 방문했어요.",
+      "en": "We visited the company whose name recently changed.",
+      "wrong": "We visited the company whose recently changed.",
+      "focus": [
+        "whose name",
+        "changed"
+      ],
+      "note": "whose 뒤에는 소유 대상인 명사 name이 필요하다.",
+      "visual": "company → name 관계를 표시하고 whose 뒤 명사 칸 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 이름이 최근에 바뀐 회사를 방문했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We visited the company whose name recently changed.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "whose name",
+            "actualStart": null
+          },
+          {
+            "text": "changed",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "나는 그녀가 말한 것을 기억해요.",
+      "en": "I remember what she said yesterday.",
+      "wrong": "I remember what she said it yesterday.",
+      "focus": [
+        "remember",
+        "what"
+      ],
+      "note": "what이 said의 목적어 자리와 연결되므로 it을 또 넣지 않는다.",
+      "visual": "what절을 remember 목적어로 묶고 said 뒤 중복 제거.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 그녀가 말한 것을 기억해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I remember what she said yesterday.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "remember",
+            "actualStart": null
+          },
+          {
+            "text": "what",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "우리가 주문한 것이 아직 도착하지 않았어요.",
+      "en": "What we ordered has not arrived yet.",
+      "wrong": "The items what we ordered have not arrived yet.",
+      "focus": [
+        "What",
+        "ordered"
+      ],
+      "note": "what절 앞에 선행사 items를 두지 않는다. items를 남기려면 that/which 또는 목적격 생략형을 쓴다.",
+      "visual": "주문한 것 전체와 items + 관계절의 두 경로를 나눔.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리가 주문한 것이 아직 도착하지 않았어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "What we ordered has not arrived yet.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "What",
+            "actualStart": null
+          },
+          {
+            "text": "ordered",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "나를 놀라게 한 것은 그녀의 차분한 대답이었어요.",
+      "en": "What surprised me was her calm answer.",
+      "wrong": "What it surprised me was her calm answer.",
+      "focus": [
+        "What",
+        "surprised"
+      ],
+      "note": "what이 surprised의 주어 역할을 하므로 it을 다시 넣지 않는다.",
+      "visual": "what에서 surprised로 주어 화살표 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나를 놀라게 한 것은 그녀의 차분한 대답이었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "What surprised me was her calm answer.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "What",
+            "actualStart": null
+          },
+          {
+            "text": "surprised",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "우리는 창문이 폭풍 때 깨진 그 집을 수리했어요.",
+      "en": "We repaired the house whose windows broke during the storm.",
+      "wrong": "We repaired the house which windows broke during the storm.",
+      "focus": [
+        "whose windows",
+        "broke"
+      ],
+      "note": "그 집의 창문이라는 소유 관계에는 whose windows가 필요하며 which windows로 연결하지 않는다.",
+      "visual": "house → windows의 소유 관계와 broke 동작을 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 창문이 폭풍 때 깨진 그 집을 수리했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We repaired the house whose windows broke during the storm.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "whose windows",
+            "actualStart": null
+          },
+          {
+            "text": "broke",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "나는 그가 약속한 것과 전달한 것을 비교했어요.",
+      "en": "I compared what he promised with what he delivered.",
+      "wrong": "I compared the things what he promised with what he delivered.",
+      "focus": [
+        "promised",
+        "delivered"
+      ],
+      "note": "각 what절이 비교 대상을 이룬다. 첫 what 앞에 같은 선행사 the things를 중복하지 않는다.",
+      "visual": "두 what절을 compared와 with 양쪽 비교 칸에 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 그가 약속한 것과 전달한 것을 비교했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I compared what he promised with what he delivered.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "promised",
+            "actualStart": null
+          },
+          {
+            "text": "delivered",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "후즈 뒤에는 소유 대상 명사를 두고, 관계절의 왓에는 선행사 명사를 따로 붙이지 마세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "후즈 뒤에는 소유 대상 명사를 두고, 관계절의 왓에는 선행사 명사를 따로 붙이지 마세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

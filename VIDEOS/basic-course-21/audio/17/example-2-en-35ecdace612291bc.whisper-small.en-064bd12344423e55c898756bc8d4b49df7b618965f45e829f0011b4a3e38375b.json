@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,180"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2180
+			},
+			"text": " The phone which he bought is quite expensive.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.996581,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,080"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 80
+					},
+					"id": 383,
+					"p": 0.388236,
+					"t_dtw": -1
+				},
+				{
+					"text": " phone",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,460"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 460
+					},
+					"id": 3072,
+					"p": 0.996136,
+					"t_dtw": -1
+				},
+				{
+					"text": " which",
+					"timestamps": {
+						"from": "00:00:00,460",
+						"to": "00:00:00,750"
+					},
+					"offsets": {
+						"from": 460,
+						"to": 750
+					},
+					"id": 543,
+					"p": 0.961291,
+					"t_dtw": -1
+				},
+				{
+					"text": " he",
+					"timestamps": {
+						"from": "00:00:00,750",
+						"to": "00:00:00,860"
+					},
+					"offsets": {
+						"from": 750,
+						"to": 860
+					},
+					"id": 339,
+					"p": 0.998003,
+					"t_dtw": -1
+				},
+				{
+					"text": " bought",
+					"timestamps": {
+						"from": "00:00:00,860",
+						"to": "00:00:01,110"
+					},
+					"offsets": {
+						"from": 860,
+						"to": 1110
+					},
+					"id": 5839,
+					"p": 0.999228,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:01,250",
+						"to": "00:00:01,320"
+					},
+					"offsets": {
+						"from": 1250,
+						"to": 1320
+					},
+					"id": 318,
+					"p": 0.997969,
+					"t_dtw": -1
+				},
+				{
+					"text": " quite",
+					"timestamps": {
+						"from": "00:00:01,320",
+						"to": "00:00:01,610"
+					},
+					"offsets": {
+						"from": 1320,
+						"to": 1610
+					},
+					"id": 2407,
+					"p": 0.995883,
+					"t_dtw": -1
+				},
+				{
+					"text": " expensive",
+					"timestamps": {
+						"from": "00:00:01,610",
+						"to": "00:00:02,120"
+					},
+					"offsets": {
+						"from": 1610,
+						"to": 2120
+					},
+					"id": 5789,
+					"p": 0.998532,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,180",
+						"to": "00:00:02,180"
+					},
+					"offsets": {
+						"from": 2180,
+						"to": 2180
+					},
+					"id": 13,
+					"p": 0.908653,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_109]",
+					"timestamps": {
+						"from": "00:00:02,180",
+						"to": "00:00:02,180"
+					},
+					"offsets": {
+						"from": 2180,
+						"to": 2180
+					},
+					"id": 50472,
+					"p": 0.128024,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

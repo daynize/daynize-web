@@ -1,0 +1,171 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,720"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1720
+			},
+			"text": " I heard him singing in the hallway",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998001,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.95041,
+					"t_dtw": -1
+				},
+				{
+					"text": " heard",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,360"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 360
+					},
+					"id": 2982,
+					"p": 0.984851,
+					"t_dtw": -1
+				},
+				{
+					"text": " him",
+					"timestamps": {
+						"from": "00:00:00,360",
+						"to": "00:00:00,530"
+					},
+					"offsets": {
+						"from": 360,
+						"to": 530
+					},
+					"id": 683,
+					"p": 0.99612,
+					"t_dtw": -1
+				},
+				{
+					"text": " singing",
+					"timestamps": {
+						"from": "00:00:00,640",
+						"to": "00:00:00,960"
+					},
+					"offsets": {
+						"from": 640,
+						"to": 960
+					},
+					"id": 13777,
+					"p": 0.995594,
+					"t_dtw": -1
+				},
+				{
+					"text": " in",
+					"timestamps": {
+						"from": "00:00:00,960",
+						"to": "00:00:01,080"
+					},
+					"offsets": {
+						"from": 960,
+						"to": 1080
+					},
+					"id": 287,
+					"p": 0.989506,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,080",
+						"to": "00:00:01,260"
+					},
+					"offsets": {
+						"from": 1080,
+						"to": 1260
+					},
+					"id": 262,
+					"p": 0.995078,
+					"t_dtw": -1
+				},
+				{
+					"text": " hallway",
+					"timestamps": {
+						"from": "00:00:01,260",
+						"to": "00:00:01,660"
+					},
+					"offsets": {
+						"from": 1260,
+						"to": 1660
+					},
+					"id": 23959,
+					"p": 0.982356,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_86]",
+					"timestamps": {
+						"from": "00:00:01,720",
+						"to": "00:00:01,720"
+					},
+					"offsets": {
+						"from": 1720,
+						"to": 1720
+					},
+					"id": 50449,
+					"p": 0.142482,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

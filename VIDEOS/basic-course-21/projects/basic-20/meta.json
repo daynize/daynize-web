@@ -1,0 +1,14 @@
+{
+  "id": "basic-20",
+  "episode": 20,
+  "title": "지금의 가정과 과거의 가정을 나누기",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "db2af4e1e85c652499efa5d7f1b92cd2eb56435af7f6085a92fd2479abcdb5bc",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

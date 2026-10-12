@@ -1,0 +1,157 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,440"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1440
+			},
+			"text": " The Good News made me happy",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997502,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,190"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 190
+					},
+					"id": 383,
+					"p": 0.795297,
+					"t_dtw": -1
+				},
+				{
+					"text": " Good",
+					"timestamps": {
+						"from": "00:00:00,190",
+						"to": "00:00:00,450"
+					},
+					"offsets": {
+						"from": 190,
+						"to": 450
+					},
+					"id": 4599,
+					"p": 0.697122,
+					"t_dtw": -1
+				},
+				{
+					"text": " News",
+					"timestamps": {
+						"from": "00:00:00,450",
+						"to": "00:00:00,710"
+					},
+					"offsets": {
+						"from": 450,
+						"to": 710
+					},
+					"id": 3000,
+					"p": 0.98745,
+					"t_dtw": -1
+				},
+				{
+					"text": " made",
+					"timestamps": {
+						"from": "00:00:00,710",
+						"to": "00:00:00,970"
+					},
+					"offsets": {
+						"from": 710,
+						"to": 970
+					},
+					"id": 925,
+					"p": 0.863836,
+					"t_dtw": -1
+				},
+				{
+					"text": " me",
+					"timestamps": {
+						"from": "00:00:00,970",
+						"to": "00:00:01,100"
+					},
+					"offsets": {
+						"from": 970,
+						"to": 1100
+					},
+					"id": 502,
+					"p": 0.994065,
+					"t_dtw": -1
+				},
+				{
+					"text": " happy",
+					"timestamps": {
+						"from": "00:00:01,100",
+						"to": "00:00:01,400"
+					},
+					"offsets": {
+						"from": 1100,
+						"to": 1400
+					},
+					"id": 3772,
+					"p": 0.996578,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_72]",
+					"timestamps": {
+						"from": "00:00:01,440",
+						"to": "00:00:01,440"
+					},
+					"offsets": {
+						"from": 1440,
+						"to": 1440
+					},
+					"id": 50435,
+					"p": 0.123435,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

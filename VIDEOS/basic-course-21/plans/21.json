@@ -1,0 +1,656 @@
+{
+  "id": "basic-21",
+  "episode": 21,
+  "title": "정말 한다는 강조, 더 그렇다는 비교",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "정말 한다고 강조할 때는 긍정문에도 두를 넣어요. 주어와 시간에 맞춰 더즈나 디드를 고릅니다.",
+      "screen": "do / does / did + 동사원형",
+      "visual": "첫 예문의 do에 강조 파형, 뒤 like에 원형 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "정말 한다고 강조할 때는 긍정문에도 두를 넣어요. 주어와 시간에 맞춰 더즈나 디드를 고릅니다.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "강조하는 말이 시제와 주어 정보를 맡으니 뒤 동사는 원형이에요. 더즈 뒤에도 에스를 다시 붙이지 않죠.",
+      "screen": "강조 조동사에 정보 / 본동사는 원형",
+      "visual": "does·did 칸에 문법 정보 모으고 본동사 칸은 원형 유지.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "강조하는 말이 시제와 주어 정보를 맡으니 뒤 동사는 원형이에요. 더즈 뒤에도 에스를 다시 붙이지 않죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "비교급은 형용사뿐 아니라 부사에도 있어요. 이알이나 모어 중 알맞은 형태를 쓰고 둘을 겹치지 마세요.",
+      "screen": "형용사·부사 비교 / more faster는 중복",
+      "visual": "성질 비교와 행동 속도 비교를 두 줄로 배치.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "비교급은 형용사뿐 아니라 부사에도 있어요. 이알이나 모어 중 알맞은 형태를 쓰고 둘을 겹치지 마세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "베터와 워스 같은 불규칙 비교급도 익히세요. 훨씬 더는 머치로 강조하고 베리는 비교급 앞에 쓰지 않아요.",
+      "screen": "better / worse / much + 비교급",
+      "visual": "불규칙 형태 표와 비교 차이의 크기를 나타내는 눈금.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "베터와 워스 같은 불규칙 비교급도 익히세요. 훨씬 더는 머치로 강조하고 베리는 비교급 앞에 쓰지 않아요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "네가 의심해도 나는 이 노래를 정말 좋아해요.",
+      "en": "I do like this song, despite your doubts.",
+      "wrong": "I do likes this song, despite your doubts.",
+      "focus": [
+        "do",
+        "like"
+      ],
+      "note": "긍정문을 강조하는 do 뒤에는 원형 like를 쓰며 likes를 쓰지 않는다.",
+      "visual": "의심 말풍선에 응답하는 do 강조와 like 원형 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "네가 의심해도 나는 이 노래를 정말 좋아해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I do like this song, despite your doubts.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "do",
+            "actualStart": null
+          },
+          {
+            "text": "like",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "네가 뭐라 해도 그녀는 답을 정말 알아요.",
+      "en": "She does know the answer, whatever you say.",
+      "wrong": "She does knows the answer, whatever you say.",
+      "focus": [
+        "does",
+        "know"
+      ],
+      "note": "삼인칭 단수 표시는 does가 맡으므로 본동사 know에 s를 더하지 않는다.",
+      "visual": "she → does의 수 정보와 원형 know를 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "네가 뭐라 해도 그녀는 답을 정말 알아요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She does know the answer, whatever you say.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "does",
+            "actualStart": null
+          },
+          {
+            "text": "know",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "네 말과 달리 나는 어제 전화했어요.",
+      "en": "I did call you yesterday, contrary to your claim.",
+      "wrong": "I did called you yesterday, contrary to your claim.",
+      "focus": [
+        "did",
+        "call"
+      ],
+      "note": "과거 강조는 did가 맡으므로 본동사는 과거형 called가 아닌 원형 call이다.",
+      "visual": "어제 시간 정보는 did에, 전화 동작은 call에 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "네 말과 달리 나는 어제 전화했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I did call you yesterday, contrary to your claim.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "did",
+            "actualStart": null
+          },
+          {
+            "text": "call",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "우리는 네가 생각하는 것보다 도움이 정말 필요해요.",
+      "en": "We do need help more than you think.",
+      "wrong": "We does need help more than you think.",
+      "focus": [
+        "do",
+        "need"
+      ],
+      "note": "현재 주어 we에는 강조 do를 쓰고 does를 쓰지 않는다.",
+      "visual": "we 복수 주어와 do 연결, need 원형 유지.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 네가 생각하는 것보다 도움이 정말 필요해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We do need help more than you think.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "do",
+            "actualStart": null
+          },
+          {
+            "text": "need",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "이 가방은 네 것보다 더 가벼워요.",
+      "en": "This bag is lighter than yours.",
+      "wrong": "This bag is more lighter than yours.",
+      "focus": [
+        "lighter",
+        "than"
+      ],
+      "note": "lighter 자체가 비교급이므로 more를 앞에 겹쳐 쓰지 않는다.",
+      "visual": "두 가방 무게 눈금과 lighter 단일 비교 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이 가방은 네 것보다 더 가벼워요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This bag is lighter than yours.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "lighter",
+            "actualStart": null
+          },
+          {
+            "text": "than",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "그녀는 나보다 더 빨리 달려요.",
+      "en": "She runs faster than I do.",
+      "wrong": "She runs more faster than I do.",
+      "focus": [
+        "runs",
+        "faster"
+      ],
+      "note": "달리는 방식을 꾸미는 부사 fast의 비교급은 faster이며 more를 중복하지 않는다.",
+      "visual": "달리기 속도 눈금에 부사 비교 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 나보다 더 빨리 달려요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She runs faster than I do.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "runs",
+            "actualStart": null
+          },
+          {
+            "text": "faster",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "이 문제는 앞의 문제보다 더 어려워요.",
+      "en": "This problem is more difficult than the last one.",
+      "wrong": "This problem is difficulter than the last one.",
+      "focus": [
+        "more difficult",
+        "than"
+      ],
+      "note": "difficult의 표준 비교급은 more difficult이며 difficulter로 만들지 않는다.",
+      "visual": "문제 난이도 두 칸과 more difficult 묶음.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이 문제는 앞의 문제보다 더 어려워요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This problem is more difficult than the last one.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "more difficult",
+            "actualStart": null
+          },
+          {
+            "text": "than",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "그녀는 나보다 영어를 더 잘해요.",
+      "en": "She speaks English better than I do.",
+      "wrong": "She speaks English more better than I do.",
+      "focus": [
+        "speaks",
+        "better"
+      ],
+      "note": "speaks를 꾸미는 well의 비교급은 better이며 more를 덧붙이지 않는다.",
+      "visual": "말하기 수행 비교와 well → better 변화 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 나보다 영어를 더 잘해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She speaks English better than I do.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "speaks",
+            "actualStart": null
+          },
+          {
+            "text": "better",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "이 결과는 어제 결과보다 더 나빠요.",
+      "en": "This result is worse than yesterday’s result.",
+      "wrong": "This result is badder than yesterday’s result.",
+      "focus": [
+        "is",
+        "worse"
+      ],
+      "note": "결과의 성질을 설명하는 bad의 비교급은 worse이며 badder가 아니다.",
+      "visual": "결과 두 개를 비교하고 bad → worse 불규칙 변화 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이 결과는 어제 결과보다 더 나빠요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This result is worse than yesterday’s result.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "is",
+            "actualStart": null
+          },
+          {
+            "text": "worse",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "이 버전은 이전 버전보다 훨씬 더 좋아요.",
+      "en": "This version is much better than the previous one.",
+      "wrong": "This version is very better than the previous one.",
+      "focus": [
+        "much",
+        "better"
+      ],
+      "note": "형용사 good의 비교급 better는 차이의 크기를 나타내는 much로 강조한다. very를 바로 붙이지 않는다.",
+      "visual": "두 버전 차이 눈금 확대, much → better 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이 버전은 이전 버전보다 훨씬 더 좋아요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This version is much better than the previous one.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "much",
+            "actualStart": null
+          },
+          {
+            "text": "better",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "강조 조동사 뒤에는 원형을 두고, 비교급은 형태와 강조어를 겹치지 않게 고르세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "강조 조동사 뒤에는 원형을 두고, 비교급은 형태와 강조어를 겹치지 않게 고르세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

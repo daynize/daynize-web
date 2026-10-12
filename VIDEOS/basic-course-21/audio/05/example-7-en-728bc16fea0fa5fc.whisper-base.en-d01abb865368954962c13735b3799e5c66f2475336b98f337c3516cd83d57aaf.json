@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,480"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2480
+			},
+			"text": " She had the technician inspect the broken printer.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998875,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,170"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 170
+					},
+					"id": 1375,
+					"p": 0.966588,
+					"t_dtw": -1
+				},
+				{
+					"text": " had",
+					"timestamps": {
+						"from": "00:00:00,170",
+						"to": "00:00:00,340"
+					},
+					"offsets": {
+						"from": 170,
+						"to": 340
+					},
+					"id": 550,
+					"p": 0.997088,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,340",
+						"to": "00:00:00,460"
+					},
+					"offsets": {
+						"from": 340,
+						"to": 460
+					},
+					"id": 262,
+					"p": 0.994501,
+					"t_dtw": -1
+				},
+				{
+					"text": " technician",
+					"timestamps": {
+						"from": "00:00:00,540",
+						"to": "00:00:01,080"
+					},
+					"offsets": {
+						"from": 540,
+						"to": 1080
+					},
+					"id": 33024,
+					"p": 0.962032,
+					"t_dtw": -1
+				},
+				{
+					"text": " inspect",
+					"timestamps": {
+						"from": "00:00:01,080",
+						"to": "00:00:01,380"
+					},
+					"offsets": {
+						"from": 1080,
+						"to": 1380
+					},
+					"id": 10104,
+					"p": 0.997046,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,510",
+						"to": "00:00:01,590"
+					},
+					"offsets": {
+						"from": 1510,
+						"to": 1590
+					},
+					"id": 262,
+					"p": 0.995044,
+					"t_dtw": -1
+				},
+				{
+					"text": " broken",
+					"timestamps": {
+						"from": "00:00:01,650",
+						"to": "00:00:01,980"
+					},
+					"offsets": {
+						"from": 1650,
+						"to": 1980
+					},
+					"id": 5445,
+					"p": 0.961066,
+					"t_dtw": -1
+				},
+				{
+					"text": " printer",
+					"timestamps": {
+						"from": "00:00:01,980",
+						"to": "00:00:02,400"
+					},
+					"offsets": {
+						"from": 1980,
+						"to": 2400
+					},
+					"id": 20632,
+					"p": 0.997139,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,400",
+						"to": "00:00:02,420"
+					},
+					"offsets": {
+						"from": 2400,
+						"to": 2420
+					},
+					"id": 13,
+					"p": 0.748775,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_124]",
+					"timestamps": {
+						"from": "00:00:02,480",
+						"to": "00:00:02,480"
+					},
+					"offsets": {
+						"from": 2480,
+						"to": 2480
+					},
+					"id": 50487,
+					"p": 0.112266,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

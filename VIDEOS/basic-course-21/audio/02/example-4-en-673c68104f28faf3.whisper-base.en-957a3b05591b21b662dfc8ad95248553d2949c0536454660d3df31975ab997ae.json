@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,680"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2680
+			},
+			"text": " She listened to my explanation before answering.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998309,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,190"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 190
+					},
+					"id": 1375,
+					"p": 0.860288,
+					"t_dtw": -1
+				},
+				{
+					"text": " listened",
+					"timestamps": {
+						"from": "00:00:00,190",
+						"to": "00:00:00,700"
+					},
+					"offsets": {
+						"from": 190,
+						"to": 700
+					},
+					"id": 16399,
+					"p": 0.999443,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,700",
+						"to": "00:00:00,820"
+					},
+					"offsets": {
+						"from": 700,
+						"to": 820
+					},
+					"id": 284,
+					"p": 0.999493,
+					"t_dtw": -1
+				},
+				{
+					"text": " my",
+					"timestamps": {
+						"from": "00:00:00,820",
+						"to": "00:00:00,940"
+					},
+					"offsets": {
+						"from": 820,
+						"to": 940
+					},
+					"id": 616,
+					"p": 0.973055,
+					"t_dtw": -1
+				},
+				{
+					"text": " explanation",
+					"timestamps": {
+						"from": "00:00:00,940",
+						"to": "00:00:01,640"
+					},
+					"offsets": {
+						"from": 940,
+						"to": 1640
+					},
+					"id": 7468,
+					"p": 0.989035,
+					"t_dtw": -1
+				},
+				{
+					"text": " before",
+					"timestamps": {
+						"from": "00:00:01,640",
+						"to": "00:00:02,020"
+					},
+					"offsets": {
+						"from": 1640,
+						"to": 2020
+					},
+					"id": 878,
+					"p": 0.999093,
+					"t_dtw": -1
+				},
+				{
+					"text": " answering",
+					"timestamps": {
+						"from": "00:00:02,020",
+						"to": "00:00:02,630"
+					},
+					"offsets": {
+						"from": 2020,
+						"to": 2630
+					},
+					"id": 18877,
+					"p": 0.999723,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,640",
+						"to": "00:00:02,640"
+					},
+					"offsets": {
+						"from": 2640,
+						"to": 2640
+					},
+					"id": 13,
+					"p": 0.681392,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_134]",
+					"timestamps": {
+						"from": "00:00:02,680",
+						"to": "00:00:02,680"
+					},
+					"offsets": {
+						"from": 2680,
+						"to": 2680
+					},
+					"id": 50497,
+					"p": 0.133091,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

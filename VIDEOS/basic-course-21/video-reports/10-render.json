@@ -1,0 +1,36 @@
+{
+  "episode": 10,
+  "title": "먹을 것과 먹으러 가는 이유",
+  "inputHash": "91e538836fdb82fcc2e0bb2765abce28275e4331d34adece2d3228ce3ce20006",
+  "output": "renders/basic-10.mp4",
+  "contact": "renders/basic-10-contact.png",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "duration": "130.000000",
+        "nb_frames": "3900"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "130.000000",
+        "nb_frames": "6095"
+      }
+    ],
+    "format": {
+      "duration": "130.000000",
+      "size": "7990014"
+    }
+  },
+  "audioPeakDb": -1.5,
+  "browserCheck": true,
+  "listeningReviewed": false
+}

@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,900"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1900
+			},
+			"text": " I borrowed a book to read this weekend.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.99772,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.98447,
+					"t_dtw": -1
+				},
+				{
+					"text": " borrowed",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,540"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 540
+					},
+					"id": 22546,
+					"p": 0.996487,
+					"t_dtw": -1
+				},
+				{
+					"text": " a",
+					"timestamps": {
+						"from": "00:00:00,540",
+						"to": "00:00:00,590"
+					},
+					"offsets": {
+						"from": 540,
+						"to": 590
+					},
+					"id": 257,
+					"p": 0.997529,
+					"t_dtw": -1
+				},
+				{
+					"text": " book",
+					"timestamps": {
+						"from": "00:00:00,590",
+						"to": "00:00:00,840"
+					},
+					"offsets": {
+						"from": 590,
+						"to": 840
+					},
+					"id": 1492,
+					"p": 0.997084,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,840",
+						"to": "00:00:00,960"
+					},
+					"offsets": {
+						"from": 840,
+						"to": 960
+					},
+					"id": 284,
+					"p": 0.99862,
+					"t_dtw": -1
+				},
+				{
+					"text": " read",
+					"timestamps": {
+						"from": "00:00:00,960",
+						"to": "00:00:01,200"
+					},
+					"offsets": {
+						"from": 960,
+						"to": 1200
+					},
+					"id": 1100,
+					"p": 0.99862,
+					"t_dtw": -1
+				},
+				{
+					"text": " this",
+					"timestamps": {
+						"from": "00:00:01,200",
+						"to": "00:00:01,440"
+					},
+					"offsets": {
+						"from": 1200,
+						"to": 1440
+					},
+					"id": 428,
+					"p": 0.984087,
+					"t_dtw": -1
+				},
+				{
+					"text": " weekend",
+					"timestamps": {
+						"from": "00:00:01,440",
+						"to": "00:00:01,840"
+					},
+					"offsets": {
+						"from": 1440,
+						"to": 1840
+					},
+					"id": 5041,
+					"p": 0.998866,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,900",
+						"to": "00:00:01,900"
+					},
+					"offsets": {
+						"from": 1900,
+						"to": 1900
+					},
+					"id": 13,
+					"p": 0.738497,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_95]",
+					"timestamps": {
+						"from": "00:00:01,900",
+						"to": "00:00:01,900"
+					},
+					"offsets": {
+						"from": 1900,
+						"to": 1900
+					},
+					"id": 50458,
+					"p": 0.0738339,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

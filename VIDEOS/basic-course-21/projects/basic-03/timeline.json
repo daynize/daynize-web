@@ -1,0 +1,1210 @@
+{
+  "id": "basic-03",
+  "episode": 3,
+  "title": "무엇을 주고, 누구에게 줄까요?",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10.904583666666666,
+      "text": "나는 문을 열었어요. 여는 대상인 문이 동사 뒤에 오죠. 이런 주어, 동사, 목적어 구조를 삼형식이라고 불러요.",
+      "screen": "주어 + 동사 + 직접 목적어",
+      "visual": "I → opened → the door 세 칸을 연결하고 마지막 칸에 동작의 대상 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 문을 열었어요. 여는 대상인 문이 동사 뒤에 오죠. 이런 주어, 동사, 목적어 구조를 삼형식이라고 불러요.",
+          "actualStart": 0.2,
+          "actualEnd": 8.545895999999999,
+          "rate": 185,
+          "cacheKey": "dabf2d3ccbc250ad020d4012dcaf6ba79df7b322505ce45f58da9260baab1e99",
+          "file": "audio/03/concept-1-ko-dabf2d3ccbc250ad.wav",
+          "duration": 8.345896
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10.904583666666666,
+      "end": 21.968169333333332,
+      "text": "주는 동사는 받는 사람과 주는 물건을 함께 붙일 수 있어요. 사람, 물건 순서의 두 목적어 구조가 사형식이에요.",
+      "screen": "give + 사람 + 물건",
+      "visual": "give 뒤에 사람 칸과 물건 칸을 놓고 선물이 사람에게 이동하는 화살표 표시.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "주는 동사는 받는 사람과 주는 물건을 함께 붙일 수 있어요. 사람, 물건 순서의 두 목적어 구조가 사형식이에요.",
+          "actualStart": 11.104583666666665,
+          "actualEnd": 19.609481666666667,
+          "rate": 185,
+          "cacheKey": "a915d99a744ce5906d9bb1b70b3ae6ce78ada6dc5bcbc69f43fed3b02e25037a",
+          "file": "audio/03/concept-2-ko-a915d99a744ce590.wav",
+          "duration": 8.504898
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 21.968169333333332,
+      "end": 32.327084,
+      "text": "물건을 먼저 말하면 받는 사람은 투로 연결해요. 사 주거나 만들어 주는 동사는 포를 쓰는 경우가 많아요.",
+      "screen": "give something to someone / buy something for someone",
+      "visual": "전달 화살표에는 to, 수혜자를 위해 구매하는 장면에는 for를 배치.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "물건을 먼저 말하면 받는 사람은 투로 연결해요. 사 주거나 만들어 주는 동사는 포를 쓰는 경우가 많아요.",
+          "actualStart": 22.16816933333333,
+          "actualEnd": 29.96839633333333,
+          "rate": 185,
+          "cacheKey": "b475193d72082b661408930b9772765400383e4b40f58605f5589c792ae68aed",
+          "file": "audio/03/concept-3-ko-b475193d72082b66.wav",
+          "duration": 7.800227
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 32.327084,
+      "end": 42.92849266666666,
+      "text": "하지만 모든 동사가 두 목적어를 받지는 않아요. 설명하다는 내용을 먼저 놓고 상대를 투로 연결해야 해요.",
+      "screen": "explain something to someone",
+      "visual": "explain → 내용 → to → 사람 배열과 explain → 사람 → 내용 오류 배열을 비교.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "하지만 모든 동사가 두 목적어를 받지는 않아요. 설명하다는 내용을 먼저 놓고 상대를 투로 연결해야 해요.",
+          "actualStart": 32.527084,
+          "actualEnd": 40.569805,
+          "rate": 185,
+          "cacheKey": "468a1e063cbd626a921bec3f44874ad2c3c57e0fe100682355e17e452bed1c1a",
+          "file": "audio/03/concept-4-ko-468a1e063cbd626a.wav",
+          "duration": 8.042721
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 42.92849266666666,
+      "end": 49.85489033333333,
+      "ko": "나는 점심 먹고 문을 열었어요.",
+      "en": "I opened the door after lunch.",
+      "wrong": "I opened to the door after lunch.",
+      "focus": [
+        "opened",
+        "the door"
+      ],
+      "note": "문을 여는 뜻의 open은 문을 직접 목적어로 받으므로 to를 넣지 않는다.",
+      "visual": "opened에서 문으로 바로 이어지는 선과 불필요한 to를 대비.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 점심 먹고 문을 열었어요.",
+          "actualStart": 43.128492666666666,
+          "actualEnd": 45.23983066666666,
+          "rate": 185,
+          "cacheKey": "c0b3f9e2c96b39fcea54154981d828c31b6e7062fe61e418735347b69c1c59a9",
+          "file": "audio/03/example-1-ko-c0b3f9e2c96b39fc.wav",
+          "duration": 2.111338
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I opened the door after lunch.",
+          "actualStart": 45.589830666666664,
+          "actualEnd": 47.24620266666666,
+          "rate": 155,
+          "cacheKey": "787a4c63e751454689d64f1e9c193e17d02cb34094b93bb88d6a709c3b56f09e",
+          "file": "audio/03/example-1-en-787a4c63e7514546.wav",
+          "duration": 1.656372
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "opened",
+            "actualStart": 45.649830666666666,
+            "actualEnd": 46.019830666666664
+          },
+          {
+            "text": "the door",
+            "actualStart": 46.049830666666665,
+            "actualEnd": 46.519830666666664
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "I",
+          "start": 45.59983066666666,
+          "end": 45.649830666666666
+        },
+        {
+          "text": "opened",
+          "start": 45.649830666666666,
+          "end": 46.019830666666664
+        },
+        {
+          "text": "the",
+          "start": 46.049830666666665,
+          "end": 46.24983066666666
+        },
+        {
+          "text": "door",
+          "start": 46.24983066666666,
+          "end": 46.519830666666664
+        },
+        {
+          "text": "after",
+          "start": 46.519830666666664,
+          "end": 46.85983066666667
+        },
+        {
+          "text": "lunch.",
+          "start": 46.85983066666667,
+          "end": 47.13983066666666
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 49.85489033333333,
+      "end": 57.106094999999996,
+      "ko": "그녀는 나에게 새 공책을 줬어요.",
+      "en": "She gave me a new notebook.",
+      "wrong": "She gave I a new notebook.",
+      "focus": [
+        "gave",
+        "me"
+      ],
+      "note": "두 목적어 구조의 받는 사람 자리에는 주격 I가 아니라 목적격 me를 쓴다.",
+      "visual": "I와 me를 비교하고 me를 받는 사람 칸, a new notebook을 물건 칸에 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 나에게 새 공책을 줬어요.",
+          "actualStart": 50.05489033333333,
+          "actualEnd": 52.68627333333333,
+          "rate": 185,
+          "cacheKey": "0e41fa799af5721a9355536ba4b73043aca9112d00bf0ad070c9066ae041157b",
+          "file": "audio/03/example-2-ko-0e41fa799af5721a.wav",
+          "duration": 2.631383
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She gave me a new notebook.",
+          "actualStart": 53.036273333333334,
+          "actualEnd": 54.497407333333335,
+          "rate": 155,
+          "cacheKey": "ed35ba5241fc416e27da956ca0b12201cd0b61c082fb6cde6804f1aeb2bd1d92",
+          "file": "audio/03/example-2-en-ed35ba5241fc416e.wav",
+          "duration": 1.461134
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "gave",
+            "actualStart": 53.206273333333336,
+            "actualEnd": 53.43627333333333
+          },
+          {
+            "text": "me",
+            "actualStart": 53.43627333333333,
+            "actualEnd": 53.54627333333333
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "She",
+          "start": 53.066273333333335,
+          "end": 53.206273333333336
+        },
+        {
+          "text": "gave",
+          "start": 53.206273333333336,
+          "end": 53.43627333333333
+        },
+        {
+          "text": "me",
+          "start": 53.43627333333333,
+          "end": 53.54627333333333
+        },
+        {
+          "text": "a",
+          "start": 53.54627333333333,
+          "end": 53.596273333333336
+        },
+        {
+          "text": "new",
+          "start": 53.596273333333336,
+          "end": 53.76627333333333
+        },
+        {
+          "text": "notebook.",
+          "start": 53.76627333333333,
+          "end": 54.22627333333333
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 57.106094999999996,
+      "end": 64.08596166666666,
+      "ko": "그녀는 그 공책을 나에게 줬어요.",
+      "en": "She gave the notebook to me.",
+      "wrong": "She gave the notebook me.",
+      "focus": [
+        "the notebook",
+        "to me"
+      ],
+      "note": "물건을 먼저 놓은 이 배열에서는 받는 사람 앞에 to가 필요하다.",
+      "visual": "공책 칸을 앞으로 옮기고 me 앞에 to 연결 고리 추가.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 그 공책을 나에게 줬어요.",
+          "actualStart": 57.306095,
+          "actualEnd": 59.66614,
+          "rate": 185,
+          "cacheKey": "281f65c142bdb058cba8df0af0bd0719feb66bca1f7fd4c354d31334998b9306",
+          "file": "audio/03/example-3-ko-281f65c142bdb058.wav",
+          "duration": 2.360045
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She gave the notebook to me.",
+          "actualStart": 60.01614,
+          "actualEnd": 61.477274,
+          "rate": 155,
+          "cacheKey": "1d6fea96643b7cca2979c871b679f352e65a9871d771bad9102faaf6f06cfcbd",
+          "file": "audio/03/example-3-en-1d6fea96643b7cca.wav",
+          "duration": 1.461134
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "the notebook",
+            "actualStart": 60.38614,
+            "actualEnd": 60.95614
+          },
+          {
+            "text": "to me",
+            "actualStart": 61.05614,
+            "actualEnd": 61.17614
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "She",
+          "start": 60.04614,
+          "end": 60.17614
+        },
+        {
+          "text": "gave",
+          "start": 60.17614,
+          "end": 60.38614
+        },
+        {
+          "text": "the",
+          "start": 60.38614,
+          "end": 60.54614
+        },
+        {
+          "text": "notebook",
+          "start": 60.54614,
+          "end": 60.95614
+        },
+        {
+          "text": "to",
+          "start": 61.05614,
+          "end": 61.06614
+        },
+        {
+          "text": "me.",
+          "start": 61.08614,
+          "end": 61.17614
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 64.08596166666666,
+      "end": 71.49997833333333,
+      "ko": "나는 여동생에게 스카프를 사 줬어요.",
+      "en": "I bought a scarf for my sister.",
+      "wrong": "I bought a scarf to my sister.",
+      "focus": [
+        "bought",
+        "for my sister"
+      ],
+      "note": "누군가를 위해 물건을 사 주는 뜻에서는 buy 물건 for 사람을 쓴다.",
+      "visual": "구매한 스카프와 수혜자 사이에 for 표시, 이동 화살표와 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 여동생에게 스카프를 사 줬어요.",
+          "actualStart": 64.28596166666667,
+          "actualEnd": 66.82686866666667,
+          "rate": 185,
+          "cacheKey": "74100e4539446c0c7718b9a285061254d45416369d302f8a3bfe2f87c3a5ed46",
+          "file": "audio/03/example-4-ko-74100e4539446c0c.wav",
+          "duration": 2.540907
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I bought a scarf for my sister.",
+          "actualStart": 67.17686866666666,
+          "actualEnd": 68.89129066666666,
+          "rate": 155,
+          "cacheKey": "0dac591a58dda2291841ce6237a0fd0946e19937dc1a6ee30fdfd4e487a51906",
+          "file": "audio/03/example-4-en-0dac591a58dda229.wav",
+          "duration": 1.714422
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "bought",
+            "actualStart": 67.24686866666666,
+            "actualEnd": 67.61686866666666
+          },
+          {
+            "text": "for my sister",
+            "actualStart": 68.06686866666666,
+            "actualEnd": 68.82686866666667
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "I",
+          "start": 67.18686866666667,
+          "end": 67.24686866666666
+        },
+        {
+          "text": "bought",
+          "start": 67.24686866666666,
+          "end": 67.61686866666666
+        },
+        {
+          "text": "a",
+          "start": 67.65686866666667,
+          "end": 67.66686866666666
+        },
+        {
+          "text": "scarf",
+          "start": 67.73686866666667,
+          "end": 68.06686866666666
+        },
+        {
+          "text": "for",
+          "start": 68.06686866666666,
+          "end": 68.27686866666666
+        },
+        {
+          "text": "my",
+          "start": 68.27686866666666,
+          "end": 68.35686866666667
+        },
+        {
+          "text": "sister.",
+          "start": 68.40686866666667,
+          "end": 68.82686866666667
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 71.49997833333333,
+      "end": 79.32651200000001,
+      "ko": "우리는 손님들에게 저녁을 만들어 줬어요.",
+      "en": "We cooked our guests a simple dinner.",
+      "wrong": "We cooked to our guests a simple dinner.",
+      "focus": [
+        "our guests",
+        "a simple dinner"
+      ],
+      "note": "cook 사람 음식의 두 목적어 구조나 cook 음식 for 사람을 쓴다; 수혜자를 cook to 사람으로 연결하지 않는다.",
+      "visual": "손님·저녁 두 칸과 음식 for 손님 배열을 비교하고 cook to 연결에는 오류 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 손님들에게 저녁을 만들어 줬어요.",
+          "actualStart": 71.69997833333333,
+          "actualEnd": 74.62396933333333,
+          "rate": 185,
+          "cacheKey": "05cd597a941836235d2fc3e5410e2d7c8422d3168ce64c44f47d917e04d4658c",
+          "file": "audio/03/example-5-ko-05cd597a94183623.wav",
+          "duration": 2.923991
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We cooked our guests a simple dinner.",
+          "actualStart": 74.97396933333333,
+          "actualEnd": 76.71782433333333,
+          "rate": 155,
+          "cacheKey": "8ad005f13f1952c1f4492ef6708246541050e5041c7fadbd7d9261d049faf635",
+          "file": "audio/03/example-5-en-8ad005f13f1952c1.wav",
+          "duration": 1.743855
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "our guests",
+            "actualStart": 75.42396933333333,
+            "actualEnd": 75.93396933333332
+          },
+          {
+            "text": "a simple dinner",
+            "actualStart": 75.93396933333332,
+            "actualEnd": 76.64396933333333
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "We",
+          "start": 74.98396933333333,
+          "end": 75.08396933333333
+        },
+        {
+          "text": "cooked",
+          "start": 75.08396933333333,
+          "end": 75.42396933333333
+        },
+        {
+          "text": "our",
+          "start": 75.42396933333333,
+          "end": 75.55396933333333
+        },
+        {
+          "text": "guests",
+          "start": 75.61396933333333,
+          "end": 75.93396933333332
+        },
+        {
+          "text": "a",
+          "start": 75.93396933333332,
+          "end": 75.97396933333333
+        },
+        {
+          "text": "simple",
+          "start": 76.06396933333333,
+          "end": 76.32396933333332
+        },
+        {
+          "text": "dinner.",
+          "start": 76.32396933333332,
+          "end": 76.64396933333333
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 79.32651200000001,
+      "end": 87.09073266666668,
+      "ko": "오늘 오후에 그 파일을 나에게 보내 주세요.",
+      "en": "Please send the file to me this afternoon.",
+      "wrong": "Please send the file me this afternoon.",
+      "focus": [
+        "send",
+        "to me"
+      ],
+      "note": "send 물건 to 사람 구조이며 send me the file처럼 사람을 먼저 놓을 수도 있다.",
+      "visual": "파일에서 수신자까지 to 화살표를 그리고 두 배열의 순서 비교.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "오늘 오후에 그 파일을 나에게 보내 주세요.",
+          "actualStart": 79.52651200000001,
+          "actualEnd": 81.99775900000002,
+          "rate": 185,
+          "cacheKey": "4f963fe50a3ce51155d841a6cb2118543148ad2ac0103125d3ceabd73edaa0c7",
+          "file": "audio/03/example-6-ko-4f963fe50a3ce511.wav",
+          "duration": 2.471247
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Please send the file to me this afternoon.",
+          "actualStart": 82.34775900000001,
+          "actualEnd": 84.48204500000001,
+          "rate": 155,
+          "cacheKey": "04db7dcb50e072ba53a685b5af4db30fae10e6d0df1b0f6ab800bea47bb864c4",
+          "file": "audio/03/example-6-en-04db7dcb50e072ba.wav",
+          "duration": 2.134286
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "send",
+            "actualStart": 82.70775900000001,
+            "actualEnd": 82.93775900000001
+          },
+          {
+            "text": "to me",
+            "actualStart": 83.37775900000001,
+            "actualEnd": 83.587759
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "Please",
+          "start": 82.39775900000001,
+          "end": 82.70775900000001
+        },
+        {
+          "text": "send",
+          "start": 82.70775900000001,
+          "end": 82.93775900000001
+        },
+        {
+          "text": "the",
+          "start": 83.03775900000001,
+          "end": 83.12775900000001
+        },
+        {
+          "text": "file",
+          "start": 83.12775900000001,
+          "end": 83.27775900000002
+        },
+        {
+          "text": "to",
+          "start": 83.37775900000001,
+          "end": 83.48775900000001
+        },
+        {
+          "text": "me",
+          "start": 83.48775900000001,
+          "end": 83.587759
+        },
+        {
+          "text": "this",
+          "start": 83.62775900000001,
+          "end": 83.84775900000001
+        },
+        {
+          "text": "afternoon.",
+          "start": 83.84775900000001,
+          "end": 84.417759
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 87.09073266666668,
+      "end": 95.38252733333336,
+      "ko": "그녀는 회의 전에 우리에게 계획을 보여 줬어요.",
+      "en": "She showed us the plan before the meeting.",
+      "wrong": "She showed we the plan before the meeting.",
+      "focus": [
+        "showed",
+        "us"
+      ],
+      "note": "show 사람 내용 구조의 사람 자리에는 주격 we가 아니라 목적격 us를 쓴다; show the plan to us도 가능하다.",
+      "visual": "we를 us와 비교하고 us와 the plan을 두 목적어 칸으로 묶기.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 회의 전에 우리에게 계획을 보여 줬어요.",
+          "actualStart": 87.29073266666668,
+          "actualEnd": 90.41703666666669,
+          "rate": 185,
+          "cacheKey": "d7e39646accb5ce22d246169dec6cf5033696d511227867e6222941362130f2e",
+          "file": "audio/03/example-7-ko-d7e39646accb5ce2.wav",
+          "duration": 3.126304
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She showed us the plan before the meeting.",
+          "actualStart": 90.76703666666668,
+          "actualEnd": 92.77383966666669,
+          "rate": 155,
+          "cacheKey": "aad9efc4dee3b4bac1e3506ff82682d33f3194d1825da888f267ffd9b623cd29",
+          "file": "audio/03/example-7-en-aad9efc4dee3b4ba.wav",
+          "duration": 2.006803
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "showed",
+            "actualStart": 90.91703666666669,
+            "actualEnd": 91.22703666666668
+          },
+          {
+            "text": "us",
+            "actualStart": 91.22703666666668,
+            "actualEnd": 91.32703666666669
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "She",
+          "start": 90.79703666666668,
+          "end": 90.91703666666669
+        },
+        {
+          "text": "showed",
+          "start": 90.91703666666669,
+          "end": 91.22703666666668
+        },
+        {
+          "text": "us",
+          "start": 91.22703666666668,
+          "end": 91.32703666666669
+        },
+        {
+          "text": "the",
+          "start": 91.32703666666669,
+          "end": 91.47703666666668
+        },
+        {
+          "text": "plan",
+          "start": 91.47703666666668,
+          "end": 91.68703666666669
+        },
+        {
+          "text": "before",
+          "start": 91.68703666666669,
+          "end": 91.93703666666669
+        },
+        {
+          "text": "the",
+          "start": 92.03703666666668,
+          "end": 92.14703666666668
+        },
+        {
+          "text": "meeting.",
+          "start": 92.14703666666668,
+          "end": 92.51703666666668
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 95.38252733333336,
+      "end": 104.44425400000003,
+      "ko": "담당자가 새 직원들에게 그 규칙을 설명했어요.",
+      "en": "The manager explained the rule to the new staff.",
+      "wrong": "The manager explained the new staff the rule.",
+      "focus": [
+        "explained",
+        "to the new staff"
+      ],
+      "note": "explain은 이 의미에서 사람·내용의 두 목적어 구조를 취하지 않는다.",
+      "visual": "규칙을 직접 목적어 칸에, 직원들을 to 뒤의 상대 칸에 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "담당자가 새 직원들에게 그 규칙을 설명했어요.",
+          "actualStart": 95.58252733333336,
+          "actualEnd": 99.03540733333335,
+          "rate": 185,
+          "cacheKey": "71a436f3b2f902273dcda6bcc54df38e2d60329c6f19a2f4969ca1ab90f2ea6a",
+          "file": "audio/03/example-8-ko-71a436f3b2f90227.wav",
+          "duration": 3.45288
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The manager explained the rule to the new staff.",
+          "actualStart": 99.38540733333335,
+          "actualEnd": 101.83556633333335,
+          "rate": 155,
+          "cacheKey": "120599b881dac21cdd3e9ead8c343c78a7a49dda45e566a36e8829cbae49988c",
+          "file": "audio/03/example-8-en-120599b881dac21c.wav",
+          "duration": 2.450159
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "explained",
+            "actualStart": 99.96540733333335,
+            "actualEnd": 100.49540733333335
+          },
+          {
+            "text": "to the new staff",
+            "actualStart": 100.90540733333334,
+            "actualEnd": 101.67540733333335
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "The",
+          "start": 99.39540733333335,
+          "end": 99.55540733333335
+        },
+        {
+          "text": "manager",
+          "start": 99.55540733333335,
+          "end": 99.96540733333335
+        },
+        {
+          "text": "explained",
+          "start": 99.96540733333335,
+          "end": 100.49540733333335
+        },
+        {
+          "text": "the",
+          "start": 100.49540733333335,
+          "end": 100.66540733333335
+        },
+        {
+          "text": "rule",
+          "start": 100.66540733333335,
+          "end": 100.84540733333334
+        },
+        {
+          "text": "to",
+          "start": 100.90540733333334,
+          "end": 100.99540733333335
+        },
+        {
+          "text": "the",
+          "start": 101.02540733333335,
+          "end": 101.17540733333335
+        },
+        {
+          "text": "new",
+          "start": 101.17540733333335,
+          "end": 101.29540733333334
+        },
+        {
+          "text": "staff.",
+          "start": 101.33540733333335,
+          "end": 101.67540733333335
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104.44425400000003,
+      "end": 112.1735996666667,
+      "ko": "내일 네 자전거를 나에게 빌려줄 수 있니?",
+      "en": "Could you lend me your bike tomorrow?",
+      "wrong": "Could you lend I your bike tomorrow?",
+      "focus": [
+        "lend",
+        "me"
+      ],
+      "note": "빌리는 상대는 목적격 me로 나타낸다; lend me your bike와 lend your bike to me 모두 가능하다.",
+      "visual": "목적격 me를 강조하고 두 가지 올바른 어순을 평행선으로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "내일 네 자전거를 나에게 빌려줄 수 있니?",
+          "actualStart": 104.64425400000003,
+          "actualEnd": 107.52180500000003,
+          "rate": 185,
+          "cacheKey": "8afdc7ee8e740b29219c743db52ea24c44f92bdf2c06c59f38af77bb7b5d0ba7",
+          "file": "audio/03/example-9-ko-8afdc7ee8e740b29.wav",
+          "duration": 2.877551
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Could you lend me your bike tomorrow?",
+          "actualStart": 107.87180500000002,
+          "actualEnd": 109.56491200000002,
+          "rate": 155,
+          "cacheKey": "0da55e73b7b3138daeacfee2e5ed0b4bc61e7b7fe7e7566cedb2818aee8c33af",
+          "file": "audio/03/example-9-en-0da55e73b7b3138d.wav",
+          "duration": 1.693107
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "lend",
+            "actualStart": 108.30180500000003,
+            "actualEnd": 108.51180500000002
+          },
+          {
+            "text": "me",
+            "actualStart": 108.51180500000002,
+            "actualEnd": 108.61180500000002
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "Could",
+          "start": 107.92180500000002,
+          "end": 108.14180500000002
+        },
+        {
+          "text": "you",
+          "start": 108.14180500000002,
+          "end": 108.30180500000003
+        },
+        {
+          "text": "lend",
+          "start": 108.30180500000003,
+          "end": 108.51180500000002
+        },
+        {
+          "text": "me",
+          "start": 108.51180500000002,
+          "end": 108.61180500000002
+        },
+        {
+          "text": "your",
+          "start": 108.61180500000002,
+          "end": 108.82180500000003
+        },
+        {
+          "text": "bike",
+          "start": 108.82180500000003,
+          "end": 109.02180500000003
+        },
+        {
+          "text": "tomorrow?",
+          "start": 109.04180500000002,
+          "end": 109.46180500000003
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 112.1735996666667,
+      "end": 121.38258233333337,
+      "ko": "그녀는 초보자들에게 기본 기타 코드를 가르쳤어요.",
+      "en": "She taught the beginners some basic guitar chords.",
+      "wrong": "She taught the beginners to some basic guitar chords.",
+      "focus": [
+        "the beginners",
+        "guitar chords"
+      ],
+      "note": "teach 사람 내용에서는 내용 앞에 to를 넣지 않는다; teach 사람 to 동사와 명사 내용을 구별한다.",
+      "visual": "학습자·코드 명사 두 칸과 to play 동작 보충 칸을 나란히 비교.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 초보자들에게 기본 기타 코드를 가르쳤어요.",
+          "actualStart": 112.3735996666667,
+          "actualEnd": 115.8249826666667,
+          "rate": 185,
+          "cacheKey": "ac6393c07a944962f2b5401d75c73b17325dc010c31659ce1a7c70b616399af5",
+          "file": "audio/03/example-10-ko-ac6393c07a944962.wav",
+          "duration": 3.451383
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She taught the beginners some basic guitar chords.",
+          "actualStart": 116.1749826666667,
+          "actualEnd": 118.77389466666669,
+          "rate": 155,
+          "cacheKey": "626597e9519e5f4ade9958b54897c44a75a43b7ebc09b5cd3dbe06422ed8f69a",
+          "file": "audio/03/example-10-en-626597e9519e5f4a.wav",
+          "duration": 2.598912
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "the beginners",
+            "actualStart": 116.7049826666667,
+            "actualEnd": 117.41498266666669
+          },
+          {
+            "text": "guitar chords",
+            "actualStart": 118.00498266666669,
+            "actualEnd": 118.66498266666669
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "She",
+          "start": 116.2049826666667,
+          "end": 116.3549826666667
+        },
+        {
+          "text": "taught",
+          "start": 116.3549826666667,
+          "end": 116.7049826666667
+        },
+        {
+          "text": "the",
+          "start": 116.7049826666667,
+          "end": 116.88498266666669
+        },
+        {
+          "text": "beginners",
+          "start": 116.88498266666669,
+          "end": 117.41498266666669
+        },
+        {
+          "text": "some",
+          "start": 117.41498266666669,
+          "end": 117.61498266666669
+        },
+        {
+          "text": "basic",
+          "start": 117.6849826666667,
+          "end": 117.9349826666667
+        },
+        {
+          "text": "guitar",
+          "start": 118.00498266666669,
+          "end": 118.30498266666669
+        },
+        {
+          "text": "chords.",
+          "start": 118.30498266666669,
+          "end": 118.66498266666669
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 121.38258233333337,
+      "end": 130,
+      "text": "목적어 구조와 사람을 연결하는 전치사는 한국어 조사보다 영어 동사의 쓰임으로 고르세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "목적어 구조와 사람을 연결하는 전치사는 한국어 조사보다 영어 동사의 쓰임으로 고르세요.",
+          "actualStart": 121.58258233333338,
+          "actualEnd": 127.64131233333337,
+          "rate": 185,
+          "cacheKey": "faef4f54496dcfd10d8b7204a42d56de1d66c3a50ffe168dbb89453b7655c349",
+          "file": "audio/03/summary-ko-faef4f54496dcfd1.wav",
+          "duration": 6.05873
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 103.61968499999999,
+  "sourceHash": "b9a88afed740c7617ac6bdedef02f7b252f11ad69e214db5eb0a3a3c1ee875fe",
+  "audioFile": "audio/03/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "b9a88afed740c7617ac6bdedef02f7b252f11ad69e214db5eb0a3a3c1ee875fe",
+    "clipHashes": {
+      "example-1-en": "c9ef48223c4d2efb26de02df597fa3f68639534bf091dbf624963c1083503ec7",
+      "example-2-en": "c0908f6d89445efdc85880938daf36ad2627ab234035483768bf3c542e968f76",
+      "example-3-en": "44d30e1319d381ec3925bb5c15a26a119af11cf946e00bba59fb63e14b133382",
+      "example-4-en": "4b0d32f253cfc31b00253bda3b6d08bf888cc8695b16c605518c786b565951b8",
+      "example-5-en": "6ed7627ca3b43dab464689307d6c14c2f20483d65eaca6c1f52bd2d2c9bd981c",
+      "example-6-en": "64eb2b6b6e90606480674342333ae5ba972bd81371d460cc570a4e5fc07e1c8e",
+      "example-7-en": "02b5b024635a13a1bca37e49463f9588b9dcbce7521763dc6330005de1724ee6",
+      "example-8-en": "bc3289541adc97ae2798ac39423af76e3fd286db5bfacf189024cc82f8d10421",
+      "example-9-en": "f65e5b14bb1f39ff23ff51866d1481878bea0a6de583a2b1f48c26d9ca9960b5",
+      "example-10-en": "5172abc25887983b873e79475782d9b820e9803bdcded03a286e687efdb5801d"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

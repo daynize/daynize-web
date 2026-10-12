@@ -1,0 +1,36 @@
+{
+  "episode": 13,
+  "title": "직접 하는 대상과 영향을 받은 대상",
+  "inputHash": "5c8f9f10af03727d0d1ceb39b68eb1779bb429d3edcfe0b0727cbbd0774642ce",
+  "output": "renders/basic-13.mp4",
+  "contact": "renders/basic-13-contact.png",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "duration": "130.000000",
+        "nb_frames": "3900"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "130.000000",
+        "nb_frames": "6095"
+      }
+    ],
+    "format": {
+      "duration": "130.000000",
+      "size": "8043185"
+    }
+  },
+  "audioPeakDb": -1.4,
+  "browserCheck": true,
+  "listeningReviewed": false
+}

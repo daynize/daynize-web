@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,320"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2320
+			},
+			"text": " The manager explained the rule to the new staff.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998824,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,170"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 170
+					},
+					"id": 383,
+					"p": 0.688351,
+					"t_dtw": -1
+				},
+				{
+					"text": " manager",
+					"timestamps": {
+						"from": "00:00:00,170",
+						"to": "00:00:00,580"
+					},
+					"offsets": {
+						"from": 170,
+						"to": 580
+					},
+					"id": 4706,
+					"p": 0.944244,
+					"t_dtw": -1
+				},
+				{
+					"text": " explained",
+					"timestamps": {
+						"from": "00:00:00,580",
+						"to": "00:00:01,110"
+					},
+					"offsets": {
+						"from": 580,
+						"to": 1110
+					},
+					"id": 4893,
+					"p": 0.995837,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,110",
+						"to": "00:00:01,280"
+					},
+					"offsets": {
+						"from": 1110,
+						"to": 1280
+					},
+					"id": 262,
+					"p": 0.998734,
+					"t_dtw": -1
+				},
+				{
+					"text": " rule",
+					"timestamps": {
+						"from": "00:00:01,280",
+						"to": "00:00:01,460"
+					},
+					"offsets": {
+						"from": 1280,
+						"to": 1460
+					},
+					"id": 3896,
+					"p": 0.992475,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:01,520",
+						"to": "00:00:01,610"
+					},
+					"offsets": {
+						"from": 1520,
+						"to": 1610
+					},
+					"id": 284,
+					"p": 0.999054,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,640",
+						"to": "00:00:01,790"
+					},
+					"offsets": {
+						"from": 1640,
+						"to": 1790
+					},
+					"id": 262,
+					"p": 0.997805,
+					"t_dtw": -1
+				},
+				{
+					"text": " new",
+					"timestamps": {
+						"from": "00:00:01,790",
+						"to": "00:00:01,910"
+					},
+					"offsets": {
+						"from": 1790,
+						"to": 1910
+					},
+					"id": 649,
+					"p": 0.988039,
+					"t_dtw": -1
+				},
+				{
+					"text": " staff",
+					"timestamps": {
+						"from": "00:00:01,950",
+						"to": "00:00:02,290"
+					},
+					"offsets": {
+						"from": 1950,
+						"to": 2290
+					},
+					"id": 3085,
+					"p": 0.998117,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,320",
+						"to": "00:00:02,320"
+					},
+					"offsets": {
+						"from": 2320,
+						"to": 2320
+					},
+					"id": 13,
+					"p": 0.93781,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_116]",
+					"timestamps": {
+						"from": "00:00:02,320",
+						"to": "00:00:02,320"
+					},
+					"offsets": {
+						"from": 2320,
+						"to": 2320
+					},
+					"id": 50479,
+					"p": 0.096046,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,060"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2060
+			},
+			"text": " the students were bored during the long meeting.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997471,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,150"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 150
+					},
+					"id": 262,
+					"p": 0.52283,
+					"t_dtw": -1
+				},
+				{
+					"text": " students",
+					"timestamps": {
+						"from": "00:00:00,230",
+						"to": "00:00:00,480"
+					},
+					"offsets": {
+						"from": 230,
+						"to": 480
+					},
+					"id": 2444,
+					"p": 0.972394,
+					"t_dtw": -1
+				},
+				{
+					"text": " were",
+					"timestamps": {
+						"from": "00:00:00,600",
+						"to": "00:00:00,730"
+					},
+					"offsets": {
+						"from": 600,
+						"to": 730
+					},
+					"id": 547,
+					"p": 0.998753,
+					"t_dtw": -1
+				},
+				{
+					"text": " bored",
+					"timestamps": {
+						"from": "00:00:00,780",
+						"to": "00:00:00,960"
+					},
+					"offsets": {
+						"from": 780,
+						"to": 960
+					},
+					"id": 17533,
+					"p": 0.654252,
+					"t_dtw": -1
+				},
+				{
+					"text": " during",
+					"timestamps": {
+						"from": "00:00:01,030",
+						"to": "00:00:01,280"
+					},
+					"offsets": {
+						"from": 1030,
+						"to": 1280
+					},
+					"id": 1141,
+					"p": 0.999769,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,280",
+						"to": "00:00:01,430"
+					},
+					"offsets": {
+						"from": 1280,
+						"to": 1430
+					},
+					"id": 262,
+					"p": 0.994423,
+					"t_dtw": -1
+				},
+				{
+					"text": " long",
+					"timestamps": {
+						"from": "00:00:01,430",
+						"to": "00:00:01,630"
+					},
+					"offsets": {
+						"from": 1430,
+						"to": 1630
+					},
+					"id": 890,
+					"p": 0.928424,
+					"t_dtw": -1
+				},
+				{
+					"text": " meeting",
+					"timestamps": {
+						"from": "00:00:01,630",
+						"to": "00:00:01,990"
+					},
+					"offsets": {
+						"from": 1630,
+						"to": 1990
+					},
+					"id": 3249,
+					"p": 0.972653,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,990",
+						"to": "00:00:02,030"
+					},
+					"offsets": {
+						"from": 1990,
+						"to": 2030
+					},
+					"id": 13,
+					"p": 0.903358,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_103]",
+					"timestamps": {
+						"from": "00:00:02,060",
+						"to": "00:00:02,060"
+					},
+					"offsets": {
+						"from": 2060,
+						"to": 2060
+					},
+					"id": 50466,
+					"p": 0.0826077,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,1285 @@
+{
+  "id": "basic-06",
+  "episode": 6,
+  "title": "정보 두 개를 영어로 세는 법",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 9.627603866666666,
+      "text": "영어에서는 하나씩 세는 명사와 양으로 다루는 명사가 달라요. 정보나 조언은 보통 양으로 다루죠.",
+      "screen": "books / information / advice",
+      "visual": "책은 개별 상자로, 정보와 조언은 분리되지 않은 묶음 영역으로 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "영어에서는 하나씩 세는 명사와 양으로 다루는 명사가 달라요. 정보나 조언은 보통 양으로 다루죠.",
+          "actualStart": 0.2,
+          "actualEnd": 7.17551,
+          "rate": 185,
+          "cacheKey": "dafcc1628865753e7f5ee4b91231c92c5027373eff6c8cc21dcfaf48688a2105",
+          "file": "audio/06/concept-1-ko-dafcc1628865753e.wav",
+          "duration": 6.97551
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 9.627603866666666,
+      "end": 19.674028733333333,
+      "text": "양으로 다루는 명사는 복수 표시를 바로 붙이지 않아요. 몇 개인지 말하려면 조각이나 컵 같은 단위를 써요.",
+      "screen": "two pieces of advice / two cups of coffee",
+      "visual": "advice 묶음을 pieces 두 칸으로 세고 coffee는 컵 두 개로 계량.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "양으로 다루는 명사는 복수 표시를 바로 붙이지 않아요. 몇 개인지 말하려면 조각이나 컵 같은 단위를 써요.",
+          "actualStart": 9.827603866666665,
+          "actualEnd": 17.221934866666665,
+          "rate": 185,
+          "cacheKey": "424daf092a748c5c7013672c65d3fecb89bdcb03639e80a095bb6e422e6b71db",
+          "file": "audio/06/concept-2-ko-424daf092a748c5c.wav",
+          "duration": 7.394331
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 19.674028733333333,
+      "end": 30.2736506,
+      "text": "많은지 물을 때 세는 명사는 매니, 양으로 다루면 머치를 써요. 일상 평서문에서는 어 랏 오브도 자연스러워요.",
+      "screen": "many books / much information / a lot of",
+      "visual": "개수 눈금과 양 눈금을 분리하고 many·much를 해당 눈금에 연결.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "많은지 물을 때 세는 명사는 매니, 양으로 다루면 머치를 써요. 일상 평서문에서는 어 랏 오브도 자연스러워요.",
+          "actualStart": 19.874028733333333,
+          "actualEnd": 27.82155673333333,
+          "rate": 185,
+          "cacheKey": "f895be74e24034aa13d2451e595d257cb3e27e376f0dcc6a19328f8edfd488a4",
+          "file": "audio/06/concept-3-ko-f895be74e24034aa.wav",
+          "duration": 7.947528
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30.2736506,
+      "end": 40.12837446666666,
+      "text": "동사도 주어의 수에 맞춰요. 정보 자체는 단수로 받지만, 정보 두 조각을 주어로 쓰면 단위가 복수예요.",
+      "screen": "The information is ... / Two pieces are ...",
+      "visual": "information → is, pieces → are 연결선을 그어 of 뒤 명사와 일치 주체 구분.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "동사도 주어의 수에 맞춰요. 정보 자체는 단수로 받지만, 정보 두 조각을 주어로 쓰면 단위가 복수예요.",
+          "actualStart": 30.4736506,
+          "actualEnd": 37.6762806,
+          "rate": 185,
+          "cacheKey": "652b0089272b559f69b9a0d05b7ab1b3d541c784ec1b9de40db34eb9eaac8da3",
+          "file": "audio/06/concept-4-ko-652b0089272b559f.wav",
+          "duration": 7.20263
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40.12837446666666,
+      "end": 47.719606333333324,
+      "ko": "이 정보는 우리 여행에 도움이 돼요.",
+      "en": "This information is useful for our trip.",
+      "wrong": "This information are useful for our trip.",
+      "focus": [
+        "information",
+        "is"
+      ],
+      "note": "일반적인 불가산 명사 information은 여기서 단수 동사 is를 받는다.",
+      "visual": "information 하나의 묶음과 is를 같은 색으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이 정보는 우리 여행에 도움이 돼요.",
+          "actualStart": 40.328374466666666,
+          "actualEnd": 42.509689466666664,
+          "rate": 185,
+          "cacheKey": "aebcb484a58dcbb6f910cf88aeb6875e81a6d5387edd1292d4cb7bb44f870947",
+          "file": "audio/06/example-1-ko-aebcb484a58dcbb6.wav",
+          "duration": 2.181315
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This information is useful for our trip.",
+          "actualStart": 42.859689466666666,
+          "actualEnd": 45.017512466666666,
+          "rate": 155,
+          "cacheKey": "c33ba52c362fc96bebc6a44f2ab59fea1f3e36679567e167f7d967d5594a3b1f",
+          "file": "audio/06/example-1-en-c33ba52c362fc96b.wav",
+          "duration": 2.157823
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "information",
+            "actualStart": 43.08968946666666,
+            "actualEnd": 43.719689466666665
+          },
+          {
+            "text": "is",
+            "actualStart": 43.719689466666665,
+            "actualEnd": 43.81968946666667
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "This",
+          "start": 42.87968946666667,
+          "end": 43.08968946666666
+        },
+        {
+          "text": "information",
+          "start": 43.08968946666666,
+          "end": 43.719689466666665
+        },
+        {
+          "text": "is",
+          "start": 43.719689466666665,
+          "end": 43.81968946666667
+        },
+        {
+          "text": "useful",
+          "start": 43.81968946666667,
+          "end": 44.16968946666667
+        },
+        {
+          "text": "for",
+          "start": 44.16968946666667,
+          "end": 44.33968946666666
+        },
+        {
+          "text": "our",
+          "start": 44.33968946666666,
+          "end": 44.509689466666664
+        },
+        {
+          "text": "trip.",
+          "start": 44.509689466666664,
+          "end": 44.73968946666667
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47.719606333333324,
+      "end": 56.41151919999999,
+      "ko": "그녀는 나에게 유용한 조언 두 가지를 해 줬어요.",
+      "en": "She gave me two useful pieces of advice.",
+      "wrong": "She gave me two useful advices.",
+      "focus": [
+        "pieces",
+        "advice"
+      ],
+      "note": "advice에 s를 붙이지 않고 pieces of advice로 단위를 센다.",
+      "visual": "advice 영역 위에 pieces 두 개를 놓고 s 직접 부착 오류 비교.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀는 나에게 유용한 조언 두 가지를 해 줬어요.",
+          "actualStart": 47.91960633333333,
+          "actualEnd": 50.83017333333333,
+          "rate": 185,
+          "cacheKey": "6d98430d2712b7deced6a849313d6c180cfb90146ef1be8ed70a0985a4dc4b22",
+          "file": "audio/06/example-2-ko-6d98430d2712b7de.wav",
+          "duration": 2.910567
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She gave me two useful pieces of advice.",
+          "actualStart": 51.18017333333333,
+          "actualEnd": 53.70942533333333,
+          "rate": 155,
+          "cacheKey": "560661ac51957b2c93ecd91009b796b79762e7436315eeb171543320afa94b1e",
+          "file": "audio/06/example-2-en-560661ac51957b2c.wav",
+          "duration": 2.529252
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "pieces",
+            "actualStart": 52.61017333333333,
+            "actualEnd": 53.04017333333333
+          },
+          {
+            "text": "advice",
+            "actualStart": 53.19017333333333,
+            "actualEnd": 53.53017333333333
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "She",
+          "start": 51.21017333333333,
+          "end": 51.39017333333333
+        },
+        {
+          "text": "gave",
+          "start": 51.45017333333333,
+          "end": 51.72017333333333
+        },
+        {
+          "text": "me",
+          "start": 51.72017333333333,
+          "end": 51.87017333333333
+        },
+        {
+          "text": "two",
+          "start": 51.92017333333333,
+          "end": 52.10017333333333
+        },
+        {
+          "text": "useful",
+          "start": 52.10017333333333,
+          "end": 52.50017333333333
+        },
+        {
+          "text": "pieces",
+          "start": 52.61017333333333,
+          "end": 53.04017333333333
+        },
+        {
+          "text": "of",
+          "start": 53.04017333333333,
+          "end": 53.19017333333333
+        },
+        {
+          "text": "advice.",
+          "start": 53.19017333333333,
+          "end": 53.53017333333333
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 56.41151919999999,
+      "end": 62.87032506666665,
+      "ko": "너는 집에 책이 많이 있니?",
+      "en": "Do you have many books at home?",
+      "wrong": "Do you have much books at home?",
+      "focus": [
+        "many",
+        "books"
+      ],
+      "note": "books는 가산 복수이므로 개수를 묻는 many를 쓴다.",
+      "visual": "책 여러 권에 번호를 붙이고 many 개수 눈금 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "너는 집에 책이 많이 있니?",
+          "actualStart": 56.61151919999999,
+          "actualEnd": 58.18943319999999,
+          "rate": 185,
+          "cacheKey": "99f0d55449a4dbdef058cf04632419a8193b4682c4fdd1b794ffefd0763f397b",
+          "file": "audio/06/example-3-ko-99f0d55449a4dbde.wav",
+          "duration": 1.577914
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Do you have many books at home?",
+          "actualStart": 58.53943319999999,
+          "actualEnd": 60.168231199999994,
+          "rate": 155,
+          "cacheKey": "0b3d9a4169097f635bd1633a85d425eedecb9fd86097246161b6fa515b6fe673",
+          "file": "audio/06/example-3-en-0b3d9a4169097f63.wav",
+          "duration": 1.628798
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "many",
+            "actualStart": 59.059433199999994,
+            "actualEnd": 59.27943319999999
+          },
+          {
+            "text": "books",
+            "actualStart": 59.27943319999999,
+            "actualEnd": 59.47943319999999
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "Do",
+          "start": 58.559433199999994,
+          "end": 58.64943319999999
+        },
+        {
+          "text": "you",
+          "start": 58.64943319999999,
+          "end": 58.81943319999999
+        },
+        {
+          "text": "have",
+          "start": 58.81943319999999,
+          "end": 58.99943319999999
+        },
+        {
+          "text": "many",
+          "start": 59.059433199999994,
+          "end": 59.27943319999999
+        },
+        {
+          "text": "books",
+          "start": 59.27943319999999,
+          "end": 59.47943319999999
+        },
+        {
+          "text": "at",
+          "start": 59.56943319999999,
+          "end": 59.67943319999999
+        },
+        {
+          "text": "home?",
+          "start": 59.67943319999999,
+          "end": 59.90943319999999
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 62.87032506666665,
+      "end": 70.81012893333332,
+      "ko": "이 작은 방에는 가구가 많이 없어요.",
+      "en": "There is not much furniture in this small room.",
+      "wrong": "There is not many furniture in this small room.",
+      "focus": [
+        "much",
+        "furniture"
+      ],
+      "note": "furniture는 이 용법에서 불가산이며 much와 단수 is를 쓴다.",
+      "visual": "방 속 가구들을 furniture 전체 묶음으로 표시하고 much 양 막대 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이 작은 방에는 가구가 많이 없어요.",
+          "actualStart": 63.070325066666655,
+          "actualEnd": 65.44919106666666,
+          "rate": 185,
+          "cacheKey": "bb9467de107111833bbd0389e7f2e23c38e7e947a3965dd7f4ccb422881b8217",
+          "file": "audio/06/example-4-ko-bb9467de10711183.wav",
+          "duration": 2.378866
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "There is not much furniture in this small room.",
+          "actualStart": 65.79919106666665,
+          "actualEnd": 68.10803506666664,
+          "rate": 155,
+          "cacheKey": "365c11f07c5b3a670a8b88b2bd9caea6461303c9b30031d29d9b849f80753957",
+          "file": "audio/06/example-4-en-365c11f07c5b3a67.wav",
+          "duration": 2.308844
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "much",
+            "actualStart": 66.36919106666664,
+            "actualEnd": 66.56919106666665
+          },
+          {
+            "text": "furniture",
+            "actualStart": 66.67919106666665,
+            "actualEnd": 67.11919106666664
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "There",
+          "start": 65.81919106666665,
+          "end": 66.08919106666666
+        },
+        {
+          "text": "is",
+          "start": 66.08919106666666,
+          "end": 66.19919106666666
+        },
+        {
+          "text": "not",
+          "start": 66.19919106666666,
+          "end": 66.36919106666664
+        },
+        {
+          "text": "much",
+          "start": 66.36919106666664,
+          "end": 66.56919106666665
+        },
+        {
+          "text": "furniture",
+          "start": 66.67919106666665,
+          "end": 67.11919106666664
+        },
+        {
+          "text": "in",
+          "start": 67.11919106666664,
+          "end": 67.22919106666666
+        },
+        {
+          "text": "this",
+          "start": 67.22919106666666,
+          "end": 67.34919106666665
+        },
+        {
+          "text": "small",
+          "start": 67.46919106666665,
+          "end": 67.74919106666665
+        },
+        {
+          "text": "room.",
+          "start": 67.74919106666665,
+          "end": 68.02919106666666
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 70.81012893333332,
+      "end": 78.80775579999998,
+      "ko": "빵 한 조각이 아직 접시에 남아 있어요.",
+      "en": "One slice of bread is still on the plate.",
+      "wrong": "One slice of bread are still on the plate.",
+      "focus": [
+        "One slice",
+        "is"
+      ],
+      "note": "주어의 중심은 단수 slice이므로 is를 쓴다.",
+      "visual": "한 조각을 테두리로 묶고 slice에서 is로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "빵 한 조각이 아직 접시에 남아 있어요.",
+          "actualStart": 71.01012893333332,
+          "actualEnd": 73.65207893333331,
+          "rate": 185,
+          "cacheKey": "8c136ada49700a27cb08863cb97fac1d13683338d7f2aaf19c50266802f8afb6",
+          "file": "audio/06/example-5-ko-8c136ada49700a27.wav",
+          "duration": 2.64195
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "One slice of bread is still on the plate.",
+          "actualStart": 74.00207893333331,
+          "actualEnd": 76.10566193333331,
+          "rate": 155,
+          "cacheKey": "51eb0a0496e1750a5739bf3ceaa84ef763a248b6c6c61e7c43b6fff39803c0a2",
+          "file": "audio/06/example-5-en-51eb0a0496e1750a.wav",
+          "duration": 2.103583
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "One slice",
+            "actualStart": 74.01207893333331,
+            "actualEnd": 74.4920789333333
+          },
+          {
+            "text": "is",
+            "actualStart": 74.92207893333331,
+            "actualEnd": 75.04207893333331
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "One",
+          "start": 74.01207893333331,
+          "end": 74.18207893333332
+        },
+        {
+          "text": "slice",
+          "start": 74.18207893333332,
+          "end": 74.4920789333333
+        },
+        {
+          "text": "of",
+          "start": 74.4920789333333,
+          "end": 74.5720789333333
+        },
+        {
+          "text": "bread",
+          "start": 74.61207893333331,
+          "end": 74.92207893333331
+        },
+        {
+          "text": "is",
+          "start": 74.92207893333331,
+          "end": 75.04207893333331
+        },
+        {
+          "text": "still",
+          "start": 75.04207893333331,
+          "end": 75.3520789333333
+        },
+        {
+          "text": "on",
+          "start": 75.3520789333333,
+          "end": 75.47207893333331
+        },
+        {
+          "text": "the",
+          "start": 75.47207893333331,
+          "end": 75.62207893333331
+        },
+        {
+          "text": "plate.",
+          "start": 75.75207893333331,
+          "end": 75.98207893333331
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 78.80775579999998,
+      "end": 86.34279666666664,
+      "ko": "내 책상에는 커피 두 잔이 있어요.",
+      "en": "Two cups of coffee are on my desk.",
+      "wrong": "Two cups of coffee is on my desk.",
+      "focus": [
+        "Two cups",
+        "are"
+      ],
+      "note": "coffee가 아니라 복수 단위 cups에 동사를 일치시킨다.",
+      "visual": "컵 두 개에서 are로 선을 긋고 coffee에는 내용물 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "내 책상에는 커피 두 잔이 있어요.",
+          "actualStart": 79.00775579999998,
+          "actualEnd": 81.28226779999999,
+          "rate": 185,
+          "cacheKey": "33ee02df4b401c6659b1f8df7e9864d00d3447257cfce5b931b00940e5f53d15",
+          "file": "audio/06/example-6-ko-33ee02df4b401c66.wav",
+          "duration": 2.274512
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Two cups of coffee are on my desk.",
+          "actualStart": 81.63226779999998,
+          "actualEnd": 83.64070279999999,
+          "rate": 155,
+          "cacheKey": "17df3db5156500e936b0611468853d363c6c3bb86d9cab9c4b49e0e10cfafe0e",
+          "file": "audio/06/example-6-en-17df3db5156500e9.wav",
+          "duration": 2.008435
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "Two cups",
+            "actualStart": 81.65226779999998,
+            "actualEnd": 82.16226779999998
+          },
+          {
+            "text": "are",
+            "actualStart": 82.77226779999998,
+            "actualEnd": 83.00226779999998
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "Two",
+          "start": 81.65226779999998,
+          "end": 81.80226779999998
+        },
+        {
+          "text": "cups",
+          "start": 81.86226779999998,
+          "end": 82.16226779999998
+        },
+        {
+          "text": "of",
+          "start": 82.16226779999998,
+          "end": 82.30226779999998
+        },
+        {
+          "text": "coffee",
+          "start": 82.33226779999998,
+          "end": 82.77226779999998
+        },
+        {
+          "text": "are",
+          "start": 82.77226779999998,
+          "end": 83.00226779999998
+        },
+        {
+          "text": "on",
+          "start": 83.00226779999998,
+          "end": 83.15226779999998
+        },
+        {
+          "text": "my",
+          "start": 83.15226779999998,
+          "end": 83.30226779999998
+        },
+        {
+          "text": "desk.",
+          "start": 83.30226779999998,
+          "end": 83.52226779999998
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 86.34279666666664,
+      "end": 94.97167053333331,
+      "ko": "우리는 예약 전에 시간이 많이 남아 있지 않아요.",
+      "en": "We do not have much time before our appointment.",
+      "wrong": "We do not have many time before our appointment.",
+      "focus": [
+        "much",
+        "time"
+      ],
+      "note": "남아 있는 시간의 양은 불가산 time으로 말하므로 much가 맞다.",
+      "visual": "예약까지 남은 시간 막대에 much 표시, 횟수 times와 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 예약 전에 시간이 많이 남아 있지 않아요.",
+          "actualStart": 86.54279666666665,
+          "actualEnd": 89.45585766666665,
+          "rate": 185,
+          "cacheKey": "2de6c84906a70274b26fbad7d9d5e5da3d40a305d7add4d421d7aaa4453c6cd5",
+          "file": "audio/06/example-7-ko-2de6c84906a70274.wav",
+          "duration": 2.913061
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We do not have much time before our appointment.",
+          "actualStart": 89.80585766666664,
+          "actualEnd": 92.26957666666664,
+          "rate": 155,
+          "cacheKey": "9e0b99ab08025e9b776090efc3d7c0bd82af96abfa6c6888de52dc53a9e1fb43",
+          "file": "audio/06/example-7-en-9e0b99ab08025e9b.wav",
+          "duration": 2.463719
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "much",
+            "actualStart": 90.46585766666664,
+            "actualEnd": 90.67585766666664
+          },
+          {
+            "text": "time",
+            "actualStart": 90.72585766666664,
+            "actualEnd": 90.94585766666664
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "We",
+          "start": 89.81585766666664,
+          "end": 89.92585766666664
+        },
+        {
+          "text": "do",
+          "start": 89.92585766666664,
+          "end": 90.04585766666663
+        },
+        {
+          "text": "not",
+          "start": 90.04585766666663,
+          "end": 90.22585766666664
+        },
+        {
+          "text": "have",
+          "start": 90.22585766666664,
+          "end": 90.46585766666664
+        },
+        {
+          "text": "much",
+          "start": 90.46585766666664,
+          "end": 90.67585766666664
+        },
+        {
+          "text": "time",
+          "start": 90.72585766666664,
+          "end": 90.94585766666664
+        },
+        {
+          "text": "before",
+          "start": 90.94585766666664,
+          "end": 91.30585766666664
+        },
+        {
+          "text": "our",
+          "start": 91.30585766666664,
+          "end": 91.48585766666665
+        },
+        {
+          "text": "appointment.",
+          "start": 91.48585766666665,
+          "end": 92.17585766666664
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94.97167053333331,
+      "end": 103.47659839999997,
+      "ko": "그 새 장비는 사무실에 이미 도착했어요.",
+      "en": "The new equipment has already arrived at the office.",
+      "wrong": "The new equipment have already arrived at the office.",
+      "focus": [
+        "equipment",
+        "has"
+      ],
+      "note": "equipment는 여러 장비를 가리켜도 이 용법에서 단수 has와 결합한다.",
+      "visual": "여러 장비를 equipment 한 묶음으로 감싸고 has 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 새 장비는 사무실에 이미 도착했어요.",
+          "actualStart": 95.17167053333331,
+          "actualEnd": 97.73053653333331,
+          "rate": 185,
+          "cacheKey": "ed4a022803ddbb2ff48990cb9a6a2161a36fec075e7897ac24287e79537a64ab",
+          "file": "audio/06/example-8-ko-ed4a022803ddbb2f.wav",
+          "duration": 2.558866
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The new equipment has already arrived at the office.",
+          "actualStart": 98.0805365333333,
+          "actualEnd": 100.7745045333333,
+          "rate": 155,
+          "cacheKey": "e4b5339dea9db92f301722b9edc61021b12c21f007852bb85d244f6da8a5bf6b",
+          "file": "audio/06/example-8-en-e4b5339dea9db92f.wav",
+          "duration": 2.693968
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "equipment",
+            "actualStart": 98.5505365333333,
+            "actualEnd": 98.98053653333331
+          },
+          {
+            "text": "has",
+            "actualStart": 98.98053653333331,
+            "actualEnd": 99.1605365333333
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "The",
+          "start": 98.0905365333333,
+          "end": 98.26053653333331
+        },
+        {
+          "text": "new",
+          "start": 98.26053653333331,
+          "end": 98.4305365333333
+        },
+        {
+          "text": "equipment",
+          "start": 98.5505365333333,
+          "end": 98.98053653333331
+        },
+        {
+          "text": "has",
+          "start": 98.98053653333331,
+          "end": 99.1605365333333
+        },
+        {
+          "text": "already",
+          "start": 99.1605365333333,
+          "end": 99.5805365333333
+        },
+        {
+          "text": "arrived",
+          "start": 99.5805365333333,
+          "end": 100.0005365333333
+        },
+        {
+          "text": "at",
+          "start": 100.0005365333333,
+          "end": 100.12053653333331
+        },
+        {
+          "text": "the",
+          "start": 100.12053653333331,
+          "end": 100.3005365333333
+        },
+        {
+          "text": "office.",
+          "start": 100.3005365333333,
+          "end": 100.5905365333333
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 103.47659839999997,
+      "end": 111.99173026666664,
+      "ko": "그 두 가지 정보는 최신 자료가 아니에요.",
+      "en": "Those two pieces of information are not up to date.",
+      "wrong": "Those two pieces of information is not up to date.",
+      "focus": [
+        "pieces of information",
+        "are"
+      ],
+      "note": "정보 자체는 불가산이지만 주어의 중심 pieces가 복수라서 are를 쓴다.",
+      "visual": "pieces에 두 개 표시를 붙이고 of information은 아래 보충 칸으로 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 두 가지 정보는 최신 자료가 아니에요.",
+          "actualStart": 103.67659839999997,
+          "actualEnd": 106.29419439999998,
+          "rate": 185,
+          "cacheKey": "229ea6dd1873d16b3c50516a2ab5dad0f6602902b2cff0c61ee95dce8b6b777a",
+          "file": "audio/06/example-9-ko-229ea6dd1873d16b.wav",
+          "duration": 2.617596
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Those two pieces of information are not up to date.",
+          "actualStart": 106.64419439999998,
+          "actualEnd": 109.28963639999998,
+          "rate": 155,
+          "cacheKey": "20b52601bbf2774ec697232851ca746aa55764232dcab0acba47ecf2b12a043b",
+          "file": "audio/06/example-9-en-20b52601bbf2774e.wav",
+          "duration": 2.645442
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "pieces of information",
+            "actualStart": 107.16419439999997,
+            "actualEnd": 108.33419439999997
+          },
+          {
+            "text": "are",
+            "actualStart": 108.33419439999997,
+            "actualEnd": 108.52419439999997
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "Those",
+          "start": 106.66419439999997,
+          "end": 106.95419439999998
+        },
+        {
+          "text": "two",
+          "start": 106.95419439999998,
+          "end": 107.06419439999998
+        },
+        {
+          "text": "pieces",
+          "start": 107.16419439999997,
+          "end": 107.48419439999998
+        },
+        {
+          "text": "of",
+          "start": 107.53419439999998,
+          "end": 107.59419439999998
+        },
+        {
+          "text": "information",
+          "start": 107.64419439999998,
+          "end": 108.33419439999997
+        },
+        {
+          "text": "are",
+          "start": 108.33419439999997,
+          "end": 108.52419439999997
+        },
+        {
+          "text": "not",
+          "start": 108.52419439999997,
+          "end": 108.69419439999997
+        },
+        {
+          "text": "up",
+          "start": 108.78419439999998,
+          "end": 108.83419439999997
+        },
+        {
+          "text": "to",
+          "start": 108.83419439999997,
+          "end": 108.95419439999998
+        },
+        {
+          "text": "date.",
+          "start": 108.95419439999998,
+          "end": 109.16419439999997
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 111.99173026666664,
+      "end": 121.63928913333329,
+      "ko": "소식이 나쁘지 않아서 우리는 회의를 계속할 수 있어요.",
+      "en": "The news is not bad, so we can continue the meeting.",
+      "wrong": "The news are not bad, so we can continue the meeting.",
+      "focus": [
+        "news",
+        "is"
+      ],
+      "note": "news는 s로 끝나지만 이 뜻에서 단수 동사를 받는다.",
+      "visual": "news의 끝 s와 단수 is를 대비하고 복수 표지로 오해하는 연결선 차단.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "소식이 나쁘지 않아서 우리는 회의를 계속할 수 있어요.",
+          "actualStart": 112.19173026666664,
+          "actualEnd": 115.62619726666664,
+          "rate": 185,
+          "cacheKey": "970443e51718584f1b7f82a35b8429497a182a1516d34dbb73c210ade4473351",
+          "file": "audio/06/example-10-ko-970443e51718584f.wav",
+          "duration": 3.434467
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The news is not bad, so we can continue the meeting.",
+          "actualStart": 115.97619726666663,
+          "actualEnd": 118.93719526666663,
+          "rate": 155,
+          "cacheKey": "21f09b1032f29f9fbc332a02a0093478010b51d2e7be3f3e15ff43c622de4310",
+          "file": "audio/06/example-10-en-21f09b1032f29f9f.wav",
+          "duration": 2.960998
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "news",
+            "actualStart": 116.17619726666663,
+            "actualEnd": 116.40619726666664
+          },
+          {
+            "text": "is",
+            "actualStart": 116.45619726666663,
+            "actualEnd": 116.57619726666663
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "The",
+          "start": 115.98619726666664,
+          "end": 116.17619726666663
+        },
+        {
+          "text": "news",
+          "start": 116.17619726666663,
+          "end": 116.40619726666664
+        },
+        {
+          "text": "is",
+          "start": 116.45619726666663,
+          "end": 116.57619726666663
+        },
+        {
+          "text": "not",
+          "start": 116.57619726666663,
+          "end": 116.77619726666663
+        },
+        {
+          "text": "bad,",
+          "start": 116.77619726666663,
+          "end": 116.97619726666663
+        },
+        {
+          "text": "so",
+          "start": 117.23619726666664,
+          "end": 117.23619726666664
+        },
+        {
+          "text": "we",
+          "start": 117.30619726666663,
+          "end": 117.35619726666663
+        },
+        {
+          "text": "can",
+          "start": 117.37619726666664,
+          "end": 117.56619726666663
+        },
+        {
+          "text": "continue",
+          "start": 117.56619726666663,
+          "end": 118.11619726666663
+        },
+        {
+          "text": "the",
+          "start": 118.11619726666663,
+          "end": 118.31619726666663
+        },
+        {
+          "text": "meeting.",
+          "start": 118.31619726666663,
+          "end": 118.85619726666663
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 121.63928913333329,
+      "end": 130,
+      "text": "명사의 용법에 맞게 양이나 단위로 세고 동사는 주어의 중심 명사의 수에 맞추세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "명사의 용법에 맞게 양이나 단위로 세고 동사는 주어의 중심 명사의 수에 맞추세요.",
+          "actualStart": 121.8392891333333,
+          "actualEnd": 127.5479061333333,
+          "rate": 185,
+          "cacheKey": "169ea0b6830421cced348872eacc8ad8d82cbd0d25154dbd8f988d335191bac7",
+          "file": "audio/06/summary-ko-169ea0b6830421cc.wav",
+          "duration": 5.708617
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 102.218592,
+  "sourceHash": "e3850ff93d0f062d5eefc65b563d9b1032c405c80a754c73f1cf45c28dd7bc7e",
+  "audioFile": "audio/06/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "e3850ff93d0f062d5eefc65b563d9b1032c405c80a754c73f1cf45c28dd7bc7e",
+    "clipHashes": {
+      "example-1-en": "00b93c1ba13b084f64b6bb7c815b5ed5d57cbffe0a1f7cc1508a4c99567139f4",
+      "example-2-en": "5382bcdeb2b28f2242fd95ac1c0bcfc1aceca50c9650b9d1f87aeefc122710fc",
+      "example-3-en": "9e5cc233dce60677df52053587e2194733f1b33d36eb53db7200f6547f4599a5",
+      "example-4-en": "3a378ba51aaa6454fb894fb4360b3a879457916744a74a686a2f6b6482d91f0f",
+      "example-5-en": "9c4e5c09aab20fa9be579a16c0cf09cb707982e8b718d8ec79ee7495490f3855",
+      "example-6-en": "58ad352c0bb7934dab29e01d3d7ad58a1aca9104c1c17b052556b4fcff158c5f",
+      "example-7-en": "6d25c5e3e2a8633e8ccaf9030ce0240df5f024d266544c8bf29f72e0d40368f2",
+      "example-8-en": "2b481271fae1bf022f4f1df62379c19c41a782de493c09e5388bb971831f7b15",
+      "example-9-en": "1d32b9cb9a00e3d1447e3c65d2dbe831cc63ba96c46301f484025adf6a57aa80",
+      "example-10-en": "3833de1c18a62c661f3ae1ae30ec4b9a2d33a001b86046474133e86d89c4b40f"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

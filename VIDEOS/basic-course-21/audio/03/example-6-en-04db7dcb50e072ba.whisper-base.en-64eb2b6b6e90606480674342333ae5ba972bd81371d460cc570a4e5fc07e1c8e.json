@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,100"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2100
+			},
+			"text": " Please send the file to me this afternoon.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997582,
+					"t_dtw": -1
+				},
+				{
+					"text": " Please",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,360"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 360
+					},
+					"id": 4222,
+					"p": 0.933432,
+					"t_dtw": -1
+				},
+				{
+					"text": " send",
+					"timestamps": {
+						"from": "00:00:00,360",
+						"to": "00:00:00,590"
+					},
+					"offsets": {
+						"from": 360,
+						"to": 590
+					},
+					"id": 3758,
+					"p": 0.99654,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,690",
+						"to": "00:00:00,780"
+					},
+					"offsets": {
+						"from": 690,
+						"to": 780
+					},
+					"id": 262,
+					"p": 0.997636,
+					"t_dtw": -1
+				},
+				{
+					"text": " file",
+					"timestamps": {
+						"from": "00:00:00,780",
+						"to": "00:00:00,930"
+					},
+					"offsets": {
+						"from": 780,
+						"to": 930
+					},
+					"id": 2393,
+					"p": 0.99442,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:01,030",
+						"to": "00:00:01,140"
+					},
+					"offsets": {
+						"from": 1030,
+						"to": 1140
+					},
+					"id": 284,
+					"p": 0.998439,
+					"t_dtw": -1
+				},
+				{
+					"text": " me",
+					"timestamps": {
+						"from": "00:00:01,140",
+						"to": "00:00:01,240"
+					},
+					"offsets": {
+						"from": 1140,
+						"to": 1240
+					},
+					"id": 502,
+					"p": 0.969404,
+					"t_dtw": -1
+				},
+				{
+					"text": " this",
+					"timestamps": {
+						"from": "00:00:01,280",
+						"to": "00:00:01,500"
+					},
+					"offsets": {
+						"from": 1280,
+						"to": 1500
+					},
+					"id": 428,
+					"p": 0.99922,
+					"t_dtw": -1
+				},
+				{
+					"text": " afternoon",
+					"timestamps": {
+						"from": "00:00:01,500",
+						"to": "00:00:02,070"
+					},
+					"offsets": {
+						"from": 1500,
+						"to": 2070
+					},
+					"id": 6672,
+					"p": 0.998258,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,100",
+						"to": "00:00:02,100"
+					},
+					"offsets": {
+						"from": 2100,
+						"to": 2100
+					},
+					"id": 13,
+					"p": 0.935367,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_105]",
+					"timestamps": {
+						"from": "00:00:02,100",
+						"to": "00:00:02,100"
+					},
+					"offsets": {
+						"from": 2100,
+						"to": 2100
+					},
+					"id": 50468,
+					"p": 0.153602,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

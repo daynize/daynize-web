@@ -1,0 +1,197 @@
+{
+  "lessons": [
+    {
+      "episode": 1,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 2,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 3,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 4,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 5,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 6,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [
+        "example-10: onset-only token(s) so; no duration invented"
+      ],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 7,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 8,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 9,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 10,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 11,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 12,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 13,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 14,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 15,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 16,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 17,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 18,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 19,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 20,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    },
+    {
+      "episode": 21,
+      "engine": "whisper.cpp small.en token offsets",
+      "reviewed": false,
+      "passed": 10,
+      "issues": [],
+      "warnings": [],
+      "timingStatus": "audio-measured-words-aligned"
+    }
+  ],
+  "engine": "whisper.cpp small.en token offsets",
+  "reviewed": false
+}

@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,600"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1600
+			},
+			"text": " The room was kept warm all night.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.996077,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 180
+					},
+					"id": 383,
+					"p": 0.619365,
+					"t_dtw": -1
+				},
+				{
+					"text": " room",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,420"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 420
+					},
+					"id": 2119,
+					"p": 0.986494,
+					"t_dtw": -1
+				},
+				{
+					"text": " was",
+					"timestamps": {
+						"from": "00:00:00,420",
+						"to": "00:00:00,480"
+					},
+					"offsets": {
+						"from": 420,
+						"to": 480
+					},
+					"id": 373,
+					"p": 0.994856,
+					"t_dtw": -1
+				},
+				{
+					"text": " kept",
+					"timestamps": {
+						"from": "00:00:00,610",
+						"to": "00:00:00,730"
+					},
+					"offsets": {
+						"from": 610,
+						"to": 730
+					},
+					"id": 4030,
+					"p": 0.998883,
+					"t_dtw": -1
+				},
+				{
+					"text": " warm",
+					"timestamps": {
+						"from": "00:00:00,850",
+						"to": "00:00:01,080"
+					},
+					"offsets": {
+						"from": 850,
+						"to": 1080
+					},
+					"id": 5814,
+					"p": 0.999111,
+					"t_dtw": -1
+				},
+				{
+					"text": " all",
+					"timestamps": {
+						"from": "00:00:01,080",
+						"to": "00:00:01,260"
+					},
+					"offsets": {
+						"from": 1080,
+						"to": 1260
+					},
+					"id": 477,
+					"p": 0.995249,
+					"t_dtw": -1
+				},
+				{
+					"text": " night",
+					"timestamps": {
+						"from": "00:00:01,260",
+						"to": "00:00:01,560"
+					},
+					"offsets": {
+						"from": 1260,
+						"to": 1560
+					},
+					"id": 1755,
+					"p": 0.999605,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,600",
+						"to": "00:00:01,600"
+					},
+					"offsets": {
+						"from": 1600,
+						"to": 1600
+					},
+					"id": 13,
+					"p": 0.910616,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_80]",
+					"timestamps": {
+						"from": "00:00:01,600",
+						"to": "00:00:01,600"
+					},
+					"offsets": {
+						"from": 1600,
+						"to": 1600
+					},
+					"id": 50443,
+					"p": 0.158339,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

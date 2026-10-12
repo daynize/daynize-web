@@ -1,0 +1,241 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,640"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2640
+			},
+			"text": " If I were you, I would refuse the offer today.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997583,
+					"t_dtw": -1
+				},
+				{
+					"text": " If",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,080"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 80
+					},
+					"id": 1002,
+					"p": 0.585379,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,150",
+						"to": "00:00:00,210"
+					},
+					"offsets": {
+						"from": 150,
+						"to": 210
+					},
+					"id": 314,
+					"p": 0.983384,
+					"t_dtw": -1
+				},
+				{
+					"text": " were",
+					"timestamps": {
+						"from": "00:00:00,210",
+						"to": "00:00:00,490"
+					},
+					"offsets": {
+						"from": 210,
+						"to": 490
+					},
+					"id": 547,
+					"p": 0.994393,
+					"t_dtw": -1
+				},
+				{
+					"text": " you",
+					"timestamps": {
+						"from": "00:00:00,490",
+						"to": "00:00:00,680"
+					},
+					"offsets": {
+						"from": 490,
+						"to": 680
+					},
+					"id": 345,
+					"p": 0.9972,
+					"t_dtw": -1
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:00,700",
+						"to": "00:00:00,710"
+					},
+					"offsets": {
+						"from": 700,
+						"to": 710
+					},
+					"id": 11,
+					"p": 0.974989,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,910",
+						"to": "00:00:00,910"
+					},
+					"offsets": {
+						"from": 910,
+						"to": 910
+					},
+					"id": 314,
+					"p": 0.99008,
+					"t_dtw": -1
+				},
+				{
+					"text": " would",
+					"timestamps": {
+						"from": "00:00:00,940",
+						"to": "00:00:01,260"
+					},
+					"offsets": {
+						"from": 940,
+						"to": 1260
+					},
+					"id": 561,
+					"p": 0.998938,
+					"t_dtw": -1
+				},
+				{
+					"text": " refuse",
+					"timestamps": {
+						"from": "00:00:01,260",
+						"to": "00:00:01,610"
+					},
+					"offsets": {
+						"from": 1260,
+						"to": 1610
+					},
+					"id": 11148,
+					"p": 0.995059,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,700",
+						"to": "00:00:01,890"
+					},
+					"offsets": {
+						"from": 1700,
+						"to": 1890
+					},
+					"id": 262,
+					"p": 0.995279,
+					"t_dtw": -1
+				},
+				{
+					"text": " offer",
+					"timestamps": {
+						"from": "00:00:01,890",
+						"to": "00:00:02,240"
+					},
+					"offsets": {
+						"from": 1890,
+						"to": 2240
+					},
+					"id": 2897,
+					"p": 0.99914,
+					"t_dtw": -1
+				},
+				{
+					"text": " today",
+					"timestamps": {
+						"from": "00:00:02,240",
+						"to": "00:00:02,590"
+					},
+					"offsets": {
+						"from": 2240,
+						"to": 2590
+					},
+					"id": 1909,
+					"p": 0.985928,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,640",
+						"to": "00:00:02,640"
+					},
+					"offsets": {
+						"from": 2640,
+						"to": 2640
+					},
+					"id": 13,
+					"p": 0.503141,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_132]",
+					"timestamps": {
+						"from": "00:00:02,640",
+						"to": "00:00:02,640"
+					},
+					"offsets": {
+						"from": 2640,
+						"to": 2640
+					},
+					"id": 50495,
+					"p": 0.145231,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

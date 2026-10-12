@@ -1,0 +1,14 @@
+{
+  "id": "basic-19",
+  "episode": 19,
+  "title": "장소·시간·이유·방법을 연결하기",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "010274dd0e3b879434123b543946ea5b11df1120606471a3b100400b13489106",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

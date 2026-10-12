@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,880"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2880
+			},
+			"text": " She objected to using her photo without her permission.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.99865,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 180
+					},
+					"id": 1375,
+					"p": 0.898178,
+					"t_dtw": -1
+				},
+				{
+					"text": " objected",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,660"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 660
+					},
+					"id": 29811,
+					"p": 0.992509,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,660",
+						"to": "00:00:00,780"
+					},
+					"offsets": {
+						"from": 660,
+						"to": 780
+					},
+					"id": 284,
+					"p": 0.999855,
+					"t_dtw": -1
+				},
+				{
+					"text": " using",
+					"timestamps": {
+						"from": "00:00:00,780",
+						"to": "00:00:01,080"
+					},
+					"offsets": {
+						"from": 780,
+						"to": 1080
+					},
+					"id": 1262,
+					"p": 0.999769,
+					"t_dtw": -1
+				},
+				{
+					"text": " her",
+					"timestamps": {
+						"from": "00:00:01,080",
+						"to": "00:00:01,260"
+					},
+					"offsets": {
+						"from": 1080,
+						"to": 1260
+					},
+					"id": 607,
+					"p": 0.996191,
+					"t_dtw": -1
+				},
+				{
+					"text": " photo",
+					"timestamps": {
+						"from": "00:00:01,260",
+						"to": "00:00:01,560"
+					},
+					"offsets": {
+						"from": 1260,
+						"to": 1560
+					},
+					"id": 4590,
+					"p": 0.996324,
+					"t_dtw": -1
+				},
+				{
+					"text": " without",
+					"timestamps": {
+						"from": "00:00:01,560",
+						"to": "00:00:01,980"
+					},
+					"offsets": {
+						"from": 1560,
+						"to": 1980
+					},
+					"id": 1231,
+					"p": 0.999287,
+					"t_dtw": -1
+				},
+				{
+					"text": " her",
+					"timestamps": {
+						"from": "00:00:01,980",
+						"to": "00:00:02,160"
+					},
+					"offsets": {
+						"from": 1980,
+						"to": 2160
+					},
+					"id": 607,
+					"p": 0.997345,
+					"t_dtw": -1
+				},
+				{
+					"text": " permission",
+					"timestamps": {
+						"from": "00:00:02,160",
+						"to": "00:00:02,790"
+					},
+					"offsets": {
+						"from": 2160,
+						"to": 2790
+					},
+					"id": 7170,
+					"p": 0.999098,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,800",
+						"to": "00:00:02,810"
+					},
+					"offsets": {
+						"from": 2800,
+						"to": 2810
+					},
+					"id": 13,
+					"p": 0.910346,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_144]",
+					"timestamps": {
+						"from": "00:00:02,880",
+						"to": "00:00:02,880"
+					},
+					"offsets": {
+						"from": 2880,
+						"to": 2880
+					},
+					"id": 50507,
+					"p": 0.0585598,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

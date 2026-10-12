@@ -1,0 +1,227 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:03,240"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 3240
+			},
+			"text": " This laptop, which I bought yesterday, works well.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997548,
+					"t_dtw": -1
+				},
+				{
+					"text": " This",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,270"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 270
+					},
+					"id": 770,
+					"p": 0.702445,
+					"t_dtw": -1
+				},
+				{
+					"text": " laptop",
+					"timestamps": {
+						"from": "00:00:00,270",
+						"to": "00:00:00,680"
+					},
+					"offsets": {
+						"from": 270,
+						"to": 680
+					},
+					"id": 13224,
+					"p": 0.992781,
+					"t_dtw": -1
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:00,680",
+						"to": "00:00:00,770"
+					},
+					"offsets": {
+						"from": 680,
+						"to": 770
+					},
+					"id": 11,
+					"p": 0.902116,
+					"t_dtw": -1
+				},
+				{
+					"text": " which",
+					"timestamps": {
+						"from": "00:00:01,060",
+						"to": "00:00:01,150"
+					},
+					"offsets": {
+						"from": 1060,
+						"to": 1150
+					},
+					"id": 543,
+					"p": 0.99297,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:01,150",
+						"to": "00:00:01,180"
+					},
+					"offsets": {
+						"from": 1150,
+						"to": 1180
+					},
+					"id": 314,
+					"p": 0.983618,
+					"t_dtw": -1
+				},
+				{
+					"text": " bought",
+					"timestamps": {
+						"from": "00:00:01,230",
+						"to": "00:00:01,620"
+					},
+					"offsets": {
+						"from": 1230,
+						"to": 1620
+					},
+					"id": 5839,
+					"p": 0.995828,
+					"t_dtw": -1
+				},
+				{
+					"text": " yesterday",
+					"timestamps": {
+						"from": "00:00:01,620",
+						"to": "00:00:02,240"
+					},
+					"offsets": {
+						"from": 1620,
+						"to": 2240
+					},
+					"id": 7415,
+					"p": 0.999445,
+					"t_dtw": -1
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:02,240",
+						"to": "00:00:02,360"
+					},
+					"offsets": {
+						"from": 2240,
+						"to": 2360
+					},
+					"id": 11,
+					"p": 0.991119,
+					"t_dtw": -1
+				},
+				{
+					"text": " works",
+					"timestamps": {
+						"from": "00:00:02,610",
+						"to": "00:00:02,710"
+					},
+					"offsets": {
+						"from": 2610,
+						"to": 2710
+					},
+					"id": 2499,
+					"p": 0.993018,
+					"t_dtw": -1
+				},
+				{
+					"text": " well",
+					"timestamps": {
+						"from": "00:00:02,710",
+						"to": "00:00:02,980"
+					},
+					"offsets": {
+						"from": 2710,
+						"to": 2980
+					},
+					"id": 880,
+					"p": 0.998035,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,980",
+						"to": "00:00:03,230"
+					},
+					"offsets": {
+						"from": 2980,
+						"to": 3230
+					},
+					"id": 13,
+					"p": 0.887186,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_162]",
+					"timestamps": {
+						"from": "00:00:03,240",
+						"to": "00:00:03,240"
+					},
+					"offsets": {
+						"from": 3240,
+						"to": 3240
+					},
+					"id": 50525,
+					"p": 0.11625,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,700"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1700
+			},
+			"text": " I sat on the chair by the window.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998189,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.986781,
+					"t_dtw": -1
+				},
+				{
+					"text": " sat",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,250"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 250
+					},
+					"id": 3332,
+					"p": 0.973911,
+					"t_dtw": -1
+				},
+				{
+					"text": " on",
+					"timestamps": {
+						"from": "00:00:00,250",
+						"to": "00:00:00,380"
+					},
+					"offsets": {
+						"from": 250,
+						"to": 380
+					},
+					"id": 319,
+					"p": 0.994867,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,380",
+						"to": "00:00:00,570"
+					},
+					"offsets": {
+						"from": 380,
+						"to": 570
+					},
+					"id": 262,
+					"p": 0.997723,
+					"t_dtw": -1
+				},
+				{
+					"text": " chair",
+					"timestamps": {
+						"from": "00:00:00,570",
+						"to": "00:00:00,890"
+					},
+					"offsets": {
+						"from": 570,
+						"to": 890
+					},
+					"id": 5118,
+					"p": 0.993794,
+					"t_dtw": -1
+				},
+				{
+					"text": " by",
+					"timestamps": {
+						"from": "00:00:00,890",
+						"to": "00:00:01,030"
+					},
+					"offsets": {
+						"from": 890,
+						"to": 1030
+					},
+					"id": 416,
+					"p": 0.998531,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,030",
+						"to": "00:00:01,220"
+					},
+					"offsets": {
+						"from": 1030,
+						"to": 1220
+					},
+					"id": 262,
+					"p": 0.996101,
+					"t_dtw": -1
+				},
+				{
+					"text": " window",
+					"timestamps": {
+						"from": "00:00:01,220",
+						"to": "00:00:01,620"
+					},
+					"offsets": {
+						"from": 1220,
+						"to": 1620
+					},
+					"id": 4324,
+					"p": 0.999296,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,700",
+						"to": "00:00:01,700"
+					},
+					"offsets": {
+						"from": 1700,
+						"to": 1700
+					},
+					"id": 13,
+					"p": 0.573741,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_85]",
+					"timestamps": {
+						"from": "00:00:01,700",
+						"to": "00:00:01,700"
+					},
+					"offsets": {
+						"from": 1700,
+						"to": 1700
+					},
+					"id": 50448,
+					"p": 0.131888,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

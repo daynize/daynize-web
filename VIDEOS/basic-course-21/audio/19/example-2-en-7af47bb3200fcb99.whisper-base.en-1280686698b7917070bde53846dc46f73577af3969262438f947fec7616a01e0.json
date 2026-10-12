@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,000"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2000
+			},
+			"text": " I remember the day when we first met.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997768,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.877547,
+					"t_dtw": -1
+				},
+				{
+					"text": " remember",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,560"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 560
+					},
+					"id": 3505,
+					"p": 0.985545,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,560",
+						"to": "00:00:00,760"
+					},
+					"offsets": {
+						"from": 560,
+						"to": 760
+					},
+					"id": 262,
+					"p": 0.994059,
+					"t_dtw": -1
+				},
+				{
+					"text": " day",
+					"timestamps": {
+						"from": "00:00:00,760",
+						"to": "00:00:00,950"
+					},
+					"offsets": {
+						"from": 760,
+						"to": 950
+					},
+					"id": 1110,
+					"p": 0.997489,
+					"t_dtw": -1
+				},
+				{
+					"text": " when",
+					"timestamps": {
+						"from": "00:00:00,950",
+						"to": "00:00:01,200"
+					},
+					"offsets": {
+						"from": 950,
+						"to": 1200
+					},
+					"id": 618,
+					"p": 0.995243,
+					"t_dtw": -1
+				},
+				{
+					"text": " we",
+					"timestamps": {
+						"from": "00:00:01,200",
+						"to": "00:00:01,220"
+					},
+					"offsets": {
+						"from": 1200,
+						"to": 1220
+					},
+					"id": 356,
+					"p": 0.998108,
+					"t_dtw": -1
+				},
+				{
+					"text": " first",
+					"timestamps": {
+						"from": "00:00:01,320",
+						"to": "00:00:01,640"
+					},
+					"offsets": {
+						"from": 1320,
+						"to": 1640
+					},
+					"id": 717,
+					"p": 0.999329,
+					"t_dtw": -1
+				},
+				{
+					"text": " met",
+					"timestamps": {
+						"from": "00:00:01,640",
+						"to": "00:00:01,830"
+					},
+					"offsets": {
+						"from": 1640,
+						"to": 1830
+					},
+					"id": 1138,
+					"p": 0.999218,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,940",
+						"to": "00:00:01,940"
+					},
+					"offsets": {
+						"from": 1940,
+						"to": 1940
+					},
+					"id": 13,
+					"p": 0.835376,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_100]",
+					"timestamps": {
+						"from": "00:00:02,000",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 2000,
+						"to": 2000
+					},
+					"id": 50463,
+					"p": 0.0554678,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

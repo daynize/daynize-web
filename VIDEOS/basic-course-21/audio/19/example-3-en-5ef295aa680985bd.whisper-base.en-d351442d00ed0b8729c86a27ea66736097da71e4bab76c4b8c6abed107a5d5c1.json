@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,800"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1800
+			},
+			"text": " That is the reason why I left early.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.999047,
+					"t_dtw": -1
+				},
+				{
+					"text": " That",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,240"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 240
+					},
+					"id": 1320,
+					"p": 0.638622,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:00,330",
+						"to": "00:00:00,370"
+					},
+					"offsets": {
+						"from": 330,
+						"to": 370
+					},
+					"id": 318,
+					"p": 0.9772,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,370",
+						"to": "00:00:00,550"
+					},
+					"offsets": {
+						"from": 370,
+						"to": 550
+					},
+					"id": 262,
+					"p": 0.998232,
+					"t_dtw": -1
+				},
+				{
+					"text": " reason",
+					"timestamps": {
+						"from": "00:00:00,550",
+						"to": "00:00:00,920"
+					},
+					"offsets": {
+						"from": 550,
+						"to": 920
+					},
+					"id": 1738,
+					"p": 0.999239,
+					"t_dtw": -1
+				},
+				{
+					"text": " why",
+					"timestamps": {
+						"from": "00:00:00,920",
+						"to": "00:00:01,100"
+					},
+					"offsets": {
+						"from": 920,
+						"to": 1100
+					},
+					"id": 1521,
+					"p": 0.995251,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:01,100",
+						"to": "00:00:01,160"
+					},
+					"offsets": {
+						"from": 1100,
+						"to": 1160
+					},
+					"id": 314,
+					"p": 0.984827,
+					"t_dtw": -1
+				},
+				{
+					"text": " left",
+					"timestamps": {
+						"from": "00:00:01,160",
+						"to": "00:00:01,410"
+					},
+					"offsets": {
+						"from": 1160,
+						"to": 1410
+					},
+					"id": 1364,
+					"p": 0.99778,
+					"t_dtw": -1
+				},
+				{
+					"text": " early",
+					"timestamps": {
+						"from": "00:00:01,410",
+						"to": "00:00:01,710"
+					},
+					"offsets": {
+						"from": 1410,
+						"to": 1710
+					},
+					"id": 1903,
+					"p": 0.888008,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,780",
+						"to": "00:00:01,780"
+					},
+					"offsets": {
+						"from": 1780,
+						"to": 1780
+					},
+					"id": 13,
+					"p": 0.676153,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_90]",
+					"timestamps": {
+						"from": "00:00:01,800",
+						"to": "00:00:01,800"
+					},
+					"offsets": {
+						"from": 1800,
+						"to": 1800
+					},
+					"id": 50453,
+					"p": 0.059694,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

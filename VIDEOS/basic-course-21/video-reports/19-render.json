@@ -1,0 +1,36 @@
+{
+  "episode": 19,
+  "title": "장소·시간·이유·방법을 연결하기",
+  "inputHash": "cabb9d7111a9966147bda42022ceabecacc341cf420ccf1d5e8b8d7c7f0eba1b",
+  "output": "renders/basic-19.mp4",
+  "contact": "renders/basic-19-contact.png",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "duration": "130.000000",
+        "nb_frames": "3900"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "130.000000",
+        "nb_frames": "6095"
+      }
+    ],
+    "format": {
+      "duration": "130.000000",
+      "size": "7795370"
+    }
+  },
+  "audioPeakDb": -1.9,
+  "browserCheck": true,
+  "listeningReviewed": false
+}

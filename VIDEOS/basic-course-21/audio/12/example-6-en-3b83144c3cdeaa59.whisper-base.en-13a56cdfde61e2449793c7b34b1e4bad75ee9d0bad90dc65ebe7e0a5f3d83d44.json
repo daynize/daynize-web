@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,200"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2200
+			},
+			"text": " They stopped talking when the teacher came in.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.999145,
+					"t_dtw": -1
+				},
+				{
+					"text": " They",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,190"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 190
+					},
+					"id": 1119,
+					"p": 0.751771,
+					"t_dtw": -1
+				},
+				{
+					"text": " stopped",
+					"timestamps": {
+						"from": "00:00:00,270",
+						"to": "00:00:00,590"
+					},
+					"offsets": {
+						"from": 270,
+						"to": 590
+					},
+					"id": 5025,
+					"p": 0.986479,
+					"t_dtw": -1
+				},
+				{
+					"text": " talking",
+					"timestamps": {
+						"from": "00:00:00,610",
+						"to": "00:00:01,000"
+					},
+					"offsets": {
+						"from": 610,
+						"to": 1000
+					},
+					"id": 3375,
+					"p": 0.999152,
+					"t_dtw": -1
+				},
+				{
+					"text": " when",
+					"timestamps": {
+						"from": "00:00:01,000",
+						"to": "00:00:01,190"
+					},
+					"offsets": {
+						"from": 1000,
+						"to": 1190
+					},
+					"id": 618,
+					"p": 0.999378,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,260",
+						"to": "00:00:01,390"
+					},
+					"offsets": {
+						"from": 1260,
+						"to": 1390
+					},
+					"id": 262,
+					"p": 0.996633,
+					"t_dtw": -1
+				},
+				{
+					"text": " teacher",
+					"timestamps": {
+						"from": "00:00:01,390",
+						"to": "00:00:01,780"
+					},
+					"offsets": {
+						"from": 1390,
+						"to": 1780
+					},
+					"id": 4701,
+					"p": 0.98347,
+					"t_dtw": -1
+				},
+				{
+					"text": " came",
+					"timestamps": {
+						"from": "00:00:01,780",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 1780,
+						"to": 2000
+					},
+					"id": 1625,
+					"p": 0.997643,
+					"t_dtw": -1
+				},
+				{
+					"text": " in",
+					"timestamps": {
+						"from": "00:00:02,000",
+						"to": "00:00:02,150"
+					},
+					"offsets": {
+						"from": 2000,
+						"to": 2150
+					},
+					"id": 287,
+					"p": 0.998873,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,160",
+						"to": "00:00:02,170"
+					},
+					"offsets": {
+						"from": 2160,
+						"to": 2170
+					},
+					"id": 13,
+					"p": 0.948157,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_110]",
+					"timestamps": {
+						"from": "00:00:02,200",
+						"to": "00:00:02,200"
+					},
+					"offsets": {
+						"from": 2200,
+						"to": 2200
+					},
+					"id": 50473,
+					"p": 0.0879827,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

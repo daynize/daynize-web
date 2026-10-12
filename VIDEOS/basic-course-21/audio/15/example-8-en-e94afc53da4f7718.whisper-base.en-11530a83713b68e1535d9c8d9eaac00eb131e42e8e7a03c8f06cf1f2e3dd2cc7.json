@@ -1,0 +1,241 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,760"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2760
+			},
+			"text": " The red bike was bought for me as a birthday gift.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997801,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 180
+					},
+					"id": 383,
+					"p": 0.421541,
+					"t_dtw": -1
+				},
+				{
+					"text": " red",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,360"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 360
+					},
+					"id": 2266,
+					"p": 0.782093,
+					"t_dtw": -1
+				},
+				{
+					"text": " bike",
+					"timestamps": {
+						"from": "00:00:00,360",
+						"to": "00:00:00,520"
+					},
+					"offsets": {
+						"from": 360,
+						"to": 520
+					},
+					"id": 7161,
+					"p": 0.975452,
+					"t_dtw": -1
+				},
+				{
+					"text": " was",
+					"timestamps": {
+						"from": "00:00:00,600",
+						"to": "00:00:00,720"
+					},
+					"offsets": {
+						"from": 600,
+						"to": 720
+					},
+					"id": 373,
+					"p": 0.99791,
+					"t_dtw": -1
+				},
+				{
+					"text": " bought",
+					"timestamps": {
+						"from": "00:00:00,830",
+						"to": "00:00:01,140"
+					},
+					"offsets": {
+						"from": 830,
+						"to": 1140
+					},
+					"id": 5839,
+					"p": 0.998015,
+					"t_dtw": -1
+				},
+				{
+					"text": " for",
+					"timestamps": {
+						"from": "00:00:01,140",
+						"to": "00:00:01,320"
+					},
+					"offsets": {
+						"from": 1140,
+						"to": 1320
+					},
+					"id": 329,
+					"p": 0.992123,
+					"t_dtw": -1
+				},
+				{
+					"text": " me",
+					"timestamps": {
+						"from": "00:00:01,320",
+						"to": "00:00:01,410"
+					},
+					"offsets": {
+						"from": 1320,
+						"to": 1410
+					},
+					"id": 502,
+					"p": 0.998182,
+					"t_dtw": -1
+				},
+				{
+					"text": " as",
+					"timestamps": {
+						"from": "00:00:01,450",
+						"to": "00:00:01,550"
+					},
+					"offsets": {
+						"from": 1450,
+						"to": 1550
+					},
+					"id": 355,
+					"p": 0.991875,
+					"t_dtw": -1
+				},
+				{
+					"text": " a",
+					"timestamps": {
+						"from": "00:00:01,600",
+						"to": "00:00:01,620"
+					},
+					"offsets": {
+						"from": 1600,
+						"to": 1620
+					},
+					"id": 257,
+					"p": 0.983609,
+					"t_dtw": -1
+				},
+				{
+					"text": " birthday",
+					"timestamps": {
+						"from": "00:00:01,620",
+						"to": "00:00:02,110"
+					},
+					"offsets": {
+						"from": 1620,
+						"to": 2110
+					},
+					"id": 10955,
+					"p": 0.967442,
+					"t_dtw": -1
+				},
+				{
+					"text": " gift",
+					"timestamps": {
+						"from": "00:00:02,110",
+						"to": "00:00:02,290"
+					},
+					"offsets": {
+						"from": 2110,
+						"to": 2290
+					},
+					"id": 6979,
+					"p": 0.997676,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,410",
+						"to": "00:00:02,410"
+					},
+					"offsets": {
+						"from": 2410,
+						"to": 2410
+					},
+					"id": 13,
+					"p": 0.896988,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_138]",
+					"timestamps": {
+						"from": "00:00:02,760",
+						"to": "00:00:02,760"
+					},
+					"offsets": {
+						"from": 2760,
+						"to": 2760
+					},
+					"id": 50501,
+					"p": 0.0128406,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

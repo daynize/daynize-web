@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,800"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1800
+			},
+			"text": " She left early to catch the bus.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.995199,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,210"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 210
+					},
+					"id": 1375,
+					"p": 0.903139,
+					"t_dtw": -1
+				},
+				{
+					"text": " left",
+					"timestamps": {
+						"from": "00:00:00,210",
+						"to": "00:00:00,490"
+					},
+					"offsets": {
+						"from": 210,
+						"to": 490
+					},
+					"id": 1364,
+					"p": 0.999308,
+					"t_dtw": -1
+				},
+				{
+					"text": " early",
+					"timestamps": {
+						"from": "00:00:00,490",
+						"to": "00:00:00,840"
+					},
+					"offsets": {
+						"from": 490,
+						"to": 840
+					},
+					"id": 1903,
+					"p": 0.99842,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,840",
+						"to": "00:00:00,980"
+					},
+					"offsets": {
+						"from": 840,
+						"to": 980
+					},
+					"id": 284,
+					"p": 0.9991,
+					"t_dtw": -1
+				},
+				{
+					"text": " catch",
+					"timestamps": {
+						"from": "00:00:00,980",
+						"to": "00:00:01,330"
+					},
+					"offsets": {
+						"from": 980,
+						"to": 1330
+					},
+					"id": 4929,
+					"p": 0.999775,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,330",
+						"to": "00:00:01,540"
+					},
+					"offsets": {
+						"from": 1330,
+						"to": 1540
+					},
+					"id": 262,
+					"p": 0.998736,
+					"t_dtw": -1
+				},
+				{
+					"text": " bus",
+					"timestamps": {
+						"from": "00:00:01,540",
+						"to": "00:00:01,690"
+					},
+					"offsets": {
+						"from": 1540,
+						"to": 1690
+					},
+					"id": 1323,
+					"p": 0.992888,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,800",
+						"to": "00:00:01,800"
+					},
+					"offsets": {
+						"from": 1800,
+						"to": 1800
+					},
+					"id": 13,
+					"p": 0.950344,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_90]",
+					"timestamps": {
+						"from": "00:00:01,800",
+						"to": "00:00:01,800"
+					},
+					"offsets": {
+						"from": 1800,
+						"to": 1800
+					},
+					"id": 50453,
+					"p": 0.160272,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,600"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2600
+			},
+			"text": " He refused to sign the contract without reading it.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998869,
+					"t_dtw": -1
+				},
+				{
+					"text": " He",
+					"timestamps": {
+						"from": "00:00:00,040",
+						"to": "00:00:00,120"
+					},
+					"offsets": {
+						"from": 40,
+						"to": 120
+					},
+					"id": 679,
+					"p": 0.787177,
+					"t_dtw": -1
+				},
+				{
+					"text": " refused",
+					"timestamps": {
+						"from": "00:00:00,120",
+						"to": "00:00:00,530"
+					},
+					"offsets": {
+						"from": 120,
+						"to": 530
+					},
+					"id": 6520,
+					"p": 0.999756,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,640",
+						"to": "00:00:00,670"
+					},
+					"offsets": {
+						"from": 640,
+						"to": 670
+					},
+					"id": 284,
+					"p": 0.998974,
+					"t_dtw": -1
+				},
+				{
+					"text": " sign",
+					"timestamps": {
+						"from": "00:00:00,670",
+						"to": "00:00:00,910"
+					},
+					"offsets": {
+						"from": 670,
+						"to": 910
+					},
+					"id": 1051,
+					"p": 0.999449,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,910",
+						"to": "00:00:01,090"
+					},
+					"offsets": {
+						"from": 910,
+						"to": 1090
+					},
+					"id": 262,
+					"p": 0.998902,
+					"t_dtw": -1
+				},
+				{
+					"text": " contract",
+					"timestamps": {
+						"from": "00:00:01,090",
+						"to": "00:00:01,580"
+					},
+					"offsets": {
+						"from": 1090,
+						"to": 1580
+					},
+					"id": 2775,
+					"p": 0.997744,
+					"t_dtw": -1
+				},
+				{
+					"text": " without",
+					"timestamps": {
+						"from": "00:00:01,580",
+						"to": "00:00:02,010"
+					},
+					"offsets": {
+						"from": 1580,
+						"to": 2010
+					},
+					"id": 1231,
+					"p": 0.998346,
+					"t_dtw": -1
+				},
+				{
+					"text": " reading",
+					"timestamps": {
+						"from": "00:00:02,010",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2010,
+						"to": 2440
+					},
+					"id": 3555,
+					"p": 0.998831,
+					"t_dtw": -1
+				},
+				{
+					"text": " it",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,540"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2540
+					},
+					"id": 340,
+					"p": 0.999251,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,600",
+						"to": "00:00:02,600"
+					},
+					"offsets": {
+						"from": 2600,
+						"to": 2600
+					},
+					"id": 13,
+					"p": 0.951901,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_130]",
+					"timestamps": {
+						"from": "00:00:02,600",
+						"to": "00:00:02,600"
+					},
+					"offsets": {
+						"from": 2600,
+						"to": 2600
+					},
+					"id": 50493,
+					"p": 0.137211,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

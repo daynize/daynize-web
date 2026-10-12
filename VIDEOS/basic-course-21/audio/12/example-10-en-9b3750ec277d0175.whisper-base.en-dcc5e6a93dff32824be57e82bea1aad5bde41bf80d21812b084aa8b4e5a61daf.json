@@ -1,0 +1,227 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,440"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2440
+			},
+			"text": " Try restarting it before you try to repair it.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998404,
+					"t_dtw": -1
+				},
+				{
+					"text": " Try",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,190"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 190
+					},
+					"id": 9993,
+					"p": 0.684081,
+					"t_dtw": -1
+				},
+				{
+					"text": " restart",
+					"timestamps": {
+						"from": "00:00:00,190",
+						"to": "00:00:00,640"
+					},
+					"offsets": {
+						"from": 190,
+						"to": 640
+					},
+					"id": 15765,
+					"p": 0.964669,
+					"t_dtw": -1
+				},
+				{
+					"text": "ing",
+					"timestamps": {
+						"from": "00:00:00,640",
+						"to": "00:00:00,820"
+					},
+					"offsets": {
+						"from": 640,
+						"to": 820
+					},
+					"id": 278,
+					"p": 0.999075,
+					"t_dtw": -1
+				},
+				{
+					"text": " it",
+					"timestamps": {
+						"from": "00:00:00,830",
+						"to": "00:00:00,960"
+					},
+					"offsets": {
+						"from": 830,
+						"to": 960
+					},
+					"id": 340,
+					"p": 0.99549,
+					"t_dtw": -1
+				},
+				{
+					"text": " before",
+					"timestamps": {
+						"from": "00:00:00,960",
+						"to": "00:00:01,340"
+					},
+					"offsets": {
+						"from": 960,
+						"to": 1340
+					},
+					"id": 878,
+					"p": 0.999371,
+					"t_dtw": -1
+				},
+				{
+					"text": " you",
+					"timestamps": {
+						"from": "00:00:01,340",
+						"to": "00:00:01,420"
+					},
+					"offsets": {
+						"from": 1340,
+						"to": 1420
+					},
+					"id": 345,
+					"p": 0.998447,
+					"t_dtw": -1
+				},
+				{
+					"text": " try",
+					"timestamps": {
+						"from": "00:00:01,540",
+						"to": "00:00:01,720"
+					},
+					"offsets": {
+						"from": 1540,
+						"to": 1720
+					},
+					"id": 1949,
+					"p": 0.998544,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:01,720",
+						"to": "00:00:01,850"
+					},
+					"offsets": {
+						"from": 1720,
+						"to": 1850
+					},
+					"id": 284,
+					"p": 0.998418,
+					"t_dtw": -1
+				},
+				{
+					"text": " repair",
+					"timestamps": {
+						"from": "00:00:01,850",
+						"to": "00:00:02,230"
+					},
+					"offsets": {
+						"from": 1850,
+						"to": 2230
+					},
+					"id": 9185,
+					"p": 0.99589,
+					"t_dtw": -1
+				},
+				{
+					"text": " it",
+					"timestamps": {
+						"from": "00:00:02,230",
+						"to": "00:00:02,370"
+					},
+					"offsets": {
+						"from": 2230,
+						"to": 2370
+					},
+					"id": 340,
+					"p": 0.999333,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 13,
+					"p": 0.761185,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_122]",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 50485,
+					"p": 0.043924,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

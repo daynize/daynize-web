@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,920"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1920
+			},
+			"text": " I enjoy cooking at home after work.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998161,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.895873,
+					"t_dtw": -1
+				},
+				{
+					"text": " enjoy",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,360"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 360
+					},
+					"id": 2883,
+					"p": 0.994715,
+					"t_dtw": -1
+				},
+				{
+					"text": " cooking",
+					"timestamps": {
+						"from": "00:00:00,360",
+						"to": "00:00:00,790"
+					},
+					"offsets": {
+						"from": 360,
+						"to": 790
+					},
+					"id": 10801,
+					"p": 0.998799,
+					"t_dtw": -1
+				},
+				{
+					"text": " at",
+					"timestamps": {
+						"from": "00:00:00,790",
+						"to": "00:00:00,910"
+					},
+					"offsets": {
+						"from": 790,
+						"to": 910
+					},
+					"id": 379,
+					"p": 0.997324,
+					"t_dtw": -1
+				},
+				{
+					"text": " home",
+					"timestamps": {
+						"from": "00:00:00,910",
+						"to": "00:00:01,150"
+					},
+					"offsets": {
+						"from": 910,
+						"to": 1150
+					},
+					"id": 1363,
+					"p": 0.997984,
+					"t_dtw": -1
+				},
+				{
+					"text": " after",
+					"timestamps": {
+						"from": "00:00:01,150",
+						"to": "00:00:01,380"
+					},
+					"offsets": {
+						"from": 1150,
+						"to": 1380
+					},
+					"id": 706,
+					"p": 0.997685,
+					"t_dtw": -1
+				},
+				{
+					"text": " work",
+					"timestamps": {
+						"from": "00:00:01,480",
+						"to": "00:00:01,690"
+					},
+					"offsets": {
+						"from": 1480,
+						"to": 1690
+					},
+					"id": 670,
+					"p": 0.998496,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,690",
+						"to": "00:00:01,860"
+					},
+					"offsets": {
+						"from": 1690,
+						"to": 1860
+					},
+					"id": 13,
+					"p": 0.856928,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_96]",
+					"timestamps": {
+						"from": "00:00:01,920",
+						"to": "00:00:01,920"
+					},
+					"offsets": {
+						"from": 1920,
+						"to": 1920
+					},
+					"id": 50459,
+					"p": 0.115869,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

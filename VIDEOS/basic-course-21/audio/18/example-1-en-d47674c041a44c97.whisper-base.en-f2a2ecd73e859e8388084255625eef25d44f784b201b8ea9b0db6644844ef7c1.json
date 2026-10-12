@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,840"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1840
+			},
+			"text": " I know the woman whose son works here",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998187,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.976097,
+					"t_dtw": -1
+				},
+				{
+					"text": " know",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,300"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 300
+					},
+					"id": 760,
+					"p": 0.984735,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,300",
+						"to": "00:00:00,480"
+					},
+					"offsets": {
+						"from": 300,
+						"to": 480
+					},
+					"id": 262,
+					"p": 0.99404,
+					"t_dtw": -1
+				},
+				{
+					"text": " woman",
+					"timestamps": {
+						"from": "00:00:00,480",
+						"to": "00:00:00,760"
+					},
+					"offsets": {
+						"from": 480,
+						"to": 760
+					},
+					"id": 2415,
+					"p": 0.939802,
+					"t_dtw": -1
+				},
+				{
+					"text": " whose",
+					"timestamps": {
+						"from": "00:00:00,790",
+						"to": "00:00:01,080"
+					},
+					"offsets": {
+						"from": 790,
+						"to": 1080
+					},
+					"id": 3025,
+					"p": 0.972205,
+					"t_dtw": -1
+				},
+				{
+					"text": " son",
+					"timestamps": {
+						"from": "00:00:01,080",
+						"to": "00:00:01,260"
+					},
+					"offsets": {
+						"from": 1080,
+						"to": 1260
+					},
+					"id": 3367,
+					"p": 0.974566,
+					"t_dtw": -1
+				},
+				{
+					"text": " works",
+					"timestamps": {
+						"from": "00:00:01,260",
+						"to": "00:00:01,380"
+					},
+					"offsets": {
+						"from": 1260,
+						"to": 1380
+					},
+					"id": 2499,
+					"p": 0.999014,
+					"t_dtw": -1
+				},
+				{
+					"text": " here",
+					"timestamps": {
+						"from": "00:00:01,560",
+						"to": "00:00:01,800"
+					},
+					"offsets": {
+						"from": 1560,
+						"to": 1800
+					},
+					"id": 994,
+					"p": 0.998485,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_92]",
+					"timestamps": {
+						"from": "00:00:01,840",
+						"to": "00:00:01,840"
+					},
+					"offsets": {
+						"from": 1840,
+						"to": 1840
+					},
+					"id": 50455,
+					"p": 0.1591,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

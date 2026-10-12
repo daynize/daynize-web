@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,000"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2000
+			},
+			"text": " The long meeting was boring for everyone.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997913,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,170"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 170
+					},
+					"id": 383,
+					"p": 0.7843,
+					"t_dtw": -1
+				},
+				{
+					"text": " long",
+					"timestamps": {
+						"from": "00:00:00,170",
+						"to": "00:00:00,400"
+					},
+					"offsets": {
+						"from": 170,
+						"to": 400
+					},
+					"id": 890,
+					"p": 0.960331,
+					"t_dtw": -1
+				},
+				{
+					"text": " meeting",
+					"timestamps": {
+						"from": "00:00:00,400",
+						"to": "00:00:00,770"
+					},
+					"offsets": {
+						"from": 400,
+						"to": 770
+					},
+					"id": 3249,
+					"p": 0.992979,
+					"t_dtw": -1
+				},
+				{
+					"text": " was",
+					"timestamps": {
+						"from": "00:00:00,890",
+						"to": "00:00:00,970"
+					},
+					"offsets": {
+						"from": 890,
+						"to": 970
+					},
+					"id": 373,
+					"p": 0.999174,
+					"t_dtw": -1
+				},
+				{
+					"text": " boring",
+					"timestamps": {
+						"from": "00:00:00,970",
+						"to": "00:00:01,310"
+					},
+					"offsets": {
+						"from": 970,
+						"to": 1310
+					},
+					"id": 14262,
+					"p": 0.958739,
+					"t_dtw": -1
+				},
+				{
+					"text": " for",
+					"timestamps": {
+						"from": "00:00:01,310",
+						"to": "00:00:01,480"
+					},
+					"offsets": {
+						"from": 1310,
+						"to": 1480
+					},
+					"id": 329,
+					"p": 0.999611,
+					"t_dtw": -1
+				},
+				{
+					"text": " everyone",
+					"timestamps": {
+						"from": "00:00:01,480",
+						"to": "00:00:01,950"
+					},
+					"offsets": {
+						"from": 1480,
+						"to": 1950
+					},
+					"id": 2506,
+					"p": 0.993515,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,960",
+						"to": "00:00:01,980"
+					},
+					"offsets": {
+						"from": 1960,
+						"to": 1980
+					},
+					"id": 13,
+					"p": 0.940325,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_100]",
+					"timestamps": {
+						"from": "00:00:02,000",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 2000,
+						"to": 2000
+					},
+					"id": 50463,
+					"p": 0.213313,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

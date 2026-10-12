@@ -1,0 +1,227 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,680"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2680
+			},
+			"text": " I heard her close the door before she answered again.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.99805,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.957163,
+					"t_dtw": -1
+				},
+				{
+					"text": " heard",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,340"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 340
+					},
+					"id": 2982,
+					"p": 0.997971,
+					"t_dtw": -1
+				},
+				{
+					"text": " her",
+					"timestamps": {
+						"from": "00:00:00,370",
+						"to": "00:00:00,480"
+					},
+					"offsets": {
+						"from": 370,
+						"to": 480
+					},
+					"id": 607,
+					"p": 0.998599,
+					"t_dtw": -1
+				},
+				{
+					"text": " close",
+					"timestamps": {
+						"from": "00:00:00,600",
+						"to": "00:00:00,810"
+					},
+					"offsets": {
+						"from": 600,
+						"to": 810
+					},
+					"id": 1969,
+					"p": 0.994648,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,910",
+						"to": "00:00:01,000"
+					},
+					"offsets": {
+						"from": 910,
+						"to": 1000
+					},
+					"id": 262,
+					"p": 0.999365,
+					"t_dtw": -1
+				},
+				{
+					"text": " door",
+					"timestamps": {
+						"from": "00:00:01,040",
+						"to": "00:00:01,280"
+					},
+					"offsets": {
+						"from": 1040,
+						"to": 1280
+					},
+					"id": 3420,
+					"p": 0.999941,
+					"t_dtw": -1
+				},
+				{
+					"text": " before",
+					"timestamps": {
+						"from": "00:00:01,280",
+						"to": "00:00:01,650"
+					},
+					"offsets": {
+						"from": 1280,
+						"to": 1650
+					},
+					"id": 878,
+					"p": 0.999321,
+					"t_dtw": -1
+				},
+				{
+					"text": " she",
+					"timestamps": {
+						"from": "00:00:01,650",
+						"to": "00:00:01,830"
+					},
+					"offsets": {
+						"from": 1650,
+						"to": 1830
+					},
+					"id": 673,
+					"p": 0.998894,
+					"t_dtw": -1
+				},
+				{
+					"text": " answered",
+					"timestamps": {
+						"from": "00:00:01,830",
+						"to": "00:00:02,320"
+					},
+					"offsets": {
+						"from": 1830,
+						"to": 2320
+					},
+					"id": 9373,
+					"p": 0.996756,
+					"t_dtw": -1
+				},
+				{
+					"text": " again",
+					"timestamps": {
+						"from": "00:00:02,320",
+						"to": "00:00:02,650"
+					},
+					"offsets": {
+						"from": 2320,
+						"to": 2650
+					},
+					"id": 757,
+					"p": 0.999512,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,680",
+						"to": "00:00:02,680"
+					},
+					"offsets": {
+						"from": 2680,
+						"to": 2680
+					},
+					"id": 13,
+					"p": 0.832506,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_134]",
+					"timestamps": {
+						"from": "00:00:02,680",
+						"to": "00:00:02,680"
+					},
+					"offsets": {
+						"from": 2680,
+						"to": 2680
+					},
+					"id": 50497,
+					"p": 0.200993,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

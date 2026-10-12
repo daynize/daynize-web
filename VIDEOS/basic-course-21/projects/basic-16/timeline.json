@@ -1,0 +1,1300 @@
+{
+  "id": "basic-16",
+  "episode": 16,
+  "title": "수동태에서도 남는 보어",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 8.4974004,
+      "text": "오형식 수동태에서는 목적어가 주어로 올라와요. 그 대상을 설명하던 보어는 뒤에 남습니다.",
+      "screen": "목적어 → 주어 / 보어는 유지",
+      "visual": "첫 예문의 door를 주어 칸에 놓고 open을 뒤에 유지.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "오형식 수동태에서는 목적어가 주어로 올라와요. 그 대상을 설명하던 보어는 뒤에 남습니다.",
+          "actualStart": 0.2,
+          "actualEnd": 6.36381,
+          "rate": 185,
+          "cacheKey": "469cf46f7f51eda818994feb8d93751672689feaf930604b7525039093986fc7",
+          "file": "audio/16/concept-1-ko-469cf46f7f51eda8.wav",
+          "duration": 6.16381
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 8.4974004,
+      "end": 17.7029638,
+      "text": "열린 채 두었다면 열린 상태가 남고, 이름을 붙였다면 붙인 이름이 남아요. 보어까지 확인하세요.",
+      "screen": "was kept + 상태 / was named + 이름",
+      "visual": "상태 보어와 이름 보어를 각각 주어에 연결.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "열린 채 두었다면 열린 상태가 남고, 이름을 붙였다면 붙인 이름이 남아요. 보어까지 확인하세요.",
+          "actualStart": 8.6974004,
+          "actualEnd": 15.5693734,
+          "rate": 185,
+          "cacheKey": "db970ad1e99e52193c75dcc16677b2a6bf355c4d1e7f210cc05050bfec05c99f",
+          "file": "audio/16/concept-2-ko-db970ad1e99e5219.wav",
+          "duration": 6.871973
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 17.7029638,
+      "end": 26.5472122,
+      "text": "억지로 시키는 메이크는 수동태에서 투가 필요해요. 허락하는 렛은 보통 얼라우드 투로 표현하죠.",
+      "screen": "was made to do / was allowed to do",
+      "visual": "강제와 허락 두 경로를 분리하고 to를 강조.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "억지로 시키는 메이크는 수동태에서 투가 필요해요. 허락하는 렛은 보통 얼라우드 투로 표현하죠.",
+          "actualStart": 17.9029638,
+          "actualEnd": 24.413621799999998,
+          "rate": 185,
+          "cacheKey": "f40fd40cc063028fd94ee4370bc0d153c8588b6ef510dcb47393d1159a646136",
+          "file": "audio/16/concept-3-ko-f40fd40cc063028f.wav",
+          "duration": 6.510658
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 26.5472122,
+      "end": 35.6887846,
+      "text": "보았다는 지각 동사도 형태를 살펴요. 수동태의 투 원형과 아이엔지는 동작을 보는 초점이 달라요.",
+      "screen": "was seen to do / was seen doing",
+      "visual": "동작 전체와 진행 중 장면을 서로 다른 프레임으로 표시.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "보았다는 지각 동사도 형태를 살펴요. 수동태의 투 원형과 아이엔지는 동작을 보는 초점이 달라요.",
+          "actualStart": 26.7472122,
+          "actualEnd": 33.5551942,
+          "rate": 185,
+          "cacheKey": "d27ee9bc270377220d25cee78ec8af2956f14f362196927286db442bf4fbd4a0",
+          "file": "audio/16/concept-4-ko-d27ee9bc27037722.wav",
+          "duration": 6.807982
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 35.6887846,
+      "end": 43.357839,
+      "ko": "그 문은 회의 내내 열린 채로 유지되었어요.",
+      "en": "The door was kept open throughout the meeting.",
+      "wrong": "The door was keep open throughout the meeting.",
+      "focus": [
+        "was kept",
+        "open"
+      ],
+      "note": "수동태는 kept를 쓰며, 문 상태를 설명하는 형용사 open은 그대로 남는다.",
+      "visual": "door → was kept → open, 상태 보어를 주어에 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 문은 회의 내내 열린 채로 유지되었어요.",
+          "actualStart": 35.8887846,
+          "actualEnd": 38.5572196,
+          "rate": 185,
+          "cacheKey": "8b54c28d79aba04b623c394536a02b62ffdbf3062d3cfa66b8e032938b6a920b",
+          "file": "audio/16/example-1-ko-8b54c28d79aba04b.wav",
+          "duration": 2.668435
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The door was kept open throughout the meeting.",
+          "actualStart": 38.907219600000005,
+          "actualEnd": 40.9742486,
+          "rate": 155,
+          "cacheKey": "5801b7099204c5bb3d2366ea3c484fb69790bd0726784867d9db2c3a175e0aed",
+          "file": "audio/16/example-1-en-5801b7099204c5bb.wav",
+          "duration": 2.067029
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was kept",
+            "actualStart": 39.267219600000004,
+            "actualEnd": 39.60721960000001
+          },
+          {
+            "text": "open",
+            "actualStart": 39.697219600000004,
+            "actualEnd": 39.82721960000001
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "The",
+          "start": 38.9172196,
+          "end": 39.0572196
+        },
+        {
+          "text": "door",
+          "start": 39.0572196,
+          "end": 39.267219600000004
+        },
+        {
+          "text": "was",
+          "start": 39.267219600000004,
+          "end": 39.35721960000001
+        },
+        {
+          "text": "kept",
+          "start": 39.4872196,
+          "end": 39.60721960000001
+        },
+        {
+          "text": "open",
+          "start": 39.697219600000004,
+          "end": 39.82721960000001
+        },
+        {
+          "text": "throughout",
+          "start": 39.907219600000005,
+          "end": 40.35721960000001
+        },
+        {
+          "text": "the",
+          "start": 40.35721960000001,
+          "end": 40.507219600000006
+        },
+        {
+          "text": "meeting.",
+          "start": 40.507219600000006,
+          "end": 40.89721960000001
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 43.357839,
+      "end": 52.1839914,
+      "ko": "그 아기는 할머니 이름을 따서 로즈라고 이름 지어졌어요.",
+      "en": "The baby was named Rose after her grandmother.",
+      "wrong": "The baby was name Rose after her grandmother.",
+      "focus": [
+        "was named",
+        "Rose"
+      ],
+      "note": "named는 수동태의 과거분사이며 이름 보어 Rose는 뒤에 남는다.",
+      "visual": "아기 주어와 Rose 이름표를 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 아기는 할머니 이름을 따서 로즈라고 이름 지어졌어요.",
+          "actualStart": 43.557839,
+          "actualEnd": 47.069902,
+          "rate": 185,
+          "cacheKey": "1a33f53699a217f2e13fae1da190b92e2c621fd458c88a69977ce62c470d6a45",
+          "file": "audio/16/example-2-ko-1a33f53699a217f2.wav",
+          "duration": 3.512063
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The baby was named Rose after her grandmother.",
+          "actualStart": 47.419902,
+          "actualEnd": 49.800401,
+          "rate": 155,
+          "cacheKey": "ba2b77c4fb3bc79f49e0e97a11f635972037ac20da9dfb5c42aae1d4e2b19572",
+          "file": "audio/16/example-2-en-ba2b77c4fb3bc79f.wav",
+          "duration": 2.380499
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was named",
+            "actualStart": 47.839902,
+            "actualEnd": 48.309902
+          },
+          {
+            "text": "Rose",
+            "actualStart": 48.319902,
+            "actualEnd": 48.519902
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "The",
+          "start": 47.429902,
+          "end": 47.599902
+        },
+        {
+          "text": "baby",
+          "start": 47.599902,
+          "end": 47.839902
+        },
+        {
+          "text": "was",
+          "start": 47.839902,
+          "end": 47.969902
+        },
+        {
+          "text": "named",
+          "start": 48.029902,
+          "end": 48.309902
+        },
+        {
+          "text": "Rose",
+          "start": 48.319902,
+          "end": 48.519902
+        },
+        {
+          "text": "after",
+          "start": 48.579902,
+          "end": 48.859902
+        },
+        {
+          "text": "her",
+          "start": 48.859902,
+          "end": 49.039902
+        },
+        {
+          "text": "grandmother.",
+          "start": 49.039902,
+          "end": 49.719902
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 52.1839914,
+      "end": 59.524383799999995,
+      "ko": "그 방은 밤새 따뜻하게 유지되었어요.",
+      "en": "The room was kept warm all night.",
+      "wrong": "The room was kept warmly all night.",
+      "focus": [
+        "kept",
+        "warm"
+      ],
+      "note": "방의 상태를 설명하는 보어는 형용사 warm이며 동작을 꾸미는 부사 warmly가 아니다.",
+      "visual": "warm에서 room으로 상태 연결선 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 방은 밤새 따뜻하게 유지되었어요.",
+          "actualStart": 52.3839914,
+          "actualEnd": 55.1185034,
+          "rate": 185,
+          "cacheKey": "376a14cce4a95b03bfae40153fcf20f668d9bc4fec572f01af1897fc2f640f3c",
+          "file": "audio/16/example-3-ko-376a14cce4a95b03.wav",
+          "duration": 2.734512
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The room was kept warm all night.",
+          "actualStart": 55.4685034,
+          "actualEnd": 57.1407934,
+          "rate": 155,
+          "cacheKey": "f67e162192809ec5639edcd93aba3312098afb54516f2ed2dae0f8c5e28ec8ba",
+          "file": "audio/16/example-3-en-f67e162192809ec5.wav",
+          "duration": 1.67229
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "kept",
+            "actualStart": 56.0785034,
+            "actualEnd": 56.1985034
+          },
+          {
+            "text": "warm",
+            "actualStart": 56.318503400000004,
+            "actualEnd": 56.5485034
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "The",
+          "start": 55.4785034,
+          "end": 55.6485034
+        },
+        {
+          "text": "room",
+          "start": 55.6485034,
+          "end": 55.888503400000005
+        },
+        {
+          "text": "was",
+          "start": 55.888503400000005,
+          "end": 55.9485034
+        },
+        {
+          "text": "kept",
+          "start": 56.0785034,
+          "end": 56.1985034
+        },
+        {
+          "text": "warm",
+          "start": 56.318503400000004,
+          "end": 56.5485034
+        },
+        {
+          "text": "all",
+          "start": 56.5485034,
+          "end": 56.7285034
+        },
+        {
+          "text": "night.",
+          "start": 56.7285034,
+          "end": 57.028503400000005
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 59.524383799999995,
+      "end": 67.78826819999999,
+      "ko": "우리는 밖에서 한 시간 동안 기다리도록 강요받았어요.",
+      "en": "We were made to wait outside for an hour.",
+      "wrong": "We were made wait outside for an hour.",
+      "focus": [
+        "were made",
+        "to wait"
+      ],
+      "note": "사역 make의 수동태에서는 원형 앞에 to를 붙인다.",
+      "visual": "능동 사역의 원형 자리에서 수동의 to wait 자리로 이동.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 밖에서 한 시간 동안 기다리도록 강요받았어요.",
+          "actualStart": 59.7243838,
+          "actualEnd": 63.0902338,
+          "rate": 185,
+          "cacheKey": "f2a56eefe97623f795f76b065a93b459109f4b9f270fd46be73a5a6f2df93d6f",
+          "file": "audio/16/example-4-ko-f2a56eefe97623f7.wav",
+          "duration": 3.36585
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We were made to wait outside for an hour.",
+          "actualStart": 63.4402338,
+          "actualEnd": 65.4046778,
+          "rate": 155,
+          "cacheKey": "83cb5baf78d15c03c340e6488877a8a0652042a780c4b7e12ff952049ea6808a",
+          "file": "audio/16/example-4-en-83cb5baf78d15c03.wav",
+          "duration": 1.964444
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were made",
+            "actualStart": 63.5602338,
+            "actualEnd": 64.0202338
+          },
+          {
+            "text": "to wait",
+            "actualStart": 64.0202338,
+            "actualEnd": 64.37023380000001
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "We",
+          "start": 63.4502338,
+          "end": 63.5602338
+        },
+        {
+          "text": "were",
+          "start": 63.5602338,
+          "end": 63.7902338
+        },
+        {
+          "text": "made",
+          "start": 63.7902338,
+          "end": 64.0202338
+        },
+        {
+          "text": "to",
+          "start": 64.0202338,
+          "end": 64.1402338
+        },
+        {
+          "text": "wait",
+          "start": 64.1402338,
+          "end": 64.37023380000001
+        },
+        {
+          "text": "outside",
+          "start": 64.37023380000001,
+          "end": 64.7402338
+        },
+        {
+          "text": "for",
+          "start": 64.84023380000001,
+          "end": 64.9602338
+        },
+        {
+          "text": "an",
+          "start": 64.9602338,
+          "end": 65.0802338
+        },
+        {
+          "text": "hour.",
+          "start": 65.0802338,
+          "end": 65.3102338
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 67.78826819999999,
+      "end": 76.90281059999998,
+      "ko": "그 아이들은 점심 후에 밖에서 놀도록 허락받았어요.",
+      "en": "The children were allowed to play outside after lunch.",
+      "wrong": "The children were allowed play outside after lunch.",
+      "focus": [
+        "were allowed",
+        "to play"
+      ],
+      "note": "허락 의미의 let을 옮길 때 보통 allowed to를 쓰며, allowed 뒤의 to를 생략하지 않는다.",
+      "visual": "허락 표식에서 allowed to play 묶음으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 아이들은 점심 후에 밖에서 놀도록 허락받았어요.",
+          "actualStart": 67.9882682,
+          "actualEnd": 71.41720219999999,
+          "rate": 185,
+          "cacheKey": "6beeda35b47f16cb7cfb9658a3fd19859f7875207e03de98dda5f7729fd5d6fb",
+          "file": "audio/16/example-5-ko-6beeda35b47f16cb.wav",
+          "duration": 3.428934
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The children were allowed to play outside after lunch.",
+          "actualStart": 71.76720219999999,
+          "actualEnd": 74.51922019999999,
+          "rate": 155,
+          "cacheKey": "be2bf54c9553b23bd08b06b3220a0f1bd9cd70664371da3cd4f45c11501ade2c",
+          "file": "audio/16/example-5-en-be2bf54c9553b23b.wav",
+          "duration": 2.752018
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were allowed",
+            "actualStart": 72.40720219999999,
+            "actualEnd": 73.04720219999999
+          },
+          {
+            "text": "to play",
+            "actualStart": 73.04720219999999,
+            "actualEnd": 73.32720219999999
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "The",
+          "start": 71.77720219999999,
+          "end": 71.93720219999999
+        },
+        {
+          "text": "children",
+          "start": 71.93720219999999,
+          "end": 72.40720219999999
+        },
+        {
+          "text": "were",
+          "start": 72.40720219999999,
+          "end": 72.63720219999999
+        },
+        {
+          "text": "allowed",
+          "start": 72.63720219999999,
+          "end": 73.04720219999999
+        },
+        {
+          "text": "to",
+          "start": 73.04720219999999,
+          "end": 73.15720219999999
+        },
+        {
+          "text": "play",
+          "start": 73.15720219999999,
+          "end": 73.32720219999999
+        },
+        {
+          "text": "outside",
+          "start": 73.40720219999999,
+          "end": 73.79720219999999
+        },
+        {
+          "text": "after",
+          "start": 73.79720219999999,
+          "end": 74.08720219999998
+        },
+        {
+          "text": "lunch.",
+          "start": 74.08720219999998,
+          "end": 74.40720219999999
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 76.90281059999998,
+      "end": 85.83349799999998,
+      "ko": "그녀가 해 뜨기 전에 사무실을 나가는 것이 목격되었어요.",
+      "en": "She was seen to leave the office before sunrise.",
+      "wrong": "She was seen leave the office before sunrise.",
+      "focus": [
+        "was seen",
+        "to leave"
+      ],
+      "note": "see의 원형 보어를 수동태로 옮기면 to leave가 된다. 맨 원형 leave만 남기지 않는다.",
+      "visual": "사무실을 나가는 동작 전체를 프레임으로 묶고 to leave 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀가 해 뜨기 전에 사무실을 나가는 것이 목격되었어요.",
+          "actualStart": 77.10281059999998,
+          "actualEnd": 80.46616659999998,
+          "rate": 185,
+          "cacheKey": "ff6f7fe1d04e3ab2b5e2408c264faa5d7f53b0368bc968ee5f07f86bfaf3adcb",
+          "file": "audio/16/example-6-ko-ff6f7fe1d04e3ab2.wav",
+          "duration": 3.363356
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She was seen to leave the office before sunrise.",
+          "actualStart": 80.81616659999997,
+          "actualEnd": 83.44990759999997,
+          "rate": 155,
+          "cacheKey": "2c26399bd55ae918a05b0f9c82749dbab30f72499b25156ed868631efe369abc",
+          "file": "audio/16/example-6-en-2c26399bd55ae918.wav",
+          "duration": 2.633741
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was seen",
+            "actualStart": 81.01616659999998,
+            "actualEnd": 81.46616659999998
+          },
+          {
+            "text": "to leave",
+            "actualStart": 81.48616659999998,
+            "actualEnd": 81.93616659999998
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "She",
+          "start": 80.86616659999997,
+          "end": 81.01616659999998
+        },
+        {
+          "text": "was",
+          "start": 81.01616659999998,
+          "end": 81.13616659999997
+        },
+        {
+          "text": "seen",
+          "start": 81.24616659999998,
+          "end": 81.46616659999998
+        },
+        {
+          "text": "to",
+          "start": 81.48616659999998,
+          "end": 81.60616659999998
+        },
+        {
+          "text": "leave",
+          "start": 81.60616659999998,
+          "end": 81.93616659999998
+        },
+        {
+          "text": "the",
+          "start": 81.93616659999998,
+          "end": 82.07616659999998
+        },
+        {
+          "text": "office",
+          "start": 82.14616659999997,
+          "end": 82.45616659999997
+        },
+        {
+          "text": "before",
+          "start": 82.54616659999998,
+          "end": 82.91616659999997
+        },
+        {
+          "text": "sunrise.",
+          "start": 82.91616659999997,
+          "end": 83.28616659999997
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85.83349799999998,
+      "end": 95.54400439999998,
+      "ko": "그는 우리가 도착했을 때 정원에서 일하는 모습이 목격되었어요.",
+      "en": "He was seen working in the garden when we arrived.",
+      "wrong": "He was seen work in the garden when we arrived.",
+      "focus": [
+        "was seen",
+        "working"
+      ],
+      "note": "진행 중인 모습을 표현하는 working은 수동태에서도 남는다. 원형 work만 쓰는 구조는 아니다.",
+      "visual": "도착 시점의 작업 장면과 working 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그는 우리가 도착했을 때 정원에서 일하는 모습이 목격되었어요.",
+          "actualStart": 86.03349799999998,
+          "actualEnd": 90.41122999999997,
+          "rate": 185,
+          "cacheKey": "2ce709d4be8a02504933e0513da243942345ff06e36297767b08d0b1c5088947",
+          "file": "audio/16/example-7-ko-2ce709d4be8a0250.wav",
+          "duration": 4.377732
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He was seen working in the garden when we arrived.",
+          "actualStart": 90.76122999999997,
+          "actualEnd": 93.16041399999997,
+          "rate": 155,
+          "cacheKey": "51a35c643a414e5b8fac60139a30773ccf098f3f33a7d2e0de2e309b04bab211",
+          "file": "audio/16/example-7-en-51a35c643a414e5b.wav",
+          "duration": 2.399184
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was seen",
+            "actualStart": 90.87122999999997,
+            "actualEnd": 91.25122999999996
+          },
+          {
+            "text": "working",
+            "actualStart": 91.25122999999996,
+            "actualEnd": 91.64122999999996
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "He",
+          "start": 90.80122999999998,
+          "end": 90.87122999999997
+        },
+        {
+          "text": "was",
+          "start": 90.87122999999997,
+          "end": 91.02122999999997
+        },
+        {
+          "text": "seen",
+          "start": 91.12122999999997,
+          "end": 91.25122999999996
+        },
+        {
+          "text": "working",
+          "start": 91.25122999999996,
+          "end": 91.64122999999996
+        },
+        {
+          "text": "in",
+          "start": 91.64122999999996,
+          "end": 91.75122999999996
+        },
+        {
+          "text": "the",
+          "start": 91.75122999999996,
+          "end": 91.89122999999996
+        },
+        {
+          "text": "garden",
+          "start": 91.96122999999997,
+          "end": 92.24122999999997
+        },
+        {
+          "text": "when",
+          "start": 92.24122999999997,
+          "end": 92.46122999999997
+        },
+        {
+          "text": "we",
+          "start": 92.46122999999997,
+          "end": 92.57122999999997
+        },
+        {
+          "text": "arrived.",
+          "start": 92.57122999999997,
+          "end": 92.96122999999997
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 95.54400439999998,
+      "end": 103.73042979999997,
+      "ko": "그 선수는 토너먼트 내내 럭키라고 불렸어요.",
+      "en": "The player was called Lucky throughout the tournament.",
+      "wrong": "The player was called as Lucky throughout the tournament.",
+      "focus": [
+        "was called",
+        "Lucky"
+      ],
+      "note": "별명을 붙이는 call의 이름 보어 앞에는 as를 넣지 않는다.",
+      "visual": "player와 Lucky 이름 보어를 직접 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 선수는 토너먼트 내내 럭키라고 불렸어요.",
+          "actualStart": 95.74400439999998,
+          "actualEnd": 98.62795039999997,
+          "rate": 185,
+          "cacheKey": "84a96ced0adfc34518f8bf83903ee6d61cef8caa62eed5132c9b34a4103f403d",
+          "file": "audio/16/example-8-ko-84a96ced0adfc345.wav",
+          "duration": 2.883946
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The player was called Lucky throughout the tournament.",
+          "actualStart": 98.97795039999997,
+          "actualEnd": 101.34683939999996,
+          "rate": 155,
+          "cacheKey": "039480072ee2179c3aaaaa50698c82d97a2be47cecc824f0bd9775995a67d000",
+          "file": "audio/16/example-8-en-039480072ee2179c.wav",
+          "duration": 2.368889
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was called",
+            "actualStart": 99.42795039999997,
+            "actualEnd": 99.87795039999997
+          },
+          {
+            "text": "Lucky",
+            "actualStart": 99.87795039999997,
+            "actualEnd": 100.09795039999997
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "The",
+          "start": 98.98795039999997,
+          "end": 99.05795039999997
+        },
+        {
+          "text": "player",
+          "start": 99.16795039999997,
+          "end": 99.42795039999997
+        },
+        {
+          "text": "was",
+          "start": 99.42795039999997,
+          "end": 99.56795039999997
+        },
+        {
+          "text": "called",
+          "start": 99.69795039999997,
+          "end": 99.87795039999997
+        },
+        {
+          "text": "Lucky",
+          "start": 99.87795039999997,
+          "end": 100.09795039999997
+        },
+        {
+          "text": "throughout",
+          "start": 100.17795039999997,
+          "end": 100.59795039999997
+        },
+        {
+          "text": "the",
+          "start": 100.66795039999997,
+          "end": 100.74795039999997
+        },
+        {
+          "text": "tournament.",
+          "start": 100.83795039999997,
+          "end": 101.25795039999997
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 103.73042979999997,
+      "end": 112.85658319999996,
+      "ko": "그 아이는 길을 건너는 도중의 모습이 목격되었어요.",
+      "en": "The child was seen crossing the road midway through the crossing.",
+      "wrong": "The child was seen to crossing the road midway through the crossing.",
+      "focus": [
+        "was seen",
+        "crossing"
+      ],
+      "note": "진행 장면은 seen crossing으로 표현한다. seen to cross도 가능하지만 to crossing은 이 구조에 맞지 않는다.",
+      "visual": "횡단 도중의 장면과 crossing을 연결하고 불필요한 to 제거.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 아이는 길을 건너는 도중의 모습이 목격되었어요.",
+          "actualStart": 103.93042979999997,
+          "actualEnd": 107.06911479999997,
+          "rate": 185,
+          "cacheKey": "c200f8284f2b0f01527713e539fbf66b3bcdc33035bffd67430327c7980f0ea0",
+          "file": "audio/16/example-9-ko-c200f8284f2b0f01.wav",
+          "duration": 3.138685
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The child was seen crossing the road midway through the crossing.",
+          "actualStart": 107.41911479999996,
+          "actualEnd": 110.47299279999996,
+          "rate": 155,
+          "cacheKey": "f1c8023de9c66e6c7b61c874ad37b497c18fbd1c414f449ad4f107239af6d151",
+          "file": "audio/16/example-9-en-f1c8023de9c66e6c.wav",
+          "duration": 3.053878
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was seen",
+            "actualStart": 107.84911479999997,
+            "actualEnd": 108.22911479999996
+          },
+          {
+            "text": "crossing",
+            "actualStart": 108.22911479999996,
+            "actualEnd": 108.59911479999997
+          },
+          {
+            "text": "crossing",
+            "actualStart": 109.90911479999995,
+            "actualEnd": 110.39911479999996
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "The",
+          "start": 107.42911479999997,
+          "end": 107.57911479999996
+        },
+        {
+          "text": "child",
+          "start": 107.57911479999996,
+          "end": 107.84911479999997
+        },
+        {
+          "text": "was",
+          "start": 107.84911479999997,
+          "end": 108.00911479999996
+        },
+        {
+          "text": "seen",
+          "start": 108.00911479999996,
+          "end": 108.22911479999996
+        },
+        {
+          "text": "crossing",
+          "start": 108.22911479999996,
+          "end": 108.59911479999997
+        },
+        {
+          "text": "the",
+          "start": 108.67911479999997,
+          "end": 108.82911479999996
+        },
+        {
+          "text": "road",
+          "start": 108.82911479999996,
+          "end": 109.04911479999996
+        },
+        {
+          "text": "midway",
+          "start": 109.04911479999996,
+          "end": 109.37911479999995
+        },
+        {
+          "text": "through",
+          "start": 109.37911479999995,
+          "end": 109.75911479999996
+        },
+        {
+          "text": "the",
+          "start": 109.75911479999996,
+          "end": 109.89911479999996
+        },
+        {
+          "text": "crossing.",
+          "start": 109.90911479999995,
+          "end": 110.39911479999996
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 112.85658319999996,
+      "end": 121.95538959999995,
+      "ko": "그 직원들은 퇴근 전에 방을 청소하도록 강요받았어요.",
+      "en": "The workers were made to clean the room before leaving.",
+      "wrong": "The workers were made to cleaned the room before leaving.",
+      "focus": [
+        "were made",
+        "to clean"
+      ],
+      "note": "made의 수동태에서 to를 붙인 뒤에는 과거형 cleaned가 아니라 원형 clean을 쓴다.",
+      "visual": "were made / to clean / room 칸에서 원형 자리 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 직원들은 퇴근 전에 방을 청소하도록 강요받았어요.",
+          "actualStart": 113.05658319999996,
+          "actualEnd": 116.72520019999996,
+          "rate": 185,
+          "cacheKey": "94b1d638f56135bd507cf7c93ab67e2374a1d58376eb9af8d40d66ade63fb160",
+          "file": "audio/16/example-10-ko-94b1d638f56135bd.wav",
+          "duration": 3.668617
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The workers were made to clean the room before leaving.",
+          "actualStart": 117.07520019999995,
+          "actualEnd": 119.57179919999996,
+          "rate": 155,
+          "cacheKey": "29f5471ed57b6137b2f18f300b48bf4c9d8a803ca7d4b45589a7223caec99bb1",
+          "file": "audio/16/example-10-en-29f5471ed57b6137.wav",
+          "duration": 2.496599
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were made",
+            "actualStart": 117.60520019999996,
+            "actualEnd": 118.02520019999996
+          },
+          {
+            "text": "to clean",
+            "actualStart": 118.02520019999996,
+            "actualEnd": 118.38520019999996
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "The",
+          "start": 117.08520019999996,
+          "end": 117.23520019999995
+        },
+        {
+          "text": "workers",
+          "start": 117.23520019999995,
+          "end": 117.53520019999995
+        },
+        {
+          "text": "were",
+          "start": 117.60520019999996,
+          "end": 117.81520019999995
+        },
+        {
+          "text": "made",
+          "start": 117.81520019999995,
+          "end": 118.02520019999996
+        },
+        {
+          "text": "to",
+          "start": 118.02520019999996,
+          "end": 118.05520019999996
+        },
+        {
+          "text": "clean",
+          "start": 118.17520019999995,
+          "end": 118.38520019999996
+        },
+        {
+          "text": "the",
+          "start": 118.38520019999996,
+          "end": 118.54520019999995
+        },
+        {
+          "text": "room",
+          "start": 118.54520019999995,
+          "end": 118.73520019999995
+        },
+        {
+          "text": "before",
+          "start": 118.75520019999996,
+          "end": 119.06520019999995
+        },
+        {
+          "text": "leaving.",
+          "start": 119.06520019999995,
+          "end": 119.46520019999996
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 121.95538959999995,
+      "end": 130,
+      "text": "오형식 수동태는 보어를 남기되, 사역·지각 동사에 맞는 보어 형태로 바꾸세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "오형식 수동태는 보어를 남기되, 사역·지각 동사에 맞는 보어 형태로 바꾸세요.",
+          "actualStart": 122.15538959999995,
+          "actualEnd": 127.86640959999995,
+          "rate": 185,
+          "cacheKey": "7345da03ed1562554274ecadd4876069fbd30910c8e08ae80cc5815aa2c75018",
+          "file": "audio/16/summary-ko-7345da03ed156255.wav",
+          "duration": 5.71102
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 106.99614399999999,
+  "sourceHash": "556d41527664d92268d1b19fc97fcc93dee01ca1a927eb843503fe6e6bec8e71",
+  "audioFile": "audio/16/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "556d41527664d92268d1b19fc97fcc93dee01ca1a927eb843503fe6e6bec8e71",
+    "clipHashes": {
+      "example-1-en": "c4cda8bd002778c1761fe50ade8501846c455931e079c2039ef5c10ff555ff33",
+      "example-2-en": "b3f8765345c327388c264b216cd9c5f12a22c9a78c1c3d719896b0f2fab3c7fe",
+      "example-3-en": "9285cdee0a9454bc50277022e134d7afc23c47f12113a90eaca6cebe2c6fd712",
+      "example-4-en": "96f88802a82f4b803b0fe4922634660d03219306ec2a16914321644c516644d5",
+      "example-5-en": "03e9cd686269078dfaa1fd9de43f58747b291be2442cee3e5f344964114713f3",
+      "example-6-en": "32c97f07ff32f352f96c5ba627c07daafebb7fea050cf83255660af99f7d2bb7",
+      "example-7-en": "9eb672847f4cb1cb0817ed6dff728f0ecc6c8240c4c96eb920d0b408b4af608b",
+      "example-8-en": "b82b2e309123b134fcb5ea88a3d55473da5437de6c0f84ee5fe53cc48be99a0d",
+      "example-9-en": "47e2c673edf6e206cceffd58199634bc0931a26061a396887329b146532be6e0",
+      "example-10-en": "dc7e6d493c8947ec11280483d9b9f0e9bf07979951547b0c85a9b05f903b1b5e"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

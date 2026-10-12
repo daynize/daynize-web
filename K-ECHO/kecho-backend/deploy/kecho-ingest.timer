@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the K-ECHO import batch every six hours
+
+[Timer]
+OnCalendar=*-*-* 00,06,12,18:00:00
+Persistent=true
+RandomizedDelaySec=60
+Unit=kecho-ingest.service
+
+[Install]
+WantedBy=timers.target

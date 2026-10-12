@@ -1,0 +1,1220 @@
+{
+  "id": "basic-13",
+  "episode": 13,
+  "title": "직접 하는 대상과 영향을 받은 대상",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 9.745302933333335,
+      "text": "분사는 명사의 모습이나 상태를 설명해요. 잠자는 아이처럼, 그 대상이 직접 하는 일을 나타낼 수 있죠.",
+      "screen": "a sleeping child / 아이가 잠자는 중",
+      "visual": "첫 예문의 아이에서 sleeping으로 능동 화살표 연결.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "분사는 명사의 모습이나 상태를 설명해요. 잠자는 아이처럼, 그 대상이 직접 하는 일을 나타낼 수 있죠.",
+          "actualStart": 0.2,
+          "actualEnd": 7.567256,
+          "rate": 185,
+          "cacheKey": "0365df517bdc917d8a159d374bce0fb36f71c2755db4265e2db2bb8fb9761d3b",
+          "file": "audio/13/concept-1-ko-0365df517bdc917d.wav",
+          "duration": 7.367256
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 9.745302933333335,
+      "end": 19.075639866666666,
+      "text": "현재분사는 보통 직접 하는 동작을, 과거분사는 받은 작용이나 결과 상태를 보여 줘요.",
+      "screen": "하는 대상 / 작용을 받은 대상",
+      "visual": "아이의 동작과 깨진 창문의 결과를 두 열로 대조.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "현재분사는 보통 직접 하는 동작을, 과거분사는 받은 작용이나 결과 상태를 보여 줘요.",
+          "actualStart": 9.945302933333334,
+          "actualEnd": 16.897592933333335,
+          "rate": 185,
+          "cacheKey": "a920faa3f0d5fc393f5a1e6f92c61e160d8e6c240970bba16f741990460afde8",
+          "file": "audio/13/concept-2-ko-a920faa3f0d5fc39.wav",
+          "duration": 6.95229
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 19.075639866666666,
+      "end": 28.1730068,
+      "text": "과거분사는 모두 이디로 끝나지 않아요. 깨진 창문의 브로큰처럼 불규칙 형태도 익혀야 해요.",
+      "screen": "break → broke → broken",
+      "visual": "원형·과거형·과거분사 세 칸에서 broken만 명사에 연결.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "과거분사는 모두 이디로 끝나지 않아요. 깨진 창문의 브로큰처럼 불규칙 형태도 익혀야 해요.",
+          "actualStart": 19.275639866666666,
+          "actualEnd": 25.994959866666665,
+          "rate": 185,
+          "cacheKey": "4b83c5e47a082f029d3bd04d98bed602f926b014908e0945bc681504b9a61fff",
+          "file": "audio/13/concept-3-ko-4b83c5e47a082f02.wav",
+          "duration": 6.71932
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 28.1730068,
+      "end": 38.23177973333333,
+      "text": "분사의 이름만 보고 현재와 과거를 결정하지 마세요. 명사와의 관계를 보고, 완료된 상태도 구분하세요.",
+      "screen": "시간 이름보다 명사와의 관계",
+      "visual": "첫 두 예문의 sleeping과 broken을 각각 동작·결과 상태에 연결.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "분사의 이름만 보고 현재와 과거를 결정하지 마세요. 명사와의 관계를 보고, 완료된 상태도 구분하세요.",
+          "actualStart": 28.3730068,
+          "actualEnd": 36.0537328,
+          "rate": 185,
+          "cacheKey": "93503cc74df2f7aeef300db77b31481d45ea478d433b18ebc2293c61e5cfdb38",
+          "file": "audio/13/concept-4-ko-93503cc74df2f7ae.wav",
+          "duration": 7.680726
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 38.23177973333333,
+      "end": 45.64551766666666,
+      "ko": "우리는 잠자는 아이를 깨우지 않았어요.",
+      "en": "We did not wake the sleeping child.",
+      "wrong": "We did not wake the slept child.",
+      "focus": [
+        "sleeping",
+        "child"
+      ],
+      "note": "아이가 직접 자는 상태는 sleeping이며, slept를 이 명사 앞에 쓰지 않는다.",
+      "visual": "아이 → 잠자는 동작 화살표와 sleeping 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 잠자는 아이를 깨우지 않았어요.",
+          "actualStart": 38.431779733333336,
+          "actualEnd": 40.84497673333333,
+          "rate": 185,
+          "cacheKey": "37c52251c99f5d283af80cc62a1e134eaaac2ef22f8116d5814cc16f8833ae25",
+          "file": "audio/13/example-1-ko-37c52251c99f5d28.wav",
+          "duration": 2.413197
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We did not wake the sleeping child.",
+          "actualStart": 41.194976733333334,
+          "actualEnd": 43.217470733333336,
+          "rate": 155,
+          "cacheKey": "1658cd19fdb46b72e73a2803c8ef58f059c2db22afe45eb6a2762afbad711172",
+          "file": "audio/13/example-1-en-1658cd19fdb46b72.wav",
+          "duration": 2.022494
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "sleeping",
+            "actualStart": 42.24497673333333,
+            "actualEnd": 42.81497673333333
+          },
+          {
+            "text": "child",
+            "actualStart": 42.81497673333333,
+            "actualEnd": 43.114976733333336
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "We",
+          "start": 41.20497673333333,
+          "end": 41.32497673333334
+        },
+        {
+          "text": "did",
+          "start": 41.374976733333334,
+          "end": 41.544976733333336
+        },
+        {
+          "text": "not",
+          "start": 41.544976733333336,
+          "end": 41.71497673333334
+        },
+        {
+          "text": "wake",
+          "start": 41.77497673333333,
+          "end": 41.944976733333334
+        },
+        {
+          "text": "the",
+          "start": 42.044976733333336,
+          "end": 42.17497673333333
+        },
+        {
+          "text": "sleeping",
+          "start": 42.24497673333333,
+          "end": 42.81497673333333
+        },
+        {
+          "text": "child.",
+          "start": 42.81497673333333,
+          "end": 43.114976733333336
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 45.64551766666666,
+      "end": 54.26456159999999,
+      "ko": "그는 아침 식사 전에 깨진 창문을 고쳤어요.",
+      "en": "He fixed the broken window before breakfast.",
+      "wrong": "He fixed the broke window before breakfast.",
+      "focus": [
+        "broken",
+        "window"
+      ],
+      "note": "깨진 결과 상태에는 과거형 broke가 아니라 과거분사 broken을 쓴다.",
+      "visual": "창문에 작용이 들어온 뒤 broken 상태 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그는 아침 식사 전에 깨진 창문을 고쳤어요.",
+          "actualStart": 45.845517666666666,
+          "actualEnd": 48.982841666666666,
+          "rate": 185,
+          "cacheKey": "3aa4840353b224d07bb224cdc8e9b2c0309a953e84fc5b7cfbcdaa5f4b891e56",
+          "file": "audio/13/example-2-ko-3aa4840353b224d0.wav",
+          "duration": 3.137324
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He fixed the broken window before breakfast.",
+          "actualStart": 49.33284166666667,
+          "actualEnd": 51.836514666666666,
+          "rate": 155,
+          "cacheKey": "0b2fcec3b1b5db1f1accc0c85c86d3768527038314afbb7475fafec7364093c8",
+          "file": "audio/13/example-2-en-0b2fcec3b1b5db1f.wav",
+          "duration": 2.503673
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "broken",
+            "actualStart": 49.982841666666666,
+            "actualEnd": 50.29284166666667
+          },
+          {
+            "text": "window",
+            "actualStart": 50.29284166666667,
+            "actualEnd": 50.65284166666667
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "He",
+          "start": 49.372841666666666,
+          "end": 49.452841666666664
+        },
+        {
+          "text": "fixed",
+          "start": 49.452841666666664,
+          "end": 49.75284166666667
+        },
+        {
+          "text": "the",
+          "start": 49.75284166666667,
+          "end": 49.93284166666667
+        },
+        {
+          "text": "broken",
+          "start": 49.982841666666666,
+          "end": 50.29284166666667
+        },
+        {
+          "text": "window",
+          "start": 50.29284166666667,
+          "end": 50.65284166666667
+        },
+        {
+          "text": "before",
+          "start": 50.65284166666667,
+          "end": 51.01284166666667
+        },
+        {
+          "text": "breakfast.",
+          "start": 51.01284166666667,
+          "end": 51.552841666666666
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54.26456159999999,
+      "end": 62.30732453333332,
+      "ko": "떨어지는 나뭇잎들이 좁은 길을 덮었어요.",
+      "en": "The falling leaves covered the narrow path.",
+      "wrong": "The fell leaves covered the narrow path.",
+      "focus": [
+        "falling",
+        "leaves"
+      ],
+      "note": "잎이 떨어지는 동작을 꾸미려면 falling이며, 과거형 fell은 쓸 수 없다.",
+      "visual": "아래로 움직이는 잎과 falling을 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "떨어지는 나뭇잎들이 좁은 길을 덮었어요.",
+          "actualStart": 54.464561599999996,
+          "actualEnd": 57.404198599999994,
+          "rate": 185,
+          "cacheKey": "48231da56793c88963a9fbbc838627a39afe04608083fc6045b82d97f143b3b1",
+          "file": "audio/13/example-3-ko-48231da56793c889.wav",
+          "duration": 2.939637
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The falling leaves covered the narrow path.",
+          "actualStart": 57.754198599999995,
+          "actualEnd": 59.879277599999995,
+          "rate": 155,
+          "cacheKey": "a6c4892e616d1ff8256cbebe462ef020879f0ea20d909a0b6ea0756aff6504b0",
+          "file": "audio/13/example-3-en-a6c4892e616d1ff8.wav",
+          "duration": 2.125079
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "falling",
+            "actualStart": 57.934198599999995,
+            "actualEnd": 58.294198599999994
+          },
+          {
+            "text": "leaves",
+            "actualStart": 58.294198599999994,
+            "actualEnd": 58.474198599999994
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "The",
+          "start": 57.76419859999999,
+          "end": 57.83419859999999
+        },
+        {
+          "text": "falling",
+          "start": 57.934198599999995,
+          "end": 58.294198599999994
+        },
+        {
+          "text": "leaves",
+          "start": 58.294198599999994,
+          "end": 58.474198599999994
+        },
+        {
+          "text": "covered",
+          "start": 58.66419859999999,
+          "end": 59.004198599999995
+        },
+        {
+          "text": "the",
+          "start": 59.004198599999995,
+          "end": 59.16419859999999
+        },
+        {
+          "text": "narrow",
+          "start": 59.16419859999999,
+          "end": 59.4941986
+        },
+        {
+          "text": "path.",
+          "start": 59.4941986,
+          "end": 59.714198599999996
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 62.30732453333332,
+      "end": 70.60138046666667,
+      "ko": "서면 지시가 새 직원들에게 도움이 되었어요.",
+      "en": "The written instructions helped the new staff.",
+      "wrong": "The wrote instructions helped the new staff.",
+      "focus": [
+        "written",
+        "instructions"
+      ],
+      "note": "글로 작성된 지시는 과거분사 written으로 꾸미며 wrote는 과거형이다.",
+      "visual": "종이에 기록된 지시와 written 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "서면 지시가 새 직원들에게 도움이 되었어요.",
+          "actualStart": 62.507324533333325,
+          "actualEnd": 65.59376453333333,
+          "rate": 185,
+          "cacheKey": "62ad6a5743f628c409a5979b07ed30d4c3f3a079936583d557ea5e739b08b046",
+          "file": "audio/13/example-4-ko-62ad6a5743f628c4.wav",
+          "duration": 3.08644
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The written instructions helped the new staff.",
+          "actualStart": 65.94376453333332,
+          "actualEnd": 68.17333353333332,
+          "rate": 155,
+          "cacheKey": "c46894b82f6254b18e001683f9b6090edced943765b104075cf6221f2bb95361",
+          "file": "audio/13/example-4-en-c46894b82f6254b1.wav",
+          "duration": 2.229569
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "written",
+            "actualStart": 66.10376453333332,
+            "actualEnd": 66.47376453333332
+          },
+          {
+            "text": "instructions",
+            "actualStart": 66.50376453333332,
+            "actualEnd": 67.16376453333332
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "The",
+          "start": 65.95376453333333,
+          "end": 66.10376453333332
+        },
+        {
+          "text": "written",
+          "start": 66.10376453333332,
+          "end": 66.47376453333332
+        },
+        {
+          "text": "instructions",
+          "start": 66.50376453333332,
+          "end": 67.16376453333332
+        },
+        {
+          "text": "helped",
+          "start": 67.16376453333332,
+          "end": 67.49376453333332
+        },
+        {
+          "text": "the",
+          "start": 67.49376453333332,
+          "end": 67.64376453333333
+        },
+        {
+          "text": "new",
+          "start": 67.67376453333333,
+          "end": 67.81376453333333
+        },
+        {
+          "text": "staff.",
+          "start": 67.81376453333333,
+          "end": 68.02376453333332
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 70.60138046666667,
+      "end": 78.6739854,
+      "ko": "경찰은 어제 도난당한 자전거를 찾았어요.",
+      "en": "The police found the stolen bike yesterday.",
+      "wrong": "The police found the stole bike yesterday.",
+      "focus": [
+        "stolen",
+        "bike"
+      ],
+      "note": "도난의 영향을 받은 자전거에는 과거분사 stolen을 쓴다.",
+      "visual": "자전거로 향하는 수동 화살표와 stolen 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "경찰은 어제 도난당한 자전거를 찾았어요.",
+          "actualStart": 70.80138046666667,
+          "actualEnd": 73.65475946666668,
+          "rate": 185,
+          "cacheKey": "f64d05dd2cdb8cba21f30071cc8a725b7aefa2ef36dbeddf7c654f5cf4c9b369",
+          "file": "audio/13/example-5-ko-f64d05dd2cdb8cba.wav",
+          "duration": 2.853379
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The police found the stolen bike yesterday.",
+          "actualStart": 74.00475946666667,
+          "actualEnd": 76.24593846666667,
+          "rate": 155,
+          "cacheKey": "191f902cb51ab649f9c01b518e6859bdaae324092a4fbcd50e600a56e89d145c",
+          "file": "audio/13/example-5-en-191f902cb51ab649.wav",
+          "duration": 2.241179
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "stolen",
+            "actualStart": 75.02475946666667,
+            "actualEnd": 75.38475946666667
+          },
+          {
+            "text": "bike",
+            "actualStart": 75.38475946666667,
+            "actualEnd": 75.62475946666667
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "The",
+          "start": 74.01475946666667,
+          "end": 74.18475946666668
+        },
+        {
+          "text": "police",
+          "start": 74.18475946666668,
+          "end": 74.44475946666667
+        },
+        {
+          "text": "found",
+          "start": 74.54475946666668,
+          "end": 74.84475946666667
+        },
+        {
+          "text": "the",
+          "start": 74.84475946666667,
+          "end": 75.02475946666667
+        },
+        {
+          "text": "stolen",
+          "start": 75.02475946666667,
+          "end": 75.38475946666667
+        },
+        {
+          "text": "bike",
+          "start": 75.38475946666667,
+          "end": 75.62475946666667
+        },
+        {
+          "text": "yesterday.",
+          "start": 75.62475946666667,
+          "end": 76.17475946666667
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 78.6739854,
+      "end": 87.44518433333334,
+      "ko": "얼린 채소는 이 선반에서 더 오래 보관돼요.",
+      "en": "Frozen vegetables last longer on this shelf.",
+      "wrong": "Froze vegetables last longer on this shelf.",
+      "focus": [
+        "Frozen",
+        "vegetables"
+      ],
+      "note": "얼린 상태를 꾸미는 형태는 frozen이며 froze는 과거형이다.",
+      "visual": "채소의 얼린 상태와 freeze의 형태 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "얼린 채소는 이 선반에서 더 오래 보관돼요.",
+          "actualStart": 78.87398540000001,
+          "actualEnd": 82.05344140000001,
+          "rate": 185,
+          "cacheKey": "d55f6672eb4fcdfd821b28a635161069081b906d07cc48f240b9877191df113b",
+          "file": "audio/13/example-6-ko-d55f6672eb4fcdfd.wav",
+          "duration": 3.179456
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Frozen vegetables last longer on this shelf.",
+          "actualStart": 82.4034414,
+          "actualEnd": 85.01713740000001,
+          "rate": 155,
+          "cacheKey": "7180d0d7afc563ac3261a34f7757329be3c8f5d97a2a19175f3b760db13e787d",
+          "file": "audio/13/example-6-en-7180d0d7afc563ac.wav",
+          "duration": 2.613696
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "Frozen",
+            "actualStart": 82.5034414,
+            "actualEnd": 82.80344140000001
+          },
+          {
+            "text": "vegetables",
+            "actualStart": 82.80344140000001,
+            "actualEnd": 83.4834414
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "Frozen",
+          "start": 82.5034414,
+          "end": 82.80344140000001
+        },
+        {
+          "text": "vegetables",
+          "start": 82.80344140000001,
+          "end": 83.4834414
+        },
+        {
+          "text": "last",
+          "start": 83.4834414,
+          "end": 83.66344140000001
+        },
+        {
+          "text": "longer",
+          "start": 83.7634414,
+          "end": 84.1534414
+        },
+        {
+          "text": "on",
+          "start": 84.1534414,
+          "end": 84.2834414
+        },
+        {
+          "text": "this",
+          "start": 84.2834414,
+          "end": 84.55344140000001
+        },
+        {
+          "text": "shelf.",
+          "start": 84.55344140000001,
+          "end": 84.85344140000001
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 87.44518433333334,
+      "end": 95.17329926666669,
+      "ko": "떠오르는 해가 동쪽 하늘을 밝혔어요.",
+      "en": "The rising sun lit the eastern sky.",
+      "wrong": "The rise sun lit the eastern sky.",
+      "focus": [
+        "rising",
+        "sun"
+      ],
+      "note": "해가 직접 떠오르는 모습을 명사 앞에서 꾸밀 때 rising을 쓴다.",
+      "visual": "수평선에서 상승하는 해와 능동 방향 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "떠오르는 해가 동쪽 하늘을 밝혔어요.",
+          "actualStart": 87.64518433333335,
+          "actualEnd": 90.31661333333335,
+          "rate": 185,
+          "cacheKey": "ae9964b76ab40cf0bbcf9a88d2fd06418fd55db796c07e0798a8183353f6f085",
+          "file": "audio/13/example-7-ko-ae9964b76ab40cf0.wav",
+          "duration": 2.671429
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The rising sun lit the eastern sky.",
+          "actualStart": 90.66661333333334,
+          "actualEnd": 92.74525233333334,
+          "rate": 155,
+          "cacheKey": "3066c18248ef38a0c7800d13ebf636c700c0613bdb6a1bf1ff72b7775f047c61",
+          "file": "audio/13/example-7-en-3066c18248ef38a0.wav",
+          "duration": 2.078639
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "rising",
+            "actualStart": 90.87661333333334,
+            "actualEnd": 91.30661333333335
+          },
+          {
+            "text": "sun",
+            "actualStart": 91.30661333333335,
+            "actualEnd": 91.51661333333334
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "The",
+          "start": 90.67661333333335,
+          "end": 90.87661333333334
+        },
+        {
+          "text": "rising",
+          "start": 90.87661333333334,
+          "end": 91.30661333333335
+        },
+        {
+          "text": "sun",
+          "start": 91.30661333333335,
+          "end": 91.51661333333334
+        },
+        {
+          "text": "lit",
+          "start": 91.51661333333334,
+          "end": 91.72661333333335
+        },
+        {
+          "text": "the",
+          "start": 91.72661333333335,
+          "end": 91.93661333333334
+        },
+        {
+          "text": "eastern",
+          "start": 91.93661333333334,
+          "end": 92.43661333333334
+        },
+        {
+          "text": "sky.",
+          "start": 92.43661333333334,
+          "end": 92.66661333333334
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 95.17329926666669,
+      "end": 103.93189020000003,
+      "ko": "이미 떨어진 잎들이 땅 위에 가만히 놓여 있었어요.",
+      "en": "The fallen leaves lay motionless on the ground.",
+      "wrong": "The falling leaves lay motionless on the ground.",
+      "focus": [
+        "fallen",
+        "lay"
+      ],
+      "note": "falling도 문법적 분사지만 낙하 중이라는 뜻이다. 이미 떨어져 가만히 놓인 이 문맥에는 fallen이 맞다.",
+      "visual": "낙하 중인 잎과 땅에 멈춘 잎을 구분하고 후자 선택.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이미 떨어진 잎들이 땅 위에 가만히 놓여 있었어요.",
+          "actualStart": 95.37329926666669,
+          "actualEnd": 98.78495426666669,
+          "rate": 185,
+          "cacheKey": "80bbd123142ed2ecf6272dc177cfb4621b7f5882ac548099500271a9d3069052",
+          "file": "audio/13/example-8-ko-80bbd123142ed2ec.wav",
+          "duration": 3.411655
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The fallen leaves lay motionless on the ground.",
+          "actualStart": 99.13495426666668,
+          "actualEnd": 101.50384326666668,
+          "rate": 155,
+          "cacheKey": "8396f1162d3cf273d6f2b651af7f6ad6680474579625911ee76a1a363120c7de",
+          "file": "audio/13/example-8-en-8396f1162d3cf273.wav",
+          "duration": 2.368889
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "fallen",
+            "actualStart": 99.31495426666669,
+            "actualEnd": 99.65495426666668
+          },
+          {
+            "text": "lay",
+            "actualStart": 100.00495426666669,
+            "actualEnd": 100.17495426666669
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "The",
+          "start": 99.14495426666669,
+          "end": 99.21495426666668
+        },
+        {
+          "text": "fallen",
+          "start": 99.31495426666669,
+          "end": 99.65495426666668
+        },
+        {
+          "text": "leaves",
+          "start": 99.65495426666668,
+          "end": 100.00495426666669
+        },
+        {
+          "text": "lay",
+          "start": 100.00495426666669,
+          "end": 100.17495426666669
+        },
+        {
+          "text": "motionless",
+          "start": 100.17495426666669,
+          "end": 100.75495426666669
+        },
+        {
+          "text": "on",
+          "start": 100.75495426666669,
+          "end": 100.86495426666669
+        },
+        {
+          "text": "the",
+          "start": 100.86495426666669,
+          "end": 100.98495426666668
+        },
+        {
+          "text": "ground.",
+          "start": 101.05495426666668,
+          "end": 101.41495426666668
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 103.93189020000003,
+      "end": 112.15642313333336,
+      "ko": "연필로 작성된 문서들은 읽기 어려워요.",
+      "en": "The documents written in pencil are hard to read.",
+      "wrong": "The documents wrote in pencil are hard to read.",
+      "focus": [
+        "written",
+        "documents"
+      ],
+      "note": "명사 뒤에서도 작성된 관계는 written으로 꾸민다. wrote는 이 자리의 분사가 아니다.",
+      "visual": "documents 뒤의 written in pencil을 한 묶음으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "연필로 작성된 문서들은 읽기 어려워요.",
+          "actualStart": 104.13189020000003,
+          "actualEnd": 106.89338720000003,
+          "rate": 185,
+          "cacheKey": "05529d48a8c2539676757b94e3df62bfff6359e30105c8c12dfe3a921daefbb4",
+          "file": "audio/13/example-9-ko-05529d48a8c25396.wav",
+          "duration": 2.761497
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The documents written in pencil are hard to read.",
+          "actualStart": 107.24338720000003,
+          "actualEnd": 109.72837620000003,
+          "rate": 155,
+          "cacheKey": "b779d3622f0b0e88f95c44287128e77866b32b3af1a0b4b0846f1026ee139974",
+          "file": "audio/13/example-9-en-b779d3622f0b0e88.wav",
+          "duration": 2.484989
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "written",
+            "actualStart": 107.96338720000003,
+            "actualEnd": 108.38338720000003
+          },
+          {
+            "text": "documents",
+            "actualStart": 107.42338720000004,
+            "actualEnd": 107.96338720000003
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "The",
+          "start": 107.25338720000003,
+          "end": 107.42338720000004
+        },
+        {
+          "text": "documents",
+          "start": 107.42338720000004,
+          "end": 107.96338720000003
+        },
+        {
+          "text": "written",
+          "start": 107.96338720000003,
+          "end": 108.38338720000003
+        },
+        {
+          "text": "in",
+          "start": 108.38338720000003,
+          "end": 108.50338720000003
+        },
+        {
+          "text": "pencil",
+          "start": 108.50338720000003,
+          "end": 108.86338720000003
+        },
+        {
+          "text": "are",
+          "start": 108.86338720000003,
+          "end": 109.04338720000003
+        },
+        {
+          "text": "hard",
+          "start": 109.04338720000003,
+          "end": 109.28338720000004
+        },
+        {
+          "text": "to",
+          "start": 109.28338720000004,
+          "end": 109.40338720000003
+        },
+        {
+          "text": "read.",
+          "start": 109.40338720000003,
+          "end": 109.61338720000003
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 112.15642313333336,
+      "end": 121.2381890666667,
+      "ko": "그 팀이 선택한 디자인은 비용이 더 적게 들어요.",
+      "en": "The design chosen by the team costs less.",
+      "wrong": "The design chose by the team costs less.",
+      "focus": [
+        "chosen",
+        "design"
+      ],
+      "note": "선택된 디자인에는 과거분사 chosen을 쓰며, 선택한 주체는 by 뒤에 둔다.",
+      "visual": "팀 → 선택 → 디자인의 관계를 chosen by로 압축.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 팀이 선택한 디자인은 비용이 더 적게 들어요.",
+          "actualStart": 112.35642313333337,
+          "actualEnd": 116.12608313333337,
+          "rate": 185,
+          "cacheKey": "edfc43bcc25a63825ef1dbbe037d12dc95e34dfdedad973562dc8ba8dce6d06e",
+          "file": "audio/13/example-10-ko-edfc43bcc25a6382.wav",
+          "duration": 3.76966
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The design chosen by the team costs less.",
+          "actualStart": 116.47608313333336,
+          "actualEnd": 118.81014213333336,
+          "rate": 155,
+          "cacheKey": "2d4acc5a3d23a29433970293da0bb1af38360c3b0d7b1ee2252f0ec68cc66104",
+          "file": "audio/13/example-10-en-2d4acc5a3d23a294.wav",
+          "duration": 2.334059
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "chosen",
+            "actualStart": 117.08608313333336,
+            "actualEnd": 117.49608313333336
+          },
+          {
+            "text": "design",
+            "actualStart": 116.67608313333336,
+            "actualEnd": 117.07608313333336
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "The",
+          "start": 116.48608313333337,
+          "end": 116.67608313333336
+        },
+        {
+          "text": "design",
+          "start": 116.67608313333336,
+          "end": 117.07608313333336
+        },
+        {
+          "text": "chosen",
+          "start": 117.08608313333336,
+          "end": 117.49608313333336
+        },
+        {
+          "text": "by",
+          "start": 117.49608313333336,
+          "end": 117.62608313333337
+        },
+        {
+          "text": "the",
+          "start": 117.62608313333337,
+          "end": 117.82608313333336
+        },
+        {
+          "text": "team",
+          "start": 117.82608313333336,
+          "end": 118.09608313333337
+        },
+        {
+          "text": "costs",
+          "start": 118.09608313333337,
+          "end": 118.43608313333336
+        },
+        {
+          "text": "less.",
+          "start": 118.43608313333336,
+          "end": 118.63608313333336
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 121.2381890666667,
+      "end": 130,
+      "text": "명사가 직접 하는지 작용을 받았는지 살피고, 그 관계에 맞는 분사 형태를 고르세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "명사가 직접 하는지 작용을 받았는지 살피고, 그 관계에 맞는 분사 형태를 고르세요.",
+          "actualStart": 121.43818906666671,
+          "actualEnd": 127.82195306666671,
+          "rate": 185,
+          "cacheKey": "fc00eaec247171e1522e5f4805763496fe4b648a59478553675727208830e881",
+          "file": "audio/13/summary-ko-fc00eaec247171e1.wav",
+          "duration": 6.383764
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 106.32929599999999,
+  "sourceHash": "0068ed67ee73de858cfd53334eeb5f85952212634f324bb376b1ec406b381cd1",
+  "audioFile": "audio/13/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "0068ed67ee73de858cfd53334eeb5f85952212634f324bb376b1ec406b381cd1",
+    "clipHashes": {
+      "example-1-en": "33e3984e09c38eefac0fdffc717169f4bf4f92b175ac76c1ad2e0067aab9a4f6",
+      "example-2-en": "04d32d8f20c13a21e175b0c0b0036376d4ba68811435feeee06ad86891580f18",
+      "example-3-en": "92d6e1c05fee9973569c5edb394503a169bb4cd387dd5a92a528112a99de1a35",
+      "example-4-en": "a0018f756a33958a85abcd0b86c75eaa060d9403c2a15a92ded357a7b3537af6",
+      "example-5-en": "5db994604ed3703389c3c4b2e1b8949db03f2d4f53d8de14b8b1a6fefad5c6c3",
+      "example-6-en": "2d0f77d58ef3693870d7ebc66e3e2f3a40b0a3ac2f79252615e75f3eddce85d6",
+      "example-7-en": "d924ffbfd4f0abb92b1658c22831d6009c8aa3c2bac0474e02e3ad4ccb96afc8",
+      "example-8-en": "61f0f049c77280e8998c1b65a8ef69eac22cd238cd6e7e7d36fd4a909c975c05",
+      "example-9-en": "2e2479b2391f38e5c2e7c583797f47010bf3b9397b9ca429aedbdaa9a6ddb87a",
+      "example-10-en": "40a5ad84c3a962918065331991a6100528945bcfa81c8826e9916654ab9378a0"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

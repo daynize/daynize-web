@@ -1,0 +1,13 @@
+[Unit]
+Description=K-ECHO approved subtitle import batch
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=kecho
+WorkingDirectory=/srv/kecho/kecho-backend
+EnvironmentFile=/etc/kecho/worker.env
+ExecStart=/srv/kecho/kecho-backend/.venv/bin/python auto_ingest.py --source-mode approved --max-ingest 25 --delay 0
+NoNewPrivileges=true
+PrivateTmp=true

@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,000"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2000
+			},
+			"text": " She speaks English better than I do.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998544,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,030",
+						"to": "00:00:00,200"
+					},
+					"offsets": {
+						"from": 30,
+						"to": 200
+					},
+					"id": 1375,
+					"p": 0.908358,
+					"t_dtw": -1
+				},
+				{
+					"text": " speaks",
+					"timestamps": {
+						"from": "00:00:00,200",
+						"to": "00:00:00,600"
+					},
+					"offsets": {
+						"from": 200,
+						"to": 600
+					},
+					"id": 9209,
+					"p": 0.99791,
+					"t_dtw": -1
+				},
+				{
+					"text": " English",
+					"timestamps": {
+						"from": "00:00:00,600",
+						"to": "00:00:01,070"
+					},
+					"offsets": {
+						"from": 600,
+						"to": 1070
+					},
+					"id": 3594,
+					"p": 0.998186,
+					"t_dtw": -1
+				},
+				{
+					"text": " better",
+					"timestamps": {
+						"from": "00:00:01,070",
+						"to": "00:00:01,470"
+					},
+					"offsets": {
+						"from": 1070,
+						"to": 1470
+					},
+					"id": 1365,
+					"p": 0.972398,
+					"t_dtw": -1
+				},
+				{
+					"text": " than",
+					"timestamps": {
+						"from": "00:00:01,470",
+						"to": "00:00:01,740"
+					},
+					"offsets": {
+						"from": 1470,
+						"to": 1740
+					},
+					"id": 621,
+					"p": 0.998822,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:01,740",
+						"to": "00:00:01,800"
+					},
+					"offsets": {
+						"from": 1740,
+						"to": 1800
+					},
+					"id": 314,
+					"p": 0.995862,
+					"t_dtw": -1
+				},
+				{
+					"text": " do",
+					"timestamps": {
+						"from": "00:00:01,800",
+						"to": "00:00:01,920"
+					},
+					"offsets": {
+						"from": 1800,
+						"to": 1920
+					},
+					"id": 466,
+					"p": 0.9985,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,990",
+						"to": "00:00:01,990"
+					},
+					"offsets": {
+						"from": 1990,
+						"to": 1990
+					},
+					"id": 13,
+					"p": 0.608239,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_100]",
+					"timestamps": {
+						"from": "00:00:02,000",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 2000,
+						"to": 2000
+					},
+					"id": 50463,
+					"p": 0.164508,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,143 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,080"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1080
+			},
+			"text": " I sleep on the bed",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997081,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,070"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 70
+					},
+					"id": 314,
+					"p": 0.474568,
+					"t_dtw": -1
+				},
+				{
+					"text": " sleep",
+					"timestamps": {
+						"from": "00:00:00,070",
+						"to": "00:00:00,420"
+					},
+					"offsets": {
+						"from": 70,
+						"to": 420
+					},
+					"id": 3993,
+					"p": 0.926127,
+					"t_dtw": -1
+				},
+				{
+					"text": " on",
+					"timestamps": {
+						"from": "00:00:00,490",
+						"to": "00:00:00,600"
+					},
+					"offsets": {
+						"from": 490,
+						"to": 600
+					},
+					"id": 319,
+					"p": 0.998178,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,600",
+						"to": "00:00:00,830"
+					},
+					"offsets": {
+						"from": 600,
+						"to": 830
+					},
+					"id": 262,
+					"p": 0.995533,
+					"t_dtw": -1
+				},
+				{
+					"text": " bed",
+					"timestamps": {
+						"from": "00:00:00,830",
+						"to": "00:00:01,030"
+					},
+					"offsets": {
+						"from": 830,
+						"to": 1030
+					},
+					"id": 3996,
+					"p": 0.999592,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_54]",
+					"timestamps": {
+						"from": "00:00:01,080",
+						"to": "00:00:01,080"
+					},
+					"offsets": {
+						"from": 1080,
+						"to": 1080
+					},
+					"id": 50417,
+					"p": 0.13945,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

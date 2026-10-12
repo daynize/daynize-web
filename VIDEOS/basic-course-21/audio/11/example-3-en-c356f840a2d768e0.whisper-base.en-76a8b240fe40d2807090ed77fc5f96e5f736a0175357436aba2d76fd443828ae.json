@@ -1,0 +1,157 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,240"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1240
+			},
+			"text": " They allowed us to wait here",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998838,
+					"t_dtw": -1
+				},
+				{
+					"text": " They",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,210"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 210
+					},
+					"id": 1119,
+					"p": 0.784653,
+					"t_dtw": -1
+				},
+				{
+					"text": " allowed",
+					"timestamps": {
+						"from": "00:00:00,210",
+						"to": "00:00:00,550"
+					},
+					"offsets": {
+						"from": 210,
+						"to": 550
+					},
+					"id": 3142,
+					"p": 0.993801,
+					"t_dtw": -1
+				},
+				{
+					"text": " us",
+					"timestamps": {
+						"from": "00:00:00,620",
+						"to": "00:00:00,680"
+					},
+					"offsets": {
+						"from": 620,
+						"to": 680
+					},
+					"id": 514,
+					"p": 0.997193,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,680",
+						"to": "00:00:00,780"
+					},
+					"offsets": {
+						"from": 680,
+						"to": 780
+					},
+					"id": 284,
+					"p": 0.9983,
+					"t_dtw": -1
+				},
+				{
+					"text": " wait",
+					"timestamps": {
+						"from": "00:00:00,780",
+						"to": "00:00:00,990"
+					},
+					"offsets": {
+						"from": 780,
+						"to": 990
+					},
+					"id": 4043,
+					"p": 0.999485,
+					"t_dtw": -1
+				},
+				{
+					"text": " here",
+					"timestamps": {
+						"from": "00:00:00,990",
+						"to": "00:00:01,210"
+					},
+					"offsets": {
+						"from": 990,
+						"to": 1210
+					},
+					"id": 994,
+					"p": 0.999094,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_62]",
+					"timestamps": {
+						"from": "00:00:01,240",
+						"to": "00:00:01,240"
+					},
+					"offsets": {
+						"from": 1240,
+						"to": 1240
+					},
+					"id": 50425,
+					"p": 0.0341717,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

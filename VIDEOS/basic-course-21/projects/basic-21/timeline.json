@@ -1,0 +1,1235 @@
+{
+  "id": "basic-21",
+  "episode": 21,
+  "title": "정말 한다는 강조, 더 그렇다는 비교",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 9.601423933333333,
+      "text": "정말 한다고 강조할 때는 긍정문에도 두를 넣어요. 주어와 시간에 맞춰 더즈나 디드를 고릅니다.",
+      "screen": "do / does / did + 동사원형",
+      "visual": "첫 예문의 do에 강조 파형, 뒤 like에 원형 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "정말 한다고 강조할 때는 긍정문에도 두를 넣어요. 주어와 시간에 맞춰 더즈나 디드를 고릅니다.",
+          "actualStart": 0.2,
+          "actualEnd": 7.343356,
+          "rate": 185,
+          "cacheKey": "33afff50b94ed079b3ccc525399aea38e443d3ce0353f6565d451b66e5b632f7",
+          "file": "audio/21/concept-1-ko-33afff50b94ed079.wav",
+          "duration": 7.143356
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 9.601423933333333,
+      "end": 19.175047866666667,
+      "text": "강조하는 말이 시제와 주어 정보를 맡으니 뒤 동사는 원형이에요. 더즈 뒤에도 에스를 다시 붙이지 않죠.",
+      "screen": "강조 조동사에 정보 / 본동사는 원형",
+      "visual": "does·did 칸에 문법 정보 모으고 본동사 칸은 원형 유지.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "강조하는 말이 시제와 주어 정보를 맡으니 뒤 동사는 원형이에요. 더즈 뒤에도 에스를 다시 붙이지 않죠.",
+          "actualStart": 9.801423933333332,
+          "actualEnd": 16.91697993333333,
+          "rate": 185,
+          "cacheKey": "460c0b8f00047eb2bf77712d81199480dfa6963a22b32509a3c6fbb36029b39c",
+          "file": "audio/21/concept-2-ko-460c0b8f00047eb2.wav",
+          "duration": 7.115556
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 19.175047866666667,
+      "end": 28.875292800000004,
+      "text": "비교급은 형용사뿐 아니라 부사에도 있어요. 이알이나 모어 중 알맞은 형태를 쓰고 둘을 겹치지 마세요.",
+      "screen": "형용사·부사 비교 / more faster는 중복",
+      "visual": "성질 비교와 행동 속도 비교를 두 줄로 배치.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "비교급은 형용사뿐 아니라 부사에도 있어요. 이알이나 모어 중 알맞은 형태를 쓰고 둘을 겹치지 마세요.",
+          "actualStart": 19.375047866666666,
+          "actualEnd": 26.617224866666668,
+          "rate": 185,
+          "cacheKey": "8caa29d892eb07e5c99d3104cdc0379d35070c73aaff92667eebffc5a39fe0f8",
+          "file": "audio/21/concept-3-ko-8caa29d892eb07e5.wav",
+          "duration": 7.242177
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 28.875292800000004,
+      "end": 39.03667173333334,
+      "text": "베터와 워스 같은 불규칙 비교급도 익히세요. 훨씬 더는 머치로 강조하고 베리는 비교급 앞에 쓰지 않아요.",
+      "screen": "better / worse / much + 비교급",
+      "visual": "불규칙 형태 표와 비교 차이의 크기를 나타내는 눈금.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "베터와 워스 같은 불규칙 비교급도 익히세요. 훨씬 더는 머치로 강조하고 베리는 비교급 앞에 쓰지 않아요.",
+          "actualStart": 29.075292800000003,
+          "actualEnd": 36.778603800000006,
+          "rate": 185,
+          "cacheKey": "c3f185f669ae29d23cb75b07ec77e40be1dc59b3a173c95ab120bc12e48b57d2",
+          "file": "audio/21/concept-4-ko-c3f185f669ae29d2.wav",
+          "duration": 7.703311
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 39.03667173333334,
+      "end": 47.93868566666668,
+      "ko": "네가 의심해도 나는 이 노래를 정말 좋아해요.",
+      "en": "I do like this song, despite your doubts.",
+      "wrong": "I do likes this song, despite your doubts.",
+      "focus": [
+        "do",
+        "like"
+      ],
+      "note": "긍정문을 강조하는 do 뒤에는 원형 like를 쓰며 likes를 쓰지 않는다.",
+      "visual": "의심 말풍선에 응답하는 do 강조와 like 원형 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "네가 의심해도 나는 이 노래를 정말 좋아해요.",
+          "actualStart": 39.236671733333345,
+          "actualEnd": 42.62297573333335,
+          "rate": 185,
+          "cacheKey": "0e677fa43b74bf67c52144baa5e23d902d6c9c8fb580934f1f9089e81586f577",
+          "file": "audio/21/example-1-ko-0e677fa43b74bf67.wav",
+          "duration": 3.386304
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I do like this song, despite your doubts.",
+          "actualStart": 42.97297573333335,
+          "actualEnd": 45.43061773333335,
+          "rate": 155,
+          "cacheKey": "ba83b5e4f5c8f287acbfab5b607a137c0c17945c139c4d4615e238b8bd996aa2",
+          "file": "audio/21/example-1-en-ba83b5e4f5c8f287.wav",
+          "duration": 2.457642
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "do",
+            "actualStart": 43.04297573333335,
+            "actualEnd": 43.17297573333335
+          },
+          {
+            "text": "like",
+            "actualStart": 43.17297573333335,
+            "actualEnd": 43.46297573333335
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "I",
+          "start": 42.98297573333335,
+          "end": 43.04297573333335
+        },
+        {
+          "text": "do",
+          "start": 43.04297573333335,
+          "end": 43.17297573333335
+        },
+        {
+          "text": "like",
+          "start": 43.17297573333335,
+          "end": 43.46297573333335
+        },
+        {
+          "text": "this",
+          "start": 43.46297573333335,
+          "end": 43.66297573333335
+        },
+        {
+          "text": "song,",
+          "start": 43.74297573333335,
+          "end": 44.02297573333335
+        },
+        {
+          "text": "despite",
+          "start": 44.36297573333335,
+          "end": 44.66297573333335
+        },
+        {
+          "text": "your",
+          "start": 44.66297573333335,
+          "end": 44.93297573333335
+        },
+        {
+          "text": "doubts.",
+          "start": 44.96297573333335,
+          "end": 45.202975733333346
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47.93868566666668,
+      "end": 56.66849960000001,
+      "ko": "네가 뭐라 해도 그녀는 답을 정말 알아요.",
+      "en": "She does know the answer, whatever you say.",
+      "wrong": "She does knows the answer, whatever you say.",
+      "focus": [
+        "does",
+        "know"
+      ],
+      "note": "삼인칭 단수 표시는 does가 맡으므로 본동사 know에 s를 더하지 않는다.",
+      "visual": "she → does의 수 정보와 원형 know를 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "네가 뭐라 해도 그녀는 답을 정말 알아요.",
+          "actualStart": 48.13868566666668,
+          "actualEnd": 51.30439966666668,
+          "rate": 185,
+          "cacheKey": "d1b1d6095ee9289d4b702ed49ee07947a0a03cb281d4eec3d2cd4e4c3ff1e6da",
+          "file": "audio/21/example-2-ko-d1b1d6095ee9289d.wav",
+          "duration": 3.165714
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She does know the answer, whatever you say.",
+          "actualStart": 51.654399666666684,
+          "actualEnd": 54.16043166666668,
+          "rate": 155,
+          "cacheKey": "b95af1c03f594aa9c91768fd4864b057932c6668c30ae984893523544e97dfa5",
+          "file": "audio/21/example-2-en-b95af1c03f594aa9.wav",
+          "duration": 2.506032
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "does",
+            "actualStart": 51.85439966666669,
+            "actualEnd": 52.12439966666668
+          },
+          {
+            "text": "know",
+            "actualStart": 52.12439966666668,
+            "actualEnd": 52.394399666666686
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "She",
+          "start": 51.684399666666685,
+          "end": 51.85439966666669
+        },
+        {
+          "text": "does",
+          "start": 51.85439966666669,
+          "end": 52.12439966666668
+        },
+        {
+          "text": "know",
+          "start": 52.12439966666668,
+          "end": 52.394399666666686
+        },
+        {
+          "text": "the",
+          "start": 52.394399666666686,
+          "end": 52.59439966666668
+        },
+        {
+          "text": "answer,",
+          "start": 52.59439966666668,
+          "end": 52.88439966666668
+        },
+        {
+          "text": "whatever",
+          "start": 53.13439966666668,
+          "end": 53.66439966666668
+        },
+        {
+          "text": "you",
+          "start": 53.66439966666668,
+          "end": 53.864399666666685
+        },
+        {
+          "text": "say.",
+          "start": 53.864399666666685,
+          "end": 54.09439966666668
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 56.66849960000001,
+      "end": 65.86053553333333,
+      "ko": "네 말과 달리 나는 어제 전화했어요.",
+      "en": "I did call you yesterday, contrary to your claim.",
+      "wrong": "I did called you yesterday, contrary to your claim.",
+      "focus": [
+        "did",
+        "call"
+      ],
+      "note": "과거 강조는 did가 맡으므로 본동사는 과거형 called가 아닌 원형 call이다.",
+      "visual": "어제 시간 정보는 did에, 전화 동작은 call에 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "네 말과 달리 나는 어제 전화했어요.",
+          "actualStart": 56.868499600000014,
+          "actualEnd": 59.976163600000014,
+          "rate": 185,
+          "cacheKey": "bce0aa9d2db827ee53e3d7adbc2693deace5b85d0afe4ed7c63e858864c59521",
+          "file": "audio/21/example-3-ko-bce0aa9d2db827ee.wav",
+          "duration": 3.107664
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I did call you yesterday, contrary to your claim.",
+          "actualStart": 60.326163600000015,
+          "actualEnd": 63.35246760000002,
+          "rate": 155,
+          "cacheKey": "158ef74b665a81d8ed0c7e0fa69b6f07d239af1f461bab502856877a93e0e65b",
+          "file": "audio/21/example-3-en-158ef74b665a81d8.wav",
+          "duration": 3.026304
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "did",
+            "actualStart": 60.396163600000015,
+            "actualEnd": 60.606163600000016
+          },
+          {
+            "text": "call",
+            "actualStart": 60.606163600000016,
+            "actualEnd": 60.896163600000015
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "I",
+          "start": 60.33616360000001,
+          "end": 60.396163600000015
+        },
+        {
+          "text": "did",
+          "start": 60.396163600000015,
+          "end": 60.606163600000016
+        },
+        {
+          "text": "call",
+          "start": 60.606163600000016,
+          "end": 60.896163600000015
+        },
+        {
+          "text": "you",
+          "start": 60.896163600000015,
+          "end": 61.106163600000016
+        },
+        {
+          "text": "yesterday,",
+          "start": 61.106163600000016,
+          "end": 61.73616360000001
+        },
+        {
+          "text": "contrary",
+          "start": 62.02616360000002,
+          "end": 62.476163600000014
+        },
+        {
+          "text": "to",
+          "start": 62.476163600000014,
+          "end": 62.55616360000001
+        },
+        {
+          "text": "your",
+          "start": 62.616163600000014,
+          "end": 62.84616360000002
+        },
+        {
+          "text": "claim.",
+          "start": 62.976163600000014,
+          "end": 63.27616360000002
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 65.86053553333333,
+      "end": 74.29470346666666,
+      "ko": "우리는 네가 생각하는 것보다 도움이 정말 필요해요.",
+      "en": "We do need help more than you think.",
+      "wrong": "We does need help more than you think.",
+      "focus": [
+        "do",
+        "need"
+      ],
+      "note": "현재 주어 we에는 강조 do를 쓰고 does를 쓰지 않는다.",
+      "visual": "we 복수 주어와 do 연결, need 원형 유지.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 네가 생각하는 것보다 도움이 정말 필요해요.",
+          "actualStart": 66.06053553333334,
+          "actualEnd": 69.66956053333334,
+          "rate": 185,
+          "cacheKey": "271c8c4f689072ebf0bd4e93c8e34489e4387b04d4ded77c1edab838fd80b17f",
+          "file": "audio/21/example-4-ko-271c8c4f689072eb.wav",
+          "duration": 3.609025
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We do need help more than you think.",
+          "actualStart": 70.01956053333333,
+          "actualEnd": 71.78663553333334,
+          "rate": 155,
+          "cacheKey": "ac9290b0cad6c900568f9f0cd16753c3581bb597ea16286c52655e80fe35b83d",
+          "file": "audio/21/example-4-en-ac9290b0cad6c900.wav",
+          "duration": 1.767075
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "do",
+            "actualStart": 70.13956053333334,
+            "actualEnd": 70.25956053333333
+          },
+          {
+            "text": "need",
+            "actualStart": 70.25956053333333,
+            "actualEnd": 70.49956053333334
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "We",
+          "start": 70.02956053333334,
+          "end": 70.13956053333334
+        },
+        {
+          "text": "do",
+          "start": 70.13956053333334,
+          "end": 70.25956053333333
+        },
+        {
+          "text": "need",
+          "start": 70.25956053333333,
+          "end": 70.49956053333334
+        },
+        {
+          "text": "help",
+          "start": 70.49956053333334,
+          "end": 70.73956053333333
+        },
+        {
+          "text": "more",
+          "start": 70.73956053333333,
+          "end": 70.97956053333333
+        },
+        {
+          "text": "than",
+          "start": 70.97956053333333,
+          "end": 71.21956053333334
+        },
+        {
+          "text": "you",
+          "start": 71.21956053333334,
+          "end": 71.34956053333333
+        },
+        {
+          "text": "think.",
+          "start": 71.43956053333334,
+          "end": 71.67956053333333
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 74.29470346666666,
+      "end": 81.54061739999999,
+      "ko": "이 가방은 네 것보다 더 가벼워요.",
+      "en": "This bag is lighter than yours.",
+      "wrong": "This bag is more lighter than yours.",
+      "focus": [
+        "lighter",
+        "than"
+      ],
+      "note": "lighter 자체가 비교급이므로 more를 앞에 겹쳐 쓰지 않는다.",
+      "visual": "두 가방 무게 눈금과 lighter 단일 비교 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이 가방은 네 것보다 더 가벼워요.",
+          "actualStart": 74.49470346666666,
+          "actualEnd": 77.08200546666666,
+          "rate": 185,
+          "cacheKey": "ac6551988b77d2a3698832e08a01bdea512dc20860399b8d0f500ac716de5e84",
+          "file": "audio/21/example-5-ko-ac6551988b77d2a3.wav",
+          "duration": 2.587302
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This bag is lighter than yours.",
+          "actualStart": 77.43200546666665,
+          "actualEnd": 79.03254946666665,
+          "rate": 155,
+          "cacheKey": "53afede071f39ce79dfb6a8cef3ea63244fd2f9e87ecc185518971afc3f3b38a",
+          "file": "audio/21/example-5-en-53afede071f39ce7.wav",
+          "duration": 1.600544
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "lighter",
+            "actualStart": 77.99200546666665,
+            "actualEnd": 78.43200546666665
+          },
+          {
+            "text": "than",
+            "actualStart": 78.43200546666665,
+            "actualEnd": 78.68200546666665
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "This",
+          "start": 77.45200546666665,
+          "end": 77.60200546666665
+        },
+        {
+          "text": "bag",
+          "start": 77.69200546666666,
+          "end": 77.87200546666665
+        },
+        {
+          "text": "is",
+          "start": 77.89200546666665,
+          "end": 77.99200546666665
+        },
+        {
+          "text": "lighter",
+          "start": 77.99200546666665,
+          "end": 78.43200546666665
+        },
+        {
+          "text": "than",
+          "start": 78.43200546666665,
+          "end": 78.68200546666665
+        },
+        {
+          "text": "yours.",
+          "start": 78.68200546666665,
+          "end": 78.87200546666665
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 81.54061739999999,
+      "end": 88.45900333333331,
+      "ko": "그녀는 나보다 더 빨리 달려요.",
+      "en": "She runs faster than I do.",
+      "wrong": "She runs more faster than I do.",
+      "focus": [
+        "runs",
+        "faster"
+      ],
+      "note": "달리는 방식을 꾸미는 부사 fast의 비교급은 faster이며 more를 중복하지 않는다.",
+      "visual": "달리기 속도 눈금에 부사 비교 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 나보다 더 빨리 달려요.",
+          "actualStart": 81.74061739999999,
+          "actualEnd": 84.00048139999998,
+          "rate": 185,
+          "cacheKey": "43478e8416eee3ec63e0524e284f0de99db34bfdd9153016065faec2831cde3a",
+          "file": "audio/21/example-6-ko-43478e8416eee3ec.wav",
+          "duration": 2.259864
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She runs faster than I do.",
+          "actualStart": 84.35048139999998,
+          "actualEnd": 85.95093539999998,
+          "rate": 155,
+          "cacheKey": "4a1235dc072a2fd38cf2ac91b9823d68d06fdf4906bfa571b91de3d6cf748f4f",
+          "file": "audio/21/example-6-en-4a1235dc072a2fd3.wav",
+          "duration": 1.600454
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "runs",
+            "actualStart": 84.58048139999998,
+            "actualEnd": 84.76048139999997
+          },
+          {
+            "text": "faster",
+            "actualStart": 84.89048139999998,
+            "actualEnd": 85.36048139999998
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "She",
+          "start": 84.40048139999998,
+          "end": 84.58048139999998
+        },
+        {
+          "text": "runs",
+          "start": 84.58048139999998,
+          "end": 84.76048139999997
+        },
+        {
+          "text": "faster",
+          "start": 84.89048139999998,
+          "end": 85.36048139999998
+        },
+        {
+          "text": "than",
+          "start": 85.36048139999998,
+          "end": 85.67048139999997
+        },
+        {
+          "text": "I",
+          "start": 85.67048139999997,
+          "end": 85.74048139999998
+        },
+        {
+          "text": "do.",
+          "start": 85.74048139999998,
+          "end": 85.88048139999998
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 88.45900333333331,
+      "end": 96.97044926666665,
+      "ko": "이 문제는 앞의 문제보다 더 어려워요.",
+      "en": "This problem is more difficult than the last one.",
+      "wrong": "This problem is difficulter than the last one.",
+      "focus": [
+        "more difficult",
+        "than"
+      ],
+      "note": "difficult의 표준 비교급은 more difficult이며 difficulter로 만들지 않는다.",
+      "visual": "문제 난이도 두 칸과 more difficult 묶음.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이 문제는 앞의 문제보다 더 어려워요.",
+          "actualStart": 88.65900333333332,
+          "actualEnd": 91.57142933333331,
+          "rate": 185,
+          "cacheKey": "d333e671aef2e008055605be5a4bc2091a5d600de94bd224280c107d171ed243",
+          "file": "audio/21/example-7-ko-d333e671aef2e008.wav",
+          "duration": 2.912426
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This problem is more difficult than the last one.",
+          "actualStart": 91.92142933333331,
+          "actualEnd": 94.46238133333331,
+          "rate": 155,
+          "cacheKey": "0c3badd28fb536fc989f8c663094831133b622eaa0971ae6d52ee2f419a03133",
+          "file": "audio/21/example-7-en-0c3badd28fb536fc.wav",
+          "duration": 2.540952
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "more difficult",
+            "actualStart": 92.71142933333331,
+            "actualEnd": 93.40142933333331
+          },
+          {
+            "text": "than",
+            "actualStart": 93.40142933333331,
+            "actualEnd": 93.6314293333333
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "This",
+          "start": 91.9414293333333,
+          "end": 92.09142933333331
+        },
+        {
+          "text": "problem",
+          "start": 92.20142933333331,
+          "end": 92.5514293333333
+        },
+        {
+          "text": "is",
+          "start": 92.5514293333333,
+          "end": 92.65142933333331
+        },
+        {
+          "text": "more",
+          "start": 92.71142933333331,
+          "end": 92.8914293333333
+        },
+        {
+          "text": "difficult",
+          "start": 92.8914293333333,
+          "end": 93.40142933333331
+        },
+        {
+          "text": "than",
+          "start": 93.40142933333331,
+          "end": 93.6314293333333
+        },
+        {
+          "text": "the",
+          "start": 93.6314293333333,
+          "end": 93.8014293333333
+        },
+        {
+          "text": "last",
+          "start": 93.8014293333333,
+          "end": 93.96142933333331
+        },
+        {
+          "text": "one.",
+          "start": 94.0514293333333,
+          "end": 94.20142933333331
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 96.97044926666665,
+      "end": 104.65509319999998,
+      "ko": "그녀는 나보다 영어를 더 잘해요.",
+      "en": "She speaks English better than I do.",
+      "wrong": "She speaks English more better than I do.",
+      "focus": [
+        "speaks",
+        "better"
+      ],
+      "note": "speaks를 꾸미는 well의 비교급은 better이며 more를 덧붙이지 않는다.",
+      "visual": "말하기 수행 비교와 well → better 변화 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 나보다 영어를 더 잘해요.",
+          "actualStart": 97.17044926666665,
+          "actualEnd": 99.80183226666665,
+          "rate": 185,
+          "cacheKey": "c260f721549d30977bdd714c2afa12ec9c18f4db1839d69889a98e31b834ef71",
+          "file": "audio/21/example-8-ko-c260f721549d3097.wav",
+          "duration": 2.631383
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She speaks English better than I do.",
+          "actualStart": 100.15183226666664,
+          "actualEnd": 102.14702526666665,
+          "rate": 155,
+          "cacheKey": "90d7ed85e7c330c7aa76c9ed756d2312ff6dd2f7c0eb9806ffcde3563c5169ad",
+          "file": "audio/21/example-8-en-90d7ed85e7c330c7.wav",
+          "duration": 1.995193
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "speaks",
+            "actualStart": 100.35183226666665,
+            "actualEnd": 100.75183226666664
+          },
+          {
+            "text": "better",
+            "actualStart": 101.22183226666664,
+            "actualEnd": 101.62183226666664
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "She",
+          "start": 100.18183226666665,
+          "end": 100.35183226666665
+        },
+        {
+          "text": "speaks",
+          "start": 100.35183226666665,
+          "end": 100.75183226666664
+        },
+        {
+          "text": "English",
+          "start": 100.75183226666664,
+          "end": 101.22183226666664
+        },
+        {
+          "text": "better",
+          "start": 101.22183226666664,
+          "end": 101.62183226666664
+        },
+        {
+          "text": "than",
+          "start": 101.62183226666664,
+          "end": 101.89183226666664
+        },
+        {
+          "text": "I",
+          "start": 101.89183226666664,
+          "end": 101.95183226666664
+        },
+        {
+          "text": "do.",
+          "start": 101.95183226666664,
+          "end": 102.07183226666665
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104.65509319999998,
+      "end": 112.70214113333331,
+      "ko": "이 결과는 어제 결과보다 더 나빠요.",
+      "en": "This result is worse than yesterday’s result.",
+      "wrong": "This result is badder than yesterday’s result.",
+      "focus": [
+        "is",
+        "worse"
+      ],
+      "note": "결과의 성질을 설명하는 bad의 비교급은 worse이며 badder가 아니다.",
+      "visual": "결과 두 개를 비교하고 bad → worse 불규칙 변화 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이 결과는 어제 결과보다 더 나빠요.",
+          "actualStart": 104.85509319999998,
+          "actualEnd": 107.55854019999998,
+          "rate": 185,
+          "cacheKey": "7b3aa6c63be6f1a9ae1911ab302ee81aa4b70303f5a97a16c5ffadcd251cc250",
+          "file": "audio/21/example-9-ko-7b3aa6c63be6f1a9.wav",
+          "duration": 2.703447
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This result is worse than yesterday’s result.",
+          "actualStart": 107.90854019999998,
+          "actualEnd": 110.19407319999998,
+          "rate": 155,
+          "cacheKey": "e15d0bc2d00229e89b1e42376320dfd07d6dd9a70709335262af4e618a6b359d",
+          "file": "audio/21/example-9-en-e15d0bc2d00229e8.wav",
+          "duration": 2.285533
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "is",
+            "actualStart": 108.49854019999998,
+            "actualEnd": 108.59854019999997
+          },
+          {
+            "text": "worse",
+            "actualStart": 108.59854019999997,
+            "actualEnd": 108.82854019999998
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "This",
+          "start": 107.92854019999997,
+          "end": 108.13854019999998
+        },
+        {
+          "text": "result",
+          "start": 108.13854019999998,
+          "end": 108.44854019999998
+        },
+        {
+          "text": "is",
+          "start": 108.49854019999998,
+          "end": 108.59854019999997
+        },
+        {
+          "text": "worse",
+          "start": 108.59854019999997,
+          "end": 108.82854019999998
+        },
+        {
+          "text": "than",
+          "start": 108.92854019999997,
+          "end": 109.11854019999997
+        },
+        {
+          "text": "yesterday’s",
+          "start": 109.11854019999997,
+          "end": 109.74854019999998
+        },
+        {
+          "text": "result.",
+          "start": 109.74854019999998,
+          "end": 110.06854019999997
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 112.70214113333331,
+      "end": 121.41082106666664,
+      "ko": "이 버전은 이전 버전보다 훨씬 더 좋아요.",
+      "en": "This version is much better than the previous one.",
+      "wrong": "This version is very better than the previous one.",
+      "focus": [
+        "much",
+        "better"
+      ],
+      "note": "형용사 good의 비교급 better는 차이의 크기를 나타내는 much로 강조한다. very를 바로 붙이지 않는다.",
+      "visual": "두 버전 차이 눈금 확대, much → better 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이 버전은 이전 버전보다 훨씬 더 좋아요.",
+          "actualStart": 112.90214113333332,
+          "actualEnd": 116.04663113333332,
+          "rate": 185,
+          "cacheKey": "6b173e4cd7124a975ad75af1af5b86960a501585b4c7024e94a9fef0645a15e4",
+          "file": "audio/21/example-10-ko-6b173e4cd7124a97.wav",
+          "duration": 3.14449
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This version is much better than the previous one.",
+          "actualStart": 116.39663113333332,
+          "actualEnd": 118.90275313333332,
+          "rate": 155,
+          "cacheKey": "6d2118b47271dae41e9964e22d49205555eb531362e30d57a73b428fe4262bf6",
+          "file": "audio/21/example-10-en-6d2118b47271dae4.wav",
+          "duration": 2.506122
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "much",
+            "actualStart": 117.13663113333331,
+            "actualEnd": 117.35663113333331
+          },
+          {
+            "text": "better",
+            "actualStart": 117.43663113333332,
+            "actualEnd": 117.71663113333331
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "This",
+          "start": 116.41663113333331,
+          "end": 116.56663113333332
+        },
+        {
+          "text": "version",
+          "start": 116.64663113333332,
+          "end": 117.02663113333331
+        },
+        {
+          "text": "is",
+          "start": 117.02663113333331,
+          "end": 117.13663113333331
+        },
+        {
+          "text": "much",
+          "start": 117.13663113333331,
+          "end": 117.35663113333331
+        },
+        {
+          "text": "better",
+          "start": 117.43663113333332,
+          "end": 117.71663113333331
+        },
+        {
+          "text": "than",
+          "start": 117.71663113333331,
+          "end": 117.89663113333332
+        },
+        {
+          "text": "the",
+          "start": 118.00663113333331,
+          "end": 118.11663113333331
+        },
+        {
+          "text": "previous",
+          "start": 118.11663113333331,
+          "end": 118.57663113333332
+        },
+        {
+          "text": "one.",
+          "start": 118.57663113333332,
+          "end": 118.79663113333332
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 121.41082106666664,
+      "end": 130,
+      "text": "강조 조동사 뒤에는 원형을 두고, 비교급은 형태와 강조어를 겹치지 않게 고르세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "강조 조동사 뒤에는 원형을 두고, 비교급은 형태와 강조어를 겹치지 않게 고르세요.",
+          "actualStart": 121.61082106666665,
+          "actualEnd": 127.74193206666665,
+          "rate": 185,
+          "cacheKey": "9e68460def432bb0357eea9a1ead49338b4cc025a818dafd8b79c8de0f54b2c9",
+          "file": "audio/21/summary-ko-9e68460def432bb0.wav",
+          "duration": 6.131111
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 105.128981,
+  "sourceHash": "cd3f2d301140236fe00416f63b5702940e18354a2e35626a89a467e8a7af3ea4",
+  "audioFile": "audio/21/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "cd3f2d301140236fe00416f63b5702940e18354a2e35626a89a467e8a7af3ea4",
+    "clipHashes": {
+      "example-1-en": "b256ce00dd30fc6782388fb617774116381e8c0d5db947bedf245d32d80e583b",
+      "example-2-en": "1b661f331a9e4bb484fcac943a1de1d4d6e8d5a83dd57fd08f42ad0b1660a7e9",
+      "example-3-en": "17ce3095c740de4838e71948ada243fbbedbea9971b322a15faff6f10f9a3a2c",
+      "example-4-en": "928bfb0c445fd3231b870f8f2ed30939d4ecfffd8536c88994fe4bfb59c0fb9a",
+      "example-5-en": "6f0e04625749613e50243061f7fd3801922c969ddaf394738e3a80cdf98d7964",
+      "example-6-en": "eddf5e18bd49da223e6f4ffc331f555dd4787942363a4259436c134453755d7f",
+      "example-7-en": "d0ab0b4d92f2f7f7fdc2b2ee3ff57d62157e7157d2523ed6378c8663a9ffff19",
+      "example-8-en": "61715a1a50d9a3ee4e0495f8d7b93e2030d4d91c466f2b7564418ae652ca151e",
+      "example-9-en": "9727fb4e1ee71b64ac00b25f29a7cb866fefd1dae8b33f1649a950b7308fd530",
+      "example-10-en": "0e79b03b66cb6d0ecf6de06e5ec4a346f3014c1fcb64a3970fb352f803230f1f"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

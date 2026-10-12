@@ -1,0 +1,656 @@
+{
+  "id": "basic-16",
+  "episode": 16,
+  "title": "수동태에서도 남는 보어",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "오형식 수동태에서는 목적어가 주어로 올라와요. 그 대상을 설명하던 보어는 뒤에 남습니다.",
+      "screen": "목적어 → 주어 / 보어는 유지",
+      "visual": "첫 예문의 door를 주어 칸에 놓고 open을 뒤에 유지.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "오형식 수동태에서는 목적어가 주어로 올라와요. 그 대상을 설명하던 보어는 뒤에 남습니다.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "열린 채 두었다면 열린 상태가 남고, 이름을 붙였다면 붙인 이름이 남아요. 보어까지 확인하세요.",
+      "screen": "was kept + 상태 / was named + 이름",
+      "visual": "상태 보어와 이름 보어를 각각 주어에 연결.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "열린 채 두었다면 열린 상태가 남고, 이름을 붙였다면 붙인 이름이 남아요. 보어까지 확인하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "억지로 시키는 메이크는 수동태에서 투가 필요해요. 허락하는 렛은 보통 얼라우드 투로 표현하죠.",
+      "screen": "was made to do / was allowed to do",
+      "visual": "강제와 허락 두 경로를 분리하고 to를 강조.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "억지로 시키는 메이크는 수동태에서 투가 필요해요. 허락하는 렛은 보통 얼라우드 투로 표현하죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "보았다는 지각 동사도 형태를 살펴요. 수동태의 투 원형과 아이엔지는 동작을 보는 초점이 달라요.",
+      "screen": "was seen to do / was seen doing",
+      "visual": "동작 전체와 진행 중 장면을 서로 다른 프레임으로 표시.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "보았다는 지각 동사도 형태를 살펴요. 수동태의 투 원형과 아이엔지는 동작을 보는 초점이 달라요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "그 문은 회의 내내 열린 채로 유지되었어요.",
+      "en": "The door was kept open throughout the meeting.",
+      "wrong": "The door was keep open throughout the meeting.",
+      "focus": [
+        "was kept",
+        "open"
+      ],
+      "note": "수동태는 kept를 쓰며, 문 상태를 설명하는 형용사 open은 그대로 남는다.",
+      "visual": "door → was kept → open, 상태 보어를 주어에 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 문은 회의 내내 열린 채로 유지되었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The door was kept open throughout the meeting.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was kept",
+            "actualStart": null
+          },
+          {
+            "text": "open",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "그 아기는 할머니 이름을 따서 로즈라고 이름 지어졌어요.",
+      "en": "The baby was named Rose after her grandmother.",
+      "wrong": "The baby was name Rose after her grandmother.",
+      "focus": [
+        "was named",
+        "Rose"
+      ],
+      "note": "named는 수동태의 과거분사이며 이름 보어 Rose는 뒤에 남는다.",
+      "visual": "아기 주어와 Rose 이름표를 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 아기는 할머니 이름을 따서 로즈라고 이름 지어졌어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The baby was named Rose after her grandmother.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was named",
+            "actualStart": null
+          },
+          {
+            "text": "Rose",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "그 방은 밤새 따뜻하게 유지되었어요.",
+      "en": "The room was kept warm all night.",
+      "wrong": "The room was kept warmly all night.",
+      "focus": [
+        "kept",
+        "warm"
+      ],
+      "note": "방의 상태를 설명하는 보어는 형용사 warm이며 동작을 꾸미는 부사 warmly가 아니다.",
+      "visual": "warm에서 room으로 상태 연결선 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 방은 밤새 따뜻하게 유지되었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The room was kept warm all night.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "kept",
+            "actualStart": null
+          },
+          {
+            "text": "warm",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "우리는 밖에서 한 시간 동안 기다리도록 강요받았어요.",
+      "en": "We were made to wait outside for an hour.",
+      "wrong": "We were made wait outside for an hour.",
+      "focus": [
+        "were made",
+        "to wait"
+      ],
+      "note": "사역 make의 수동태에서는 원형 앞에 to를 붙인다.",
+      "visual": "능동 사역의 원형 자리에서 수동의 to wait 자리로 이동.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 밖에서 한 시간 동안 기다리도록 강요받았어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We were made to wait outside for an hour.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were made",
+            "actualStart": null
+          },
+          {
+            "text": "to wait",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "그 아이들은 점심 후에 밖에서 놀도록 허락받았어요.",
+      "en": "The children were allowed to play outside after lunch.",
+      "wrong": "The children were allowed play outside after lunch.",
+      "focus": [
+        "were allowed",
+        "to play"
+      ],
+      "note": "허락 의미의 let을 옮길 때 보통 allowed to를 쓰며, allowed 뒤의 to를 생략하지 않는다.",
+      "visual": "허락 표식에서 allowed to play 묶음으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 아이들은 점심 후에 밖에서 놀도록 허락받았어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The children were allowed to play outside after lunch.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were allowed",
+            "actualStart": null
+          },
+          {
+            "text": "to play",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "그녀가 해 뜨기 전에 사무실을 나가는 것이 목격되었어요.",
+      "en": "She was seen to leave the office before sunrise.",
+      "wrong": "She was seen leave the office before sunrise.",
+      "focus": [
+        "was seen",
+        "to leave"
+      ],
+      "note": "see의 원형 보어를 수동태로 옮기면 to leave가 된다. 맨 원형 leave만 남기지 않는다.",
+      "visual": "사무실을 나가는 동작 전체를 프레임으로 묶고 to leave 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀가 해 뜨기 전에 사무실을 나가는 것이 목격되었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She was seen to leave the office before sunrise.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was seen",
+            "actualStart": null
+          },
+          {
+            "text": "to leave",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "그는 우리가 도착했을 때 정원에서 일하는 모습이 목격되었어요.",
+      "en": "He was seen working in the garden when we arrived.",
+      "wrong": "He was seen work in the garden when we arrived.",
+      "focus": [
+        "was seen",
+        "working"
+      ],
+      "note": "진행 중인 모습을 표현하는 working은 수동태에서도 남는다. 원형 work만 쓰는 구조는 아니다.",
+      "visual": "도착 시점의 작업 장면과 working 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그는 우리가 도착했을 때 정원에서 일하는 모습이 목격되었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He was seen working in the garden when we arrived.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was seen",
+            "actualStart": null
+          },
+          {
+            "text": "working",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "그 선수는 토너먼트 내내 럭키라고 불렸어요.",
+      "en": "The player was called Lucky throughout the tournament.",
+      "wrong": "The player was called as Lucky throughout the tournament.",
+      "focus": [
+        "was called",
+        "Lucky"
+      ],
+      "note": "별명을 붙이는 call의 이름 보어 앞에는 as를 넣지 않는다.",
+      "visual": "player와 Lucky 이름 보어를 직접 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 선수는 토너먼트 내내 럭키라고 불렸어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The player was called Lucky throughout the tournament.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was called",
+            "actualStart": null
+          },
+          {
+            "text": "Lucky",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "그 아이는 길을 건너는 도중의 모습이 목격되었어요.",
+      "en": "The child was seen crossing the road midway through the crossing.",
+      "wrong": "The child was seen to crossing the road midway through the crossing.",
+      "focus": [
+        "was seen",
+        "crossing"
+      ],
+      "note": "진행 장면은 seen crossing으로 표현한다. seen to cross도 가능하지만 to crossing은 이 구조에 맞지 않는다.",
+      "visual": "횡단 도중의 장면과 crossing을 연결하고 불필요한 to 제거.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 아이는 길을 건너는 도중의 모습이 목격되었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The child was seen crossing the road midway through the crossing.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was seen",
+            "actualStart": null
+          },
+          {
+            "text": "crossing",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "그 직원들은 퇴근 전에 방을 청소하도록 강요받았어요.",
+      "en": "The workers were made to clean the room before leaving.",
+      "wrong": "The workers were made to cleaned the room before leaving.",
+      "focus": [
+        "were made",
+        "to clean"
+      ],
+      "note": "made의 수동태에서 to를 붙인 뒤에는 과거형 cleaned가 아니라 원형 clean을 쓴다.",
+      "visual": "were made / to clean / room 칸에서 원형 자리 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 직원들은 퇴근 전에 방을 청소하도록 강요받았어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The workers were made to clean the room before leaving.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were made",
+            "actualStart": null
+          },
+          {
+            "text": "to clean",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "오형식 수동태는 보어를 남기되, 사역·지각 동사에 맞는 보어 형태로 바꾸세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "오형식 수동태는 보어를 남기되, 사역·지각 동사에 맞는 보어 형태로 바꾸세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

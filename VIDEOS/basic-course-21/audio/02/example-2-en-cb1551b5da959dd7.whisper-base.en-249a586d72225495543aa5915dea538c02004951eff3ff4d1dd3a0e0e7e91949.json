@@ -1,0 +1,171 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,560"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1560
+			},
+			"text": " We waited for the bus outside.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998055,
+					"t_dtw": -1
+				},
+				{
+					"text": " We",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,110"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 110
+					},
+					"id": 775,
+					"p": 0.903687,
+					"t_dtw": -1
+				},
+				{
+					"text": " waited",
+					"timestamps": {
+						"from": "00:00:00,110",
+						"to": "00:00:00,450"
+					},
+					"offsets": {
+						"from": 110,
+						"to": 450
+					},
+					"id": 13488,
+					"p": 0.998148,
+					"t_dtw": -1
+				},
+				{
+					"text": " for",
+					"timestamps": {
+						"from": "00:00:00,450",
+						"to": "00:00:00,620"
+					},
+					"offsets": {
+						"from": 450,
+						"to": 620
+					},
+					"id": 329,
+					"p": 0.999752,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,620",
+						"to": "00:00:00,750"
+					},
+					"offsets": {
+						"from": 620,
+						"to": 750
+					},
+					"id": 262,
+					"p": 0.997394,
+					"t_dtw": -1
+				},
+				{
+					"text": " bus",
+					"timestamps": {
+						"from": "00:00:00,800",
+						"to": "00:00:00,930"
+					},
+					"offsets": {
+						"from": 800,
+						"to": 930
+					},
+					"id": 1323,
+					"p": 0.996482,
+					"t_dtw": -1
+				},
+				{
+					"text": " outside",
+					"timestamps": {
+						"from": "00:00:00,970",
+						"to": "00:00:01,360"
+					},
+					"offsets": {
+						"from": 970,
+						"to": 1360
+					},
+					"id": 2354,
+					"p": 0.997415,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,360",
+						"to": "00:00:01,560"
+					},
+					"offsets": {
+						"from": 1360,
+						"to": 1560
+					},
+					"id": 13,
+					"p": 0.926918,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_78]",
+					"timestamps": {
+						"from": "00:00:01,560",
+						"to": "00:00:01,560"
+					},
+					"offsets": {
+						"from": 1560,
+						"to": 1560
+					},
+					"id": 50441,
+					"p": 0.0454355,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,940"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1940
+			},
+			"text": " This is the café where we first met.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998461,
+					"t_dtw": -1
+				},
+				{
+					"text": " This",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,250"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 250
+					},
+					"id": 770,
+					"p": 0.747031,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:00,250",
+						"to": "00:00:00,310"
+					},
+					"offsets": {
+						"from": 250,
+						"to": 310
+					},
+					"id": 318,
+					"p": 0.996542,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,390",
+						"to": "00:00:00,550"
+					},
+					"offsets": {
+						"from": 390,
+						"to": 550
+					},
+					"id": 262,
+					"p": 0.98635,
+					"t_dtw": -1
+				},
+				{
+					"text": " café",
+					"timestamps": {
+						"from": "00:00:00,550",
+						"to": "00:00:00,800"
+					},
+					"offsets": {
+						"from": 550,
+						"to": 800
+					},
+					"id": 40304,
+					"p": 0.293186,
+					"t_dtw": -1
+				},
+				{
+					"text": " where",
+					"timestamps": {
+						"from": "00:00:00,800",
+						"to": "00:00:01,110"
+					},
+					"offsets": {
+						"from": 800,
+						"to": 1110
+					},
+					"id": 810,
+					"p": 0.9873,
+					"t_dtw": -1
+				},
+				{
+					"text": " we",
+					"timestamps": {
+						"from": "00:00:01,110",
+						"to": "00:00:01,230"
+					},
+					"offsets": {
+						"from": 1110,
+						"to": 1230
+					},
+					"id": 356,
+					"p": 0.998887,
+					"t_dtw": -1
+				},
+				{
+					"text": " first",
+					"timestamps": {
+						"from": "00:00:01,230",
+						"to": "00:00:01,520"
+					},
+					"offsets": {
+						"from": 1230,
+						"to": 1520
+					},
+					"id": 717,
+					"p": 0.99891,
+					"t_dtw": -1
+				},
+				{
+					"text": " met",
+					"timestamps": {
+						"from": "00:00:01,610",
+						"to": "00:00:01,720"
+					},
+					"offsets": {
+						"from": 1610,
+						"to": 1720
+					},
+					"id": 1138,
+					"p": 0.998532,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,720",
+						"to": "00:00:01,870"
+					},
+					"offsets": {
+						"from": 1720,
+						"to": 1870
+					},
+					"id": 13,
+					"p": 0.934224,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_97]",
+					"timestamps": {
+						"from": "00:00:01,940",
+						"to": "00:00:01,940"
+					},
+					"offsets": {
+						"from": 1940,
+						"to": 1940
+					},
+					"id": 50460,
+					"p": 0.0471759,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,656 @@
+{
+  "id": "basic-17",
+  "episode": 17,
+  "title": "두 문장을 명사 하나로 연결하기",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "같은 사람이나 사물을 말하는 두 문장은 관계절로 연결할 수 있어요. 겹치는 자리를 먼저 찾으세요.",
+      "screen": "The woman helped me. / The woman lives nearby.",
+      "visual": "첫 예문을 두 문장으로 펼치고 공통 명사를 연결.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "같은 사람이나 사물을 말하는 두 문장은 관계절로 연결할 수 있어요. 겹치는 자리를 먼저 찾으세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "관계대명사가 주어 역할이면 뒤에 주어를 또 넣지 않아요. 사람은 후, 사물은 위치로 연결할 수 있죠.",
+      "screen": "who helped me / 주어 자리",
+      "visual": "첫 예문의 who에서 helped로 연결하고 중복 주어 칸 제거.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "관계대명사가 주어 역할이면 뒤에 주어를 또 넣지 않아요. 사람은 후, 사물은 위치로 연결할 수 있죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "목적어 역할이면 관계절 안에 주어가 따로 있어요. 명사를 좁혀 주는 목적격 관계대명사는 생략할 수 있죠.",
+      "screen": "관계절: 주어 + 동사 + 목적어 빈칸",
+      "visual": "주격과 목적격의 빈자리 위치를 두 줄로 비교.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "목적어 역할이면 관계절 안에 주어가 따로 있어요. 명사를 좁혀 주는 목적격 관계대명사는 생략할 수 있죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "주격은 보통 생략할 수 없어요. 쉼표로 덧붙이는 관계절에는 댓을 쓰거나 관계대명사를 빼지 마세요.",
+      "screen": "주격 생략 금지 / 쉼표 뒤 that 금지",
+      "visual": "제한적 관계절과 쉼표로 분리된 추가 설명을 다른 선으로 표시.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "주격은 보통 생략할 수 없어요. 쉼표로 덧붙이는 관계절에는 댓을 쓰거나 관계대명사를 빼지 마세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "나를 도와준 여자는 근처에 살아요.",
+      "en": "The woman who helped me lives nearby.",
+      "wrong": "The woman who she helped me lives nearby.",
+      "focus": [
+        "who",
+        "helped"
+      ],
+      "note": "who가 helped의 주어이므로 she를 다시 넣지 않는다.",
+      "visual": "두 문장의 공통 여자를 who로 연결하고 she 중복 제거.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나를 도와준 여자는 근처에 살아요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The woman who helped me lives nearby.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "who",
+            "actualStart": null
+          },
+          {
+            "text": "helped",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "그가 산 전화기는 꽤 비싸요.",
+      "en": "The phone which he bought is quite expensive.",
+      "wrong": "The phone which he bought it is quite expensive.",
+      "focus": [
+        "which",
+        "bought"
+      ],
+      "note": "which가 bought의 목적어 자리와 연결되므로 it을 다시 넣지 않는다.",
+      "visual": "phone을 bought 뒤의 빈 목적어 자리로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그가 산 전화기는 꽤 비싸요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The phone which he bought is quite expensive.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "which",
+            "actualStart": null
+          },
+          {
+            "text": "bought",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "우리 옆에 사는 개는 자주 짖어요.",
+      "en": "The dog that lives next door often barks.",
+      "wrong": "The dog lives next door often barks.",
+      "focus": [
+        "that",
+        "lives"
+      ],
+      "note": "that이 관계절의 주어이므로 생략하면 두 동사를 연결할 구조가 사라진다.",
+      "visual": "주절 barks와 관계절 lives를 구분하고 that 주어 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리 옆에 사는 개는 자주 짖어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The dog that lives next door often barks.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "that",
+            "actualStart": null
+          },
+          {
+            "text": "lives",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "네가 어제 만난 남자는 내 선생님이에요.",
+      "en": "The man who you met yesterday is my teacher.",
+      "wrong": "The man who you met him yesterday is my teacher.",
+      "focus": [
+        "who",
+        "met"
+      ],
+      "note": "목적격 who는 가능하지만 같은 목적어를 him으로 반복하지 않는다.",
+      "visual": "you를 관계절 주어로, who를 met의 목적어로 연결.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "네가 어제 만난 남자는 내 선생님이에요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The man who you met yesterday is my teacher.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "who",
+            "actualStart": null
+          },
+          {
+            "text": "met",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "내가 어제 산 책은 이미 여기 있어요.",
+      "en": "The book I bought yesterday is already here.",
+      "wrong": "The book I bought it yesterday is already here.",
+      "focus": [
+        "I bought",
+        "book"
+      ],
+      "note": "제한적 목적격은 생략할 수 있다. 생략해도 bought 뒤에 it을 다시 채우지 않는다.",
+      "visual": "생략된 관계대명사 자리와 목적어 빈칸을 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "내가 어제 산 책은 이미 여기 있어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The book I bought yesterday is already here.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "I bought",
+            "actualStart": null
+          },
+          {
+            "text": "book",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "입구를 막고 있는 차는 톰 것이에요.",
+      "en": "The car which blocks the entrance belongs to Tom.",
+      "wrong": "The car which it blocks the entrance belongs to Tom.",
+      "focus": [
+        "which",
+        "blocks"
+      ],
+      "note": "which가 blocks의 주어라서 it은 중복이다.",
+      "visual": "car → which → blocks 주어 연결 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "입구를 막고 있는 차는 톰 것이에요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The car which blocks the entrance belongs to Tom.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "which",
+            "actualStart": null
+          },
+          {
+            "text": "blocks",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "내가 수리한 의자는 이제 사용하기에 안전해요.",
+      "en": "The chair that I repaired is safe to use now.",
+      "wrong": "The chair that I repaired it is safe to use now.",
+      "focus": [
+        "that",
+        "repaired"
+      ],
+      "note": "that은 repaired의 목적어 역할이며 it을 덧붙이지 않는다. 이 that은 생략도 가능하다.",
+      "visual": "chair와 repaired 뒤 빈자리 연결, 생략 가능 표시.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "내가 수리한 의자는 이제 사용하기에 안전해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The chair that I repaired is safe to use now.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "that",
+            "actualStart": null
+          },
+          {
+            "text": "repaired",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "근처에 사는 내 여동생 미아는 자전거로 출근해요.",
+      "en": "My sister Mia, who lives nearby, cycles to work.",
+      "wrong": "My sister Mia, that lives nearby, cycles to work.",
+      "focus": [
+        "who",
+        "lives"
+      ],
+      "note": "이미 특정된 미아에 추가 설명을 붙이는 쉼표 관계절에는 that을 쓰지 않는다.",
+      "visual": "Mia를 특정 인물로 표시하고 쉼표 안의 who절을 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "근처에 사는 내 여동생 미아는 자전거로 출근해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "My sister Mia, who lives nearby, cycles to work.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "who",
+            "actualStart": null
+          },
+          {
+            "text": "lives",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "내가 어제 산 이 노트북은 잘 작동해요.",
+      "en": "This laptop, which I bought yesterday, works well.",
+      "wrong": "This laptop, I bought yesterday, works well.",
+      "focus": [
+        "which",
+        "bought"
+      ],
+      "note": "쉼표로 덧붙인 비제한적 관계절은 목적격이라도 관계대명사를 생략하지 않는다.",
+      "visual": "which가 목적어 역할이어도 쉼표 경계에서는 유지 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "내가 어제 산 이 노트북은 잘 작동해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This laptop, which I bought yesterday, works well.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "which",
+            "actualStart": null
+          },
+          {
+            "text": "bought",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "우리가 논의한 프로젝트는 다음 주에 시작돼요.",
+      "en": "The project about which we spoke starts next week.",
+      "wrong": "The project about that we spoke starts next week.",
+      "focus": [
+        "about which",
+        "spoke"
+      ],
+      "note": "전치사 바로 뒤에서는 which를 쓰며 that은 쓰지 않는다. 전치사를 뒤에 두는 구조와 구분한다.",
+      "visual": "about which를 한 덩어리로 묶고 전치사 바로 뒤 자리 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리가 논의한 프로젝트는 다음 주에 시작돼요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The project about which we spoke starts next week.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "about which",
+            "actualStart": null
+          },
+          {
+            "text": "spoke",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "관계절의 빈자리가 주어인지 목적어인지 확인하고, 제한적 목적격만 생략하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "관계절의 빈자리가 주어인지 목적어인지 확인하고, 제한적 목적격만 생략하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,580"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1580
+			},
+			"text": " She runs faster than I do",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998146,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,230"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 230
+					},
+					"id": 1375,
+					"p": 0.796083,
+					"t_dtw": -1
+				},
+				{
+					"text": " runs",
+					"timestamps": {
+						"from": "00:00:00,230",
+						"to": "00:00:00,410"
+					},
+					"offsets": {
+						"from": 230,
+						"to": 410
+					},
+					"id": 4539,
+					"p": 0.998891,
+					"t_dtw": -1
+				},
+				{
+					"text": " faster",
+					"timestamps": {
+						"from": "00:00:00,540",
+						"to": "00:00:01,010"
+					},
+					"offsets": {
+						"from": 540,
+						"to": 1010
+					},
+					"id": 5443,
+					"p": 0.999289,
+					"t_dtw": -1
+				},
+				{
+					"text": " than",
+					"timestamps": {
+						"from": "00:00:01,010",
+						"to": "00:00:01,320"
+					},
+					"offsets": {
+						"from": 1010,
+						"to": 1320
+					},
+					"id": 621,
+					"p": 0.997904,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:01,320",
+						"to": "00:00:01,390"
+					},
+					"offsets": {
+						"from": 1320,
+						"to": 1390
+					},
+					"id": 314,
+					"p": 0.994184,
+					"t_dtw": -1
+				},
+				{
+					"text": " do",
+					"timestamps": {
+						"from": "00:00:01,390",
+						"to": "00:00:01,530"
+					},
+					"offsets": {
+						"from": 1390,
+						"to": 1530
+					},
+					"id": 466,
+					"p": 0.998529,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_79]",
+					"timestamps": {
+						"from": "00:00:01,580",
+						"to": "00:00:01,580"
+					},
+					"offsets": {
+						"from": 1580,
+						"to": 1580
+					},
+					"id": 50442,
+					"p": 0.0511418,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

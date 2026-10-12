@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,000"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2000
+			},
+			"text": " I remember to lock the door every night.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.99754,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,050"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 50
+					},
+					"id": 314,
+					"p": 0.924896,
+					"t_dtw": -1
+				},
+				{
+					"text": " remember",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,490"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 490
+					},
+					"id": 3505,
+					"p": 0.986434,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,490",
+						"to": "00:00:00,550"
+					},
+					"offsets": {
+						"from": 490,
+						"to": 550
+					},
+					"id": 284,
+					"p": 0.997584,
+					"t_dtw": -1
+				},
+				{
+					"text": " lock",
+					"timestamps": {
+						"from": "00:00:00,600",
+						"to": "00:00:00,820"
+					},
+					"offsets": {
+						"from": 600,
+						"to": 820
+					},
+					"id": 5793,
+					"p": 0.990998,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,820",
+						"to": "00:00:00,900"
+					},
+					"offsets": {
+						"from": 820,
+						"to": 900
+					},
+					"id": 262,
+					"p": 0.997504,
+					"t_dtw": -1
+				},
+				{
+					"text": " door",
+					"timestamps": {
+						"from": "00:00:01,000",
+						"to": "00:00:01,200"
+					},
+					"offsets": {
+						"from": 1000,
+						"to": 1200
+					},
+					"id": 3420,
+					"p": 0.999758,
+					"t_dtw": -1
+				},
+				{
+					"text": " every",
+					"timestamps": {
+						"from": "00:00:01,200",
+						"to": "00:00:01,480"
+					},
+					"offsets": {
+						"from": 1200,
+						"to": 1480
+					},
+					"id": 790,
+					"p": 0.995849,
+					"t_dtw": -1
+				},
+				{
+					"text": " night",
+					"timestamps": {
+						"from": "00:00:01,480",
+						"to": "00:00:01,790"
+					},
+					"offsets": {
+						"from": 1480,
+						"to": 1790
+					},
+					"id": 1755,
+					"p": 0.999439,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,790",
+						"to": "00:00:01,800"
+					},
+					"offsets": {
+						"from": 1790,
+						"to": 1800
+					},
+					"id": 13,
+					"p": 0.802452,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_100]",
+					"timestamps": {
+						"from": "00:00:02,000",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 2000,
+						"to": 2000
+					},
+					"id": 50463,
+					"p": 0.0732897,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

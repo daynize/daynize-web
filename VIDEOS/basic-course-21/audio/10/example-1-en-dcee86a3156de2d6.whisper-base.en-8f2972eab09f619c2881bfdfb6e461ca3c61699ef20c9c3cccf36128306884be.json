@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,760"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1760
+			},
+			"text": " I brought something to eat for lunch.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997889,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,050"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 50
+					},
+					"id": 314,
+					"p": 0.93101,
+					"t_dtw": -1
+				},
+				{
+					"text": " brought",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,370"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 370
+					},
+					"id": 3181,
+					"p": 0.98206,
+					"t_dtw": -1
+				},
+				{
+					"text": " something",
+					"timestamps": {
+						"from": "00:00:00,500",
+						"to": "00:00:00,980"
+					},
+					"offsets": {
+						"from": 500,
+						"to": 980
+					},
+					"id": 1223,
+					"p": 0.997134,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,980",
+						"to": "00:00:01,090"
+					},
+					"offsets": {
+						"from": 980,
+						"to": 1090
+					},
+					"id": 284,
+					"p": 0.997805,
+					"t_dtw": -1
+				},
+				{
+					"text": " eat",
+					"timestamps": {
+						"from": "00:00:01,090",
+						"to": "00:00:01,260"
+					},
+					"offsets": {
+						"from": 1090,
+						"to": 1260
+					},
+					"id": 4483,
+					"p": 0.980746,
+					"t_dtw": -1
+				},
+				{
+					"text": " for",
+					"timestamps": {
+						"from": "00:00:01,260",
+						"to": "00:00:01,430"
+					},
+					"offsets": {
+						"from": 1260,
+						"to": 1430
+					},
+					"id": 329,
+					"p": 0.997961,
+					"t_dtw": -1
+				},
+				{
+					"text": " lunch",
+					"timestamps": {
+						"from": "00:00:01,430",
+						"to": "00:00:01,720"
+					},
+					"offsets": {
+						"from": 1430,
+						"to": 1720
+					},
+					"id": 9965,
+					"p": 0.990285,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,720",
+						"to": "00:00:01,760"
+					},
+					"offsets": {
+						"from": 1720,
+						"to": 1760
+					},
+					"id": 13,
+					"p": 0.745624,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_88]",
+					"timestamps": {
+						"from": "00:00:01,760",
+						"to": "00:00:01,760"
+					},
+					"offsets": {
+						"from": 1760,
+						"to": 1760
+					},
+					"id": 50451,
+					"p": 0.122281,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,227 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:03,000"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 3000
+			},
+			"text": " The child was seen crossing the road midway through the crossing",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998581,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,160"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 160
+					},
+					"id": 383,
+					"p": 0.767225,
+					"t_dtw": -1
+				},
+				{
+					"text": " child",
+					"timestamps": {
+						"from": "00:00:00,160",
+						"to": "00:00:00,430"
+					},
+					"offsets": {
+						"from": 160,
+						"to": 430
+					},
+					"id": 1200,
+					"p": 0.985184,
+					"t_dtw": -1
+				},
+				{
+					"text": " was",
+					"timestamps": {
+						"from": "00:00:00,430",
+						"to": "00:00:00,590"
+					},
+					"offsets": {
+						"from": 430,
+						"to": 590
+					},
+					"id": 373,
+					"p": 0.999683,
+					"t_dtw": -1
+				},
+				{
+					"text": " seen",
+					"timestamps": {
+						"from": "00:00:00,590",
+						"to": "00:00:00,810"
+					},
+					"offsets": {
+						"from": 590,
+						"to": 810
+					},
+					"id": 1775,
+					"p": 0.997447,
+					"t_dtw": -1
+				},
+				{
+					"text": " crossing",
+					"timestamps": {
+						"from": "00:00:00,810",
+						"to": "00:00:01,180"
+					},
+					"offsets": {
+						"from": 810,
+						"to": 1180
+					},
+					"id": 12538,
+					"p": 0.999443,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,260",
+						"to": "00:00:01,410"
+					},
+					"offsets": {
+						"from": 1260,
+						"to": 1410
+					},
+					"id": 262,
+					"p": 0.999163,
+					"t_dtw": -1
+				},
+				{
+					"text": " road",
+					"timestamps": {
+						"from": "00:00:01,410",
+						"to": "00:00:01,630"
+					},
+					"offsets": {
+						"from": 1410,
+						"to": 1630
+					},
+					"id": 2975,
+					"p": 0.570346,
+					"t_dtw": -1
+				},
+				{
+					"text": " midway",
+					"timestamps": {
+						"from": "00:00:01,630",
+						"to": "00:00:01,960"
+					},
+					"offsets": {
+						"from": 1630,
+						"to": 1960
+					},
+					"id": 37720,
+					"p": 0.992273,
+					"t_dtw": -1
+				},
+				{
+					"text": " through",
+					"timestamps": {
+						"from": "00:00:01,960",
+						"to": "00:00:02,340"
+					},
+					"offsets": {
+						"from": 1960,
+						"to": 2340
+					},
+					"id": 832,
+					"p": 0.997649,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:02,340",
+						"to": "00:00:02,480"
+					},
+					"offsets": {
+						"from": 2340,
+						"to": 2480
+					},
+					"id": 262,
+					"p": 0.997356,
+					"t_dtw": -1
+				},
+				{
+					"text": " crossing",
+					"timestamps": {
+						"from": "00:00:02,490",
+						"to": "00:00:02,980"
+					},
+					"offsets": {
+						"from": 2490,
+						"to": 2980
+					},
+					"id": 12538,
+					"p": 0.997402,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_150]",
+					"timestamps": {
+						"from": "00:00:03,000",
+						"to": "00:00:03,000"
+					},
+					"offsets": {
+						"from": 3000,
+						"to": 3000
+					},
+					"id": 50513,
+					"p": 0.223269,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

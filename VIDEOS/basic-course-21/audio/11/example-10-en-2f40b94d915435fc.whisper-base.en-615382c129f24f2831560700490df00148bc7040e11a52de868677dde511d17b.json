@@ -1,0 +1,227 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:03,520"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 3520
+			},
+			"text": " the training enabled new employees to handle tasks more safely.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998674,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,150"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 150
+					},
+					"id": 262,
+					"p": 0.46012,
+					"t_dtw": -1
+				},
+				{
+					"text": " training",
+					"timestamps": {
+						"from": "00:00:00,210",
+						"to": "00:00:00,710"
+					},
+					"offsets": {
+						"from": 210,
+						"to": 710
+					},
+					"id": 3047,
+					"p": 0.948842,
+					"t_dtw": -1
+				},
+				{
+					"text": " enabled",
+					"timestamps": {
+						"from": "00:00:00,710",
+						"to": "00:00:01,170"
+					},
+					"offsets": {
+						"from": 710,
+						"to": 1170
+					},
+					"id": 9343,
+					"p": 0.617522,
+					"t_dtw": -1
+				},
+				{
+					"text": " new",
+					"timestamps": {
+						"from": "00:00:01,170",
+						"to": "00:00:01,340"
+					},
+					"offsets": {
+						"from": 1170,
+						"to": 1340
+					},
+					"id": 649,
+					"p": 0.992852,
+					"t_dtw": -1
+				},
+				{
+					"text": " employees",
+					"timestamps": {
+						"from": "00:00:01,430",
+						"to": "00:00:01,950"
+					},
+					"offsets": {
+						"from": 1430,
+						"to": 1950
+					},
+					"id": 4409,
+					"p": 0.984874,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:01,950",
+						"to": "00:00:02,080"
+					},
+					"offsets": {
+						"from": 1950,
+						"to": 2080
+					},
+					"id": 284,
+					"p": 0.997261,
+					"t_dtw": -1
+				},
+				{
+					"text": " handle",
+					"timestamps": {
+						"from": "00:00:02,080",
+						"to": "00:00:02,470"
+					},
+					"offsets": {
+						"from": 2080,
+						"to": 2470
+					},
+					"id": 5412,
+					"p": 0.999638,
+					"t_dtw": -1
+				},
+				{
+					"text": " tasks",
+					"timestamps": {
+						"from": "00:00:02,470",
+						"to": "00:00:02,800"
+					},
+					"offsets": {
+						"from": 2470,
+						"to": 2800
+					},
+					"id": 8861,
+					"p": 0.995083,
+					"t_dtw": -1
+				},
+				{
+					"text": " more",
+					"timestamps": {
+						"from": "00:00:02,800",
+						"to": "00:00:03,020"
+					},
+					"offsets": {
+						"from": 2800,
+						"to": 3020
+					},
+					"id": 517,
+					"p": 0.998849,
+					"t_dtw": -1
+				},
+				{
+					"text": " safely",
+					"timestamps": {
+						"from": "00:00:03,080",
+						"to": "00:00:03,480"
+					},
+					"offsets": {
+						"from": 3080,
+						"to": 3480
+					},
+					"id": 11512,
+					"p": 0.999325,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:03,520",
+						"to": "00:00:03,520"
+					},
+					"offsets": {
+						"from": 3520,
+						"to": 3520
+					},
+					"id": 13,
+					"p": 0.624575,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_176]",
+					"timestamps": {
+						"from": "00:00:03,520",
+						"to": "00:00:03,520"
+					},
+					"offsets": {
+						"from": 3520,
+						"to": 3520
+					},
+					"id": 50539,
+					"p": 0.164548,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

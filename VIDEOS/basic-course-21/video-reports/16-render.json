@@ -1,0 +1,36 @@
+{
+  "episode": 16,
+  "title": "수동태에서도 남는 보어",
+  "inputHash": "3307640513267ebfe82777a3d9518eabfc59367788d49e7bb5fda3326109cd66",
+  "output": "renders/basic-16.mp4",
+  "contact": "renders/basic-16-contact.png",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "duration": "130.000000",
+        "nb_frames": "3900"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "130.000000",
+        "nb_frames": "6095"
+      }
+    ],
+    "format": {
+      "duration": "130.000000",
+      "size": "8637535"
+    }
+  },
+  "audioPeakDb": -1.7,
+  "browserCheck": true,
+  "listeningReviewed": false
+}

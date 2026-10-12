@@ -1,0 +1,255 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,560"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2560
+			},
+			"text": " If it had not rained, we would have played outside.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997791,
+					"t_dtw": -1
+				},
+				{
+					"text": " If",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,080"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 80
+					},
+					"id": 1002,
+					"p": 0.506917,
+					"t_dtw": -1
+				},
+				{
+					"text": " it",
+					"timestamps": {
+						"from": "00:00:00,150",
+						"to": "00:00:00,220"
+					},
+					"offsets": {
+						"from": 150,
+						"to": 220
+					},
+					"id": 340,
+					"p": 0.996706,
+					"t_dtw": -1
+				},
+				{
+					"text": " had",
+					"timestamps": {
+						"from": "00:00:00,280",
+						"to": "00:00:00,460"
+					},
+					"offsets": {
+						"from": 280,
+						"to": 460
+					},
+					"id": 550,
+					"p": 0.996147,
+					"t_dtw": -1
+				},
+				{
+					"text": " not",
+					"timestamps": {
+						"from": "00:00:00,460",
+						"to": "00:00:00,620"
+					},
+					"offsets": {
+						"from": 460,
+						"to": 620
+					},
+					"id": 407,
+					"p": 0.999491,
+					"t_dtw": -1
+				},
+				{
+					"text": " r",
+					"timestamps": {
+						"from": "00:00:00,660",
+						"to": "00:00:00,720"
+					},
+					"offsets": {
+						"from": 660,
+						"to": 720
+					},
+					"id": 374,
+					"p": 0.487836,
+					"t_dtw": -1
+				},
+				{
+					"text": "ained",
+					"timestamps": {
+						"from": "00:00:00,720",
+						"to": "00:00:00,990"
+					},
+					"offsets": {
+						"from": 720,
+						"to": 990
+					},
+					"id": 1328,
+					"p": 0.998367,
+					"t_dtw": -1
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:01,240",
+						"to": "00:00:01,240"
+					},
+					"offsets": {
+						"from": 1240,
+						"to": 1240
+					},
+					"id": 11,
+					"p": 0.965116,
+					"t_dtw": -1
+				},
+				{
+					"text": " we",
+					"timestamps": {
+						"from": "00:00:01,250",
+						"to": "00:00:01,350"
+					},
+					"offsets": {
+						"from": 1250,
+						"to": 1350
+					},
+					"id": 356,
+					"p": 0.9765,
+					"t_dtw": -1
+				},
+				{
+					"text": " would",
+					"timestamps": {
+						"from": "00:00:01,350",
+						"to": "00:00:01,570"
+					},
+					"offsets": {
+						"from": 1350,
+						"to": 1570
+					},
+					"id": 561,
+					"p": 0.998249,
+					"t_dtw": -1
+				},
+				{
+					"text": " have",
+					"timestamps": {
+						"from": "00:00:01,720",
+						"to": "00:00:01,840"
+					},
+					"offsets": {
+						"from": 1720,
+						"to": 1840
+					},
+					"id": 423,
+					"p": 0.929557,
+					"t_dtw": -1
+				},
+				{
+					"text": " played",
+					"timestamps": {
+						"from": "00:00:01,840",
+						"to": "00:00:02,120"
+					},
+					"offsets": {
+						"from": 1840,
+						"to": 2120
+					},
+					"id": 2826,
+					"p": 0.987163,
+					"t_dtw": -1
+				},
+				{
+					"text": " outside",
+					"timestamps": {
+						"from": "00:00:02,150",
+						"to": "00:00:02,460"
+					},
+					"offsets": {
+						"from": 2150,
+						"to": 2460
+					},
+					"id": 2354,
+					"p": 0.991243,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,550",
+						"to": "00:00:02,550"
+					},
+					"offsets": {
+						"from": 2550,
+						"to": 2550
+					},
+					"id": 13,
+					"p": 0.802979,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_128]",
+					"timestamps": {
+						"from": "00:00:02,560",
+						"to": "00:00:02,560"
+					},
+					"offsets": {
+						"from": 2560,
+						"to": 2560
+					},
+					"id": 50491,
+					"p": 0.0665794,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

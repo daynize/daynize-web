@@ -1,0 +1,227 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,280"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2280
+			},
+			"text": " The doctor warned me to rest for a few days.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997847,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,200"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 200
+					},
+					"id": 383,
+					"p": 0.364098,
+					"t_dtw": -1
+				},
+				{
+					"text": " doctor",
+					"timestamps": {
+						"from": "00:00:00,200",
+						"to": "00:00:00,600"
+					},
+					"offsets": {
+						"from": 200,
+						"to": 600
+					},
+					"id": 6253,
+					"p": 0.986658,
+					"t_dtw": -1
+				},
+				{
+					"text": " warned",
+					"timestamps": {
+						"from": "00:00:00,600",
+						"to": "00:00:00,930"
+					},
+					"offsets": {
+						"from": 600,
+						"to": 930
+					},
+					"id": 7728,
+					"p": 0.999521,
+					"t_dtw": -1
+				},
+				{
+					"text": " me",
+					"timestamps": {
+						"from": "00:00:01,000",
+						"to": "00:00:01,130"
+					},
+					"offsets": {
+						"from": 1000,
+						"to": 1130
+					},
+					"id": 502,
+					"p": 0.999083,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:01,130",
+						"to": "00:00:01,260"
+					},
+					"offsets": {
+						"from": 1130,
+						"to": 1260
+					},
+					"id": 284,
+					"p": 0.997474,
+					"t_dtw": -1
+				},
+				{
+					"text": " rest",
+					"timestamps": {
+						"from": "00:00:01,260",
+						"to": "00:00:01,520"
+					},
+					"offsets": {
+						"from": 1260,
+						"to": 1520
+					},
+					"id": 1334,
+					"p": 0.990633,
+					"t_dtw": -1
+				},
+				{
+					"text": " for",
+					"timestamps": {
+						"from": "00:00:01,520",
+						"to": "00:00:01,610"
+					},
+					"offsets": {
+						"from": 1520,
+						"to": 1610
+					},
+					"id": 329,
+					"p": 0.998053,
+					"t_dtw": -1
+				},
+				{
+					"text": " a",
+					"timestamps": {
+						"from": "00:00:01,720",
+						"to": "00:00:01,780"
+					},
+					"offsets": {
+						"from": 1720,
+						"to": 1780
+					},
+					"id": 257,
+					"p": 0.995801,
+					"t_dtw": -1
+				},
+				{
+					"text": " few",
+					"timestamps": {
+						"from": "00:00:01,780",
+						"to": "00:00:01,980"
+					},
+					"offsets": {
+						"from": 1780,
+						"to": 1980
+					},
+					"id": 1178,
+					"p": 0.99972,
+					"t_dtw": -1
+				},
+				{
+					"text": " days",
+					"timestamps": {
+						"from": "00:00:01,980",
+						"to": "00:00:02,210"
+					},
+					"offsets": {
+						"from": 1980,
+						"to": 2210
+					},
+					"id": 1528,
+					"p": 0.998925,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,260",
+						"to": "00:00:02,280"
+					},
+					"offsets": {
+						"from": 2260,
+						"to": 2280
+					},
+					"id": 13,
+					"p": 0.91699,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_114]",
+					"timestamps": {
+						"from": "00:00:02,280",
+						"to": "00:00:02,280"
+					},
+					"offsets": {
+						"from": 2280,
+						"to": 2280
+					},
+					"id": 50477,
+					"p": 0.0866273,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

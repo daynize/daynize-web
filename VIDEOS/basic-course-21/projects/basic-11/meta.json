@@ -1,0 +1,14 @@
+{
+  "id": "basic-11",
+  "episode": 11,
+  "title": "누가 그 행동을 하기를 바라나요?",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "4d84980396f8c1ad843ce7647c71c107f8768f600757d6b965494fb025605c43",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

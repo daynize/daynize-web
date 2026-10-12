@@ -1,0 +1,227 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,640"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2640
+			},
+			"text": " This box is large enough to hold all the equipment.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998848,
+					"t_dtw": -1
+				},
+				{
+					"text": " This",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,170"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 170
+					},
+					"id": 770,
+					"p": 0.90579,
+					"t_dtw": -1
+				},
+				{
+					"text": " box",
+					"timestamps": {
+						"from": "00:00:00,260",
+						"to": "00:00:00,420"
+					},
+					"offsets": {
+						"from": 260,
+						"to": 420
+					},
+					"id": 3091,
+					"p": 0.995566,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:00,480",
+						"to": "00:00:00,560"
+					},
+					"offsets": {
+						"from": 480,
+						"to": 560
+					},
+					"id": 318,
+					"p": 0.999523,
+					"t_dtw": -1
+				},
+				{
+					"text": " large",
+					"timestamps": {
+						"from": "00:00:00,560",
+						"to": "00:00:00,880"
+					},
+					"offsets": {
+						"from": 560,
+						"to": 880
+					},
+					"id": 1588,
+					"p": 0.999399,
+					"t_dtw": -1
+				},
+				{
+					"text": " enough",
+					"timestamps": {
+						"from": "00:00:00,880",
+						"to": "00:00:01,220"
+					},
+					"offsets": {
+						"from": 880,
+						"to": 1220
+					},
+					"id": 1576,
+					"p": 0.999908,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:01,310",
+						"to": "00:00:01,380"
+					},
+					"offsets": {
+						"from": 1310,
+						"to": 1380
+					},
+					"id": 284,
+					"p": 0.999258,
+					"t_dtw": -1
+				},
+				{
+					"text": " hold",
+					"timestamps": {
+						"from": "00:00:01,380",
+						"to": "00:00:01,630"
+					},
+					"offsets": {
+						"from": 1380,
+						"to": 1630
+					},
+					"id": 1745,
+					"p": 0.999369,
+					"t_dtw": -1
+				},
+				{
+					"text": " all",
+					"timestamps": {
+						"from": "00:00:01,630",
+						"to": "00:00:01,820"
+					},
+					"offsets": {
+						"from": 1630,
+						"to": 1820
+					},
+					"id": 477,
+					"p": 0.998034,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,820",
+						"to": "00:00:02,010"
+					},
+					"offsets": {
+						"from": 1820,
+						"to": 2010
+					},
+					"id": 262,
+					"p": 0.991874,
+					"t_dtw": -1
+				},
+				{
+					"text": " equipment",
+					"timestamps": {
+						"from": "00:00:02,010",
+						"to": "00:00:02,590"
+					},
+					"offsets": {
+						"from": 2010,
+						"to": 2590
+					},
+					"id": 5112,
+					"p": 0.9996,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,640",
+						"to": "00:00:02,640"
+					},
+					"offsets": {
+						"from": 2640,
+						"to": 2640
+					},
+					"id": 13,
+					"p": 0.864816,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_132]",
+					"timestamps": {
+						"from": "00:00:02,640",
+						"to": "00:00:02,640"
+					},
+					"offsets": {
+						"from": 2640,
+						"to": 2640
+					},
+					"id": 50495,
+					"p": 0.10115,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

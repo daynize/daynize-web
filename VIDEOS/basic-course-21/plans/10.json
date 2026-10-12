@@ -1,0 +1,656 @@
+{
+  "id": "basic-10",
+  "episode": 10,
+  "title": "먹을 것과 먹으러 가는 이유",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "먹을 것에서 먹을은 어떤 것인지 설명하죠. 영어도 명사 뒤에 투와 원형을 붙여 용도나 할 일을 설명할 수 있어요.",
+      "screen": "something to eat / a task to finish",
+      "visual": "명사 카드 뒤 to부정사 꼬리표를 붙이고 설명 화살표가 명사로 돌아가게 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "먹을 것에서 먹을은 어떤 것인지 설명하죠. 영어도 명사 뒤에 투와 원형을 붙여 용도나 할 일을 설명할 수 있어요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "음식을 사러 나갔다면 투와 원형은 나간 목적이에요. 왜 나갔는지 답하는 부분이라 앞의 행동과 연결해요.",
+      "screen": "went out to buy food",
+      "visual": "외출 동작에서 구매 목적 카드로 왜 화살표 연결, 명사 수식 선과 구분.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "음식을 사러 나갔다면 투와 원형은 나간 목적이에요. 왜 나갔는지 답하는 부분이라 앞의 행동과 연결해요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "너무 뜨거워 마실 수 없다거나 충분히 커서 담을 수 있다는 말도 만들어요. 투와 이너프의 위치를 함께 보세요.",
+      "screen": "too hot to drink / large enough to hold it",
+      "visual": "too → 형용사, 형용사 → enough 어순을 두 줄로 표시하고 가능 여부 대비.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "너무 뜨거워 마실 수 없다거나 충분히 커서 담을 수 있다는 말도 만들어요. 투와 이너프의 위치를 함께 보세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "하지만 형용사나 동사 뒤의 투가 모두 목적은 아니에요. 떠날 준비가 됐다거나 떠날 필요가 있다는 내용도 보충하죠.",
+      "screen": "ready to leave / need to leave",
+      "visual": "ready의 준비 내용과 need의 필요 내용 칸을 나누고 왜 행동했나 질문과 구별.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "하지만 형용사나 동사 뒤의 투가 모두 목적은 아니에요. 떠날 준비가 됐다거나 떠날 필요가 있다는 내용도 보충하죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "나는 점심에 먹을 것을 좀 가져왔어요.",
+      "en": "I brought something to eat for lunch.",
+      "wrong": "I brought something to eating for lunch.",
+      "focus": [
+        "something",
+        "to eat"
+      ],
+      "note": "something을 설명하는 이 부정사에서는 to 뒤에 원형 eat을 쓴다.",
+      "visual": "something 묶음에서 먹을 용도 꼬리표 to eat으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 점심에 먹을 것을 좀 가져왔어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I brought something to eat for lunch.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "something",
+            "actualStart": null
+          },
+          {
+            "text": "to eat",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "우리는 앉을 의자가 필요해요.",
+      "en": "We need a chair to sit on.",
+      "wrong": "We need a chair to sit.",
+      "focus": [
+        "a chair",
+        "to sit on"
+      ],
+      "note": "의도한 의자에 앉는 의미에서는 sit on a chair의 관계를 유지해 끝에 on을 둔다.",
+      "visual": "앉는 인물과 의자 접촉면을 on에 연결하고 빠진 관계선 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 앉을 의자가 필요해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We need a chair to sit on.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "a chair",
+            "actualStart": null
+          },
+          {
+            "text": "to sit on",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "그녀는 버스를 타려고 일찍 나갔어요.",
+      "en": "She left early to catch the bus.",
+      "wrong": "She left early to catching the bus.",
+      "focus": [
+        "left early",
+        "to catch"
+      ],
+      "note": "떠난 목적을 나타내는 to부정사이며 catching이 아니라 원형 catch를 쓴다.",
+      "visual": "출발 행동에서 버스 탑승 목적까지 왜 화살표 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀는 버스를 타려고 일찍 나갔어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She left early to catch the bus.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "left early",
+            "actualStart": null
+          },
+          {
+            "text": "to catch",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "이 차는 지금 마시기에는 너무 뜨거워요.",
+      "en": "This tea is too hot to drink now.",
+      "wrong": "This tea is too hot to drinking now.",
+      "focus": [
+        "too hot",
+        "to drink"
+      ],
+      "note": "too 형용사 to 원형 구조로 뜨거워서 마시기 어렵다는 뜻을 나타낸다.",
+      "visual": "온도 표시가 적정선을 넘고 to drink 가능 칸에 제한 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이 차는 지금 마시기에는 너무 뜨거워요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This tea is too hot to drink now.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "too hot",
+            "actualStart": null
+          },
+          {
+            "text": "to drink",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "그녀는 그 선반에 닿을 만큼 키가 커요.",
+      "en": "She is tall enough to reach that shelf.",
+      "wrong": "She is enough tall to reach that shelf.",
+      "focus": [
+        "tall enough",
+        "to reach"
+      ],
+      "note": "형용사 tall 뒤에 enough를 놓는다; enough tall 어순은 맞지 않는다.",
+      "visual": "키 눈금과 선반 높이를 비교하고 tall → enough 순서 화살표 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀는 그 선반에 닿을 만큼 키가 커요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She is tall enough to reach that shelf.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "tall enough",
+            "actualStart": null
+          },
+          {
+            "text": "to reach",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "나는 이번 주말에 읽을 책을 빌렸어요.",
+      "en": "I borrowed a book to read this weekend.",
+      "wrong": "I borrowed a book to reads this weekend.",
+      "focus": [
+        "a book",
+        "to read"
+      ],
+      "note": "읽을 책이라는 명사 수식 해석에서 to read를 쓴다; 문맥에 따라 빌린 목적 해석도 가능하다.",
+      "visual": "책 카드에 읽기 꼬리표를 붙이고 목적 해석도 가능한 점을 작은 분기선으로 표시.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 이번 주말에 읽을 책을 빌렸어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I borrowed a book to read this weekend.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "a book",
+            "actualStart": null
+          },
+          {
+            "text": "to read",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "그는 첫 면접 이야기를 할 준비가 됐어요.",
+      "en": "He is ready to discuss his first interview.",
+      "wrong": "He is ready discuss his first interview.",
+      "focus": [
+        "ready",
+        "to discuss"
+      ],
+      "note": "ready가 요구하는 준비의 내용을 to discuss로 보충하며 discuss만 바로 붙이지 않는다.",
+      "visual": "ready 상태 칸 뒤 준비된 행동 to discuss를 내용 괄호로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그는 첫 면접 이야기를 할 준비가 됐어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He is ready to discuss his first interview.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "ready",
+            "actualStart": null
+          },
+          {
+            "text": "to discuss",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "마지막 버스를 타려면 지금 떠나야 해요.",
+      "en": "I need to leave now to catch the last bus.",
+      "wrong": "I need leave now to catch the last bus.",
+      "focus": [
+        "need to leave",
+        "to catch"
+      ],
+      "note": "첫 부정사는 need의 필요한 행동, 둘째는 떠나는 목적이다; 둘을 모두 목적 수식으로 설명하지 않는다.",
+      "visual": "need 뒤 내용 괄호와 leave 뒤 목적 화살표를 서로 다른 방향으로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "마지막 버스를 타려면 지금 떠나야 해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I need to leave now to catch the last bus.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "need to leave",
+            "actualStart": null
+          },
+          {
+            "text": "to catch",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "이 상자는 장비를 모두 담기에 충분히 커요.",
+      "en": "This box is large enough to hold all the equipment.",
+      "wrong": "This box is enough large to hold all the equipment.",
+      "focus": [
+        "large enough",
+        "to hold"
+      ],
+      "note": "형용사 large 뒤에 enough를 놓고 수용 가능한 행동을 to hold로 연결한다.",
+      "visual": "상자 크기와 장비 부피를 비교하고 large enough 어순을 상단에 고정.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이 상자는 장비를 모두 담기에 충분히 커요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This box is large enough to hold all the equipment.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "large enough",
+            "actualStart": null
+          },
+          {
+            "text": "to hold",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "그녀는 모두가 끝내기를 기다릴 만큼 인내심이 있었어요.",
+      "en": "She was patient enough to wait for everyone to finish.",
+      "wrong": "She was enough patient to wait for everyone to finish.",
+      "focus": [
+        "patient enough",
+        "to wait"
+      ],
+      "note": "정도 표현은 patient enough이며 마지막 for everyone to finish는 기다리는 사건의 행위자를 밝힌다.",
+      "visual": "인내 정도와 기다림을 연결하고 everyone은 finish의 행위자 칸으로 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀는 모두가 끝내기를 기다릴 만큼 인내심이 있었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She was patient enough to wait for everyone to finish.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "patient enough",
+            "actualStart": null
+          },
+          {
+            "text": "to wait",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "to부정사는 위치만 보지 말고 명사 설명인지 목적 또는 보충 내용인지 관계를 확인하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "to부정사는 위치만 보지 말고 명사 설명인지 목적 또는 보충 내용인지 관계를 확인하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

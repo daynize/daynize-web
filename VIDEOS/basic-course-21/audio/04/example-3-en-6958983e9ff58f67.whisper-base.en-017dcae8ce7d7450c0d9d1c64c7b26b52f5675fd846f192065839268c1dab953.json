@@ -1,0 +1,171 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,620"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1620
+			},
+			"text": " We found the film quite boring.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998704,
+					"t_dtw": -1
+				},
+				{
+					"text": " We",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,120"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 120
+					},
+					"id": 775,
+					"p": 0.83168,
+					"t_dtw": -1
+				},
+				{
+					"text": " found",
+					"timestamps": {
+						"from": "00:00:00,120",
+						"to": "00:00:00,420"
+					},
+					"offsets": {
+						"from": 120,
+						"to": 420
+					},
+					"id": 1043,
+					"p": 0.995023,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,420",
+						"to": "00:00:00,530"
+					},
+					"offsets": {
+						"from": 420,
+						"to": 530
+					},
+					"id": 262,
+					"p": 0.985846,
+					"t_dtw": -1
+				},
+				{
+					"text": " film",
+					"timestamps": {
+						"from": "00:00:00,630",
+						"to": "00:00:00,840"
+					},
+					"offsets": {
+						"from": 630,
+						"to": 840
+					},
+					"id": 2646,
+					"p": 0.999091,
+					"t_dtw": -1
+				},
+				{
+					"text": " quite",
+					"timestamps": {
+						"from": "00:00:00,840",
+						"to": "00:00:01,110"
+					},
+					"offsets": {
+						"from": 840,
+						"to": 1110
+					},
+					"id": 2407,
+					"p": 0.804146,
+					"t_dtw": -1
+				},
+				{
+					"text": " boring",
+					"timestamps": {
+						"from": "00:00:01,190",
+						"to": "00:00:01,540"
+					},
+					"offsets": {
+						"from": 1190,
+						"to": 1540
+					},
+					"id": 14262,
+					"p": 0.997555,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,540",
+						"to": "00:00:01,580"
+					},
+					"offsets": {
+						"from": 1540,
+						"to": 1580
+					},
+					"id": 13,
+					"p": 0.93094,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_81]",
+					"timestamps": {
+						"from": "00:00:01,620",
+						"to": "00:00:01,620"
+					},
+					"offsets": {
+						"from": 1620,
+						"to": 1620
+					},
+					"id": 50444,
+					"p": 0.0574651,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

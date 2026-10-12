@@ -1,0 +1,1275 @@
+{
+  "id": "basic-11",
+  "episode": 11,
+  "title": "누가 그 행동을 하기를 바라나요?",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 9.484356333333333,
+      "text": "나는 가고 싶다에서는 내가 가요. 나는 네가 가기를 바란다에서는 네가 가죠. 행동 주체를 따로 밝혀야 해요.",
+      "screen": "I want to go. / I want you to go.",
+      "visual": "각 문장에서 go로 향하는 화살표를 I와 you에 각각 연결.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 가고 싶다에서는 내가 가요. 나는 네가 가기를 바란다에서는 네가 가죠. 행동 주체를 따로 밝혀야 해요.",
+          "actualStart": 0.2,
+          "actualEnd": 8.185986,
+          "rate": 185,
+          "cacheKey": "7896873ff0f234d45a21f8963fd164505581c1ef446bc1c609850d20c1fe55c4",
+          "file": "audio/11/concept-1-ko-7896873ff0f234d4.wav",
+          "duration": 7.985986
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 9.484356333333333,
+      "end": 19.532567666666665,
+      "text": "원하다, 부탁하다, 허락하다 같은 동사는 사람 뒤에 투와 원형을 붙여요. 그 사람이 뒤의 행동을 하는 구조예요.",
+      "screen": "want / ask / allow + 사람 + to do",
+      "visual": "동사 → 사람 → to do 배열에서 사람이 행동 주체임을 아래 화살표로 표시.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "원하다, 부탁하다, 허락하다 같은 동사는 사람 뒤에 투와 원형을 붙여요. 그 사람이 뒤의 행동을 하는 구조예요.",
+          "actualStart": 9.684356333333332,
+          "actualEnd": 18.234197333333334,
+          "rate": 185,
+          "cacheKey": "2cddaf6f221b060c77e6910d3e0c28ec690599e2537d3e4c379dba68050a5260",
+          "file": "audio/11/concept-2-ko-2cddaf6f221b060c.wav",
+          "duration": 8.549841
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 19.532567666666665,
+      "end": 28.769986,
+      "text": "가능하게 하다, 격려하다, 경고하다도 이런 결합을 쓸 수 있어요. 시키는 말이라고 원형만 붙이지 마세요.",
+      "screen": "enable / encourage / warn + 사람 + to do",
+      "visual": "세 동사의 가능·격려·경고 표지를 구분하고 공통 to 연결 칸 강조.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "가능하게 하다, 격려하다, 경고하다도 이런 결합을 쓸 수 있어요. 시키는 말이라고 원형만 붙이지 마세요.",
+          "actualStart": 19.732567666666665,
+          "actualEnd": 27.471615666666665,
+          "rate": 185,
+          "cacheKey": "b8cb3daa9d0c1f49b41a6bb9556901ece1995b09c679af9dfd22880b52dd600e",
+          "file": "audio/11/concept-3-ko-b8cb3daa9d0c1f49.wav",
+          "duration": 7.739048
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 28.769986,
+      "end": 38.05665533333334,
+      "text": "하지 말라고 할 때는 투 앞에 낫을 놓아요. 다만 모든 동사가 이 구조를 받지는 않으니 동사별로 익혀야 해요.",
+      "screen": "ask someone not to do / warn someone not to do",
+      "visual": "not을 to do 묶음 앞에 배치하고 행동 금지 범위 괄호 표시.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "하지 말라고 할 때는 투 앞에 낫을 놓아요. 다만 모든 동사가 이 구조를 받지는 않으니 동사별로 익혀야 해요.",
+          "actualStart": 28.969986,
+          "actualEnd": 36.758285,
+          "rate": 185,
+          "cacheKey": "d3475bf355bc790f3e24e150e7ad67e132bd40529528d18a3fbdc8fb6997a94c",
+          "file": "audio/11/concept-4-ko-d3475bf355bc790f.wav",
+          "duration": 7.788299
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 38.05665533333334,
+      "end": 44.53806466666668,
+      "ko": "나는 네가 오늘 저녁에 머물기를 바라요.",
+      "en": "I want you to stay this evening.",
+      "wrong": "I want you stay this evening.",
+      "focus": [
+        "you",
+        "to stay"
+      ],
+      "note": "머무는 사람은 you이며 want 사람 to 동사 구조로 연결한다.",
+      "visual": "you에서 stay 행동으로 화살표를 그어 I의 행동과 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 네가 오늘 저녁에 머물기를 바라요.",
+          "actualStart": 38.25665533333334,
+          "actualEnd": 40.98332233333334,
+          "rate": 185,
+          "cacheKey": "34aa0ad823d43711b82a51124446cf6b058147d626509296ae141d182638fdff",
+          "file": "audio/11/example-1-ko-34aa0ad823d43711.wav",
+          "duration": 2.726667
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I want you to stay this evening.",
+          "actualStart": 41.33332233333334,
+          "actualEnd": 42.98969433333334,
+          "rate": 155,
+          "cacheKey": "abfc2a4e1b71f6f641fcbda8bb6f116df509d0b305fbc00f01a3f72faf2a7b63",
+          "file": "audio/11/example-1-en-abfc2a4e1b71f6f6.wav",
+          "duration": 1.656372
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "you",
+            "actualStart": 41.643322333333344,
+            "actualEnd": 41.83332233333334
+          },
+          {
+            "text": "to stay",
+            "actualStart": 41.83332233333334,
+            "actualEnd": 42.20332233333334
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "I",
+          "start": 41.34332233333334,
+          "end": 41.393322333333344
+        },
+        {
+          "text": "want",
+          "start": 41.393322333333344,
+          "end": 41.643322333333344
+        },
+        {
+          "text": "you",
+          "start": 41.643322333333344,
+          "end": 41.83332233333334
+        },
+        {
+          "text": "to",
+          "start": 41.83332233333334,
+          "end": 41.95332233333334
+        },
+        {
+          "text": "stay",
+          "start": 41.95332233333334,
+          "end": 42.20332233333334
+        },
+        {
+          "text": "this",
+          "start": 42.20332233333334,
+          "end": 42.433322333333344
+        },
+        {
+          "text": "evening.",
+          "start": 42.503322333333344,
+          "end": 42.91332233333334
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 44.53806466666668,
+      "end": 52.33112900000001,
+      "ko": "그녀는 나에게 그 창문을 닫아 달라고 부탁했어요.",
+      "en": "She asked me to close the window.",
+      "wrong": "She asked me close the window.",
+      "focus": [
+        "asked me",
+        "to close"
+      ],
+      "note": "부탁을 받은 me가 닫는 구조이므로 ask 사람 to close를 쓴다.",
+      "visual": "부탁 말풍선에서 me로, me에서 닫기 행동으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 나에게 그 창문을 닫아 달라고 부탁했어요.",
+          "actualStart": 44.73806466666668,
+          "actualEnd": 48.61171566666668,
+          "rate": 185,
+          "cacheKey": "1e14daf402c6a24f8ae79e6bb8bc4da088d7e049315c5defa5ecee91bd140318",
+          "file": "audio/11/example-2-ko-1e14daf402c6a24f.wav",
+          "duration": 3.873651
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She asked me to close the window.",
+          "actualStart": 48.961715666666684,
+          "actualEnd": 50.78275866666669,
+          "rate": 155,
+          "cacheKey": "c129fbcd455e8a358f76f72d3223e694e33ae7e605d265cad30a75dd15f37f39",
+          "file": "audio/11/example-2-en-c129fbcd455e8a35.wav",
+          "duration": 1.821043
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "asked me",
+            "actualStart": 49.16171566666669,
+            "actualEnd": 49.631715666666686
+          },
+          {
+            "text": "to close",
+            "actualStart": 49.631715666666686,
+            "actualEnd": 50.101715666666685
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "She",
+          "start": 49.01171566666668,
+          "end": 49.16171566666669
+        },
+        {
+          "text": "asked",
+          "start": 49.16171566666669,
+          "end": 49.321715666666684
+        },
+        {
+          "text": "me",
+          "start": 49.50171566666668,
+          "end": 49.631715666666686
+        },
+        {
+          "text": "to",
+          "start": 49.631715666666686,
+          "end": 49.76171566666668
+        },
+        {
+          "text": "close",
+          "start": 49.76171566666668,
+          "end": 50.101715666666685
+        },
+        {
+          "text": "the",
+          "start": 50.101715666666685,
+          "end": 50.30171566666669
+        },
+        {
+          "text": "window.",
+          "start": 50.30171566666669,
+          "end": 50.701715666666686
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 52.33112900000001,
+      "end": 58.87326333333335,
+      "ko": "그들은 우리가 여기에서 기다리도록 허락했어요.",
+      "en": "They allowed us to wait here.",
+      "wrong": "They allowed us wait here.",
+      "focus": [
+        "allowed us",
+        "to wait"
+      ],
+      "note": "allow 사람 to 동사 구조이며 사역 let의 원형 구조와 다르다.",
+      "visual": "allowed us to wait와 let us wait를 평행 배열로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그들은 우리가 여기에서 기다리도록 허락했어요.",
+          "actualStart": 52.531129000000014,
+          "actualEnd": 55.699247000000014,
+          "rate": 185,
+          "cacheKey": "3b6b1dd679ab6b0ccd177b67ba0a4cbe2209780fc4fc1187d6d764862606cc27",
+          "file": "audio/11/example-3-ko-3b6b1dd679ab6b0c.wav",
+          "duration": 3.168118
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "They allowed us to wait here.",
+          "actualStart": 56.049247000000015,
+          "actualEnd": 57.32489300000002,
+          "rate": 155,
+          "cacheKey": "c356f840a2d768e0ac55b22a31d20c2aeea95c8c7ddaeb4f11069a4a203ab5dc",
+          "file": "audio/11/example-3-en-c356f840a2d768e0.wav",
+          "duration": 1.275646
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "allowed us",
+            "actualStart": 56.259247000000016,
+            "actualEnd": 56.729247000000015
+          },
+          {
+            "text": "to wait",
+            "actualStart": 56.729247000000015,
+            "actualEnd": 57.03924700000002
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "They",
+          "start": 56.06924700000002,
+          "end": 56.259247000000016
+        },
+        {
+          "text": "allowed",
+          "start": 56.259247000000016,
+          "end": 56.59924700000001
+        },
+        {
+          "text": "us",
+          "start": 56.66924700000001,
+          "end": 56.729247000000015
+        },
+        {
+          "text": "to",
+          "start": 56.729247000000015,
+          "end": 56.82924700000002
+        },
+        {
+          "text": "wait",
+          "start": 56.82924700000002,
+          "end": 57.03924700000002
+        },
+        {
+          "text": "here.",
+          "start": 57.03924700000002,
+          "end": 57.259247000000016
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 58.87326333333335,
+      "end": 67.84142966666668,
+      "ko": "이 앱은 사용자가 자기 진행 상황을 확인할 수 있게 해 줘요.",
+      "en": "This app enables users to track their progress.",
+      "wrong": "This app enables users track their progress.",
+      "focus": [
+        "enables users",
+        "to track"
+      ],
+      "note": "가능하게 하는 enable 뒤에 행동 주체 users와 to track을 놓는다.",
+      "visual": "앱 기능에서 사용자와 진행 기록 화면으로 단계별 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이 앱은 사용자가 자기 진행 상황을 확인할 수 있게 해 줘요.",
+          "actualStart": 59.07326333333335,
+          "actualEnd": 63.22795733333335,
+          "rate": 185,
+          "cacheKey": "166221fc18d6820f2a183aa02f533d1accace891ceebc935d5137671675ca709",
+          "file": "audio/11/example-4-ko-166221fc18d6820f.wav",
+          "duration": 4.154694
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This app enables users to track their progress.",
+          "actualStart": 63.57795733333335,
+          "actualEnd": 66.29305933333335,
+          "rate": 155,
+          "cacheKey": "c82525056563a503c33d58ce6fc3cb669484b5d2604b92c13f28a1277858800d",
+          "file": "audio/11/example-4-en-c82525056563a503.wav",
+          "duration": 2.715102
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "enables users",
+            "actualStart": 64.04795733333336,
+            "actualEnd": 64.86795733333335
+          },
+          {
+            "text": "to track",
+            "actualStart": 64.86795733333335,
+            "actualEnd": 65.33795733333335
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "This",
+          "start": 63.597957333333355,
+          "end": 63.847957333333355
+        },
+        {
+          "text": "app",
+          "start": 63.847957333333355,
+          "end": 64.04795733333336
+        },
+        {
+          "text": "enables",
+          "start": 64.04795733333336,
+          "end": 64.47795733333335
+        },
+        {
+          "text": "users",
+          "start": 64.52795733333335,
+          "end": 64.86795733333335
+        },
+        {
+          "text": "to",
+          "start": 64.86795733333335,
+          "end": 64.99795733333335
+        },
+        {
+          "text": "track",
+          "start": 64.99795733333335,
+          "end": 65.33795733333335
+        },
+        {
+          "text": "their",
+          "start": 65.33795733333335,
+          "end": 65.67795733333335
+        },
+        {
+          "text": "progress.",
+          "start": 65.67795733333335,
+          "end": 66.12795733333336
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 67.84142966666668,
+      "end": 75.96315600000001,
+      "ko": "선생님은 학생들에게 질문하도록 격려했어요.",
+      "en": "The teacher encouraged the students to ask questions.",
+      "wrong": "The teacher encouraged the students ask questions.",
+      "focus": [
+        "encouraged",
+        "to ask"
+      ],
+      "note": "격려를 받은 학생들의 행동을 to ask로 연결하며 원형만 쓰지 않는다.",
+      "visual": "교사의 격려 표시에서 학생 질문 말풍선으로 화살표 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "선생님은 학생들에게 질문하도록 격려했어요.",
+          "actualStart": 68.04142966666669,
+          "actualEnd": 71.2198876666667,
+          "rate": 185,
+          "cacheKey": "e4940d70adf5c9028e2a4e28b4180a1bb8556599a2140338595ec5329f7b1ae0",
+          "file": "audio/11/example-5-ko-e4940d70adf5c902.wav",
+          "duration": 3.178458
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The teacher encouraged the students to ask questions.",
+          "actualStart": 71.56988766666669,
+          "actualEnd": 74.41478566666669,
+          "rate": 155,
+          "cacheKey": "5bf67ca55c70229a8f36c3ab8baad883f732cea8f5bc2d15dc488c29e76247d2",
+          "file": "audio/11/example-5-en-5bf67ca55c70229a.wav",
+          "duration": 2.844898
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "encouraged",
+            "actualStart": 72.17988766666669,
+            "actualEnd": 72.78988766666669
+          },
+          {
+            "text": "to ask",
+            "actualStart": 73.4698876666667,
+            "actualEnd": 73.58988766666668
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "The",
+          "start": 71.57988766666669,
+          "end": 71.64988766666669
+        },
+        {
+          "text": "teacher",
+          "start": 71.7498876666667,
+          "end": 72.17988766666669
+        },
+        {
+          "text": "encouraged",
+          "start": 72.17988766666669,
+          "end": 72.78988766666669
+        },
+        {
+          "text": "the",
+          "start": 72.87988766666669,
+          "end": 72.97988766666668
+        },
+        {
+          "text": "students",
+          "start": 72.97988766666668,
+          "end": 73.4698876666667
+        },
+        {
+          "text": "to",
+          "start": 73.4698876666667,
+          "end": 73.57988766666669
+        },
+        {
+          "text": "ask",
+          "start": 73.57988766666669,
+          "end": 73.58988766666668
+        },
+        {
+          "text": "questions.",
+          "start": 73.77988766666668,
+          "end": 74.26988766666669
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 75.96315600000001,
+      "end": 83.86506433333334,
+      "ko": "의사는 나에게 며칠 동안 쉬라고 경고했어요.",
+      "en": "The doctor warned me to rest for a few days.",
+      "wrong": "The doctor warned me rest for a few days.",
+      "focus": [
+        "warned me",
+        "to rest"
+      ],
+      "note": "경고·강한 주의의 내용을 warn 사람 to 동사로 연결한다.",
+      "visual": "의사의 주의 표지와 me의 휴식 행동을 to로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "의사는 나에게 며칠 동안 쉬라고 경고했어요.",
+          "actualStart": 76.16315600000001,
+          "actualEnd": 79.59780500000001,
+          "rate": 185,
+          "cacheKey": "98d446aec9b0b821aa4be01c673c708731c7edf0705510254e35eec2d177797e",
+          "file": "audio/11/example-6-ko-98d446aec9b0b821.wav",
+          "duration": 3.434649
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The doctor warned me to rest for a few days.",
+          "actualStart": 79.947805,
+          "actualEnd": 82.316694,
+          "rate": 155,
+          "cacheKey": "710cf9418645893068c91221a46739571344db51c52aa70396ec90c5ea9071a3",
+          "file": "audio/11/example-6-en-710cf94186458930.wav",
+          "duration": 2.368889
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "warned me",
+            "actualStart": 80.547805,
+            "actualEnd": 81.077805
+          },
+          {
+            "text": "to rest",
+            "actualStart": 81.077805,
+            "actualEnd": 81.467805
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "The",
+          "start": 79.95780500000001,
+          "end": 80.147805
+        },
+        {
+          "text": "doctor",
+          "start": 80.147805,
+          "end": 80.547805
+        },
+        {
+          "text": "warned",
+          "start": 80.547805,
+          "end": 80.87780500000001
+        },
+        {
+          "text": "me",
+          "start": 80.947805,
+          "end": 81.077805
+        },
+        {
+          "text": "to",
+          "start": 81.077805,
+          "end": 81.20780500000001
+        },
+        {
+          "text": "rest",
+          "start": 81.20780500000001,
+          "end": 81.467805
+        },
+        {
+          "text": "for",
+          "start": 81.467805,
+          "end": 81.557805
+        },
+        {
+          "text": "a",
+          "start": 81.667805,
+          "end": 81.727805
+        },
+        {
+          "text": "few",
+          "start": 81.727805,
+          "end": 81.927805
+        },
+        {
+          "text": "days.",
+          "start": 81.927805,
+          "end": 82.157805
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 83.86506433333334,
+      "end": 92.83635966666667,
+      "ko": "그녀는 우리에게 도서관에서 소음을 내지 말라고 부탁했어요.",
+      "en": "She asked us not to make noise in the library.",
+      "wrong": "She asked us not make noise in the library.",
+      "focus": [
+        "asked us",
+        "not to make"
+      ],
+      "note": "하지 말라는 요청은 ask 사람 not to 원형이며 to를 빼지 않는다.",
+      "visual": "not이 make noise 전체를 부정하는 괄호를 그리고 library 장소 칸 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 우리에게 도서관에서 소음을 내지 말라고 부탁했어요.",
+          "actualStart": 84.06506433333334,
+          "actualEnd": 88.44356733333333,
+          "rate": 185,
+          "cacheKey": "50d1e398176d12be38e7b970f2bd4928e02204e94f62a02f9531a4cebcdf8bc3",
+          "file": "audio/11/example-7-ko-50d1e398176d12be.wav",
+          "duration": 4.378503
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She asked us not to make noise in the library.",
+          "actualStart": 88.79356733333333,
+          "actualEnd": 91.28798933333333,
+          "rate": 155,
+          "cacheKey": "0dbd799f0c6e058cd02e35badf343678a4776e5ed293256b7554aa0b4eaffef5",
+          "file": "audio/11/example-7-en-0dbd799f0c6e058c.wav",
+          "duration": 2.494422
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "asked us",
+            "actualStart": 88.97356733333334,
+            "actualEnd": 89.40356733333333
+          },
+          {
+            "text": "not to make",
+            "actualStart": 89.40356733333333,
+            "actualEnd": 89.95356733333332
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "She",
+          "start": 88.84356733333333,
+          "end": 88.97356733333334
+        },
+        {
+          "text": "asked",
+          "start": 88.97356733333334,
+          "end": 89.15356733333333
+        },
+        {
+          "text": "us",
+          "start": 89.32356733333333,
+          "end": 89.40356733333333
+        },
+        {
+          "text": "not",
+          "start": 89.40356733333333,
+          "end": 89.58356733333333
+        },
+        {
+          "text": "to",
+          "start": 89.58356733333333,
+          "end": 89.70356733333332
+        },
+        {
+          "text": "make",
+          "start": 89.70356733333332,
+          "end": 89.95356733333332
+        },
+        {
+          "text": "noise",
+          "start": 89.95356733333332,
+          "end": 90.26356733333333
+        },
+        {
+          "text": "in",
+          "start": 90.26356733333333,
+          "end": 90.38356733333333
+        },
+        {
+          "text": "the",
+          "start": 90.38356733333333,
+          "end": 90.56356733333332
+        },
+        {
+          "text": "library.",
+          "start": 90.56356733333332,
+          "end": 90.99356733333333
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 92.83635966666667,
+      "end": 101.945932,
+      "ko": "안내자는 방문객들에게 동물에게 먹이를 주지 말라고 경고했어요.",
+      "en": "The guide warned visitors not to feed the animals.",
+      "wrong": "The guide warned visitors not feed the animals.",
+      "focus": [
+        "warned visitors",
+        "not to feed"
+      ],
+      "note": "경고의 부정 행동은 not to feed로 연결한다; warned visitors against feeding도 가능하다.",
+      "visual": "방문객 행동 칸에 not to feed 표시와 동물 먹이 금지 표지 연결.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "안내자는 방문객들에게 동물에게 먹이를 주지 말라고 경고했어요.",
+          "actualStart": 93.03635966666667,
+          "actualEnd": 97.53935266666667,
+          "rate": 185,
+          "cacheKey": "3d62b09d33ccd9dffd6dc5e88849c850b620150aeadd726c60076ba686bc36f9",
+          "file": "audio/11/example-8-ko-3d62b09d33ccd9df.wav",
+          "duration": 4.502993
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The guide warned visitors not to feed the animals.",
+          "actualStart": 97.88935266666667,
+          "actualEnd": 100.39756166666666,
+          "rate": 155,
+          "cacheKey": "358bb27cb6312aa81f66df3a5d25f4f7e1e6f3851278fb72d107e78c6644d1ed",
+          "file": "audio/11/example-8-en-358bb27cb6312aa8.wav",
+          "duration": 2.508209
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "warned visitors",
+            "actualStart": 98.34935266666666,
+            "actualEnd": 99.15935266666666
+          },
+          {
+            "text": "not to feed",
+            "actualStart": 99.15935266666666,
+            "actualEnd": 99.66935266666667
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "The",
+          "start": 97.89935266666667,
+          "end": 98.05935266666667
+        },
+        {
+          "text": "guide",
+          "start": 98.05935266666667,
+          "end": 98.34935266666666
+        },
+        {
+          "text": "warned",
+          "start": 98.34935266666666,
+          "end": 98.69935266666667
+        },
+        {
+          "text": "visitors",
+          "start": 98.69935266666667,
+          "end": 99.15935266666666
+        },
+        {
+          "text": "not",
+          "start": 99.15935266666666,
+          "end": 99.32935266666667
+        },
+        {
+          "text": "to",
+          "start": 99.32935266666667,
+          "end": 99.37935266666666
+        },
+        {
+          "text": "feed",
+          "start": 99.46935266666667,
+          "end": 99.66935266666667
+        },
+        {
+          "text": "the",
+          "start": 99.66935266666667,
+          "end": 99.83935266666667
+        },
+        {
+          "text": "animals.",
+          "start": 99.83935266666667,
+          "end": 100.21935266666667
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 101.945932,
+      "end": 111.06307833333334,
+      "ko": "우리 관리자는 직원들이 필요할 때 재택근무하도록 허락해요.",
+      "en": "Our manager allows employees to work from home when needed.",
+      "wrong": "Our manager allows employees work from home when needed.",
+      "focus": [
+        "allows employees",
+        "to work"
+      ],
+      "note": "행동 주체 employees 뒤에는 to work가 필요하며 원형 work만 붙이지 않는다.",
+      "visual": "허락 범위 안에 직원 재택근무 장면을 놓고 when needed 조건 띠 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리 관리자는 직원들이 필요할 때 재택근무하도록 허락해요.",
+          "actualStart": 102.145932,
+          "actualEnd": 106.149651,
+          "rate": 185,
+          "cacheKey": "d3f230170ae4b1df6b6f48fff3d442fcfd3c74d83f1c71db7db68abc4f718e31",
+          "file": "audio/11/example-9-ko-d3f230170ae4b1df.wav",
+          "duration": 4.003719
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Our manager allows employees to work from home when needed.",
+          "actualStart": 106.499651,
+          "actualEnd": 109.514708,
+          "rate": 155,
+          "cacheKey": "30d54827784370c59820d67bac901c7813853c8962383cff1b6c2e995cc90438",
+          "file": "audio/11/example-9-en-30d54827784370c5.wav",
+          "duration": 3.015057
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "allows employees",
+            "actualStart": 107.059651,
+            "actualEnd": 107.909651
+          },
+          {
+            "text": "to work",
+            "actualStart": 107.909651,
+            "actualEnd": 108.239651
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "Our",
+          "start": 106.509651,
+          "end": 106.669651
+        },
+        {
+          "text": "manager",
+          "start": 106.669651,
+          "end": 107.059651
+        },
+        {
+          "text": "allows",
+          "start": 107.059651,
+          "end": 107.399651
+        },
+        {
+          "text": "employees",
+          "start": 107.399651,
+          "end": 107.909651
+        },
+        {
+          "text": "to",
+          "start": 107.909651,
+          "end": 108.019651
+        },
+        {
+          "text": "work",
+          "start": 108.019651,
+          "end": 108.239651
+        },
+        {
+          "text": "from",
+          "start": 108.239651,
+          "end": 108.389651
+        },
+        {
+          "text": "home",
+          "start": 108.519651,
+          "end": 108.669651
+        },
+        {
+          "text": "when",
+          "start": 108.689651,
+          "end": 108.899651
+        },
+        {
+          "text": "needed.",
+          "start": 108.899651,
+          "end": 109.239651
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 111.06307833333334,
+      "end": 121.02648266666667,
+      "ko": "그 교육은 신입 직원들이 일을 더 안전하게 처리할 수 있게 했어요.",
+      "en": "The training enabled new employees to handle tasks more safely.",
+      "wrong": "The training enabled new employees handle tasks more safely.",
+      "focus": [
+        "enabled",
+        "to handle"
+      ],
+      "note": "교육의 효과로 가능해진 직원들의 행동을 to handle로 나타내며 more safely는 처리 방식이다.",
+      "visual": "교육 → 직원 → 안전한 업무 처리 연결, to handle과 방식 부사를 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 교육은 신입 직원들이 일을 더 안전하게 처리할 수 있게 했어요.",
+          "actualStart": 111.26307833333334,
+          "actualEnd": 115.57500533333334,
+          "rate": 185,
+          "cacheKey": "e59fbadc2c8bed76c1523badc9f4bc96886c0644d65a0b2d9c49218e218c551d",
+          "file": "audio/11/example-10-ko-e59fbadc2c8bed76.wav",
+          "duration": 4.311927
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The training enabled new employees to handle tasks more safely.",
+          "actualStart": 115.92500533333333,
+          "actualEnd": 119.47811233333333,
+          "rate": 155,
+          "cacheKey": "2f40b94d915435fc59877e2a7142950a835fc6e78c0659a96de0faa24b209e87",
+          "file": "audio/11/example-10-en-2f40b94d915435fc.wav",
+          "duration": 3.553107
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "enabled",
+            "actualStart": 116.63500533333332,
+            "actualEnd": 117.09500533333333
+          },
+          {
+            "text": "to handle",
+            "actualStart": 117.87500533333333,
+            "actualEnd": 118.39500533333333
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "The",
+          "start": 115.93500533333334,
+          "end": 116.07500533333334
+        },
+        {
+          "text": "training",
+          "start": 116.13500533333332,
+          "end": 116.63500533333332
+        },
+        {
+          "text": "enabled",
+          "start": 116.63500533333332,
+          "end": 117.09500533333333
+        },
+        {
+          "text": "new",
+          "start": 117.09500533333333,
+          "end": 117.26500533333333
+        },
+        {
+          "text": "employees",
+          "start": 117.35500533333334,
+          "end": 117.87500533333333
+        },
+        {
+          "text": "to",
+          "start": 117.87500533333333,
+          "end": 118.00500533333333
+        },
+        {
+          "text": "handle",
+          "start": 118.00500533333333,
+          "end": 118.39500533333333
+        },
+        {
+          "text": "tasks",
+          "start": 118.39500533333333,
+          "end": 118.72500533333333
+        },
+        {
+          "text": "more",
+          "start": 118.72500533333333,
+          "end": 118.94500533333333
+        },
+        {
+          "text": "safely.",
+          "start": 119.00500533333333,
+          "end": 119.40500533333334
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 121.02648266666667,
+      "end": 130,
+      "text": "목적어가 할 행동은 해당 동사의 결합에 맞춰 to부정사로 연결하고 부정은 보통 not to로 나타내세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "목적어가 할 행동은 해당 동사의 결합에 맞춰 to부정사로 연결하고 부정은 보통 not to로 나타내세요.",
+          "actualStart": 121.22648266666667,
+          "actualEnd": 128.70162966666666,
+          "rate": 185,
+          "cacheKey": "01e28f8dc119786f2037bcbace3757f4351112113380baa9eaf7b8a7ee1cfc5a",
+          "file": "audio/11/summary-ko-01e28f8dc119786f.wav",
+          "duration": 7.475147
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 119.524445,
+  "sourceHash": "4d84980396f8c1ad843ce7647c71c107f8768f600757d6b965494fb025605c43",
+  "audioFile": "audio/11/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "4d84980396f8c1ad843ce7647c71c107f8768f600757d6b965494fb025605c43",
+    "clipHashes": {
+      "example-1-en": "4de65c94a9c99eda1b3bcc2a6e918d4e2e5e710c5bf2d7dca9a9aa59de10c29f",
+      "example-2-en": "ead1a708d43309a0536981ac67c6f9d6654f2ed1f815ad42a954689aa77ea36a",
+      "example-3-en": "76a8b240fe40d2807090ed77fc5f96e5f736a0175357436aba2d76fd443828ae",
+      "example-4-en": "7598c91ae89f0e31a440facd4ff2abdf4b96f1656b677550e8df12fef42685fa",
+      "example-5-en": "c1542551eb660acf4def2724126ad5f4b6a229c6f2cf3cb7a8b6ddb420502fe2",
+      "example-6-en": "6797ab8db9b7f02721adff33445d156e99941502c5ee50e7bd33e80c183a7be9",
+      "example-7-en": "d7c1d206d520c95aaf673dc6687295e144cf13b6f94b0b8fadbb6942588bc3b7",
+      "example-8-en": "06b3d0e1a3459dae9ddf15047244ccde56d9a2f898cea2037f82ee70ceaebbe8",
+      "example-9-en": "6e92b85d79e572902d87a219f4b149cb6f122666e4bac0b8727c2be3ec1cf930",
+      "example-10-en": "615382c129f24f2831560700490df00148bc7040e11a52de868677dde511d17b"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

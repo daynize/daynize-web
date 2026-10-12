@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,760"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2760
+			},
+			"text": " Passengers must wear seat belts before departure.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998858,
+					"t_dtw": -1
+				},
+				{
+					"text": " Pass",
+					"timestamps": {
+						"from": "00:00:00,040",
+						"to": "00:00:00,240"
+					},
+					"offsets": {
+						"from": 40,
+						"to": 240
+					},
+					"id": 6251,
+					"p": 0.765808,
+					"t_dtw": -1
+				},
+				{
+					"text": "engers",
+					"timestamps": {
+						"from": "00:00:00,280",
+						"to": "00:00:00,630"
+					},
+					"offsets": {
+						"from": 280,
+						"to": 630
+					},
+					"id": 9302,
+					"p": 0.995158,
+					"t_dtw": -1
+				},
+				{
+					"text": " must",
+					"timestamps": {
+						"from": "00:00:00,630",
+						"to": "00:00:00,810"
+					},
+					"offsets": {
+						"from": 630,
+						"to": 810
+					},
+					"id": 1276,
+					"p": 0.991961,
+					"t_dtw": -1
+				},
+				{
+					"text": " wear",
+					"timestamps": {
+						"from": "00:00:00,880",
+						"to": "00:00:01,120"
+					},
+					"offsets": {
+						"from": 880,
+						"to": 1120
+					},
+					"id": 5806,
+					"p": 0.980079,
+					"t_dtw": -1
+				},
+				{
+					"text": " seat",
+					"timestamps": {
+						"from": "00:00:01,190",
+						"to": "00:00:01,310"
+					},
+					"offsets": {
+						"from": 1190,
+						"to": 1310
+					},
+					"id": 5852,
+					"p": 0.874953,
+					"t_dtw": -1
+				},
+				{
+					"text": " belts",
+					"timestamps": {
+						"from": "00:00:01,410",
+						"to": "00:00:01,640"
+					},
+					"offsets": {
+						"from": 1410,
+						"to": 1640
+					},
+					"id": 28617,
+					"p": 0.908403,
+					"t_dtw": -1
+				},
+				{
+					"text": " before",
+					"timestamps": {
+						"from": "00:00:01,740",
+						"to": "00:00:02,080"
+					},
+					"offsets": {
+						"from": 1740,
+						"to": 2080
+					},
+					"id": 878,
+					"p": 0.999247,
+					"t_dtw": -1
+				},
+				{
+					"text": " departure",
+					"timestamps": {
+						"from": "00:00:02,080",
+						"to": "00:00:02,700"
+					},
+					"offsets": {
+						"from": 2080,
+						"to": 2700
+					},
+					"id": 12928,
+					"p": 0.998341,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,760",
+						"to": "00:00:02,760"
+					},
+					"offsets": {
+						"from": 2760,
+						"to": 2760
+					},
+					"id": 13,
+					"p": 0.556368,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_138]",
+					"timestamps": {
+						"from": "00:00:02,760",
+						"to": "00:00:02,760"
+					},
+					"offsets": {
+						"from": 2760,
+						"to": 2760
+					},
+					"id": 50501,
+					"p": 0.195866,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

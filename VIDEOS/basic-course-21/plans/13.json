@@ -1,0 +1,656 @@
+{
+  "id": "basic-13",
+  "episode": 13,
+  "title": "직접 하는 대상과 영향을 받은 대상",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "분사는 명사의 모습이나 상태를 설명해요. 잠자는 아이처럼, 그 대상이 직접 하는 일을 나타낼 수 있죠.",
+      "screen": "a sleeping child / 아이가 잠자는 중",
+      "visual": "첫 예문의 아이에서 sleeping으로 능동 화살표 연결.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "분사는 명사의 모습이나 상태를 설명해요. 잠자는 아이처럼, 그 대상이 직접 하는 일을 나타낼 수 있죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "현재분사는 보통 직접 하는 동작을, 과거분사는 받은 작용이나 결과 상태를 보여 줘요.",
+      "screen": "하는 대상 / 작용을 받은 대상",
+      "visual": "아이의 동작과 깨진 창문의 결과를 두 열로 대조.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "현재분사는 보통 직접 하는 동작을, 과거분사는 받은 작용이나 결과 상태를 보여 줘요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "과거분사는 모두 이디로 끝나지 않아요. 깨진 창문의 브로큰처럼 불규칙 형태도 익혀야 해요.",
+      "screen": "break → broke → broken",
+      "visual": "원형·과거형·과거분사 세 칸에서 broken만 명사에 연결.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "과거분사는 모두 이디로 끝나지 않아요. 깨진 창문의 브로큰처럼 불규칙 형태도 익혀야 해요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "분사의 이름만 보고 현재와 과거를 결정하지 마세요. 명사와의 관계를 보고, 완료된 상태도 구분하세요.",
+      "screen": "시간 이름보다 명사와의 관계",
+      "visual": "첫 두 예문의 sleeping과 broken을 각각 동작·결과 상태에 연결.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "분사의 이름만 보고 현재와 과거를 결정하지 마세요. 명사와의 관계를 보고, 완료된 상태도 구분하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "우리는 잠자는 아이를 깨우지 않았어요.",
+      "en": "We did not wake the sleeping child.",
+      "wrong": "We did not wake the slept child.",
+      "focus": [
+        "sleeping",
+        "child"
+      ],
+      "note": "아이가 직접 자는 상태는 sleeping이며, slept를 이 명사 앞에 쓰지 않는다.",
+      "visual": "아이 → 잠자는 동작 화살표와 sleeping 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 잠자는 아이를 깨우지 않았어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We did not wake the sleeping child.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "sleeping",
+            "actualStart": null
+          },
+          {
+            "text": "child",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "그는 아침 식사 전에 깨진 창문을 고쳤어요.",
+      "en": "He fixed the broken window before breakfast.",
+      "wrong": "He fixed the broke window before breakfast.",
+      "focus": [
+        "broken",
+        "window"
+      ],
+      "note": "깨진 결과 상태에는 과거형 broke가 아니라 과거분사 broken을 쓴다.",
+      "visual": "창문에 작용이 들어온 뒤 broken 상태 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그는 아침 식사 전에 깨진 창문을 고쳤어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He fixed the broken window before breakfast.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "broken",
+            "actualStart": null
+          },
+          {
+            "text": "window",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "떨어지는 나뭇잎들이 좁은 길을 덮었어요.",
+      "en": "The falling leaves covered the narrow path.",
+      "wrong": "The fell leaves covered the narrow path.",
+      "focus": [
+        "falling",
+        "leaves"
+      ],
+      "note": "잎이 떨어지는 동작을 꾸미려면 falling이며, 과거형 fell은 쓸 수 없다.",
+      "visual": "아래로 움직이는 잎과 falling을 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "떨어지는 나뭇잎들이 좁은 길을 덮었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The falling leaves covered the narrow path.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "falling",
+            "actualStart": null
+          },
+          {
+            "text": "leaves",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "서면 지시가 새 직원들에게 도움이 되었어요.",
+      "en": "The written instructions helped the new staff.",
+      "wrong": "The wrote instructions helped the new staff.",
+      "focus": [
+        "written",
+        "instructions"
+      ],
+      "note": "글로 작성된 지시는 과거분사 written으로 꾸미며 wrote는 과거형이다.",
+      "visual": "종이에 기록된 지시와 written 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "서면 지시가 새 직원들에게 도움이 되었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The written instructions helped the new staff.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "written",
+            "actualStart": null
+          },
+          {
+            "text": "instructions",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "경찰은 어제 도난당한 자전거를 찾았어요.",
+      "en": "The police found the stolen bike yesterday.",
+      "wrong": "The police found the stole bike yesterday.",
+      "focus": [
+        "stolen",
+        "bike"
+      ],
+      "note": "도난의 영향을 받은 자전거에는 과거분사 stolen을 쓴다.",
+      "visual": "자전거로 향하는 수동 화살표와 stolen 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "경찰은 어제 도난당한 자전거를 찾았어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The police found the stolen bike yesterday.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "stolen",
+            "actualStart": null
+          },
+          {
+            "text": "bike",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "얼린 채소는 이 선반에서 더 오래 보관돼요.",
+      "en": "Frozen vegetables last longer on this shelf.",
+      "wrong": "Froze vegetables last longer on this shelf.",
+      "focus": [
+        "Frozen",
+        "vegetables"
+      ],
+      "note": "얼린 상태를 꾸미는 형태는 frozen이며 froze는 과거형이다.",
+      "visual": "채소의 얼린 상태와 freeze의 형태 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "얼린 채소는 이 선반에서 더 오래 보관돼요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Frozen vegetables last longer on this shelf.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "Frozen",
+            "actualStart": null
+          },
+          {
+            "text": "vegetables",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "떠오르는 해가 동쪽 하늘을 밝혔어요.",
+      "en": "The rising sun lit the eastern sky.",
+      "wrong": "The rise sun lit the eastern sky.",
+      "focus": [
+        "rising",
+        "sun"
+      ],
+      "note": "해가 직접 떠오르는 모습을 명사 앞에서 꾸밀 때 rising을 쓴다.",
+      "visual": "수평선에서 상승하는 해와 능동 방향 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "떠오르는 해가 동쪽 하늘을 밝혔어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The rising sun lit the eastern sky.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "rising",
+            "actualStart": null
+          },
+          {
+            "text": "sun",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "이미 떨어진 잎들이 땅 위에 가만히 놓여 있었어요.",
+      "en": "The fallen leaves lay motionless on the ground.",
+      "wrong": "The falling leaves lay motionless on the ground.",
+      "focus": [
+        "fallen",
+        "lay"
+      ],
+      "note": "falling도 문법적 분사지만 낙하 중이라는 뜻이다. 이미 떨어져 가만히 놓인 이 문맥에는 fallen이 맞다.",
+      "visual": "낙하 중인 잎과 땅에 멈춘 잎을 구분하고 후자 선택.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "이미 떨어진 잎들이 땅 위에 가만히 놓여 있었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The fallen leaves lay motionless on the ground.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "fallen",
+            "actualStart": null
+          },
+          {
+            "text": "lay",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "연필로 작성된 문서들은 읽기 어려워요.",
+      "en": "The documents written in pencil are hard to read.",
+      "wrong": "The documents wrote in pencil are hard to read.",
+      "focus": [
+        "written",
+        "documents"
+      ],
+      "note": "명사 뒤에서도 작성된 관계는 written으로 꾸민다. wrote는 이 자리의 분사가 아니다.",
+      "visual": "documents 뒤의 written in pencil을 한 묶음으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "연필로 작성된 문서들은 읽기 어려워요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The documents written in pencil are hard to read.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "written",
+            "actualStart": null
+          },
+          {
+            "text": "documents",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "그 팀이 선택한 디자인은 비용이 더 적게 들어요.",
+      "en": "The design chosen by the team costs less.",
+      "wrong": "The design chose by the team costs less.",
+      "focus": [
+        "chosen",
+        "design"
+      ],
+      "note": "선택된 디자인에는 과거분사 chosen을 쓰며, 선택한 주체는 by 뒤에 둔다.",
+      "visual": "팀 → 선택 → 디자인의 관계를 chosen by로 압축.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 팀이 선택한 디자인은 비용이 더 적게 들어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The design chosen by the team costs less.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "chosen",
+            "actualStart": null
+          },
+          {
+            "text": "design",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "명사가 직접 하는지 작용을 받았는지 살피고, 그 관계에 맞는 분사 형태를 고르세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "명사가 직접 하는지 작용을 받았는지 살피고, 그 관계에 맞는 분사 형태를 고르세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1270 @@
+{
+  "id": "basic-15",
+  "episode": 15,
+  "title": "받는 사람과 전달되는 물건",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 9.657460333333331,
+      "text": "수동태는 행동을 받은 대상을 주어로 세워요. 비동사 뒤에는 과거형이 아니라 과거분사를 놓습니다.",
+      "screen": "받은 대상 + be + 과거분사",
+      "visual": "첫 예문의 letter를 주어로 이동하고 was sent 연결.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "수동태는 행동을 받은 대상을 주어로 세워요. 비동사 뒤에는 과거형이 아니라 과거분사를 놓습니다.",
+          "actualStart": 0.2,
+          "actualEnd": 7.373152,
+          "rate": 185,
+          "cacheKey": "2070f78a6e860e8574f591bae19eef183a70fa1dbaee7660bbed22a4b4034836",
+          "file": "audio/15/concept-1-ko-2070f78a6e860e85.wav",
+          "duration": 7.173152
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 9.657460333333331,
+      "end": 19.29990966666666,
+      "text": "주는 동사는 받는 사람을 주어로 세울 수 있어요. 이때 전달한 물건은 동사 뒤에 그대로 남아요.",
+      "screen": "받는 사람 / was given / 물건",
+      "visual": "사람을 앞으로 이동하고 물건 칸은 뒤에 유지.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "주는 동사는 받는 사람을 주어로 세울 수 있어요. 이때 전달한 물건은 동사 뒤에 그대로 남아요.",
+          "actualStart": 9.85746033333333,
+          "actualEnd": 17.01560133333333,
+          "rate": 185,
+          "cacheKey": "44056b0eac787934b055f801ed5c6c4992d06ce683c7ffedf91780951ba4dace",
+          "file": "audio/15/concept-2-ko-44056b0eac787934.wav",
+          "duration": 7.158141
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 19.29990966666666,
+      "end": 28.62081699999999,
+      "text": "물건을 주어로 세우면 받는 사람은 투로 연결해요. 주다와 보여 주다는 두 구조를 비교할 수 있죠.",
+      "screen": "물건 / was given / to + 사람",
+      "visual": "사람 주어와 물건 주어의 구조를 두 줄로 대조.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "물건을 주어로 세우면 받는 사람은 투로 연결해요. 주다와 보여 주다는 두 구조를 비교할 수 있죠.",
+          "actualStart": 19.49990966666666,
+          "actualEnd": 26.33650866666666,
+          "rate": 185,
+          "cacheKey": "9fe63f0a5fccc3d9a8bea2e77c4e917431934fb7ef89c18cb67de835fc469950",
+          "file": "audio/15/concept-3-ko-9fe63f0a5fccc3d9.wav",
+          "duration": 6.836599
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 28.62081699999999,
+      "end": 38.54535233333333,
+      "text": "모든 사형식 동사가 같은 방식으로 바뀌지는 않아요. 사 주다는 물건을 주어로 두고 포로 연결하세요.",
+      "screen": "buy: 물건 + was bought + for + 사람",
+      "visual": "buy에서 물건 주어 경로를 강조하고 사람 주어는 일반화 금지 표시.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "모든 사형식 동사가 같은 방식으로 바뀌지는 않아요. 사 주다는 물건을 주어로 두고 포로 연결하세요.",
+          "actualStart": 28.82081699999999,
+          "actualEnd": 36.26104399999999,
+          "rate": 185,
+          "cacheKey": "fcf2875b1dd08a79a142e710eb2b81c4df3f6ca29dfbd637d3a56cb0762de59c",
+          "file": "audio/15/concept-4-ko-fcf2875b1dd08a79.wav",
+          "duration": 7.440227
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 38.54535233333333,
+      "end": 46.87283466666666,
+      "ko": "그 편지는 어제 우리 사무실로 발송되었어요.",
+      "en": "The letter was sent to our office yesterday.",
+      "wrong": "The letter was send to our office yesterday.",
+      "focus": [
+        "was",
+        "sent"
+      ],
+      "note": "수동태는 was와 과거분사 sent를 결합하며 원형 send를 쓰지 않는다.",
+      "visual": "letter → was sent와 도착지 to를 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 편지는 어제 우리 사무실로 발송되었어요.",
+          "actualStart": 38.74535233333333,
+          "actualEnd": 41.82861733333333,
+          "rate": 185,
+          "cacheKey": "77822a7c76a8a06d79742ea98572d12afb52e555e970e43a4672499c5dac76d2",
+          "file": "audio/15/example-1-ko-77822a7c76a8a06d.wav",
+          "duration": 3.083265
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The letter was sent to our office yesterday.",
+          "actualStart": 42.17861733333333,
+          "actualEnd": 44.33852633333333,
+          "rate": 155,
+          "cacheKey": "8b134bb3322887a4b25024589d051129f72ee735013ea0337e33b5468a22386f",
+          "file": "audio/15/example-1-en-8b134bb3322887a4.wav",
+          "duration": 2.159909
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was",
+            "actualStart": 42.758617333333326,
+            "actualEnd": 42.868617333333326
+          },
+          {
+            "text": "sent",
+            "actualStart": 42.868617333333326,
+            "actualEnd": 43.09861733333333
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "The",
+          "start": 42.188617333333326,
+          "end": 42.34861733333333
+        },
+        {
+          "text": "letter",
+          "start": 42.34861733333333,
+          "end": 42.658617333333325
+        },
+        {
+          "text": "was",
+          "start": 42.758617333333326,
+          "end": 42.868617333333326
+        },
+        {
+          "text": "sent",
+          "start": 42.868617333333326,
+          "end": 43.09861733333333
+        },
+        {
+          "text": "to",
+          "start": 43.09861733333333,
+          "end": 43.20861733333333
+        },
+        {
+          "text": "our",
+          "start": 43.20861733333333,
+          "end": 43.37861733333333
+        },
+        {
+          "text": "office",
+          "start": 43.37861733333333,
+          "end": 43.728617333333325
+        },
+        {
+          "text": "yesterday.",
+          "start": 43.728617333333325,
+          "end": 44.24861733333333
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 46.87283466666666,
+      "end": 55.38607699999999,
+      "ko": "그 창문은 어젯밤 폭풍 때문에 깨졌어요.",
+      "en": "The window was broken by the storm last night.",
+      "wrong": "The window was broke by the storm last night.",
+      "focus": [
+        "was",
+        "broken"
+      ],
+      "note": "과거형 broke가 아니라 과거분사 broken을 쓴다.",
+      "visual": "폭풍 → 창문 작용 화살표와 broken 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 창문은 어젯밤 폭풍 때문에 깨졌어요.",
+          "actualStart": 47.072834666666665,
+          "actualEnd": 50.086439666666664,
+          "rate": 185,
+          "cacheKey": "c7d868f93171eb02f57f9c1196d8afeeb64bb7d503ad0f6374e0f6d6bd088972",
+          "file": "audio/15/example-2-ko-c7d868f93171eb02.wav",
+          "duration": 3.013605
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The window was broken by the storm last night.",
+          "actualStart": 50.436439666666665,
+          "actualEnd": 52.851768666666665,
+          "rate": 155,
+          "cacheKey": "cd497861f52e931458eca701dda49c3bd55c66751fec15454f737d31175eb5ba",
+          "file": "audio/15/example-2-en-cd497861f52e9314.wav",
+          "duration": 2.415329
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was",
+            "actualStart": 50.98643966666666,
+            "actualEnd": 51.16643966666666
+          },
+          {
+            "text": "broken",
+            "actualStart": 51.16643966666666,
+            "actualEnd": 51.536439666666666
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "The",
+          "start": 50.44643966666666,
+          "end": 50.616439666666665
+        },
+        {
+          "text": "window",
+          "start": 50.616439666666665,
+          "end": 50.98643966666666
+        },
+        {
+          "text": "was",
+          "start": 50.98643966666666,
+          "end": 51.16643966666666
+        },
+        {
+          "text": "broken",
+          "start": 51.16643966666666,
+          "end": 51.536439666666666
+        },
+        {
+          "text": "by",
+          "start": 51.536439666666666,
+          "end": 51.656439666666664
+        },
+        {
+          "text": "the",
+          "start": 51.656439666666664,
+          "end": 51.826439666666666
+        },
+        {
+          "text": "storm",
+          "start": 51.91643966666666,
+          "end": 52.146439666666666
+        },
+        {
+          "text": "last",
+          "start": 52.146439666666666,
+          "end": 52.366439666666665
+        },
+        {
+          "text": "night.",
+          "start": 52.45643966666667,
+          "end": 52.73643966666666
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 55.38607699999999,
+      "end": 62.70049833333333,
+      "ko": "그 보고서는 매주 월요일에 점검돼요.",
+      "en": "The report is checked every Monday.",
+      "wrong": "The report checked every Monday.",
+      "focus": [
+        "is",
+        "checked"
+      ],
+      "note": "보고서가 점검을 받는 현재 수동태에는 is checked가 필요하다.",
+      "visual": "현재 반복 시간선 위에 is checked 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 보고서는 매주 월요일에 점검돼요.",
+          "actualStart": 55.586076999999996,
+          "actualEnd": 58.109069999999996,
+          "rate": 185,
+          "cacheKey": "92b58810616d97793cbc0e7e0652e6c5e2e7c2f313f6b2078150461ec52e7db0",
+          "file": "audio/15/example-3-ko-92b58810616d9779.wav",
+          "duration": 2.522993
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The report is checked every Monday.",
+          "actualStart": 58.45907,
+          "actualEnd": 60.16619,
+          "rate": 155,
+          "cacheKey": "4e3e0520744234d2e0dcef7db55807911cde748eef557fb6f8828825a9a757f0",
+          "file": "audio/15/example-3-en-4e3e0520744234d2.wav",
+          "duration": 1.70712
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "is",
+            "actualStart": 58.969069999999995,
+            "actualEnd": 59.04907
+          },
+          {
+            "text": "checked",
+            "actualStart": 59.13907,
+            "actualEnd": 59.47907
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "The",
+          "start": 58.469069999999995,
+          "end": 58.62907
+        },
+        {
+          "text": "report",
+          "start": 58.62907,
+          "end": 58.969069999999995
+        },
+        {
+          "text": "is",
+          "start": 58.969069999999995,
+          "end": 59.04907
+        },
+        {
+          "text": "checked",
+          "start": 59.13907,
+          "end": 59.47907
+        },
+        {
+          "text": "every",
+          "start": 59.47907,
+          "end": 59.759069999999994
+        },
+        {
+          "text": "Monday.",
+          "start": 59.759069999999994,
+          "end": 60.079069999999994
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 62.70049833333333,
+      "end": 69.79632566666666,
+      "ko": "나는 회의 후에 지도를 받았어요.",
+      "en": "I was given a map after the meeting.",
+      "wrong": "I was gave a map after the meeting.",
+      "focus": [
+        "was given",
+        "map"
+      ],
+      "note": "받는 사람을 주어로 두어도 물건 목적어는 남는다. gave가 아닌 given을 쓴다.",
+      "visual": "I를 주어 칸에, map을 남은 목적어 칸에 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 회의 후에 지도를 받았어요.",
+          "actualStart": 62.90049833333333,
+          "actualEnd": 65.03505633333333,
+          "rate": 185,
+          "cacheKey": "ec65947946259685b5219463834c11d71245c68137761d67a549ab0d4ac07ed8",
+          "file": "audio/15/example-4-ko-ec65947946259685.wav",
+          "duration": 2.134558
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I was given a map after the meeting.",
+          "actualStart": 65.38505633333332,
+          "actualEnd": 67.26201733333332,
+          "rate": 155,
+          "cacheKey": "437abe836ff252befa445e381afcf5cc82b6d9c711a8819c1cf53a9c730b27b8",
+          "file": "audio/15/example-4-en-437abe836ff252be.wav",
+          "duration": 1.876961
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was given",
+            "actualStart": 65.44505633333333,
+            "actualEnd": 65.95505633333332
+          },
+          {
+            "text": "map",
+            "actualStart": 66.01505633333332,
+            "actualEnd": 66.20505633333332
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "I",
+          "start": 65.39505633333333,
+          "end": 65.44505633333333
+        },
+        {
+          "text": "was",
+          "start": 65.44505633333333,
+          "end": 65.62505633333332
+        },
+        {
+          "text": "given",
+          "start": 65.73505633333332,
+          "end": 65.95505633333332
+        },
+        {
+          "text": "a",
+          "start": 65.95505633333332,
+          "end": 66.01505633333332
+        },
+        {
+          "text": "map",
+          "start": 66.01505633333332,
+          "end": 66.20505633333332
+        },
+        {
+          "text": "after",
+          "start": 66.20505633333332,
+          "end": 66.48505633333332
+        },
+        {
+          "text": "the",
+          "start": 66.56505633333333,
+          "end": 66.70505633333332
+        },
+        {
+          "text": "meeting.",
+          "start": 66.73505633333332,
+          "end": 67.17505633333333
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69.79632566666666,
+      "end": 77.951881,
+      "ko": "그 지도는 회의 후에 나에게 주어졌어요.",
+      "en": "The map was given to me after the meeting.",
+      "wrong": "The map was given me to after the meeting.",
+      "focus": [
+        "was given",
+        "to me"
+      ],
+      "note": "물건을 주어로 둔 이 구조에서는 받는 사람을 to me로 묶으며 전치사를 뒤집지 않는다.",
+      "visual": "map을 앞으로 이동하고 to me를 하나의 수신자 묶음으로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 지도는 회의 후에 나에게 주어졌어요.",
+          "actualStart": 69.99632566666666,
+          "actualEnd": 72.98893366666667,
+          "rate": 185,
+          "cacheKey": "643ed3fb3b36bf9af5381f433ff387a549e30f8fd518ebcdda4cab97c8d7894e",
+          "file": "audio/15/example-5-ko-643ed3fb3b36bf9a.wav",
+          "duration": 2.992608
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The map was given to me after the meeting.",
+          "actualStart": 73.33893366666666,
+          "actualEnd": 75.41757266666666,
+          "rate": 155,
+          "cacheKey": "a972201a161848cee7a21164421ed2cab80b0a4007c4016a845138d332dd8df8",
+          "file": "audio/15/example-5-en-a972201a161848ce.wav",
+          "duration": 2.078639
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was given",
+            "actualStart": 73.70893366666667,
+            "actualEnd": 74.17893366666667
+          },
+          {
+            "text": "to me",
+            "actualStart": 74.17893366666667,
+            "actualEnd": 74.41893366666666
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "The",
+          "start": 73.34893366666667,
+          "end": 73.51893366666667
+        },
+        {
+          "text": "map",
+          "start": 73.51893366666667,
+          "end": 73.62893366666667
+        },
+        {
+          "text": "was",
+          "start": 73.70893366666667,
+          "end": 73.82893366666666
+        },
+        {
+          "text": "given",
+          "start": 73.92893366666667,
+          "end": 74.17893366666667
+        },
+        {
+          "text": "to",
+          "start": 74.17893366666667,
+          "end": 74.29893366666666
+        },
+        {
+          "text": "me",
+          "start": 74.29893366666666,
+          "end": 74.41893366666666
+        },
+        {
+          "text": "after",
+          "start": 74.41893366666666,
+          "end": 74.62893366666667
+        },
+        {
+          "text": "the",
+          "start": 74.73893366666667,
+          "end": 74.89893366666666
+        },
+        {
+          "text": "meeting.",
+          "start": 74.89893366666666,
+          "end": 75.32893366666666
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77.951881,
+      "end": 86.06399033333334,
+      "ko": "우리는 가이드에게 출구 위치를 안내받았어요.",
+      "en": "We were shown the exit by the guide.",
+      "wrong": "We were show the exit by the guide.",
+      "focus": [
+        "were shown",
+        "exit"
+      ],
+      "note": "수동태에는 과거분사가 필요하므로 원형 show를 쓰지 않는다. shown이 일반적이며 showed도 과거분사로 인정된다.",
+      "visual": "가이드 → 우리 → 출구 연결에서 우리를 주어로 이동.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 가이드에게 출구 위치를 안내받았어요.",
+          "actualStart": 78.151881,
+          "actualEnd": 81.400997,
+          "rate": 185,
+          "cacheKey": "97aabfbe67c9b57fe826fac93cd297a733bf1956af17e8f542ec438506451193",
+          "file": "audio/15/example-6-ko-97aabfbe67c9b57f.wav",
+          "duration": 3.249116
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We were shown the exit by the guide.",
+          "actualStart": 81.750997,
+          "actualEnd": 83.529682,
+          "rate": 155,
+          "cacheKey": "f43e6264ab1727af431901b14a216bbea35ce15d26d2cd6a5fc3404320a2f237",
+          "file": "audio/15/example-6-en-f43e6264ab1727af.wav",
+          "duration": 1.778685
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were shown",
+            "actualStart": 81.870997,
+            "actualEnd": 82.410997
+          },
+          {
+            "text": "exit",
+            "actualStart": 82.580997,
+            "actualEnd": 82.760997
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "We",
+          "start": 81.760997,
+          "end": 81.870997
+        },
+        {
+          "text": "were",
+          "start": 81.870997,
+          "end": 82.10099699999999
+        },
+        {
+          "text": "shown",
+          "start": 82.110997,
+          "end": 82.410997
+        },
+        {
+          "text": "the",
+          "start": 82.410997,
+          "end": 82.580997
+        },
+        {
+          "text": "exit",
+          "start": 82.580997,
+          "end": 82.760997
+        },
+        {
+          "text": "by",
+          "start": 82.85099699999999,
+          "end": 82.950997
+        },
+        {
+          "text": "the",
+          "start": 82.950997,
+          "end": 83.110997
+        },
+        {
+          "text": "guide.",
+          "start": 83.150997,
+          "end": 83.440997
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 86.06399033333334,
+      "end": 94.31061166666667,
+      "ko": "그 출구는 가이드에 의해 우리에게 안내되었어요.",
+      "en": "The exit was shown to us by the guide.",
+      "wrong": "The exit was shown to we by the guide.",
+      "focus": [
+        "was shown",
+        "to us"
+      ],
+      "note": "물건 주어형에서 to 뒤의 대명사는 목적격 us이며 we가 아니다.",
+      "visual": "출구 주어와 to us 수신자, by 행위자를 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 출구는 가이드에 의해 우리에게 안내되었어요.",
+          "actualStart": 86.26399033333334,
+          "actualEnd": 89.41918333333334,
+          "rate": 185,
+          "cacheKey": "3c6ecce6605edc83b2badd8934e42cc7ce2de1c653ee48d86ae3f3fecd23fbd8",
+          "file": "audio/15/example-7-ko-3c6ecce6605edc83.wav",
+          "duration": 3.155193
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The exit was shown to us by the guide.",
+          "actualStart": 89.76918333333333,
+          "actualEnd": 91.77630333333333,
+          "rate": 155,
+          "cacheKey": "ad2f035ffdb8c3bf3e522cfdce225c00473f39284dd9a4fbdd37f5b9acd7a269",
+          "file": "audio/15/example-7-en-ad2f035ffdb8c3bf.wav",
+          "duration": 2.00712
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was shown",
+            "actualStart": 90.27918333333334,
+            "actualEnd": 90.76918333333333
+          },
+          {
+            "text": "to us",
+            "actualStart": 90.76918333333333,
+            "actualEnd": 90.96918333333333
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "The",
+          "start": 89.78918333333333,
+          "end": 89.96918333333333
+        },
+        {
+          "text": "exit",
+          "start": 89.96918333333333,
+          "end": 90.21918333333333
+        },
+        {
+          "text": "was",
+          "start": 90.27918333333334,
+          "end": 90.43918333333333
+        },
+        {
+          "text": "shown",
+          "start": 90.43918333333333,
+          "end": 90.76918333333333
+        },
+        {
+          "text": "to",
+          "start": 90.76918333333333,
+          "end": 90.89918333333333
+        },
+        {
+          "text": "us",
+          "start": 90.89918333333333,
+          "end": 90.96918333333333
+        },
+        {
+          "text": "by",
+          "start": 91.08918333333332,
+          "end": 91.15918333333333
+        },
+        {
+          "text": "the",
+          "start": 91.15918333333333,
+          "end": 91.34918333333333
+        },
+        {
+          "text": "guide.",
+          "start": 91.38918333333334,
+          "end": 91.66918333333334
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94.31061166666667,
+      "end": 103.95433100000001,
+      "ko": "그 빨간 자전거는 내 생일 선물로 나를 위해 구매되었어요.",
+      "en": "The red bike was bought for me as a birthday gift.",
+      "wrong": "The red bike was bought to me as a birthday gift.",
+      "focus": [
+        "was bought",
+        "for me"
+      ],
+      "note": "나를 위한 구매라는 수혜 의미는 for me다. buy를 give처럼 to로 연결하지 않는다.",
+      "visual": "구매한 자전거 → 수혜자 for me 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 빨간 자전거는 내 생일 선물로 나를 위해 구매되었어요.",
+          "actualStart": 94.51061166666668,
+          "actualEnd": 98.60825366666667,
+          "rate": 185,
+          "cacheKey": "bf35d3d7d181d5b50e1620e84c39b0b6bf1f448e92be0306be52c016ef26e23c",
+          "file": "audio/15/example-8-ko-bf35d3d7d181d5b5.wav",
+          "duration": 4.097642
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The red bike was bought for me as a birthday gift.",
+          "actualStart": 98.95825366666666,
+          "actualEnd": 101.42002266666667,
+          "rate": 155,
+          "cacheKey": "e94afc53da4f771811105e73dd511adb19e49c2aa348caa1516911aed3b48f36",
+          "file": "audio/15/example-8-en-e94afc53da4f7718.wav",
+          "duration": 2.461769
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was bought",
+            "actualStart": 99.55825366666666,
+            "actualEnd": 100.09825366666666
+          },
+          {
+            "text": "for me",
+            "actualStart": 100.09825366666666,
+            "actualEnd": 100.36825366666666
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "The",
+          "start": 98.96825366666667,
+          "end": 99.13825366666667
+        },
+        {
+          "text": "red",
+          "start": 99.13825366666667,
+          "end": 99.31825366666666
+        },
+        {
+          "text": "bike",
+          "start": 99.31825366666666,
+          "end": 99.47825366666666
+        },
+        {
+          "text": "was",
+          "start": 99.55825366666666,
+          "end": 99.67825366666666
+        },
+        {
+          "text": "bought",
+          "start": 99.78825366666666,
+          "end": 100.09825366666666
+        },
+        {
+          "text": "for",
+          "start": 100.09825366666666,
+          "end": 100.27825366666666
+        },
+        {
+          "text": "me",
+          "start": 100.27825366666666,
+          "end": 100.36825366666666
+        },
+        {
+          "text": "as",
+          "start": 100.40825366666667,
+          "end": 100.50825366666666
+        },
+        {
+          "text": "a",
+          "start": 100.55825366666666,
+          "end": 100.57825366666667
+        },
+        {
+          "text": "birthday",
+          "start": 100.57825366666667,
+          "end": 101.06825366666666
+        },
+        {
+          "text": "gift.",
+          "start": 101.06825366666666,
+          "end": 101.24825366666667
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 103.95433100000001,
+      "end": 111.51183633333335,
+      "ko": "그 아이들을 위해 새 신발이 구매되었어요.",
+      "en": "New shoes were bought for the children.",
+      "wrong": "New shoes were buy for the children.",
+      "focus": [
+        "were bought",
+        "for"
+      ],
+      "note": "buy의 수동태는 were bought이며, 물건 주어 뒤에 for로 수혜자를 연결한다.",
+      "visual": "신발 주어, were bought, for children 세 칸 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 아이들을 위해 새 신발이 구매되었어요.",
+          "actualStart": 104.15433100000001,
+          "actualEnd": 106.82136000000001,
+          "rate": 185,
+          "cacheKey": "12e0a350a6738bf523b4e143576b4e1efee3c37db5e6fa1318b0592afcfdfe95",
+          "file": "audio/15/example-9-ko-12e0a350a6738bf5.wav",
+          "duration": 2.667029
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "New shoes were bought for the children.",
+          "actualStart": 107.17136,
+          "actualEnd": 108.977528,
+          "rate": 155,
+          "cacheKey": "34dd831f7589603dadb67df72e1246c9258a25e88485a204a1403fc262f1f134",
+          "file": "audio/15/example-9-en-34dd831f7589603d.wav",
+          "duration": 1.806168
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were bought",
+            "actualStart": 107.60136000000001,
+            "actualEnd": 108.14136
+          },
+          {
+            "text": "for",
+            "actualStart": 108.14136,
+            "actualEnd": 108.30136
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "New",
+          "start": 107.18136000000001,
+          "end": 107.33136
+        },
+        {
+          "text": "shoes",
+          "start": 107.33136,
+          "end": 107.60136000000001
+        },
+        {
+          "text": "were",
+          "start": 107.60136000000001,
+          "end": 107.82136000000001
+        },
+        {
+          "text": "bought",
+          "start": 107.82136000000001,
+          "end": 108.14136
+        },
+        {
+          "text": "for",
+          "start": 108.14136,
+          "end": 108.30136
+        },
+        {
+          "text": "the",
+          "start": 108.30136,
+          "end": 108.46136000000001
+        },
+        {
+          "text": "children.",
+          "start": 108.46136000000001,
+          "end": 108.90136000000001
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 111.51183633333335,
+      "end": 120.40058966666668,
+      "ko": "각 손님에게 도착하자마자 방 열쇠가 주어졌어요.",
+      "en": "Each guest was given a room key on arrival.",
+      "wrong": "Each guest were given a room key on arrival.",
+      "focus": [
+        "was given",
+        "key"
+      ],
+      "note": "each guest는 단수여서 was를 쓴다. 사람 주어 수동태에서도 room key는 남을 수 있다.",
+      "visual": "각 손님 한 명을 단수 표시하고 뒤의 열쇠 목적어 유지.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "각 손님에게 도착하자마자 방 열쇠가 주어졌어요.",
+          "actualStart": 111.71183633333335,
+          "actualEnd": 115.30108833333335,
+          "rate": 185,
+          "cacheKey": "48837d33ed5d46ff9baeb61985990f3ff37af1c6a971487be09e3923a7063da6",
+          "file": "audio/15/example-10-ko-48837d33ed5d46ff.wav",
+          "duration": 3.589252
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Each guest was given a room key on arrival.",
+          "actualStart": 115.65108833333335,
+          "actualEnd": 117.86628133333335,
+          "rate": 155,
+          "cacheKey": "3f2cb831c038f15cd4e64a44b844640485b77579dd6810b123d3456de4cc5422",
+          "file": "audio/15/example-10-en-3f2cb831c038f15c.wav",
+          "duration": 2.215193
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was given",
+            "actualStart": 116.21108833333335,
+            "actualEnd": 116.71108833333335
+          },
+          {
+            "text": "key",
+            "actualStart": 117.03108833333334,
+            "actualEnd": 117.21108833333335
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "Each",
+          "start": 115.65108833333335,
+          "end": 115.83108833333335
+        },
+        {
+          "text": "guest",
+          "start": 115.90108833333335,
+          "end": 116.21108833333335
+        },
+        {
+          "text": "was",
+          "start": 116.21108833333335,
+          "end": 116.40108833333335
+        },
+        {
+          "text": "given",
+          "start": 116.40108833333335,
+          "end": 116.71108833333335
+        },
+        {
+          "text": "a",
+          "start": 116.71108833333335,
+          "end": 116.77108833333335
+        },
+        {
+          "text": "room",
+          "start": 116.77108833333335,
+          "end": 116.94108833333335
+        },
+        {
+          "text": "key",
+          "start": 117.03108833333334,
+          "end": 117.21108833333335
+        },
+        {
+          "text": "on",
+          "start": 117.21108833333335,
+          "end": 117.33108833333335
+        },
+        {
+          "text": "arrival.",
+          "start": 117.33108833333335,
+          "end": 117.78108833333334
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 120.40058966666668,
+      "end": 130,
+      "text": "수동태는 비동사와 과거분사로 만들고, 두 목적어의 전환 가능성은 동사별로 확인하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "수동태는 비동사와 과거분사로 만들고, 두 목적어의 전환 가능성은 동사별로 확인하세요.",
+          "actualStart": 120.60058966666668,
+          "actualEnd": 127.71569166666669,
+          "rate": 185,
+          "cacheKey": "acb1fa9d094b176d0d552b22850cf73887197a0f5f279de49d33d597078b1f69",
+          "file": "audio/15/summary-ko-acb1fa9d094b176d.wav",
+          "duration": 7.115102
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 104.73537500000002,
+  "sourceHash": "e68c5dcaa200c4ea4c9f08d87c72c633d61d243bafa778206cb39aa94d1ffd36",
+  "audioFile": "audio/15/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "e68c5dcaa200c4ea4c9f08d87c72c633d61d243bafa778206cb39aa94d1ffd36",
+    "clipHashes": {
+      "example-1-en": "be45169b46ebe361f5dcfa8d017f289707311272aaa309a8d0d45213f245e94e",
+      "example-2-en": "a27bb9e3677b2511fa64bfe0fedaaff2c29fad9ed0847028849fc52e2451d56d",
+      "example-3-en": "076b1381112f11d5e8ef982219a1d1777bd1b65fbb0c9200bb0a78ee39e79108",
+      "example-4-en": "f5910ff3d269a4c2c2f20e212e8c985be02ff852d51b2600ed033d00aaa2e339",
+      "example-5-en": "fd06085492653c3d473785ee4aad3c52d29b941f0ab9568a13bf0db8bdb0653f",
+      "example-6-en": "4b46331548fafc39b779fd344e5e50e50b3f8d3544f46c87fb89c553fdb7868d",
+      "example-7-en": "3c90b485f89c18c9e440d2d89cd610cc642915052df8e4253c0a8931cc2404ac",
+      "example-8-en": "11530a83713b68e1535d9c8d9eaac00eb131e42e8e7a03c8f06cf1f2e3dd2cc7",
+      "example-9-en": "50a2c0bd61ec5804b2df5f644516a9a1f504f8d28d8682ad8ac435ff4da5bdcf",
+      "example-10-en": "aa8a064119f7a07db98dc75474a075d913775ce5f902912b864da2c6e3a70d28"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

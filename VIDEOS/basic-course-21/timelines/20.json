@@ -1,0 +1,1360 @@
+{
+  "id": "basic-20",
+  "episode": 20,
+  "title": "지금의 가정과 과거의 가정을 나누기",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 9.714497133333335,
+      "text": "실제와 다른 상황을 가정할 때는 시간부터 나눠요. 지금 다른 상황인지, 이미 지난 일을 바꾸는지 보세요.",
+      "screen": "지금의 반사실 / 과거의 반사실",
+      "visual": "현재 지점과 지나간 지점을 두 시간선으로 분리.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "실제와 다른 상황을 가정할 때는 시간부터 나눠요. 지금 다른 상황인지, 이미 지난 일을 바꾸는지 보세요.",
+          "actualStart": 0.2,
+          "actualEnd": 7.766848,
+          "rate": 185,
+          "cacheKey": "353893fb3af226b51bed231c8e4193c2b1c866bc83057cdf150f9c5b79085827",
+          "file": "audio/20/concept-1-ko-353893fb3af226b5.wav",
+          "duration": 7.566848
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 9.714497133333335,
+      "end": 19.11040026666667,
+      "text": "지금의 반사실은 이프절에 과거형을 써요. 결과는 우드와 원형으로 나타내며, 비동사는 워를 쓸 수 있죠.",
+      "screen": "if + 과거형 / would + 원형",
+      "visual": "첫 예문의 were와 would buy를 현재 가정 선에 연결.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "지금의 반사실은 이프절에 과거형을 써요. 결과는 우드와 원형으로 나타내며, 비동사는 워를 쓸 수 있죠.",
+          "actualStart": 9.914497133333334,
+          "actualEnd": 17.162751133333334,
+          "rate": 185,
+          "cacheKey": "490b05b65d2efd208dc3a9a8114d4c42186486baaf987cbe0d6bc50e00c609fe",
+          "file": "audio/20/concept-2-ko-490b05b65d2efd20.wav",
+          "duration": 7.248254
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 19.11040026666667,
+      "end": 27.921995400000004,
+      "text": "지난 일의 반사실은 이프절에 해드와 과거분사를 써요. 결과도 우드 해브와 과거분사로 맞춥니다.",
+      "screen": "if + had + 과거분사 / would have + 과거분사",
+      "visual": "과거 원인과 실현되지 않은 과거 결과를 연결.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "지난 일의 반사실은 이프절에 해드와 과거분사를 써요. 결과도 우드 해브와 과거분사로 맞춥니다.",
+          "actualStart": 19.31040026666667,
+          "actualEnd": 25.974346266666668,
+          "rate": 185,
+          "cacheKey": "c2c8e851f1438e3df89e13032c502f0d6ce9b9d9a20cbf0fb796519d99078d8c",
+          "file": "audio/20/concept-3-ko-c2c8e851f1438e3d.wav",
+          "duration": 6.663946
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 27.921995400000004,
+      "end": 36.93599353333334,
+      "text": "쿠드는 할 수 있었을 가능성이나 능력을 나타내요. 우드와 뜻이 같지는 않으며, 문맥에 맞춰 고르세요.",
+      "screen": "would: 예상 결과 / could: 능력·가능성",
+      "visual": "결과 경로와 가능한 선택지 경로를 구분.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "쿠드는 할 수 있었을 가능성이나 능력을 나타내요. 우드와 뜻이 같지는 않으며, 문맥에 맞춰 고르세요.",
+          "actualStart": 28.121995400000003,
+          "actualEnd": 34.9883444,
+          "rate": 185,
+          "cacheKey": "5e1b8fd2bde9c44e4c07720a18a38adc8a00cdb3408340b2290b0362e849d21b",
+          "file": "audio/20/concept-4-ko-5e1b8fd2bde9c44e.wav",
+          "duration": 6.866349
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 36.93599353333334,
+      "end": 45.39171566666667,
+      "ko": "내가 지금 부자라면 더 큰 집을 살 텐데요.",
+      "en": "If I were rich now, I would buy a bigger house.",
+      "wrong": "If I were rich now, I would bought a bigger house.",
+      "focus": [
+        "were",
+        "would buy"
+      ],
+      "note": "현재 반사실 결과에서 would 뒤에는 원형 buy를 쓰며 과거형 bought를 쓰지 않는다.",
+      "visual": "현재의 실제와 부자인 가정 경로를 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "내가 지금 부자라면 더 큰 집을 살 텐데요.",
+          "actualStart": 37.13599353333334,
+          "actualEnd": 40.16515453333334,
+          "rate": 185,
+          "cacheKey": "cb8954ce1c510e6e1642b2d118a4c323d4c54cdd36237df702d8efe47361652f",
+          "file": "audio/20/example-1-ko-cb8954ce1c510e6e.wav",
+          "duration": 3.029161
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If I were rich now, I would buy a bigger house.",
+          "actualStart": 40.515154533333344,
+          "actualEnd": 43.19406653333334,
+          "rate": 155,
+          "cacheKey": "c896436a571b3afcdcca4e136e79b29a47812e9b68b542b9acd076426514a975",
+          "file": "audio/20/example-1-en-c896436a571b3afc.wav",
+          "duration": 2.678912
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were",
+            "actualStart": 40.75515453333335,
+            "actualEnd": 41.07515453333335
+          },
+          {
+            "text": "would buy",
+            "actualStart": 41.88515453333334,
+            "actualEnd": 42.39515453333335
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "If",
+          "start": 40.515154533333344,
+          "end": 40.67515453333334
+        },
+        {
+          "text": "I",
+          "start": 40.67515453333334,
+          "end": 40.75515453333335
+        },
+        {
+          "text": "were",
+          "start": 40.75515453333335,
+          "end": 41.07515453333335
+        },
+        {
+          "text": "rich",
+          "start": 41.07515453333335,
+          "end": 41.39515453333335
+        },
+        {
+          "text": "now,",
+          "start": 41.39515453333335,
+          "end": 41.57515453333335
+        },
+        {
+          "text": "I",
+          "start": 41.835154533333345,
+          "end": 41.88515453333334
+        },
+        {
+          "text": "would",
+          "start": 41.88515453333334,
+          "end": 42.23515453333334
+        },
+        {
+          "text": "buy",
+          "start": 42.23515453333334,
+          "end": 42.39515453333335
+        },
+        {
+          "text": "a",
+          "start": 42.45515453333334,
+          "end": 42.515154533333344
+        },
+        {
+          "text": "bigger",
+          "start": 42.515154533333344,
+          "end": 42.935154533333346
+        },
+        {
+          "text": "house.",
+          "start": 42.935154533333346,
+          "end": 43.02515453333334
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 45.39171566666667,
+      "end": 53.322312800000006,
+      "ko": "지금 시간이 더 있다면 너를 도울 텐데요.",
+      "en": "If I had more time now, I would help you.",
+      "wrong": "If I had more time now, I would helps you.",
+      "focus": [
+        "had",
+        "would help"
+      ],
+      "note": "현재의 가정에서 had는 have의 과거형이다. would 뒤의 help에는 s를 붙이지 않는다.",
+      "visual": "현재 가정의 had와 원형 help를 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "지금 시간이 더 있다면 너를 도울 텐데요.",
+          "actualStart": 45.59171566666667,
+          "actualEnd": 48.29312166666667,
+          "rate": 185,
+          "cacheKey": "a4c4cb220a854d75c57ddeaec7dcb3a10a66509945d0f29162eefd16221fd69f",
+          "file": "audio/20/example-2-ko-a4c4cb220a854d75.wav",
+          "duration": 2.701406
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If I had more time now, I would help you.",
+          "actualStart": 48.64312166666667,
+          "actualEnd": 51.12466366666667,
+          "rate": 155,
+          "cacheKey": "740d88ff61b5469cc57daa9d93a1ef1b888b695f0930f79714f65de3dda3beab",
+          "file": "audio/20/example-2-en-740d88ff61b5469c.wav",
+          "duration": 2.481542
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had",
+            "actualStart": 48.883121666666675,
+            "actualEnd": 49.093121666666676
+          },
+          {
+            "text": "would help",
+            "actualStart": 50.28312166666667,
+            "actualEnd": 50.883121666666675
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "If",
+          "start": 48.64312166666667,
+          "end": 48.80312166666667
+        },
+        {
+          "text": "I",
+          "start": 48.80312166666667,
+          "end": 48.883121666666675
+        },
+        {
+          "text": "had",
+          "start": 48.883121666666675,
+          "end": 49.093121666666676
+        },
+        {
+          "text": "more",
+          "start": 49.12312166666667,
+          "end": 49.453121666666675
+        },
+        {
+          "text": "time",
+          "start": 49.453121666666675,
+          "end": 49.78312166666667
+        },
+        {
+          "text": "now,",
+          "start": 49.78312166666667,
+          "end": 49.97312166666667
+        },
+        {
+          "text": "I",
+          "start": 50.233121666666676,
+          "end": 50.28312166666667
+        },
+        {
+          "text": "would",
+          "start": 50.28312166666667,
+          "end": 50.61312166666667
+        },
+        {
+          "text": "help",
+          "start": 50.61312166666667,
+          "end": 50.883121666666675
+        },
+        {
+          "text": "you.",
+          "start": 50.883121666666675,
+          "end": 51.04312166666667
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 53.322312800000006,
+      "end": 61.27336293333334,
+      "ko": "그녀가 지금 여기 있다면 답을 알 텐데요.",
+      "en": "If she were here now, she would know the answer.",
+      "wrong": "If she were here now, she would knows the answer.",
+      "focus": [
+        "were",
+        "would know"
+      ],
+      "note": "주어가 she여도 would 뒤에는 원형 know를 쓴다. 반사실 be에 were가 가능하다.",
+      "visual": "she 주어와 조동사 뒤 원형 자리를 따로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀가 지금 여기 있다면 답을 알 텐데요.",
+          "actualStart": 53.52231280000001,
+          "actualEnd": 56.20934180000001,
+          "rate": 185,
+          "cacheKey": "9cc8f06eea0f7a921dda0ce697eab4d83784f2366900641c281c5807b4c1e73b",
+          "file": "audio/20/example-3-ko-9cc8f06eea0f7a92.wav",
+          "duration": 2.687029
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If she were here now, she would know the answer.",
+          "actualStart": 56.55934180000001,
+          "actualEnd": 59.07571380000001,
+          "rate": 155,
+          "cacheKey": "cc1788e9b3c4f4465ead98dda0eb4223719a9206d6b6daf431415789c7cd7ccb",
+          "file": "audio/20/example-3-en-cc1788e9b3c4f446.wav",
+          "duration": 2.516372
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were",
+            "actualStart": 56.91934180000001,
+            "actualEnd": 57.20934180000001
+          },
+          {
+            "text": "would know",
+            "actualStart": 58.049341800000015,
+            "actualEnd": 58.549341800000015
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "If",
+          "start": 56.55934180000001,
+          "end": 56.69934180000001
+        },
+        {
+          "text": "she",
+          "start": 56.69934180000001,
+          "end": 56.91934180000001
+        },
+        {
+          "text": "were",
+          "start": 56.91934180000001,
+          "end": 57.20934180000001
+        },
+        {
+          "text": "here",
+          "start": 57.20934180000001,
+          "end": 57.48934180000001
+        },
+        {
+          "text": "now,",
+          "start": 57.48934180000001,
+          "end": 57.60934180000001
+        },
+        {
+          "text": "she",
+          "start": 57.88934180000001,
+          "end": 58.049341800000015
+        },
+        {
+          "text": "would",
+          "start": 58.049341800000015,
+          "end": 58.329341800000016
+        },
+        {
+          "text": "know",
+          "start": 58.329341800000016,
+          "end": 58.549341800000015
+        },
+        {
+          "text": "the",
+          "start": 58.549341800000015,
+          "end": 58.71934180000001
+        },
+        {
+          "text": "answer.",
+          "start": 58.71934180000001,
+          "end": 58.99934180000001
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61.27336293333334,
+      "end": 69.70545706666667,
+      "ko": "내가 일찍 떠났더라면 기차를 탔을 텐데요.",
+      "en": "If I had left early, I would have caught the train.",
+      "wrong": "If I had left early, I would have catch the train.",
+      "focus": [
+        "had left",
+        "would have caught"
+      ],
+      "note": "과거 반사실 결과는 would have 뒤에 과거분사 caught를 쓴다.",
+      "visual": "과거 출발과 놓친 기차의 대체 결과를 시간선에 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "내가 일찍 떠났더라면 기차를 탔을 텐데요.",
+          "actualStart": 61.47336293333334,
+          "actualEnd": 64.60660593333334,
+          "rate": 185,
+          "cacheKey": "2368b64270974eafdc15e7d95561051887121be666dd4150203d928e5f9f192d",
+          "file": "audio/20/example-4-ko-2368b64270974eaf.wav",
+          "duration": 3.133243
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If I had left early, I would have caught the train.",
+          "actualStart": 64.95660593333334,
+          "actualEnd": 67.50780793333334,
+          "rate": 155,
+          "cacheKey": "8883665f50f4f3b33dc7d6f5353b2a8c8eb193ae54e8081724faea5a34e7c4d5",
+          "file": "audio/20/example-4-en-8883665f50f4f3b3.wav",
+          "duration": 2.551202
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had left",
+            "actualStart": 65.17660593333333,
+            "actualEnd": 65.69660593333333
+          },
+          {
+            "text": "would have caught",
+            "actualStart": 66.28660593333333,
+            "actualEnd": 67.01660593333334
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "If",
+          "start": 64.95660593333334,
+          "end": 65.03660593333333
+        },
+        {
+          "text": "I",
+          "start": 65.10660593333334,
+          "end": 65.17660593333333
+        },
+        {
+          "text": "had",
+          "start": 65.17660593333333,
+          "end": 65.39660593333333
+        },
+        {
+          "text": "left",
+          "start": 65.39660593333333,
+          "end": 65.69660593333333
+        },
+        {
+          "text": "early,",
+          "start": 65.69660593333333,
+          "end": 66.00660593333333
+        },
+        {
+          "text": "I",
+          "start": 66.26660593333334,
+          "end": 66.28660593333333
+        },
+        {
+          "text": "would",
+          "start": 66.28660593333333,
+          "end": 66.53660593333333
+        },
+        {
+          "text": "have",
+          "start": 66.53660593333333,
+          "end": 66.73660593333334
+        },
+        {
+          "text": "caught",
+          "start": 66.73660593333334,
+          "end": 67.01660593333334
+        },
+        {
+          "text": "the",
+          "start": 67.07660593333334,
+          "end": 67.18660593333334
+        },
+        {
+          "text": "train.",
+          "start": 67.18660593333334,
+          "end": 67.43660593333334
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69.70545706666667,
+      "end": 78.0435372,
+      "ko": "공부했더라면 시험에 합격했을 텐데요.",
+      "en": "If I had studied, I would have passed the exam.",
+      "wrong": "If I had study, I would have passed the exam.",
+      "focus": [
+        "had studied",
+        "would have passed"
+      ],
+      "note": "과거 반사실의 if절은 had와 과거분사 studied를 결합한다.",
+      "visual": "had 뒤 과거분사 칸과 결과 passed 칸을 대응.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "공부했더라면 시험에 합격했을 텐데요.",
+          "actualStart": 69.90545706666667,
+          "actualEnd": 72.82858606666667,
+          "rate": 185,
+          "cacheKey": "08cf54a3cf3872861bd202fc33b13b3ff437ec25b43af8324590abe2bdc6756a",
+          "file": "audio/20/example-5-ko-08cf54a3cf387286.wav",
+          "duration": 2.923129
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If I had studied, I would have passed the exam.",
+          "actualStart": 73.17858606666667,
+          "actualEnd": 75.84588806666667,
+          "rate": 155,
+          "cacheKey": "40c6e49b0b2d1f066bbf363d832d9093a9dc74b3d944c760c2073e8f05137093",
+          "file": "audio/20/example-5-en-40c6e49b0b2d1f06.wav",
+          "duration": 2.667302
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had studied",
+            "actualStart": 73.39858606666667,
+            "actualEnd": 74.09858606666667
+          },
+          {
+            "text": "would have passed",
+            "actualStart": 74.41858606666666,
+            "actualEnd": 75.34858606666667
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "If",
+          "start": 73.17858606666667,
+          "end": 73.25858606666667
+        },
+        {
+          "text": "I",
+          "start": 73.32858606666667,
+          "end": 73.39858606666667
+        },
+        {
+          "text": "had",
+          "start": 73.39858606666667,
+          "end": 73.62858606666667
+        },
+        {
+          "text": "studied,",
+          "start": 73.62858606666667,
+          "end": 74.09858606666667
+        },
+        {
+          "text": "I",
+          "start": 74.36858606666667,
+          "end": 74.41858606666666
+        },
+        {
+          "text": "would",
+          "start": 74.41858606666666,
+          "end": 74.68858606666667
+        },
+        {
+          "text": "have",
+          "start": 74.82858606666667,
+          "end": 74.97858606666667
+        },
+        {
+          "text": "passed",
+          "start": 74.97858606666667,
+          "end": 75.34858606666667
+        },
+        {
+          "text": "the",
+          "start": 75.34858606666667,
+          "end": 75.52858606666666
+        },
+        {
+          "text": "exam.",
+          "start": 75.52858606666666,
+          "end": 75.77858606666666
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 78.0435372,
+      "end": 86.61717333333334,
+      "ko": "비가 오지 않았더라면 우리는 밖에서 놀았을 텐데요.",
+      "en": "If it had not rained, we would have played outside.",
+      "wrong": "If it had not rained, we would have play outside.",
+      "focus": [
+        "had not rained",
+        "would have played"
+      ],
+      "note": "부정 과거 반사실 조건은 had not rained이며 결과에는 과거분사 played가 필요하다.",
+      "visual": "실제 비와 비 없는 가정, 야외 활동 결과를 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "비가 오지 않았더라면 우리는 밖에서 놀았을 텐데요.",
+          "actualStart": 78.2435372,
+          "actualEnd": 81.5183222,
+          "rate": 185,
+          "cacheKey": "74ee5ffa59c08ff5e92bbdcfe58f757a71656cb457b5ca15c3fd0cb6b7a6f539",
+          "file": "audio/20/example-6-ko-74ee5ffa59c08ff5.wav",
+          "duration": 3.274785
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If it had not rained, we would have played outside.",
+          "actualStart": 81.8683222,
+          "actualEnd": 84.4195242,
+          "rate": 155,
+          "cacheKey": "474f0654401344abfa5df23222f4be661888e37d764d25a0590e6a22c84db238",
+          "file": "audio/20/example-6-en-474f0654401344ab.wav",
+          "duration": 2.551202
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had not rained",
+            "actualStart": 82.1483222,
+            "actualEnd": 82.85832219999999
+          },
+          {
+            "text": "would have played",
+            "actualStart": 83.21832219999999,
+            "actualEnd": 83.9883222
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "If",
+          "start": 81.8683222,
+          "end": 81.94832219999999
+        },
+        {
+          "text": "it",
+          "start": 82.0183222,
+          "end": 82.0883222
+        },
+        {
+          "text": "had",
+          "start": 82.1483222,
+          "end": 82.32832219999999
+        },
+        {
+          "text": "not",
+          "start": 82.32832219999999,
+          "end": 82.4883222
+        },
+        {
+          "text": "rained,",
+          "start": 82.52832219999999,
+          "end": 82.85832219999999
+        },
+        {
+          "text": "we",
+          "start": 83.1183222,
+          "end": 83.21832219999999
+        },
+        {
+          "text": "would",
+          "start": 83.21832219999999,
+          "end": 83.43832219999999
+        },
+        {
+          "text": "have",
+          "start": 83.5883222,
+          "end": 83.7083222
+        },
+        {
+          "text": "played",
+          "start": 83.7083222,
+          "end": 83.9883222
+        },
+        {
+          "text": "outside.",
+          "start": 84.0183222,
+          "end": 84.32832219999999
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 86.61717333333334,
+      "end": 95.93012846666667,
+      "ko": "차가 있었다면 우리는 그곳까지 운전해 갈 수도 있었을 텐데요.",
+      "en": "If we had had a car, we could have driven there.",
+      "wrong": "If we had had a car, we could have drove there.",
+      "focus": [
+        "had had",
+        "could have driven"
+      ],
+      "note": "첫 had는 완료 조동사, 둘째 had는 소유 동사의 과거분사다. could have 뒤에는 driven을 쓴다.",
+      "visual": "had 두 개의 역할을 분리하고 가능한 이동 경로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "차가 있었다면 우리는 그곳까지 운전해 갈 수도 있었을 텐데요.",
+          "actualStart": 86.81717333333334,
+          "actualEnd": 90.98220733333335,
+          "rate": 185,
+          "cacheKey": "7682956c5237e758733fc5917ad7cab963069f84ad2c13c9a61f31ec4f5cf8e3",
+          "file": "audio/20/example-7-ko-7682956c5237e758.wav",
+          "duration": 4.165034
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If we had had a car, we could have driven there.",
+          "actualStart": 91.33220733333334,
+          "actualEnd": 93.73247933333334,
+          "rate": 155,
+          "cacheKey": "87af08c511eb08c251347ea85ecd64b7837faf51ad456dcc5c2deb8c8572af0b",
+          "file": "audio/20/example-7-en-87af08c511eb08c2.wav",
+          "duration": 2.400272
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had had",
+            "actualStart": 91.57220733333334,
+            "actualEnd": 91.93220733333334
+          },
+          {
+            "text": "could have driven",
+            "actualStart": 92.64220733333335,
+            "actualEnd": 93.33220733333334
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "If",
+          "start": 91.33220733333334,
+          "end": 91.41220733333334
+        },
+        {
+          "text": "we",
+          "start": 91.50220733333335,
+          "end": 91.57220733333334
+        },
+        {
+          "text": "had",
+          "start": 91.57220733333334,
+          "end": 91.75220733333335
+        },
+        {
+          "text": "had",
+          "start": 91.75220733333335,
+          "end": 91.93220733333334
+        },
+        {
+          "text": "a",
+          "start": 91.93220733333334,
+          "end": 91.99220733333334
+        },
+        {
+          "text": "car,",
+          "start": 91.99220733333334,
+          "end": 92.17220733333335
+        },
+        {
+          "text": "we",
+          "start": 92.29220733333334,
+          "end": 92.40220733333334
+        },
+        {
+          "text": "could",
+          "start": 92.64220733333335,
+          "end": 92.72220733333334
+        },
+        {
+          "text": "have",
+          "start": 92.72220733333334,
+          "end": 92.96220733333334
+        },
+        {
+          "text": "driven",
+          "start": 92.96220733333334,
+          "end": 93.33220733333334
+        },
+        {
+          "text": "there.",
+          "start": 93.33220733333334,
+          "end": 93.66220733333334
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 95.93012846666667,
+      "end": 105.0824486,
+      "ko": "내가 지금 수영할 줄 안다면 그들과 함께할 수 있을 텐데요.",
+      "en": "If I could swim now, I could join them.",
+      "wrong": "If I could swam now, I could join them.",
+      "focus": [
+        "could swim",
+        "could join"
+      ],
+      "note": "could 뒤에는 원형 swim을 쓴다. 여기서 could는 가정 속 능력과 참여 가능성을 나타낸다.",
+      "visual": "수영 능력 조건에서 참여 가능성으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "내가 지금 수영할 줄 안다면 그들과 함께할 수 있을 텐데요.",
+          "actualStart": 96.13012846666668,
+          "actualEnd": 100.18096746666667,
+          "rate": 185,
+          "cacheKey": "f6f2f4ae1a72ca4cfd5503697f3deda8174871910651dc1461fa713790d3854d",
+          "file": "audio/20/example-8-ko-f6f2f4ae1a72ca4c.wav",
+          "duration": 4.050839
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If I could swim now, I could join them.",
+          "actualStart": 100.53096746666667,
+          "actualEnd": 102.88479946666666,
+          "rate": 155,
+          "cacheKey": "e54b46a93900681366e2fdafc1b8553e5930d4ea9bb61ab71f6ff37977a3ae85",
+          "file": "audio/20/example-8-en-e54b46a939006813.wav",
+          "duration": 2.353832
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "could swim",
+            "actualStart": 100.77096746666666,
+            "actualEnd": 101.47096746666666
+          },
+          {
+            "text": "could join",
+            "actualStart": 101.95096746666667,
+            "actualEnd": 102.53096746666667
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "If",
+          "start": 100.53096746666667,
+          "end": 100.69096746666666
+        },
+        {
+          "text": "I",
+          "start": 100.69096746666666,
+          "end": 100.77096746666666
+        },
+        {
+          "text": "could",
+          "start": 100.77096746666666,
+          "end": 101.16096746666666
+        },
+        {
+          "text": "swim",
+          "start": 101.16096746666666,
+          "end": 101.47096746666666
+        },
+        {
+          "text": "now,",
+          "start": 101.47096746666666,
+          "end": 101.63096746666666
+        },
+        {
+          "text": "I",
+          "start": 101.89096746666667,
+          "end": 101.95096746666667
+        },
+        {
+          "text": "could",
+          "start": 101.95096746666667,
+          "end": 102.27096746666666
+        },
+        {
+          "text": "join",
+          "start": 102.27096746666666,
+          "end": 102.53096746666667
+        },
+        {
+          "text": "them.",
+          "start": 102.53096746666667,
+          "end": 102.80096746666666
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 105.0824486,
+      "end": 113.37563073333334,
+      "ko": "내가 너라면 오늘 그 제안을 거절할 텐데요.",
+      "en": "If I were you, I would refuse the offer today.",
+      "wrong": "If I were you, I would refusing the offer today.",
+      "focus": [
+        "were",
+        "would refuse"
+      ],
+      "note": "현재 반사실 조언의 결과는 would refuse이며 ing를 바로 붙이지 않는다.",
+      "visual": "상대 입장 가정과 오늘의 선택을 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "내가 너라면 오늘 그 제안을 거절할 텐데요.",
+          "actualStart": 105.28244860000001,
+          "actualEnd": 108.17228960000001,
+          "rate": 185,
+          "cacheKey": "c374403af91c7678b986eece94f82fb304be3416ffe50da980a48a059750ac9d",
+          "file": "audio/20/example-9-ko-c374403af91c7678.wav",
+          "duration": 2.889841
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If I were you, I would refuse the offer today.",
+          "actualStart": 108.52228960000001,
+          "actualEnd": 111.17798160000001,
+          "rate": 155,
+          "cacheKey": "880910c8beecc0a11b38598eeb9a900ccaacbfde7a0a227b3411e023ffb1d937",
+          "file": "audio/20/example-9-en-880910c8beecc0a1.wav",
+          "duration": 2.655692
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were",
+            "actualStart": 108.7622896,
+            "actualEnd": 109.0722896
+          },
+          {
+            "text": "would refuse",
+            "actualStart": 109.5422896,
+            "actualEnd": 110.27228960000001
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "If",
+          "start": 108.52228960000001,
+          "end": 108.6822896
+        },
+        {
+          "text": "I",
+          "start": 108.6822896,
+          "end": 108.7622896
+        },
+        {
+          "text": "were",
+          "start": 108.7622896,
+          "end": 109.0722896
+        },
+        {
+          "text": "you,",
+          "start": 109.0722896,
+          "end": 109.2122896
+        },
+        {
+          "text": "I",
+          "start": 109.4822896,
+          "end": 109.5422896
+        },
+        {
+          "text": "would",
+          "start": 109.5422896,
+          "end": 109.8522896
+        },
+        {
+          "text": "refuse",
+          "start": 109.95228960000001,
+          "end": 110.27228960000001
+        },
+        {
+          "text": "the",
+          "start": 110.27228960000001,
+          "end": 110.47228960000001
+        },
+        {
+          "text": "offer",
+          "start": 110.47228960000001,
+          "end": 110.7922896
+        },
+        {
+          "text": "today.",
+          "start": 110.8222896,
+          "end": 111.1022896
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 113.37563073333334,
+      "end": 122.13312186666667,
+      "ko": "네가 알려 줬더라면 나는 어제 올 수 있었을 텐데요.",
+      "en": "If you had told me, I could have come yesterday.",
+      "wrong": "If you had told me, I could have came yesterday.",
+      "focus": [
+        "had told",
+        "could have come"
+      ],
+      "note": "could have 뒤에는 과거형 came이 아니라 과거분사 come을 쓴다. 올 수 있었을 가능성을 말하며 반드시 왔을 것이라고 단정하지 않는다.",
+      "visual": "과거 통보 조건과 가능한 방문을 점선으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "네가 알려 줬더라면 나는 어제 올 수 있었을 텐데요.",
+          "actualStart": 113.57563073333334,
+          "actualEnd": 116.99944073333334,
+          "rate": 185,
+          "cacheKey": "0c18c95d5ef4955822fba5c3acf5f3868db5bb9957a0d4dbab0305f864aeeae2",
+          "file": "audio/20/example-10-ko-0c18c95d5ef49558.wav",
+          "duration": 3.42381
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If you had told me, I could have come yesterday.",
+          "actualStart": 117.34944073333334,
+          "actualEnd": 119.93547273333334,
+          "rate": 155,
+          "cacheKey": "165619e11b9ee02624a72e2115e3b5370811c2f104aff669567c8fe6e67795f1",
+          "file": "audio/20/example-10-en-165619e11b9ee026.wav",
+          "duration": 2.586032
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had told",
+            "actualStart": 117.65944073333334,
+            "actualEnd": 118.08944073333333
+          },
+          {
+            "text": "could have come",
+            "actualStart": 118.39944073333334,
+            "actualEnd": 119.21944073333334
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "If",
+          "start": 117.34944073333334,
+          "end": 117.42944073333334
+        },
+        {
+          "text": "you",
+          "start": 117.50944073333334,
+          "end": 117.65944073333334
+        },
+        {
+          "text": "had",
+          "start": 117.65944073333334,
+          "end": 117.78944073333334
+        },
+        {
+          "text": "told",
+          "start": 117.88944073333334,
+          "end": 118.08944073333333
+        },
+        {
+          "text": "me,",
+          "start": 118.11944073333333,
+          "end": 118.21944073333334
+        },
+        {
+          "text": "I",
+          "start": 118.33944073333333,
+          "end": 118.39944073333334
+        },
+        {
+          "text": "could",
+          "start": 118.39944073333334,
+          "end": 118.71944073333334
+        },
+        {
+          "text": "have",
+          "start": 118.71944073333334,
+          "end": 118.96944073333334
+        },
+        {
+          "text": "come",
+          "start": 118.96944073333334,
+          "end": 119.21944073333334
+        },
+        {
+          "text": "yesterday.",
+          "start": 119.21944073333334,
+          "end": 119.84944073333334
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 122.13312186666667,
+      "end": 130,
+      "text": "현재와 과거의 반사실 시간을 나누고, 결과와 가능성에 맞는 조동사를 선택하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "현재와 과거의 반사실 시간을 나누고, 결과와 가능성에 맞는 조동사를 선택하세요.",
+          "actualStart": 122.33312186666667,
+          "actualEnd": 128.05235086666667,
+          "rate": 185,
+          "cacheKey": "40e19232652e6014a379635345dc4bce2f97032d42c8dbe17bc42f972e0905ce",
+          "file": "audio/20/summary-ko-40e19232652e6014.wav",
+          "duration": 5.719229
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 109.78526299999999,
+  "sourceHash": "db2af4e1e85c652499efa5d7f1b92cd2eb56435af7f6085a92fd2479abcdb5bc",
+  "audioFile": "audio/20/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "db2af4e1e85c652499efa5d7f1b92cd2eb56435af7f6085a92fd2479abcdb5bc",
+    "clipHashes": {
+      "example-1-en": "7d3f82974f1056b30c7531ef3c58fd333308c19332eadda02744da38c5bbb537",
+      "example-2-en": "b1ad1e54f6ce54aaf32163a1b199736557951aecba643c6204491375da4959a3",
+      "example-3-en": "ffc88ebd4964bdeccce92264f02df91e4dd0fd5382d3beebbb0aa58370a8cbdc",
+      "example-4-en": "cc66fc264e52c8eacf37c559ece79263a2cbd089e38dca78837629c9b02a46dd",
+      "example-5-en": "49f2774f8bb78ae1e9abfd3ddcf607e24f8cb3583486bcadab7716c31264cc7a",
+      "example-6-en": "b6528b7706262202654cc656fb4fbcab6a28a72107a81ee55f268f6823f965bd",
+      "example-7-en": "8661feea5a2954ae51d3cd27467d8f87d7c44b91d9c7612d3b353869fa8cbedf",
+      "example-8-en": "e0702fdbef95cec90c2fbbb3b314e380aa7711f689de1f0f25f823f2d9b161f8",
+      "example-9-en": "ab845308f7a9c655c8416626cb4acea7d3fa28f739992da0999cbdfdc2748474",
+      "example-10-en": "7cffd9d706f65d7a6a516a250031a3d8585d6f48f72565db8f9e662871e85684"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

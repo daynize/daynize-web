@@ -1,0 +1,14 @@
+{
+  "id": "basic-01",
+  "episode": 1,
+  "title": "나 혼자서 할 수 있는 동사",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "576a62f85204e8cdbd492edfea2464fd445005fd980bc5f9829ab11c9c4b1b67",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

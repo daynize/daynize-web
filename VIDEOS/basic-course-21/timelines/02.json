@@ -1,0 +1,1250 @@
+{
+  "id": "basic-02",
+  "episode": 2,
+  "title": "전치사라는 지팡이가 필요한 순간",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10.126255733333334,
+      "text": "나는 앉았다. 여기까지는 문장이 완성돼요. 그런데 의자에 앉았다고 말하고 싶다면, 의자를 어떻게 연결할까요?",
+      "screen": "동작 / 장소",
+      "visual": "앉는 인물과 의자를 두 부분으로 분리.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 앉았다. 여기까지는 문장이 완성돼요. 그런데 의자에 앉았다고 말하고 싶다면, 의자를 어떻게 연결할까요?",
+          "actualStart": 0.2,
+          "actualEnd": 8.34898,
+          "rate": 185,
+          "cacheKey": "9ead1d6c2d1c4b38ea549708c40090d37cbb7b79943a6d43023e3caec0fd5782",
+          "file": "audio/02/concept-1-ko-9ead1d6c2d1c4b38.wav",
+          "duration": 8.14898
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10.126255733333334,
+      "end": 21.11174046666667,
+      "text": "의자를 동사 바로 뒤에 붙이지 않아요. 의자 위라는 관계를 나타내는 전치사가 필요하죠. 이때 전치사는 연결을 돕는 지팡이예요.",
+      "screen": "❌ I sat the chair by the window. / ⭕ I sat on the chair by the window.",
+      "visual": "첫 예문의 on이 인물과 의자를 연결.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "의자를 동사 바로 뒤에 붙이지 않아요. 의자 위라는 관계를 나타내는 전치사가 필요하죠. 이때 전치사는 연결을 돕는 지팡이예요.",
+          "actualStart": 10.326255733333333,
+          "actualEnd": 19.334464733333334,
+          "rate": 185,
+          "cacheKey": "1512f185e4a2836e8c3e6c6af99fb1a64a2c4da95af56ddc0dd09615d8250d91",
+          "file": "audio/02/concept-2-ko-1512f185e4a2836e.wav",
+          "duration": 9.008209
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 21.11174046666667,
+      "end": 31.706250200000003,
+      "text": "전치사 뒤의 명사는 동사의 직접 목적어가 아니에요. 동사와 전치사를 함께 보고, 어떤 관계를 나타내는지 이해하세요.",
+      "screen": "I / sat / on the chair",
+      "visual": "chair는 on의 목적어라고 표시하고 동사의 직접 목적어와 구분.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "전치사 뒤의 명사는 동사의 직접 목적어가 아니에요. 동사와 전치사를 함께 보고, 어떤 관계를 나타내는지 이해하세요.",
+          "actualStart": 21.31174046666667,
+          "actualEnd": 29.92897446666667,
+          "rate": 185,
+          "cacheKey": "9fc88c690ddde5f50df1bffe7973c2d3206b0857155e9c6353f6bf0bd765e768",
+          "file": "audio/02/concept-3-ko-9fc88c690ddde5f5.wav",
+          "duration": 8.617234
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 31.706250200000003,
+      "end": 43.450146933333336,
+      "text": "전치사는 아무거나 붙일 수 없어요. 기다리는 대상은 포, 귀 기울이는 대상은 투로 연결하죠. 동사와 전치사의 조합을 예문으로 익혀 봅시다.",
+      "screen": "wait + for / listen + to",
+      "visual": "대기·듣기 동작과 대상 연결. 영어 예문 별도 발화 없음.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "전치사는 아무거나 붙일 수 없어요. 기다리는 대상은 포, 귀 기울이는 대상은 투로 연결하죠. 동사와 전치사의 조합을 예문으로 익혀 봅시다.",
+          "actualStart": 31.906250200000002,
+          "actualEnd": 41.6728712,
+          "rate": 185,
+          "cacheKey": "57943f0e3b1c9463a00f1e3d7725e50c71e2ef10f8eb8814f5f91fafdaeba351",
+          "file": "audio/02/concept-4-ko-57943f0e3b1c9463.wav",
+          "duration": 9.766621
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 43.450146933333336,
+      "end": 49.667468666666664,
+      "ko": "나는 창문 옆 의자에 앉았어요.",
+      "en": "I sat on the chair by the window.",
+      "wrong": "I sat the chair by the window.",
+      "focus": [
+        "sat",
+        "on"
+      ],
+      "note": "앉는 동작에 장소를 연결한다.",
+      "visual": "의자 위 접촉면.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 창문 옆 의자에 앉았어요.",
+          "actualStart": 43.65014693333334,
+          "actualEnd": 45.58765293333334,
+          "rate": 185,
+          "cacheKey": "ea7738a8ba5b33c27f94c3726a99385bf3743db740be8457aa97164474dc37b0",
+          "file": "audio/02/example-1-ko-ea7738a8ba5b33c2.wav",
+          "duration": 1.937506
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I sat on the chair by the window.",
+          "actualStart": 45.93765293333334,
+          "actualEnd": 47.64019293333334,
+          "rate": 155,
+          "cacheKey": "849c51bca49d0659b36ebdb7b43e87eadfb79836c9809cb3e364c528351b6ebc",
+          "file": "audio/02/example-1-en-849c51bca49d0659.wav",
+          "duration": 1.70254
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "sat",
+            "actualStart": 45.99765293333334,
+            "actualEnd": 46.18765293333334
+          },
+          {
+            "text": "on",
+            "actualStart": 46.18765293333334,
+            "actualEnd": 46.31765293333334
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "I",
+          "start": 45.94765293333334,
+          "end": 45.99765293333334
+        },
+        {
+          "text": "sat",
+          "start": 45.99765293333334,
+          "end": 46.18765293333334
+        },
+        {
+          "text": "on",
+          "start": 46.18765293333334,
+          "end": 46.31765293333334
+        },
+        {
+          "text": "the",
+          "start": 46.31765293333334,
+          "end": 46.50765293333334
+        },
+        {
+          "text": "chair",
+          "start": 46.50765293333334,
+          "end": 46.82765293333334
+        },
+        {
+          "text": "by",
+          "start": 46.82765293333334,
+          "end": 46.96765293333334
+        },
+        {
+          "text": "the",
+          "start": 46.96765293333334,
+          "end": 47.15765293333334
+        },
+        {
+          "text": "window.",
+          "start": 47.15765293333334,
+          "end": 47.55765293333334
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 49.667468666666664,
+      "end": 56.05413239999999,
+      "ko": "우리는 밖에서 버스를 기다렸어요.",
+      "en": "We waited for the bus outside.",
+      "wrong": "We waited the bus outside.",
+      "focus": [
+        "waited",
+        "for"
+      ],
+      "note": "기다리는 대상은 for로 연결한다.",
+      "visual": "버스를 기다리는 인물.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 밖에서 버스를 기다렸어요.",
+          "actualStart": 49.86746866666667,
+          "actualEnd": 52.014271666666666,
+          "rate": 185,
+          "cacheKey": "ba4157472eb7169c067e66f332a8a458400f7cc50cd663720ec32cef7b475b77",
+          "file": "audio/02/example-2-ko-ba4157472eb7169c.wav",
+          "duration": 2.146803
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We waited for the bus outside.",
+          "actualStart": 52.36427166666667,
+          "actualEnd": 54.02685666666667,
+          "rate": 155,
+          "cacheKey": "cb1551b5da959dd7b683ceb6010803a9ecbedd72c50cec60200b1946792adacd",
+          "file": "audio/02/example-2-en-cb1551b5da959dd7.wav",
+          "duration": 1.662585
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "waited",
+            "actualStart": 52.47427166666667,
+            "actualEnd": 52.81427166666667
+          },
+          {
+            "text": "for",
+            "actualStart": 52.81427166666667,
+            "actualEnd": 52.984271666666665
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "We",
+          "start": 52.374271666666665,
+          "end": 52.47427166666667
+        },
+        {
+          "text": "waited",
+          "start": 52.47427166666667,
+          "end": 52.81427166666667
+        },
+        {
+          "text": "for",
+          "start": 52.81427166666667,
+          "end": 52.984271666666665
+        },
+        {
+          "text": "the",
+          "start": 52.984271666666665,
+          "end": 53.11427166666667
+        },
+        {
+          "text": "bus",
+          "start": 53.164271666666664,
+          "end": 53.29427166666667
+        },
+        {
+          "text": "outside.",
+          "start": 53.334271666666666,
+          "end": 53.72427166666667
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 56.05413239999999,
+      "end": 62.080660133333325,
+      "ko": "그 표지판을 주의 깊게 보세요.",
+      "en": "Look at the sign carefully.",
+      "wrong": "Look the sign carefully.",
+      "focus": [
+        "Look",
+        "at"
+      ],
+      "note": "시선을 향하는 대상은 at으로 연결한다.",
+      "visual": "시선이 표지판에 도달.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 표지판을 주의 깊게 보세요.",
+          "actualStart": 56.254132399999996,
+          "actualEnd": 58.2710034,
+          "rate": 185,
+          "cacheKey": "8d3e82603c257e047d2f8345c0780288e4f957525fd2886f7d74378569258ae4",
+          "file": "audio/02/example-3-ko-8d3e82603c257e04.wav",
+          "duration": 2.016871
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Look at the sign carefully.",
+          "actualStart": 58.6210034,
+          "actualEnd": 60.0533844,
+          "rate": 155,
+          "cacheKey": "499cd30f6785997f316e1ae5f5e4a9478cc18b085f251830a3d2d771de2214d2",
+          "file": "audio/02/example-3-en-499cd30f6785997f.wav",
+          "duration": 1.432381
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "Look",
+            "actualStart": 58.6310034,
+            "actualEnd": 58.8610034
+          },
+          {
+            "text": "at",
+            "actualStart": 58.8610034,
+            "actualEnd": 58.9810034
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "Look",
+          "start": 58.6310034,
+          "end": 58.8610034
+        },
+        {
+          "text": "at",
+          "start": 58.8610034,
+          "end": 58.9810034
+        },
+        {
+          "text": "the",
+          "start": 58.9810034,
+          "end": 59.1610034
+        },
+        {
+          "text": "sign",
+          "start": 59.1610034,
+          "end": 59.3710034
+        },
+        {
+          "text": "carefully.",
+          "start": 59.4410034,
+          "end": 59.9710034
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 62.080660133333325,
+      "end": 69.85394486666665,
+      "ko": "그녀는 답하기 전에 내 설명을 들었어요.",
+      "en": "She listened to my explanation before answering.",
+      "wrong": "She listened my explanation before answering.",
+      "focus": [
+        "listened",
+        "to"
+      ],
+      "note": "듣는 대상은 to로 연결한다.",
+      "visual": "말풍선에서 듣는 사람으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀는 답하기 전에 내 설명을 들었어요.",
+          "actualStart": 62.28066013333333,
+          "actualEnd": 64.77326813333333,
+          "rate": 185,
+          "cacheKey": "77b8e874985a6e33b8bbfbb8386a73a3b412103025413599f3e639d7b40185b0",
+          "file": "audio/02/example-4-ko-77b8e874985a6e33.wav",
+          "duration": 2.492608
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She listened to my explanation before answering.",
+          "actualStart": 65.12326813333333,
+          "actualEnd": 67.82666913333333,
+          "rate": 155,
+          "cacheKey": "673c68104f28faf3679e06d798c60b0414a0859eaf3fa6dadf1de692da93e356",
+          "file": "audio/02/example-4-en-673c68104f28faf3.wav",
+          "duration": 2.703401
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "listened",
+            "actualStart": 65.31326813333332,
+            "actualEnd": 65.82326813333333
+          },
+          {
+            "text": "to",
+            "actualStart": 65.82326813333333,
+            "actualEnd": 65.94326813333332
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "She",
+          "start": 65.17326813333332,
+          "end": 65.31326813333332
+        },
+        {
+          "text": "listened",
+          "start": 65.31326813333332,
+          "end": 65.82326813333333
+        },
+        {
+          "text": "to",
+          "start": 65.82326813333333,
+          "end": 65.94326813333332
+        },
+        {
+          "text": "my",
+          "start": 65.94326813333332,
+          "end": 66.06326813333332
+        },
+        {
+          "text": "explanation",
+          "start": 66.06326813333332,
+          "end": 66.76326813333333
+        },
+        {
+          "text": "before",
+          "start": 66.76326813333333,
+          "end": 67.14326813333332
+        },
+        {
+          "text": "answering.",
+          "start": 67.14326813333332,
+          "end": 67.75326813333332
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69.85394486666665,
+      "end": 77.83861259999998,
+      "ko": "그들은 회의 시작 직전에 사무실에 도착했어요.",
+      "en": "They arrived at the office just before the meeting.",
+      "wrong": "They arrived the office just before the meeting.",
+      "focus": [
+        "arrived",
+        "at"
+      ],
+      "note": "특정 도착 지점을 표시한다.",
+      "visual": "시간선과 사무실 도착 지점.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그들은 회의 시작 직전에 사무실에 도착했어요.",
+          "actualStart": 70.05394486666665,
+          "actualEnd": 73.04791286666665,
+          "rate": 185,
+          "cacheKey": "1ac72d915ad4d8a42d1029c9d4afafaf8a8d91d031b4e89a6b37c9a4a3daa23a",
+          "file": "audio/02/example-5-ko-1ac72d915ad4d8a4.wav",
+          "duration": 2.993968
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "They arrived at the office just before the meeting.",
+          "actualStart": 73.39791286666664,
+          "actualEnd": 75.81133686666665,
+          "rate": 155,
+          "cacheKey": "ed3cf2c298709e2080ac66198313f1bddcb3c7aed4a46e09b066eb2934161abe",
+          "file": "audio/02/example-5-en-ed3cf2c298709e20.wav",
+          "duration": 2.413424
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "arrived",
+            "actualStart": 73.61791286666664,
+            "actualEnd": 73.97791286666664
+          },
+          {
+            "text": "at",
+            "actualStart": 74.04791286666665,
+            "actualEnd": 74.10791286666664
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "They",
+          "start": 73.41791286666664,
+          "end": 73.61791286666664
+        },
+        {
+          "text": "arrived",
+          "start": 73.61791286666664,
+          "end": 73.97791286666664
+        },
+        {
+          "text": "at",
+          "start": 74.04791286666665,
+          "end": 74.10791286666664
+        },
+        {
+          "text": "the",
+          "start": 74.10791286666664,
+          "end": 74.26791286666665
+        },
+        {
+          "text": "office",
+          "start": 74.26791286666665,
+          "end": 74.49791286666664
+        },
+        {
+          "text": "just",
+          "start": 74.58791286666664,
+          "end": 74.78791286666664
+        },
+        {
+          "text": "before",
+          "start": 74.89791286666664,
+          "end": 75.14791286666664
+        },
+        {
+          "text": "the",
+          "start": 75.14791286666664,
+          "end": 75.30791286666664
+        },
+        {
+          "text": "meeting.",
+          "start": 75.30791286666664,
+          "end": 75.71791286666664
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77.83861259999998,
+      "end": 85.3919883333333,
+      "ko": "우리의 결정은 최종 비용에 달려 있어요.",
+      "en": "Our decision depends on the final cost.",
+      "wrong": "Our decision depends the final cost.",
+      "focus": [
+        "depends",
+        "on"
+      ],
+      "note": "판단이 의존하는 조건을 연결한다.",
+      "visual": "비용 조건과 결정의 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리의 결정은 최종 비용에 달려 있어요.",
+          "actualStart": 78.03861259999998,
+          "actualEnd": 80.69625459999997,
+          "rate": 185,
+          "cacheKey": "9415bc3deadaa77ac20abf910b75f78b2b988c9d992802a1bdfafc1206e60997",
+          "file": "audio/02/example-6-ko-9415bc3deadaa77a.wav",
+          "duration": 2.657642
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Our decision depends on the final cost.",
+          "actualStart": 81.04625459999997,
+          "actualEnd": 83.36471259999998,
+          "rate": 155,
+          "cacheKey": "fc186a8a3d7ccc794852746f38b3f71851f2e6f117b9cf43f442ce3d21d6c9a7",
+          "file": "audio/02/example-6-en-fc186a8a3d7ccc79.wav",
+          "duration": 2.318458
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "depends",
+            "actualStart": 81.74625459999997,
+            "actualEnd": 82.19625459999997
+          },
+          {
+            "text": "on",
+            "actualStart": 82.19625459999997,
+            "actualEnd": 82.31625459999997
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "Our",
+          "start": 81.05625459999997,
+          "end": 81.19625459999997
+        },
+        {
+          "text": "decision",
+          "start": 81.23625459999997,
+          "end": 81.74625459999997
+        },
+        {
+          "text": "depends",
+          "start": 81.74625459999997,
+          "end": 82.19625459999997
+        },
+        {
+          "text": "on",
+          "start": 82.19625459999997,
+          "end": 82.31625459999997
+        },
+        {
+          "text": "the",
+          "start": 82.31625459999997,
+          "end": 82.39625459999996
+        },
+        {
+          "text": "final",
+          "start": 82.49625459999997,
+          "end": 82.78625459999996
+        },
+        {
+          "text": "cost.",
+          "start": 82.86625459999996,
+          "end": 83.07625459999997
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85.3919883333333,
+      "end": 93.04627106666663,
+      "ko": "접수대에 있는 가방은 내 동료 것이에요.",
+      "en": "The bag at reception belongs to my colleague.",
+      "wrong": "The bag at reception belongs my colleague.",
+      "focus": [
+        "belongs",
+        "to"
+      ],
+      "note": "소유자를 연결한다.",
+      "visual": "가방과 소유자 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "접수대에 있는 가방은 내 동료 것이에요.",
+          "actualStart": 85.5919883333333,
+          "actualEnd": 88.3233263333333,
+          "rate": 185,
+          "cacheKey": "62935d64764734bb2e5a81eff3a43eb0cda05fb298276a272a1b8614ddf90fbd",
+          "file": "audio/02/example-7-ko-62935d64764734bb.wav",
+          "duration": 2.731338
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The bag at reception belongs to my colleague.",
+          "actualStart": 88.67332633333329,
+          "actualEnd": 91.0189953333333,
+          "rate": 155,
+          "cacheKey": "9a77d721b81f6c260015c3825f9e163a67486bdcee38405e319c739b8586a6c7",
+          "file": "audio/02/example-7-en-9a77d721b81f6c26.wav",
+          "duration": 2.345669
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "belongs",
+            "actualStart": 89.7033263333333,
+            "actualEnd": 90.1033263333333
+          },
+          {
+            "text": "to",
+            "actualStart": 90.2133263333333,
+            "actualEnd": 90.25332633333329
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "The",
+          "start": 88.6833263333333,
+          "end": 88.8533263333333
+        },
+        {
+          "text": "bag",
+          "start": 88.8533263333333,
+          "end": 89.03332633333329
+        },
+        {
+          "text": "at",
+          "start": 89.03332633333329,
+          "end": 89.1533263333333
+        },
+        {
+          "text": "reception",
+          "start": 89.1533263333333,
+          "end": 89.7033263333333
+        },
+        {
+          "text": "belongs",
+          "start": 89.7033263333333,
+          "end": 90.1033263333333
+        },
+        {
+          "text": "to",
+          "start": 90.2133263333333,
+          "end": 90.25332633333329
+        },
+        {
+          "text": "my",
+          "start": 90.25332633333329,
+          "end": 90.3733263333333
+        },
+        {
+          "text": "colleague.",
+          "start": 90.3733263333333,
+          "end": 90.9333263333333
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 93.04627106666663,
+      "end": 102.14345579999997,
+      "ko": "나는 네 의견에 동의하지만 일정을 다시 확인해야 해요.",
+      "en": "I agree with you, but we need to check the schedule again.",
+      "wrong": "I agree you, but we need to check the schedule again.",
+      "focus": [
+        "agree",
+        "with"
+      ],
+      "note": "동의하는 상대를 with로 연결한다.",
+      "visual": "동의 상대와 일정 확인을 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 네 의견에 동의하지만 일정을 다시 확인해야 해요.",
+          "actualStart": 93.24627106666664,
+          "actualEnd": 96.64677006666663,
+          "rate": 185,
+          "cacheKey": "7db41b2a741e982e1531855a99c9fa07c9be2aa4df96072f2b5a8c83dd4d492a",
+          "file": "audio/02/example-8-ko-7db41b2a741e982e.wav",
+          "duration": 3.400499
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I agree with you, but we need to check the schedule again.",
+          "actualStart": 96.99677006666663,
+          "actualEnd": 100.11618006666663,
+          "rate": 155,
+          "cacheKey": "fb9940feac03dce6f1e509d5253693366c325624fd46354cb71314a12404389d",
+          "file": "audio/02/example-8-en-fb9940feac03dce6.wav",
+          "duration": 3.11941
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "agree",
+            "actualStart": 97.05677006666663,
+            "actualEnd": 97.36677006666663
+          },
+          {
+            "text": "with",
+            "actualStart": 97.36677006666663,
+            "actualEnd": 97.58677006666663
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "I",
+          "start": 97.00677006666663,
+          "end": 97.05677006666663
+        },
+        {
+          "text": "agree",
+          "start": 97.05677006666663,
+          "end": 97.36677006666663
+        },
+        {
+          "text": "with",
+          "start": 97.36677006666663,
+          "end": 97.58677006666663
+        },
+        {
+          "text": "you,",
+          "start": 97.67677006666663,
+          "end": 97.79677006666662
+        },
+        {
+          "text": "but",
+          "start": 97.91677006666663,
+          "end": 97.94677006666663
+        },
+        {
+          "text": "we",
+          "start": 98.18677006666663,
+          "end": 98.23677006666662
+        },
+        {
+          "text": "need",
+          "start": 98.23677006666662,
+          "end": 98.48677006666662
+        },
+        {
+          "text": "to",
+          "start": 98.48677006666662,
+          "end": 98.60677006666663
+        },
+        {
+          "text": "check",
+          "start": 98.60677006666663,
+          "end": 98.91677006666663
+        },
+        {
+          "text": "the",
+          "start": 98.91677006666663,
+          "end": 99.02677006666663
+        },
+        {
+          "text": "schedule",
+          "start": 99.12677006666662,
+          "end": 99.60677006666663
+        },
+        {
+          "text": "again.",
+          "start": 99.60677006666663,
+          "end": 99.99677006666663
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 102.14345579999997,
+      "end": 112.5425455333333,
+      "ko": "그는 아무에게도 알리지 않고 계획을 바꾼 것에 대해 사과했어요.",
+      "en": "He apologized for changing the plan without telling anyone.",
+      "wrong": "He apologized changing the plan without telling anyone.",
+      "focus": [
+        "apologized",
+        "for"
+      ],
+      "note": "사과하는 이유이며 for 뒤에는 동명사가 올 수 있다.",
+      "visual": "for + changing을 한 묶음으로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그는 아무에게도 알리지 않고 계획을 바꾼 것에 대해 사과했어요.",
+          "actualStart": 102.34345579999997,
+          "actualEnd": 106.72118779999997,
+          "rate": 185,
+          "cacheKey": "48c7d3ffea40380c8a36eb1e83a0ac10049ca8776c15e5cacb78d1c34d66944d",
+          "file": "audio/02/example-9-ko-48c7d3ffea40380c.wav",
+          "duration": 4.377732
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He apologized for changing the plan without telling anyone.",
+          "actualStart": 107.07118779999996,
+          "actualEnd": 110.51526979999996,
+          "rate": 155,
+          "cacheKey": "efcdd9496b00f4b523823c2158380e490cce683cf782bf551e6787c6141bb2ff",
+          "file": "audio/02/example-9-en-efcdd9496b00f4b5.wav",
+          "duration": 3.444082
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "apologized",
+            "actualStart": 107.20118779999996,
+            "actualEnd": 107.87118779999996
+          },
+          {
+            "text": "for",
+            "actualStart": 107.87118779999996,
+            "actualEnd": 107.92118779999996
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "He",
+          "start": 107.11118779999997,
+          "end": 107.20118779999996
+        },
+        {
+          "text": "apologized",
+          "start": 107.20118779999996,
+          "end": 107.87118779999996
+        },
+        {
+          "text": "for",
+          "start": 107.87118779999996,
+          "end": 107.92118779999996
+        },
+        {
+          "text": "changing",
+          "start": 108.08118779999997,
+          "end": 108.60118779999996
+        },
+        {
+          "text": "the",
+          "start": 108.60118779999996,
+          "end": 108.74118779999996
+        },
+        {
+          "text": "plan",
+          "start": 108.86118779999997,
+          "end": 109.06118779999996
+        },
+        {
+          "text": "without",
+          "start": 109.06118779999996,
+          "end": 109.45118779999996
+        },
+        {
+          "text": "telling",
+          "start": 109.57118779999996,
+          "end": 110.00118779999997
+        },
+        {
+          "text": "anyone.",
+          "start": 110.00118779999997,
+          "end": 110.43118779999996
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 112.5425455333333,
+      "end": 121.99927726666662,
+      "ko": "그녀는 허락 없이 자신의 사진을 사용하는 것에 반대했어요.",
+      "en": "She objected to using her photo without her permission.",
+      "wrong": "She objected to use her photo without her permission.",
+      "focus": [
+        "objected",
+        "to using"
+      ],
+      "note": "여기서 to는 전치사이므로 using을 쓴다.",
+      "visual": "to + using 결합을 확대.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀는 허락 없이 자신의 사진을 사용하는 것에 반대했어요.",
+          "actualStart": 112.7425455333333,
+          "actualEnd": 116.74445053333329,
+          "rate": 185,
+          "cacheKey": "c354b6706bd7de2c0484505aea3d56dc7846155842493644ae274f335d5d9e29",
+          "file": "audio/02/example-10-ko-c354b6706bd7de2c.wav",
+          "duration": 4.001905
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She objected to using her photo without her permission.",
+          "actualStart": 117.09445053333329,
+          "actualEnd": 119.97200153333328,
+          "rate": 155,
+          "cacheKey": "6b8ed9078cc1bb07dabf9ecd07274adc8d3ec8ac9aca21e0e8fb175d786a938b",
+          "file": "audio/02/example-10-en-6b8ed9078cc1bb07.wav",
+          "duration": 2.877551
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "objected",
+            "actualStart": 117.2744505333333,
+            "actualEnd": 117.75445053333328
+          },
+          {
+            "text": "to using",
+            "actualStart": 117.75445053333328,
+            "actualEnd": 118.17445053333329
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "She",
+          "start": 117.14445053333328,
+          "end": 117.2744505333333
+        },
+        {
+          "text": "objected",
+          "start": 117.2744505333333,
+          "end": 117.75445053333328
+        },
+        {
+          "text": "to",
+          "start": 117.75445053333328,
+          "end": 117.87445053333329
+        },
+        {
+          "text": "using",
+          "start": 117.87445053333329,
+          "end": 118.17445053333329
+        },
+        {
+          "text": "her",
+          "start": 118.17445053333329,
+          "end": 118.35445053333329
+        },
+        {
+          "text": "photo",
+          "start": 118.35445053333329,
+          "end": 118.65445053333329
+        },
+        {
+          "text": "without",
+          "start": 118.65445053333329,
+          "end": 119.07445053333329
+        },
+        {
+          "text": "her",
+          "start": 119.07445053333329,
+          "end": 119.25445053333328
+        },
+        {
+          "text": "permission.",
+          "start": 119.25445053333328,
+          "end": 119.8844505333333
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 121.99927726666662,
+      "end": 130,
+      "text": "이번 자동사 용법에서는 대상을 바로 붙이지 말고, 동사에 맞는 전치사로 연결하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이번 자동사 용법에서는 대상을 바로 붙이지 말고, 동사에 맞는 전치사로 연결하세요.",
+          "actualStart": 122.19927726666663,
+          "actualEnd": 128.22272426666663,
+          "rate": 185,
+          "cacheKey": "0f9a1757ca24a9c6e447c618dde98b067f0dd0e9e2e7fd0a04588ce8e445a191",
+          "file": "audio/02/summary-ko-0f9a1757ca24a9c6.wav",
+          "duration": 6.023447
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 112.34086399999998,
+  "sourceHash": "ce1d83ffe372a0add4e8808ef7d1965ffe483eeb07ec4e0440bd2e04ec5355ff",
+  "audioFile": "audio/02/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "ce1d83ffe372a0add4e8808ef7d1965ffe483eeb07ec4e0440bd2e04ec5355ff",
+    "clipHashes": {
+      "example-1-en": "c9e92ebf92d3a62c552a580710c0970c8bdf5b27a71e26f282cdb21798f769ac",
+      "example-2-en": "249a586d72225495543aa5915dea538c02004951eff3ff4d1dd3a0e0e7e91949",
+      "example-3-en": "556fe7cb6d34f150fcebf5f8ef67b493121344498463317e2050d300ad43180a",
+      "example-4-en": "957a3b05591b21b662dfc8ad95248553d2949c0536454660d3df31975ab997ae",
+      "example-5-en": "06388f212c635343ce452f9b8a7124c393093874c7c8812e5aeee41f7d4f5bea",
+      "example-6-en": "207f63bca4c861feddea56d2ea2d145fe6d7cac6488b14ae4959e5b91f3fdc8c",
+      "example-7-en": "12a81491053e7a21b4775f1dbbdb0b0a6d38d3d86dab986ab441159639324f84",
+      "example-8-en": "0d01ce7ef28cbdc7d960c4747bff56f1d8fd2f94e08e335a23823530602fb347",
+      "example-9-en": "a78941da5d76890d21ee3ce5a1265757ee859767279ffb17a4f7951908b38094",
+      "example-10-en": "a484a86e4b9037826e96afcf2a60385d2e0f7b890f464538a4652542f91caae2"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

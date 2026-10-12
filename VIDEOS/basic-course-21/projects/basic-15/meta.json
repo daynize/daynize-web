@@ -1,0 +1,14 @@
+{
+  "id": "basic-15",
+  "episode": 15,
+  "title": "받는 사람과 전달되는 물건",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "e68c5dcaa200c4ea4c9f08d87c72c633d61d243bafa778206cb39aa94d1ffd36",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

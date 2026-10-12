@@ -1,0 +1,1265 @@
+{
+  "id": "basic-10",
+  "episode": 10,
+  "title": "먹을 것과 먹으러 가는 이유",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10.753798666666667,
+      "text": "먹을 것에서 먹을은 어떤 것인지 설명하죠. 영어도 명사 뒤에 투와 원형을 붙여 용도나 할 일을 설명할 수 있어요.",
+      "screen": "something to eat / a task to finish",
+      "visual": "명사 카드 뒤 to부정사 꼬리표를 붙이고 설명 화살표가 명사로 돌아가게 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "먹을 것에서 먹을은 어떤 것인지 설명하죠. 영어도 명사 뒤에 투와 원형을 붙여 용도나 할 일을 설명할 수 있어요.",
+          "actualStart": 0.2,
+          "actualEnd": 8.395646,
+          "rate": 185,
+          "cacheKey": "b88c67ce88b2c6995160189477350e0724e994a7713893f87de0449617fe3471",
+          "file": "audio/10/concept-1-ko-b88c67ce88b2c699.wav",
+          "duration": 8.195646
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10.753798666666667,
+      "end": 20.822563333333335,
+      "text": "음식을 사러 나갔다면 투와 원형은 나간 목적이에요. 왜 나갔는지 답하는 부분이라 앞의 행동과 연결해요.",
+      "screen": "went out to buy food",
+      "visual": "외출 동작에서 구매 목적 카드로 왜 화살표 연결, 명사 수식 선과 구분.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "음식을 사러 나갔다면 투와 원형은 나간 목적이에요. 왜 나갔는지 답하는 부분이라 앞의 행동과 연결해요.",
+          "actualStart": 10.953798666666666,
+          "actualEnd": 18.464410666666666,
+          "rate": 185,
+          "cacheKey": "a1e14bd5420a422dcaea4a2c4a953f5a3ea27937948e7661aa2005a87cc0b8c6",
+          "file": "audio/10/concept-2-ko-a1e14bd5420a422d.wav",
+          "duration": 7.510612
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20.822563333333335,
+      "end": 31.067428000000003,
+      "text": "너무 뜨거워 마실 수 없다거나 충분히 커서 담을 수 있다는 말도 만들어요. 투와 이너프의 위치를 함께 보세요.",
+      "screen": "too hot to drink / large enough to hold it",
+      "visual": "too → 형용사, 형용사 → enough 어순을 두 줄로 표시하고 가능 여부 대비.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "너무 뜨거워 마실 수 없다거나 충분히 커서 담을 수 있다는 말도 만들어요. 투와 이너프의 위치를 함께 보세요.",
+          "actualStart": 21.022563333333334,
+          "actualEnd": 28.709275333333334,
+          "rate": 185,
+          "cacheKey": "a8dbf6ad9344d0fc475b8ef1575d781529eba78ea13ac7e8e04cc209b080c375",
+          "file": "audio/10/concept-3-ko-a8dbf6ad9344d0fc.wav",
+          "duration": 7.686712
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 31.067428000000003,
+      "end": 41.26304066666667,
+      "text": "하지만 형용사나 동사 뒤의 투가 모두 목적은 아니에요. 떠날 준비가 됐다거나 떠날 필요가 있다는 내용도 보충하죠.",
+      "screen": "ready to leave / need to leave",
+      "visual": "ready의 준비 내용과 need의 필요 내용 칸을 나누고 왜 행동했나 질문과 구별.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "하지만 형용사나 동사 뒤의 투가 모두 목적은 아니에요. 떠날 준비가 됐다거나 떠날 필요가 있다는 내용도 보충하죠.",
+          "actualStart": 31.267428000000002,
+          "actualEnd": 38.904888,
+          "rate": 185,
+          "cacheKey": "94a3ba90d18af82e7eb589ce4cfcd2fe8986e4d4b6b1ca00efe3a252d559f1bc",
+          "file": "audio/10/concept-4-ko-94a3ba90d18af82e.wav",
+          "duration": 7.63746
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 41.26304066666667,
+      "end": 48.95375633333334,
+      "ko": "나는 점심에 먹을 것을 좀 가져왔어요.",
+      "en": "I brought something to eat for lunch.",
+      "wrong": "I brought something to eating for lunch.",
+      "focus": [
+        "something",
+        "to eat"
+      ],
+      "note": "something을 설명하는 이 부정사에서는 to 뒤에 원형 eat을 쓴다.",
+      "visual": "something 묶음에서 먹을 용도 꼬리표 to eat으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 점심에 먹을 것을 좀 가져왔어요.",
+          "actualStart": 41.46304066666667,
+          "actualEnd": 44.17669166666667,
+          "rate": 185,
+          "cacheKey": "2ef0bff36b7ea87645cc702d0aaeb1e3de1c9444cdab5734b8447eb80b1eb9b2",
+          "file": "audio/10/example-1-ko-2ef0bff36b7ea876.wav",
+          "duration": 2.713651
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I brought something to eat for lunch.",
+          "actualStart": 44.52669166666667,
+          "actualEnd": 46.34560366666667,
+          "rate": 155,
+          "cacheKey": "dcee86a3156de2d610183711c33bf00600353cae44ba5b89ac1b97886b266d72",
+          "file": "audio/10/example-1-en-dcee86a3156de2d6.wav",
+          "duration": 1.818912
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "something",
+            "actualStart": 45.02669166666667,
+            "actualEnd": 45.50669166666667
+          },
+          {
+            "text": "to eat",
+            "actualStart": 45.50669166666667,
+            "actualEnd": 45.78669166666667
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "I",
+          "start": 44.53669166666667,
+          "end": 44.57669166666667
+        },
+        {
+          "text": "brought",
+          "start": 44.57669166666667,
+          "end": 44.89669166666667
+        },
+        {
+          "text": "something",
+          "start": 45.02669166666667,
+          "end": 45.50669166666667
+        },
+        {
+          "text": "to",
+          "start": 45.50669166666667,
+          "end": 45.616691666666675
+        },
+        {
+          "text": "eat",
+          "start": 45.616691666666675,
+          "end": 45.78669166666667
+        },
+        {
+          "text": "for",
+          "start": 45.78669166666667,
+          "end": 45.95669166666667
+        },
+        {
+          "text": "lunch.",
+          "start": 45.95669166666667,
+          "end": 46.24669166666667
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 48.95375633333334,
+      "end": 55.375356000000004,
+      "ko": "우리는 앉을 의자가 필요해요.",
+      "en": "We need a chair to sit on.",
+      "wrong": "We need a chair to sit.",
+      "focus": [
+        "a chair",
+        "to sit on"
+      ],
+      "note": "의도한 의자에 앉는 의미에서는 sit on a chair의 관계를 유지해 끝에 on을 둔다.",
+      "visual": "앉는 인물과 의자 접촉면을 on에 연결하고 빠진 관계선 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 앉을 의자가 필요해요.",
+          "actualStart": 49.15375633333334,
+          "actualEnd": 51.010037333333344,
+          "rate": 185,
+          "cacheKey": "7c6817d8bdaa5dcd7c12c6dc0fbdc08d0242d2c737a8e9d706beecfc928f94a0",
+          "file": "audio/10/example-2-ko-7c6817d8bdaa5dcd.wav",
+          "duration": 1.856281
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We need a chair to sit on.",
+          "actualStart": 51.360037333333345,
+          "actualEnd": 52.76720333333334,
+          "rate": 155,
+          "cacheKey": "178a4c85a321162c745a8da63bd7b96582378cba7153a2762a6944a7cebac586",
+          "file": "audio/10/example-2-en-178a4c85a321162c.wav",
+          "duration": 1.407166
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "a chair",
+            "actualStart": 51.820037333333346,
+            "actualEnd": 52.19003733333334
+          },
+          {
+            "text": "to sit on",
+            "actualStart": 52.28003733333335,
+            "actualEnd": 52.69003733333334
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "We",
+          "start": 51.38003733333335,
+          "end": 51.500037333333346
+        },
+        {
+          "text": "need",
+          "start": 51.500037333333346,
+          "end": 51.750037333333346
+        },
+        {
+          "text": "a",
+          "start": 51.820037333333346,
+          "end": 51.85003733333335
+        },
+        {
+          "text": "chair",
+          "start": 51.85003733333335,
+          "end": 52.19003733333334
+        },
+        {
+          "text": "to",
+          "start": 52.28003733333335,
+          "end": 52.34003733333334
+        },
+        {
+          "text": "sit",
+          "start": 52.34003733333334,
+          "end": 52.55003733333334
+        },
+        {
+          "text": "on.",
+          "start": 52.55003733333334,
+          "end": 52.69003733333334
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 55.375356000000004,
+      "end": 63.06421166666667,
+      "ko": "그녀는 버스를 타려고 일찍 나갔어요.",
+      "en": "She left early to catch the bus.",
+      "wrong": "She left early to catching the bus.",
+      "focus": [
+        "left early",
+        "to catch"
+      ],
+      "note": "떠난 목적을 나타내는 to부정사이며 catching이 아니라 원형 catch를 쓴다.",
+      "visual": "출발 행동에서 버스 탑승 목적까지 왜 화살표 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀는 버스를 타려고 일찍 나갔어요.",
+          "actualStart": 55.575356000000006,
+          "actualEnd": 58.296626,
+          "rate": 185,
+          "cacheKey": "3c6a51a776f7d2554307b1d09cb1b5a08d643c813df4fae5d66fcd86923f4dc8",
+          "file": "audio/10/example-3-ko-3c6a51a776f7d255.wav",
+          "duration": 2.72127
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She left early to catch the bus.",
+          "actualStart": 58.646626000000005,
+          "actualEnd": 60.456059,
+          "rate": 155,
+          "cacheKey": "18804762f61594038e4ce80736f6d76f1aac3e46a7837413365b7062150f382f",
+          "file": "audio/10/example-3-en-18804762f6159403.wav",
+          "duration": 1.809433
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "left early",
+            "actualStart": 58.856626000000006,
+            "actualEnd": 59.48662600000001
+          },
+          {
+            "text": "to catch",
+            "actualStart": 59.48662600000001,
+            "actualEnd": 59.976626
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "She",
+          "start": 58.696626,
+          "end": 58.856626000000006
+        },
+        {
+          "text": "left",
+          "start": 58.856626000000006,
+          "end": 59.13662600000001
+        },
+        {
+          "text": "early",
+          "start": 59.13662600000001,
+          "end": 59.48662600000001
+        },
+        {
+          "text": "to",
+          "start": 59.48662600000001,
+          "end": 59.626626
+        },
+        {
+          "text": "catch",
+          "start": 59.626626,
+          "end": 59.976626
+        },
+        {
+          "text": "the",
+          "start": 59.976626,
+          "end": 60.186626000000004
+        },
+        {
+          "text": "bus.",
+          "start": 60.186626000000004,
+          "end": 60.336626
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 63.06421166666667,
+      "end": 70.74585633333335,
+      "ko": "이 차는 지금 마시기에는 너무 뜨거워요.",
+      "en": "This tea is too hot to drink now.",
+      "wrong": "This tea is too hot to drinking now.",
+      "focus": [
+        "too hot",
+        "to drink"
+      ],
+      "note": "too 형용사 to 원형 구조로 뜨거워서 마시기 어렵다는 뜻을 나타낸다.",
+      "visual": "온도 표시가 적정선을 넘고 to drink 가능 칸에 제한 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이 차는 지금 마시기에는 너무 뜨거워요.",
+          "actualStart": 63.264211666666675,
+          "actualEnd": 65.92012966666667,
+          "rate": 185,
+          "cacheKey": "e92a5642fbffc5972cfdc1bd1a3cdf6ad1caad47453903b14114905a0a44493d",
+          "file": "audio/10/example-4-ko-e92a5642fbffc597.wav",
+          "duration": 2.655918
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This tea is too hot to drink now.",
+          "actualStart": 66.27012966666666,
+          "actualEnd": 68.13770366666667,
+          "rate": 155,
+          "cacheKey": "3ff471633504cf3a5fa33620c911a627bac404e2168c4ebb8b190232b604639c",
+          "file": "audio/10/example-4-en-3ff471633504cf3a.wav",
+          "duration": 1.867574
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "too hot",
+            "actualStart": 66.91012966666666,
+            "actualEnd": 67.26012966666666
+          },
+          {
+            "text": "to drink",
+            "actualStart": 67.33012966666666,
+            "actualEnd": 67.81012966666667
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "This",
+          "start": 66.29012966666666,
+          "end": 66.44012966666666
+        },
+        {
+          "text": "tea",
+          "start": 66.55012966666666,
+          "end": 66.76012966666666
+        },
+        {
+          "text": "is",
+          "start": 66.76012966666666,
+          "end": 66.89012966666667
+        },
+        {
+          "text": "too",
+          "start": 66.91012966666666,
+          "end": 67.11012966666667
+        },
+        {
+          "text": "hot",
+          "start": 67.11012966666667,
+          "end": 67.26012966666666
+        },
+        {
+          "text": "to",
+          "start": 67.33012966666666,
+          "end": 67.43012966666666
+        },
+        {
+          "text": "drink",
+          "start": 67.48012966666666,
+          "end": 67.81012966666667
+        },
+        {
+          "text": "now.",
+          "start": 67.81012966666667,
+          "end": 68.05012966666666
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 70.74585633333335,
+      "end": 78.80976900000003,
+      "ko": "그녀는 그 선반에 닿을 만큼 키가 커요.",
+      "en": "She is tall enough to reach that shelf.",
+      "wrong": "She is enough tall to reach that shelf.",
+      "focus": [
+        "tall enough",
+        "to reach"
+      ],
+      "note": "형용사 tall 뒤에 enough를 놓는다; enough tall 어순은 맞지 않는다.",
+      "visual": "키 눈금과 선반 높이를 비교하고 tall → enough 순서 화살표 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀는 그 선반에 닿을 만큼 키가 커요.",
+          "actualStart": 70.94585633333335,
+          "actualEnd": 73.77515333333335,
+          "rate": 185,
+          "cacheKey": "794f0fcdea414abddc676b2122580403204c984b89f53ff5bfc99c0bd8f53cf9",
+          "file": "audio/10/example-5-ko-794f0fcdea414abd.wav",
+          "duration": 2.829297
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She is tall enough to reach that shelf.",
+          "actualStart": 74.12515333333334,
+          "actualEnd": 76.20161633333335,
+          "rate": 155,
+          "cacheKey": "3378537750d5c5a07b9251790e14260b71261ef2e2db2cab8e697332868f8e01",
+          "file": "audio/10/example-5-en-3378537750d5c5a0.wav",
+          "duration": 2.076463
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "tall enough",
+            "actualStart": 74.55515333333335,
+            "actualEnd": 75.00515333333334
+          },
+          {
+            "text": "to reach",
+            "actualStart": 75.09515333333334,
+            "actualEnd": 75.45515333333334
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "She",
+          "start": 74.17515333333334,
+          "end": 74.31515333333334
+        },
+        {
+          "text": "is",
+          "start": 74.31515333333334,
+          "end": 74.42515333333334
+        },
+        {
+          "text": "tall",
+          "start": 74.55515333333335,
+          "end": 74.68515333333335
+        },
+        {
+          "text": "enough",
+          "start": 74.68515333333335,
+          "end": 75.00515333333334
+        },
+        {
+          "text": "to",
+          "start": 75.09515333333334,
+          "end": 75.18515333333335
+        },
+        {
+          "text": "reach",
+          "start": 75.18515333333335,
+          "end": 75.45515333333334
+        },
+        {
+          "text": "that",
+          "start": 75.51515333333334,
+          "end": 75.75515333333334
+        },
+        {
+          "text": "shelf.",
+          "start": 75.75515333333334,
+          "end": 76.04515333333335
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 78.80976900000003,
+      "end": 86.42125466666671,
+      "ko": "나는 이번 주말에 읽을 책을 빌렸어요.",
+      "en": "I borrowed a book to read this weekend.",
+      "wrong": "I borrowed a book to reads this weekend.",
+      "focus": [
+        "a book",
+        "to read"
+      ],
+      "note": "읽을 책이라는 명사 수식 해석에서 to read를 쓴다; 문맥에 따라 빌린 목적 해석도 가능하다.",
+      "visual": "책 카드에 읽기 꼬리표를 붙이고 목적 해석도 가능한 점을 작은 분기선으로 표시.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 이번 주말에 읽을 책을 빌렸어요.",
+          "actualStart": 79.00976900000003,
+          "actualEnd": 81.53970100000004,
+          "rate": 185,
+          "cacheKey": "c9090bb9c1960b48f10b2b43590f87f0c3e79eb8e60904c5e3d8ac50c6b504f6",
+          "file": "audio/10/example-6-ko-c9090bb9c1960b48.wav",
+          "duration": 2.529932
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I borrowed a book to read this weekend.",
+          "actualStart": 81.88970100000003,
+          "actualEnd": 83.81310200000003,
+          "rate": 155,
+          "cacheKey": "aae71235841fc26ea45a11d30e52ad1d5d6b290adc1c8e95a008a4e9bae49cb1",
+          "file": "audio/10/example-6-en-aae71235841fc26e.wav",
+          "duration": 1.923401
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "a book",
+            "actualStart": 82.42970100000004,
+            "actualEnd": 82.72970100000003
+          },
+          {
+            "text": "to read",
+            "actualStart": 82.72970100000003,
+            "actualEnd": 83.08970100000003
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "I",
+          "start": 81.89970100000004,
+          "end": 81.94970100000003
+        },
+        {
+          "text": "borrowed",
+          "start": 81.94970100000003,
+          "end": 82.42970100000004
+        },
+        {
+          "text": "a",
+          "start": 82.42970100000004,
+          "end": 82.47970100000003
+        },
+        {
+          "text": "book",
+          "start": 82.47970100000003,
+          "end": 82.72970100000003
+        },
+        {
+          "text": "to",
+          "start": 82.72970100000003,
+          "end": 82.84970100000002
+        },
+        {
+          "text": "read",
+          "start": 82.84970100000002,
+          "end": 83.08970100000003
+        },
+        {
+          "text": "this",
+          "start": 83.08970100000003,
+          "end": 83.32970100000003
+        },
+        {
+          "text": "weekend.",
+          "start": 83.32970100000003,
+          "end": 83.72970100000003
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 86.42125466666671,
+      "end": 94.70911233333338,
+      "ko": "그는 첫 면접 이야기를 할 준비가 됐어요.",
+      "en": "He is ready to discuss his first interview.",
+      "wrong": "He is ready discuss his first interview.",
+      "focus": [
+        "ready",
+        "to discuss"
+      ],
+      "note": "ready가 요구하는 준비의 내용을 to discuss로 보충하며 discuss만 바로 붙이지 않는다.",
+      "visual": "ready 상태 칸 뒤 준비된 행동 to discuss를 내용 괄호로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그는 첫 면접 이야기를 할 준비가 됐어요.",
+          "actualStart": 86.62125466666672,
+          "actualEnd": 89.46787566666671,
+          "rate": 185,
+          "cacheKey": "f7561bbe944c296599d4cea635135f1c39fb97f1928f5acad67cc996063c09c3",
+          "file": "audio/10/example-7-ko-f7561bbe944c2965.wav",
+          "duration": 2.846621
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He is ready to discuss his first interview.",
+          "actualStart": 89.81787566666671,
+          "actualEnd": 92.10095966666671,
+          "rate": 155,
+          "cacheKey": "4591e1128f42da57d2ef5ebfe84b7bd081683c9e590025ab2ddb41163658198e",
+          "file": "audio/10/example-7-en-4591e1128f42da57.wav",
+          "duration": 2.283084
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "ready",
+            "actualStart": 90.10787566666671,
+            "actualEnd": 90.3678756666667
+          },
+          {
+            "text": "to discuss",
+            "actualStart": 90.3678756666667,
+            "actualEnd": 90.92787566666671
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "He",
+          "start": 89.85787566666671,
+          "end": 89.93787566666671
+        },
+        {
+          "text": "is",
+          "start": 89.93787566666671,
+          "end": 90.04787566666671
+        },
+        {
+          "text": "ready",
+          "start": 90.10787566666671,
+          "end": 90.3678756666667
+        },
+        {
+          "text": "to",
+          "start": 90.3678756666667,
+          "end": 90.4778756666667
+        },
+        {
+          "text": "discuss",
+          "start": 90.48787566666671,
+          "end": 90.92787566666671
+        },
+        {
+          "text": "his",
+          "start": 90.92787566666671,
+          "end": 91.1178756666667
+        },
+        {
+          "text": "first",
+          "start": 91.1178756666667,
+          "end": 91.42787566666671
+        },
+        {
+          "text": "interview.",
+          "start": 91.42787566666671,
+          "end": 92.0278756666667
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94.70911233333338,
+      "end": 102.70304800000005,
+      "ko": "마지막 버스를 타려면 지금 떠나야 해요.",
+      "en": "I need to leave now to catch the last bus.",
+      "wrong": "I need leave now to catch the last bus.",
+      "focus": [
+        "need to leave",
+        "to catch"
+      ],
+      "note": "첫 부정사는 need의 필요한 행동, 둘째는 떠나는 목적이다; 둘을 모두 목적 수식으로 설명하지 않는다.",
+      "visual": "need 뒤 내용 괄호와 leave 뒤 목적 화살표를 서로 다른 방향으로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "마지막 버스를 타려면 지금 떠나야 해요.",
+          "actualStart": 94.90911233333338,
+          "actualEnd": 97.41514433333339,
+          "rate": 185,
+          "cacheKey": "0be139f7418ed17c590ac769de588212a1f35a72383bfb4353de9bc2f835184c",
+          "file": "audio/10/example-8-ko-0be139f7418ed17c.wav",
+          "duration": 2.506032
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I need to leave now to catch the last bus.",
+          "actualStart": 97.76514433333338,
+          "actualEnd": 100.09489533333338,
+          "rate": 155,
+          "cacheKey": "42a726cc8734dd9c98a50dea92ece8ec4d227835d405c0e62c5ac17ef85b0497",
+          "file": "audio/10/example-8-en-42a726cc8734dd9c.wav",
+          "duration": 2.329751
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "need to leave",
+            "actualStart": 97.82514433333338,
+            "actualEnd": 98.53514433333338
+          },
+          {
+            "text": "to catch",
+            "actualStart": 98.72514433333338,
+            "actualEnd": 99.17514433333338
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "I",
+          "start": 97.77514433333339,
+          "end": 97.82514433333338
+        },
+        {
+          "text": "need",
+          "start": 97.82514433333338,
+          "end": 98.06514433333338
+        },
+        {
+          "text": "to",
+          "start": 98.16514433333339,
+          "end": 98.21514433333338
+        },
+        {
+          "text": "leave",
+          "start": 98.21514433333338,
+          "end": 98.53514433333338
+        },
+        {
+          "text": "now",
+          "start": 98.53514433333338,
+          "end": 98.72514433333338
+        },
+        {
+          "text": "to",
+          "start": 98.72514433333338,
+          "end": 98.84514433333338
+        },
+        {
+          "text": "catch",
+          "start": 98.84514433333338,
+          "end": 99.17514433333338
+        },
+        {
+          "text": "the",
+          "start": 99.17514433333338,
+          "end": 99.36514433333338
+        },
+        {
+          "text": "last",
+          "start": 99.36514433333338,
+          "end": 99.53514433333338
+        },
+        {
+          "text": "bus.",
+          "start": 99.66514433333339,
+          "end": 99.81514433333338
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 102.70304800000005,
+      "end": 111.48922766666672,
+      "ko": "이 상자는 장비를 모두 담기에 충분히 커요.",
+      "en": "This box is large enough to hold all the equipment.",
+      "wrong": "This box is enough large to hold all the equipment.",
+      "focus": [
+        "large enough",
+        "to hold"
+      ],
+      "note": "형용사 large 뒤에 enough를 놓고 수용 가능한 행동을 to hold로 연결한다.",
+      "visual": "상자 크기와 장비 부피를 비교하고 large enough 어순을 상단에 고정.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이 상자는 장비를 모두 담기에 충분히 커요.",
+          "actualStart": 102.90304800000006,
+          "actualEnd": 105.85080300000006,
+          "rate": 185,
+          "cacheKey": "9db8e52e750117a1530189a2c9cffb04f2eabcdbd434087a2490f11303b4265b",
+          "file": "audio/10/example-9-ko-9db8e52e750117a1.wav",
+          "duration": 2.947755
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This box is large enough to hold all the equipment.",
+          "actualStart": 106.20080300000005,
+          "actualEnd": 108.88107500000005,
+          "rate": 155,
+          "cacheKey": "667ae0e49ad41a385289d5d1893fb1e109566e3ff89be1f6f2f60d1d37fc4fe0",
+          "file": "audio/10/example-9-en-667ae0e49ad41a38.wav",
+          "duration": 2.680272
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "large enough",
+            "actualStart": 106.76080300000005,
+            "actualEnd": 107.42080300000005
+          },
+          {
+            "text": "to hold",
+            "actualStart": 107.51080300000005,
+            "actualEnd": 107.83080300000005
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "This",
+          "start": 106.22080300000005,
+          "end": 106.37080300000005
+        },
+        {
+          "text": "box",
+          "start": 106.46080300000006,
+          "end": 106.62080300000005
+        },
+        {
+          "text": "is",
+          "start": 106.68080300000005,
+          "end": 106.76080300000005
+        },
+        {
+          "text": "large",
+          "start": 106.76080300000005,
+          "end": 107.08080300000005
+        },
+        {
+          "text": "enough",
+          "start": 107.08080300000005,
+          "end": 107.42080300000005
+        },
+        {
+          "text": "to",
+          "start": 107.51080300000005,
+          "end": 107.58080300000005
+        },
+        {
+          "text": "hold",
+          "start": 107.58080300000005,
+          "end": 107.83080300000005
+        },
+        {
+          "text": "all",
+          "start": 107.83080300000005,
+          "end": 108.02080300000004
+        },
+        {
+          "text": "the",
+          "start": 108.02080300000004,
+          "end": 108.21080300000006
+        },
+        {
+          "text": "equipment.",
+          "start": 108.21080300000006,
+          "end": 108.79080300000005
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 111.48922766666672,
+      "end": 120.8650673333334,
+      "ko": "그녀는 모두가 끝내기를 기다릴 만큼 인내심이 있었어요.",
+      "en": "She was patient enough to wait for everyone to finish.",
+      "wrong": "She was enough patient to wait for everyone to finish.",
+      "focus": [
+        "patient enough",
+        "to wait"
+      ],
+      "note": "정도 표현은 patient enough이며 마지막 for everyone to finish는 기다리는 사건의 행위자를 밝힌다.",
+      "visual": "인내 정도와 기다림을 연결하고 everyone은 finish의 행위자 칸으로 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀는 모두가 끝내기를 기다릴 만큼 인내심이 있었어요.",
+          "actualStart": 111.68922766666672,
+          "actualEnd": 115.22673366666672,
+          "rate": 185,
+          "cacheKey": "dc708097f05010de35a6078d820b7fed0c30278d9a078ef0a2dd02664ffb8855",
+          "file": "audio/10/example-10-ko-dc708097f05010de.wav",
+          "duration": 3.537506
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She was patient enough to wait for everyone to finish.",
+          "actualStart": 115.57673366666671,
+          "actualEnd": 118.25691466666672,
+          "rate": 155,
+          "cacheKey": "d90ad1138c1e27297d89e478a97a6b79c2ff373cbda84cd400609374acfba569",
+          "file": "audio/10/example-10-en-d90ad1138c1e2729.wav",
+          "duration": 2.680181
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "patient enough",
+            "actualStart": 116.0367336666667,
+            "actualEnd": 116.60673366666671
+          },
+          {
+            "text": "to wait",
+            "actualStart": 116.69673366666672,
+            "actualEnd": 116.96673366666671
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "She",
+          "start": 115.62673366666671,
+          "end": 115.75673366666672
+        },
+        {
+          "text": "was",
+          "start": 115.75673366666672,
+          "end": 115.90673366666671
+        },
+        {
+          "text": "patient",
+          "start": 116.0367336666667,
+          "end": 116.34673366666671
+        },
+        {
+          "text": "enough",
+          "start": 116.34673366666671,
+          "end": 116.60673366666671
+        },
+        {
+          "text": "to",
+          "start": 116.69673366666672,
+          "end": 116.8167336666667
+        },
+        {
+          "text": "wait",
+          "start": 116.8167336666667,
+          "end": 116.96673366666671
+        },
+        {
+          "text": "for",
+          "start": 117.07673366666671,
+          "end": 117.23673366666671
+        },
+        {
+          "text": "everyone",
+          "start": 117.23673366666671,
+          "end": 117.70673366666671
+        },
+        {
+          "text": "to",
+          "start": 117.70673366666671,
+          "end": 117.82673366666671
+        },
+        {
+          "text": "finish.",
+          "start": 117.82673366666671,
+          "end": 118.18673366666671
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 120.8650673333334,
+      "end": 130,
+      "text": "to부정사는 위치만 보지 말고 명사 설명인지 목적 또는 보충 내용인지 관계를 확인하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "to부정사는 위치만 보지 말고 명사 설명인지 목적 또는 보충 내용인지 관계를 확인하세요.",
+          "actualStart": 121.0650673333334,
+          "actualEnd": 127.6418473333334,
+          "rate": 185,
+          "cacheKey": "f1fade0375efc55266dad842df160d55a97ff6c0d8af80a3d93a9943bea97b4b",
+          "file": "audio/10/summary-ko-f1fade0375efc552.wav",
+          "duration": 6.57678
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 103.62770999999998,
+  "sourceHash": "835d682e9f345d5e1690006a22c949f4c8cb04881019db45cbfc014c30865de2",
+  "audioFile": "audio/10/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "835d682e9f345d5e1690006a22c949f4c8cb04881019db45cbfc014c30865de2",
+    "clipHashes": {
+      "example-1-en": "8f2972eab09f619c2881bfdfb6e461ca3c61699ef20c9c3cccf36128306884be",
+      "example-2-en": "2da30ed811517d1470056d66af8077eeff7f0d5d0acd0045d7e4e24e65be049d",
+      "example-3-en": "992f2e5286498b921d2f6dc510ba301924699a9a1a18d08f1a7933f227271552",
+      "example-4-en": "3c73cdc06d7c361f37ac1ce47f80cc99d661c7b910e3534e58c489965f139858",
+      "example-5-en": "9988b65bf1f76c73e410a119300b242f94474a4694a651f0545d4953121c9d4c",
+      "example-6-en": "0d380e10bc8507a6a95f923d251a9808fcfd077968223b6fe6904e6ceeb53d56",
+      "example-7-en": "5a4620d90eace8bb59080e114d623a53ddf8f1158ffbcaf07d3dbb0ac992f2ea",
+      "example-8-en": "47984214763a66c1f25d2988b9fb02052e5da5f3e42e801fe9b9359c7fc70df3",
+      "example-9-en": "f6af1a377d4f29b766169d7298f148229ebeeaab35f1e16906a8f944c754f5ec",
+      "example-10-en": "476bb9171547f0e17fc79026e1b2f106cbebcc250e87284b933809e266e5118a"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

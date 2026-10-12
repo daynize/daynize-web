@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,240"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2240
+			},
+			"text": " We elected Maya team leader last month.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998087,
+					"t_dtw": -1
+				},
+				{
+					"text": " We",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,130"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 130
+					},
+					"id": 775,
+					"p": 0.792584,
+					"t_dtw": -1
+				},
+				{
+					"text": " elected",
+					"timestamps": {
+						"from": "00:00:00,130",
+						"to": "00:00:00,610"
+					},
+					"offsets": {
+						"from": 130,
+						"to": 610
+					},
+					"id": 7018,
+					"p": 0.992494,
+					"t_dtw": -1
+				},
+				{
+					"text": " Maya",
+					"timestamps": {
+						"from": "00:00:00,610",
+						"to": "00:00:00,880"
+					},
+					"offsets": {
+						"from": 610,
+						"to": 880
+					},
+					"id": 26041,
+					"p": 0.0941181,
+					"t_dtw": -1
+				},
+				{
+					"text": " team",
+					"timestamps": {
+						"from": "00:00:00,880",
+						"to": "00:00:01,150"
+					},
+					"offsets": {
+						"from": 880,
+						"to": 1150
+					},
+					"id": 1074,
+					"p": 0.608719,
+					"t_dtw": -1
+				},
+				{
+					"text": " leader",
+					"timestamps": {
+						"from": "00:00:01,150",
+						"to": "00:00:01,560"
+					},
+					"offsets": {
+						"from": 1150,
+						"to": 1560
+					},
+					"id": 3554,
+					"p": 0.987022,
+					"t_dtw": -1
+				},
+				{
+					"text": " last",
+					"timestamps": {
+						"from": "00:00:01,560",
+						"to": "00:00:01,830"
+					},
+					"offsets": {
+						"from": 1560,
+						"to": 1830
+					},
+					"id": 938,
+					"p": 0.998742,
+					"t_dtw": -1
+				},
+				{
+					"text": " month",
+					"timestamps": {
+						"from": "00:00:01,830",
+						"to": "00:00:02,160"
+					},
+					"offsets": {
+						"from": 1830,
+						"to": 2160
+					},
+					"id": 1227,
+					"p": 0.999119,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,240",
+						"to": "00:00:02,240"
+					},
+					"offsets": {
+						"from": 2240,
+						"to": 2240
+					},
+					"id": 13,
+					"p": 0.948242,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_112]",
+					"timestamps": {
+						"from": "00:00:02,240",
+						"to": "00:00:02,240"
+					},
+					"offsets": {
+						"from": 2240,
+						"to": 2240
+					},
+					"id": 50475,
+					"p": 0.0779967,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,656 @@
+{
+  "id": "basic-05",
+  "episode": 5,
+  "title": "하게 하고, 하는 것을 보고",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "누군가에게 일을 하게 할 때, 사람 뒤의 동사 형태를 확인하세요. 메이크와 렛 뒤에서는 원형을 써요.",
+      "screen": "make / let + 사람 + 동사원형",
+      "visual": "make와 let 두 줄에서 사람 칸 다음 원형 칸을 같은 색으로 강조.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "누군가에게 일을 하게 할 때, 사람 뒤의 동사 형태를 확인하세요. 메이크와 렛 뒤에서는 원형을 써요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "일을 맡기는 해브도 사람 뒤에 원형을 쓰지만, 겟으로 누군가 하도록 이끌면 투와 원형을 붙여요.",
+      "screen": "have someone do / get someone to do",
+      "visual": "have와 get 평행 배열에서 get 줄에만 to 연결 고리 표시.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "일을 맡기는 해브도 사람 뒤에 원형을 쓰지만, 겟으로 누군가 하도록 이끌면 투와 원형을 붙여요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "보고 듣는 표현에서도 사람 뒤에 원형이 올 수 있어요. 동작 전체를 보았다는 관점에서 자주 쓰죠.",
+      "screen": "see / hear + 사람 + 동사원형",
+      "visual": "한 동작의 시작부터 끝까지 이어진 전체 구간을 눈·귀 표시로 묶기.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "보고 듣는 표현에서도 사람 뒤에 원형이 올 수 있어요. 동작 전체를 보았다는 관점에서 자주 쓰죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "진행 중인 장면에 초점을 두면 아이엔지를 쓸 수 있어요. 둘 다 가능하지만 무엇을 관찰했는지가 달라져요.",
+      "screen": "saw him cross / saw him crossing",
+      "visual": "전체 횡단 구간과 횡단 도중 한 장면을 나란히 표시, 어느 쪽도 오답 표시하지 않기.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "진행 중인 장면에 초점을 두면 아이엔지를 쓸 수 있어요. 둘 다 가능하지만 무엇을 관찰했는지가 달라져요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "그 농담이 우리 모두를 웃게 했어요.",
+      "en": "The joke made us all laugh.",
+      "wrong": "The joke made us all to laugh.",
+      "focus": [
+        "made",
+        "laugh"
+      ],
+      "note": "능동 사역 make 뒤에서 사람이 하는 동작은 to 없는 원형 laugh로 나타낸다.",
+      "visual": "made → us all → laugh 배열에서 to가 없는 간격을 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 농담이 우리 모두를 웃게 했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The joke made us all laugh.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "made",
+            "actualStart": null
+          },
+          {
+            "text": "laugh",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "엄마가 오늘 나를 일찍 나가게 해 줬어요.",
+      "en": "My mom let me leave early today.",
+      "wrong": "My mom let me to leave early today.",
+      "focus": [
+        "let",
+        "leave"
+      ],
+      "note": "허락을 나타내는 let 사람 원형 구조에는 to를 붙이지 않는다.",
+      "visual": "허락 표시가 me를 통과하고 leave 원형 칸으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "엄마가 오늘 나를 일찍 나가게 해 줬어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "My mom let me leave early today.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "let",
+            "actualStart": null
+          },
+          {
+            "text": "leave",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "나는 직원에게 문을 확인하도록 맡겼어요.",
+      "en": "I had the worker check the door.",
+      "wrong": "I had the worker checked the door.",
+      "focus": [
+        "had",
+        "check"
+      ],
+      "note": "직원이 확인하는 능동 사역 구조이므로 check를 쓴다; had the door checked와 구별한다.",
+      "visual": "worker가 확인 동작의 주체임을 화살표로 표시하고 door를 대상 칸에 놓기.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 직원에게 문을 확인하도록 맡겼어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I had the worker check the door.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had",
+            "actualStart": null
+          },
+          {
+            "text": "check",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "나는 동생을 설득해 이사를 돕게 했어요.",
+      "en": "I got my brother to help with the move.",
+      "wrong": "I got my brother help with the move.",
+      "focus": [
+        "got",
+        "to help"
+      ],
+      "note": "get my brother to help는 동생이 돕도록 이끌었다는 뜻이다. get my brother help도 가능하지만 help가 명사여서 동생에게 도움을 구해 줬다는 뜻이므로 제시된 한국어와 다르다.",
+      "visual": "설득 화살표 뒤 사람과 to help를 연결. 명사 help의 다른 의미는 교정 메모로 구분.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 동생을 설득해 이사를 돕게 했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I got my brother to help with the move.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "got",
+            "actualStart": null
+          },
+          {
+            "text": "to help",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "나는 그녀가 현관문을 닫는 것을 봤어요.",
+      "en": "I saw her close the front door.",
+      "wrong": "I saw her to close the front door.",
+      "focus": [
+        "saw",
+        "close"
+      ],
+      "note": "직접 지각 구문에서 to를 붙이지 않는다; 원형은 문 닫는 사건을 전체적으로 제시한다.",
+      "visual": "열린 문에서 닫힌 문까지 전체 구간을 saw의 관찰 괄호로 묶기.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그녀가 현관문을 닫는 것을 봤어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I saw her close the front door.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "saw",
+            "actualStart": null
+          },
+          {
+            "text": "close",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "나는 복도에서 그가 노래하는 것을 들었어요.",
+      "en": "I heard him singing in the hallway.",
+      "wrong": "I heard him was singing in the hallway.",
+      "focus": [
+        "heard",
+        "singing"
+      ],
+      "note": "heard 목적어 ing 구조에 was를 끼우지 않는다; heard that he was singing은 다른 절 구조다.",
+      "visual": "복도에서 노래 중인 장면을 잘라 표시하고 him 뒤 was 혼합 오류 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 복도에서 그가 노래하는 것을 들었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I heard him singing in the hallway.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "heard",
+            "actualStart": null
+          },
+          {
+            "text": "singing",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "그녀는 기술자에게 고장 난 프린터를 점검하게 했어요.",
+      "en": "She had the technician inspect the broken printer.",
+      "wrong": "She had the technician inspected the broken printer.",
+      "focus": [
+        "the technician",
+        "inspect"
+      ],
+      "note": "기술자가 점검하는 구조에서는 원형 inspect이며 inspected로 바꾸지 않는다.",
+      "visual": "기술자에서 프린터로 점검 동작 화살표, 행위자와 대상 칸 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 기술자에게 고장 난 프린터를 점검하게 했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She had the technician inspect the broken printer.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "the technician",
+            "actualStart": null
+          },
+          {
+            "text": "inspect",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "소방 훈련 중 직원들은 건물 밖으로 나가야 했어요.",
+      "en": "The staff were made to leave during the fire drill.",
+      "wrong": "The staff were made leave during the fire drill.",
+      "focus": [
+        "were made",
+        "to leave"
+      ],
+      "note": "make 사역 구문의 수동형에는 to leave를 쓴다; 능동 원형 규칙을 그대로 옮기지 않는다.",
+      "visual": "능동 made staff leave에서 수동 were made to leave로 이동하며 to 등장.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "소방 훈련 중 직원들은 건물 밖으로 나가야 했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The staff were made to leave during the fire drill.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were made",
+            "actualStart": null
+          },
+          {
+            "text": "to leave",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "나는 비가 오는데 그가 도로를 건너는 중인 것을 봤어요.",
+      "en": "I saw him crossing the road in the rain.",
+      "wrong": "I saw him was crossing the road in the rain.",
+      "focus": [
+        "saw",
+        "crossing"
+      ],
+      "note": "목적어 뒤 진행 장면은 crossing으로 제시한다; 원형 cross도 가능하지만 관찰 초점이 달라진다.",
+      "visual": "도로 중간의 인물만 관찰 창에 담고 crossing 강조, was는 구조 혼합으로 표시.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 비가 오는데 그가 도로를 건너는 중인 것을 봤어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I saw him crossing the road in the rain.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "saw",
+            "actualStart": null
+          },
+          {
+            "text": "crossing",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "나는 그녀가 다시 대답하기 전에 문을 닫는 것을 들었어요.",
+      "en": "I heard her close the door before she answered again.",
+      "wrong": "I heard her to close the door before she answered again.",
+      "focus": [
+        "heard",
+        "close"
+      ],
+      "note": "직접 들은 동작에는 원형 close나 문맥에 따라 closing을 쓰며 to close는 이 지각 구조에 맞지 않는다.",
+      "visual": "문 닫는 소리 다음 대답의 시간 순서를 표시하고 heard 뒤 원형 칸 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그녀가 다시 대답하기 전에 문을 닫는 것을 들었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I heard her close the door before she answered again.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "heard",
+            "actualStart": null
+          },
+          {
+            "text": "close",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "사역 동사는 동사별 결합을 확인하고 지각 동사는 전체 동작과 진행 장면의 초점을 구분하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "사역 동사는 동사별 결합을 확인하고 지각 동사는 전체 동작과 진행 장면의 초점을 구분하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

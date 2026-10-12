@@ -1,0 +1,241 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,500"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2500
+			},
+			"text": " If she were here now, she would know the answer.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.995822,
+					"t_dtw": -1
+				},
+				{
+					"text": " If",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,090"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 90
+					},
+					"id": 1002,
+					"p": 0.74629,
+					"t_dtw": -1
+				},
+				{
+					"text": " she",
+					"timestamps": {
+						"from": "00:00:00,130",
+						"to": "00:00:00,300"
+					},
+					"offsets": {
+						"from": 130,
+						"to": 300
+					},
+					"id": 673,
+					"p": 0.995319,
+					"t_dtw": -1
+				},
+				{
+					"text": " were",
+					"timestamps": {
+						"from": "00:00:00,300",
+						"to": "00:00:00,550"
+					},
+					"offsets": {
+						"from": 300,
+						"to": 550
+					},
+					"id": 547,
+					"p": 0.992583,
+					"t_dtw": -1
+				},
+				{
+					"text": " here",
+					"timestamps": {
+						"from": "00:00:00,550",
+						"to": "00:00:00,800"
+					},
+					"offsets": {
+						"from": 550,
+						"to": 800
+					},
+					"id": 994,
+					"p": 0.997018,
+					"t_dtw": -1
+				},
+				{
+					"text": " now",
+					"timestamps": {
+						"from": "00:00:00,800",
+						"to": "00:00:00,980"
+					},
+					"offsets": {
+						"from": 800,
+						"to": 980
+					},
+					"id": 783,
+					"p": 0.997691,
+					"t_dtw": -1
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:00,980",
+						"to": "00:00:01,050"
+					},
+					"offsets": {
+						"from": 980,
+						"to": 1050
+					},
+					"id": 11,
+					"p": 0.976712,
+					"t_dtw": -1
+				},
+				{
+					"text": " she",
+					"timestamps": {
+						"from": "00:00:01,280",
+						"to": "00:00:01,280"
+					},
+					"offsets": {
+						"from": 1280,
+						"to": 1280
+					},
+					"id": 673,
+					"p": 0.988616,
+					"t_dtw": -1
+				},
+				{
+					"text": " would",
+					"timestamps": {
+						"from": "00:00:01,330",
+						"to": "00:00:01,590"
+					},
+					"offsets": {
+						"from": 1330,
+						"to": 1590
+					},
+					"id": 561,
+					"p": 0.999072,
+					"t_dtw": -1
+				},
+				{
+					"text": " know",
+					"timestamps": {
+						"from": "00:00:01,590",
+						"to": "00:00:01,840"
+					},
+					"offsets": {
+						"from": 1590,
+						"to": 1840
+					},
+					"id": 760,
+					"p": 0.99624,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,840",
+						"to": "00:00:02,020"
+					},
+					"offsets": {
+						"from": 1840,
+						"to": 2020
+					},
+					"id": 262,
+					"p": 0.99846,
+					"t_dtw": -1
+				},
+				{
+					"text": " answer",
+					"timestamps": {
+						"from": "00:00:02,020",
+						"to": "00:00:02,430"
+					},
+					"offsets": {
+						"from": 2020,
+						"to": 2430
+					},
+					"id": 3280,
+					"p": 0.999142,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,500",
+						"to": "00:00:02,500"
+					},
+					"offsets": {
+						"from": 2500,
+						"to": 2500
+					},
+					"id": 13,
+					"p": 0.865652,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_125]",
+					"timestamps": {
+						"from": "00:00:02,500",
+						"to": "00:00:02,500"
+					},
+					"offsets": {
+						"from": 2500,
+						"to": 2500
+					},
+					"id": 50488,
+					"p": 0.0708631,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

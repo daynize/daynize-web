@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,600"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1600
+			},
+			"text": " I saw her close the front door.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998111,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,050"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 50
+					},
+					"id": 314,
+					"p": 0.973396,
+					"t_dtw": -1
+				},
+				{
+					"text": " saw",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,200"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 200
+					},
+					"id": 2497,
+					"p": 0.99678,
+					"t_dtw": -1
+				},
+				{
+					"text": " her",
+					"timestamps": {
+						"from": "00:00:00,220",
+						"to": "00:00:00,390"
+					},
+					"offsets": {
+						"from": 220,
+						"to": 390
+					},
+					"id": 607,
+					"p": 0.999192,
+					"t_dtw": -1
+				},
+				{
+					"text": " close",
+					"timestamps": {
+						"from": "00:00:00,390",
+						"to": "00:00:00,680"
+					},
+					"offsets": {
+						"from": 390,
+						"to": 680
+					},
+					"id": 1969,
+					"p": 0.99452,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,680",
+						"to": "00:00:00,850"
+					},
+					"offsets": {
+						"from": 680,
+						"to": 850
+					},
+					"id": 262,
+					"p": 0.999201,
+					"t_dtw": -1
+				},
+				{
+					"text": " front",
+					"timestamps": {
+						"from": "00:00:00,850",
+						"to": "00:00:01,140"
+					},
+					"offsets": {
+						"from": 850,
+						"to": 1140
+					},
+					"id": 2166,
+					"p": 0.998511,
+					"t_dtw": -1
+				},
+				{
+					"text": " door",
+					"timestamps": {
+						"from": "00:00:01,140",
+						"to": "00:00:01,370"
+					},
+					"offsets": {
+						"from": 1140,
+						"to": 1370
+					},
+					"id": 3420,
+					"p": 0.999344,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,370",
+						"to": "00:00:01,590"
+					},
+					"offsets": {
+						"from": 1370,
+						"to": 1590
+					},
+					"id": 13,
+					"p": 0.574523,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_80]",
+					"timestamps": {
+						"from": "00:00:01,600",
+						"to": "00:00:01,600"
+					},
+					"offsets": {
+						"from": 1600,
+						"to": 1600
+					},
+					"id": 50443,
+					"p": 0.179842,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

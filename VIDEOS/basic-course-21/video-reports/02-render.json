@@ -1,0 +1,36 @@
+{
+  "episode": 2,
+  "title": "전치사라는 지팡이가 필요한 순간",
+  "inputHash": "2fd4bf344ddf0e3d4d14beb80e3ef1f39c870b022a44cef8e74e7a573a586d42",
+  "output": "renders/basic-02.mp4",
+  "contact": "renders/basic-02-contact.png",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "duration": "130.000000",
+        "nb_frames": "3900"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "130.000000",
+        "nb_frames": "6095"
+      }
+    ],
+    "format": {
+      "duration": "130.000000",
+      "size": "7900218"
+    }
+  },
+  "audioPeakDb": -1.7,
+  "browserCheck": true,
+  "listeningReviewed": false
+}

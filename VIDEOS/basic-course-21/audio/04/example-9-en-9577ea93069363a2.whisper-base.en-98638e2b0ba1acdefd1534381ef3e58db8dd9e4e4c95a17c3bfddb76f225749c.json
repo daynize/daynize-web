@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,440"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2440
+			},
+			"text": " I consider that experience a valuable lesson.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998919,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.823331,
+					"t_dtw": -1
+				},
+				{
+					"text": " consider",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,530"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 530
+					},
+					"id": 2074,
+					"p": 0.998251,
+					"t_dtw": -1
+				},
+				{
+					"text": " that",
+					"timestamps": {
+						"from": "00:00:00,530",
+						"to": "00:00:00,760"
+					},
+					"offsets": {
+						"from": 530,
+						"to": 760
+					},
+					"id": 326,
+					"p": 0.999495,
+					"t_dtw": -1
+				},
+				{
+					"text": " experience",
+					"timestamps": {
+						"from": "00:00:00,760",
+						"to": "00:00:01,340"
+					},
+					"offsets": {
+						"from": 760,
+						"to": 1340
+					},
+					"id": 1998,
+					"p": 0.995646,
+					"t_dtw": -1
+				},
+				{
+					"text": " a",
+					"timestamps": {
+						"from": "00:00:01,380",
+						"to": "00:00:01,410"
+					},
+					"offsets": {
+						"from": 1380,
+						"to": 1410
+					},
+					"id": 257,
+					"p": 0.998942,
+					"t_dtw": -1
+				},
+				{
+					"text": " valuable",
+					"timestamps": {
+						"from": "00:00:01,410",
+						"to": "00:00:01,880"
+					},
+					"offsets": {
+						"from": 1410,
+						"to": 1880
+					},
+					"id": 8119,
+					"p": 0.995427,
+					"t_dtw": -1
+				},
+				{
+					"text": " lesson",
+					"timestamps": {
+						"from": "00:00:01,880",
+						"to": "00:00:02,170"
+					},
+					"offsets": {
+						"from": 1880,
+						"to": 2170
+					},
+					"id": 11483,
+					"p": 0.998306,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,220",
+						"to": "00:00:02,430"
+					},
+					"offsets": {
+						"from": 2220,
+						"to": 2430
+					},
+					"id": 13,
+					"p": 0.605847,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_122]",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 50485,
+					"p": 0.130748,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

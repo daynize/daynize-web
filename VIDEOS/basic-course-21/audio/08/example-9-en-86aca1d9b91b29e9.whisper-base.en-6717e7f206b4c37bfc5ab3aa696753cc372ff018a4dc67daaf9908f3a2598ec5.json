@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,840"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1840
+			},
+			"text": " I would join you if I had more time.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998159,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.950293,
+					"t_dtw": -1
+				},
+				{
+					"text": " would",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,390"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 390
+					},
+					"id": 561,
+					"p": 0.928187,
+					"t_dtw": -1
+				},
+				{
+					"text": " join",
+					"timestamps": {
+						"from": "00:00:00,390",
+						"to": "00:00:00,650"
+					},
+					"offsets": {
+						"from": 390,
+						"to": 650
+					},
+					"id": 4654,
+					"p": 0.994531,
+					"t_dtw": -1
+				},
+				{
+					"text": " you",
+					"timestamps": {
+						"from": "00:00:00,650",
+						"to": "00:00:00,840"
+					},
+					"offsets": {
+						"from": 650,
+						"to": 840
+					},
+					"id": 345,
+					"p": 0.998003,
+					"t_dtw": -1
+				},
+				{
+					"text": " if",
+					"timestamps": {
+						"from": "00:00:00,840",
+						"to": "00:00:00,970"
+					},
+					"offsets": {
+						"from": 840,
+						"to": 970
+					},
+					"id": 611,
+					"p": 0.997872,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,970",
+						"to": "00:00:01,030"
+					},
+					"offsets": {
+						"from": 970,
+						"to": 1030
+					},
+					"id": 314,
+					"p": 0.988787,
+					"t_dtw": -1
+				},
+				{
+					"text": " had",
+					"timestamps": {
+						"from": "00:00:01,030",
+						"to": "00:00:01,220"
+					},
+					"offsets": {
+						"from": 1030,
+						"to": 1220
+					},
+					"id": 550,
+					"p": 0.998919,
+					"t_dtw": -1
+				},
+				{
+					"text": " more",
+					"timestamps": {
+						"from": "00:00:01,220",
+						"to": "00:00:01,360"
+					},
+					"offsets": {
+						"from": 1220,
+						"to": 1360
+					},
+					"id": 517,
+					"p": 0.999304,
+					"t_dtw": -1
+				},
+				{
+					"text": " time",
+					"timestamps": {
+						"from": "00:00:01,480",
+						"to": "00:00:01,790"
+					},
+					"offsets": {
+						"from": 1480,
+						"to": 1790
+					},
+					"id": 640,
+					"p": 0.99963,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,800",
+						"to": "00:00:01,830"
+					},
+					"offsets": {
+						"from": 1800,
+						"to": 1830
+					},
+					"id": 13,
+					"p": 0.789013,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_92]",
+					"timestamps": {
+						"from": "00:00:01,840",
+						"to": "00:00:01,840"
+					},
+					"offsets": {
+						"from": 1840,
+						"to": 1840
+					},
+					"id": 50455,
+					"p": 0.111703,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

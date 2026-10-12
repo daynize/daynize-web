@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,800"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1800
+			},
+			"text": " I hope to meet your family soon.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997952,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,070"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 70
+					},
+					"id": 314,
+					"p": 0.92278,
+					"t_dtw": -1
+				},
+				{
+					"text": " hope",
+					"timestamps": {
+						"from": "00:00:00,070",
+						"to": "00:00:00,320"
+					},
+					"offsets": {
+						"from": 70,
+						"to": 320
+					},
+					"id": 2911,
+					"p": 0.997544,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,410",
+						"to": "00:00:00,490"
+					},
+					"offsets": {
+						"from": 410,
+						"to": 490
+					},
+					"id": 284,
+					"p": 0.999176,
+					"t_dtw": -1
+				},
+				{
+					"text": " meet",
+					"timestamps": {
+						"from": "00:00:00,490",
+						"to": "00:00:00,740"
+					},
+					"offsets": {
+						"from": 490,
+						"to": 740
+					},
+					"id": 1826,
+					"p": 0.999275,
+					"t_dtw": -1
+				},
+				{
+					"text": " your",
+					"timestamps": {
+						"from": "00:00:00,770",
+						"to": "00:00:01,050"
+					},
+					"offsets": {
+						"from": 770,
+						"to": 1050
+					},
+					"id": 534,
+					"p": 0.998772,
+					"t_dtw": -1
+				},
+				{
+					"text": " family",
+					"timestamps": {
+						"from": "00:00:01,050",
+						"to": "00:00:01,400"
+					},
+					"offsets": {
+						"from": 1050,
+						"to": 1400
+					},
+					"id": 1641,
+					"p": 0.997744,
+					"t_dtw": -1
+				},
+				{
+					"text": " soon",
+					"timestamps": {
+						"from": "00:00:01,510",
+						"to": "00:00:01,780"
+					},
+					"offsets": {
+						"from": 1510,
+						"to": 1780
+					},
+					"id": 2582,
+					"p": 0.999388,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,800",
+						"to": "00:00:01,800"
+					},
+					"offsets": {
+						"from": 1800,
+						"to": 1800
+					},
+					"id": 13,
+					"p": 0.86902,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_90]",
+					"timestamps": {
+						"from": "00:00:01,800",
+						"to": "00:00:01,800"
+					},
+					"offsets": {
+						"from": 1800,
+						"to": 1800
+					},
+					"id": 50453,
+					"p": 0.156062,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

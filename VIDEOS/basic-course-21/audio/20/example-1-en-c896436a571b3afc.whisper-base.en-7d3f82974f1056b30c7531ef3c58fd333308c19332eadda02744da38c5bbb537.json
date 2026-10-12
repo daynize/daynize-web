@@ -1,0 +1,255 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,800"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2800
+			},
+			"text": " If I were rich now, I would buy a bigger house.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.995119,
+					"t_dtw": -1
+				},
+				{
+					"text": " If",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,160"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 160
+					},
+					"id": 1002,
+					"p": 0.773806,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,160",
+						"to": "00:00:00,240"
+					},
+					"offsets": {
+						"from": 160,
+						"to": 240
+					},
+					"id": 314,
+					"p": 0.975869,
+					"t_dtw": -1
+				},
+				{
+					"text": " were",
+					"timestamps": {
+						"from": "00:00:00,240",
+						"to": "00:00:00,560"
+					},
+					"offsets": {
+						"from": 240,
+						"to": 560
+					},
+					"id": 547,
+					"p": 0.995034,
+					"t_dtw": -1
+				},
+				{
+					"text": " rich",
+					"timestamps": {
+						"from": "00:00:00,560",
+						"to": "00:00:00,880"
+					},
+					"offsets": {
+						"from": 560,
+						"to": 880
+					},
+					"id": 5527,
+					"p": 0.970679,
+					"t_dtw": -1
+				},
+				{
+					"text": " now",
+					"timestamps": {
+						"from": "00:00:00,880",
+						"to": "00:00:01,060"
+					},
+					"offsets": {
+						"from": 880,
+						"to": 1060
+					},
+					"id": 783,
+					"p": 0.99698,
+					"t_dtw": -1
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:01,300",
+						"to": "00:00:01,300"
+					},
+					"offsets": {
+						"from": 1300,
+						"to": 1300
+					},
+					"id": 11,
+					"p": 0.969346,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:01,320",
+						"to": "00:00:01,370"
+					},
+					"offsets": {
+						"from": 1320,
+						"to": 1370
+					},
+					"id": 314,
+					"p": 0.977612,
+					"t_dtw": -1
+				},
+				{
+					"text": " would",
+					"timestamps": {
+						"from": "00:00:01,370",
+						"to": "00:00:01,720"
+					},
+					"offsets": {
+						"from": 1370,
+						"to": 1720
+					},
+					"id": 561,
+					"p": 0.994577,
+					"t_dtw": -1
+				},
+				{
+					"text": " buy",
+					"timestamps": {
+						"from": "00:00:01,720",
+						"to": "00:00:01,880"
+					},
+					"offsets": {
+						"from": 1720,
+						"to": 1880
+					},
+					"id": 2822,
+					"p": 0.998698,
+					"t_dtw": -1
+				},
+				{
+					"text": " a",
+					"timestamps": {
+						"from": "00:00:01,940",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 1940,
+						"to": 2000
+					},
+					"id": 257,
+					"p": 0.998321,
+					"t_dtw": -1
+				},
+				{
+					"text": " bigger",
+					"timestamps": {
+						"from": "00:00:02,000",
+						"to": "00:00:02,420"
+					},
+					"offsets": {
+						"from": 2000,
+						"to": 2420
+					},
+					"id": 5749,
+					"p": 0.996599,
+					"t_dtw": -1
+				},
+				{
+					"text": " house",
+					"timestamps": {
+						"from": "00:00:02,420",
+						"to": "00:00:02,510"
+					},
+					"offsets": {
+						"from": 2420,
+						"to": 2510
+					},
+					"id": 2156,
+					"p": 0.999478,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,670",
+						"to": "00:00:02,670"
+					},
+					"offsets": {
+						"from": 2670,
+						"to": 2670
+					},
+					"id": 13,
+					"p": 0.856993,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_140]",
+					"timestamps": {
+						"from": "00:00:02,800",
+						"to": "00:00:02,800"
+					},
+					"offsets": {
+						"from": 2800,
+						"to": 2800
+					},
+					"id": 50503,
+					"p": 0.0270503,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

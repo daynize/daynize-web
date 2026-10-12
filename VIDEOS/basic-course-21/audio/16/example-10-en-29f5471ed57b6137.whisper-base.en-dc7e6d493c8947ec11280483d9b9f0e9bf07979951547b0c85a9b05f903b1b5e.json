@@ -1,0 +1,227 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,440"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2440
+			},
+			"text": " The workers were made to clean the room before leaving.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998199,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,160"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 160
+					},
+					"id": 383,
+					"p": 0.69151,
+					"t_dtw": -1
+				},
+				{
+					"text": " workers",
+					"timestamps": {
+						"from": "00:00:00,160",
+						"to": "00:00:00,460"
+					},
+					"offsets": {
+						"from": 160,
+						"to": 460
+					},
+					"id": 3259,
+					"p": 0.99627,
+					"t_dtw": -1
+				},
+				{
+					"text": " were",
+					"timestamps": {
+						"from": "00:00:00,530",
+						"to": "00:00:00,740"
+					},
+					"offsets": {
+						"from": 530,
+						"to": 740
+					},
+					"id": 547,
+					"p": 0.999481,
+					"t_dtw": -1
+				},
+				{
+					"text": " made",
+					"timestamps": {
+						"from": "00:00:00,740",
+						"to": "00:00:00,950"
+					},
+					"offsets": {
+						"from": 740,
+						"to": 950
+					},
+					"id": 925,
+					"p": 0.998666,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,950",
+						"to": "00:00:00,980"
+					},
+					"offsets": {
+						"from": 950,
+						"to": 980
+					},
+					"id": 284,
+					"p": 0.999554,
+					"t_dtw": -1
+				},
+				{
+					"text": " clean",
+					"timestamps": {
+						"from": "00:00:01,100",
+						"to": "00:00:01,310"
+					},
+					"offsets": {
+						"from": 1100,
+						"to": 1310
+					},
+					"id": 3424,
+					"p": 0.998125,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,310",
+						"to": "00:00:01,470"
+					},
+					"offsets": {
+						"from": 1310,
+						"to": 1470
+					},
+					"id": 262,
+					"p": 0.999037,
+					"t_dtw": -1
+				},
+				{
+					"text": " room",
+					"timestamps": {
+						"from": "00:00:01,470",
+						"to": "00:00:01,660"
+					},
+					"offsets": {
+						"from": 1470,
+						"to": 1660
+					},
+					"id": 2119,
+					"p": 0.998999,
+					"t_dtw": -1
+				},
+				{
+					"text": " before",
+					"timestamps": {
+						"from": "00:00:01,680",
+						"to": "00:00:01,990"
+					},
+					"offsets": {
+						"from": 1680,
+						"to": 1990
+					},
+					"id": 878,
+					"p": 0.999781,
+					"t_dtw": -1
+				},
+				{
+					"text": " leaving",
+					"timestamps": {
+						"from": "00:00:01,990",
+						"to": "00:00:02,390"
+					},
+					"offsets": {
+						"from": 1990,
+						"to": 2390
+					},
+					"id": 4305,
+					"p": 0.998888,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,390",
+						"to": "00:00:02,430"
+					},
+					"offsets": {
+						"from": 2390,
+						"to": 2430
+					},
+					"id": 13,
+					"p": 0.73638,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_122]",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 50485,
+					"p": 0.137729,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

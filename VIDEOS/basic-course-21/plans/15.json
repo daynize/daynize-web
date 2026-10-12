@@ -1,0 +1,656 @@
+{
+  "id": "basic-15",
+  "episode": 15,
+  "title": "받는 사람과 전달되는 물건",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "수동태는 행동을 받은 대상을 주어로 세워요. 비동사 뒤에는 과거형이 아니라 과거분사를 놓습니다.",
+      "screen": "받은 대상 + be + 과거분사",
+      "visual": "첫 예문의 letter를 주어로 이동하고 was sent 연결.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "수동태는 행동을 받은 대상을 주어로 세워요. 비동사 뒤에는 과거형이 아니라 과거분사를 놓습니다.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "주는 동사는 받는 사람을 주어로 세울 수 있어요. 이때 전달한 물건은 동사 뒤에 그대로 남아요.",
+      "screen": "받는 사람 / was given / 물건",
+      "visual": "사람을 앞으로 이동하고 물건 칸은 뒤에 유지.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "주는 동사는 받는 사람을 주어로 세울 수 있어요. 이때 전달한 물건은 동사 뒤에 그대로 남아요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "물건을 주어로 세우면 받는 사람은 투로 연결해요. 주다와 보여 주다는 두 구조를 비교할 수 있죠.",
+      "screen": "물건 / was given / to + 사람",
+      "visual": "사람 주어와 물건 주어의 구조를 두 줄로 대조.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "물건을 주어로 세우면 받는 사람은 투로 연결해요. 주다와 보여 주다는 두 구조를 비교할 수 있죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "모든 사형식 동사가 같은 방식으로 바뀌지는 않아요. 사 주다는 물건을 주어로 두고 포로 연결하세요.",
+      "screen": "buy: 물건 + was bought + for + 사람",
+      "visual": "buy에서 물건 주어 경로를 강조하고 사람 주어는 일반화 금지 표시.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "모든 사형식 동사가 같은 방식으로 바뀌지는 않아요. 사 주다는 물건을 주어로 두고 포로 연결하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "그 편지는 어제 우리 사무실로 발송되었어요.",
+      "en": "The letter was sent to our office yesterday.",
+      "wrong": "The letter was send to our office yesterday.",
+      "focus": [
+        "was",
+        "sent"
+      ],
+      "note": "수동태는 was와 과거분사 sent를 결합하며 원형 send를 쓰지 않는다.",
+      "visual": "letter → was sent와 도착지 to를 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 편지는 어제 우리 사무실로 발송되었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The letter was sent to our office yesterday.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was",
+            "actualStart": null
+          },
+          {
+            "text": "sent",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "그 창문은 어젯밤 폭풍 때문에 깨졌어요.",
+      "en": "The window was broken by the storm last night.",
+      "wrong": "The window was broke by the storm last night.",
+      "focus": [
+        "was",
+        "broken"
+      ],
+      "note": "과거형 broke가 아니라 과거분사 broken을 쓴다.",
+      "visual": "폭풍 → 창문 작용 화살표와 broken 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 창문은 어젯밤 폭풍 때문에 깨졌어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The window was broken by the storm last night.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was",
+            "actualStart": null
+          },
+          {
+            "text": "broken",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "그 보고서는 매주 월요일에 점검돼요.",
+      "en": "The report is checked every Monday.",
+      "wrong": "The report checked every Monday.",
+      "focus": [
+        "is",
+        "checked"
+      ],
+      "note": "보고서가 점검을 받는 현재 수동태에는 is checked가 필요하다.",
+      "visual": "현재 반복 시간선 위에 is checked 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 보고서는 매주 월요일에 점검돼요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The report is checked every Monday.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "is",
+            "actualStart": null
+          },
+          {
+            "text": "checked",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "나는 회의 후에 지도를 받았어요.",
+      "en": "I was given a map after the meeting.",
+      "wrong": "I was gave a map after the meeting.",
+      "focus": [
+        "was given",
+        "map"
+      ],
+      "note": "받는 사람을 주어로 두어도 물건 목적어는 남는다. gave가 아닌 given을 쓴다.",
+      "visual": "I를 주어 칸에, map을 남은 목적어 칸에 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 회의 후에 지도를 받았어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I was given a map after the meeting.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was given",
+            "actualStart": null
+          },
+          {
+            "text": "map",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "그 지도는 회의 후에 나에게 주어졌어요.",
+      "en": "The map was given to me after the meeting.",
+      "wrong": "The map was given me to after the meeting.",
+      "focus": [
+        "was given",
+        "to me"
+      ],
+      "note": "물건을 주어로 둔 이 구조에서는 받는 사람을 to me로 묶으며 전치사를 뒤집지 않는다.",
+      "visual": "map을 앞으로 이동하고 to me를 하나의 수신자 묶음으로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 지도는 회의 후에 나에게 주어졌어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The map was given to me after the meeting.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was given",
+            "actualStart": null
+          },
+          {
+            "text": "to me",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "우리는 가이드에게 출구 위치를 안내받았어요.",
+      "en": "We were shown the exit by the guide.",
+      "wrong": "We were show the exit by the guide.",
+      "focus": [
+        "were shown",
+        "exit"
+      ],
+      "note": "수동태에는 과거분사가 필요하므로 원형 show를 쓰지 않는다. shown이 일반적이며 showed도 과거분사로 인정된다.",
+      "visual": "가이드 → 우리 → 출구 연결에서 우리를 주어로 이동.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 가이드에게 출구 위치를 안내받았어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We were shown the exit by the guide.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were shown",
+            "actualStart": null
+          },
+          {
+            "text": "exit",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "그 출구는 가이드에 의해 우리에게 안내되었어요.",
+      "en": "The exit was shown to us by the guide.",
+      "wrong": "The exit was shown to we by the guide.",
+      "focus": [
+        "was shown",
+        "to us"
+      ],
+      "note": "물건 주어형에서 to 뒤의 대명사는 목적격 us이며 we가 아니다.",
+      "visual": "출구 주어와 to us 수신자, by 행위자를 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 출구는 가이드에 의해 우리에게 안내되었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The exit was shown to us by the guide.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was shown",
+            "actualStart": null
+          },
+          {
+            "text": "to us",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "그 빨간 자전거는 내 생일 선물로 나를 위해 구매되었어요.",
+      "en": "The red bike was bought for me as a birthday gift.",
+      "wrong": "The red bike was bought to me as a birthday gift.",
+      "focus": [
+        "was bought",
+        "for me"
+      ],
+      "note": "나를 위한 구매라는 수혜 의미는 for me다. buy를 give처럼 to로 연결하지 않는다.",
+      "visual": "구매한 자전거 → 수혜자 for me 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 빨간 자전거는 내 생일 선물로 나를 위해 구매되었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The red bike was bought for me as a birthday gift.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was bought",
+            "actualStart": null
+          },
+          {
+            "text": "for me",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "그 아이들을 위해 새 신발이 구매되었어요.",
+      "en": "New shoes were bought for the children.",
+      "wrong": "New shoes were buy for the children.",
+      "focus": [
+        "were bought",
+        "for"
+      ],
+      "note": "buy의 수동태는 were bought이며, 물건 주어 뒤에 for로 수혜자를 연결한다.",
+      "visual": "신발 주어, were bought, for children 세 칸 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 아이들을 위해 새 신발이 구매되었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "New shoes were bought for the children.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were bought",
+            "actualStart": null
+          },
+          {
+            "text": "for",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "각 손님에게 도착하자마자 방 열쇠가 주어졌어요.",
+      "en": "Each guest was given a room key on arrival.",
+      "wrong": "Each guest were given a room key on arrival.",
+      "focus": [
+        "was given",
+        "key"
+      ],
+      "note": "each guest는 단수여서 was를 쓴다. 사람 주어 수동태에서도 room key는 남을 수 있다.",
+      "visual": "각 손님 한 명을 단수 표시하고 뒤의 열쇠 목적어 유지.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "각 손님에게 도착하자마자 방 열쇠가 주어졌어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Each guest was given a room key on arrival.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "was given",
+            "actualStart": null
+          },
+          {
+            "text": "key",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "수동태는 비동사와 과거분사로 만들고, 두 목적어의 전환 가능성은 동사별로 확인하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "수동태는 비동사와 과거분사로 만들고, 두 목적어의 전환 가능성은 동사별로 확인하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

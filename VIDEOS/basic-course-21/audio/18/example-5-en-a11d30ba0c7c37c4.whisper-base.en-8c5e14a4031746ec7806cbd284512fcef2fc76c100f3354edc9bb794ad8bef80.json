@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,680"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2680
+			},
+			"text": " We visited the company whose name recently changed.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998438,
+					"t_dtw": -1
+				},
+				{
+					"text": " We",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,120"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 120
+					},
+					"id": 775,
+					"p": 0.868517,
+					"t_dtw": -1
+				},
+				{
+					"text": " visited",
+					"timestamps": {
+						"from": "00:00:00,120",
+						"to": "00:00:00,520"
+					},
+					"offsets": {
+						"from": 120,
+						"to": 520
+					},
+					"id": 8672,
+					"p": 0.995611,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,550",
+						"to": "00:00:00,730"
+					},
+					"offsets": {
+						"from": 550,
+						"to": 730
+					},
+					"id": 262,
+					"p": 0.997295,
+					"t_dtw": -1
+				},
+				{
+					"text": " company",
+					"timestamps": {
+						"from": "00:00:00,730",
+						"to": "00:00:01,160"
+					},
+					"offsets": {
+						"from": 730,
+						"to": 1160
+					},
+					"id": 1664,
+					"p": 0.998877,
+					"t_dtw": -1
+				},
+				{
+					"text": " whose",
+					"timestamps": {
+						"from": "00:00:01,160",
+						"to": "00:00:01,470"
+					},
+					"offsets": {
+						"from": 1160,
+						"to": 1470
+					},
+					"id": 3025,
+					"p": 0.994397,
+					"t_dtw": -1
+				},
+				{
+					"text": " name",
+					"timestamps": {
+						"from": "00:00:01,470",
+						"to": "00:00:01,710"
+					},
+					"offsets": {
+						"from": 1470,
+						"to": 1710
+					},
+					"id": 1438,
+					"p": 0.999407,
+					"t_dtw": -1
+				},
+				{
+					"text": " recently",
+					"timestamps": {
+						"from": "00:00:01,710",
+						"to": "00:00:02,200"
+					},
+					"offsets": {
+						"from": 1710,
+						"to": 2200
+					},
+					"id": 2904,
+					"p": 0.998214,
+					"t_dtw": -1
+				},
+				{
+					"text": " changed",
+					"timestamps": {
+						"from": "00:00:02,200",
+						"to": "00:00:02,640"
+					},
+					"offsets": {
+						"from": 2200,
+						"to": 2640
+					},
+					"id": 3421,
+					"p": 0.998607,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,680",
+						"to": "00:00:02,680"
+					},
+					"offsets": {
+						"from": 2680,
+						"to": 2680
+					},
+					"id": 13,
+					"p": 0.970354,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_134]",
+					"timestamps": {
+						"from": "00:00:02,680",
+						"to": "00:00:02,680"
+					},
+					"offsets": {
+						"from": 2680,
+						"to": 2680
+					},
+					"id": 50497,
+					"p": 0.0801458,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

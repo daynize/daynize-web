@@ -1,0 +1,1250 @@
+{
+  "id": "basic-05",
+  "episode": 5,
+  "title": "하게 하고, 하는 것을 보고",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 9.459241533333334,
+      "text": "누군가에게 일을 하게 할 때, 사람 뒤의 동사 형태를 확인하세요. 메이크와 렛 뒤에서는 원형을 써요.",
+      "screen": "make / let + 사람 + 동사원형",
+      "visual": "make와 let 두 줄에서 사람 칸 다음 원형 칸을 같은 색으로 강조.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "누군가에게 일을 하게 할 때, 사람 뒤의 동사 형태를 확인하세요. 메이크와 렛 뒤에서는 원형을 써요.",
+          "actualStart": 0.2,
+          "actualEnd": 7.199048,
+          "rate": 185,
+          "cacheKey": "d9804f7bbb8e6a9bc2cb099487ef9d2f838c87ac1c45207f0151bec7a19dc35a",
+          "file": "audio/05/concept-1-ko-d9804f7bbb8e6a9b.wav",
+          "duration": 6.999048
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 9.459241533333334,
+      "end": 18.721158066666668,
+      "text": "일을 맡기는 해브도 사람 뒤에 원형을 쓰지만, 겟으로 누군가 하도록 이끌면 투와 원형을 붙여요.",
+      "screen": "have someone do / get someone to do",
+      "visual": "have와 get 평행 배열에서 get 줄에만 to 연결 고리 표시.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "일을 맡기는 해브도 사람 뒤에 원형을 쓰지만, 겟으로 누군가 하도록 이끌면 투와 원형을 붙여요.",
+          "actualStart": 9.659241533333333,
+          "actualEnd": 16.460964533333332,
+          "rate": 185,
+          "cacheKey": "32b9e80fc0f4e6593d26f375c9dbfee85814a7de6389443ecc7945de5bdfd2e6",
+          "file": "audio/05/concept-2-ko-32b9e80fc0f4e659.wav",
+          "duration": 6.801723
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 18.721158066666668,
+      "end": 28.274911600000003,
+      "text": "보고 듣는 표현에서도 사람 뒤에 원형이 올 수 있어요. 동작 전체를 보았다는 관점에서 자주 쓰죠.",
+      "screen": "see / hear + 사람 + 동사원형",
+      "visual": "한 동작의 시작부터 끝까지 이어진 전체 구간을 눈·귀 표시로 묶기.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "보고 듣는 표현에서도 사람 뒤에 원형이 올 수 있어요. 동작 전체를 보았다는 관점에서 자주 쓰죠.",
+          "actualStart": 18.921158066666667,
+          "actualEnd": 26.014718066666667,
+          "rate": 185,
+          "cacheKey": "5022cd4fca55a3b5b16f3899a540b3133b66d815468450870bb86ec00175b37a",
+          "file": "audio/05/concept-3-ko-5022cd4fca55a3b5.wav",
+          "duration": 7.09356
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 28.274911600000003,
+      "end": 38.260048133333335,
+      "text": "진행 중인 장면에 초점을 두면 아이엔지를 쓸 수 있어요. 둘 다 가능하지만 무엇을 관찰했는지가 달라져요.",
+      "screen": "saw him cross / saw him crossing",
+      "visual": "전체 횡단 구간과 횡단 도중 한 장면을 나란히 표시, 어느 쪽도 오답 표시하지 않기.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "진행 중인 장면에 초점을 두면 아이엔지를 쓸 수 있어요. 둘 다 가능하지만 무엇을 관찰했는지가 달라져요.",
+          "actualStart": 28.474911600000002,
+          "actualEnd": 35.999854600000006,
+          "rate": 185,
+          "cacheKey": "9bbba69c79a17941964db3bd647dcf7ca7dd168d8ff4a60cf65ec0314e79e8b9",
+          "file": "audio/05/concept-4-ko-9bbba69c79a17941.wav",
+          "duration": 7.524943
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 38.260048133333335,
+      "end": 45.23398366666667,
+      "ko": "그 농담이 우리 모두를 웃게 했어요.",
+      "en": "The joke made us all laugh.",
+      "wrong": "The joke made us all to laugh.",
+      "focus": [
+        "made",
+        "laugh"
+      ],
+      "note": "능동 사역 make 뒤에서 사람이 하는 동작은 to 없는 원형 laugh로 나타낸다.",
+      "visual": "made → us all → laugh 배열에서 to가 없는 간격을 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그 농담이 우리 모두를 웃게 했어요.",
+          "actualStart": 38.46004813333334,
+          "actualEnd": 40.956919133333336,
+          "rate": 185,
+          "cacheKey": "c375b28ab5aaa109205c2ed347c741835591dd62c656b4805bd08fe0c4cc557d",
+          "file": "audio/05/example-1-ko-c375b28ab5aaa109.wav",
+          "duration": 2.496871
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The joke made us all laugh.",
+          "actualStart": 41.30691913333334,
+          "actualEnd": 42.72379013333334,
+          "rate": 155,
+          "cacheKey": "1dac13b53bd944c9056a494f5962a1f28946a9901684b61152ab7817b23cb211",
+          "file": "audio/05/example-1-en-1dac13b53bd944c9.wav",
+          "duration": 1.416871
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "made",
+            "actualStart": 41.706919133333336,
+            "actualEnd": 41.90691913333334
+          },
+          {
+            "text": "laugh",
+            "actualStart": 42.176919133333335,
+            "actualEnd": 42.44691913333334
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "The",
+          "start": 41.316919133333336,
+          "end": 41.466919133333334
+        },
+        {
+          "text": "joke",
+          "start": 41.466919133333334,
+          "end": 41.61691913333334
+        },
+        {
+          "text": "made",
+          "start": 41.706919133333336,
+          "end": 41.90691913333334
+        },
+        {
+          "text": "us",
+          "start": 41.90691913333334,
+          "end": 42.01691913333334
+        },
+        {
+          "text": "all",
+          "start": 42.01691913333334,
+          "end": 42.176919133333335
+        },
+        {
+          "text": "laugh.",
+          "start": 42.176919133333335,
+          "end": 42.44691913333334
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 45.23398366666667,
+      "end": 53.1378052,
+      "ko": "엄마가 오늘 나를 일찍 나가게 해 줬어요.",
+      "en": "My mom let me leave early today.",
+      "wrong": "My mom let me to leave early today.",
+      "focus": [
+        "let",
+        "leave"
+      ],
+      "note": "허락을 나타내는 let 사람 원형 구조에는 to를 붙이지 않는다.",
+      "visual": "허락 표시가 me를 통과하고 leave 원형 칸으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "엄마가 오늘 나를 일찍 나가게 해 줬어요.",
+          "actualStart": 45.43398366666667,
+          "actualEnd": 48.41575266666667,
+          "rate": 185,
+          "cacheKey": "1301d72e8dbb6f72f1f1b52575527d5f913b0f4bd30eddcf746161b5ecfadc3c",
+          "file": "audio/05/example-2-ko-1301d72e8dbb6f72.wav",
+          "duration": 2.981769
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "My mom let me leave early today.",
+          "actualStart": 48.76575266666667,
+          "actualEnd": 50.627611666666674,
+          "rate": 155,
+          "cacheKey": "9e46e168ef138eea9461f916b1526acfef1d6b081a869efcaf639fa70dc0210d",
+          "file": "audio/05/example-2-en-9e46e168ef138eea.wav",
+          "duration": 1.861859
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "let",
+            "actualStart": 49.11575266666667,
+            "actualEnd": 49.32575266666667
+          },
+          {
+            "text": "leave",
+            "actualStart": 49.465752666666674,
+            "actualEnd": 49.81575266666667
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "My",
+          "start": 48.77575266666667,
+          "end": 48.90575266666667
+        },
+        {
+          "text": "mom",
+          "start": 48.90575266666667,
+          "end": 49.11575266666667
+        },
+        {
+          "text": "let",
+          "start": 49.11575266666667,
+          "end": 49.32575266666667
+        },
+        {
+          "text": "me",
+          "start": 49.32575266666667,
+          "end": 49.465752666666674
+        },
+        {
+          "text": "leave",
+          "start": 49.465752666666674,
+          "end": 49.81575266666667
+        },
+        {
+          "text": "early",
+          "start": 49.81575266666667,
+          "end": 50.15575266666667
+        },
+        {
+          "text": "today.",
+          "start": 50.15575266666667,
+          "end": 50.54575266666667
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 53.1378052,
+      "end": 60.60425673333334,
+      "ko": "나는 직원에게 문을 확인하도록 맡겼어요.",
+      "en": "I had the worker check the door.",
+      "wrong": "I had the worker checked the door.",
+      "focus": [
+        "had",
+        "check"
+      ],
+      "note": "직원이 확인하는 능동 사역 구조이므로 check를 쓴다; had the door checked와 구별한다.",
+      "visual": "worker가 확인 동작의 주체임을 화살표로 표시하고 door를 대상 칸에 놓기.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 직원에게 문을 확인하도록 맡겼어요.",
+          "actualStart": 53.337805200000005,
+          "actualEnd": 56.2502312,
+          "rate": 185,
+          "cacheKey": "41173e957c107892c696c1d290537014b59041dbf0aaca60be2d03f668f60de2",
+          "file": "audio/05/example-3-ko-41173e957c107892.wav",
+          "duration": 2.912426
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I had the worker check the door.",
+          "actualStart": 56.6002312,
+          "actualEnd": 58.0940632,
+          "rate": 155,
+          "cacheKey": "2db91cfdf3e59261c0809e4f979e28b46c59ba6e70cd002955e9040e01bee787",
+          "file": "audio/05/example-3-en-2db91cfdf3e59261.wav",
+          "duration": 1.493832
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had",
+            "actualStart": 56.6502312,
+            "actualEnd": 56.8202312
+          },
+          {
+            "text": "check",
+            "actualStart": 57.3302312,
+            "actualEnd": 57.5702312
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "I",
+          "start": 56.6102312,
+          "end": 56.6502312
+        },
+        {
+          "text": "had",
+          "start": 56.6502312,
+          "end": 56.8202312
+        },
+        {
+          "text": "the",
+          "start": 56.8202312,
+          "end": 56.990231200000004
+        },
+        {
+          "text": "worker",
+          "start": 56.990231200000004,
+          "end": 57.3302312
+        },
+        {
+          "text": "check",
+          "start": 57.3302312,
+          "end": 57.5702312
+        },
+        {
+          "text": "the",
+          "start": 57.660231200000005,
+          "end": 57.7502312
+        },
+        {
+          "text": "door.",
+          "start": 57.7802312,
+          "end": 58.020231200000005
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 60.60425673333334,
+      "end": 68.54671726666666,
+      "ko": "나는 동생을 설득해 이사를 돕게 했어요.",
+      "en": "I got my brother to help with the move.",
+      "wrong": "I got my brother help with the move.",
+      "focus": [
+        "got",
+        "to help"
+      ],
+      "note": "get my brother to help는 동생이 돕도록 이끌었다는 뜻이다. get my brother help도 가능하지만 help가 명사여서 동생에게 도움을 구해 줬다는 뜻이므로 제시된 한국어와 다르다.",
+      "visual": "설득 화살표 뒤 사람과 to help를 연결. 명사 help의 다른 의미는 교정 메모로 구분.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 동생을 설득해 이사를 돕게 했어요.",
+          "actualStart": 60.80425673333334,
+          "actualEnd": 63.70507273333334,
+          "rate": 185,
+          "cacheKey": "5e4442ed9219e36b0e6eba2a497996cf80e810d0aa7ab545708611eb5bfa2cb0",
+          "file": "audio/05/example-4-ko-5e4442ed9219e36b.wav",
+          "duration": 2.900816
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I got my brother to help with the move.",
+          "actualStart": 64.05507273333333,
+          "actualEnd": 66.03652373333334,
+          "rate": 155,
+          "cacheKey": "ec496362068a37f17816a1f6c6a94438c98df337b682762c6f19e00f874a509f",
+          "file": "audio/05/example-4-en-ec496362068a37f1.wav",
+          "duration": 1.981451
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "got",
+            "actualStart": 64.11507273333334,
+            "actualEnd": 64.30507273333333
+          },
+          {
+            "text": "to help",
+            "actualStart": 64.86507273333334,
+            "actualEnd": 65.23507273333334
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "I",
+          "start": 64.06507273333334,
+          "end": 64.11507273333334
+        },
+        {
+          "text": "got",
+          "start": 64.11507273333334,
+          "end": 64.30507273333333
+        },
+        {
+          "text": "my",
+          "start": 64.30507273333333,
+          "end": 64.39507273333334
+        },
+        {
+          "text": "brother",
+          "start": 64.43507273333333,
+          "end": 64.86507273333334
+        },
+        {
+          "text": "to",
+          "start": 64.86507273333334,
+          "end": 64.96507273333333
+        },
+        {
+          "text": "help",
+          "start": 65.01507273333333,
+          "end": 65.23507273333334
+        },
+        {
+          "text": "with",
+          "start": 65.23507273333334,
+          "end": 65.48507273333334
+        },
+        {
+          "text": "the",
+          "start": 65.48507273333334,
+          "end": 65.67507273333334
+        },
+        {
+          "text": "move.",
+          "start": 65.67507273333334,
+          "end": 65.93507273333333
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 68.54671726666666,
+      "end": 75.98994979999999,
+      "ko": "나는 그녀가 현관문을 닫는 것을 봤어요.",
+      "en": "I saw her close the front door.",
+      "wrong": "I saw her to close the front door.",
+      "focus": [
+        "saw",
+        "close"
+      ],
+      "note": "직접 지각 구문에서 to를 붙이지 않는다; 원형은 문 닫는 사건을 전체적으로 제시한다.",
+      "visual": "열린 문에서 닫힌 문까지 전체 구간을 saw의 관찰 괄호로 묶기.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그녀가 현관문을 닫는 것을 봤어요.",
+          "actualStart": 68.74671726666666,
+          "actualEnd": 71.48499426666666,
+          "rate": 185,
+          "cacheKey": "5ff238ceb501b596fc125488ccacb600418b9ff05abd5072fd9a0ce806b1cb15",
+          "file": "audio/05/example-5-ko-5ff238ceb501b596.wav",
+          "duration": 2.738277
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I saw her close the front door.",
+          "actualStart": 71.83499426666665,
+          "actualEnd": 73.47975626666666,
+          "rate": 155,
+          "cacheKey": "1ecb67d1fa2b4018c0e9c1a0991f3f0100034ac9ce00143dbfc3da4995f5c13f",
+          "file": "audio/05/example-5-en-1ecb67d1fa2b4018.wav",
+          "duration": 1.644762
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "saw",
+            "actualStart": 71.88499426666665,
+            "actualEnd": 72.03499426666666
+          },
+          {
+            "text": "close",
+            "actualStart": 72.22499426666666,
+            "actualEnd": 72.51499426666666
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "I",
+          "start": 71.84499426666666,
+          "end": 71.88499426666665
+        },
+        {
+          "text": "saw",
+          "start": 71.88499426666665,
+          "end": 72.03499426666666
+        },
+        {
+          "text": "her",
+          "start": 72.05499426666665,
+          "end": 72.22499426666666
+        },
+        {
+          "text": "close",
+          "start": 72.22499426666666,
+          "end": 72.51499426666666
+        },
+        {
+          "text": "the",
+          "start": 72.51499426666666,
+          "end": 72.68499426666665
+        },
+        {
+          "text": "front",
+          "start": 72.68499426666665,
+          "end": 72.97499426666666
+        },
+        {
+          "text": "door.",
+          "start": 72.97499426666666,
+          "end": 73.20499426666666
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 75.98994979999999,
+      "end": 83.80442933333332,
+      "ko": "나는 복도에서 그가 노래하는 것을 들었어요.",
+      "en": "I heard him singing in the hallway.",
+      "wrong": "I heard him was singing in the hallway.",
+      "focus": [
+        "heard",
+        "singing"
+      ],
+      "note": "heard 목적어 ing 구조에 was를 끼우지 않는다; heard that he was singing은 다른 절 구조다.",
+      "visual": "복도에서 노래 중인 장면을 잘라 표시하고 him 뒤 was 혼합 오류 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 복도에서 그가 노래하는 것을 들었어요.",
+          "actualStart": 76.1899498,
+          "actualEnd": 79.1952558,
+          "rate": 185,
+          "cacheKey": "1968bb6550c350855372fbb494afa9901dca8be18cdbcd77579647b2a01d1aa4",
+          "file": "audio/05/example-6-ko-1968bb6550c35085.wav",
+          "duration": 3.005306
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I heard him singing in the hallway.",
+          "actualStart": 79.54525579999999,
+          "actualEnd": 81.2942358,
+          "rate": 155,
+          "cacheKey": "a866e384ffe1e5c6c752b72b899318b51be9eef085a9b731ea170c41259337f8",
+          "file": "audio/05/example-6-en-a866e384ffe1e5c6.wav",
+          "duration": 1.74898
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "heard",
+            "actualStart": 79.6052558,
+            "actualEnd": 79.90525579999999
+          },
+          {
+            "text": "singing",
+            "actualStart": 80.1852558,
+            "actualEnd": 80.50525579999999
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "I",
+          "start": 79.5552558,
+          "end": 79.6052558
+        },
+        {
+          "text": "heard",
+          "start": 79.6052558,
+          "end": 79.90525579999999
+        },
+        {
+          "text": "him",
+          "start": 79.90525579999999,
+          "end": 80.0752558
+        },
+        {
+          "text": "singing",
+          "start": 80.1852558,
+          "end": 80.50525579999999
+        },
+        {
+          "text": "in",
+          "start": 80.50525579999999,
+          "end": 80.62525579999999
+        },
+        {
+          "text": "the",
+          "start": 80.62525579999999,
+          "end": 80.8052558
+        },
+        {
+          "text": "hallway.",
+          "start": 80.8052558,
+          "end": 81.20525579999999
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 83.80442933333332,
+      "end": 92.99618786666665,
+      "ko": "그녀는 기술자에게 고장 난 프린터를 점검하게 했어요.",
+      "en": "She had the technician inspect the broken printer.",
+      "wrong": "She had the technician inspected the broken printer.",
+      "focus": [
+        "the technician",
+        "inspect"
+      ],
+      "note": "기술자가 점검하는 구조에서는 원형 inspect이며 inspected로 바꾸지 않는다.",
+      "visual": "기술자에서 프린터로 점검 동작 화살표, 행위자와 대상 칸 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 기술자에게 고장 난 프린터를 점검하게 했어요.",
+          "actualStart": 84.00442933333332,
+          "actualEnd": 87.65318233333332,
+          "rate": 185,
+          "cacheKey": "ce12f9019edc9388b669044bf07fdcb2d925109543bd474ba4e8d7334f9040cf",
+          "file": "audio/05/example-7-ko-ce12f9019edc9388.wav",
+          "duration": 3.648753
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She had the technician inspect the broken printer.",
+          "actualStart": 88.00318233333331,
+          "actualEnd": 90.48599433333331,
+          "rate": 155,
+          "cacheKey": "728bc16fea0fa5fc33307c7e628b7ab02c3f8f6d159f236a371728eeb152e907",
+          "file": "audio/05/example-7-en-728bc16fea0fa5fc.wav",
+          "duration": 2.482812
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "the technician",
+            "actualStart": 88.34318233333332,
+            "actualEnd": 89.08318233333331
+          },
+          {
+            "text": "inspect",
+            "actualStart": 89.08318233333331,
+            "actualEnd": 89.38318233333331
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "She",
+          "start": 88.05318233333331,
+          "end": 88.17318233333332
+        },
+        {
+          "text": "had",
+          "start": 88.17318233333332,
+          "end": 88.34318233333332
+        },
+        {
+          "text": "the",
+          "start": 88.34318233333332,
+          "end": 88.46318233333331
+        },
+        {
+          "text": "technician",
+          "start": 88.54318233333332,
+          "end": 89.08318233333331
+        },
+        {
+          "text": "inspect",
+          "start": 89.08318233333331,
+          "end": 89.38318233333331
+        },
+        {
+          "text": "the",
+          "start": 89.51318233333332,
+          "end": 89.59318233333332
+        },
+        {
+          "text": "broken",
+          "start": 89.65318233333332,
+          "end": 89.98318233333332
+        },
+        {
+          "text": "printer.",
+          "start": 89.98318233333332,
+          "end": 90.40318233333332
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 92.99618786666665,
+      "end": 102.10350139999997,
+      "ko": "소방 훈련 중 직원들은 건물 밖으로 나가야 했어요.",
+      "en": "The staff were made to leave during the fire drill.",
+      "wrong": "The staff were made leave during the fire drill.",
+      "focus": [
+        "were made",
+        "to leave"
+      ],
+      "note": "make 사역 구문의 수동형에는 to leave를 쓴다; 능동 원형 규칙을 그대로 옮기지 않는다.",
+      "visual": "능동 made staff leave에서 수동 were made to leave로 이동하며 to 등장.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "소방 훈련 중 직원들은 건물 밖으로 나가야 했어요.",
+          "actualStart": 93.19618786666665,
+          "actualEnd": 96.81636886666665,
+          "rate": 185,
+          "cacheKey": "67ddca976fe8d0fef737a54de435464bb48bbe8a025a9066fc402c82f59a7f85",
+          "file": "audio/05/example-8-ko-67ddca976fe8d0fe.wav",
+          "duration": 3.620181
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The staff were made to leave during the fire drill.",
+          "actualStart": 97.16636886666664,
+          "actualEnd": 99.59330786666665,
+          "rate": 155,
+          "cacheKey": "28d74727d72fcfdefaf72b734dd6da4122dde31c1d999bb6307fe667d59128cf",
+          "file": "audio/05/example-8-en-28d74727d72fcfde.wav",
+          "duration": 2.426939
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were made",
+            "actualStart": 97.64636886666665,
+            "actualEnd": 97.97636886666665
+          },
+          {
+            "text": "to leave",
+            "actualStart": 98.06636886666665,
+            "actualEnd": 98.46636886666664
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "The",
+          "start": 97.17636886666665,
+          "end": 97.31636886666665
+        },
+        {
+          "text": "staff",
+          "start": 97.38636886666664,
+          "end": 97.55636886666665
+        },
+        {
+          "text": "were",
+          "start": 97.64636886666665,
+          "end": 97.84636886666665
+        },
+        {
+          "text": "made",
+          "start": 97.84636886666665,
+          "end": 97.97636886666665
+        },
+        {
+          "text": "to",
+          "start": 98.06636886666665,
+          "end": 98.18636886666664
+        },
+        {
+          "text": "leave",
+          "start": 98.18636886666664,
+          "end": 98.46636886666664
+        },
+        {
+          "text": "during",
+          "start": 98.46636886666664,
+          "end": 98.78636886666665
+        },
+        {
+          "text": "the",
+          "start": 98.89636886666665,
+          "end": 98.97636886666665
+        },
+        {
+          "text": "fire",
+          "start": 98.97636886666665,
+          "end": 99.18636886666664
+        },
+        {
+          "text": "drill.",
+          "start": 99.23636886666664,
+          "end": 99.51636886666664
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 102.10350139999997,
+      "end": 110.7874589333333,
+      "ko": "나는 비가 오는데 그가 도로를 건너는 중인 것을 봤어요.",
+      "en": "I saw him crossing the road in the rain.",
+      "wrong": "I saw him was crossing the road in the rain.",
+      "focus": [
+        "saw",
+        "crossing"
+      ],
+      "note": "목적어 뒤 진행 장면은 crossing으로 제시한다; 원형 cross도 가능하지만 관찰 초점이 달라진다.",
+      "visual": "도로 중간의 인물만 관찰 창에 담고 crossing 강조, was는 구조 혼합으로 표시.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 비가 오는데 그가 도로를 건너는 중인 것을 봤어요.",
+          "actualStart": 102.30350139999997,
+          "actualEnd": 105.99225439999998,
+          "rate": 185,
+          "cacheKey": "d712d59699ff7fae7d7f351b32830c4fb80b666ab2a2866bcd832d490557904e",
+          "file": "audio/05/example-9-ko-d712d59699ff7fae.wav",
+          "duration": 3.688753
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I saw him crossing the road in the rain.",
+          "actualStart": 106.34225439999997,
+          "actualEnd": 108.27726539999998,
+          "rate": 155,
+          "cacheKey": "8e88b45acb5f96b8fb38e636b148ff45b964c7229227c51e2f148e497e73416e",
+          "file": "audio/05/example-9-en-8e88b45acb5f96b8.wav",
+          "duration": 1.935011
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "saw",
+            "actualStart": 106.40225439999998,
+            "actualEnd": 106.58225439999997
+          },
+          {
+            "text": "crossing",
+            "actualStart": 106.76225439999997,
+            "actualEnd": 107.24225439999998
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "I",
+          "start": 106.35225439999998,
+          "end": 106.40225439999998
+        },
+        {
+          "text": "saw",
+          "start": 106.40225439999998,
+          "end": 106.58225439999997
+        },
+        {
+          "text": "him",
+          "start": 106.58225439999997,
+          "end": 106.76225439999997
+        },
+        {
+          "text": "crossing",
+          "start": 106.76225439999997,
+          "end": 107.24225439999998
+        },
+        {
+          "text": "the",
+          "start": 107.24225439999998,
+          "end": 107.42225439999997
+        },
+        {
+          "text": "road",
+          "start": 107.42225439999997,
+          "end": 107.66225439999997
+        },
+        {
+          "text": "in",
+          "start": 107.66225439999997,
+          "end": 107.78225439999997
+        },
+        {
+          "text": "the",
+          "start": 107.78225439999997,
+          "end": 107.96225439999998
+        },
+        {
+          "text": "rain.",
+          "start": 107.96225439999998,
+          "end": 108.21225439999998
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 110.7874589333333,
+      "end": 120.41336646666663,
+      "ko": "나는 그녀가 다시 대답하기 전에 문을 닫는 것을 들었어요.",
+      "en": "I heard her close the door before she answered again.",
+      "wrong": "I heard her to close the door before she answered again.",
+      "focus": [
+        "heard",
+        "close"
+      ],
+      "note": "직접 들은 동작에는 원형 close나 문맥에 따라 closing을 쓰며 to close는 이 지각 구조에 맞지 않는다.",
+      "visual": "문 닫는 소리 다음 대답의 시간 순서를 표시하고 heard 뒤 원형 칸 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그녀가 다시 대답하기 전에 문을 닫는 것을 들었어요.",
+          "actualStart": 110.9874589333333,
+          "actualEnd": 114.8402929333333,
+          "rate": 185,
+          "cacheKey": "a2078788ae08b65886c0db36f6cca4adb078a75e56a478550bde26dca00c970a",
+          "file": "audio/05/example-10-ko-a2078788ae08b658.wav",
+          "duration": 3.852834
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I heard her close the door before she answered again.",
+          "actualStart": 115.1902929333333,
+          "actualEnd": 117.9031729333333,
+          "rate": 155,
+          "cacheKey": "b6db9e8a7e170644d8333e19487b2750974f5d5b0b315b1c42b8f10582294a0e",
+          "file": "audio/05/example-10-en-b6db9e8a7e170644.wav",
+          "duration": 2.71288
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "heard",
+            "actualStart": 115.2502929333333,
+            "actualEnd": 115.5302929333333
+          },
+          {
+            "text": "close",
+            "actualStart": 115.79029293333329,
+            "actualEnd": 116.0002929333333
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "I",
+          "start": 115.2002929333333,
+          "end": 115.2502929333333
+        },
+        {
+          "text": "heard",
+          "start": 115.2502929333333,
+          "end": 115.5302929333333
+        },
+        {
+          "text": "her",
+          "start": 115.5602929333333,
+          "end": 115.6702929333333
+        },
+        {
+          "text": "close",
+          "start": 115.79029293333329,
+          "end": 116.0002929333333
+        },
+        {
+          "text": "the",
+          "start": 116.1002929333333,
+          "end": 116.1902929333333
+        },
+        {
+          "text": "door",
+          "start": 116.2302929333333,
+          "end": 116.4702929333333
+        },
+        {
+          "text": "before",
+          "start": 116.4702929333333,
+          "end": 116.8402929333333
+        },
+        {
+          "text": "she",
+          "start": 116.8402929333333,
+          "end": 117.0202929333333
+        },
+        {
+          "text": "answered",
+          "start": 117.0202929333333,
+          "end": 117.51029293333329
+        },
+        {
+          "text": "again.",
+          "start": 117.51029293333329,
+          "end": 117.8402929333333
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 120.41336646666663,
+      "end": 130,
+      "text": "사역 동사는 동사별 결합을 확인하고 지각 동사는 전체 동작과 진행 장면의 초점을 구분하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "사역 동사는 동사별 결합을 확인하고 지각 동사는 전체 동작과 진행 장면의 초점을 구분하세요.",
+          "actualStart": 120.61336646666663,
+          "actualEnd": 127.73980646666664,
+          "rate": 185,
+          "cacheKey": "112fea33bc89c932308fb20ff95cb91f713aa38730caacd47e3287ed96e608f1",
+          "file": "audio/05/summary-ko-112fea33bc89c932.wav",
+          "duration": 7.12644
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 105.097097,
+  "sourceHash": "6f933731c8edef97245f05d9a51f72c9dcdf91aa923900edd94a6b37b695a4ae",
+  "audioFile": "audio/05/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "6f933731c8edef97245f05d9a51f72c9dcdf91aa923900edd94a6b37b695a4ae",
+    "clipHashes": {
+      "example-1-en": "48f2976a79bf46baffc59454e551278ea9cf8889c4309cd5b0cff1f54bb92c3c",
+      "example-2-en": "ad0e43fa069ad2a5a88da72b4e7d42beb7e9c48733792e3f409b3896bbfb513c",
+      "example-3-en": "38f23709507e7966c258544f2b4945fcfe1b716f6081e0972d950a57a1ae3121",
+      "example-4-en": "75ccd55eec01ea29b0e8988fae6cdd55a8c3ebeb58bf906e289b9a0943ae2fd3",
+      "example-5-en": "89c1a9bb7c8366577089dcc06b81e4e4ac1d080239703e2a010324e44a53fd55",
+      "example-6-en": "5ce853f3b497e0624a3085d9a8410eb621df2848f06f38b8fe59a2fdd848ae4d",
+      "example-7-en": "d01abb865368954962c13735b3799e5c66f2475336b98f337c3516cd83d57aaf",
+      "example-8-en": "e12d41c6f181da2c06adc6c2523febcc693bf0e296d52ddbe572f2f099d508a8",
+      "example-9-en": "ec05eb3f689254d8c95db2de408898c7455085c38f9a7c8f6c37875498b94be1",
+      "example-10-en": "bcaedc7303f91dbeea52d691be8b7b3029ba8d95268efbdb92b5451bb58660dc"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

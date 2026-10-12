@@ -1,0 +1,14 @@
+{
+  "id": "basic-13",
+  "episode": 13,
+  "title": "직접 하는 대상과 영향을 받은 대상",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "0068ed67ee73de858cfd53334eeb5f85952212634f324bb376b1ec406b381cd1",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

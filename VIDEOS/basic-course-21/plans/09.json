@@ -1,0 +1,656 @@
+{
+  "id": "basic-09",
+  "episode": 9,
+  "title": "하는 것을 문장의 한 자리에 넣기",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "매일 연습하는 것은 노력이 필요해요. 이렇게 행동 전체를 하나의 내용으로 묶어 주어 자리에 놓을 수 있어요.",
+      "screen": "To practice daily takes effort.",
+      "visual": "To practice daily 전체를 주어 한 칸으로 묶고 takes effort와 연결.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "매일 연습하는 것은 노력이 필요해요. 이렇게 행동 전체를 하나의 내용으로 묶어 주어 자리에 놓을 수 있어요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "떠나고 싶다, 가기로 결정했다처럼 동사 뒤에도 붙일 수 있어요. 여기서 투와 원형은 원하는 일이나 결정한 일이에요.",
+      "screen": "want to leave / decide to go",
+      "visual": "want·decide 뒤 내용 칸에 to leave·to go를 각각 넣기.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "떠나고 싶다, 가기로 결정했다처럼 동사 뒤에도 붙일 수 있어요. 여기서 투와 원형은 원하는 일이나 결정한 일이에요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "내 목표는 배우는 것이다처럼 보어 자리에도 와요. 행동의 내용을 묶는다는 점에서 명사적 용법이라고 불러요.",
+      "screen": "My goal is to learn.",
+      "visual": "goal 카드와 to learn 행동 묶음을 등호로 연결, is는 사이 연결 칸에 배치.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "내 목표는 배우는 것이다처럼 보어 자리에도 와요. 행동의 내용을 묶는다는 점에서 명사적 용법이라고 불러요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "다만 모든 동사 뒤에 같은 형태를 붙이지는 않아요. 원하다, 결정하다, 바라다는 투와 원형으로 익혀 두세요.",
+      "screen": "want / decide / hope + to do",
+      "visual": "세 동사만 목록으로 묶고 모든 동사로 확장하는 화살표에는 제한 표시.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "다만 모든 동사 뒤에 같은 형태를 붙이지는 않아요. 원하다, 결정하다, 바라다는 투와 원형으로 익혀 두세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "나는 이번 학기에 스페인어를 배우고 싶어요.",
+      "en": "I want to learn Spanish this term.",
+      "wrong": "I want learn Spanish this term.",
+      "focus": [
+        "want",
+        "to learn"
+      ],
+      "note": "원하는 행동은 want 뒤에서 to learn으로 연결한다.",
+      "visual": "want의 내용 칸에 to learn Spanish를 하나의 묶음으로 넣기.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 이번 학기에 스페인어를 배우고 싶어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I want to learn Spanish this term.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "want",
+            "actualStart": null
+          },
+          {
+            "text": "to learn",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "우리는 오늘 저녁 집에 있기로 결정했어요.",
+      "en": "We decided to stay home this evening.",
+      "wrong": "We decided stay home this evening.",
+      "focus": [
+        "decided",
+        "to stay"
+      ],
+      "note": "결정한 행동을 나타낼 때 decide 뒤에 to부정사를 쓴다.",
+      "visual": "결정 체크 다음 to stay home 행동 카드 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 오늘 저녁 집에 있기로 결정했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We decided to stay home this evening.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "decided",
+            "actualStart": null
+          },
+          {
+            "text": "to stay",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "나는 곧 네 가족을 만나기를 바라요.",
+      "en": "I hope to meet your family soon.",
+      "wrong": "I hope meet your family soon.",
+      "focus": [
+        "hope",
+        "to meet"
+      ],
+      "note": "화자 자신이 하기를 바라는 행동은 hope to meet로 표현한다.",
+      "visual": "희망 말풍선 안에 to meet를 묶고 행동 주체 I를 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 곧 네 가족을 만나기를 바라요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I hope to meet your family soon.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "hope",
+            "actualStart": null
+          },
+          {
+            "text": "to meet",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "내 목표는 언젠가 작은 서점을 여는 거예요.",
+      "en": "My goal is to open a small bookshop someday.",
+      "wrong": "My goal is to opens a small bookshop someday.",
+      "focus": [
+        "My goal",
+        "to open"
+      ],
+      "note": "목표의 내용을 설명하는 보어로 to부정사를 쓰며 to 뒤는 원형 open이다.",
+      "visual": "goal과 서점 개업 행동을 등호로 연결하고 opens의 s 오류 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "내 목표는 언젠가 작은 서점을 여는 거예요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "My goal is to open a small bookshop someday.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "My goal",
+            "actualStart": null
+          },
+          {
+            "text": "to open",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "매일 연습하려면 약간의 노력이 필요해요.",
+      "en": "To practice every day takes some effort.",
+      "wrong": "To practice every day take some effort.",
+      "focus": [
+        "To practice",
+        "takes"
+      ],
+      "note": "to부정사 주어 전체를 하나의 내용으로 보아 단수 동사 takes를 쓴다.",
+      "visual": "주어 묶음 전체에서 takes로 단수 일치선 그리기.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "매일 연습하려면 약간의 노력이 필요해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "To practice every day takes some effort.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "To practice",
+            "actualStart": null
+          },
+          {
+            "text": "takes",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "처음부터 모든 내용을 기억하기는 어려워요.",
+      "en": "It is difficult to remember everything at first.",
+      "wrong": "It is difficult to remembers everything at first.",
+      "focus": [
+        "It is difficult",
+        "to remember"
+      ],
+      "note": "it을 먼저 둔 구조에서 뒤의 행동 내용은 to remember이며 remembers가 아니다.",
+      "visual": "앞 it 칸과 뒤 행동 묶음을 연결하고 remember 원형 확대.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "처음부터 모든 내용을 기억하기는 어려워요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "It is difficult to remember everything at first.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "It is difficult",
+            "actualStart": null
+          },
+          {
+            "text": "to remember",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "그녀는 여행 전에 친구에게 전화하겠다고 약속했어요.",
+      "en": "She promised to call her friend before the trip.",
+      "wrong": "She promised call her friend before the trip.",
+      "focus": [
+        "promised",
+        "to call"
+      ],
+      "note": "자신이 하겠다고 약속한 행동에는 promise to 동사를 쓴다.",
+      "visual": "약속 카드 뒤 통화 행동을 붙이고 before 시간 정보를 아래에 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 여행 전에 친구에게 전화하겠다고 약속했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She promised to call her friend before the trip.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "promised",
+            "actualStart": null
+          },
+          {
+            "text": "to call",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "우리는 다음 달에 더 큰 사무실로 옮길 계획이에요.",
+      "en": "We plan to move to a larger office next month.",
+      "wrong": "We plan move to a larger office next month.",
+      "focus": [
+        "plan to move",
+        "to a larger office"
+      ],
+      "note": "앞 to는 원형 move를 이끄는 부정사 표지이고 뒤 to는 이동 목적지를 잇는 전치사다.",
+      "visual": "첫 to 아래 동사 표지, 둘째 to 아래 목적지 연결 표시로 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 다음 달에 더 큰 사무실로 옮길 계획이에요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We plan to move to a larger office next month.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "plan to move",
+            "actualStart": null
+          },
+          {
+            "text": "to a larger office",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "그는 읽지도 않고 계약서에 서명하는 것을 거절했어요.",
+      "en": "He refused to sign the contract without reading it.",
+      "wrong": "He refused sign the contract without reading it.",
+      "focus": [
+        "refused",
+        "to sign"
+      ],
+      "note": "거절한 행동은 refuse to sign이며 without reading은 전치사 뒤 별도 구조다.",
+      "visual": "거절 내용과 without 조건 영역을 서로 다른 테두리로 묶기.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그는 읽지도 않고 계약서에 서명하는 것을 거절했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He refused to sign the contract without reading it.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "refused",
+            "actualStart": null
+          },
+          {
+            "text": "to sign",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "그녀는 여유 시간이 생기면 새 언어를 배우고 싶어 해요.",
+      "en": "She wants to learn another language when she has free time.",
+      "wrong": "She wants to learns another language when she has free time.",
+      "focus": [
+        "wants",
+        "to learn"
+      ],
+      "note": "주어와 일치하는 s는 정동사 wants에 붙고 to 뒤 learn에는 붙이지 않는다.",
+      "visual": "wants의 s와 learn의 원형을 두 확대창에서 비교.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 여유 시간이 생기면 새 언어를 배우고 싶어 해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She wants to learn another language when she has free time.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "wants",
+            "actualStart": null
+          },
+          {
+            "text": "to learn",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "행동을 하나의 내용으로 묶는 to부정사를 주어·목적어·보어 자리와 동사별 쓰임에 맞게 사용하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "행동을 하나의 내용으로 묶는 to부정사를 주어·목적어·보어 자리와 동사별 쓰임에 맞게 사용하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

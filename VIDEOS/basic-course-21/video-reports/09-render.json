@@ -1,0 +1,36 @@
+{
+  "episode": 9,
+  "title": "하는 것을 문장의 한 자리에 넣기",
+  "inputHash": "2fc4898fc43a85d57de6a97f010ac3e9a3d28ff765cf3f06bac05cda813b999e",
+  "output": "renders/basic-09.mp4",
+  "contact": "renders/basic-09-contact.png",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "duration": "130.000000",
+        "nb_frames": "3900"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "130.000000",
+        "nb_frames": "6095"
+      }
+    ],
+    "format": {
+      "duration": "130.000000",
+      "size": "8373644"
+    }
+  },
+  "audioPeakDb": -1.7,
+  "browserCheck": true,
+  "listeningReviewed": false
+}

@@ -1,0 +1,656 @@
+{
+  "id": "basic-02",
+  "episode": 2,
+  "title": "전치사라는 지팡이가 필요한 순간",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "나는 앉았다. 여기까지는 문장이 완성돼요. 그런데 의자에 앉았다고 말하고 싶다면, 의자를 어떻게 연결할까요?",
+      "screen": "동작 / 장소",
+      "visual": "앉는 인물과 의자를 두 부분으로 분리.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 앉았다. 여기까지는 문장이 완성돼요. 그런데 의자에 앉았다고 말하고 싶다면, 의자를 어떻게 연결할까요?",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "의자를 동사 바로 뒤에 붙이지 않아요. 의자 위라는 관계를 나타내는 전치사가 필요하죠. 이때 전치사는 연결을 돕는 지팡이예요.",
+      "screen": "❌ I sat the chair by the window. / ⭕ I sat on the chair by the window.",
+      "visual": "첫 예문의 on이 인물과 의자를 연결.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "의자를 동사 바로 뒤에 붙이지 않아요. 의자 위라는 관계를 나타내는 전치사가 필요하죠. 이때 전치사는 연결을 돕는 지팡이예요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "전치사 뒤의 명사는 동사의 직접 목적어가 아니에요. 동사와 전치사를 함께 보고, 어떤 관계를 나타내는지 이해하세요.",
+      "screen": "I / sat / on the chair",
+      "visual": "chair는 on의 목적어라고 표시하고 동사의 직접 목적어와 구분.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "전치사 뒤의 명사는 동사의 직접 목적어가 아니에요. 동사와 전치사를 함께 보고, 어떤 관계를 나타내는지 이해하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "전치사는 아무거나 붙일 수 없어요. 기다리는 대상은 포, 귀 기울이는 대상은 투로 연결하죠. 동사와 전치사의 조합을 예문으로 익혀 봅시다.",
+      "screen": "wait + for / listen + to",
+      "visual": "대기·듣기 동작과 대상 연결. 영어 예문 별도 발화 없음.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "전치사는 아무거나 붙일 수 없어요. 기다리는 대상은 포, 귀 기울이는 대상은 투로 연결하죠. 동사와 전치사의 조합을 예문으로 익혀 봅시다.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "나는 창문 옆 의자에 앉았어요.",
+      "en": "I sat on the chair by the window.",
+      "wrong": "I sat the chair by the window.",
+      "focus": [
+        "sat",
+        "on"
+      ],
+      "note": "앉는 동작에 장소를 연결한다.",
+      "visual": "의자 위 접촉면.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 창문 옆 의자에 앉았어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I sat on the chair by the window.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "sat",
+            "actualStart": null
+          },
+          {
+            "text": "on",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "우리는 밖에서 버스를 기다렸어요.",
+      "en": "We waited for the bus outside.",
+      "wrong": "We waited the bus outside.",
+      "focus": [
+        "waited",
+        "for"
+      ],
+      "note": "기다리는 대상은 for로 연결한다.",
+      "visual": "버스를 기다리는 인물.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리는 밖에서 버스를 기다렸어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We waited for the bus outside.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "waited",
+            "actualStart": null
+          },
+          {
+            "text": "for",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "그 표지판을 주의 깊게 보세요.",
+      "en": "Look at the sign carefully.",
+      "wrong": "Look the sign carefully.",
+      "focus": [
+        "Look",
+        "at"
+      ],
+      "note": "시선을 향하는 대상은 at으로 연결한다.",
+      "visual": "시선이 표지판에 도달.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그 표지판을 주의 깊게 보세요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Look at the sign carefully.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "Look",
+            "actualStart": null
+          },
+          {
+            "text": "at",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "그녀는 답하기 전에 내 설명을 들었어요.",
+      "en": "She listened to my explanation before answering.",
+      "wrong": "She listened my explanation before answering.",
+      "focus": [
+        "listened",
+        "to"
+      ],
+      "note": "듣는 대상은 to로 연결한다.",
+      "visual": "말풍선에서 듣는 사람으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀는 답하기 전에 내 설명을 들었어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She listened to my explanation before answering.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "listened",
+            "actualStart": null
+          },
+          {
+            "text": "to",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "그들은 회의 시작 직전에 사무실에 도착했어요.",
+      "en": "They arrived at the office just before the meeting.",
+      "wrong": "They arrived the office just before the meeting.",
+      "focus": [
+        "arrived",
+        "at"
+      ],
+      "note": "특정 도착 지점을 표시한다.",
+      "visual": "시간선과 사무실 도착 지점.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그들은 회의 시작 직전에 사무실에 도착했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "They arrived at the office just before the meeting.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "arrived",
+            "actualStart": null
+          },
+          {
+            "text": "at",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "우리의 결정은 최종 비용에 달려 있어요.",
+      "en": "Our decision depends on the final cost.",
+      "wrong": "Our decision depends the final cost.",
+      "focus": [
+        "depends",
+        "on"
+      ],
+      "note": "판단이 의존하는 조건을 연결한다.",
+      "visual": "비용 조건과 결정의 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "우리의 결정은 최종 비용에 달려 있어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Our decision depends on the final cost.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "depends",
+            "actualStart": null
+          },
+          {
+            "text": "on",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "접수대에 있는 가방은 내 동료 것이에요.",
+      "en": "The bag at reception belongs to my colleague.",
+      "wrong": "The bag at reception belongs my colleague.",
+      "focus": [
+        "belongs",
+        "to"
+      ],
+      "note": "소유자를 연결한다.",
+      "visual": "가방과 소유자 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "접수대에 있는 가방은 내 동료 것이에요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The bag at reception belongs to my colleague.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "belongs",
+            "actualStart": null
+          },
+          {
+            "text": "to",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "나는 네 의견에 동의하지만 일정을 다시 확인해야 해요.",
+      "en": "I agree with you, but we need to check the schedule again.",
+      "wrong": "I agree you, but we need to check the schedule again.",
+      "focus": [
+        "agree",
+        "with"
+      ],
+      "note": "동의하는 상대를 with로 연결한다.",
+      "visual": "동의 상대와 일정 확인을 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "나는 네 의견에 동의하지만 일정을 다시 확인해야 해요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I agree with you, but we need to check the schedule again.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "agree",
+            "actualStart": null
+          },
+          {
+            "text": "with",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "그는 아무에게도 알리지 않고 계획을 바꾼 것에 대해 사과했어요.",
+      "en": "He apologized for changing the plan without telling anyone.",
+      "wrong": "He apologized changing the plan without telling anyone.",
+      "focus": [
+        "apologized",
+        "for"
+      ],
+      "note": "사과하는 이유이며 for 뒤에는 동명사가 올 수 있다.",
+      "visual": "for + changing을 한 묶음으로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그는 아무에게도 알리지 않고 계획을 바꾼 것에 대해 사과했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He apologized for changing the plan without telling anyone.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "apologized",
+            "actualStart": null
+          },
+          {
+            "text": "for",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "그녀는 허락 없이 자신의 사진을 사용하는 것에 반대했어요.",
+      "en": "She objected to using her photo without her permission.",
+      "wrong": "She objected to use her photo without her permission.",
+      "focus": [
+        "objected",
+        "to using"
+      ],
+      "note": "여기서 to는 전치사이므로 using을 쓴다.",
+      "visual": "to + using 결합을 확대.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀는 허락 없이 자신의 사진을 사용하는 것에 반대했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She objected to using her photo without her permission.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "objected",
+            "actualStart": null
+          },
+          {
+            "text": "to using",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "이번 자동사 용법에서는 대상을 바로 붙이지 말고, 동사에 맞는 전치사로 연결하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "이번 자동사 용법에서는 대상을 바로 붙이지 말고, 동사에 맞는 전치사로 연결하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "basic-06",
+  "episode": 6,
+  "title": "정보 두 개를 영어로 세는 법",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "e3850ff93d0f062d5eefc65b563d9b1032c405c80a754c73f1cf45c28dd7bc7e",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,680"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1680
+			},
+			"text": " they call their new puppy Mochi.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997558,
+					"t_dtw": -1
+				},
+				{
+					"text": " they",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,250"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 250
+					},
+					"id": 484,
+					"p": 0.537272,
+					"t_dtw": -1
+				},
+				{
+					"text": " call",
+					"timestamps": {
+						"from": "00:00:00,250",
+						"to": "00:00:00,500"
+					},
+					"offsets": {
+						"from": 250,
+						"to": 500
+					},
+					"id": 869,
+					"p": 0.96569,
+					"t_dtw": -1
+				},
+				{
+					"text": " their",
+					"timestamps": {
+						"from": "00:00:00,500",
+						"to": "00:00:00,770"
+					},
+					"offsets": {
+						"from": 500,
+						"to": 770
+					},
+					"id": 511,
+					"p": 0.999123,
+					"t_dtw": -1
+				},
+				{
+					"text": " new",
+					"timestamps": {
+						"from": "00:00:00,870",
+						"to": "00:00:00,980"
+					},
+					"offsets": {
+						"from": 870,
+						"to": 980
+					},
+					"id": 649,
+					"p": 0.998325,
+					"t_dtw": -1
+				},
+				{
+					"text": " puppy",
+					"timestamps": {
+						"from": "00:00:01,050",
+						"to": "00:00:01,330"
+					},
+					"offsets": {
+						"from": 1050,
+						"to": 1330
+					},
+					"id": 26188,
+					"p": 0.958782,
+					"t_dtw": -1
+				},
+				{
+					"text": " Mo",
+					"timestamps": {
+						"from": "00:00:01,330",
+						"to": "00:00:01,440"
+					},
+					"offsets": {
+						"from": 1330,
+						"to": 1440
+					},
+					"id": 4270,
+					"p": 0.853596,
+					"t_dtw": -1
+				},
+				{
+					"text": "chi",
+					"timestamps": {
+						"from": "00:00:01,440",
+						"to": "00:00:01,610"
+					},
+					"offsets": {
+						"from": 1440,
+						"to": 1610
+					},
+					"id": 11072,
+					"p": 0.983904,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,680",
+						"to": "00:00:01,680"
+					},
+					"offsets": {
+						"from": 1680,
+						"to": 1680
+					},
+					"id": 13,
+					"p": 0.944475,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_84]",
+					"timestamps": {
+						"from": "00:00:01,680",
+						"to": "00:00:01,680"
+					},
+					"offsets": {
+						"from": 1680,
+						"to": 1680
+					},
+					"id": 50447,
+					"p": 0.114914,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

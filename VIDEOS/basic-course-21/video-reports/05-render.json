@@ -1,0 +1,36 @@
+{
+  "episode": 5,
+  "title": "하게 하고, 하는 것을 보고",
+  "inputHash": "87ac7e9a1b06368d596bcc5e549b1906111cc89660ca3cc3ddae809a5254c3c2",
+  "output": "renders/basic-05.mp4",
+  "contact": "renders/basic-05-contact.png",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "duration": "130.000000",
+        "nb_frames": "3900"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "130.000000",
+        "nb_frames": "6095"
+      }
+    ],
+    "format": {
+      "duration": "130.000000",
+      "size": "8052428"
+    }
+  },
+  "audioPeakDb": -2,
+  "browserCheck": true,
+  "listeningReviewed": false
+}

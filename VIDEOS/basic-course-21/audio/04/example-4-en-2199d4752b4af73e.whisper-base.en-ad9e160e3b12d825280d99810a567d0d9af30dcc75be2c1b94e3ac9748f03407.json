@@ -1,0 +1,171 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,640"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1640
+			},
+			"text": " They call their new pup emoji.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998899,
+					"t_dtw": -1
+				},
+				{
+					"text": " They",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,270"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 270
+					},
+					"id": 1119,
+					"p": 0.908819,
+					"t_dtw": -1
+				},
+				{
+					"text": " call",
+					"timestamps": {
+						"from": "00:00:00,270",
+						"to": "00:00:00,540"
+					},
+					"offsets": {
+						"from": 270,
+						"to": 540
+					},
+					"id": 869,
+					"p": 0.746957,
+					"t_dtw": -1
+				},
+				{
+					"text": " their",
+					"timestamps": {
+						"from": "00:00:00,540",
+						"to": "00:00:00,770"
+					},
+					"offsets": {
+						"from": 540,
+						"to": 770
+					},
+					"id": 511,
+					"p": 0.994107,
+					"t_dtw": -1
+				},
+				{
+					"text": " new",
+					"timestamps": {
+						"from": "00:00:00,870",
+						"to": "00:00:01,070"
+					},
+					"offsets": {
+						"from": 870,
+						"to": 1070
+					},
+					"id": 649,
+					"p": 0.837016,
+					"t_dtw": -1
+				},
+				{
+					"text": " pup",
+					"timestamps": {
+						"from": "00:00:01,070",
+						"to": "00:00:01,270"
+					},
+					"offsets": {
+						"from": 1070,
+						"to": 1270
+					},
+					"id": 15552,
+					"p": 0.744711,
+					"t_dtw": -1
+				},
+				{
+					"text": " emoji",
+					"timestamps": {
+						"from": "00:00:01,270",
+						"to": "00:00:01,600"
+					},
+					"offsets": {
+						"from": 1270,
+						"to": 1600
+					},
+					"id": 44805,
+					"p": 0.652594,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,620",
+						"to": "00:00:01,620"
+					},
+					"offsets": {
+						"from": 1620,
+						"to": 1620
+					},
+					"id": 13,
+					"p": 0.531764,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_82]",
+					"timestamps": {
+						"from": "00:00:01,640",
+						"to": "00:00:01,640"
+					},
+					"offsets": {
+						"from": 1640,
+						"to": 1640
+					},
+					"id": 50445,
+					"p": 0.134347,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

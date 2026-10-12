@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,360"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2360
+			},
+			"text": " They arrived at the office just before the meeting.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.999257,
+					"t_dtw": -1
+				},
+				{
+					"text": " They",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,220"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 220
+					},
+					"id": 1119,
+					"p": 0.369723,
+					"t_dtw": -1
+				},
+				{
+					"text": " arrived",
+					"timestamps": {
+						"from": "00:00:00,220",
+						"to": "00:00:00,580"
+					},
+					"offsets": {
+						"from": 220,
+						"to": 580
+					},
+					"id": 5284,
+					"p": 0.999083,
+					"t_dtw": -1
+				},
+				{
+					"text": " at",
+					"timestamps": {
+						"from": "00:00:00,650",
+						"to": "00:00:00,710"
+					},
+					"offsets": {
+						"from": 650,
+						"to": 710
+					},
+					"id": 379,
+					"p": 0.999458,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,710",
+						"to": "00:00:00,870"
+					},
+					"offsets": {
+						"from": 710,
+						"to": 870
+					},
+					"id": 262,
+					"p": 0.993079,
+					"t_dtw": -1
+				},
+				{
+					"text": " office",
+					"timestamps": {
+						"from": "00:00:00,870",
+						"to": "00:00:01,100"
+					},
+					"offsets": {
+						"from": 870,
+						"to": 1100
+					},
+					"id": 2607,
+					"p": 0.993921,
+					"t_dtw": -1
+				},
+				{
+					"text": " just",
+					"timestamps": {
+						"from": "00:00:01,190",
+						"to": "00:00:01,390"
+					},
+					"offsets": {
+						"from": 1190,
+						"to": 1390
+					},
+					"id": 655,
+					"p": 0.997925,
+					"t_dtw": -1
+				},
+				{
+					"text": " before",
+					"timestamps": {
+						"from": "00:00:01,500",
+						"to": "00:00:01,750"
+					},
+					"offsets": {
+						"from": 1500,
+						"to": 1750
+					},
+					"id": 878,
+					"p": 0.999741,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,750",
+						"to": "00:00:01,910"
+					},
+					"offsets": {
+						"from": 1750,
+						"to": 1910
+					},
+					"id": 262,
+					"p": 0.99894,
+					"t_dtw": -1
+				},
+				{
+					"text": " meeting",
+					"timestamps": {
+						"from": "00:00:01,910",
+						"to": "00:00:02,320"
+					},
+					"offsets": {
+						"from": 1910,
+						"to": 2320
+					},
+					"id": 3249,
+					"p": 0.999643,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,320",
+						"to": "00:00:02,350"
+					},
+					"offsets": {
+						"from": 2320,
+						"to": 2350
+					},
+					"id": 13,
+					"p": 0.961178,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_118]",
+					"timestamps": {
+						"from": "00:00:02,360",
+						"to": "00:00:02,360"
+					},
+					"offsets": {
+						"from": 2360,
+						"to": 2360
+					},
+					"id": 50481,
+					"p": 0.165448,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

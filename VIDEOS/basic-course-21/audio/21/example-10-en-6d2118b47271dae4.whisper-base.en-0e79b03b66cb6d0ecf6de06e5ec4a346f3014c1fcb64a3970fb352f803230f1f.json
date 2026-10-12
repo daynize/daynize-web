@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,400"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2400
+			},
+			"text": " This version is much better than the previous one.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998475,
+					"t_dtw": -1
+				},
+				{
+					"text": " This",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,170"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 170
+					},
+					"id": 770,
+					"p": 0.898301,
+					"t_dtw": -1
+				},
+				{
+					"text": " version",
+					"timestamps": {
+						"from": "00:00:00,250",
+						"to": "00:00:00,630"
+					},
+					"offsets": {
+						"from": 250,
+						"to": 630
+					},
+					"id": 2196,
+					"p": 0.995475,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:00,630",
+						"to": "00:00:00,740"
+					},
+					"offsets": {
+						"from": 630,
+						"to": 740
+					},
+					"id": 318,
+					"p": 0.999588,
+					"t_dtw": -1
+				},
+				{
+					"text": " much",
+					"timestamps": {
+						"from": "00:00:00,740",
+						"to": "00:00:00,960"
+					},
+					"offsets": {
+						"from": 740,
+						"to": 960
+					},
+					"id": 881,
+					"p": 0.993481,
+					"t_dtw": -1
+				},
+				{
+					"text": " better",
+					"timestamps": {
+						"from": "00:00:01,040",
+						"to": "00:00:01,320"
+					},
+					"offsets": {
+						"from": 1040,
+						"to": 1320
+					},
+					"id": 1365,
+					"p": 0.995296,
+					"t_dtw": -1
+				},
+				{
+					"text": " than",
+					"timestamps": {
+						"from": "00:00:01,320",
+						"to": "00:00:01,500"
+					},
+					"offsets": {
+						"from": 1320,
+						"to": 1500
+					},
+					"id": 621,
+					"p": 0.998213,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,610",
+						"to": "00:00:01,720"
+					},
+					"offsets": {
+						"from": 1610,
+						"to": 1720
+					},
+					"id": 262,
+					"p": 0.995636,
+					"t_dtw": -1
+				},
+				{
+					"text": " previous",
+					"timestamps": {
+						"from": "00:00:01,720",
+						"to": "00:00:02,180"
+					},
+					"offsets": {
+						"from": 1720,
+						"to": 2180
+					},
+					"id": 2180,
+					"p": 0.993952,
+					"t_dtw": -1
+				},
+				{
+					"text": " one",
+					"timestamps": {
+						"from": "00:00:02,180",
+						"to": "00:00:02,400"
+					},
+					"offsets": {
+						"from": 2180,
+						"to": 2400
+					},
+					"id": 530,
+					"p": 0.994052,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,400",
+						"to": "00:00:02,400"
+					},
+					"offsets": {
+						"from": 2400,
+						"to": 2400
+					},
+					"id": 13,
+					"p": 0.882057,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_120]",
+					"timestamps": {
+						"from": "00:00:02,400",
+						"to": "00:00:02,400"
+					},
+					"offsets": {
+						"from": 2400,
+						"to": 2400
+					},
+					"id": 50483,
+					"p": 0.111929,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

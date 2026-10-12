@@ -1,0 +1,115 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:00,920"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 920
+			},
+			"text": " She looks happy",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997725,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,210"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 210
+					},
+					"id": 1375,
+					"p": 0.873969,
+					"t_dtw": -1
+				},
+				{
+					"text": " looks",
+					"timestamps": {
+						"from": "00:00:00,210",
+						"to": "00:00:00,560"
+					},
+					"offsets": {
+						"from": 210,
+						"to": 560
+					},
+					"id": 3073,
+					"p": 0.967517,
+					"t_dtw": -1
+				},
+				{
+					"text": " happy",
+					"timestamps": {
+						"from": "00:00:00,560",
+						"to": "00:00:00,880"
+					},
+					"offsets": {
+						"from": 560,
+						"to": 880
+					},
+					"id": 3772,
+					"p": 0.995004,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_46]",
+					"timestamps": {
+						"from": "00:00:00,920",
+						"to": "00:00:00,920"
+					},
+					"offsets": {
+						"from": 920,
+						"to": 920
+					},
+					"id": 50409,
+					"p": 0.108868,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

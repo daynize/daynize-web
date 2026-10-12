@@ -1,0 +1,14 @@
+{
+  "id": "basic-04",
+  "episode": 4,
+  "title": "그 사람을 무엇으로, 어떤 상태로?",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "986162d5c94c49b21f3bae2c61549dcd831e200f4d91cb4487a6a08318193d70",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

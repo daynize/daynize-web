@@ -1,0 +1,14 @@
+{
+  "id": "basic-03",
+  "episode": 3,
+  "title": "무엇을 주고, 누구에게 줄까요?",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "b9a88afed740c7617ac6bdedef02f7b252f11ad69e214db5eb0a3a3c1ee875fe",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

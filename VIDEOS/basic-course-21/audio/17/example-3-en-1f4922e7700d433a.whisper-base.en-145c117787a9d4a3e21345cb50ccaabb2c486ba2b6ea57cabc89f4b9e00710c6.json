@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,280"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2280
+			},
+			"text": " the dog that lives next door often barks.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998373,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,200"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 200
+					},
+					"id": 262,
+					"p": 0.224549,
+					"t_dtw": -1
+				},
+				{
+					"text": " dog",
+					"timestamps": {
+						"from": "00:00:00,200",
+						"to": "00:00:00,400"
+					},
+					"offsets": {
+						"from": 200,
+						"to": 400
+					},
+					"id": 3290,
+					"p": 0.991051,
+					"t_dtw": -1
+				},
+				{
+					"text": " that",
+					"timestamps": {
+						"from": "00:00:00,400",
+						"to": "00:00:00,670"
+					},
+					"offsets": {
+						"from": 400,
+						"to": 670
+					},
+					"id": 326,
+					"p": 0.997759,
+					"t_dtw": -1
+				},
+				{
+					"text": " lives",
+					"timestamps": {
+						"from": "00:00:00,670",
+						"to": "00:00:01,010"
+					},
+					"offsets": {
+						"from": 670,
+						"to": 1010
+					},
+					"id": 3160,
+					"p": 0.986629,
+					"t_dtw": -1
+				},
+				{
+					"text": " next",
+					"timestamps": {
+						"from": "00:00:01,010",
+						"to": "00:00:01,280"
+					},
+					"offsets": {
+						"from": 1010,
+						"to": 1280
+					},
+					"id": 1306,
+					"p": 0.998725,
+					"t_dtw": -1
+				},
+				{
+					"text": " door",
+					"timestamps": {
+						"from": "00:00:01,280",
+						"to": "00:00:01,550"
+					},
+					"offsets": {
+						"from": 1280,
+						"to": 1550
+					},
+					"id": 3420,
+					"p": 0.98277,
+					"t_dtw": -1
+				},
+				{
+					"text": " often",
+					"timestamps": {
+						"from": "00:00:01,550",
+						"to": "00:00:01,890"
+					},
+					"offsets": {
+						"from": 1550,
+						"to": 1890
+					},
+					"id": 1690,
+					"p": 0.893612,
+					"t_dtw": -1
+				},
+				{
+					"text": " bar",
+					"timestamps": {
+						"from": "00:00:01,890",
+						"to": "00:00:02,080"
+					},
+					"offsets": {
+						"from": 1890,
+						"to": 2080
+					},
+					"id": 2318,
+					"p": 0.701204,
+					"t_dtw": -1
+				},
+				{
+					"text": "ks",
+					"timestamps": {
+						"from": "00:00:02,090",
+						"to": "00:00:02,260"
+					},
+					"offsets": {
+						"from": 2090,
+						"to": 2260
+					},
+					"id": 591,
+					"p": 0.994538,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,260",
+						"to": "00:00:02,280"
+					},
+					"offsets": {
+						"from": 2260,
+						"to": 2280
+					},
+					"id": 13,
+					"p": 0.914201,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_114]",
+					"timestamps": {
+						"from": "00:00:02,280",
+						"to": "00:00:02,280"
+					},
+					"offsets": {
+						"from": 2280,
+						"to": 2280
+					},
+					"id": 50477,
+					"p": 0.122921,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

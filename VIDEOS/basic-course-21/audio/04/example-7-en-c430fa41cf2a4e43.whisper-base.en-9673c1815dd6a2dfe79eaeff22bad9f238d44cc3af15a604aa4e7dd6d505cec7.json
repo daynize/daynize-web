@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,360"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2360
+			},
+			"text": " Please keep the door open during the discussion.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997901,
+					"t_dtw": -1
+				},
+				{
+					"text": " Please",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,210"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 210
+					},
+					"id": 4222,
+					"p": 0.854819,
+					"t_dtw": -1
+				},
+				{
+					"text": " keep",
+					"timestamps": {
+						"from": "00:00:00,360",
+						"to": "00:00:00,480"
+					},
+					"offsets": {
+						"from": 360,
+						"to": 480
+					},
+					"id": 1394,
+					"p": 0.963993,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,590",
+						"to": "00:00:00,740"
+					},
+					"offsets": {
+						"from": 590,
+						"to": 740
+					},
+					"id": 262,
+					"p": 0.999314,
+					"t_dtw": -1
+				},
+				{
+					"text": " door",
+					"timestamps": {
+						"from": "00:00:00,740",
+						"to": "00:00:00,970"
+					},
+					"offsets": {
+						"from": 740,
+						"to": 970
+					},
+					"id": 3420,
+					"p": 0.999114,
+					"t_dtw": -1
+				},
+				{
+					"text": " open",
+					"timestamps": {
+						"from": "00:00:00,970",
+						"to": "00:00:01,200"
+					},
+					"offsets": {
+						"from": 970,
+						"to": 1200
+					},
+					"id": 1280,
+					"p": 0.992127,
+					"t_dtw": -1
+				},
+				{
+					"text": " during",
+					"timestamps": {
+						"from": "00:00:01,200",
+						"to": "00:00:01,540"
+					},
+					"offsets": {
+						"from": 1200,
+						"to": 1540
+					},
+					"id": 1141,
+					"p": 0.999775,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,540",
+						"to": "00:00:01,700"
+					},
+					"offsets": {
+						"from": 1540,
+						"to": 1700
+					},
+					"id": 262,
+					"p": 0.99662,
+					"t_dtw": -1
+				},
+				{
+					"text": " discussion",
+					"timestamps": {
+						"from": "00:00:01,700",
+						"to": "00:00:02,290"
+					},
+					"offsets": {
+						"from": 1700,
+						"to": 2290
+					},
+					"id": 5114,
+					"p": 0.997388,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,300",
+						"to": "00:00:02,310"
+					},
+					"offsets": {
+						"from": 2300,
+						"to": 2310
+					},
+					"id": 13,
+					"p": 0.9,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_118]",
+					"timestamps": {
+						"from": "00:00:02,360",
+						"to": "00:00:02,360"
+					},
+					"offsets": {
+						"from": 2360,
+						"to": 2360
+					},
+					"id": 50481,
+					"p": 0.106649,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

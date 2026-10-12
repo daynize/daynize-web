@@ -1,0 +1,157 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,280"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2280
+			},
+			"text": " She listened carefully to the explanation",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998495,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,190"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 190
+					},
+					"id": 1375,
+					"p": 0.907426,
+					"t_dtw": -1
+				},
+				{
+					"text": " listened",
+					"timestamps": {
+						"from": "00:00:00,190",
+						"to": "00:00:00,690"
+					},
+					"offsets": {
+						"from": 190,
+						"to": 690
+					},
+					"id": 16399,
+					"p": 0.998946,
+					"t_dtw": -1
+				},
+				{
+					"text": " carefully",
+					"timestamps": {
+						"from": "00:00:00,690",
+						"to": "00:00:01,250"
+					},
+					"offsets": {
+						"from": 690,
+						"to": 1250
+					},
+					"id": 7773,
+					"p": 0.991648,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:01,250",
+						"to": "00:00:01,370"
+					},
+					"offsets": {
+						"from": 1250,
+						"to": 1370
+					},
+					"id": 284,
+					"p": 0.999222,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,370",
+						"to": "00:00:01,520"
+					},
+					"offsets": {
+						"from": 1370,
+						"to": 1520
+					},
+					"id": 262,
+					"p": 0.944352,
+					"t_dtw": -1
+				},
+				{
+					"text": " explanation",
+					"timestamps": {
+						"from": "00:00:01,590",
+						"to": "00:00:02,260"
+					},
+					"offsets": {
+						"from": 1590,
+						"to": 2260
+					},
+					"id": 7468,
+					"p": 0.980944,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_114]",
+					"timestamps": {
+						"from": "00:00:02,280",
+						"to": "00:00:02,280"
+					},
+					"offsets": {
+						"from": 2280,
+						"to": 2280
+					},
+					"id": 50477,
+					"p": 0.0915011,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

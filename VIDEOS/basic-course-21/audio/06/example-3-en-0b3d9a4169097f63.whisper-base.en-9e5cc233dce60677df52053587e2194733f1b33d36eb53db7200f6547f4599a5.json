@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,580"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1580
+			},
+			"text": " Do you have many books at home?",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.994343,
+					"t_dtw": -1
+				},
+				{
+					"text": " Do",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,110"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 110
+					},
+					"id": 2141,
+					"p": 0.931539,
+					"t_dtw": -1
+				},
+				{
+					"text": " you",
+					"timestamps": {
+						"from": "00:00:00,110",
+						"to": "00:00:00,280"
+					},
+					"offsets": {
+						"from": 110,
+						"to": 280
+					},
+					"id": 345,
+					"p": 0.996675,
+					"t_dtw": -1
+				},
+				{
+					"text": " have",
+					"timestamps": {
+						"from": "00:00:00,280",
+						"to": "00:00:00,460"
+					},
+					"offsets": {
+						"from": 280,
+						"to": 460
+					},
+					"id": 423,
+					"p": 0.998814,
+					"t_dtw": -1
+				},
+				{
+					"text": " many",
+					"timestamps": {
+						"from": "00:00:00,520",
+						"to": "00:00:00,740"
+					},
+					"offsets": {
+						"from": 520,
+						"to": 740
+					},
+					"id": 867,
+					"p": 0.982913,
+					"t_dtw": -1
+				},
+				{
+					"text": " books",
+					"timestamps": {
+						"from": "00:00:00,740",
+						"to": "00:00:00,940"
+					},
+					"offsets": {
+						"from": 740,
+						"to": 940
+					},
+					"id": 3835,
+					"p": 0.9977,
+					"t_dtw": -1
+				},
+				{
+					"text": " at",
+					"timestamps": {
+						"from": "00:00:01,030",
+						"to": "00:00:01,140"
+					},
+					"offsets": {
+						"from": 1030,
+						"to": 1140
+					},
+					"id": 379,
+					"p": 0.999558,
+					"t_dtw": -1
+				},
+				{
+					"text": " home",
+					"timestamps": {
+						"from": "00:00:01,140",
+						"to": "00:00:01,370"
+					},
+					"offsets": {
+						"from": 1140,
+						"to": 1370
+					},
+					"id": 1363,
+					"p": 0.999104,
+					"t_dtw": -1
+				},
+				{
+					"text": "?",
+					"timestamps": {
+						"from": "00:00:01,370",
+						"to": "00:00:01,550"
+					},
+					"offsets": {
+						"from": 1370,
+						"to": 1550
+					},
+					"id": 30,
+					"p": 0.990216,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_79]",
+					"timestamps": {
+						"from": "00:00:01,580",
+						"to": "00:00:01,580"
+					},
+					"offsets": {
+						"from": 1580,
+						"to": 1580
+					},
+					"id": 50442,
+					"p": 0.04847,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

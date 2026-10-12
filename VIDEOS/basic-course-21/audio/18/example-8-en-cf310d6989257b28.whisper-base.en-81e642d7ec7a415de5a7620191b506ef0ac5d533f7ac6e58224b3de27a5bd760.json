@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,920"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1920
+			},
+			"text": " What surprised me was her calm answer.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998725,
+					"t_dtw": -1
+				},
+				{
+					"text": " What",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,140"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 140
+					},
+					"id": 1867,
+					"p": 0.860996,
+					"t_dtw": -1
+				},
+				{
+					"text": " surprised",
+					"timestamps": {
+						"from": "00:00:00,260",
+						"to": "00:00:00,790"
+					},
+					"offsets": {
+						"from": 260,
+						"to": 790
+					},
+					"id": 6655,
+					"p": 0.98392,
+					"t_dtw": -1
+				},
+				{
+					"text": " me",
+					"timestamps": {
+						"from": "00:00:00,790",
+						"to": "00:00:00,910"
+					},
+					"offsets": {
+						"from": 790,
+						"to": 910
+					},
+					"id": 502,
+					"p": 0.995541,
+					"t_dtw": -1
+				},
+				{
+					"text": " was",
+					"timestamps": {
+						"from": "00:00:00,910",
+						"to": "00:00:01,090"
+					},
+					"offsets": {
+						"from": 910,
+						"to": 1090
+					},
+					"id": 373,
+					"p": 0.999352,
+					"t_dtw": -1
+				},
+				{
+					"text": " her",
+					"timestamps": {
+						"from": "00:00:01,090",
+						"to": "00:00:01,270"
+					},
+					"offsets": {
+						"from": 1090,
+						"to": 1270
+					},
+					"id": 607,
+					"p": 0.998477,
+					"t_dtw": -1
+				},
+				{
+					"text": " calm",
+					"timestamps": {
+						"from": "00:00:01,270",
+						"to": "00:00:01,510"
+					},
+					"offsets": {
+						"from": 1270,
+						"to": 1510
+					},
+					"id": 9480,
+					"p": 0.748948,
+					"t_dtw": -1
+				},
+				{
+					"text": " answer",
+					"timestamps": {
+						"from": "00:00:01,510",
+						"to": "00:00:01,880"
+					},
+					"offsets": {
+						"from": 1510,
+						"to": 1880
+					},
+					"id": 3280,
+					"p": 0.999434,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,920",
+						"to": "00:00:01,920"
+					},
+					"offsets": {
+						"from": 1920,
+						"to": 1920
+					},
+					"id": 13,
+					"p": 0.538174,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_96]",
+					"timestamps": {
+						"from": "00:00:01,920",
+						"to": "00:00:01,920"
+					},
+					"offsets": {
+						"from": 1920,
+						"to": 1920
+					},
+					"id": 50459,
+					"p": 0.159859,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

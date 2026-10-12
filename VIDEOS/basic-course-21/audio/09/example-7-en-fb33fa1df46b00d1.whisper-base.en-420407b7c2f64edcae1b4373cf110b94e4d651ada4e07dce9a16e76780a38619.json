@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,440"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2440
+			},
+			"text": " She promised to call her friend before the trip.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997641,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,030",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 30,
+						"to": 180
+					},
+					"id": 1375,
+					"p": 0.908143,
+					"t_dtw": -1
+				},
+				{
+					"text": " promised",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,620"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 620
+					},
+					"id": 8072,
+					"p": 0.994463,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,700",
+						"to": "00:00:00,790"
+					},
+					"offsets": {
+						"from": 700,
+						"to": 790
+					},
+					"id": 284,
+					"p": 0.999649,
+					"t_dtw": -1
+				},
+				{
+					"text": " call",
+					"timestamps": {
+						"from": "00:00:00,790",
+						"to": "00:00:01,030"
+					},
+					"offsets": {
+						"from": 790,
+						"to": 1030
+					},
+					"id": 869,
+					"p": 0.998435,
+					"t_dtw": -1
+				},
+				{
+					"text": " her",
+					"timestamps": {
+						"from": "00:00:01,030",
+						"to": "00:00:01,210"
+					},
+					"offsets": {
+						"from": 1030,
+						"to": 1210
+					},
+					"id": 607,
+					"p": 0.998327,
+					"t_dtw": -1
+				},
+				{
+					"text": " friend",
+					"timestamps": {
+						"from": "00:00:01,210",
+						"to": "00:00:01,530"
+					},
+					"offsets": {
+						"from": 1210,
+						"to": 1530
+					},
+					"id": 1545,
+					"p": 0.997925,
+					"t_dtw": -1
+				},
+				{
+					"text": " before",
+					"timestamps": {
+						"from": "00:00:01,580",
+						"to": "00:00:01,930"
+					},
+					"offsets": {
+						"from": 1580,
+						"to": 1930
+					},
+					"id": 878,
+					"p": 0.998856,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,930",
+						"to": "00:00:02,090"
+					},
+					"offsets": {
+						"from": 1930,
+						"to": 2090
+					},
+					"id": 262,
+					"p": 0.999133,
+					"t_dtw": -1
+				},
+				{
+					"text": " trip",
+					"timestamps": {
+						"from": "00:00:02,100",
+						"to": "00:00:02,360"
+					},
+					"offsets": {
+						"from": 2100,
+						"to": 2360
+					},
+					"id": 5296,
+					"p": 0.997174,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 13,
+					"p": 0.951063,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_122]",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 50485,
+					"p": 0.0617742,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

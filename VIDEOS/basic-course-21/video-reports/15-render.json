@@ -1,0 +1,36 @@
+{
+  "episode": 15,
+  "title": "받는 사람과 전달되는 물건",
+  "inputHash": "798ac000550c29a5f0af4145199aefd76eb60dab8250550a3df123d662fb04b2",
+  "output": "renders/basic-15.mp4",
+  "contact": "renders/basic-15-contact.png",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "duration": "130.000000",
+        "nb_frames": "3900"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "130.000000",
+        "nb_frames": "6095"
+      }
+    ],
+    "format": {
+      "duration": "130.000000",
+      "size": "7853836"
+    }
+  },
+  "audioPeakDb": -1.5,
+  "browserCheck": true,
+  "listeningReviewed": false
+}

@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,900"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1900
+			},
+			"text": " I want to learn Spanish this term.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997488,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,070"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 70
+					},
+					"id": 314,
+					"p": 0.917086,
+					"t_dtw": -1
+				},
+				{
+					"text": " want",
+					"timestamps": {
+						"from": "00:00:00,070",
+						"to": "00:00:00,340"
+					},
+					"offsets": {
+						"from": 70,
+						"to": 340
+					},
+					"id": 765,
+					"p": 0.983085,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,340",
+						"to": "00:00:00,470"
+					},
+					"offsets": {
+						"from": 340,
+						"to": 470
+					},
+					"id": 284,
+					"p": 0.999089,
+					"t_dtw": -1
+				},
+				{
+					"text": " learn",
+					"timestamps": {
+						"from": "00:00:00,470",
+						"to": "00:00:00,760"
+					},
+					"offsets": {
+						"from": 470,
+						"to": 760
+					},
+					"id": 2193,
+					"p": 0.993754,
+					"t_dtw": -1
+				},
+				{
+					"text": " Spanish",
+					"timestamps": {
+						"from": "00:00:00,910",
+						"to": "00:00:01,240"
+					},
+					"offsets": {
+						"from": 910,
+						"to": 1240
+					},
+					"id": 7897,
+					"p": 0.918031,
+					"t_dtw": -1
+				},
+				{
+					"text": " this",
+					"timestamps": {
+						"from": "00:00:01,300",
+						"to": "00:00:01,560"
+					},
+					"offsets": {
+						"from": 1300,
+						"to": 1560
+					},
+					"id": 428,
+					"p": 0.993197,
+					"t_dtw": -1
+				},
+				{
+					"text": " term",
+					"timestamps": {
+						"from": "00:00:01,560",
+						"to": "00:00:01,820"
+					},
+					"offsets": {
+						"from": 1560,
+						"to": 1820
+					},
+					"id": 3381,
+					"p": 0.804121,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,900",
+						"to": "00:00:01,900"
+					},
+					"offsets": {
+						"from": 1900,
+						"to": 1900
+					},
+					"id": 13,
+					"p": 0.744012,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_95]",
+					"timestamps": {
+						"from": "00:00:01,900",
+						"to": "00:00:01,900"
+					},
+					"offsets": {
+						"from": 1900,
+						"to": 1900
+					},
+					"id": 50458,
+					"p": 0.108488,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

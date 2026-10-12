@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,080"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2080
+			},
+			"text": " that was the moment when everything changed.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.999099,
+					"t_dtw": -1
+				},
+				{
+					"text": " that",
+					"timestamps": {
+						"from": "00:00:00,020",
+						"to": "00:00:00,210"
+					},
+					"offsets": {
+						"from": 20,
+						"to": 210
+					},
+					"id": 326,
+					"p": 0.820271,
+					"t_dtw": -1
+				},
+				{
+					"text": " was",
+					"timestamps": {
+						"from": "00:00:00,210",
+						"to": "00:00:00,300"
+					},
+					"offsets": {
+						"from": 210,
+						"to": 300
+					},
+					"id": 373,
+					"p": 0.998477,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,390",
+						"to": "00:00:00,530"
+					},
+					"offsets": {
+						"from": 390,
+						"to": 530
+					},
+					"id": 262,
+					"p": 0.997685,
+					"t_dtw": -1
+				},
+				{
+					"text": " moment",
+					"timestamps": {
+						"from": "00:00:00,530",
+						"to": "00:00:00,800"
+					},
+					"offsets": {
+						"from": 530,
+						"to": 800
+					},
+					"id": 2589,
+					"p": 0.999529,
+					"t_dtw": -1
+				},
+				{
+					"text": " when",
+					"timestamps": {
+						"from": "00:00:00,870",
+						"to": "00:00:01,060"
+					},
+					"offsets": {
+						"from": 870,
+						"to": 1060
+					},
+					"id": 618,
+					"p": 0.997798,
+					"t_dtw": -1
+				},
+				{
+					"text": " everything",
+					"timestamps": {
+						"from": "00:00:01,060",
+						"to": "00:00:01,590"
+					},
+					"offsets": {
+						"from": 1060,
+						"to": 1590
+					},
+					"id": 2279,
+					"p": 0.995313,
+					"t_dtw": -1
+				},
+				{
+					"text": " changed",
+					"timestamps": {
+						"from": "00:00:01,590",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 1590,
+						"to": 2000
+					},
+					"id": 3421,
+					"p": 0.995987,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,000",
+						"to": "00:00:02,030"
+					},
+					"offsets": {
+						"from": 2000,
+						"to": 2030
+					},
+					"id": 13,
+					"p": 0.909891,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_104]",
+					"timestamps": {
+						"from": "00:00:02,080",
+						"to": "00:00:02,080"
+					},
+					"offsets": {
+						"from": 2080,
+						"to": 2080
+					},
+					"id": 50467,
+					"p": 0.0804817,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

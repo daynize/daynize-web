@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,880"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1880
+			},
+			"text": " The house whose roof is blue is empty",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998412,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 180
+					},
+					"id": 383,
+					"p": 0.840286,
+					"t_dtw": -1
+				},
+				{
+					"text": " house",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,490"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 490
+					},
+					"id": 2156,
+					"p": 0.92544,
+					"t_dtw": -1
+				},
+				{
+					"text": " whose",
+					"timestamps": {
+						"from": "00:00:00,490",
+						"to": "00:00:00,800"
+					},
+					"offsets": {
+						"from": 490,
+						"to": 800
+					},
+					"id": 3025,
+					"p": 0.993229,
+					"t_dtw": -1
+				},
+				{
+					"text": " roof",
+					"timestamps": {
+						"from": "00:00:00,800",
+						"to": "00:00:00,980"
+					},
+					"offsets": {
+						"from": 800,
+						"to": 980
+					},
+					"id": 9753,
+					"p": 0.998714,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:01,090",
+						"to": "00:00:01,170"
+					},
+					"offsets": {
+						"from": 1090,
+						"to": 1170
+					},
+					"id": 318,
+					"p": 0.988237,
+					"t_dtw": -1
+				},
+				{
+					"text": " blue",
+					"timestamps": {
+						"from": "00:00:01,170",
+						"to": "00:00:01,420"
+					},
+					"offsets": {
+						"from": 1170,
+						"to": 1420
+					},
+					"id": 4171,
+					"p": 0.991647,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:01,420",
+						"to": "00:00:01,540"
+					},
+					"offsets": {
+						"from": 1420,
+						"to": 1540
+					},
+					"id": 318,
+					"p": 0.998887,
+					"t_dtw": -1
+				},
+				{
+					"text": " empty",
+					"timestamps": {
+						"from": "00:00:01,540",
+						"to": "00:00:01,840"
+					},
+					"offsets": {
+						"from": 1540,
+						"to": 1840
+					},
+					"id": 6565,
+					"p": 0.999718,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_94]",
+					"timestamps": {
+						"from": "00:00:01,880",
+						"to": "00:00:01,880"
+					},
+					"offsets": {
+						"from": 1880,
+						"to": 1880
+					},
+					"id": 50457,
+					"p": 0.237649,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

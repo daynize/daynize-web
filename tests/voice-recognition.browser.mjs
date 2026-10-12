@@ -36,6 +36,7 @@ test('speech recognition updates the yellow transcript live and restores recordi
     try {
         browser = await chromium.launch({ headless: true });
         const page = await browser.newPage();
+        page.setDefaultTimeout(5000);
         await page.addInitScript(() => {
             Object.defineProperty(navigator, 'mediaDevices', {
                 configurable: true,
@@ -105,7 +106,7 @@ test('speech recognition updates the yellow transcript live and restores recordi
         await page.locator('#record-button').click();
         await page.waitForFunction(() => window.__mockRecognitions?.length === 1);
         assert.deepEqual(await page.evaluate(() => window.__mockRecognitions[0].config), {
-            lang: 'en-US', continuous: true, interimResults: true
+            lang: 'en-US', continuous: false, interimResults: true
         });
         assert.equal(await page.locator('#record-label').textContent(), '녹음 중지');
         assert.equal(await page.locator('#transcript').textContent(), '음성을 듣고 있습니다. 영어로 말씀해 주세요.');
@@ -138,7 +139,7 @@ test('speech recognition updates the yellow transcript live and restores recordi
             window.__permissionQueryNeverResolves = true;
         });
         await page.locator('#record-button').click();
-        await page.waitForFunction(() => window.__mockRecognitions.length === 2);
+        await page.waitForFunction(() => window.__mockRecognitions.length === 3);
         assert.equal(await page.locator('#record-label').textContent(), '녹음 중지');
         await page.locator('#record-button').click();
         await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 시작');
@@ -148,7 +149,7 @@ test('speech recognition updates the yellow transcript live and restores recordi
     }
 });
 
-test('iOS Safari and mobile Chrome use single-shot recognition and restart safely', { timeout: 30000 }, async () => {
+test('iOS Safari and mobile Chrome start in the click gesture and preserve delayed results', { timeout: 45000 }, async () => {
     const mobileAgents = [
         ['iOS Safari', 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1'],
         ['Mobile Chrome', 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36']
@@ -164,7 +165,13 @@ test('iOS Safari and mobile Chrome use single-shot recognition and restart safel
                 Object.defineProperty(navigator, 'userAgent', { configurable: true, value: mobileAgent });
                 Object.defineProperty(navigator, 'mediaDevices', {
                     configurable: true,
-                    value: { getUserMedia: async () => ({ getTracks: () => [{ stop() { } }] }) }
+                    value: {
+                        getUserMedia: async () => {
+                            window.__mediaRequests = (window.__mediaRequests || 0) + 1;
+                            await new Promise((resolve) => setTimeout(resolve, 50));
+                            return { getTracks: () => [{ stop() { window.__trackStopped = true; } }] };
+                        }
+                    }
                 });
                 Object.defineProperty(navigator, 'permissions', {
                     configurable: true,
@@ -184,21 +191,26 @@ test('iOS Safari and mobile Chrome use single-shot recognition and restart safel
                 }
                 window.MediaRecorder = MockRecorder;
                 window.__mobileRecognitions = [];
+                document.addEventListener('click', () => {
+                    window.__insideClick = true;
+                    setTimeout(() => { window.__insideClick = false; }, 0);
+                }, true);
                 const MockMobileRecognition = class {
                     start() {
+                        if (!window.__insideClick || (window.__mediaRequests || 0) !== window.__mobileRecognitions.length) throw new Error('Recognition must start synchronously before microphone acquisition');
                         this.config = { lang: this.lang, continuous: this.continuous, interimResults: this.interimResults };
                         window.__mobileRecognitions.push(this);
                         this.onstart?.();
                     }
-                    stop() { this.onend?.(); }
-                    emitResult(text) {
+                    stop() { this.stopTime = performance.now(); this.onend?.(); }
+                    emitResult(text, isFinal = true) {
                         const result = [{ transcript: text }];
-                        result.isFinal = true;
+                        result.isFinal = isFinal;
                         this.onresult?.({ resultIndex: 0, results: [result] });
                     }
                     emitError(error) { this.onerror?.({ error }); }
                 };
-                window.SpeechRecognition = MockMobileRecognition;
+                window.SpeechRecognition = /iPhone/.test(mobileAgent) ? undefined : MockMobileRecognition;
                 window.webkitSpeechRecognition = MockMobileRecognition;
             }, userAgent);
 
@@ -217,22 +229,56 @@ test('iOS Safari and mobile Chrome use single-shot recognition and restart safel
                 }));
                 throw new Error(`${label} recognition did not start: ${JSON.stringify(state)}; ${error.message}`);
             });
-            const expected = label === 'iOS Safari'
-                ? { lang: 'en-US', continuous: false, interimResults: false }
-                : { lang: 'en-US', continuous: false, interimResults: true };
+            const expected = { lang: 'en-US', continuous: false, interimResults: true };
             assert.deepEqual(await page.evaluate(() => window.__mobileRecognitions[0].config), expected, label);
-
-            await page.evaluate(() => window.__mobileRecognitions[0].emitResult('Can you drop me off here?'));
+            await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 중지');
+            await page.evaluate(() => window.__mobileRecognitions[0].emitResult('Can you drop', false));
+            assert.equal(await page.locator('#transcript').textContent(), 'Can you drop');
+            await page.locator('#record-button').click();
+            await page.evaluate(() => { window.__stopClickTime = performance.now(); });
+            assert.equal(await page.evaluate(() => window.__mobileRecognitions[0].stopTime), undefined);
+            assert.equal(await page.evaluate(() => window.__trackStopped), undefined);
+            await page.evaluate(() => new Promise((resolve) => setTimeout(() => {
+                window.__mobileRecognitions[0].emitResult('Can you drop me off here?');
+                resolve();
+            }, 1000)));
             assert.equal(await page.locator('#transcript').textContent(), 'Can you drop me off here?');
-            await page.evaluate(() => window.__mobileRecognitions[0].onend());
-            await page.waitForFunction(() => window.__mobileRecognitions.length === 2);
-            assert.deepEqual(await page.evaluate(() => window.__mobileRecognitions[1].config), expected, `${label} restart`);
-
-            await page.evaluate(() => window.__mobileRecognitions[1].emitError('not-allowed'));
-            assert.match(await page.locator('#voice-status').textContent(), /사파리\/크롬 설정에서 마이크 및 음성 인식을 허용해 주세요/);
-            assert.equal(await page.locator('#record-label').textContent(), '녹음 중지');
+            await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 시작');
+            assert.ok(await page.evaluate(() => window.__mobileRecognitions[0].stopTime - window.__stopClickTime >= 1400));
+            assert.equal(await page.evaluate(() => window.__mediaRequests), 1);
+            assert.equal(await page.evaluate(() => window.__trackStopped), true);
+            assert.equal(await page.locator('#transcript').textContent(), 'Can you drop me off here?');
+            assert.equal(await page.locator('#playback-button').isDisabled(), false);
+            for (const [errorCode, expectedMessage] of [
+                ['not-allowed', label === 'iOS Safari' ? /받아쓰기 활성화와 Siri/ : /기기의 앱 마이크 권한/],
+                ['network', /인터넷 연결/],
+                ['no-speech', /음성이 감지되지/]
+            ]) {
+                await page.locator('#record-button').click();
+                await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 중지');
+                await page.evaluate((code) => {
+                    const activeRecognition = window.__mobileRecognitions.at(-1);
+                    activeRecognition.emitError(code);
+                    activeRecognition.onend();
+                }, errorCode);
+                assert.match(await page.locator('#voice-status').textContent(), expectedMessage);
+                assert.match(await page.locator('#transcript').textContent(), expectedMessage);
+                await page.locator('#record-button').click();
+                await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 시작');
+                assert.match(await page.locator('#transcript').textContent(), expectedMessage);
+                assert.equal(await page.locator('#playback-button').isDisabled(), false);
+            }
+            await page.locator('#record-button').click();
+            await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 중지');
+            await page.evaluate(() => {
+                const activeRecognition = window.__mobileRecognitions.at(-1);
+                activeRecognition.emitResult('Keep my interim words', false);
+                activeRecognition.onend();
+            });
             await page.locator('#record-button').click();
             await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 시작');
+            assert.equal(await page.locator('#transcript').textContent(), 'Keep my interim words');
+            assert.equal(await page.evaluate(() => window.__mobileRecognitions.length), 5);
             await page.close();
         }
     } finally {

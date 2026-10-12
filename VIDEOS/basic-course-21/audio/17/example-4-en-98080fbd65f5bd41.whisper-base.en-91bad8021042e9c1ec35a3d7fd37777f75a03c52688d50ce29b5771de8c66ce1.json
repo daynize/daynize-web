@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,280"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2280
+			},
+			"text": " The man who you met yesterday is my teacher.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997817,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,190"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 190
+					},
+					"id": 383,
+					"p": 0.69793,
+					"t_dtw": -1
+				},
+				{
+					"text": " man",
+					"timestamps": {
+						"from": "00:00:00,190",
+						"to": "00:00:00,360"
+					},
+					"offsets": {
+						"from": 190,
+						"to": 360
+					},
+					"id": 582,
+					"p": 0.927032,
+					"t_dtw": -1
+				},
+				{
+					"text": " who",
+					"timestamps": {
+						"from": "00:00:00,390",
+						"to": "00:00:00,570"
+					},
+					"offsets": {
+						"from": 390,
+						"to": 570
+					},
+					"id": 508,
+					"p": 0.976313,
+					"t_dtw": -1
+				},
+				{
+					"text": " you",
+					"timestamps": {
+						"from": "00:00:00,570",
+						"to": "00:00:00,760"
+					},
+					"offsets": {
+						"from": 570,
+						"to": 760
+					},
+					"id": 345,
+					"p": 0.988927,
+					"t_dtw": -1
+				},
+				{
+					"text": " met",
+					"timestamps": {
+						"from": "00:00:00,760",
+						"to": "00:00:00,950"
+					},
+					"offsets": {
+						"from": 760,
+						"to": 950
+					},
+					"id": 1138,
+					"p": 0.998599,
+					"t_dtw": -1
+				},
+				{
+					"text": " yesterday",
+					"timestamps": {
+						"from": "00:00:00,950",
+						"to": "00:00:01,520"
+					},
+					"offsets": {
+						"from": 950,
+						"to": 1520
+					},
+					"id": 7415,
+					"p": 0.998603,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:01,520",
+						"to": "00:00:01,640"
+					},
+					"offsets": {
+						"from": 1520,
+						"to": 1640
+					},
+					"id": 318,
+					"p": 0.981205,
+					"t_dtw": -1
+				},
+				{
+					"text": " my",
+					"timestamps": {
+						"from": "00:00:01,640",
+						"to": "00:00:01,760"
+					},
+					"offsets": {
+						"from": 1640,
+						"to": 1760
+					},
+					"id": 616,
+					"p": 0.997094,
+					"t_dtw": -1
+				},
+				{
+					"text": " teacher",
+					"timestamps": {
+						"from": "00:00:01,760",
+						"to": "00:00:02,220"
+					},
+					"offsets": {
+						"from": 1760,
+						"to": 2220
+					},
+					"id": 4701,
+					"p": 0.992085,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,240",
+						"to": "00:00:02,240"
+					},
+					"offsets": {
+						"from": 2240,
+						"to": 2240
+					},
+					"id": 13,
+					"p": 0.737162,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_114]",
+					"timestamps": {
+						"from": "00:00:02,280",
+						"to": "00:00:02,280"
+					},
+					"offsets": {
+						"from": 2280,
+						"to": 2280
+					},
+					"id": 50477,
+					"p": 0.183805,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,1270 @@
+{
+  "id": "basic-09",
+  "episode": 9,
+  "title": "하는 것을 문장의 한 자리에 넣기",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 8.933015666666666,
+      "text": "매일 연습하는 것은 노력이 필요해요. 이렇게 행동 전체를 하나의 내용으로 묶어 주어 자리에 놓을 수 있어요.",
+      "screen": "To practice daily takes effort.",
+      "visual": "To practice daily 전체를 주어 한 칸으로 묶고 takes effort와 연결.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "매일 연습하는 것은 노력이 필요해요. 이렇게 행동 전체를 하나의 내용으로 묶어 주어 자리에 놓을 수 있어요.",
+          "actualStart": 0.2,
+          "actualEnd": 7.1991380000000005,
+          "rate": 185,
+          "cacheKey": "d38d23b9e0257ab95b3bb136ffd6628bf12f1853bc5a0eda2f591817e92659b0",
+          "file": "audio/09/concept-1-ko-d38d23b9e0257ab9.wav",
+          "duration": 6.999138
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 8.933015666666666,
+      "end": 19.468888333333332,
+      "text": "떠나고 싶다, 가기로 결정했다처럼 동사 뒤에도 붙일 수 있어요. 여기서 투와 원형은 원하는 일이나 결정한 일이에요.",
+      "screen": "want to leave / decide to go",
+      "visual": "want·decide 뒤 내용 칸에 to leave·to go를 각각 넣기.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "떠나고 싶다, 가기로 결정했다처럼 동사 뒤에도 붙일 수 있어요. 여기서 투와 원형은 원하는 일이나 결정한 일이에요.",
+          "actualStart": 9.133015666666665,
+          "actualEnd": 17.735010666666668,
+          "rate": 185,
+          "cacheKey": "769896d835a972a206f37836dfb5f4f24afddbf52a7f31b8c000b0c09a96c977",
+          "file": "audio/09/concept-2-ko-769896d835a972a2.wav",
+          "duration": 8.601995
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 19.468888333333332,
+      "end": 29.284263,
+      "text": "내 목표는 배우는 것이다처럼 보어 자리에도 와요. 행동의 내용을 묶는다는 점에서 명사적 용법이라고 불러요.",
+      "screen": "My goal is to learn.",
+      "visual": "goal 카드와 to learn 행동 묶음을 등호로 연결, is는 사이 연결 칸에 배치.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "내 목표는 배우는 것이다처럼 보어 자리에도 와요. 행동의 내용을 묶는다는 점에서 명사적 용법이라고 불러요.",
+          "actualStart": 19.66888833333333,
+          "actualEnd": 27.55038533333333,
+          "rate": 185,
+          "cacheKey": "c7854fe8c2a677307d31cc597b80427e6c251797b9b3688c6a653f5f1cccb9ac",
+          "file": "audio/09/concept-3-ko-c7854fe8c2a67730.wav",
+          "duration": 7.881497
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 29.284263,
+      "end": 39.53768666666666,
+      "text": "다만 모든 동사 뒤에 같은 형태를 붙이지는 않아요. 원하다, 결정하다, 바라다는 투와 원형으로 익혀 두세요.",
+      "screen": "want / decide / hope + to do",
+      "visual": "세 동사만 목록으로 묶고 모든 동사로 확장하는 화살표에는 제한 표시.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "다만 모든 동사 뒤에 같은 형태를 붙이지는 않아요. 원하다, 결정하다, 바라다는 투와 원형으로 익혀 두세요.",
+          "actualStart": 29.484263,
+          "actualEnd": 37.803809,
+          "rate": 185,
+          "cacheKey": "fb453c6f7810461a20148dcdeca3c9d85999e070c82c5b4dfe8a45b281b8351a",
+          "file": "audio/09/concept-4-ko-fb453c6f7810461a.wav",
+          "duration": 8.319546
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 39.53768666666666,
+      "end": 46.69841233333332,
+      "ko": "나는 이번 학기에 스페인어를 배우고 싶어요.",
+      "en": "I want to learn Spanish this term.",
+      "wrong": "I want learn Spanish this term.",
+      "focus": [
+        "want",
+        "to learn"
+      ],
+      "note": "원하는 행동은 want 뒤에서 to learn으로 연결한다.",
+      "visual": "want의 내용 칸에 to learn Spanish를 하나의 묶음으로 넣기.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 이번 학기에 스페인어를 배우고 싶어요.",
+          "actualStart": 39.73768666666666,
+          "actualEnd": 42.46435366666666,
+          "rate": 185,
+          "cacheKey": "26ead91d03b48462f9d20963dbdabb4a5c799d14f22c996dc0d58927015b918e",
+          "file": "audio/09/example-1-ko-26ead91d03b48462.wav",
+          "duration": 2.726667
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I want to learn Spanish this term.",
+          "actualStart": 42.81435366666666,
+          "actualEnd": 44.714534666666665,
+          "rate": 155,
+          "cacheKey": "b19006001841270131ad23a7fea04f547e60845e2387c60655e3805d5be6e6c3",
+          "file": "audio/09/example-1-en-b190060018412701.wav",
+          "duration": 1.900181
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "want",
+            "actualStart": 42.88435366666666,
+            "actualEnd": 43.154353666666665
+          },
+          {
+            "text": "to learn",
+            "actualStart": 43.154353666666665,
+            "actualEnd": 43.57435366666666
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "I",
+          "start": 42.82435366666666,
+          "end": 42.88435366666666
+        },
+        {
+          "text": "want",
+          "start": 42.88435366666666,
+          "end": 43.154353666666665
+        },
+        {
+          "text": "to",
+          "start": 43.154353666666665,
+          "end": 43.28435366666666
+        },
+        {
+          "text": "learn",
+          "start": 43.28435366666666,
+          "end": 43.57435366666666
+        },
+        {
+          "text": "Spanish",
+          "start": 43.72435366666666,
+          "end": 44.054353666666664
+        },
+        {
+          "text": "this",
+          "start": 44.11435366666666,
+          "end": 44.374353666666664
+        },
+        {
+          "text": "term.",
+          "start": 44.374353666666664,
+          "end": 44.63435366666666
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 46.69841233333332,
+      "end": 54.283309999999986,
+      "ko": "우리는 오늘 저녁 집에 있기로 결정했어요.",
+      "en": "We decided to stay home this evening.",
+      "wrong": "We decided stay home this evening.",
+      "focus": [
+        "decided",
+        "to stay"
+      ],
+      "note": "결정한 행동을 나타낼 때 decide 뒤에 to부정사를 쓴다.",
+      "visual": "결정 체크 다음 to stay home 행동 카드 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 오늘 저녁 집에 있기로 결정했어요.",
+          "actualStart": 46.898412333333326,
+          "actualEnd": 49.93854833333332,
+          "rate": 185,
+          "cacheKey": "0fdf52b59d405a837ad70b3f34c788847a12994560c04c466d9177cd37cad0a0",
+          "file": "audio/09/example-2-ko-0fdf52b59d405a83.wav",
+          "duration": 3.040136
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We decided to stay home this evening.",
+          "actualStart": 50.288548333333324,
+          "actualEnd": 52.29943233333332,
+          "rate": 155,
+          "cacheKey": "eff7b223302d46a70781ffe5e0a433b187d12f53f7dbfa22dcb7f58168a295e0",
+          "file": "audio/09/example-2-en-eff7b223302d46a7.wav",
+          "duration": 2.010884
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "decided",
+            "actualStart": 50.41854833333333,
+            "actualEnd": 50.86854833333332
+          },
+          {
+            "text": "to stay",
+            "actualStart": 50.86854833333332,
+            "actualEnd": 51.25854833333332
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "We",
+          "start": 50.29854833333332,
+          "end": 50.41854833333333
+        },
+        {
+          "text": "decided",
+          "start": 50.41854833333333,
+          "end": 50.86854833333332
+        },
+        {
+          "text": "to",
+          "start": 50.86854833333332,
+          "end": 50.998548333333325
+        },
+        {
+          "text": "stay",
+          "start": 50.998548333333325,
+          "end": 51.25854833333332
+        },
+        {
+          "text": "home",
+          "start": 51.25854833333332,
+          "end": 51.51854833333332
+        },
+        {
+          "text": "this",
+          "start": 51.51854833333332,
+          "end": 51.72854833333332
+        },
+        {
+          "text": "evening.",
+          "start": 51.80854833333333,
+          "end": 52.218548333333324
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54.283309999999986,
+      "end": 61.01419366666665,
+      "ko": "나는 곧 네 가족을 만나기를 바라요.",
+      "en": "I hope to meet your family soon.",
+      "wrong": "I hope meet your family soon.",
+      "focus": [
+        "hope",
+        "to meet"
+      ],
+      "note": "화자 자신이 하기를 바라는 행동은 hope to meet로 표현한다.",
+      "visual": "희망 말풍선 안에 to meet를 묶고 행동 주체 I를 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 곧 네 가족을 만나기를 바라요.",
+          "actualStart": 54.48330999999999,
+          "actualEnd": 56.82684699999999,
+          "rate": 185,
+          "cacheKey": "f11908301ab8e403d614980cf019751c49d986299f8ce4622179e446e0987c5f",
+          "file": "audio/09/example-3-ko-f11908301ab8e403.wav",
+          "duration": 2.343537
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I hope to meet your family soon.",
+          "actualStart": 57.17684699999999,
+          "actualEnd": 59.030315999999985,
+          "rate": 155,
+          "cacheKey": "8b02368cda862bb0a79770cff3fad4a9060cbc80660eb045b96010786224d112",
+          "file": "audio/09/example-3-en-8b02368cda862bb0.wav",
+          "duration": 1.853469
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "hope",
+            "actualStart": 57.24684699999999,
+            "actualEnd": 57.49684699999999
+          },
+          {
+            "text": "to meet",
+            "actualStart": 57.586846999999985,
+            "actualEnd": 57.91684699999999
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "I",
+          "start": 57.186846999999986,
+          "end": 57.24684699999999
+        },
+        {
+          "text": "hope",
+          "start": 57.24684699999999,
+          "end": 57.49684699999999
+        },
+        {
+          "text": "to",
+          "start": 57.586846999999985,
+          "end": 57.66684699999999
+        },
+        {
+          "text": "meet",
+          "start": 57.66684699999999,
+          "end": 57.91684699999999
+        },
+        {
+          "text": "your",
+          "start": 57.94684699999999,
+          "end": 58.226846999999985
+        },
+        {
+          "text": "family",
+          "start": 58.226846999999985,
+          "end": 58.57684699999999
+        },
+        {
+          "text": "soon.",
+          "start": 58.686846999999986,
+          "end": 58.95684699999999
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61.01419366666665,
+      "end": 69.29759533333332,
+      "ko": "내 목표는 언젠가 작은 서점을 여는 거예요.",
+      "en": "My goal is to open a small bookshop someday.",
+      "wrong": "My goal is to opens a small bookshop someday.",
+      "focus": [
+        "My goal",
+        "to open"
+      ],
+      "note": "목표의 내용을 설명하는 보어로 to부정사를 쓰며 to 뒤는 원형 open이다.",
+      "visual": "goal과 서점 개업 행동을 등호로 연결하고 opens의 s 오류 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "내 목표는 언젠가 작은 서점을 여는 거예요.",
+          "actualStart": 61.21419366666665,
+          "actualEnd": 64.47491966666665,
+          "rate": 185,
+          "cacheKey": "e851f992da3e13f674f0010c868ed3d08d65bccebfee31a05de311166f5c2571",
+          "file": "audio/09/example-4-ko-e851f992da3e13f6.wav",
+          "duration": 3.260726
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "My goal is to open a small bookshop someday.",
+          "actualStart": 64.82491966666664,
+          "actualEnd": 67.31371766666665,
+          "rate": 155,
+          "cacheKey": "c936cbaa4f222ce1739b8e63a46aa0d6a9c1da4fa9cbd36d5ecf59d481f089ed",
+          "file": "audio/09/example-4-en-c936cbaa4f222ce1.wav",
+          "duration": 2.488798
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "My goal",
+            "actualStart": 64.82491966666664,
+            "actualEnd": 65.22491966666665
+          },
+          {
+            "text": "to open",
+            "actualStart": 65.42491966666664,
+            "actualEnd": 65.75491966666665
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "My",
+          "start": 64.82491966666664,
+          "end": 64.95491966666664
+        },
+        {
+          "text": "goal",
+          "start": 64.95491966666664,
+          "end": 65.22491966666665
+        },
+        {
+          "text": "is",
+          "start": 65.22491966666665,
+          "end": 65.32491966666664
+        },
+        {
+          "text": "to",
+          "start": 65.42491966666664,
+          "end": 65.48491966666664
+        },
+        {
+          "text": "open",
+          "start": 65.48491966666664,
+          "end": 65.75491966666665
+        },
+        {
+          "text": "a",
+          "start": 65.75491966666665,
+          "end": 65.82491966666664
+        },
+        {
+          "text": "small",
+          "start": 65.82491966666664,
+          "end": 66.16491966666665
+        },
+        {
+          "text": "bookshop",
+          "start": 66.16491966666665,
+          "end": 66.70491966666664
+        },
+        {
+          "text": "someday.",
+          "start": 66.70491966666664,
+          "end": 67.23491966666664
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69.29759533333332,
+      "end": 76.74072399999999,
+      "ko": "매일 연습하려면 약간의 노력이 필요해요.",
+      "en": "To practice every day takes some effort.",
+      "wrong": "To practice every day take some effort.",
+      "focus": [
+        "To practice",
+        "takes"
+      ],
+      "note": "to부정사 주어 전체를 하나의 내용으로 보아 단수 동사 takes를 쓴다.",
+      "visual": "주어 묶음 전체에서 takes로 단수 일치선 그리기.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "매일 연습하려면 약간의 노력이 필요해요.",
+          "actualStart": 69.49759533333332,
+          "actualEnd": 72.31714133333332,
+          "rate": 185,
+          "cacheKey": "64da2b71183308bc4b5a701a0408b5d54a667c9efa4ccbc482325b393cace136",
+          "file": "audio/09/example-5-ko-64da2b71183308bc.wav",
+          "duration": 2.819546
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "To practice every day takes some effort.",
+          "actualStart": 72.66714133333332,
+          "actualEnd": 74.75684633333331,
+          "rate": 155,
+          "cacheKey": "4971ab8cf336ec49bdd9ecd62231a156811fd90e4e91c8a3a0ecd0e79621b966",
+          "file": "audio/09/example-5-en-4971ab8cf336ec49.wav",
+          "duration": 2.089705
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "To practice",
+            "actualStart": 72.66714133333332,
+            "actualEnd": 73.25714133333332
+          },
+          {
+            "text": "takes",
+            "actualStart": 73.74714133333332,
+            "actualEnd": 73.99714133333332
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "To",
+          "start": 72.66714133333332,
+          "end": 72.76714133333331
+        },
+        {
+          "text": "practice",
+          "start": 72.86714133333332,
+          "end": 73.25714133333332
+        },
+        {
+          "text": "every",
+          "start": 73.29714133333331,
+          "end": 73.56714133333332
+        },
+        {
+          "text": "day",
+          "start": 73.56714133333332,
+          "end": 73.74714133333332
+        },
+        {
+          "text": "takes",
+          "start": 73.74714133333332,
+          "end": 73.99714133333332
+        },
+        {
+          "text": "some",
+          "start": 74.16714133333332,
+          "end": 74.28714133333332
+        },
+        {
+          "text": "effort.",
+          "start": 74.28714133333332,
+          "end": 74.63714133333332
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 76.74072399999999,
+      "end": 84.75886466666665,
+      "ko": "처음부터 모든 내용을 기억하기는 어려워요.",
+      "en": "It is difficult to remember everything at first.",
+      "wrong": "It is difficult to remembers everything at first.",
+      "focus": [
+        "It is difficult",
+        "to remember"
+      ],
+      "note": "it을 먼저 둔 구조에서 뒤의 행동 내용은 to remember이며 remembers가 아니다.",
+      "visual": "앞 it 칸과 뒤 행동 묶음을 연결하고 remember 원형 확대.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "처음부터 모든 내용을 기억하기는 어려워요.",
+          "actualStart": 76.94072399999999,
+          "actualEnd": 79.88544099999999,
+          "rate": 185,
+          "cacheKey": "68558beeabc1383da5b493a5823834aa638317d0b1867d2e585b03aa37315786",
+          "file": "audio/09/example-6-ko-68558beeabc1383d.wav",
+          "duration": 2.944717
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "It is difficult to remember everything at first.",
+          "actualStart": 80.23544099999998,
+          "actualEnd": 82.77498699999998,
+          "rate": 155,
+          "cacheKey": "7dc84e852b5a4d91b76914be75b0d449e4729214c3862e72e20456fa8bc5f983",
+          "file": "audio/09/example-6-en-7dc84e852b5a4d91.wav",
+          "duration": 2.539546
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "It is difficult",
+            "actualStart": 80.23544099999998,
+            "actualEnd": 81.00544099999998
+          },
+          {
+            "text": "to remember",
+            "actualStart": 81.10544099999998,
+            "actualEnd": 81.63544099999999
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "It",
+          "start": 80.23544099999998,
+          "end": 80.35544099999998
+        },
+        {
+          "text": "is",
+          "start": 80.35544099999998,
+          "end": 80.42544099999998
+        },
+        {
+          "text": "difficult",
+          "start": 80.52544099999999,
+          "end": 81.00544099999998
+        },
+        {
+          "text": "to",
+          "start": 81.10544099999998,
+          "end": 81.14544099999998
+        },
+        {
+          "text": "remember",
+          "start": 81.14544099999998,
+          "end": 81.63544099999999
+        },
+        {
+          "text": "everything",
+          "start": 81.63544099999999,
+          "end": 82.18544099999998
+        },
+        {
+          "text": "at",
+          "start": 82.33544099999997,
+          "end": 82.36544099999998
+        },
+        {
+          "text": "first.",
+          "start": 82.36544099999998,
+          "end": 82.64544099999998
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 84.75886466666665,
+      "end": 93.91024833333331,
+      "ko": "그녀는 여행 전에 친구에게 전화하겠다고 약속했어요.",
+      "en": "She promised to call her friend before the trip.",
+      "wrong": "She promised call her friend before the trip.",
+      "focus": [
+        "promised",
+        "to call"
+      ],
+      "note": "자신이 하겠다고 약속한 행동에는 promise to 동사를 쓴다.",
+      "visual": "약속 카드 뒤 통화 행동을 붙이고 before 시간 정보를 아래에 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 여행 전에 친구에게 전화하겠다고 약속했어요.",
+          "actualStart": 84.95886466666666,
+          "actualEnd": 89.10516866666666,
+          "rate": 185,
+          "cacheKey": "b724974f05cc3b7e730b9895287d8de749eeb9bdeccc002039c5b2f47518ced8",
+          "file": "audio/09/example-7-ko-b724974f05cc3b7e.wav",
+          "duration": 4.146304
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She promised to call her friend before the trip.",
+          "actualStart": 89.45516866666665,
+          "actualEnd": 91.92637066666666,
+          "rate": 155,
+          "cacheKey": "fb33fa1df46b00d1444b3b5583e8ca9de96da3bfb213d31bf64594a452dd27c9",
+          "file": "audio/09/example-7-en-fb33fa1df46b00d1.wav",
+          "duration": 2.471202
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "promised",
+            "actualStart": 89.63516866666666,
+            "actualEnd": 90.07516866666666
+          },
+          {
+            "text": "to call",
+            "actualStart": 90.15516866666665,
+            "actualEnd": 90.48516866666665
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "She",
+          "start": 89.48516866666665,
+          "end": 89.63516866666666
+        },
+        {
+          "text": "promised",
+          "start": 89.63516866666666,
+          "end": 90.07516866666666
+        },
+        {
+          "text": "to",
+          "start": 90.15516866666665,
+          "end": 90.24516866666666
+        },
+        {
+          "text": "call",
+          "start": 90.24516866666666,
+          "end": 90.48516866666665
+        },
+        {
+          "text": "her",
+          "start": 90.48516866666665,
+          "end": 90.66516866666664
+        },
+        {
+          "text": "friend",
+          "start": 90.66516866666664,
+          "end": 90.98516866666665
+        },
+        {
+          "text": "before",
+          "start": 91.03516866666665,
+          "end": 91.38516866666666
+        },
+        {
+          "text": "the",
+          "start": 91.38516866666666,
+          "end": 91.54516866666665
+        },
+        {
+          "text": "trip.",
+          "start": 91.55516866666665,
+          "end": 91.81516866666665
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 93.91024833333331,
+      "end": 102.35428499999998,
+      "ko": "우리는 다음 달에 더 큰 사무실로 옮길 계획이에요.",
+      "en": "We plan to move to a larger office next month.",
+      "wrong": "We plan move to a larger office next month.",
+      "focus": [
+        "plan to move",
+        "to a larger office"
+      ],
+      "note": "앞 to는 원형 move를 이끄는 부정사 표지이고 뒤 to는 이동 목적지를 잇는 전치사다.",
+      "visual": "첫 to 아래 동사 표지, 둘째 to 아래 목적지 연결 표시로 구분.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 다음 달에 더 큰 사무실로 옮길 계획이에요.",
+          "actualStart": 94.11024833333332,
+          "actualEnd": 97.28970433333332,
+          "rate": 185,
+          "cacheKey": "01c9396956e8c7b0432ce5c62e16fbafc13bd58ffdaaeb39d9048714971cd414",
+          "file": "audio/09/example-8-ko-01c9396956e8c7b0.wav",
+          "duration": 3.179456
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We plan to move to a larger office next month.",
+          "actualStart": 97.63970433333331,
+          "actualEnd": 100.37040733333332,
+          "rate": 155,
+          "cacheKey": "35f3b60cdefe6a6d8105abb0570b865da862059d5ba45b8f573277b66ffeb887",
+          "file": "audio/09/example-8-en-35f3b60cdefe6a6d.wav",
+          "duration": 2.730703
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "plan to move",
+            "actualStart": 97.86970433333332,
+            "actualEnd": 98.41970433333331
+          },
+          {
+            "text": "to a larger office",
+            "actualStart": 98.51970433333331,
+            "actualEnd": 99.56970433333332
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "We",
+          "start": 97.64970433333332,
+          "end": 97.75970433333332
+        },
+        {
+          "text": "plan",
+          "start": 97.86970433333332,
+          "end": 98.06970433333332
+        },
+        {
+          "text": "to",
+          "start": 98.06970433333332,
+          "end": 98.2097043333333
+        },
+        {
+          "text": "move",
+          "start": 98.2097043333333,
+          "end": 98.41970433333331
+        },
+        {
+          "text": "to",
+          "start": 98.51970433333331,
+          "end": 98.63970433333331
+        },
+        {
+          "text": "a",
+          "start": 98.63970433333331,
+          "end": 98.7097043333333
+        },
+        {
+          "text": "larger",
+          "start": 98.7097043333333,
+          "end": 99.13970433333331
+        },
+        {
+          "text": "office",
+          "start": 99.13970433333331,
+          "end": 99.56970433333332
+        },
+        {
+          "text": "next",
+          "start": 99.56970433333332,
+          "end": 99.75970433333332
+        },
+        {
+          "text": "month.",
+          "start": 99.8497043333333,
+          "end": 100.2097043333333
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 102.35428499999998,
+      "end": 111.57936466666663,
+      "ko": "그는 읽지도 않고 계약서에 서명하는 것을 거절했어요.",
+      "en": "He refused to sign the contract without reading it.",
+      "wrong": "He refused sign the contract without reading it.",
+      "focus": [
+        "refused",
+        "to sign"
+      ],
+      "note": "거절한 행동은 refuse to sign이며 without reading은 전치사 뒤 별도 구조다.",
+      "visual": "거절 내용과 without 조건 영역을 서로 다른 테두리로 묶기.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그는 읽지도 않고 계약서에 서명하는 것을 거절했어요.",
+          "actualStart": 102.55428499999998,
+          "actualEnd": 106.57927399999998,
+          "rate": 185,
+          "cacheKey": "6ac4ddaf79564cb3df33bcf4014f7079e6bec62bcc6861fc6653bd366a92aa54",
+          "file": "audio/09/example-9-ko-6ac4ddaf79564cb3.wav",
+          "duration": 4.024989
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He refused to sign the contract without reading it.",
+          "actualStart": 106.92927399999998,
+          "actualEnd": 109.59548699999998,
+          "rate": 155,
+          "cacheKey": "496d3a97a87d66cb63cd429df42dbc52cf7f6be79fd93a130de886a4fadd1b86",
+          "file": "audio/09/example-9-en-496d3a97a87d66cb.wav",
+          "duration": 2.666213
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "refused",
+            "actualStart": 107.04927399999998,
+            "actualEnd": 107.45927399999998
+          },
+          {
+            "text": "to sign",
+            "actualStart": 107.56927399999998,
+            "actualEnd": 107.83927399999997
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "He",
+          "start": 106.96927399999998,
+          "end": 107.04927399999998
+        },
+        {
+          "text": "refused",
+          "start": 107.04927399999998,
+          "end": 107.45927399999998
+        },
+        {
+          "text": "to",
+          "start": 107.56927399999998,
+          "end": 107.59927399999998
+        },
+        {
+          "text": "sign",
+          "start": 107.59927399999998,
+          "end": 107.83927399999997
+        },
+        {
+          "text": "the",
+          "start": 107.83927399999997,
+          "end": 108.01927399999998
+        },
+        {
+          "text": "contract",
+          "start": 108.01927399999998,
+          "end": 108.50927399999998
+        },
+        {
+          "text": "without",
+          "start": 108.50927399999998,
+          "end": 108.93927399999998
+        },
+        {
+          "text": "reading",
+          "start": 108.93927399999998,
+          "end": 109.36927399999998
+        },
+        {
+          "text": "it.",
+          "start": 109.36927399999998,
+          "end": 109.46927399999998
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 111.57936466666663,
+      "end": 120.7887983333333,
+      "ko": "그녀는 여유 시간이 생기면 새 언어를 배우고 싶어 해요.",
+      "en": "She wants to learn another language when she has free time.",
+      "wrong": "She wants to learns another language when she has free time.",
+      "focus": [
+        "wants",
+        "to learn"
+      ],
+      "note": "주어와 일치하는 s는 정동사 wants에 붙고 to 뒤 learn에는 붙이지 않는다.",
+      "visual": "wants의 s와 learn의 원형을 두 확대창에서 비교.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 여유 시간이 생기면 새 언어를 배우고 싶어 해요.",
+          "actualStart": 111.77936466666664,
+          "actualEnd": 115.42643966666664,
+          "rate": 185,
+          "cacheKey": "45003c967f70e207b78f21c06f85868d97347d0eda60a2079c76f726d639c486",
+          "file": "audio/09/example-10-ko-45003c967f70e207.wav",
+          "duration": 3.647075
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She wants to learn another language when she has free time.",
+          "actualStart": 115.77643966666663,
+          "actualEnd": 118.80492066666663,
+          "rate": 155,
+          "cacheKey": "b0145bffd9b1b510eeb26eb5f4845d5c6d6c49ca2b101a8ad0653b57ee84f09c",
+          "file": "audio/09/example-10-en-b0145bffd9b1b510.wav",
+          "duration": 3.028481
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "wants",
+            "actualStart": 115.95643966666664,
+            "actualEnd": 116.17643966666664
+          },
+          {
+            "text": "to learn",
+            "actualStart": 116.31643966666664,
+            "actualEnd": 116.67643966666664
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "She",
+          "start": 115.82643966666663,
+          "end": 115.95643966666664
+        },
+        {
+          "text": "wants",
+          "start": 115.95643966666664,
+          "end": 116.17643966666664
+        },
+        {
+          "text": "to",
+          "start": 116.31643966666664,
+          "end": 116.37643966666663
+        },
+        {
+          "text": "learn",
+          "start": 116.37643966666663,
+          "end": 116.67643966666664
+        },
+        {
+          "text": "another",
+          "start": 116.67643966666664,
+          "end": 117.10643966666663
+        },
+        {
+          "text": "language",
+          "start": 117.10643966666663,
+          "end": 117.59643966666663
+        },
+        {
+          "text": "when",
+          "start": 117.59643966666663,
+          "end": 117.83643966666664
+        },
+        {
+          "text": "she",
+          "start": 117.83643966666664,
+          "end": 117.99643966666663
+        },
+        {
+          "text": "has",
+          "start": 118.11643966666664,
+          "end": 118.19643966666663
+        },
+        {
+          "text": "free",
+          "start": 118.19643966666663,
+          "end": 118.43643966666663
+        },
+        {
+          "text": "time.",
+          "start": 118.43643966666663,
+          "end": 118.72643966666664
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 120.7887983333333,
+      "end": 130,
+      "text": "행동을 하나의 내용으로 묶는 to부정사를 주어·목적어·보어 자리와 동사별 쓰임에 맞게 사용하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "행동을 하나의 내용으로 묶는 to부정사를 주어·목적어·보어 자리와 동사별 쓰임에 맞게 사용하세요.",
+          "actualStart": 120.9887983333333,
+          "actualEnd": 128.2661223333333,
+          "rate": 185,
+          "cacheKey": "2d5ee5675b67f4137f02c65ee9b74597f2e9ab97f4cc53a5f7302b1120f08538",
+          "file": "audio/09/summary-ko-2d5ee5675b67f413.wav",
+          "duration": 7.277324
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 112.99183500000001,
+  "sourceHash": "9d0812c4712d78f1a793b20f72e030e8ac18b33799a912516bdc50c04577d838",
+  "audioFile": "audio/09/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "9d0812c4712d78f1a793b20f72e030e8ac18b33799a912516bdc50c04577d838",
+    "clipHashes": {
+      "example-1-en": "cd62b202cd3e5a694a94debe203f688c72c093041c162f31643a692d8abeaa21",
+      "example-2-en": "e7c2c827f166ef977e2985a5bbd2d9c08d40fd6f3dd73ca13c19df0c9f061358",
+      "example-3-en": "8e43428e4fe16c6c4a679b3103fc387f89931346174ae678fe59b7e3e00069e0",
+      "example-4-en": "028b1eaea0b0737ec20c3a6611ccd8c1813d596366951d69f4643568cda9ce7a",
+      "example-5-en": "9a245ff0e514009411cc118fb36b91e1cf592bdf090fe33077f4d5c4e38be98b",
+      "example-6-en": "bdb77ea4afcddb6528f75dba0f4ea638ffbf895bbf9a324c815195786d3fe8fe",
+      "example-7-en": "420407b7c2f64edcae1b4373cf110b94e4d651ada4e07dce9a16e76780a38619",
+      "example-8-en": "a9426912300ec8956e24afcaca2b3d4ea66bb9249ea42ebe387339478b1871be",
+      "example-9-en": "b29b75e202e0e964331938bb1611906d707bc1cf8796c23e7ac8636a3572b685",
+      "example-10-en": "6b9bc4e8f3ec72dc74334ff25b186fee9a364dae4e7ac828e7f7c017050cf43a"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

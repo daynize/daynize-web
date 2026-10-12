@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,000"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2000
+			},
+			"text": " I like the way she solved the problem.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998436,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,060"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 60
+					},
+					"id": 314,
+					"p": 0.926454,
+					"t_dtw": -1
+				},
+				{
+					"text": " like",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,280"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 280
+					},
+					"id": 588,
+					"p": 0.950423,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,380",
+						"to": "00:00:00,520"
+					},
+					"offsets": {
+						"from": 380,
+						"to": 520
+					},
+					"id": 262,
+					"p": 0.997885,
+					"t_dtw": -1
+				},
+				{
+					"text": " way",
+					"timestamps": {
+						"from": "00:00:00,520",
+						"to": "00:00:00,720"
+					},
+					"offsets": {
+						"from": 520,
+						"to": 720
+					},
+					"id": 835,
+					"p": 0.999348,
+					"t_dtw": -1
+				},
+				{
+					"text": " she",
+					"timestamps": {
+						"from": "00:00:00,720",
+						"to": "00:00:00,920"
+					},
+					"offsets": {
+						"from": 720,
+						"to": 920
+					},
+					"id": 673,
+					"p": 0.997967,
+					"t_dtw": -1
+				},
+				{
+					"text": " solved",
+					"timestamps": {
+						"from": "00:00:00,920",
+						"to": "00:00:01,300"
+					},
+					"offsets": {
+						"from": 920,
+						"to": 1300
+					},
+					"id": 16019,
+					"p": 0.998361,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:01,400",
+						"to": "00:00:01,510"
+					},
+					"offsets": {
+						"from": 1400,
+						"to": 1510
+					},
+					"id": 262,
+					"p": 0.997778,
+					"t_dtw": -1
+				},
+				{
+					"text": " problem",
+					"timestamps": {
+						"from": "00:00:01,510",
+						"to": "00:00:01,850"
+					},
+					"offsets": {
+						"from": 1510,
+						"to": 1850
+					},
+					"id": 1917,
+					"p": 0.998531,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,920",
+						"to": "00:00:01,920"
+					},
+					"offsets": {
+						"from": 1920,
+						"to": 1920
+					},
+					"id": 13,
+					"p": 0.854955,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_100]",
+					"timestamps": {
+						"from": "00:00:02,000",
+						"to": "00:00:02,000"
+					},
+					"offsets": {
+						"from": 2000,
+						"to": 2000
+					},
+					"id": 50463,
+					"p": 0.0543747,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

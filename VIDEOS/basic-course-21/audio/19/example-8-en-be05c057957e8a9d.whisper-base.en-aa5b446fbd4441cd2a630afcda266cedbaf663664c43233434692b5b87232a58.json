@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,800"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2800
+			},
+			"text": " the restaurant which opened last month is always busy.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998809,
+					"t_dtw": -1
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 180
+					},
+					"id": 262,
+					"p": 0.398352,
+					"t_dtw": -1
+				},
+				{
+					"text": " restaurant",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,800"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 800
+					},
+					"id": 7072,
+					"p": 0.977403,
+					"t_dtw": -1
+				},
+				{
+					"text": " which",
+					"timestamps": {
+						"from": "00:00:00,800",
+						"to": "00:00:01,080"
+					},
+					"offsets": {
+						"from": 800,
+						"to": 1080
+					},
+					"id": 543,
+					"p": 0.983125,
+					"t_dtw": -1
+				},
+				{
+					"text": " opened",
+					"timestamps": {
+						"from": "00:00:01,160",
+						"to": "00:00:01,480"
+					},
+					"offsets": {
+						"from": 1160,
+						"to": 1480
+					},
+					"id": 4721,
+					"p": 0.9991,
+					"t_dtw": -1
+				},
+				{
+					"text": " last",
+					"timestamps": {
+						"from": "00:00:01,480",
+						"to": "00:00:01,720"
+					},
+					"offsets": {
+						"from": 1480,
+						"to": 1720
+					},
+					"id": 938,
+					"p": 0.997402,
+					"t_dtw": -1
+				},
+				{
+					"text": " month",
+					"timestamps": {
+						"from": "00:00:01,720",
+						"to": "00:00:02,030"
+					},
+					"offsets": {
+						"from": 1720,
+						"to": 2030
+					},
+					"id": 1227,
+					"p": 0.999218,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:02,030",
+						"to": "00:00:02,150"
+					},
+					"offsets": {
+						"from": 2030,
+						"to": 2150
+					},
+					"id": 318,
+					"p": 0.995406,
+					"t_dtw": -1
+				},
+				{
+					"text": " always",
+					"timestamps": {
+						"from": "00:00:02,150",
+						"to": "00:00:02,520"
+					},
+					"offsets": {
+						"from": 2150,
+						"to": 2520
+					},
+					"id": 1464,
+					"p": 0.987261,
+					"t_dtw": -1
+				},
+				{
+					"text": " busy",
+					"timestamps": {
+						"from": "00:00:02,520",
+						"to": "00:00:02,780"
+					},
+					"offsets": {
+						"from": 2520,
+						"to": 2780
+					},
+					"id": 8179,
+					"p": 0.997699,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,800",
+						"to": "00:00:02,800"
+					},
+					"offsets": {
+						"from": 2800,
+						"to": 2800
+					},
+					"id": 13,
+					"p": 0.595549,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_140]",
+					"timestamps": {
+						"from": "00:00:02,800",
+						"to": "00:00:02,800"
+					},
+					"offsets": {
+						"from": 2800,
+						"to": 2800
+					},
+					"id": 50503,
+					"p": 0.195402,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

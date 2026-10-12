@@ -1,0 +1,1275 @@
+{
+  "id": "basic-17",
+  "episode": 17,
+  "title": "두 문장을 명사 하나로 연결하기",
+  "durationTarget": 130,
+  "timingStatus": "audio-measured-words-aligned",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 9.455576200000001,
+      "text": "같은 사람이나 사물을 말하는 두 문장은 관계절로 연결할 수 있어요. 겹치는 자리를 먼저 찾으세요.",
+      "screen": "The woman helped me. / The woman lives nearby.",
+      "visual": "첫 예문을 두 문장으로 펼치고 공통 명사를 연결.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "같은 사람이나 사물을 말하는 두 문장은 관계절로 연결할 수 있어요. 겹치는 자리를 먼저 찾으세요.",
+          "actualStart": 0.2,
+          "actualEnd": 7.297868,
+          "rate": 185,
+          "cacheKey": "5d1c5d98b93965080bdd2924160af221b6542900f0203ac5c01425a27c6734c8",
+          "file": "audio/17/concept-1-ko-5d1c5d98b9396508.wav",
+          "duration": 7.097868
+        }
+      ],
+      "plannedStart": 0,
+      "plannedEnd": 10
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 9.455576200000001,
+      "end": 19.018001400000003,
+      "text": "관계대명사가 주어 역할이면 뒤에 주어를 또 넣지 않아요. 사람은 후, 사물은 위치로 연결할 수 있죠.",
+      "screen": "who helped me / 주어 자리",
+      "visual": "첫 예문의 who에서 helped로 연결하고 중복 주어 칸 제거.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "관계대명사가 주어 역할이면 뒤에 주어를 또 넣지 않아요. 사람은 후, 사물은 위치로 연결할 수 있죠.",
+          "actualStart": 9.6555762,
+          "actualEnd": 16.8602932,
+          "rate": 185,
+          "cacheKey": "8fc910f5cce1b5031f77f5e85aa95cb36934d9952eea15d033e0750314b8e599",
+          "file": "audio/17/concept-2-ko-8fc910f5cce1b503.wav",
+          "duration": 7.204717
+        }
+      ],
+      "plannedStart": 10,
+      "plannedEnd": 20
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 19.018001400000003,
+      "end": 29.059836600000004,
+      "text": "목적어 역할이면 관계절 안에 주어가 따로 있어요. 명사를 좁혀 주는 목적격 관계대명사는 생략할 수 있죠.",
+      "screen": "관계절: 주어 + 동사 + 목적어 빈칸",
+      "visual": "주격과 목적격의 빈자리 위치를 두 줄로 비교.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "목적어 역할이면 관계절 안에 주어가 따로 있어요. 명사를 좁혀 주는 목적격 관계대명사는 생략할 수 있죠.",
+          "actualStart": 19.218001400000002,
+          "actualEnd": 26.902128400000002,
+          "rate": 185,
+          "cacheKey": "0e4bf6aa32d388c00a139c43c3661696ea6b01e0996ea9d87f35b0a173fd8817",
+          "file": "audio/17/concept-3-ko-0e4bf6aa32d388c0.wav",
+          "duration": 7.684127
+        }
+      ],
+      "plannedStart": 20,
+      "plannedEnd": 30
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 29.059836600000004,
+      "end": 38.877408800000005,
+      "text": "주격은 보통 생략할 수 없어요. 쉼표로 덧붙이는 관계절에는 댓을 쓰거나 관계대명사를 빼지 마세요.",
+      "screen": "주격 생략 금지 / 쉼표 뒤 that 금지",
+      "visual": "제한적 관계절과 쉼표로 분리된 추가 설명을 다른 선으로 표시.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "주격은 보통 생략할 수 없어요. 쉼표로 덧붙이는 관계절에는 댓을 쓰거나 관계대명사를 빼지 마세요.",
+          "actualStart": 29.259836600000003,
+          "actualEnd": 36.7197006,
+          "rate": 185,
+          "cacheKey": "9ad1b1086728e8075b98fc7ed6d46610f5190dd3b258f31e4a315c96c8685d6e",
+          "file": "audio/17/concept-4-ko-9ad1b1086728e807.wav",
+          "duration": 7.459864
+        }
+      ],
+      "plannedStart": 30,
+      "plannedEnd": 40
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 38.877408800000005,
+      "end": 46.39661400000001,
+      "ko": "나를 도와준 여자는 근처에 살아요.",
+      "en": "The woman who helped me lives nearby.",
+      "wrong": "The woman who she helped me lives nearby.",
+      "focus": [
+        "who",
+        "helped"
+      ],
+      "note": "who가 helped의 주어이므로 she를 다시 넣지 않는다.",
+      "visual": "두 문장의 공통 여자를 who로 연결하고 she 중복 제거.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나를 도와준 여자는 근처에 살아요.",
+          "actualStart": 39.07740880000001,
+          "actualEnd": 41.62992580000001,
+          "rate": 185,
+          "cacheKey": "43b52db4fe7dab00f037536d117d76a6d79f869e4ec2069f51e1304d2e614399",
+          "file": "audio/17/example-1-ko-43b52db4fe7dab00.wav",
+          "duration": 2.552517
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The woman who helped me lives nearby.",
+          "actualStart": 41.97992580000001,
+          "actualEnd": 43.98890580000001,
+          "rate": 155,
+          "cacheKey": "66edc66aba2be7c86b44755bff2b0a58b03e55d172685edb06af33b580a9e4b3",
+          "file": "audio/17/example-1-en-66edc66aba2be7c8.wav",
+          "duration": 2.00898
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "who",
+            "actualStart": 42.48992580000001,
+            "actualEnd": 42.679925800000014
+          },
+          {
+            "text": "helped",
+            "actualStart": 42.679925800000014,
+            "actualEnd": 43.069925800000014
+          }
+        ]
+      },
+      "plannedStart": 40,
+      "plannedEnd": 47,
+      "words": [
+        {
+          "text": "The",
+          "start": 41.98992580000001,
+          "end": 42.16992580000001
+        },
+        {
+          "text": "woman",
+          "start": 42.16992580000001,
+          "end": 42.48992580000001
+        },
+        {
+          "text": "who",
+          "start": 42.48992580000001,
+          "end": 42.679925800000014
+        },
+        {
+          "text": "helped",
+          "start": 42.679925800000014,
+          "end": 43.069925800000014
+        },
+        {
+          "text": "me",
+          "start": 43.069925800000014,
+          "end": 43.19992580000001
+        },
+        {
+          "text": "lives",
+          "start": 43.19992580000001,
+          "end": 43.51992580000001
+        },
+        {
+          "text": "nearby.",
+          "start": 43.51992580000001,
+          "end": 43.89992580000001
+        }
+      ]
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 46.39661400000001,
+      "end": 53.86838120000001,
+      "ko": "그가 산 전화기는 꽤 비싸요.",
+      "en": "The phone which he bought is quite expensive.",
+      "wrong": "The phone which he bought it is quite expensive.",
+      "focus": [
+        "which",
+        "bought"
+      ],
+      "note": "which가 bought의 목적어 자리와 연결되므로 it을 다시 넣지 않는다.",
+      "visual": "phone을 bought 뒤의 빈 목적어 자리로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그가 산 전화기는 꽤 비싸요.",
+          "actualStart": 46.59661400000001,
+          "actualEnd": 48.90432400000001,
+          "rate": 185,
+          "cacheKey": "f0740fd234091f55d989f5d67510f2dbd538b476532fe0972c338bd222f3a9b3",
+          "file": "audio/17/example-2-ko-f0740fd234091f55.wav",
+          "duration": 2.30771
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The phone which he bought is quite expensive.",
+          "actualStart": 49.25432400000001,
+          "actualEnd": 51.460673000000014,
+          "rate": 155,
+          "cacheKey": "35ecdace612291bcd2e709bece9808d440cd2687495c6c08993dd581315bd3b3",
+          "file": "audio/17/example-2-en-35ecdace612291bc.wav",
+          "duration": 2.206349
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "which",
+            "actualStart": 49.71432400000001,
+            "actualEnd": 50.00432400000001
+          },
+          {
+            "text": "bought",
+            "actualStart": 50.11432400000001,
+            "actualEnd": 50.36432400000001
+          }
+        ]
+      },
+      "plannedStart": 47,
+      "plannedEnd": 54,
+      "words": [
+        {
+          "text": "The",
+          "start": 49.26432400000001,
+          "end": 49.33432400000001
+        },
+        {
+          "text": "phone",
+          "start": 49.43432400000001,
+          "end": 49.71432400000001
+        },
+        {
+          "text": "which",
+          "start": 49.71432400000001,
+          "end": 50.00432400000001
+        },
+        {
+          "text": "he",
+          "start": 50.00432400000001,
+          "end": 50.11432400000001
+        },
+        {
+          "text": "bought",
+          "start": 50.11432400000001,
+          "end": 50.36432400000001
+        },
+        {
+          "text": "is",
+          "start": 50.50432400000001,
+          "end": 50.57432400000001
+        },
+        {
+          "text": "quite",
+          "start": 50.57432400000001,
+          "end": 50.86432400000001
+        },
+        {
+          "text": "expensive.",
+          "start": 50.86432400000001,
+          "end": 51.37432400000001
+        }
+      ]
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 53.86838120000001,
+      "end": 61.65447940000001,
+      "ko": "우리 옆에 사는 개는 자주 짖어요.",
+      "en": "The dog that lives next door often barks.",
+      "wrong": "The dog lives next door often barks.",
+      "focus": [
+        "that",
+        "lives"
+      ],
+      "note": "that이 관계절의 주어이므로 생략하면 두 동사를 연결할 구조가 사라진다.",
+      "visual": "주절 barks와 관계절 lives를 구분하고 that 주어 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리 옆에 사는 개는 자주 짖어요.",
+          "actualStart": 54.06838120000001,
+          "actualEnd": 56.55110220000001,
+          "rate": 185,
+          "cacheKey": "0cdc9d8bdef2dcee87f1b0ad6e220f7b03d0ce6030472cd32921b8bcf58653f8",
+          "file": "audio/17/example-3-ko-0cdc9d8bdef2dcee.wav",
+          "duration": 2.482721
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The dog that lives next door often barks.",
+          "actualStart": 56.90110220000001,
+          "actualEnd": 59.24677120000001,
+          "rate": 155,
+          "cacheKey": "1f4922e7700d433a1c03f498b7eabdaaf3072bbd31c687aa1038cb34a04a18c6",
+          "file": "audio/17/example-3-en-1f4922e7700d433a.wav",
+          "duration": 2.345669
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "that",
+            "actualStart": 57.30110220000001,
+            "actualEnd": 57.57110220000001
+          },
+          {
+            "text": "lives",
+            "actualStart": 57.57110220000001,
+            "actualEnd": 57.91110220000001
+          }
+        ]
+      },
+      "plannedStart": 54,
+      "plannedEnd": 61,
+      "words": [
+        {
+          "text": "The",
+          "start": 56.91110220000001,
+          "end": 57.101102200000014
+        },
+        {
+          "text": "dog",
+          "start": 57.101102200000014,
+          "end": 57.30110220000001
+        },
+        {
+          "text": "that",
+          "start": 57.30110220000001,
+          "end": 57.57110220000001
+        },
+        {
+          "text": "lives",
+          "start": 57.57110220000001,
+          "end": 57.91110220000001
+        },
+        {
+          "text": "next",
+          "start": 57.91110220000001,
+          "end": 58.18110220000001
+        },
+        {
+          "text": "door",
+          "start": 58.18110220000001,
+          "end": 58.45110220000001
+        },
+        {
+          "text": "often",
+          "start": 58.45110220000001,
+          "end": 58.79110220000001
+        },
+        {
+          "text": "barks.",
+          "start": 58.79110220000001,
+          "end": 59.16110220000001
+        }
+      ]
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61.65447940000001,
+      "end": 69.61472760000001,
+      "ko": "네가 어제 만난 남자는 내 선생님이에요.",
+      "en": "The man who you met yesterday is my teacher.",
+      "wrong": "The man who you met him yesterday is my teacher.",
+      "focus": [
+        "who",
+        "met"
+      ],
+      "note": "목적격 who는 가능하지만 같은 목적어를 him으로 반복하지 않는다.",
+      "visual": "you를 관계절 주어로, who를 met의 목적어로 연결.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "네가 어제 만난 남자는 내 선생님이에요.",
+          "actualStart": 61.85447940000001,
+          "actualEnd": 64.55779040000002,
+          "rate": 185,
+          "cacheKey": "2bb0aff44d7e5dc69c89a2b6971207e497abcf356badae4d97a30b4fce916ba0",
+          "file": "audio/17/example-4-ko-2bb0aff44d7e5dc6.wav",
+          "duration": 2.703311
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The man who you met yesterday is my teacher.",
+          "actualStart": 64.90779040000001,
+          "actualEnd": 67.20701940000001,
+          "rate": 155,
+          "cacheKey": "98080fbd65f5bd416f4a311e10c4ccb8cfd0d0c295cf5fff514ae3389055eb1c",
+          "file": "audio/17/example-4-en-98080fbd65f5bd41.wav",
+          "duration": 2.299229
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "who",
+            "actualStart": 65.29779040000001,
+            "actualEnd": 65.4777904
+          },
+          {
+            "text": "met",
+            "actualStart": 65.66779040000002,
+            "actualEnd": 65.85779040000001
+          }
+        ]
+      },
+      "plannedStart": 61,
+      "plannedEnd": 69,
+      "words": [
+        {
+          "text": "The",
+          "start": 64.91779040000002,
+          "end": 65.09779040000001
+        },
+        {
+          "text": "man",
+          "start": 65.09779040000001,
+          "end": 65.26779040000001
+        },
+        {
+          "text": "who",
+          "start": 65.29779040000001,
+          "end": 65.4777904
+        },
+        {
+          "text": "you",
+          "start": 65.4777904,
+          "end": 65.66779040000002
+        },
+        {
+          "text": "met",
+          "start": 65.66779040000002,
+          "end": 65.85779040000001
+        },
+        {
+          "text": "yesterday",
+          "start": 65.85779040000001,
+          "end": 66.4277904
+        },
+        {
+          "text": "is",
+          "start": 66.4277904,
+          "end": 66.54779040000001
+        },
+        {
+          "text": "my",
+          "start": 66.54779040000001,
+          "end": 66.66779040000002
+        },
+        {
+          "text": "teacher.",
+          "start": 66.66779040000002,
+          "end": 67.12779040000001
+        }
+      ]
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69.61472760000001,
+      "end": 77.51706180000002,
+      "ko": "내가 어제 산 책은 이미 여기 있어요.",
+      "en": "The book I bought yesterday is already here.",
+      "wrong": "The book I bought it yesterday is already here.",
+      "focus": [
+        "I bought",
+        "book"
+      ],
+      "note": "제한적 목적격은 생략할 수 있다. 생략해도 bought 뒤에 it을 다시 채우지 않는다.",
+      "visual": "생략된 관계대명사 자리와 목적어 빈칸을 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "내가 어제 산 책은 이미 여기 있어요.",
+          "actualStart": 69.81472760000001,
+          "actualEnd": 72.49495460000001,
+          "rate": 185,
+          "cacheKey": "21500d9e6d6660f6768a376f6c3912a34f210afac62c00ab5bac4adca24c9ec4",
+          "file": "audio/17/example-5-ko-21500d9e6d6660f6.wav",
+          "duration": 2.680227
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The book I bought yesterday is already here.",
+          "actualStart": 72.84495460000001,
+          "actualEnd": 75.1093536,
+          "rate": 155,
+          "cacheKey": "218fbba89f1e11b1223192c7c0551041c1de10cc42a131cae2dfe8aaea310c58",
+          "file": "audio/17/example-5-en-218fbba89f1e11b1.wav",
+          "duration": 2.264399
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "I bought",
+            "actualStart": 73.26495460000001,
+            "actualEnd": 73.6949546
+          },
+          {
+            "text": "book",
+            "actualStart": 73.02495460000002,
+            "actualEnd": 73.26495460000001
+          }
+        ]
+      },
+      "plannedStart": 69,
+      "plannedEnd": 77,
+      "words": [
+        {
+          "text": "The",
+          "start": 72.85495460000001,
+          "end": 73.02495460000002
+        },
+        {
+          "text": "book",
+          "start": 73.02495460000002,
+          "end": 73.26495460000001
+        },
+        {
+          "text": "I",
+          "start": 73.26495460000001,
+          "end": 73.32495460000001
+        },
+        {
+          "text": "bought",
+          "start": 73.32495460000001,
+          "end": 73.6949546
+        },
+        {
+          "text": "yesterday",
+          "start": 73.6949546,
+          "end": 74.23495460000001
+        },
+        {
+          "text": "is",
+          "start": 74.27495460000002,
+          "end": 74.3649546
+        },
+        {
+          "text": "already",
+          "start": 74.3649546,
+          "end": 74.77495460000002
+        },
+        {
+          "text": "here.",
+          "start": 74.81495460000001,
+          "end": 75.04495460000001
+        }
+      ]
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77.51706180000002,
+      "end": 85.41939500000002,
+      "ko": "입구를 막고 있는 차는 톰 것이에요.",
+      "en": "The car which blocks the entrance belongs to Tom.",
+      "wrong": "The car which it blocks the entrance belongs to Tom.",
+      "focus": [
+        "which",
+        "blocks"
+      ],
+      "note": "which가 blocks의 주어라서 it은 중복이다.",
+      "visual": "car → which → blocks 주어 연결 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "입구를 막고 있는 차는 톰 것이에요.",
+          "actualStart": 77.71706180000002,
+          "actualEnd": 80.03737880000003,
+          "rate": 185,
+          "cacheKey": "b620016f393016107fb670cad62f97a6f6eb68b06a36f4c05975082f36503d4c",
+          "file": "audio/17/example-6-ko-b620016f39301610.wav",
+          "duration": 2.320317
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The car which blocks the entrance belongs to Tom.",
+          "actualStart": 80.38737880000002,
+          "actualEnd": 83.01168680000002,
+          "rate": 155,
+          "cacheKey": "65cff556598af81792b66719e8610990945942c34ef2f3f5c3ac354d7849e290",
+          "file": "audio/17/example-6-en-65cff556598af817.wav",
+          "duration": 2.624308
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "which",
+            "actualStart": 80.72737880000003,
+            "actualEnd": 80.97737880000003
+          },
+          {
+            "text": "blocks",
+            "actualStart": 81.04737880000002,
+            "actualEnd": 81.30737880000002
+          }
+        ]
+      },
+      "plannedStart": 77,
+      "plannedEnd": 85,
+      "words": [
+        {
+          "text": "The",
+          "start": 80.39737880000003,
+          "end": 80.52737880000002
+        },
+        {
+          "text": "car",
+          "start": 80.55737880000002,
+          "end": 80.72737880000003
+        },
+        {
+          "text": "which",
+          "start": 80.72737880000003,
+          "end": 80.97737880000003
+        },
+        {
+          "text": "blocks",
+          "start": 81.04737880000002,
+          "end": 81.30737880000002
+        },
+        {
+          "text": "the",
+          "start": 81.40737880000002,
+          "end": 81.53737880000003
+        },
+        {
+          "text": "entrance",
+          "start": 81.53737880000003,
+          "end": 82.00737880000003
+        },
+        {
+          "text": "belongs",
+          "start": 82.00737880000003,
+          "end": 82.34737880000002
+        },
+        {
+          "text": "to",
+          "start": 82.43737880000002,
+          "end": 82.52737880000002
+        },
+        {
+          "text": "Tom.",
+          "start": 82.59737880000002,
+          "end": 82.69737880000002
+        }
+      ]
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85.41939500000002,
+      "end": 93.84363420000003,
+      "ko": "내가 수리한 의자는 이제 사용하기에 안전해요.",
+      "en": "The chair that I repaired is safe to use now.",
+      "wrong": "The chair that I repaired it is safe to use now.",
+      "focus": [
+        "that",
+        "repaired"
+      ],
+      "note": "that은 repaired의 목적어 역할이며 it을 덧붙이지 않는다. 이 that은 생략도 가능하다.",
+      "visual": "chair와 repaired 뒤 빈자리 연결, 생략 가능 표시.",
+      "contrastType": "intended-meaning-or-context",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "내가 수리한 의자는 이제 사용하기에 안전해요.",
+          "actualStart": 85.61939500000003,
+          "actualEnd": 88.77508700000003,
+          "rate": 185,
+          "cacheKey": "add5f5c8fc1b8dd59b4e995b776ece019976731fd63ca5dc05850506af1d7a79",
+          "file": "audio/17/example-7-ko-add5f5c8fc1b8dd5.wav",
+          "duration": 3.155692
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The chair that I repaired is safe to use now.",
+          "actualStart": 89.12508700000002,
+          "actualEnd": 91.43592600000002,
+          "rate": 155,
+          "cacheKey": "dd1cb78a1fa5c89312cefcbf623c71a5405d289501b2c35076ca330578cd8952",
+          "file": "audio/17/example-7-en-dd1cb78a1fa5c893.wav",
+          "duration": 2.310839
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "that",
+            "actualStart": 89.63508700000003,
+            "actualEnd": 89.89508700000002
+          },
+          {
+            "text": "repaired",
+            "actualStart": 90.02508700000003,
+            "actualEnd": 90.47508700000002
+          }
+        ]
+      },
+      "plannedStart": 85,
+      "plannedEnd": 94,
+      "words": [
+        {
+          "text": "The",
+          "start": 89.13508700000003,
+          "end": 89.31508700000002
+        },
+        {
+          "text": "chair",
+          "start": 89.31508700000002,
+          "end": 89.63508700000003
+        },
+        {
+          "text": "that",
+          "start": 89.63508700000003,
+          "end": 89.89508700000002
+        },
+        {
+          "text": "I",
+          "start": 89.89508700000002,
+          "end": 89.92508700000002
+        },
+        {
+          "text": "repaired",
+          "start": 90.02508700000003,
+          "end": 90.47508700000002
+        },
+        {
+          "text": "is",
+          "start": 90.47508700000002,
+          "end": 90.58508700000002
+        },
+        {
+          "text": "safe",
+          "start": 90.68508700000002,
+          "end": 90.86508700000002
+        },
+        {
+          "text": "to",
+          "start": 90.86508700000002,
+          "end": 90.95508700000002
+        },
+        {
+          "text": "use",
+          "start": 91.02508700000003,
+          "end": 91.18508700000002
+        },
+        {
+          "text": "now.",
+          "start": 91.18508700000002,
+          "end": 91.34508700000002
+        }
+      ]
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 93.84363420000003,
+      "end": 103.91794040000003,
+      "ko": "근처에 사는 내 여동생 미아는 자전거로 출근해요.",
+      "en": "My sister Mia, who lives nearby, cycles to work.",
+      "wrong": "My sister Mia, that lives nearby, cycles to work.",
+      "focus": [
+        "who",
+        "lives"
+      ],
+      "note": "이미 특정된 미아에 추가 설명을 붙이는 쉼표 관계절에는 that을 쓰지 않는다.",
+      "visual": "Mia를 특정 인물로 표시하고 쉼표 안의 who절을 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "근처에 사는 내 여동생 미아는 자전거로 출근해요.",
+          "actualStart": 94.04363420000003,
+          "actualEnd": 97.67311220000003,
+          "rate": 185,
+          "cacheKey": "a385aa4eb6cd608672c2f1286f4db474a8a8f6dbe62570ce0c990fd4cc2baac7",
+          "file": "audio/17/example-8-ko-a385aa4eb6cd6086.wav",
+          "duration": 3.629478
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "My sister Mia, who lives nearby, cycles to work.",
+          "actualStart": 98.02311220000003,
+          "actualEnd": 101.51023220000003,
+          "rate": 155,
+          "cacheKey": "cd38928888f9d6f2fd41158781f16178aec097791b4f05f52819e364daab5161",
+          "file": "audio/17/example-8-en-cd38928888f9d6f2.wav",
+          "duration": 3.48712
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "who",
+            "actualStart": 99.20311220000004,
+            "actualEnd": 99.34311220000002
+          },
+          {
+            "text": "lives",
+            "actualStart": 99.34311220000002,
+            "actualEnd": 99.76311220000002
+          }
+        ]
+      },
+      "plannedStart": 94,
+      "plannedEnd": 104,
+      "words": [
+        {
+          "text": "My",
+          "start": 98.02311220000003,
+          "end": 98.18311220000002
+        },
+        {
+          "text": "sister",
+          "start": 98.18311220000002,
+          "end": 98.68311220000002
+        },
+        {
+          "text": "Mia,",
+          "start": 98.68311220000002,
+          "end": 98.91311220000003
+        },
+        {
+          "text": "who",
+          "start": 99.20311220000004,
+          "end": 99.34311220000002
+        },
+        {
+          "text": "lives",
+          "start": 99.34311220000002,
+          "end": 99.76311220000002
+        },
+        {
+          "text": "nearby,",
+          "start": 99.76311220000002,
+          "end": 100.18311220000002
+        },
+        {
+          "text": "cycles",
+          "start": 100.48311220000002,
+          "end": 100.94311220000003
+        },
+        {
+          "text": "to",
+          "start": 100.94311220000003,
+          "end": 101.10311220000003
+        },
+        {
+          "text": "work.",
+          "start": 101.10311220000003,
+          "end": 101.37311220000002
+        }
+      ]
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 103.91794040000003,
+      "end": 112.95510460000004,
+      "ko": "내가 어제 산 이 노트북은 잘 작동해요.",
+      "en": "This laptop, which I bought yesterday, works well.",
+      "wrong": "This laptop, I bought yesterday, works well.",
+      "focus": [
+        "which",
+        "bought"
+      ],
+      "note": "쉼표로 덧붙인 비제한적 관계절은 목적격이라도 관계대명사를 생략하지 않는다.",
+      "visual": "which가 목적어 역할이어도 쉼표 경계에서는 유지 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "내가 어제 산 이 노트북은 잘 작동해요.",
+          "actualStart": 104.11794040000004,
+          "actualEnd": 106.87871140000004,
+          "rate": 185,
+          "cacheKey": "0b94c2a2c55b7cae16443eb0b10aef9ba36a7078f9750f8fbbbc5cb8f2af300e",
+          "file": "audio/17/example-9-ko-0b94c2a2c55b7cae.wav",
+          "duration": 2.760771
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "This laptop, which I bought yesterday, works well.",
+          "actualStart": 107.22871140000004,
+          "actualEnd": 110.54739640000004,
+          "rate": 155,
+          "cacheKey": "dabef5d6ba8dbec4cc19b1b19523c2d9b53118a8e7c0ce1b33b209cc63ccf40c",
+          "file": "audio/17/example-9-en-dabef5d6ba8dbec4.wav",
+          "duration": 3.318685
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "which",
+            "actualStart": 108.28871140000004,
+            "actualEnd": 108.37871140000004
+          },
+          {
+            "text": "bought",
+            "actualStart": 108.45871140000004,
+            "actualEnd": 108.84871140000004
+          }
+        ]
+      },
+      "plannedStart": 104,
+      "plannedEnd": 114,
+      "words": [
+        {
+          "text": "This",
+          "start": 107.24871140000003,
+          "end": 107.49871140000003
+        },
+        {
+          "text": "laptop,",
+          "start": 107.49871140000003,
+          "end": 107.90871140000004
+        },
+        {
+          "text": "which",
+          "start": 108.28871140000004,
+          "end": 108.37871140000004
+        },
+        {
+          "text": "I",
+          "start": 108.37871140000004,
+          "end": 108.40871140000004
+        },
+        {
+          "text": "bought",
+          "start": 108.45871140000004,
+          "end": 108.84871140000004
+        },
+        {
+          "text": "yesterday,",
+          "start": 108.84871140000004,
+          "end": 109.46871140000003
+        },
+        {
+          "text": "works",
+          "start": 109.83871140000004,
+          "end": 109.93871140000003
+        },
+        {
+          "text": "well.",
+          "start": 109.93871140000003,
+          "end": 110.20871140000004
+        }
+      ]
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 112.95510460000004,
+      "end": 121.72814180000005,
+      "ko": "우리가 논의한 프로젝트는 다음 주에 시작돼요.",
+      "en": "The project about which we spoke starts next week.",
+      "wrong": "The project about that we spoke starts next week.",
+      "focus": [
+        "about which",
+        "spoke"
+      ],
+      "note": "전치사 바로 뒤에서는 which를 쓰며 that은 쓰지 않는다. 전치사를 뒤에 두는 구조와 구분한다.",
+      "visual": "about which를 한 덩어리로 묶고 전치사 바로 뒤 자리 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리가 논의한 프로젝트는 다음 주에 시작돼요.",
+          "actualStart": 113.15510460000004,
+          "actualEnd": 116.13714560000004,
+          "rate": 185,
+          "cacheKey": "fde768b18d4536850452761c01cb961b44925e99283a41a4b316a62739811465",
+          "file": "audio/17/example-10-ko-fde768b18d453685.wav",
+          "duration": 2.982041
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "The project about which we spoke starts next week.",
+          "actualStart": 116.48714560000003,
+          "actualEnd": 119.32043360000003,
+          "rate": 155,
+          "cacheKey": "2f19c4e60e07ef88e746c992ab923aea8a57daddecc43fc1cd6efcec2a48394f",
+          "file": "audio/17/example-10-en-2f19c4e60e07ef88.wav",
+          "duration": 2.833288
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "about which",
+            "actualStart": 117.13714560000004,
+            "actualEnd": 117.78714560000003
+          },
+          {
+            "text": "spoke",
+            "actualStart": 117.92714560000003,
+            "actualEnd": 118.25714560000003
+          }
+        ]
+      },
+      "plannedStart": 114,
+      "plannedEnd": 125,
+      "words": [
+        {
+          "text": "The",
+          "start": 116.49714560000004,
+          "end": 116.67714560000003
+        },
+        {
+          "text": "project",
+          "start": 116.67714560000003,
+          "end": 117.13714560000004
+        },
+        {
+          "text": "about",
+          "start": 117.13714560000004,
+          "end": 117.46714560000004
+        },
+        {
+          "text": "which",
+          "start": 117.46714560000004,
+          "end": 117.78714560000003
+        },
+        {
+          "text": "we",
+          "start": 117.91714560000004,
+          "end": 117.92714560000003
+        },
+        {
+          "text": "spoke",
+          "start": 117.92714560000003,
+          "end": 118.25714560000003
+        },
+        {
+          "text": "starts",
+          "start": 118.25714560000003,
+          "end": 118.64714560000003
+        },
+        {
+          "text": "next",
+          "start": 118.64714560000003,
+          "end": 118.90714560000004
+        },
+        {
+          "text": "week.",
+          "start": 118.90714560000004,
+          "end": 119.16714560000004
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 121.72814180000005,
+      "end": 130,
+      "text": "관계절의 빈자리가 주어인지 목적어인지 확인하고, 제한적 목적격만 생략하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "관계절의 빈자리가 주어인지 목적어인지 확인하고, 제한적 목적격만 생략하세요.",
+          "actualStart": 121.92814180000005,
+          "actualEnd": 127.84229180000005,
+          "rate": 185,
+          "cacheKey": "60f8fc5927a6074c466c194442f830e314871ed6b2ef13a10875b288afe5807d",
+          "file": "audio/17/summary-ko-60f8fc5927a6074c.wav",
+          "duration": 5.91415
+        }
+      ],
+      "plannedStart": 125,
+      "plannedEnd": 130
+    }
+  ],
+  "duration": 130,
+  "naturalMinimum": 106.63437699999999,
+  "sourceHash": "d532eeabc1067d0d09d23f72620cf8c1ff20f967686eaefb13f7c90a788f7c2d",
+  "audioFile": "audio/17/narration.wav",
+  "alignment": {
+    "engine": "whisper.cpp small.en token offsets",
+    "reviewed": false,
+    "source": "per-sentence original English WAV",
+    "sourceHash": "d532eeabc1067d0d09d23f72620cf8c1ff20f967686eaefb13f7c90a788f7c2d",
+    "clipHashes": {
+      "example-1-en": "cd136a3f4a82aba6228f1c2c678c864368c1cea613b2f35d60a78172a4951f4f",
+      "example-2-en": "064bd12344423e55c898756bc8d4b49df7b618965f45e829f0011b4a3e38375b",
+      "example-3-en": "145c117787a9d4a3e21345cb50ccaabb2c486ba2b6ea57cabc89f4b9e00710c6",
+      "example-4-en": "91bad8021042e9c1ec35a3d7fd37777f75a03c52688d50ce29b5771de8c66ce1",
+      "example-5-en": "2af58d692cf97d47091f42cb342b02f277bce1033fda6ecc8d4c856bf5c646bc",
+      "example-6-en": "8b075e38bc29ab0c5d7901d926453a2ad6d0c19cf292a693929e8629c5541e2f",
+      "example-7-en": "fa471fb51be168cb212c5dd0424b574f1811a3a435f774ef1a4f7dd03e44dc23",
+      "example-8-en": "5c12d7db8868b2f82aa4463aa70583b17295a4aee04d23b1bece75330787164e",
+      "example-9-en": "b2e037ffd05f57a1b48cedb606cea14a184a4f2939d0f0ac85e377d742a23195",
+      "example-10-en": "11ce9aa2ae834fdd5d73e3a6eb4829692ec9d4aae6bc561a84796f00c6ac55df"
+    },
+    "issues": [],
+    "note": "ASR token offsets are approximate; listening review is required."
+  }
+}

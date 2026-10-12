@@ -1,0 +1,656 @@
+{
+  "id": "basic-20",
+  "episode": 20,
+  "title": "지금의 가정과 과거의 가정을 나누기",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Minsu (Enhanced)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "실제와 다른 상황을 가정할 때는 시간부터 나눠요. 지금 다른 상황인지, 이미 지난 일을 바꾸는지 보세요.",
+      "screen": "지금의 반사실 / 과거의 반사실",
+      "visual": "현재 지점과 지나간 지점을 두 시간선으로 분리.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "실제와 다른 상황을 가정할 때는 시간부터 나눠요. 지금 다른 상황인지, 이미 지난 일을 바꾸는지 보세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "지금의 반사실은 이프절에 과거형을 써요. 결과는 우드와 원형으로 나타내며, 비동사는 워를 쓸 수 있죠.",
+      "screen": "if + 과거형 / would + 원형",
+      "visual": "첫 예문의 were와 would buy를 현재 가정 선에 연결.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "지금의 반사실은 이프절에 과거형을 써요. 결과는 우드와 원형으로 나타내며, 비동사는 워를 쓸 수 있죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "지난 일의 반사실은 이프절에 해드와 과거분사를 써요. 결과도 우드 해브와 과거분사로 맞춥니다.",
+      "screen": "if + had + 과거분사 / would have + 과거분사",
+      "visual": "과거 원인과 실현되지 않은 과거 결과를 연결.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "지난 일의 반사실은 이프절에 해드와 과거분사를 써요. 결과도 우드 해브와 과거분사로 맞춥니다.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "쿠드는 할 수 있었을 가능성이나 능력을 나타내요. 우드와 뜻이 같지는 않으며, 문맥에 맞춰 고르세요.",
+      "screen": "would: 예상 결과 / could: 능력·가능성",
+      "visual": "결과 경로와 가능한 선택지 경로를 구분.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "쿠드는 할 수 있었을 가능성이나 능력을 나타내요. 우드와 뜻이 같지는 않으며, 문맥에 맞춰 고르세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "내가 지금 부자라면 더 큰 집을 살 텐데요.",
+      "en": "If I were rich now, I would buy a bigger house.",
+      "wrong": "If I were rich now, I would bought a bigger house.",
+      "focus": [
+        "were",
+        "would buy"
+      ],
+      "note": "현재 반사실 결과에서 would 뒤에는 원형 buy를 쓰며 과거형 bought를 쓰지 않는다.",
+      "visual": "현재의 실제와 부자인 가정 경로를 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "내가 지금 부자라면 더 큰 집을 살 텐데요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If I were rich now, I would buy a bigger house.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were",
+            "actualStart": null
+          },
+          {
+            "text": "would buy",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "지금 시간이 더 있다면 너를 도울 텐데요.",
+      "en": "If I had more time now, I would help you.",
+      "wrong": "If I had more time now, I would helps you.",
+      "focus": [
+        "had",
+        "would help"
+      ],
+      "note": "현재의 가정에서 had는 have의 과거형이다. would 뒤의 help에는 s를 붙이지 않는다.",
+      "visual": "현재 가정의 had와 원형 help를 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "지금 시간이 더 있다면 너를 도울 텐데요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If I had more time now, I would help you.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had",
+            "actualStart": null
+          },
+          {
+            "text": "would help",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "그녀가 지금 여기 있다면 답을 알 텐데요.",
+      "en": "If she were here now, she would know the answer.",
+      "wrong": "If she were here now, she would knows the answer.",
+      "focus": [
+        "were",
+        "would know"
+      ],
+      "note": "주어가 she여도 would 뒤에는 원형 know를 쓴다. 반사실 be에 were가 가능하다.",
+      "visual": "she 주어와 조동사 뒤 원형 자리를 따로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "그녀가 지금 여기 있다면 답을 알 텐데요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If she were here now, she would know the answer.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were",
+            "actualStart": null
+          },
+          {
+            "text": "would know",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "내가 일찍 떠났더라면 기차를 탔을 텐데요.",
+      "en": "If I had left early, I would have caught the train.",
+      "wrong": "If I had left early, I would have catch the train.",
+      "focus": [
+        "had left",
+        "would have caught"
+      ],
+      "note": "과거 반사실 결과는 would have 뒤에 과거분사 caught를 쓴다.",
+      "visual": "과거 출발과 놓친 기차의 대체 결과를 시간선에 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "내가 일찍 떠났더라면 기차를 탔을 텐데요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If I had left early, I would have caught the train.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had left",
+            "actualStart": null
+          },
+          {
+            "text": "would have caught",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "공부했더라면 시험에 합격했을 텐데요.",
+      "en": "If I had studied, I would have passed the exam.",
+      "wrong": "If I had study, I would have passed the exam.",
+      "focus": [
+        "had studied",
+        "would have passed"
+      ],
+      "note": "과거 반사실의 if절은 had와 과거분사 studied를 결합한다.",
+      "visual": "had 뒤 과거분사 칸과 결과 passed 칸을 대응.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "공부했더라면 시험에 합격했을 텐데요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If I had studied, I would have passed the exam.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had studied",
+            "actualStart": null
+          },
+          {
+            "text": "would have passed",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "비가 오지 않았더라면 우리는 밖에서 놀았을 텐데요.",
+      "en": "If it had not rained, we would have played outside.",
+      "wrong": "If it had not rained, we would have play outside.",
+      "focus": [
+        "had not rained",
+        "would have played"
+      ],
+      "note": "부정 과거 반사실 조건은 had not rained이며 결과에는 과거분사 played가 필요하다.",
+      "visual": "실제 비와 비 없는 가정, 야외 활동 결과를 분리.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "비가 오지 않았더라면 우리는 밖에서 놀았을 텐데요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If it had not rained, we would have played outside.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had not rained",
+            "actualStart": null
+          },
+          {
+            "text": "would have played",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "차가 있었다면 우리는 그곳까지 운전해 갈 수도 있었을 텐데요.",
+      "en": "If we had had a car, we could have driven there.",
+      "wrong": "If we had had a car, we could have drove there.",
+      "focus": [
+        "had had",
+        "could have driven"
+      ],
+      "note": "첫 had는 완료 조동사, 둘째 had는 소유 동사의 과거분사다. could have 뒤에는 driven을 쓴다.",
+      "visual": "had 두 개의 역할을 분리하고 가능한 이동 경로 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "차가 있었다면 우리는 그곳까지 운전해 갈 수도 있었을 텐데요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If we had had a car, we could have driven there.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had had",
+            "actualStart": null
+          },
+          {
+            "text": "could have driven",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "내가 지금 수영할 줄 안다면 그들과 함께할 수 있을 텐데요.",
+      "en": "If I could swim now, I could join them.",
+      "wrong": "If I could swam now, I could join them.",
+      "focus": [
+        "could swim",
+        "could join"
+      ],
+      "note": "could 뒤에는 원형 swim을 쓴다. 여기서 could는 가정 속 능력과 참여 가능성을 나타낸다.",
+      "visual": "수영 능력 조건에서 참여 가능성으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "내가 지금 수영할 줄 안다면 그들과 함께할 수 있을 텐데요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If I could swim now, I could join them.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "could swim",
+            "actualStart": null
+          },
+          {
+            "text": "could join",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "내가 너라면 오늘 그 제안을 거절할 텐데요.",
+      "en": "If I were you, I would refuse the offer today.",
+      "wrong": "If I were you, I would refusing the offer today.",
+      "focus": [
+        "were",
+        "would refuse"
+      ],
+      "note": "현재 반사실 조언의 결과는 would refuse이며 ing를 바로 붙이지 않는다.",
+      "visual": "상대 입장 가정과 오늘의 선택을 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "내가 너라면 오늘 그 제안을 거절할 텐데요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If I were you, I would refuse the offer today.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "were",
+            "actualStart": null
+          },
+          {
+            "text": "would refuse",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "네가 알려 줬더라면 나는 어제 올 수 있었을 텐데요.",
+      "en": "If you had told me, I could have come yesterday.",
+      "wrong": "If you had told me, I could have came yesterday.",
+      "focus": [
+        "had told",
+        "could have come"
+      ],
+      "note": "could have 뒤에는 과거형 came이 아니라 과거분사 come을 쓴다. 올 수 있었을 가능성을 말하며 반드시 왔을 것이라고 단정하지 않는다.",
+      "visual": "과거 통보 조건과 가능한 방문을 점선으로 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "네가 알려 줬더라면 나는 어제 올 수 있었을 텐데요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "If you had told me, I could have come yesterday.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "had told",
+            "actualStart": null
+          },
+          {
+            "text": "could have come",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "현재와 과거의 반사실 시간을 나누고, 결과와 가능성에 맞는 조동사를 선택하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Minsu (Enhanced)",
+          "text": "현재와 과거의 반사실 시간을 나누고, 결과와 가능성에 맞는 조동사를 선택하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

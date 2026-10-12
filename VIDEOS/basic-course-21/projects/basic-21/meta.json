@@ -1,0 +1,14 @@
+{
+  "id": "basic-21",
+  "episode": 21,
+  "title": "정말 한다는 강조, 더 그렇다는 비교",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "cd3f2d301140236fe00416f63b5702940e18354a2e35626a89a467e8a7af3ea4",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

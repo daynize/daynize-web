@@ -1,0 +1,410 @@
+[
+  {
+    "text": "You",
+    "start": 0,
+    "end": 2,
+    "id": "w0"
+  },
+  {
+    "text": "I",
+    "start": 30,
+    "end": 30.7,
+    "id": "w1"
+  },
+  {
+    "text": "sat",
+    "start": 30.7,
+    "end": 32.8,
+    "id": "w2"
+  },
+  {
+    "text": "on",
+    "start": 32.8,
+    "end": 34.2,
+    "id": "w3"
+  },
+  {
+    "text": "the",
+    "start": 34.2,
+    "end": 36.3,
+    "id": "w4"
+  },
+  {
+    "text": "chair.",
+    "start": 36.3,
+    "end": 41.91,
+    "id": "w5"
+  },
+  {
+    "text": "We",
+    "start": 41.91,
+    "end": 43.31,
+    "id": "w6"
+  },
+  {
+    "text": "waited",
+    "start": 43.31,
+    "end": 47.52,
+    "id": "w7"
+  },
+  {
+    "text": "for",
+    "start": 47.52,
+    "end": 49.62,
+    "id": "w8"
+  },
+  {
+    "text": "the",
+    "start": 49.62,
+    "end": 51.72,
+    "id": "w9"
+  },
+  {
+    "text": "bus.",
+    "start": 51.72,
+    "end": 56,
+    "id": "w10"
+  },
+  {
+    "text": "She",
+    "start": 56,
+    "end": 57.38,
+    "id": "w11"
+  },
+  {
+    "text": "looks",
+    "start": 57.38,
+    "end": 59.68,
+    "id": "w12"
+  },
+  {
+    "text": "happy.",
+    "start": 59.68,
+    "end": 66,
+    "id": "w13"
+  },
+  {
+    "text": "He",
+    "start": 66,
+    "end": 66.41,
+    "id": "w14"
+  },
+  {
+    "text": "arrived",
+    "start": 66.41,
+    "end": 67.85,
+    "id": "w15"
+  },
+  {
+    "text": "at",
+    "start": 67.85,
+    "end": 68.26,
+    "id": "w16"
+  },
+  {
+    "text": "the",
+    "start": 68.26,
+    "end": 68.87,
+    "id": "w17"
+  },
+  {
+    "text": "station",
+    "start": 68.87,
+    "end": 70.31,
+    "id": "w18"
+  },
+  {
+    "text": "before",
+    "start": 70.31,
+    "end": 71.54,
+    "id": "w19"
+  },
+  {
+    "text": "noon.",
+    "start": 71.54,
+    "end": 73,
+    "id": "w20"
+  },
+  {
+    "text": "She",
+    "start": 73,
+    "end": 73.61,
+    "id": "w21"
+  },
+  {
+    "text": "listened",
+    "start": 73.61,
+    "end": 75.25,
+    "id": "w22"
+  },
+  {
+    "text": "carefully",
+    "start": 75.25,
+    "end": 77.09,
+    "id": "w23"
+  },
+  {
+    "text": "to",
+    "start": 77.09,
+    "end": 77.5,
+    "id": "w24"
+  },
+  {
+    "text": "the",
+    "start": 77.5,
+    "end": 78.11,
+    "id": "w25"
+  },
+  {
+    "text": "explanation.",
+    "start": 78.11,
+    "end": 81,
+    "id": "w26"
+  },
+  {
+    "text": "The",
+    "start": 81,
+    "end": 81.58,
+    "id": "w27"
+  },
+  {
+    "text": "room",
+    "start": 81.58,
+    "end": 82.36,
+    "id": "w28"
+  },
+  {
+    "text": "became",
+    "start": 82.36,
+    "end": 83.53,
+    "id": "w29"
+  },
+  {
+    "text": "quiet",
+    "start": 83.53,
+    "end": 84.5,
+    "id": "w30"
+  },
+  {
+    "text": "after",
+    "start": 84.5,
+    "end": 85.47,
+    "id": "w31"
+  },
+  {
+    "text": "the",
+    "start": 85.47,
+    "end": 86.05,
+    "id": "w32"
+  },
+  {
+    "text": "meeting",
+    "start": 86.05,
+    "end": 87.41,
+    "id": "w33"
+  },
+  {
+    "text": "began.",
+    "start": 87.41,
+    "end": 89,
+    "id": "w34"
+  },
+  {
+    "text": "This",
+    "start": 89,
+    "end": 90.38,
+    "id": "w35"
+  },
+  {
+    "text": "soup",
+    "start": 90.38,
+    "end": 91.76,
+    "id": "w36"
+  },
+  {
+    "text": "tastes",
+    "start": 91.76,
+    "end": 93.83,
+    "id": "w37"
+  },
+  {
+    "text": "salty",
+    "start": 93.83,
+    "end": 95.56,
+    "id": "w38"
+  },
+  {
+    "text": "to",
+    "start": 95.56,
+    "end": 96.25,
+    "id": "w39"
+  },
+  {
+    "text": "me.",
+    "start": 96.25,
+    "end": 98,
+    "id": "w40"
+  },
+  {
+    "text": "The",
+    "start": 98,
+    "end": 98.5,
+    "id": "w41"
+  },
+  {
+    "text": "manager",
+    "start": 98.5,
+    "end": 99.66,
+    "id": "w42"
+  },
+  {
+    "text": "remained",
+    "start": 99.66,
+    "end": 100.99,
+    "id": "w43"
+  },
+  {
+    "text": "calm",
+    "start": 100.99,
+    "end": 101.65,
+    "id": "w44"
+  },
+  {
+    "text": "despite",
+    "start": 101.65,
+    "end": 102.81,
+    "id": "w45"
+  },
+  {
+    "text": "the",
+    "start": 102.81,
+    "end": 103.31,
+    "id": "w46"
+  },
+  {
+    "text": "sudden",
+    "start": 103.31,
+    "end": 104.3,
+    "id": "w47"
+  },
+  {
+    "text": "change",
+    "start": 104.3,
+    "end": 105.29,
+    "id": "w48"
+  },
+  {
+    "text": "in",
+    "start": 105.29,
+    "end": 105.62,
+    "id": "w49"
+  },
+  {
+    "text": "plans.",
+    "start": 105.62,
+    "end": 107,
+    "id": "w50"
+  },
+  {
+    "text": "She",
+    "start": 107,
+    "end": 107.83,
+    "id": "w51"
+  },
+  {
+    "text": "seems",
+    "start": 107.83,
+    "end": 109.21,
+    "id": "w52"
+  },
+  {
+    "text": "tired",
+    "start": 109.21,
+    "end": 110.59,
+    "id": "w53"
+  },
+  {
+    "text": "after",
+    "start": 110.59,
+    "end": 111.97,
+    "id": "w54"
+  },
+  {
+    "text": "working",
+    "start": 111.97,
+    "end": 113.91,
+    "id": "w55"
+  },
+  {
+    "text": "all",
+    "start": 113.91,
+    "end": 114.74,
+    "id": "w56"
+  },
+  {
+    "text": "night.",
+    "start": 114.74,
+    "end": 117,
+    "id": "w57"
+  },
+  {
+    "text": "When",
+    "start": 117,
+    "end": 118.25,
+    "id": "w58"
+  },
+  {
+    "text": "the",
+    "start": 118.25,
+    "end": 119.18,
+    "id": "w59"
+  },
+  {
+    "text": "alarm",
+    "start": 119.18,
+    "end": 120.74,
+    "id": "w60"
+  },
+  {
+    "text": "rang,",
+    "start": 120.74,
+    "end": 122.61,
+    "id": "w61"
+  },
+  {
+    "text": "everyone",
+    "start": 122.61,
+    "end": 125.1,
+    "id": "w62"
+  },
+  {
+    "text": "stayed",
+    "start": 125.1,
+    "end": 126.97,
+    "id": "w63"
+  },
+  {
+    "text": "calm",
+    "start": 126.97,
+    "end": 128.22,
+    "id": "w64"
+  },
+  {
+    "text": "in",
+    "start": 128.22,
+    "end": 128.84,
+    "id": "w65"
+  },
+  {
+    "text": "their",
+    "start": 128.84,
+    "end": 130.4,
+    "id": "w66"
+  },
+  {
+    "text": "seats.",
+    "start": 130.4,
+    "end": 132,
+    "id": "w67"
+  }
+]

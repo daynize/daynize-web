@@ -1,0 +1,14 @@
+{
+  "id": "basic-08",
+  "episode": 8,
+  "title": "할 수 있다, 해야 한다, 안 해도 된다",
+  "duration": 130,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "cliVersion": "0.8.149",
+  "sourceHash": "40b9db01d6439cbbfab5a24beea1598a4c405ef6550176a2504d6af9f0ddadaa",
+  "timingStatus": "audio-measured-words-aligned",
+  "alignmentReviewed": false,
+  "audioFile": "assets/audio/narration.wav"
+}

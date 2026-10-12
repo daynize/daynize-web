@@ -1,0 +1,656 @@
+{
+  "id": "basic-07",
+  "episode": 7,
+  "title": "과거의 일이 지금과 이어질 때",
+  "durationTarget": 130,
+  "timingStatus": "planned-not-synthesized",
+  "voices": {
+    "ko": "Jian (Premium)",
+    "en": "Samantha"
+  },
+  "scenes": [
+    {
+      "id": "concept-1",
+      "kind": "concept",
+      "start": 0,
+      "end": 10,
+      "text": "현재완료는 과거의 일을 지금과 연결해서 말해요. 경험이 있거나, 결과가 남거나, 지금까지 이어지는 경우죠.",
+      "screen": "과거 → 지금 / have·has + 과거분사",
+      "visual": "과거 사건에서 현재까지 연결된 시간선에 경험·결과·지속 세 갈래 표시.",
+      "narration": [
+        {
+          "id": "concept-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "현재완료는 과거의 일을 지금과 연결해서 말해요. 경험이 있거나, 결과가 남거나, 지금까지 이어지는 경우죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-2",
+      "kind": "concept",
+      "start": 10,
+      "end": 20,
+      "text": "가 본 적이 있는지, 벌써 끝냈는지, 아직 안 했는지 말할 때 자주 써요. 에버, 올레디, 옛이 단서가 되죠.",
+      "screen": "ever / already / yet",
+      "visual": "경험 목록·완료 체크·미완료 체크에 세 단어를 각각 붙이기.",
+      "narration": [
+        {
+          "id": "concept-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "가 본 적이 있는지, 벌써 끝냈는지, 아직 안 했는지 말할 때 자주 써요. 에버, 올레디, 옛이 단서가 되죠.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-3",
+      "kind": "concept",
+      "start": 20,
+      "end": 30,
+      "text": "지금까지 이어지는 일은 시작점을 신스로, 기간을 포로 연결해요. 갔다 온 경험과 가서 없는 상태도 구분해요.",
+      "screen": "since Monday / for three days / been·gone",
+      "visual": "시작점과 길이 괄호를 분리하고 been은 왕복, gone은 현재 부재로 표시.",
+      "narration": [
+        {
+          "id": "concept-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "지금까지 이어지는 일은 시작점을 신스로, 기간을 포로 연결해요. 갔다 온 경험과 가서 없는 상태도 구분해요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "concept-4",
+      "kind": "contrast",
+      "start": 30,
+      "end": 40,
+      "text": "어제처럼 끝난 과거 시점을 지정하면 보통 과거형을 써요. 현재완료의 해브 뒤에는 동사 원형이 아니라 과거분사예요.",
+      "screen": "yesterday → 과거형 / have finished",
+      "visual": "닫힌 yesterday 구간과 현재 연결선을 대비하고 finished 형태를 확대.",
+      "narration": [
+        {
+          "id": "concept-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "어제처럼 끝난 과거 시점을 지정하면 보통 과거형을 써요. 현재완료의 해브 뒤에는 동사 원형이 아니라 과거분사예요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    },
+    {
+      "id": "example-1",
+      "kind": "example",
+      "number": 1,
+      "level": "기본",
+      "start": 40,
+      "end": 47,
+      "ko": "나는 살면서 파리에 가 본 적이 있어요.",
+      "en": "I have been to Paris before.",
+      "wrong": "I have be to Paris before.",
+      "focus": [
+        "have been",
+        "before"
+      ],
+      "note": "have 뒤에는 be의 과거분사 been을 쓰며 방문 경험을 말한다.",
+      "visual": "과거 방문 체크가 현재 경험 목록에 남도록 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-1-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 살면서 파리에 가 본 적이 있어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-1-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I have been to Paris before.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "have been",
+            "actualStart": null
+          },
+          {
+            "text": "before",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-2",
+      "kind": "example",
+      "number": 2,
+      "level": "기본",
+      "start": 47,
+      "end": 54,
+      "ko": "너는 낫토를 먹어 본 적이 있니?",
+      "en": "Have you ever tried natto before?",
+      "wrong": "Have you ever try natto before?",
+      "focus": [
+        "ever",
+        "tried"
+      ],
+      "note": "경험을 묻는 have 뒤에는 과거분사 tried가 필요하다.",
+      "visual": "경험 질문 상자에서 ever와 tried 두 칸 강조.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-2-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "너는 낫토를 먹어 본 적이 있니?",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-2-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "Have you ever tried natto before?",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "ever",
+            "actualStart": null
+          },
+          {
+            "text": "tried",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-3",
+      "kind": "example",
+      "number": 3,
+      "level": "기본",
+      "start": 54,
+      "end": 61,
+      "ko": "그녀는 이미 숙제를 끝냈어요.",
+      "en": "She has already finished her homework.",
+      "wrong": "She has already finish her homework.",
+      "focus": [
+        "already",
+        "finished"
+      ],
+      "note": "has와 과거분사 finished로 지금의 완료 상태를 표현한다.",
+      "visual": "숙제 완료 체크가 현재 칸으로 이동하고 has finished 묶기.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-3-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 이미 숙제를 끝냈어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-3-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She has already finished her homework.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "already",
+            "actualStart": null
+          },
+          {
+            "text": "finished",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-4",
+      "kind": "example",
+      "number": 4,
+      "level": "중급",
+      "start": 61,
+      "end": 69,
+      "ko": "우리는 아직 답장을 받지 못했어요.",
+      "en": "We have not received a reply yet.",
+      "wrong": "We have not receive a reply yet.",
+      "focus": [
+        "received",
+        "yet"
+      ],
+      "note": "부정문이어도 have 뒤에는 과거분사 received를 쓰며 yet는 지금까지의 미완료를 나타낸다.",
+      "visual": "받은 편지함이 비어 있는 현재까지의 시간선 끝에 yet 배치.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-4-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 아직 답장을 받지 못했어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-4-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We have not received a reply yet.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "received",
+            "actualStart": null
+          },
+          {
+            "text": "yet",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-5",
+      "kind": "example",
+      "number": 5,
+      "level": "중급",
+      "start": 69,
+      "end": 77,
+      "ko": "그는 2021년부터 여기에서 살고 있어요.",
+      "en": "He has lived here since 2021.",
+      "wrong": "He has lived here for 2021.",
+      "focus": [
+        "has lived",
+        "since 2021"
+      ],
+      "note": "2021년은 기간의 길이가 아니라 시작점이므로 since를 쓴다.",
+      "visual": "2021 점에서 현재까지 선을 그리고 시작점에 since 깃발 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-5-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그는 2021년부터 여기에서 살고 있어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-5-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "He has lived here since 2021.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "has lived",
+            "actualStart": null
+          },
+          {
+            "text": "since 2021",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-6",
+      "kind": "example",
+      "number": 6,
+      "level": "중급",
+      "start": 77,
+      "end": 85,
+      "ko": "나는 그를 십 년 동안 알고 지냈어요.",
+      "en": "I have known him for ten years.",
+      "wrong": "I have known him since ten years.",
+      "focus": [
+        "have known",
+        "for ten years"
+      ],
+      "note": "ten years는 기간이므로 for가 필요하며 since ten years ago는 시작점 표현으로 가능하다.",
+      "visual": "십 년 길이의 괄호에 for를 붙이고 since 시작점과 비교.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-6-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그를 십 년 동안 알고 지냈어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-6-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I have known him for ten years.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "have known",
+            "actualStart": null
+          },
+          {
+            "text": "for ten years",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-7",
+      "kind": "example",
+      "number": 7,
+      "level": "중급",
+      "start": 85,
+      "end": 94,
+      "ko": "나는 어제 고객에게 그 보고서를 보냈어요.",
+      "en": "I sent the report to the client yesterday.",
+      "wrong": "I have sent the report to the client yesterday.",
+      "focus": [
+        "sent",
+        "yesterday"
+      ],
+      "note": "보낸 사건을 끝난 시점 yesterday로 직접 지정하므로 표준 용법에서는 과거형 sent를 쓴다.",
+      "visual": "보낸 사건을 닫힌 어제 칸 안에 고정하고 현재완료 연결과 대비.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-7-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 어제 고객에게 그 보고서를 보냈어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-7-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I sent the report to the client yesterday.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "sent",
+            "actualStart": null
+          },
+          {
+            "text": "yesterday",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-8",
+      "kind": "example",
+      "number": 8,
+      "level": "고급",
+      "start": 94,
+      "end": 104,
+      "ko": "그녀는 약국에 가서 지금 여기 없어요.",
+      "en": "She has gone to the pharmacy and is not here.",
+      "wrong": "She has went to the pharmacy and is not here.",
+      "focus": [
+        "has gone",
+        "not here"
+      ],
+      "note": "go의 과거분사는 gone이며 이 문맥에서는 약국에 가서 아직 부재임을 나타낸다.",
+      "visual": "인물의 현재 위치를 약국 쪽에 놓고 출발지에는 부재 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-8-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "그녀는 약국에 가서 지금 여기 없어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-8-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "She has gone to the pharmacy and is not here.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "has gone",
+            "actualStart": null
+          },
+          {
+            "text": "not here",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-9",
+      "kind": "example",
+      "number": 9,
+      "level": "고급",
+      "start": 104,
+      "end": 114,
+      "ko": "나는 그 박물관에 가 봤지만 그는 가 본 적 없어요.",
+      "en": "I have been to that museum, but he has never visited.",
+      "wrong": "I have went to that museum, but he has never visited.",
+      "focus": [
+        "have been",
+        "never visited"
+      ],
+      "note": "방문 경험은 have been to로 표현하고 have went는 과거분사 형태가 틀렸다.",
+      "visual": "두 사람의 방문 경험 목록을 나란히 놓고 경험 있음·없음 표시.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-9-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "나는 그 박물관에 가 봤지만 그는 가 본 적 없어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-9-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "I have been to that museum, but he has never visited.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "have been",
+            "actualStart": null
+          },
+          {
+            "text": "never visited",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-10",
+      "kind": "example",
+      "number": 10,
+      "level": "고급",
+      "start": 114,
+      "end": 125,
+      "ko": "우리는 열쇠를 잃어버려서 지금 들어갈 수 없어요.",
+      "en": "We have lost our keys, so we cannot get in now.",
+      "wrong": "We have lose our keys, so we cannot get in now.",
+      "focus": [
+        "have lost",
+        "now"
+      ],
+      "note": "현재 남은 결과와 연결하며 lose의 과거분사 lost를 쓴다.",
+      "visual": "과거 열쇠 분실에서 현재 잠긴 문까지 결과 화살표 연결.",
+      "contrastType": "form-or-usage",
+      "narration": [
+        {
+          "id": "example-10-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "우리는 열쇠를 잃어버려서 지금 들어갈 수 없어요.",
+          "actualStart": null,
+          "actualEnd": null
+        },
+        {
+          "id": "example-10-en",
+          "lang": "en",
+          "voice": "Samantha",
+          "text": "We have lost our keys, so we cannot get in now.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ],
+      "sync": {
+        "order": [
+          "ko",
+          "en"
+        ],
+        "minimumGapSeconds": 0.3,
+        "wrongSpoken": false,
+        "englishReveal": "english-audio-start",
+        "focusTimes": [
+          {
+            "text": "have lost",
+            "actualStart": null
+          },
+          {
+            "text": "now",
+            "actualStart": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "start": 125,
+      "end": 130,
+      "text": "현재와의 연결은 현재완료로, 끝난 과거 시점을 지정한 사건은 보통 과거형으로 말하세요.",
+      "narration": [
+        {
+          "id": "summary-ko",
+          "lang": "ko",
+          "voice": "Jian (Premium)",
+          "text": "현재와의 연결은 현재완료로, 끝난 과거 시점을 지정한 사건은 보통 과거형으로 말하세요.",
+          "actualStart": null,
+          "actualEnd": null
+        }
+      ]
+    }
+  ]
+}

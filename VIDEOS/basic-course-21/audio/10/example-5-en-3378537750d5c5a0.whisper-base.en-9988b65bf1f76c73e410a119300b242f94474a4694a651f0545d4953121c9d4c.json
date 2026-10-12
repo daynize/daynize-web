@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,480"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2480
+			},
+			"text": " She is tall enough to reach that shelf.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.998756,
+					"t_dtw": -1
+				},
+				{
+					"text": " She",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,190"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 190
+					},
+					"id": 1375,
+					"p": 0.749714,
+					"t_dtw": -1
+				},
+				{
+					"text": " is",
+					"timestamps": {
+						"from": "00:00:00,190",
+						"to": "00:00:00,300"
+					},
+					"offsets": {
+						"from": 190,
+						"to": 300
+					},
+					"id": 318,
+					"p": 0.998852,
+					"t_dtw": -1
+				},
+				{
+					"text": " tall",
+					"timestamps": {
+						"from": "00:00:00,430",
+						"to": "00:00:00,560"
+					},
+					"offsets": {
+						"from": 430,
+						"to": 560
+					},
+					"id": 7331,
+					"p": 0.99482,
+					"t_dtw": -1
+				},
+				{
+					"text": " enough",
+					"timestamps": {
+						"from": "00:00:00,560",
+						"to": "00:00:00,880"
+					},
+					"offsets": {
+						"from": 560,
+						"to": 880
+					},
+					"id": 1576,
+					"p": 0.999529,
+					"t_dtw": -1
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,970",
+						"to": "00:00:01,060"
+					},
+					"offsets": {
+						"from": 970,
+						"to": 1060
+					},
+					"id": 284,
+					"p": 0.999554,
+					"t_dtw": -1
+				},
+				{
+					"text": " reach",
+					"timestamps": {
+						"from": "00:00:01,060",
+						"to": "00:00:01,330"
+					},
+					"offsets": {
+						"from": 1060,
+						"to": 1330
+					},
+					"id": 3151,
+					"p": 0.999668,
+					"t_dtw": -1
+				},
+				{
+					"text": " that",
+					"timestamps": {
+						"from": "00:00:01,390",
+						"to": "00:00:01,630"
+					},
+					"offsets": {
+						"from": 1390,
+						"to": 1630
+					},
+					"id": 326,
+					"p": 0.992884,
+					"t_dtw": -1
+				},
+				{
+					"text": " shelf",
+					"timestamps": {
+						"from": "00:00:01,630",
+						"to": "00:00:01,920"
+					},
+					"offsets": {
+						"from": 1630,
+						"to": 1920
+					},
+					"id": 18316,
+					"p": 0.752769,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,070",
+						"to": "00:00:02,070"
+					},
+					"offsets": {
+						"from": 2070,
+						"to": 2070
+					},
+					"id": 13,
+					"p": 0.840673,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_124]",
+					"timestamps": {
+						"from": "00:00:02,480",
+						"to": "00:00:02,480"
+					},
+					"offsets": {
+						"from": 2480,
+						"to": 2480
+					},
+					"id": 50487,
+					"p": 0.0125424,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

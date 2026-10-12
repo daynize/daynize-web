@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/sigeol-i/.cache/hyperframes/whisper/models/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,600"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1600
+			},
+			"text": " I have known him for 10 years.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997041,
+					"t_dtw": -1
+				},
+				{
+					"text": " I",
+					"timestamps": {
+						"from": "00:00:00,010",
+						"to": "00:00:00,050"
+					},
+					"offsets": {
+						"from": 10,
+						"to": 50
+					},
+					"id": 314,
+					"p": 0.930646,
+					"t_dtw": -1
+				},
+				{
+					"text": " have",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,250"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 250
+					},
+					"id": 423,
+					"p": 0.982287,
+					"t_dtw": -1
+				},
+				{
+					"text": " known",
+					"timestamps": {
+						"from": "00:00:00,300",
+						"to": "00:00:00,560"
+					},
+					"offsets": {
+						"from": 300,
+						"to": 560
+					},
+					"id": 1900,
+					"p": 0.997128,
+					"t_dtw": -1
+				},
+				{
+					"text": " him",
+					"timestamps": {
+						"from": "00:00:00,560",
+						"to": "00:00:00,710"
+					},
+					"offsets": {
+						"from": 560,
+						"to": 710
+					},
+					"id": 683,
+					"p": 0.990376,
+					"t_dtw": -1
+				},
+				{
+					"text": " for",
+					"timestamps": {
+						"from": "00:00:00,790",
+						"to": "00:00:00,870"
+					},
+					"offsets": {
+						"from": 790,
+						"to": 870
+					},
+					"id": 329,
+					"p": 0.997828,
+					"t_dtw": -1
+				},
+				{
+					"text": " 10",
+					"timestamps": {
+						"from": "00:00:00,970",
+						"to": "00:00:01,240"
+					},
+					"offsets": {
+						"from": 970,
+						"to": 1240
+					},
+					"id": 838,
+					"p": 0.555965,
+					"t_dtw": -1
+				},
+				{
+					"text": " years",
+					"timestamps": {
+						"from": "00:00:01,240",
+						"to": "00:00:01,450"
+					},
+					"offsets": {
+						"from": 1240,
+						"to": 1450
+					},
+					"id": 812,
+					"p": 0.998788,
+					"t_dtw": -1
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,600",
+						"to": "00:00:01,600"
+					},
+					"offsets": {
+						"from": 1600,
+						"to": 1600
+					},
+					"id": 13,
+					"p": 0.781094,
+					"t_dtw": -1
+				},
+				{
+					"text": "[_TT_80]",
+					"timestamps": {
+						"from": "00:00:01,600",
+						"to": "00:00:01,600"
+					},
+					"offsets": {
+						"from": 1600,
+						"to": 1600
+					},
+					"id": 50443,
+					"p": 0.136006,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}
