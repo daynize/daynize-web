@@ -413,10 +413,8 @@
             place-items: center;
             isolation: isolate;
             background: var(--paper);
-            -webkit-mask-image: radial-gradient(ellipse closest-side, #000 65%, transparent 100%);
-            mask-image: radial-gradient(ellipse closest-side, #000 65%, transparent 100%);
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
+            -webkit-mask-image: none;
+            mask-image: none;
         }
 
         .hero-art img {
@@ -425,7 +423,7 @@
             height: auto;
             aspect-ratio: 2528 / 1696;
             object-fit: contain;
-            mix-blend-mode: multiply;
+            mix-blend-mode: normal;
             border: 0;
             border-radius: 0;
             box-shadow: none;

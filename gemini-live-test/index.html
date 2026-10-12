@@ -5,173 +5,173 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- 네이버/구글 검색 노출 최적화 (SEO) -->
-    <title>데이나이즈 DAYNIZE | 지난 주 영어 - 맞춤 영어 학습
-        <meta name="description" content="데이나이즈(DAYNIZE)에서 시작하는 가장 쉬운 AI 영어 회화. 누구나 부담 없이 매일 즐겁게 배우는 나만의 영어 학습 플랫폼." />
-        <meta name="keywords" 습content="데이나이즈, daynize, 데이나이즈 영어, AI영어회화, 영어회화, 영어학습" />
+    <title>데이나이즈 DAYNIZE | 지난 주 영어 - 맞춤 영어 학습</title>
+    <meta name="description" content="데이나이즈(DAYNIZE)에서 시작하는 가장 쉬운 AI 영어 회화. 누구나 부담 없이 매일 즐겁게 배우는 나만의 영어 학습 플랫폼." />
+    <meta name="keywords" content="데이나이즈, daynize, 데이나이즈 영어, AI영어회화, 영어회화, 영어학습" />
 
-        <!-- 카카오톡 / 네이버 블로그 / 소셜 공유용 (Open Graph) -->
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="데이나이즈 | DAYNIZE - AI 영어 회화" />
-        <meta property="og:description" content="매일 새로워지는 나만의 영어 배움터. 누구나 쉽고 즐겁게 시작하는 AI 영어 회화, 데이나이즈!" />
-        <meta property="og:url" content="https://www.daynize.co.kr" />
-        <meta property="og:site_name" content="데이나이즈" />
-        <meta name="theme-color" content="#FBF9F5">
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
-        <style>
-            :root {
-                --ink: #1F2937;
-                --muted: #63756e;
-                --green: #147a52;
-                --line: #d8e4dd;
-                --red: #b42c3f;
-            }
+    <!-- 카카오톡 / 네이버 블로그 / 소셜 공유용 (Open Graph) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="데이나이즈 | DAYNIZE - AI 영어 회화" />
+    <meta property="og:description" content="매일 새로워지는 나만의 영어 배움터. 누구나 쉽고 즐겁게 시작하는 AI 영어 회화, 데이나이즈!" />
+    <meta property="og:url" content="https://www.daynize.co.kr" />
+    <meta property="og:site_name" content="데이나이즈" />
+    <meta name="theme-color" content="#FBF9F5">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --ink: #1F2937;
+            --muted: #63756e;
+            --green: #147a52;
+            --line: #d8e4dd;
+            --red: #b42c3f;
+        }
 
-            * {
-                box-sizing: border-box;
-            }
+        * {
+            box-sizing: border-box;
+        }
 
-            body {
-                margin: 0;
-                color: var(--ink);
-                font: 18px 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
-                background: #FBF9F5;
-                letter-spacing: 0;
-            }
+        body {
+            margin: 0;
+            color: var(--ink);
+            font: 18px 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+            background: #FBF9F5;
+            letter-spacing: 0;
+        }
 
+        main {
+            max-width: 1040px;
+            margin: 48px auto;
+            padding: 28px 28px 140px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 650;
+        }
+
+        .badge {
+            font: 12px 'Avenir Next', sans-serif;
+            color: var(--muted);
+            border-left: 2px solid var(--line);
+            padding-left: 12px;
+        }
+
+        .status {
+            margin: 42px 0 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            min-height: 64px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            flex-shrink: 0;
+            margin-top: 6px;
+            border-radius: 50%;
+            background: #9aaba2;
+        }
+
+        body[data-state="active"] .dot {
+            background: var(--green);
+        }
+
+        body[data-state="error"] .dot {
+            background: var(--red);
+        }
+
+        #status {
+            margin: 0;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            min-height: 48px;
+            padding: 12px 20px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            font: inherit;
+            cursor: pointer;
+            background: white;
+            color: var(--ink);
+        }
+
+        #microphone {
+            background: var(--green);
+            border-color: var(--green);
+            color: white;
+            min-width: 160px;
+        }
+
+        #microphone[aria-pressed="true"] {
+            background: var(--red);
+            border-color: var(--red);
+        }
+
+        button:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        button:focus-visible {
+            outline: 3px solid #e0b139;
+            outline-offset: 3px;
+        }
+
+        dl {
+            margin: 40px 0 0;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        dt {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        dd {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
             main {
-                max-width: 1040px;
-                margin: 48px auto;
-                padding: 28px 28px 140px;
-            }
-
-            header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 16px;
-                flex-wrap: wrap;
+                margin-top: 6vh;
+                padding: 24px 20px;
             }
 
             h1 {
-                margin: 0;
-                font-size: 32px;
-                font-weight: 650;
-            }
-
-            .badge {
-                font: 12px 'Avenir Next', sans-serif;
-                color: var(--muted);
-                border-left: 2px solid var(--line);
-                padding-left: 12px;
-            }
-
-            .status {
-                margin: 42px 0 28px;
-                display: flex;
-                align-items: flex-start;
-                gap: 12px;
-                min-height: 64px;
-            }
-
-            .dot {
-                width: 10px;
-                height: 10px;
-                flex-shrink: 0;
-                margin-top: 6px;
-                border-radius: 50%;
-                background: #9aaba2;
-            }
-
-            body[data-state="active"] .dot {
-                background: var(--green);
-            }
-
-            body[data-state="error"] .dot {
-                background: var(--red);
-            }
-
-            #status {
-                margin: 0;
-                line-height: 1.6;
-                overflow-wrap: anywhere;
-            }
-
-            .controls {
-                display: flex;
-                gap: 12px;
-                flex-wrap: wrap;
-            }
-
-            button {
-                min-height: 48px;
-                padding: 12px 20px;
-                border: 1px solid var(--line);
-                border-radius: 6px;
-                font: inherit;
-                cursor: pointer;
-                background: white;
-                color: var(--ink);
-            }
-
-            #microphone {
-                background: var(--green);
-                border-color: var(--green);
-                color: white;
-                min-width: 160px;
-            }
-
-            #microphone[aria-pressed="true"] {
-                background: var(--red);
-                border-color: var(--red);
-            }
-
-            button:disabled {
-                opacity: .5;
-                cursor: not-allowed;
-            }
-
-            button:focus-visible {
-                outline: 3px solid #e0b139;
-                outline-offset: 3px;
+                font-size: 24px;
             }
 
             dl {
-                margin: 40px 0 0;
-                padding-top: 20px;
-                border-top: 1px solid var(--line);
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 12px;
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
-
-            dt {
-                font-size: 12px;
-                color: var(--muted);
-                margin-bottom: 6px;
-            }
-
-            dd {
-                margin: 0;
-                font-size: 14px;
-            }
-
-            @media (max-width: 480px) {
-                main {
-                    margin-top: 6vh;
-                    padding: 24px 20px;
-                }
-
-                h1 {
-                    font-size: 24px;
-                }
-
-                dl {
-                    grid-template-columns: 1fr;
-                    gap: 20px;
-                }
-            }
-        </style>
+        }
+    </style>
 </head>
 
 <body>
