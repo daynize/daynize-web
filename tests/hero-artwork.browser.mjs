@@ -12,6 +12,9 @@ try {
         if (process.env.HERO_LOCAL === '1') {
             const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
             await page.route('https://www.daynize.co.kr/?release=ac4c5fe1', route => route.fulfill({ contentType: 'text/html', body: html }));
+            const artwork = await readFile(new URL('../IMAGE/hero-great-things-v2.jpg', import.meta.url));
+            assert.ok(artwork.length < 500000);
+            await page.route('https://www.daynize.co.kr/IMAGE/hero-great-things-v2.jpg', route => route.fulfill({ contentType: 'image/jpeg', body: artwork }));
         }
         await page.goto('https://www.daynize.co.kr/?release=ac4c5fe1');
         const image = page.locator('.hero-art img');
@@ -38,9 +41,9 @@ try {
                 webkitMask: getComputedStyle(element.parentElement).webkitMaskImage,
             };
         });
-        assert.ok(info.src.includes('great%20things%20take%20time.png'));
-        assert.equal(info.width, 2528);
-        assert.equal(info.height, 1696);
+        assert.ok(info.src.includes('/IMAGE/hero-great-things-v2.jpg'));
+        assert.equal(info.width, 1264);
+        assert.equal(info.height, 848);
         assert.ok(Math.abs(info.ratio - 2528 / 1696) < 0.001);
         assert.equal(info.fit, 'contain');
         assert.equal(info.blend, 'normal');
