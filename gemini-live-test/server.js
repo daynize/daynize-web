@@ -338,6 +338,11 @@ function createRelayServer(options = {}) {
                 ready = true;
                 clearTimeout(setupTimer);
             }
+            if (transcriptionOnly && message.serverContent?.modelTurn) {
+                const { modelTurn, ...content } = message.serverContent;
+                message = { ...message, serverContent: content };
+                if (!content.inputTranscription && !content.outputTranscription && !content.turnComplete && !content.interrupted) return;
+            }
             if (client.bufferedAmount > MAX_BUFFER) return fail('Audio playback connection is too slow. Reconnect.', true);
             send(message);
         });

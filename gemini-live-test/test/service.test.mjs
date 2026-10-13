@@ -103,11 +103,11 @@ test('setup includes tutor voice and protocol waits for setupComplete', async ()
 test('transcription-only setup requests text input transcription without spoken replies', () => {
     const setup = createTranscriptionSetup();
     assert.equal(setup.setup.model, 'models/gemini-2.5-flash-native-audio-latest');
-    assert.deepEqual(setup.setup.generationConfig.responseModalities, ['TEXT']);
+    assert.deepEqual(setup.setup.generationConfig.responseModalities, ['AUDIO']);
     assert.deepEqual(setup.setup.inputAudioTranscription, {});
     assert.match(setup.setup.systemInstruction.parts[0].text, /Do not answer or converse/i);
     assert.equal(setup.setup.realtimeInputConfig.automaticActivityDetection.silenceDurationMs, 200);
-    assert.equal(setup.setup.generationConfig.speechConfig, undefined);
+    assert.equal(setup.setup.generationConfig.speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName, 'Kore');
 });
 
 test('transient disconnect reconnects; stopping cancels pending retries', async () => {

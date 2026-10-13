@@ -108,9 +108,9 @@ test('transcription websocket enables input transcription and relays PCM without
     context.after(() => client.terminate());
     const [gemini] = await accepted;
     const setup = await nextMessage(gemini);
-    assert.deepEqual(setup.setup.generationConfig.responseModalities, ['TEXT']);
+    assert.deepEqual(setup.setup.generationConfig.responseModalities, ['AUDIO']);
     assert.deepEqual(setup.setup.inputAudioTranscription, {});
-    assert.equal(setup.setup.generationConfig.speechConfig, undefined);
+    assert.equal(setup.setup.generationConfig.speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName, 'Kore');
     const ready = nextMessage(client);
     gemini.send(JSON.stringify({ setupComplete: {} }));
     await ready;
@@ -122,6 +122,14 @@ test('transcription websocket enables input transcription and relays PCM without
     const received = nextMessage(client);
     gemini.send(JSON.stringify(transcript));
     assert.deepEqual(await received, transcript);
+    const completion = nextMessage(client);
+    gemini.send(JSON.stringify({
+        serverContent: {
+            modelTurn: { parts: [{ inlineData: { mimeType: 'audio/pcm;rate=24000', data: 'AAA=' } }] },
+            turnComplete: true
+        }
+    }));
+    assert.deepEqual(await completion, { serverContent: { turnComplete: true } });
     client.close();
 });
 

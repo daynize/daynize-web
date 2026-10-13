@@ -32,8 +32,9 @@ export function createTranscriptionSetup(model = 'gemini-2.5-flash-native-audio-
         setup: {
             model: model.startsWith('models/') ? model : `models/${model}`,
             generationConfig: {
-                responseModalities: ['TEXT'],
-                thinkingConfig: { thinkingBudget: 0 }
+                responseModalities: ['AUDIO'],
+                thinkingConfig: { thinkingBudget: 0 },
+                speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Kore' } } }
             },
             systemInstruction: { parts: [{ text: 'Transcribe the users spoken English. Do not answer or converse. Provide only the exact spoken words as transcription.' }] },
             inputAudioTranscription: {},
