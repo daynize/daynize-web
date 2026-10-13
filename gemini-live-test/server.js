@@ -12,7 +12,7 @@ const FILES = new Map([
     ['/index.html', ['index.html', 'text/html; charset=utf-8']],
     ['/audio.mjs', ['audio.mjs', 'text/javascript; charset=utf-8']],
     ['/pcm-worklet.mjs', ['pcm-worklet.mjs', 'text/javascript; charset=utf-8']],
-    ...['live-service.mjs', 'audio-engine.mjs', 'ambient-orb.mjs', 'session-safety.mjs', 'tutor-widget.mjs', 'daynize-tutor.mjs'].map(file => [`/${file}`, [file, 'text/javascript; charset=utf-8']]),
+    ...['live-service.mjs', 'audio-engine.mjs', 'ambient-orb.mjs', 'session-safety.mjs', 'tutor-widget.mjs', 'daynize-tutor.mjs', 'voice-studio-live.mjs'].map(file => [`/${file}`, [file, 'text/javascript; charset=utf-8']]),
     ['/spotlight-bar.css', ['spotlight-bar.css', 'text/css; charset=utf-8']],
     ['/daynize-logo.png', ['../DAYNIZE LOGO ONLY.png', 'image/png']],
     ...['mic', 'mic-off', 'phone-off', 'x', 'volume-2', 'rotate-ccw', 'volume-x', 'message-square', 'settings-2'].map(icon => [`/icons/${icon}.svg`, [`icons/${icon}.svg`, 'image/svg+xml']])
@@ -25,6 +25,11 @@ function createRelayServer(options = {}) {
         throw new TypeError('GEMINI_MODEL must be a model ID with at most one models/ prefix.');
     }
     const model = rawModel.startsWith('models/') ? rawModel : `models/${rawModel}`;
+    const rawTranscriptionModel = options.transcriptionModel ?? process.env.GEMINI_TRANSCRIPTION_MODEL ?? 'gemini-2.5-flash';
+    if (typeof rawTranscriptionModel !== 'string' || !/^(models\/)?[A-Za-z0-9][A-Za-z0-9._-]*$/.test(rawTranscriptionModel)) {
+        throw new TypeError('GEMINI_TRANSCRIPTION_MODEL must be a model ID with at most one models/ prefix.');
+    }
+    const transcriptionModel = rawTranscriptionModel.startsWith('models/') ? rawTranscriptionModel.slice(7) : rawTranscriptionModel;
     const upstreamUrl = options.upstreamUrl ?? GEMINI_ENDPOINT;
     const wsUrl = options.wsUrl ?? process.env.NEXT_PUBLIC_WS_URL ?? process.env.WS_URL;
     if (wsUrl) {
@@ -42,6 +47,12 @@ function createRelayServer(options = {}) {
     const authorizeRequest = options.authorizeRequest;
     const maxConnections = options.maxConnections ?? 8;
     const maxSessionMs = options.maxSessionMs ?? 10 * 60 * 1000;
+    const maxTranscriptionBytes = options.maxTranscriptionBytes ?? 8 * 1024 * 1024;
+    const maxTranscriptionsPerMinute = options.maxTranscriptionsPerMinute ?? 20;
+    const fetchImpl = options.fetchImpl ?? globalThis.fetch;
+    if (!Number.isInteger(maxTranscriptionBytes) || maxTranscriptionBytes < 44 || !Number.isInteger(maxTranscriptionsPerMinute) || maxTranscriptionsPerMinute < 1) {
+        throw new Error('Invalid transcription limits.');
+    }
     const heartbeatInterval = options.heartbeatInterval ?? 20000;
     if (!Number.isFinite(heartbeatInterval) || heartbeatInterval <= 0) throw new Error('Invalid heartbeat interval.');
     if (!Number.isInteger(maxConnections) || maxConnections < 1 || !Number.isFinite(maxSessionMs) || maxSessionMs < 1000) {
@@ -57,16 +68,120 @@ function createRelayServer(options = {}) {
         }
         return true;
     };
+    const transcriptionRequests = new Map();
     const server = http.createServer(async (request, response) => {
         if (!authorized(request)) {
             response.writeHead(401, { 'Cache-Control': 'no-store' }).end('Authentication required');
+            return;
+        }
+        const pathname = new URL(request.url, 'http://localhost').pathname;
+        if (pathname === '/transcribe') {
+            const origin = request.headers.origin;
+            const host = request.headers.host || '';
+            const localOrigin = /^(localhost|127\.0\.0\.1|\[::1\]):\d+$/.test(host) ? `http://${host}` : undefined;
+            const allowedOrigin = typeof origin === 'string' && (trustedOrigins.includes(origin) || origin === publicOrigin || origin === localOrigin);
+            const corsHeaders = allowedOrigin ? {
+                'Access-Control-Allow-Origin': origin,
+                'Access-Control-Allow-Methods': 'POST, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type',
+                'Access-Control-Max-Age': '600',
+                'Vary': 'Origin'
+            } : {};
+            if (request.method === 'OPTIONS') {
+                response.writeHead(allowedOrigin ? 204 : 403, { ...corsHeaders, 'Cache-Control': 'no-store' }).end();
+                return;
+            }
+            if (request.method !== 'POST') {
+                response.writeHead(405, { ...corsHeaders, 'Cache-Control': 'no-store', 'Allow': 'POST, OPTIONS' }).end();
+                return;
+            }
+            if (!allowedOrigin) {
+                response.writeHead(403, { 'Cache-Control': 'no-store' }).end('Origin not allowed');
+                return;
+            }
+            if (!apiKey?.trim()) {
+                response.writeHead(503, { ...corsHeaders, 'Cache-Control': 'no-store', 'Content-Type': 'application/json; charset=utf-8' });
+                response.end(JSON.stringify({ error: '음성 인식 서비스를 사용할 수 없습니다.' }));
+                request.resume();
+                return;
+            }
+            if (!/^audio\/wav(?:\s*;|$)/i.test(request.headers['content-type'] || '')) {
+                response.writeHead(415, { ...corsHeaders, 'Cache-Control': 'no-store' }).end('Expected audio/wav');
+                request.resume();
+                return;
+            }
+            const declaredLength = Number(request.headers['content-length']);
+            if (Number.isFinite(declaredLength) && declaredLength > maxTranscriptionBytes) {
+                response.writeHead(413, { ...corsHeaders, 'Cache-Control': 'no-store' }).end('Audio is too large');
+                request.resume();
+                return;
+            }
+            const now = Date.now();
+            const clientAddress = request.socket.remoteAddress || 'unknown';
+            const recentRequests = (transcriptionRequests.get(clientAddress) || []).filter(timestamp => now - timestamp < 60_000);
+            if (recentRequests.length >= maxTranscriptionsPerMinute) {
+                response.writeHead(429, { ...corsHeaders, 'Cache-Control': 'no-store' }).end('Too many transcription requests');
+                request.resume();
+                return;
+            }
+            recentRequests.push(now);
+            transcriptionRequests.set(clientAddress, recentRequests);
+            try {
+                const chunks = [];
+                let totalBytes = 0;
+                for await (const chunk of request) {
+                    totalBytes += chunk.length;
+                    if (totalBytes > maxTranscriptionBytes) {
+                        response.writeHead(413, { ...corsHeaders, 'Cache-Control': 'no-store' }).end('Audio is too large');
+                        return;
+                    }
+                    chunks.push(chunk);
+                }
+                const audio = Buffer.concat(chunks);
+                if (audio.length < 44 || audio.toString('ascii', 0, 4) !== 'RIFF' || audio.toString('ascii', 8, 12) !== 'WAVE') {
+                    response.writeHead(400, { ...corsHeaders, 'Cache-Control': 'no-store' }).end('Invalid WAV audio');
+                    return;
+                }
+                const upstream = await fetchImpl(`https://generativelanguage.googleapis.com/v1beta/models/${transcriptionModel}:generateContent?key=${encodeURIComponent(apiKey)}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [
+                                { text: 'Transcribe the spoken English exactly. Return only the words you hear, without translation, explanation, or added punctuation. If there is no intelligible speech, return an empty string.' },
+                                { inlineData: { mimeType: 'audio/wav', data: audio.toString('base64') } }
+                            ]
+                        }],
+                        generationConfig: { temperature: 0 }
+                    }),
+                    signal: AbortSignal.timeout(30_000)
+                });
+                if (!upstream.ok) {
+                    response.writeHead(502, { ...corsHeaders, 'Cache-Control': 'no-store', 'Content-Type': 'application/json; charset=utf-8' });
+                    response.end(JSON.stringify({ error: '음성을 글자로 변환하지 못했습니다. 잠시 후 다시 시도해 주세요.' }));
+                    return;
+                }
+                const result = await upstream.json();
+                const transcript = result.candidates?.[0]?.content?.parts?.map(part => part.text || '').join('').trim();
+                if (typeof transcript !== 'string') {
+                    response.writeHead(502, { ...corsHeaders, 'Cache-Control': 'no-store', 'Content-Type': 'application/json; charset=utf-8' });
+                    response.end(JSON.stringify({ error: '음성 인식 결과를 받지 못했습니다.' }));
+                    return;
+                }
+                response.writeHead(200, { ...corsHeaders, 'Cache-Control': 'no-store', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff' });
+                response.end(JSON.stringify({ transcript: transcript.slice(0, 10_000) }));
+            } catch {
+                if (!response.headersSent) {
+                    response.writeHead(502, { ...corsHeaders, 'Cache-Control': 'no-store', 'Content-Type': 'application/json; charset=utf-8' });
+                    response.end(JSON.stringify({ error: '음성 인식 연결에 실패했습니다. 인터넷 연결을 확인하고 다시 시도해 주세요.' }));
+                }
+            }
             return;
         }
         if (!['GET', 'HEAD'].includes(request.method)) {
             response.writeHead(405).end();
             return;
         }
-        const pathname = request.url.split('?')[0];
         if (pathname === '/runtime-config.json') {
             response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
             response.end(request.method === 'HEAD' ? undefined : JSON.stringify({ wsUrl: wsUrl || null }));
@@ -115,7 +230,7 @@ function createRelayServer(options = {}) {
             socket.end('HTTP/1.1 401 Unauthorized\r\nConnection: close\r\n\r\n');
             return;
         }
-        if (!['/', '/ws/gemini-live'].includes(requestUrl.pathname) || !localHosts.includes(request.headers.host) ||
+        if (!['/', '/ws/gemini-live', '/ws/transcribe'].includes(requestUrl.pathname) || !localHosts.includes(request.headers.host) ||
             (request.headers.origin && !allowedOrigins.includes(request.headers.origin))) {
             socket.end('HTTP/1.1 403 Forbidden\r\nConnection: close\r\n\r\n');
             return;
@@ -124,10 +239,10 @@ function createRelayServer(options = {}) {
             socket.end('HTTP/1.1 429 Too Many Requests\r\nConnection: close\r\n\r\n');
             return;
         }
-        clients.handleUpgrade(request, socket, head, client => clients.emit('connection', client, requestedVoice, sessionId));
+        clients.handleUpgrade(request, socket, head, client => clients.emit('connection', client, requestedVoice, sessionId, requestUrl.pathname === '/ws/transcribe'));
     });
 
-    clients.on('connection', (client, requestedVoice, sessionId) => {
+    clients.on('connection', (client, requestedVoice, sessionId, transcriptionOnly = false) => {
         for (const [key, session] of resumableSessions) if (session.expiresAt <= Date.now()) resumableSessions.delete(key);
         const resumeKey = sessionId ? `${sessionId}:${requestedVoice}` : undefined;
         const resumeHandle = resumableSessions.get(resumeKey)?.handle;
@@ -188,9 +303,11 @@ function createRelayServer(options = {}) {
         setupTimer = setTimeout(() => fail('Gemini setup timed out. Check your key and model availability.', true), 15000);
         upstream.on('open', async () => {
             try {
-                const { createSetup } = await import('./live-service.mjs');
+                const { createSetup, createTranscriptionSetup } = await import('./live-service.mjs');
                 if (ended) return stopUpstream();
-                const setup = createSetup(model, requestedVoice, { silenceDurationMs: vadSilenceMs });
+                const setup = transcriptionOnly
+                    ? createTranscriptionSetup(options.transcriptionLiveModel ?? process.env.GEMINI_TRANSCRIPTION_LIVE_MODEL ?? DEFAULT_MODEL, { silenceDurationMs: vadSilenceMs })
+                    : createSetup(model, requestedVoice, { silenceDurationMs: vadSilenceMs });
                 if (resumeHandle) setup.setup.sessionResumption.handle = resumeHandle;
                 upstream.send(JSON.stringify(setup));
             } catch {

@@ -27,6 +27,29 @@ export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voic
     };
 }
 
+export function createTranscriptionSetup(model = 'gemini-2.5-flash-native-audio-latest', { silenceDurationMs = 200, prefixPaddingMs = 200 } = {}) {
+    return {
+        setup: {
+            model: model.startsWith('models/') ? model : `models/${model}`,
+            generationConfig: {
+                responseModalities: ['TEXT'],
+                thinkingConfig: { thinkingBudget: 0 }
+            },
+            systemInstruction: { parts: [{ text: 'Transcribe the users spoken English. Do not answer or converse. Provide only the exact spoken words as transcription.' }] },
+            inputAudioTranscription: {},
+            realtimeInputConfig: {
+                automaticActivityDetection: {
+                    disabled: false,
+                    startOfSpeechSensitivity: 'START_SENSITIVITY_HIGH',
+                    endOfSpeechSensitivity: 'END_SENSITIVITY_HIGH',
+                    prefixPaddingMs,
+                    silenceDurationMs: Math.min(1000, silenceDurationMs)
+                }
+            }
+        }
+    };
+}
+
 export const CONNECTION_STATES = Object.freeze({ CONNECTING: 'CONNECTING', CONNECTED: 'CONNECTED', DISCONNECTED: 'DISCONNECTED', RECONNECTING: 'RECONNECTING' });
 
 export function resolveWebSocketUrl({ endpoint, env = globalThis.process?.env, config = globalThis.DAYNIZE_CONFIG, page = globalThis.location } = {}) {

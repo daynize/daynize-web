@@ -91,6 +91,40 @@ test('setup gates audio; PCM and replies relay both ways; disconnect closes upst
     await prefixedClosed;
 });
 
+test('transcription websocket enables input transcription and relays PCM without audio replies', { timeout: 5000 }, async context => {
+    const upstream = new WebSocketServer({ port: 0, host: '127.0.0.1' });
+    await once(upstream, 'listening');
+    const relay = createRelayServer({ apiKey: 'test-key', upstreamUrl: `ws://127.0.0.1:${upstream.address().port}` });
+    relay.server.listen(0, '127.0.0.1');
+    await once(relay.server, 'listening');
+    context.after(async () => {
+        await relay.close();
+        for (const socket of upstream.clients) socket.terminate();
+        await new Promise(resolve => upstream.close(resolve));
+    });
+    const port = relay.server.address().port;
+    const accepted = once(upstream, 'connection');
+    const client = new WebSocket(`ws://127.0.0.1:${port}/ws/transcribe`, { origin: `http://127.0.0.1:${port}` });
+    context.after(() => client.terminate());
+    const [gemini] = await accepted;
+    const setup = await nextMessage(gemini);
+    assert.deepEqual(setup.setup.generationConfig.responseModalities, ['TEXT']);
+    assert.deepEqual(setup.setup.inputAudioTranscription, {});
+    assert.equal(setup.setup.generationConfig.speechConfig, undefined);
+    const ready = nextMessage(client);
+    gemini.send(JSON.stringify({ setupComplete: {} }));
+    await ready;
+    const audio = { realtimeInput: { audio: { mimeType: 'audio/pcm;rate=16000', data: 'AAA=' } } };
+    const forwarded = nextMessage(gemini);
+    client.send(JSON.stringify(audio));
+    assert.deepEqual(await forwarded, audio);
+    const transcript = { serverContent: { inputTranscription: { text: 'This is a live transcript.' } } };
+    const received = nextMessage(client);
+    gemini.send(JSON.stringify(transcript));
+    assert.deepEqual(await received, transcript);
+    client.close();
+});
+
 test('invalid model names and duplicate prefixes are rejected', () => {
     for (const model of ['', 'models/', 'models/models/gemini-2.0-flash-exp', 123, ' gemini-2.0-flash-exp']) {
         assert.throws(() => createRelayServer({ model }), /GEMINI_MODEL/);
@@ -151,6 +185,59 @@ test('runtime configuration exposes only the public WebSocket URL', async contex
     assert.equal(response.headers.get('cache-control'), 'no-store');
     assert.deepEqual(await response.json(), { wsUrl: 'wss://stable.example/ws/gemini-live' });
     assert.throws(() => createRelayServer({ wsUrl: 'https://invalid.example' }), /WebSocket/);
+});
+
+test('transcription endpoint validates origin and WAV then returns Gemini text without caching', async context => {
+    let upstreamRequest;
+    const relay = createRelayServer({
+        apiKey: 'private-test-key',
+        allowedOrigins: ['https://www.daynize.co.kr'],
+        fetchImpl: async (url, options) => {
+            upstreamRequest = { url, options, body: JSON.parse(options.body) };
+            return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: 'I would like a cup of tea.' }] } }] }), { status: 200 });
+        }
+    });
+    relay.server.listen(0, '127.0.0.1');
+    await once(relay.server, 'listening');
+    context.after(() => relay.close());
+    const address = `http://127.0.0.1:${relay.server.address().port}/transcribe`;
+    const headers = { Origin: 'https://www.daynize.co.kr', 'Content-Type': 'audio/wav' };
+    const wav = Buffer.alloc(48);
+    wav.write('RIFF', 0, 'ascii');
+    wav.write('WAVE', 8, 'ascii');
+    const response = await fetch(address, { method: 'POST', headers, body: wav });
+    assert.equal(response.status, 200);
+    assert.equal(response.headers.get('cache-control'), 'no-store');
+    assert.equal(response.headers.get('access-control-allow-origin'), 'https://www.daynize.co.kr');
+    assert.deepEqual(await response.json(), { transcript: 'I would like a cup of tea.' });
+    assert.match(upstreamRequest.url, /models\/gemini-2\.5-flash:generateContent/);
+    assert.equal(new URL(upstreamRequest.url).searchParams.get('key'), 'private-test-key');
+    assert.equal(upstreamRequest.body.contents[0].parts[1].inlineData.mimeType, 'audio/wav');
+
+    const forbidden = await fetch(address, { method: 'POST', headers: { ...headers, Origin: 'https://evil.example' }, body: wav });
+    assert.equal(forbidden.status, 403);
+    const invalidAudio = await fetch(address, { method: 'POST', headers, body: Buffer.alloc(48) });
+    assert.equal(invalidAudio.status, 400);
+    const unsupportedType = await fetch(address, { method: 'POST', headers: { ...headers, 'Content-Type': 'audio/webm' }, body: wav });
+    assert.equal(unsupportedType.status, 415);
+    const preflight = await fetch(address, { method: 'OPTIONS', headers: { Origin: headers.Origin } });
+    assert.equal(preflight.status, 204);
+    assert.equal(preflight.headers.get('access-control-allow-methods'), 'POST, OPTIONS');
+});
+
+test('transcription endpoint rejects oversized uploads before Gemini', async context => {
+    let upstreamCalls = 0;
+    const relay = createRelayServer({ apiKey: 'test-key', allowedOrigins: ['https://www.daynize.co.kr'], maxTranscriptionBytes: 128, fetchImpl: async () => { upstreamCalls++; } });
+    relay.server.listen(0, '127.0.0.1');
+    await once(relay.server, 'listening');
+    context.after(() => relay.close());
+    const response = await fetch(`http://127.0.0.1:${relay.server.address().port}/transcribe`, {
+        method: 'POST',
+        headers: { Origin: 'https://www.daynize.co.kr', 'Content-Type': 'audio/wav' },
+        body: Buffer.alloc(256)
+    });
+    assert.equal(response.status, 413);
+    assert.equal(upstreamCalls, 0);
 });
 
 test('missing upstream native pong terminates the stale relay with a retryable error', { timeout: 5000 }, async context => {

@@ -1168,6 +1168,24 @@
             gap: 12px;
         }
 
+        .cloud-transcription-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 18px;
+            color: #46564b;
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .cloud-transcription-consent input {
+            width: 20px;
+            height: 20px;
+            flex: 0 0 auto;
+            margin: 2px 0 0;
+            accent-color: var(--sage);
+        }
+
         .voice-status {
             min-height: 30px;
             margin: 14px 0 0;
@@ -2160,7 +2178,8 @@
                 <div class="section-head">
                     <p class="eyebrow">YOUR VOICE STUDIO</p>
                     <h2 class="section-title" id="voice-title">듣고, 말하고, 다시 들어 보기</h2>
-                    <p class="section-intro">내 목소리로 연습하면 영어가 조금 더 가까워집니다. 녹음과 음성 인식은 이 기기의 브라우저에서 작동합니다.</p>
+                    <p class="section-intro">내 목소리로 연습하면 영어가 조금 더 가까워집니다. 브라우저 음성 인식이 되지 않을 때는 동의 후 녹음 음성을 Google
+                        Gemini에서 글자로 변환할 수 있습니다.</p>
                 </div>
                 <div class="voice-layout">
                     <div class="voice-panel glass">
@@ -2177,6 +2196,11 @@
                                     class="recording-indicator" id="recording-indicator" hidden></span><span
                                     id="record-label">녹음 시작</span></button>
                         </div>
+                        <label class="cloud-transcription-consent" for="cloud-transcription-consent">
+                            <input id="cloud-transcription-consent" type="checkbox">
+                            <span>선택하면 녹음 중 음성을 Google Gemini로 보내 실시간으로 문장 변환을 시도합니다. 결과가 없으면 녹음 후 다시 변환합니다. 음성은 데이나이즈
+                                서버에 저장하지 않습니다.</span>
+                        </label>
                         <p class="voice-status" id="voice-status" role="status" aria-live="polite">발음 듣기를 누르거나, 녹음을 시작해
                             문장을 읽어 보세요.</p>
                         <p class="compat-note">음성 인식은 Chrome 또는 Edge와 HTTPS 연결에서 가장 잘 지원됩니다. 지원되지 않는 환경에서도 녹음과 재생을 사용할 수
@@ -2310,8 +2334,9 @@
                         않습니다.</li>
                     <li>서비스 접속 과정에서 호스팅·보안·콘텐츠 전송 업체가 접속 IP, 브라우저 정보, 접속 시각 등 기술 로그를 처리할 수 있습니다.</li>
                 </ul>
-                <p>브라우저 음성 인식(Web Speech API)을 이용하면 음성 데이터가 해당 브라우저 또는 운영체제 제공자의 음성 인식 서비스로 전달될 수 있습니다. DAYNIZE는 현재 음성
-                    원본이나 인식 문장을 자체 서버에 보관하지 않습니다.</p>
+                <p>브라우저 음성 인식(Web Speech API)을 이용하면 음성 데이터가 해당 브라우저 또는 운영체제 제공자의 음성 인식 서비스로 전달될 수 있습니다. Voice Studio에서
+                    별도 동의 항목을 선택한 경우, 녹음 중 음성은 실시간 인식을 위해 Google Gemini API로 전송되며, 실시간 결과가 없으면 녹음 후 다시 변환을 요청할 수 있습니다. 이
+                    경우에도 DAYNIZE는 음성 원본을 자체 서버에 저장하지 않으며, 전송된 음성은 Google의 API 서비스 약관 및 개인정보 처리 기준에 따라 처리됩니다.</p>
 
                 <h3>2. 개인정보의 수집 및 이용 목적</h3>
                 <p>수강 신청 상담 및 연락, 서비스 제공과 본인 확인, 수강·학습 현황 관리, 문의·불만 처리 및 관련 법령상 의무 이행을 위해 이용합니다.</p>
@@ -2319,7 +2344,8 @@
                 <h3>3. 보유 및 이용 기간</h3>
                 <p>상담 정보는 상담 완료일로부터 1년간 보관 후 파기합니다. 다만, 계약·결제·분쟁 등 관계 법령에 따라 보존할 필요가 있는 정보는 해당 법령이 정한 기간 동안 별도로 보관합니다.
                     전자상거래 등에서의 소비자보호에 관한 법률에 따른 계약·청약철회, 대금결제·재화 공급 기록은 5년, 소비자 불만·분쟁 처리 기록은 3년 보관 대상이 될 수 있습니다.</p>
-                <p>현재 데모 폼으로 입력한 정보는 서버에 전송되지 않습니다. 브라우저를 통해 생성한 임시 녹음·인식 결과는 사용자가 페이지를 닫거나 새로고침하면 소멸합니다.</p>
+                <p>현재 데모 폼으로 입력한 정보는 서버에 전송되지 않습니다. 기기에서 재생하는 녹음 파일과 인식 문장은 페이지 메모리에서 임시 처리하며 페이지를 닫거나 새로고침하면 소멸합니다.
+                    Google Gemini 음성 변환에 동의한 경우 녹음 음성은 실시간 또는 녹음 후 변환 요청에 포함되어 Google로 전송됩니다.</p>
 
                 <h3>4. 개인정보의 제3자 제공</h3>
                 <p>개인정보를 원칙적으로 외부에 제공하지 않습니다. 정보주체의 별도 동의가 있거나 법령에 근거한 요청이 있는 경우에만 필요한 범위에서 제공하며, 제공 대상·목적·항목·보유 기간을 사전에
@@ -3453,10 +3479,12 @@
             const recordingIndicator = document.querySelector('#recording-indicator');
             const playback = document.querySelector('#recording-playback');
             const playbackButton = document.querySelector('#playback-button');
+            const cloudTranscriptionConsent = document.querySelector('#cloud-transcription-consent');
             let recorder = null;
             let mediaStream = null;
             let recordingChunks = [];
             let recognition = null;
+            let liveTranscription = null;
             let recognitionRestartTimer = null;
             let finalizedTranscript = '';
             let interimTranscript = '';
@@ -3514,20 +3542,92 @@
                     } else resolve();
                 });
                 await Promise.all([recordingStopped, stopRecognition()]);
-                finishRecording();
+                liveTranscription?.stop();
+                liveTranscription = null;
+                await finishRecording();
             };
-            const finishRecording = () => {
+            const makeWavBlob = async (recording) => {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                const OfflineAudioContextClass = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+                if (!AudioContextClass || !OfflineAudioContextClass) throw new Error('이 브라우저는 서버 음성 변환용 오디오 형식을 만들 수 없습니다.');
+                const decoder = new AudioContextClass();
+                try {
+                    const decoded = await decoder.decodeAudioData(await recording.arrayBuffer());
+                    const sampleRate = 16000;
+                    const frameCount = Math.ceil(decoded.duration * sampleRate);
+                    const offline = new OfflineAudioContextClass(1, frameCount, sampleRate);
+                    const source = offline.createBufferSource();
+                    source.buffer = decoded;
+                    source.connect(offline.destination);
+                    source.start();
+                    const rendered = await offline.startRendering();
+                    const samples = rendered.getChannelData(0);
+                    const wav = new ArrayBuffer(44 + samples.length * 2);
+                    const view = new DataView(wav);
+                    const writeText = (offset, text) => [...text].forEach((character, index) => view.setUint8(offset + index, character.charCodeAt(0)));
+                    writeText(0, 'RIFF');
+                    view.setUint32(4, 36 + samples.length * 2, true);
+                    writeText(8, 'WAVE');
+                    writeText(12, 'fmt ');
+                    view.setUint32(16, 16, true);
+                    view.setUint16(20, 1, true);
+                    view.setUint16(22, 1, true);
+                    view.setUint32(24, sampleRate, true);
+                    view.setUint32(28, sampleRate * 2, true);
+                    view.setUint16(32, 2, true);
+                    view.setUint16(34, 16, true);
+                    writeText(36, 'data');
+                    view.setUint32(40, samples.length * 2, true);
+                    for (let index = 0; index < samples.length; index += 1) {
+                        const sample = Math.max(-1, Math.min(1, samples[index]));
+                        view.setInt16(44 + index * 2, sample < 0 ? sample * 0x8000 : sample * 0x7fff, true);
+                    }
+                    return new Blob([wav], { type: 'audio/wav' });
+                } finally {
+                    await decoder.close().catch(() => { });
+                }
+            };
+            const transcribeRecording = async (recording) => {
+                const endpoint = document.querySelector('script[data-daynize-tutor]')?.dataset.transcriptionEndpoint || 'https://api.daynize.co.kr/transcribe';
+                const wav = await makeWavBlob(recording);
+                if (wav.size > 8 * 1024 * 1024) throw new Error('녹음이 너무 깁니다. 짧게 나누어 다시 녹음해 주세요.');
+                const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'audio/wav' }, body: wav, cache: 'no-store' });
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok) throw new Error(result.error || '음성을 글자로 변환하지 못했습니다.');
+                return typeof result.transcript === 'string' ? result.transcript.trim() : '';
+            };
+            const finishRecording = async () => {
+                let recording;
                 if (recordingChunks.length) {
-                    const blob = new Blob(recordingChunks, { type: recorder?.mimeType || 'audio/webm' });
+                    recording = new Blob(recordingChunks, { type: recorder?.mimeType || 'audio/webm' });
                     if (playback.src) URL.revokeObjectURL(playback.src);
-                    playback.src = URL.createObjectURL(blob);
+                    playback.src = URL.createObjectURL(recording);
                     playback.hidden = false;
                     playbackButton.disabled = false;
+                } else {
+                    voiceStatus.textContent = '녹음 파일을 만들지 못했어요. 브라우저의 녹음 지원 여부를 확인해 주세요.';
+                }
+                const hasBrowserTranscript = finalizedTranscript.trim().length > 0;
+                if (recording && !hasBrowserTranscript && cloudTranscriptionConsent.checked) {
+                    recordButton.disabled = true;
+                    recordLabel.textContent = '음성 변환 중';
+                    recognitionFailureMessage = '녹음 음성을 Google Gemini로 보내 문장으로 변환하고 있어요.';
+                    renderTranscript();
+                    voiceStatus.textContent = recognitionFailureMessage;
+                    try {
+                        const transcriptText = await transcribeRecording(recording);
+                        finalizedTranscript = transcriptText;
+                        interimTranscript = '';
+                        recognitionFailureMessage = transcriptText ? '' : '음성에서 인식된 문장이 없습니다. 마이크에 가까이 대고 다시 녹음해 주세요.';
+                        voiceStatus.textContent = transcriptText ? '녹음 음성의 문장 변환이 완료되었어요.' : recognitionFailureMessage;
+                    } catch (error) {
+                        recognitionFailureMessage = error.message || '음성 변환에 실패했어요. 인터넷 연결을 확인하고 다시 시도해 주세요.';
+                        voiceStatus.textContent = `${recognitionFailureMessage} 녹음 파일은 기기에서 재생할 수 있어요.`;
+                    }
+                } else if (recording) {
                     voiceStatus.textContent = recognitionFailureMessage
                         ? `${recognitionFailureMessage} 녹음 파일은 저장되었어요.`
                         : '녹음이 저장되었어요. 내 발음 들어보기를 눌러 확인해 보세요.';
-                } else {
-                    voiceStatus.textContent = '녹음 파일을 만들지 못했어요. 브라우저의 녹음 지원 여부를 확인해 주세요.';
                 }
                 isRecording = false;
                 recordingIndicator.hidden = true;
@@ -3537,13 +3637,16 @@
                 mediaStream = null;
                 recorder = null;
                 recognition = null;
+                recognitionEnded = true;
                 recordLabel.textContent = '녹음 시작';
                 recordButton.disabled = false;
             };
             const startRecognition = () => {
                 if (!SpeechRecognition) {
                     recognitionCanRestart = false;
-                    recognitionFailureMessage = '이 브라우저는 음성 인식을 지원하지 않습니다. 인앱 브라우저 대신 Safari 또는 Chrome에서 열어 주세요. 녹음과 재생은 계속 사용할 수 있어요.';
+                    recognitionFailureMessage = cloudTranscriptionConsent.checked
+                        ? '이 브라우저는 실시간 음성 인식을 지원하지 않아 녹음 후 Google Gemini로 변환합니다.'
+                        : '이 브라우저는 실시간 음성 인식을 지원하지 않습니다. Google 변환에 동의하면 녹음 후 문장을 표시할 수 있어요.';
                     renderTranscript();
                     voiceStatus.textContent = recognitionFailureMessage;
                     return;
@@ -3647,25 +3750,53 @@
                 isRecording = true;
                 window.speechSynthesis?.cancel();
                 voiceStatus.textContent = '마이크 권한을 확인하고 있어요. 브라우저 안내가 나오면 허용해 주세요.';
-                startRecognition();
+                const useLiveTranscription = cloudTranscriptionConsent.checked && typeof window.startVoiceStudioLiveTranscription === 'function';
+                if (!useLiveTranscription) startRecognition();
                 let permissionAbandoned = false;
                 try {
-                    let permissionTimeout;
-                    const permissionRequest = navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
-                        if (permissionAbandoned) stream.getTracks().forEach((track) => track.stop());
-                        return stream;
-                    });
-                    const permissionDeadline = new Promise((_, reject) => {
-                        permissionTimeout = setTimeout(() => {
-                            const error = new Error('The browser did not resolve the microphone permission request.');
-                            error.name = 'PermissionPromptTimeoutError';
-                            reject(error);
-                        }, 10000);
-                    });
-                    try {
-                        mediaStream = await Promise.race([permissionRequest, permissionDeadline]);
-                    } finally {
-                        clearTimeout(permissionTimeout);
+                    if (useLiveTranscription) {
+                        transcript.textContent = 'Google Gemini 실시간 음성 인식에 연결하고 있습니다...';
+                        try {
+                            liveTranscription = await window.startVoiceStudioLiveTranscription({
+                                onTranscript: detail => {
+                                    const text = detail.text?.trim();
+                                    if (!text || finalizedTranscript.trim().endsWith(text)) return;
+                                    finalizedTranscript = `${finalizedTranscript.trim()} ${text}`.trim();
+                                    interimTranscript = '';
+                                    recognitionFailureMessage = '';
+                                    renderTranscript();
+                                    voiceStatus.textContent = '실시간 인식 문장을 발음 노트에 표시하고 있어요.';
+                                },
+                                onState: detail => {
+                                    if (detail.state === 'CONNECTED') voiceStatus.textContent = '영어로 말씀하시면 인식 문장이 여기에 표시됩니다.';
+                                    else if (detail.state === 'RECONNECTING') voiceStatus.textContent = '실시간 인식을 다시 연결하고 있어요. 녹음은 계속됩니다.';
+                                    else if (detail.state === 'ERROR') voiceStatus.textContent = '실시간 연결이 불안정합니다. 녹음을 마치면 다시 변환을 시도할게요.';
+                                }
+                            });
+                            mediaStream = liveTranscription.stream;
+                        } catch (error) {
+                            recognitionFailureMessage = `실시간 전사에 연결하지 못했습니다. 녹음 후 다시 변환할게요. (${error.message})`;
+                            voiceStatus.textContent = recognitionFailureMessage;
+                            mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                        }
+                    } else {
+                        let permissionTimeout;
+                        const permissionRequest = navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+                            if (permissionAbandoned) stream.getTracks().forEach((track) => track.stop());
+                            return stream;
+                        });
+                        const permissionDeadline = new Promise((_, reject) => {
+                            permissionTimeout = setTimeout(() => {
+                                const error = new Error('The browser did not resolve the microphone permission request.');
+                                error.name = 'PermissionPromptTimeoutError';
+                                reject(error);
+                            }, 10000);
+                        });
+                        try {
+                            mediaStream = await Promise.race([permissionRequest, permissionDeadline]);
+                        } finally {
+                            clearTimeout(permissionTimeout);
+                        }
                     }
                     const mimeType = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4'].find((type) => MediaRecorder.isTypeSupported(type));
                     recorder = mimeType ? new MediaRecorder(mediaStream, { mimeType }) : new MediaRecorder(mediaStream);
@@ -3680,7 +3811,7 @@
                     recordingIndicator.hidden = false;
                     transcript.classList.add('is-listening');
                     renderTranscript();
-                    if (recognitionFailureMessage) voiceStatus.textContent = `${recognitionFailureMessage} 녹음 파일은 계속 저장됩니다.`;
+                    if (recognitionFailureMessage && !liveTranscription) voiceStatus.textContent = `${recognitionFailureMessage} 녹음 파일은 계속 저장됩니다.`;
                 } catch (error) {
                     permissionAbandoned = true;
                     isRecording = false;
@@ -3756,7 +3887,9 @@
             }, { once: true });
         })();
     </script>
-    <script type="module" src="./gemini-live-test/daynize-tutor.mjs" data-daynize-tutor></script>
+    <script type="module" src="./gemini-live-test/daynize-tutor.mjs" data-daynize-tutor
+        data-transcription-endpoint="https://api.daynize.co.kr/transcribe"></script>
+    <script type="module" src="./gemini-live-test/voice-studio-live.mjs"></script>
 </body>
 
 </html>

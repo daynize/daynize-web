@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { LiveService, createSetup, resolveWebSocketUrl } from '../live-service.mjs';
+import { LiveService, createSetup, createTranscriptionSetup, resolveWebSocketUrl } from '../live-service.mjs';
 
 class MockSocket {
     static OPEN = 1;
@@ -98,6 +98,16 @@ test('setup includes tutor voice and protocol waits for setupComplete', async ()
     await socket.message({ serverContent: { inputTranscription: { text: 'Hello' }, outputTranscription: { text: 'Welcome!' } } });
     assert.deepEqual(transcripts.map(item => [item.speaker, item.text]), [['user', 'Hello'], ['tutor', 'Welcome!']]);
     service.stop();
+});
+
+test('transcription-only setup requests text input transcription without spoken replies', () => {
+    const setup = createTranscriptionSetup();
+    assert.equal(setup.setup.model, 'models/gemini-2.5-flash-native-audio-latest');
+    assert.deepEqual(setup.setup.generationConfig.responseModalities, ['TEXT']);
+    assert.deepEqual(setup.setup.inputAudioTranscription, {});
+    assert.match(setup.setup.systemInstruction.parts[0].text, /Do not answer or converse/i);
+    assert.equal(setup.setup.realtimeInputConfig.automaticActivityDetection.silenceDurationMs, 200);
+    assert.equal(setup.setup.generationConfig.speechConfig, undefined);
 });
 
 test('transient disconnect reconnects; stopping cancels pending retries', async () => {

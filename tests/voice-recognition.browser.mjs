@@ -38,6 +38,7 @@ test('speech recognition updates the yellow transcript live and restores recordi
         const page = await browser.newPage();
         page.setDefaultTimeout(5000);
         await page.addInitScript(() => {
+            window.__disableVoiceStudioLive = true;
             Object.defineProperty(navigator, 'mediaDevices', {
                 configurable: true,
                 value: {
@@ -143,6 +144,153 @@ test('speech recognition updates the yellow transcript live and restores recordi
         assert.equal(await page.locator('#record-label').textContent(), '녹음 중지');
         await page.locator('#record-button').click();
         await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 시작');
+    } finally {
+        await browser?.close();
+        await new Promise((resolveClose) => server.close(resolveClose));
+    }
+});
+
+test('recording falls back to consented Gemini transcription when browser STT is unavailable', { timeout: 30000 }, async () => {
+    await new Promise((resolveReady) => server.listen(0, '127.0.0.1', resolveReady));
+    let browser;
+    try {
+        browser = await chromium.launch({ headless: true });
+        const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+        page.setDefaultTimeout(5000);
+        await page.addInitScript(() => {
+            window.__disableVoiceStudioLive = true;
+            Object.defineProperty(navigator, 'mediaDevices', {
+                configurable: true,
+                value: { getUserMedia: async () => ({ getTracks: () => [{ stop() { } }] }) }
+            });
+            class MockRecorder {
+                static isTypeSupported() { return true; }
+                constructor() { this.state = 'inactive'; this.mimeType = 'audio/mp4'; }
+                start() { this.state = 'recording'; }
+                stop() {
+                    this.state = 'inactive';
+                    queueMicrotask(() => {
+                        this.ondataavailable?.({ data: new Blob(['captured audio'], { type: this.mimeType }) });
+                        this.onstop?.();
+                    });
+                }
+            }
+            window.MediaRecorder = MockRecorder;
+            window.SpeechRecognition = undefined;
+            window.webkitSpeechRecognition = undefined;
+            window.AudioContext = class {
+                async decodeAudioData() {
+                    return { duration: 0.01 };
+                }
+                async close() { }
+            };
+            window.OfflineAudioContext = class {
+                constructor() { this.destination = {}; }
+                createBufferSource() { return { connect() { }, start() { } }; }
+                async startRendering() { return { getChannelData: () => new Float32Array(160) }; }
+            };
+            const originalFetch = window.fetch.bind(window);
+            window.__transcriptionRequest = null;
+            window.fetch = async (input, init) => {
+                if (new URL(input, location.href).pathname === '/transcribe') {
+                    window.__transcriptionRequest = {
+                        contentType: init.headers['Content-Type'],
+                        audioSize: init.body.size,
+                        wavHeader: [...new Uint8Array(await init.body.slice(0, 12).arrayBuffer())]
+                    };
+                    return new Response(JSON.stringify({ transcript: 'I would like a cup of tea.' }), {
+                        status: 200, headers: { 'Content-Type': 'application/json' }
+                    });
+                }
+                return originalFetch(input, init);
+            };
+        });
+        await page.goto(`http://127.0.0.1:${server.address().port}/`, { waitUntil: 'domcontentloaded' });
+        await page.locator('#category-track [data-category-id="speaking"]').waitFor();
+        const consent = page.locator('#cloud-transcription-consent');
+        assert.equal(await consent.isChecked(), false);
+        await page.locator('#record-button').click();
+        await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 중지');
+        await page.locator('#record-button').click();
+        await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 시작');
+        assert.equal(await page.evaluate(() => window.__transcriptionRequest), null);
+        assert.match(await page.locator('#transcript').textContent(), /Google 변환에 동의/);
+
+        await consent.check();
+        await page.locator('#record-button').click();
+        await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 중지');
+        assert.match(await page.locator('#voice-status').textContent(), /Google Gemini/);
+        await page.locator('#record-button').click();
+        await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 시작');
+        assert.equal(await page.locator('#transcript').textContent(), 'I would like a cup of tea.');
+        assert.equal(await page.locator('#voice-status').textContent(), '녹음 음성의 문장 변환이 완료되었어요.');
+        assert.deepEqual(await page.evaluate(() => window.__transcriptionRequest.wavHeader.slice(0, 12)), [82, 73, 70, 70, 100, 1, 0, 0, 87, 65, 86, 69]);
+        assert.equal(await page.evaluate(() => window.__transcriptionRequest.contentType), 'audio/wav');
+        await page.close();
+    } finally {
+        await browser?.close();
+        await new Promise((resolveClose) => server.close(resolveClose));
+    }
+});
+
+test('consented live transcription updates the pronunciation note before recording stops', { timeout: 30000 }, async () => {
+    await new Promise((resolveReady) => server.listen(0, '127.0.0.1', resolveReady));
+    let browser;
+    try {
+        browser = await chromium.launch({ headless: true });
+        const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+        page.setDefaultTimeout(5000);
+        await page.addInitScript(() => {
+            window.__disableVoiceStudioLive = true;
+            window.__liveFallbackCalls = 0;
+            window.startVoiceStudioLiveTranscription = async ({ onTranscript, onState }) => {
+                onState({ state: 'CONNECTED' });
+                window.__emitVoiceTranscript = onTranscript;
+                return { stream: { getTracks: () => [{ stop() { } }] }, stop() { window.__liveStopped = true; } };
+            };
+            Object.defineProperty(navigator, 'mediaDevices', {
+                configurable: true,
+                value: { getUserMedia: async () => { throw new Error('Live stream should be reused'); } }
+            });
+            window.SpeechRecognition = undefined;
+            window.webkitSpeechRecognition = undefined;
+            class MockRecorder {
+                static isTypeSupported() { return true; }
+                constructor() { this.state = 'inactive'; this.mimeType = 'audio/mp4'; }
+                start() { this.state = 'recording'; }
+                stop() {
+                    this.state = 'inactive';
+                    queueMicrotask(() => {
+                        this.ondataavailable?.({ data: new Blob(['captured audio'], { type: this.mimeType }) });
+                        this.onstop?.();
+                    });
+                }
+            }
+            window.MediaRecorder = MockRecorder;
+            const originalFetch = window.fetch.bind(window);
+            window.fetch = async (input, init) => {
+                if (new URL(input, location.href).pathname === '/transcribe') {
+                    window.__liveFallbackCalls += 1;
+                    return new Response(JSON.stringify({ transcript: 'duplicate transcript' }), { status: 200 });
+                }
+                return originalFetch(input, init);
+            };
+        });
+        await page.goto(`http://127.0.0.1:${server.address().port}/`, { waitUntil: 'domcontentloaded' });
+        await page.locator('#category-track [data-category-id="speaking"]').waitFor();
+        await page.locator('#cloud-transcription-consent').check();
+        await page.locator('#record-button').click();
+        await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 중지');
+        assert.equal(await page.locator('#transcript').textContent(), '음성을 듣고 있습니다. 영어로 말씀해 주세요.');
+        await page.evaluate(() => window.__emitVoiceTranscript({ text: 'I can hear you clearly now.' }));
+        assert.equal(await page.locator('#transcript').textContent(), 'I can hear you clearly now.');
+        assert.equal(await page.locator('#record-label').textContent(), '녹음 중지');
+        await page.locator('#record-button').click();
+        await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 시작');
+        assert.equal(await page.locator('#transcript').textContent(), 'I can hear you clearly now.');
+        assert.equal(await page.evaluate(() => window.__liveStopped), true);
+        assert.equal(await page.evaluate(() => window.__liveFallbackCalls), 0);
+        await page.close();
     } finally {
         await browser?.close();
         await new Promise((resolveClose) => server.close(resolveClose));
