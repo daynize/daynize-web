@@ -1,6 +1,6 @@
 export const TUTOR_INSTRUCTION = 'You are a warm, patient, and empathetic English conversation tutor for senior learners on Daynize (데이나이즈). Speak clearly, concisely, and encouragingly in a gentle tone. Mix Korean explanations when helpful, but encourage natural English conversation.';
 
-export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voice = 'Kore') {
+export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voice = 'Kore', { silenceDurationMs = 300, prefixPaddingMs = 200 } = {}) {
     return {
         setup: {
             model: model.startsWith('models/') ? model : `models/${model}`,
@@ -17,8 +17,8 @@ export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voic
                     disabled: false,
                     startOfSpeechSensitivity: 'START_SENSITIVITY_HIGH',
                     endOfSpeechSensitivity: 'END_SENSITIVITY_HIGH',
-                    prefixPaddingMs: 200,
-                    silenceDurationMs: 450
+                    prefixPaddingMs,
+                    silenceDurationMs: Math.min(1000, silenceDurationMs)
                 }
             },
             sessionResumption: {},
@@ -42,11 +42,11 @@ export function resolveWebSocketUrl({ endpoint, env = globalThis.process?.env, c
 }
 
 export class LiveService extends EventTarget {
-    constructor({ endpoint, mode = 'proxy', apiKey, model, voice = 'Kore', protocol = 'audio', maxRetries = 10, retryDelay = 1000, maxRetryDelay = 30000, timeout = 20000, recoveryTimeout = 60000, stableConnectionTime = 30000, heartbeatInterval = 20000, heartbeatTimeout = 10000, onConnectionState, WebSocketClass = globalThis.WebSocket } = {}) {
+    constructor({ endpoint, mode = 'proxy', apiKey, model, voice = 'Kore', protocol = 'audio', silenceDurationMs = 300, maxRetries = 10, retryDelay = 1000, maxRetryDelay = 30000, timeout = 20000, recoveryTimeout = 60000, stableConnectionTime = 30000, heartbeatInterval = 20000, heartbeatTimeout = 10000, onConnectionState, WebSocketClass = globalThis.WebSocket } = {}) {
         super();
         if (!Number.isInteger(maxRetries) || maxRetries < 0 || [retryDelay, maxRetryDelay, timeout, heartbeatInterval, heartbeatTimeout].some(value => !Number.isFinite(value) || value <= 0)) throw new TypeError('Invalid connection retry or timeout options.');
         if ([recoveryTimeout, stableConnectionTime].some(value => !Number.isFinite(value) || value <= 0)) throw new TypeError('Invalid recovery timeout options.');
-        this.options = { endpoint, mode, apiKey, model, voice, protocol, maxRetries, retryDelay, maxRetryDelay, timeout, recoveryTimeout, stableConnectionTime, heartbeatInterval, heartbeatTimeout };
+        this.options = { endpoint, mode, apiKey, model, voice, protocol, silenceDurationMs, maxRetries, retryDelay, maxRetryDelay, timeout, recoveryTimeout, stableConnectionTime, heartbeatInterval, heartbeatTimeout };
         this.onConnectionState = onConnectionState;
         this.connectionState = CONNECTION_STATES.DISCONNECTED;
         this.Socket = WebSocketClass;
@@ -164,7 +164,7 @@ export class LiveService extends EventTarget {
             socket.onopen = () => {
                 if (!current()) return;
                 if (this.options.mode === 'direct') {
-                    const setup = createSetup(this.options.model, this.options.voice);
+                    const setup = createSetup(this.options.model, this.options.voice, { silenceDurationMs: this.options.silenceDurationMs });
                     if (this.resumeHandle) setup.setup.sessionResumption.handle = this.resumeHandle;
                     try { socket.send(JSON.stringify(setup)); }
                     catch { disconnect('Setup send failed'); }

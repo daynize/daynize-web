@@ -38,6 +38,7 @@ function createRelayServer(options = {}) {
         if (new URL(origin).origin !== origin || !origin.startsWith('https://')) throw new Error('ALLOWED_ORIGINS must contain exact HTTPS origins.');
     }
     const publicOrigin = options.publicOrigin ?? process.env.PUBLIC_ORIGIN;
+    const vadSilenceMs = Math.min(1000, Number(options.vadSilenceMs ?? process.env.VAD_SILENCE_MS) || 300);
     const authorizeRequest = options.authorizeRequest;
     const maxConnections = options.maxConnections ?? 8;
     const maxSessionMs = options.maxSessionMs ?? 10 * 60 * 1000;
@@ -189,7 +190,7 @@ function createRelayServer(options = {}) {
             try {
                 const { createSetup } = await import('./live-service.mjs');
                 if (ended) return stopUpstream();
-                const setup = createSetup(model, requestedVoice);
+                const setup = createSetup(model, requestedVoice, { silenceDurationMs: vadSilenceMs });
                 if (resumeHandle) setup.setup.sessionResumption.handle = resumeHandle;
                 upstream.send(JSON.stringify(setup));
             } catch {

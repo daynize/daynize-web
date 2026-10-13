@@ -161,8 +161,9 @@ export class AudioEngine extends EventTarget {
         if (source.playbackRate) source.playbackRate.value = this.playbackRate;
         const duration = buffer.duration / this.playbackRate;
         source.connect(gain).connect(this.outputAnalyser);
-        const start = Math.max(this.nextPlayback, context.currentTime + (this.sources.size ? 0.005 : 0.04));
-        if (!this.sources.size) {
+        const isFirstChunk = !this.sources.size;
+        const start = Math.max(this.nextPlayback, context.currentTime);
+        if (isFirstChunk) {
             gain.gain.setValueAtTime(0, start);
             gain.gain.linearRampToValueAtTime(1, start + Math.min(0.003, buffer.duration / 2));
         }

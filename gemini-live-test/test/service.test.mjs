@@ -75,7 +75,7 @@ test('setup includes tutor voice and protocol waits for setupComplete', async ()
         startOfSpeechSensitivity: 'START_SENSITIVITY_HIGH',
         endOfSpeechSensitivity: 'END_SENSITIVITY_HIGH',
         prefixPaddingMs: 200,
-        silenceDurationMs: 450
+        silenceDurationMs: 300
     });
     const service = new LiveService({ endpoint: 'wss://example.test/ws', WebSocketClass: MockSocket });
     const started = service.start();
