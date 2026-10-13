@@ -3542,7 +3542,7 @@
                     } else resolve();
                 });
                 await Promise.all([recordingStopped, stopRecognition()]);
-                liveTranscription?.stop();
+                await liveTranscription?.stop();
                 liveTranscription = null;
                 await finishRecording();
             };
@@ -3591,7 +3591,7 @@
                 const endpoint = document.querySelector('script[data-daynize-tutor]')?.dataset.transcriptionEndpoint || 'https://api.daynize.co.kr/transcribe';
                 const wav = await makeWavBlob(recording);
                 if (wav.size > 8 * 1024 * 1024) throw new Error('녹음이 너무 깁니다. 짧게 나누어 다시 녹음해 주세요.');
-                const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'audio/wav' }, body: wav, cache: 'no-store' });
+                const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'audio/wav' }, body: wav, cache: 'no-store', signal: AbortSignal.timeout(35_000) });
                 const result = await response.json().catch(() => ({}));
                 if (!response.ok) throw new Error(result.error || '음성을 글자로 변환하지 못했습니다.');
                 return typeof result.transcript === 'string' ? result.transcript.trim() : '';
@@ -3621,7 +3621,11 @@
                         recognitionFailureMessage = transcriptText ? '' : '음성에서 인식된 문장이 없습니다. 마이크에 가까이 대고 다시 녹음해 주세요.';
                         voiceStatus.textContent = transcriptText ? '녹음 음성의 문장 변환이 완료되었어요.' : recognitionFailureMessage;
                     } catch (error) {
-                        recognitionFailureMessage = error.message || '음성 변환에 실패했어요. 인터넷 연결을 확인하고 다시 시도해 주세요.';
+                        recognitionFailureMessage = error.name === 'TimeoutError'
+                            ? '음성 변환 시간이 초과됐어요. 네트워크를 확인한 뒤 짧게 다시 녹음해 주세요.'
+                            : error instanceof TypeError
+                                ? '음성 인식 서버에 연결하지 못했어요. 네트워크를 확인하고 다시 시도해 주세요.'
+                                : error.message || '음성 변환에 실패했어요. 다시 시도해 주세요.';
                         voiceStatus.textContent = `${recognitionFailureMessage} 녹음 파일은 기기에서 재생할 수 있어요.`;
                     }
                 } else if (recording) {

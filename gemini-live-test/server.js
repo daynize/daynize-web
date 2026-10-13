@@ -25,7 +25,7 @@ function createRelayServer(options = {}) {
         throw new TypeError('GEMINI_MODEL must be a model ID with at most one models/ prefix.');
     }
     const model = rawModel.startsWith('models/') ? rawModel : `models/${rawModel}`;
-    const rawTranscriptionModel = options.transcriptionModel ?? process.env.GEMINI_TRANSCRIPTION_MODEL ?? 'gemini-2.5-flash';
+    const rawTranscriptionModel = options.transcriptionModel ?? process.env.GEMINI_TRANSCRIPTION_MODEL ?? 'gemini-3.8-flash';
     if (typeof rawTranscriptionModel !== 'string' || !/^(models\/)?[A-Za-z0-9][A-Za-z0-9._-]*$/.test(rawTranscriptionModel)) {
         throw new TypeError('GEMINI_TRANSCRIPTION_MODEL must be a model ID with at most one models/ prefix.');
     }

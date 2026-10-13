@@ -218,7 +218,7 @@ test('transcription endpoint validates origin and WAV then returns Gemini text w
     assert.equal(response.headers.get('cache-control'), 'no-store');
     assert.equal(response.headers.get('access-control-allow-origin'), 'https://www.daynize.co.kr');
     assert.deepEqual(await response.json(), { transcript: 'I would like a cup of tea.' });
-    assert.match(upstreamRequest.url, /models\/gemini-2\.5-flash:generateContent/);
+    assert.match(upstreamRequest.url, /models\/gemini-3\.8-flash:generateContent/);
     assert.equal(new URL(upstreamRequest.url).searchParams.get('key'), 'private-test-key');
     assert.equal(upstreamRequest.body.contents[0].parts[1].inlineData.mimeType, 'audio/wav');
 

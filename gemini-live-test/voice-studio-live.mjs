@@ -19,7 +19,10 @@ export async function startVoiceStudioLiveTranscription({ onTranscript, onState 
         recoveryTimeout: 30000,
         stableConnectionTime: 30000
     });
-    audio.addEventListener('pcm', event => service.sendAudio(event.detail));
+    let sentFrames = 0;
+    audio.addEventListener('pcm', event => {
+        if (service.sendAudio(event.detail)) sentFrames += 1;
+    });
     service.addEventListener('transcript', event => {
         if (event.detail.speaker === 'user') onTranscript?.(event.detail);
     });
@@ -38,8 +41,13 @@ export async function startVoiceStudioLiveTranscription({ onTranscript, onState 
 
     return {
         stream: audio.stream,
-        stop() {
+        async stop() {
             audio.setStreaming(false);
+            if (sentFrames && service.ready) {
+                const completed = new Promise(resolve => service.addEventListener('turnComplete', resolve, { once: true }));
+                service.endAudio();
+                await Promise.race([completed, new Promise(resolve => setTimeout(resolve, 2000))]);
+            }
             service.stop();
             audio.stop();
         }
