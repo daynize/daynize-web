@@ -3,7 +3,7 @@
         "categoryId": "basic-course",
         "categoryName": "BASIC COURSE",
         "categoryDesc": "동사 중심으로 영어의 구조를 이해하는 21강. 한 강의, 한 원리, 열 문장으로 익힙니다.",
-        "thumbnail": "IMAGE/basic-course/basic-01.jpg",
+        "thumbnail": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=85",
         "curriculumVersion": 2,
         "lessons": [
             {
