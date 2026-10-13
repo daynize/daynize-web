@@ -3457,10 +3457,12 @@
             let mediaStream = null;
             let recordingChunks = [];
             let recognition = null;
+            let recognitionRestartTimer = null;
             let finalizedTranscript = '';
             let interimTranscript = '';
             let isRecording = false;
             let recognitionEnded = true;
+            let recognitionCanRestart = true;
             let resolveRecognitionEnd = null;
             let recognitionFailureMessage = '';
             const mobileUserAgent = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)
@@ -3540,19 +3542,22 @@
             };
             const startRecognition = () => {
                 if (!SpeechRecognition) {
+                    recognitionCanRestart = false;
                     recognitionFailureMessage = '이 브라우저는 음성 인식을 지원하지 않습니다. 인앱 브라우저 대신 Safari 또는 Chrome에서 열어 주세요. 녹음과 재생은 계속 사용할 수 있어요.';
                     renderTranscript();
                     voiceStatus.textContent = recognitionFailureMessage;
                     return;
                 }
+                if (recognitionRestartTimer) clearTimeout(recognitionRestartTimer);
                 try {
                     const activeRecognition = new SpeechRecognition();
                     recognition = activeRecognition;
                     activeRecognition.lang = 'en-US';
-                    activeRecognition.continuous = false;
-                    activeRecognition.interimResults = true;
+                    activeRecognition.continuous = !mobileUserAgent;
+                    activeRecognition.interimResults = !iosUserAgent;
                     activeRecognition.maxAlternatives = 1;
                     attachRecognitionHandlers(activeRecognition);
+                    recognitionCanRestart = true;
                     recognitionEnded = false;
                     activeRecognition.start();
                 } catch (error) {
@@ -3575,13 +3580,17 @@
                     network: '음성 인식 서버에 연결하지 못했어요. 인터넷 연결을 확인하고 다시 녹음해 주세요.',
                     aborted: '음성 인식이 중단되었어요. 녹음 시작을 다시 눌러 주세요.'
                 };
+                recognitionCanRestart = false;
                 recognitionFailureMessage = messages[errorCode] || '음성 인식을 시작하지 못했어요. Safari 또는 Chrome에서 권한을 확인하고 다시 시도해 주세요.';
                 renderTranscript();
                 voiceStatus.textContent = `${recognitionFailureMessage} 녹음 파일은 계속 저장됩니다.`;
             };
             const attachRecognitionHandlers = (activeRecognition) => {
                 activeRecognition.onstart = () => {
-                    if (recognition === activeRecognition && isRecording) voiceStatus.textContent = '음성을 듣고 있어요. 영어 문장을 편하게 읽어 주세요.';
+                    if (recognition === activeRecognition && isRecording) {
+                        recognitionFailureMessage = '';
+                        voiceStatus.textContent = '음성을 듣고 있어요. 영어 문장을 편하게 읽어 주세요.';
+                    }
                 };
                 activeRecognition.onresult = (event) => {
                     if (recognition !== activeRecognition) return;
@@ -3599,6 +3608,12 @@
                 activeRecognition.onerror = (event) => {
                     if (recognition !== activeRecognition) return;
                     if (event.error === 'aborted' && !isRecording) return;
+                    if (event.error === 'no-speech') {
+                        recognitionFailureMessage = '음성이 감지되지 않았어요. 마이크에 가까이 대고 영어로 말씀해 주세요.';
+                        renderTranscript();
+                        voiceStatus.textContent = recognitionFailureMessage;
+                        return;
+                    }
                     handleRecognitionFailure(event.error, event);
                 };
                 activeRecognition.onend = () => {
@@ -3606,6 +3621,13 @@
                     recognitionEnded = true;
                     resolveRecognitionEnd?.();
                     renderTranscript();
+                    if (isRecording && recognitionCanRestart && mobileUserAgent) {
+                        recognitionRestartTimer = setTimeout(() => {
+                            recognitionRestartTimer = null;
+                            if (isRecording && recognitionCanRestart) startRecognition();
+                        }, 250);
+                        return;
+                    }
                     if (isRecording && !recognitionFailureMessage) voiceStatus.textContent = '한 문장 인식이 완료되었어요. 녹음 중지를 눌러 발음을 저장해 주세요.';
                 };
             };
@@ -3621,6 +3643,7 @@
                 recognitionFailureMessage = '';
                 finalizedTranscript = '';
                 interimTranscript = '';
+                recognitionCanRestart = true;
                 isRecording = true;
                 window.speechSynthesis?.cancel();
                 voiceStatus.textContent = '마이크 권한을 확인하고 있어요. 브라우저 안내가 나오면 허용해 주세요.';

@@ -106,7 +106,7 @@ test('speech recognition updates the yellow transcript live and restores recordi
         await page.locator('#record-button').click();
         await page.waitForFunction(() => window.__mockRecognitions?.length === 1);
         assert.deepEqual(await page.evaluate(() => window.__mockRecognitions[0].config), {
-            lang: 'en-US', continuous: false, interimResults: true
+            lang: 'en-US', continuous: true, interimResults: true
         });
         assert.equal(await page.locator('#record-label').textContent(), '녹음 중지');
         assert.equal(await page.locator('#transcript').textContent(), '음성을 듣고 있습니다. 영어로 말씀해 주세요.');
@@ -197,7 +197,7 @@ test('iOS Safari and mobile Chrome start in the click gesture and preserve delay
                 }, true);
                 const MockMobileRecognition = class {
                     start() {
-                        if (!window.__insideClick || (window.__mediaRequests || 0) !== window.__mobileRecognitions.length) throw new Error('Recognition must start synchronously before microphone acquisition');
+                        if (window.__mobileRecognitions.length === 0 && (!window.__insideClick || window.__mediaRequests)) throw new Error('Initial recognition must start synchronously before microphone acquisition');
                         this.config = { lang: this.lang, continuous: this.continuous, interimResults: this.interimResults };
                         window.__mobileRecognitions.push(this);
                         this.onstart?.();
@@ -229,7 +229,7 @@ test('iOS Safari and mobile Chrome start in the click gesture and preserve delay
                 }));
                 throw new Error(`${label} recognition did not start: ${JSON.stringify(state)}; ${error.message}`);
             });
-            const expected = { lang: 'en-US', continuous: false, interimResults: true };
+            const expected = { lang: 'en-US', continuous: false, interimResults: label !== 'iOS Safari' };
             assert.deepEqual(await page.evaluate(() => window.__mobileRecognitions[0].config), expected, label);
             await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 중지');
             await page.evaluate(() => window.__mobileRecognitions[0].emitResult('Can you drop', false));
@@ -275,10 +275,12 @@ test('iOS Safari and mobile Chrome start in the click gesture and preserve delay
                 activeRecognition.emitResult('Keep my interim words', false);
                 activeRecognition.onend();
             });
+            await page.waitForFunction(() => window.__mobileRecognitions.length === 6);
+            assert.deepEqual(await page.evaluate(() => window.__mobileRecognitions.at(-1).config), expected, label);
             await page.locator('#record-button').click();
             await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 시작');
             assert.equal(await page.locator('#transcript').textContent(), 'Keep my interim words');
-            assert.equal(await page.evaluate(() => window.__mobileRecognitions.length), 5);
+            assert.equal(await page.evaluate(() => window.__mobileRecognitions.length), 6);
             await page.close();
         }
     } finally {
