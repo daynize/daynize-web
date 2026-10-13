@@ -27,7 +27,7 @@ export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voic
     };
 }
 
-export function createTranscriptionSetup(model = 'gemini-2.5-flash-native-audio-latest', { silenceDurationMs = 200, prefixPaddingMs = 200 } = {}) {
+export function createTranscriptionSetup(model = 'gemini-2.5-flash-native-audio-latest', { silenceDurationMs = 500, prefixPaddingMs = 200 } = {}) {
     return {
         setup: {
             model: model.startsWith('models/') ? model : `models/${model}`,
@@ -44,7 +44,7 @@ export function createTranscriptionSetup(model = 'gemini-2.5-flash-native-audio-
                     startOfSpeechSensitivity: 'START_SENSITIVITY_HIGH',
                     endOfSpeechSensitivity: 'END_SENSITIVITY_HIGH',
                     prefixPaddingMs,
-                    silenceDurationMs: Math.min(1000, silenceDurationMs)
+                    silenceDurationMs: Math.min(1500, silenceDurationMs)
                 }
             }
         }

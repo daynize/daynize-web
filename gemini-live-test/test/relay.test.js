@@ -111,6 +111,7 @@ test('transcription websocket enables input transcription and relays PCM without
     assert.deepEqual(setup.setup.generationConfig.responseModalities, ['AUDIO']);
     assert.deepEqual(setup.setup.inputAudioTranscription, {});
     assert.equal(setup.setup.generationConfig.speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName, 'Kore');
+    assert.equal(setup.setup.realtimeInputConfig.automaticActivityDetection.silenceDurationMs, 500);
     const ready = nextMessage(client);
     gemini.send(JSON.stringify({ setupComplete: {} }));
     await ready;

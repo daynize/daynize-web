@@ -44,6 +44,7 @@ function createRelayServer(options = {}) {
     }
     const publicOrigin = options.publicOrigin ?? process.env.PUBLIC_ORIGIN;
     const vadSilenceMs = Math.min(1000, Number(options.vadSilenceMs ?? process.env.VAD_SILENCE_MS) || 200);
+    const transcriptionSilenceMs = options.transcriptionSilenceMs ?? (Number(process.env.TRANSCRIPTION_VAD_SILENCE_MS) || 500);
     const authorizeRequest = options.authorizeRequest;
     const maxConnections = options.maxConnections ?? 8;
     const maxSessionMs = options.maxSessionMs ?? 10 * 60 * 1000;
@@ -52,6 +53,9 @@ function createRelayServer(options = {}) {
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
     if (!Number.isInteger(maxTranscriptionBytes) || maxTranscriptionBytes < 44 || !Number.isInteger(maxTranscriptionsPerMinute) || maxTranscriptionsPerMinute < 1) {
         throw new Error('Invalid transcription limits.');
+    }
+    if (!Number.isInteger(transcriptionSilenceMs) || transcriptionSilenceMs < 100 || transcriptionSilenceMs > 1500) {
+        throw new Error('TRANSCRIPTION_VAD_SILENCE_MS must be an integer between 100 and 1500.');
     }
     const heartbeatInterval = options.heartbeatInterval ?? 20000;
     if (!Number.isFinite(heartbeatInterval) || heartbeatInterval <= 0) throw new Error('Invalid heartbeat interval.');
@@ -306,7 +310,7 @@ function createRelayServer(options = {}) {
                 const { createSetup, createTranscriptionSetup } = await import('./live-service.mjs');
                 if (ended) return stopUpstream();
                 const setup = transcriptionOnly
-                    ? createTranscriptionSetup(options.transcriptionLiveModel ?? process.env.GEMINI_TRANSCRIPTION_LIVE_MODEL ?? DEFAULT_MODEL, { silenceDurationMs: vadSilenceMs })
+                    ? createTranscriptionSetup(options.transcriptionLiveModel ?? process.env.GEMINI_TRANSCRIPTION_LIVE_MODEL ?? DEFAULT_MODEL, { silenceDurationMs: transcriptionSilenceMs })
                     : createSetup(model, requestedVoice, { silenceDurationMs: vadSilenceMs });
                 if (resumeHandle) setup.setup.sessionResumption.handle = resumeHandle;
                 upstream.send(JSON.stringify(setup));

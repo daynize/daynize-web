@@ -106,7 +106,7 @@ test('transcription-only setup requests text input transcription without spoken 
     assert.deepEqual(setup.setup.generationConfig.responseModalities, ['AUDIO']);
     assert.deepEqual(setup.setup.inputAudioTranscription, {});
     assert.match(setup.setup.systemInstruction.parts[0].text, /Do not answer or converse/i);
-    assert.equal(setup.setup.realtimeInputConfig.automaticActivityDetection.silenceDurationMs, 200);
+    assert.equal(setup.setup.realtimeInputConfig.automaticActivityDetection.silenceDurationMs, 500);
     assert.equal(setup.setup.generationConfig.speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName, 'Kore');
 });
 
