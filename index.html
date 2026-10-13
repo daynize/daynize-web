@@ -3763,13 +3763,18 @@
                         try {
                             liveTranscription = await window.startVoiceStudioLiveTranscription({
                                 onTranscript: detail => {
-                                    const text = detail.text?.trim();
-                                    if (!text || finalizedTranscript.trim().endsWith(text)) return;
-                                    finalizedTranscript = `${finalizedTranscript.trim()} ${text}`.trim();
-                                    interimTranscript = '';
+                                    const text = detail.text;
+                                    if (typeof text !== 'string' || !text.trim()) return;
+                                    interimTranscript += text;
                                     recognitionFailureMessage = '';
                                     renderTranscript();
                                     voiceStatus.textContent = '실시간 인식 문장을 발음 노트에 표시하고 있어요.';
+                                },
+                                onTurnComplete: () => {
+                                    const text = interimTranscript.trim();
+                                    if (text) finalizedTranscript = `${finalizedTranscript.trim()} ${text}`.trim();
+                                    interimTranscript = '';
+                                    renderTranscript();
                                 },
                                 onState: detail => {
                                     if (detail.state === 'CONNECTED') voiceStatus.textContent = '영어로 말씀하시면 인식 문장이 여기에 표시됩니다.';

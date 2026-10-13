@@ -243,10 +243,10 @@ test('consented live transcription updates the pronunciation note before recordi
         await page.addInitScript(() => {
             window.__disableVoiceStudioLive = true;
             window.__liveFallbackCalls = 0;
-            window.startVoiceStudioLiveTranscription = async ({ onTranscript, onState }) => {
+            window.startVoiceStudioLiveTranscription = async ({ onTranscript, onState, onTurnComplete }) => {
                 onState({ state: 'CONNECTED' });
                 window.__emitVoiceTranscript = onTranscript;
-                return { stream: { getTracks: () => [{ stop() { } }] }, stop() { window.__liveStopped = true; } };
+                return { stream: { getTracks: () => [{ stop() { } }] }, stop() { onTurnComplete(); window.__liveStopped = true; } };
             };
             Object.defineProperty(navigator, 'mediaDevices', {
                 configurable: true,
@@ -282,12 +282,16 @@ test('consented live transcription updates the pronunciation note before recordi
         await page.locator('#record-button').click();
         await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 중지');
         assert.equal(await page.locator('#transcript').textContent(), '음성을 듣고 있습니다. 영어로 말씀해 주세요.');
-        await page.evaluate(() => window.__emitVoiceTranscript({ text: 'I can hear you clearly now.' }));
-        assert.equal(await page.locator('#transcript').textContent(), 'I can hear you clearly now.');
+        await page.evaluate(() => {
+            window.__emitVoiceTranscript({ text: 'Thi' });
+            window.__emitVoiceTranscript({ text: 's ' });
+            window.__emitVoiceTranscript({ text: 'is a test.' });
+        });
+        assert.equal(await page.locator('#transcript').textContent(), 'This is a test.');
         assert.equal(await page.locator('#record-label').textContent(), '녹음 중지');
         await page.locator('#record-button').click();
         await page.waitForFunction(() => document.querySelector('#record-label').textContent === '녹음 시작');
-        assert.equal(await page.locator('#transcript').textContent(), 'I can hear you clearly now.');
+        assert.equal(await page.locator('#transcript').textContent(), 'This is a test.');
         assert.equal(await page.evaluate(() => window.__liveStopped), true);
         assert.equal(await page.evaluate(() => window.__liveFallbackCalls), 0);
         await page.close();

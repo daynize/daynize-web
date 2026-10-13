@@ -26,6 +26,7 @@ export async function startVoiceStudioLiveTranscription({ onTranscript, onState 
     service.addEventListener('transcript', event => {
         if (event.detail.speaker === 'user') onTranscript?.(event.detail);
     });
+    service.addEventListener('turnComplete', () => onTurnComplete?.());
     service.addEventListener('connectionstate', event => onState?.(event.detail));
     service.addEventListener('error', event => onState?.({ state: 'ERROR', message: event.detail.message }));
 
