@@ -86,7 +86,7 @@ The modules do not access browser globals until loaded in the browser. The custo
 
 ## Tutor Configuration
 
-Automatic activity detection uses high start-of-speech and end-of-speech sensitivity, 200ms prefix padding and 450ms silence duration. This favors recognizing quieter speech and earlier turn completion, at the cost of increased sensitivity to radio/background speech. Short pauses while thinking may end a turn sooner. The silence duration is not a total response-latency guarantee: continuous radio speech can still prevent silence detection. Restart existing conversations to apply setup changes.
+Automatic activity detection uses high start-of-speech and end-of-speech sensitivity, 200ms prefix padding and 200ms silence duration. This favors earlier turn completion, but short pauses while thinking may end a turn prematurely; increase `VAD_SILENCE_MS` if users are frequently cut off. The silence duration is not a total response-latency guarantee: continuous radio speech can still prevent silence detection. Restart existing conversations to apply setup changes.
 
 For the currently configured Gemini 2.5 native audio model, generationConfig.thinkingConfig.thinkingBudget is explicitly 0 to favor fast conversational responses over extended reasoning. Actual Gemini setup accepted this setting. Other models may have different supported thinking parameters; revalidate when switching models. This is not a guarantee of equal latency across devices or model load conditions.
 

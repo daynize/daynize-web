@@ -1,6 +1,6 @@
 export const TUTOR_INSTRUCTION = 'You are a warm, patient, and empathetic English conversation tutor for senior learners on Daynize (데이나이즈). Speak clearly, concisely, and encouragingly in a gentle tone. Mix Korean explanations when helpful, but encourage natural English conversation.';
 
-export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voice = 'Kore', { silenceDurationMs = 300, prefixPaddingMs = 200 } = {}) {
+export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voice = 'Kore', { silenceDurationMs = 200, prefixPaddingMs = 200 } = {}) {
     return {
         setup: {
             model: model.startsWith('models/') ? model : `models/${model}`,
@@ -42,7 +42,7 @@ export function resolveWebSocketUrl({ endpoint, env = globalThis.process?.env, c
 }
 
 export class LiveService extends EventTarget {
-    constructor({ endpoint, mode = 'proxy', apiKey, model, voice = 'Kore', protocol = 'audio', silenceDurationMs = 300, maxRetries = 10, retryDelay = 1000, maxRetryDelay = 30000, timeout = 20000, recoveryTimeout = 60000, stableConnectionTime = 30000, heartbeatInterval = 20000, heartbeatTimeout = 10000, onConnectionState, WebSocketClass = globalThis.WebSocket } = {}) {
+    constructor({ endpoint, mode = 'proxy', apiKey, model, voice = 'Kore', protocol = 'audio', silenceDurationMs = 200, maxRetries = 10, retryDelay = 1000, maxRetryDelay = 30000, timeout = 20000, recoveryTimeout = 60000, stableConnectionTime = 30000, heartbeatInterval = 20000, heartbeatTimeout = 10000, onConnectionState, WebSocketClass = globalThis.WebSocket } = {}) {
         super();
         if (!Number.isInteger(maxRetries) || maxRetries < 0 || [retryDelay, maxRetryDelay, timeout, heartbeatInterval, heartbeatTimeout].some(value => !Number.isFinite(value) || value <= 0)) throw new TypeError('Invalid connection retry or timeout options.');
         if ([recoveryTimeout, stableConnectionTime].some(value => !Number.isFinite(value) || value <= 0)) throw new TypeError('Invalid recovery timeout options.');
