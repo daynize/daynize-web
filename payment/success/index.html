@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f7f2">
+    <meta name="daynize-payment-api" content="https://api.daynize.co.kr">
+    <title>결제 확인 중 | 데이나이즈</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            --paper: #f8f7f2;
+            --ink: #202b27;
+            --muted: #59635d;
+            --sage: #345d4d;
+            --line: #deded5;
+            --serif: "Noto Serif KR", Georgia, serif;
+            --sans: "Noto Sans KR", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            min-height: 100vh;
+            margin: 0;
+            padding: 24px;
+            place-items: center;
+            background-color: var(--paper);
+            background-image: repeating-linear-gradient(0deg, rgba(95, 82, 58, .018) 0, rgba(95, 82, 58, .018) 1px, transparent 1px, transparent 5px);
+            color: var(--ink);
+            font-family: var(--sans);
+            line-height: 1.75;
+        }
+
+        main {
+            width: min(100%, 520px);
+            text-align: center;
+        }
+
+        .brand {
+            margin: 0 0 32px;
+            color: var(--sage);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .12em;
+        }
+
+        .mark {
+            display: grid;
+            width: 58px;
+            height: 58px;
+            margin: 0 auto 22px;
+            place-items: center;
+            border: 1px solid #cbd8cc;
+            border-radius: 50%;
+            color: var(--sage);
+            font-size: 27px;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: var(--serif);
+            font-size: clamp(26px, 7vw, 34px);
+            font-weight: 600;
+        }
+
+        #status {
+            margin: 14px 0 0;
+            color: var(--muted);
+        }
+
+        #details {
+            margin: 24px 0 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        a {
+            display: inline-flex;
+            min-height: 50px;
+            margin-top: 28px;
+            padding: 10px 24px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+            background: var(--sage);
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        a:focus-visible {
+            outline: 3px solid #9b7135;
+            outline-offset: 4px;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <main aria-live="polite">
+        <p class="brand">DAYNIZE</p>
+        <div class="mark" id="mark" aria-hidden="true">…</div>
+        <h1 id="title">결제를 확인하고 있습니다</h1>
+        <p id="status">안전한 결제 확인이 끝날 때까지 이 페이지를 닫지 마세요.</p>
+        <p id="details"></p>
+        <a id="return-link" href="/#register" hidden>신청 페이지로 돌아가기</a>
+    </main>
+    <script>
+        (() => {
+            const params = new URLSearchParams(window.location.search);
+            const paymentId = params.get('paymentId') || params.get('orderId') || '';
+            const title = document.querySelector('#title');
+            const status = document.querySelector('#status');
+            const details = document.querySelector('#details');
+            const mark = document.querySelector('#mark');
+            const returnLink = document.querySelector('#return-link');
+            const apiBase = document.querySelector('meta[name="daynize-payment-api"]').content;
+            const showError = message => {
+                document.title = '결제 확인 필요 | 데이나이즈';
+                title.textContent = '결제를 완료하지 못했습니다';
+                status.textContent = message;
+                mark.textContent = '!';
+                mark.style.color = '#9b3d35';
+                mark.style.borderColor = '#e4c9c5';
+                returnLink.href = '/?checkout=cancelled#register';
+                returnLink.hidden = false;
+            };
+
+            if (!paymentId || params.has('code')) {
+                const errorMessage = params.get('message');
+                showError(errorMessage ? `결제가 취소되었거나 완료되지 않았습니다. ${errorMessage}` : '결제가 취소되었습니다. 신청 정보를 다시 확인해 주세요.');
+                return;
+            }
+
+            fetch(`${apiBase}/api/payment/verify`, {
+                method: 'POST',
+                credentials: 'include',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ paymentId })
+            }).then(async response => {
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok || result.status !== 'PAID' || result.orderId !== paymentId) {
+                    throw new Error(result.error || 'PortOne에서 결제 완료를 확인하지 못했습니다.');
+                }
+                const verified = new URL('/payment/success', window.location.origin);
+                verified.searchParams.set('orderId', result.orderId);
+                verified.searchParams.set('amount', String(result.amount));
+                verified.searchParams.set('email', result.email);
+                history.replaceState(null, '', `${verified.pathname}${verified.search}`);
+                document.title = '수강 신청 완료 | 데이나이즈';
+                title.textContent = '수강 신청이 완료되었습니다';
+                status.textContent = 'PortOne 테스트 결제가 확인되었습니다. 테스트 결제이므로 실제 청구는 발생하지 않았습니다.';
+                details.textContent = `${Number(result.amount).toLocaleString('ko-KR')}원 · ${result.email}`;
+                mark.textContent = '✓';
+                returnLink.textContent = '데이나이즈로 돌아가기';
+                returnLink.href = '/';
+                returnLink.hidden = false;
+            }).catch(error => showError(error.message || '결제 확인에 실패했습니다. 고객센터에 문의해 주세요.'));
+        })();
+    </script>
+</body>
+
+</html>

@@ -16,6 +16,25 @@ Open http://localhost:8080 in a current browser and click the floating voice but
 
 The server listens only on the loopback interface, at port 8080. Both HTTP assets and `ws://localhost:8080/ws/gemini-live` use that port (the legacy `/` WebSocket path also works). Open the served URL, not the HTML as a local file: AudioWorklet and microphone capture need a secure context (localhost qualifies). Port 8080 must be free.
 
+## PortOne Test Checkout
+
+The main site's enrollment form uses PortOne V2 card checkout through the relay API. The configured channel key selects the test PG channel; the browser never receives the PortOne API secret. Guest checkout creates a short-lived, HttpOnly session cookie and keeps pending orders in relay memory for up to 30 minutes. The API only confirms a payment after PortOne's payment lookup reports `PAID`, the configured amount/product/currency match, and the selected channel is explicitly `TEST`. This is test checkout, not account creation or production fulfillment.
+
+Configure the following variables in the private `gemini-live-test/.env` for local server testing, or as Fly secrets for the public API. Never place `PORTONE_API_SECRET` in HTML, a Pages build variable, or client JavaScript.
+
+```dotenv
+PORTONE_MODE=test
+PORTONE_STORE_ID=store-...
+PORTONE_CHANNEL_KEY=channel-...
+PORTONE_API_SECRET=...
+PORTONE_PG_PROVIDER=HTML5_INICIS
+PORTONE_AMOUNT=49000
+```
+
+Choose `HTML5_INICIS` for KG Inicis or `NHN_KCP` for KCP and use the matching **test** channel key from the PortOne console. Set the server secret with `fly secrets set PORTONE_MODE=test PORTONE_STORE_ID=... PORTONE_CHANNEL_KEY=... PORTONE_API_SECRET=... PORTONE_PG_PROVIDER=HTML5_INICIS PORTONE_AMOUNT=49000 -a daynize-relay-api`; replace `...` locally with credentials and never commit them. The deploy must include `payment-api.js` through the existing `COPY gemini-live-test/ ./` Docker build step.
+
+The static result route is `payment/success/index.html`, deployed at `/payment/success`. PortOne redirects there for both mobile checkout and server-verified success. Cancelled checkout links back to the form, which restores its in-tab draft. Order metadata is currently process-memory only; before live payments, persist orders and consent records durably, add fulfillment/account provisioning and cancellation/refund handling, update the privacy notice and terms, and switch to a live channel only after those controls are in place.
+
 ## Temporary External Access
 
 External microphone access requires HTTPS. Localhost and tunnel pages use the current page host and upgrade WebSocket to WSS automatically on HTTPS. Production pages default to `wss://api.daynize.co.kr/ws/gemini-live`, which must be separately deployed.
@@ -71,7 +90,7 @@ DNS and Gemini setup before claiming public voice connectivity. A successful
 setup/heartbeat probe alone does not verify audible microphone conversation.
 Set `NEXT_PUBLIC_WS_URL` (or `WS_URL`) in the relay environment to override the public endpoint. The loader reads only this public setting from `/runtime-config.json`; API keys remain private. On static hosts such as GitHub Pages, configure `globalThis.DAYNIZE_CONFIG.wsUrl` before the loader or set its `data-endpoint` attribute, since Node environment variables are not available in plain browser modules. A stable domain/named tunnel is required for production: retries cannot restore an expired temporary tunnel hostname.
 
-Network failures automatically retry with delays of 1, 2, 4, 8, 16 and up to 30 seconds, at most 10 consecutive retries, resetting after successful setup. Setup has a 20-second deadline. An overall 60-second recovery deadline prevents endless reconnect/flapping; 30 seconds of stable readiness clears it. `지금 다시 연결` skips backoff without replacing the microphone/session. After terminal failure, `다시 연결하기` restarts a call. Proxy heartbeats run every 20 seconds with a 10-second browser pong deadline, and the relay also checks native Gemini pong. User stop, fatal authorization/configuration errors and the ten-minute safety limit still end the call. Proxy reconnection restores a Gemini-provided handle when available in the same relay process (two-minute cache); unavailable/rejected handles fall back to a fresh conversation. Audio lost during an outage is not replayed. See [INTEGRATION.md](INTEGRATION.md) for options, token security and scaling limitations.
+Network failures automatically retry with delays of 1, 2, 4, 8, 16 and up to 30 seconds, at most 20 consecutive retries or a five-minute recovery deadline, resetting after successful setup. Setup has a 20-second deadline. `지금 다시 연결` skips backoff without replacing the microphone/session. After terminal failure, `다시 연결하기` restarts a call. Proxy heartbeats run every 20 seconds with a 10-second browser pong deadline, and the relay also checks native Gemini pong. User stop, fatal authorization/configuration errors and the ten-minute safety limit still end the call. Proxy reconnection restores a Gemini-provided handle when available in the same relay process (two-minute cache); unavailable/rejected handles fall back to a fresh conversation. Audio lost during an outage is not replayed. See [INTEGRATION.md](INTEGRATION.md) for options, token security and scaling limitations.
 
 Start the temporary tunnel in one terminal:
 

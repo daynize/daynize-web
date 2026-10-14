@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f8f7f2">
+    <meta name="daynize-payment-api" content="https://api.daynize.co.kr">
     <meta name="description"
         content="데이나이즈(Daynize)에서 매일 생생한 대사를 검색하고 자연스럽게 실전 영어를 익혀보세요. 일상 영어 회화와 K-ECHO 드라마 쉐도잉으로 배우는 지난주 영어.">
     <title>데이나이즈 (Daynize) | 일상 대화로 배우는 지난주 영어</title>
@@ -43,6 +44,7 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="preconnect" href="https://images.unsplash.com">
+    <script src="https://cdn.portone.io/v2/browser-sdk.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <style>
@@ -1290,6 +1292,27 @@
             border-radius: 4px;
         }
 
+        .product-summary {
+            margin-bottom: 26px;
+            padding: 18px 20px;
+            border: 1px solid #dce3d9;
+            border-left: 3px solid var(--sage);
+            background: rgba(255, 255, 255, .72);
+        }
+
+        .product-summary-label {
+            margin: 0 0 5px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .product-summary-title {
+            margin: 0;
+            color: var(--ink);
+            font-size: 19px;
+            font-weight: 700;
+        }
+
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1347,6 +1370,24 @@
             min-height: 60px;
         }
 
+        .form-submit:disabled {
+            cursor: not-allowed;
+            opacity: .58;
+        }
+
+        .form-validation-message {
+            margin: 14px 0 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .security-note {
+            margin: 15px 0 0;
+            color: var(--muted);
+            font-size: 14px;
+            text-align: center;
+        }
+
         .form-message {
             margin: 14px 0 0;
             color: var(--sage);
@@ -1355,6 +1396,10 @@
 
         .form-message:empty {
             display: none;
+        }
+
+        .form-message.is-error {
+            color: #9b3d35;
         }
 
         .site-footer {
@@ -2223,14 +2268,20 @@
                 <div class="registration-copy">
                     <p class="eyebrow">A NEW PAGE STARTS HERE</p>
                     <h2 class="section-title" id="register-title">다음 페이지를<br>함께 시작해요</h2>
-                    <p>수강에 대해 궁금한 점이나 희망하시는 시간을 남겨 주세요. 담당자가 안내해 드립니다.</p>
-                    <div class="contact-line">편하신 수강 시간대를 남겨 주시면<br><strong>담당자가 안내해 드립니다.</strong></div>
+                    <p>수강 신청 내용을 남겨 주시면 담당자가 수강 과정과 결제 방법을 안내해 드립니다.</p>
+                    <div class="contact-line">신청 내용을 확인한 뒤<br><strong>수강 안내를 도와드립니다.</strong></div>
                 </div>
                 <form class="registration-form glass" id="registration-form">
+                    <div class="product-summary" aria-label="신청 상품">
+                        <p class="product-summary-label">선택 중인 코스</p>
+                        <p class="product-summary-title">데이나이즈 매일 영어 라이브 패스</p>
+                        <p class="product-summary-price" id="product-summary-price">49,000원 · 테스트 결제</p>
+                    </div>
                     <div class="form-grid">
                         <div class="field">
                             <label for="name">성함</label>
-                            <input id="name" name="name" autocomplete="name" placeholder="성함을 입력해 주세요" required>
+                            <input id="name" name="name" type="text" autocomplete="name" placeholder="성함을 입력해 주세요"
+                                required>
                         </div>
                         <div class="field">
                             <label for="phone">연락처</label>
@@ -2238,18 +2289,11 @@
                                 placeholder="010-0000-0000" minlength="9" maxlength="20" required>
                         </div>
                         <div class="field full">
-                            <label for="time">희망 수강 시간대</label>
-                            <select id="time" name="time" required>
-                                <option value="" selected disabled>편한 시간대를 선택해 주세요</option>
-                                <option>평일 오전 (9시 - 12시)</option>
-                                <option>평일 오후 (12시 - 5시)</option>
-                                <option>평일 저녁 (5시 이후)</option>
-                                <option>주말</option>
-                                <option>시간 상담 후 결정</option>
-                            </select>
+                            <label for="email">이메일 주소</label>
+                            <input id="email" name="email" type="email" autocomplete="email"
+                                placeholder="email@example.com" required>
                         </div>
                     </div>
-                    <p class="legal-notice">현재 상담 신청은 운영 서버에 연결되어 있지 않아, 입력 정보가 전송되거나 저장되지 않습니다.</p>
                     <div class="consent-list" aria-label="필수 동의 항목">
                         <div class="consent-item">
                             <input id="privacy-consent" name="privacyConsent" type="checkbox" required>
@@ -2266,8 +2310,11 @@
                             </span>
                         </div>
                     </div>
-                    <button class="button form-submit" type="submit">수강 상담 신청하기 <span
+                    <p class="form-validation-message" id="form-validation-message" role="status" aria-live="polite">성함,
+                        연락처, 이메일 입력과 필수 약관 동의가 필요합니다.</p>
+                    <button class="button form-submit" type="submit" disabled>수강 신청하기 <span
                             aria-hidden="true">→</span></button>
+                    <p class="security-note">🔒 안전한 결제 및 수강 안내 보장</p>
                     <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
                 </form>
             </div>
@@ -2305,8 +2352,8 @@
                 </div>
                 <div class="business-contact">
                     <dt>고객센터</dt>
-                    <dd><a href="tel:01087650070">010-8765-0070</a> · <a
-                            href="mailto:ifonly1204@gmail.com">ifonly1204@gmail.com</a></dd>
+                    <dd><a href="tel:070-4010-1147">070-4010-1147</a> · <a
+                            href="mailto:contact@daynize.co.kr">contact@daynize.co.kr</a></dd>
                 </div>
             </dl>
             <div class="footer-bottom">
@@ -2323,13 +2370,14 @@
         </div>
         <div class="legal-modal-body">
             <p class="legal-effective-date">시행일: 2026년 10월 4일</p>
-            <p class="legal-notice"><strong>서비스 준비 안내</strong><br>현재 이 페이지의 수강 상담 폼은 운영 서버와 연결되어 있지 않습니다. 입력한 정보는
-                전송·저장되지 않으며, 아래 내용은 상담 접수 기능을 운영할 때 적용할 처리 기준입니다. 실제 접수 개시 전 처리 시스템과 위탁 업체를 확정해 본 방침을 갱신하겠습니다.</p>
+            <p class="legal-notice"><strong>테스트 결제 안내</strong><br>수강 신청 정보는 HTTPS로 데이나이즈 API와 PortOne 테스트 결제 채널에 전송됩니다.
+                주문 세션은 결제 확인을 위해 서버 메모리에서 최대 30분간 유지되며, 테스트 결제는 실제 청구되지 않습니다. 정식 운영 전 실제 처리 시스템과 위탁 내용을 확정해 본 방침을
+                갱신하겠습니다.</p>
             <article class="legal-article">
                 <h3>1. 수집하는 개인정보 항목</h3>
                 <p>수강 상담 및 서비스 제공을 위해 다음 정보를 수집·이용합니다.</p>
                 <ul>
-                    <li>상담 신청: 이름, 연락처(전화번호), 희망 수강 시간대</li>
+                    <li>수강 신청: 이름, 연락처(전화번호), 이메일 주소</li>
                     <li>학습 기능 이용 시: 음성 학습 기록(음성 인식 결과, 학습 진행·이용 기록). 브라우저 녹음 재생용 음성 파일은 현재 페이지가 메모리에서 임시 처리하며 서버에 저장하지
                         않습니다.</li>
                     <li>서비스 접속 과정에서 호스팅·보안·콘텐츠 전송 업체가 접속 IP, 브라우저 정보, 접속 시각 등 기술 로그를 처리할 수 있습니다.</li>
@@ -2339,12 +2387,15 @@
                     경우에도 DAYNIZE는 음성 원본을 자체 서버에 저장하지 않으며, 전송된 음성은 Google의 API 서비스 약관 및 개인정보 처리 기준에 따라 처리됩니다.</p>
 
                 <h3>2. 개인정보의 수집 및 이용 목적</h3>
-                <p>수강 신청 상담 및 연락, 서비스 제공과 본인 확인, 수강·학습 현황 관리, 문의·불만 처리 및 관련 법령상 의무 이행을 위해 이용합니다.</p>
+                <p>테스트 결제 세션 생성과 결제 상태 확인, 신청자 식별 및 향후 수강 계정 연결 준비를 위해 이용합니다.</p>
 
                 <h3>3. 보유 및 이용 기간</h3>
-                <p>상담 정보는 상담 완료일로부터 1년간 보관 후 파기합니다. 다만, 계약·결제·분쟁 등 관계 법령에 따라 보존할 필요가 있는 정보는 해당 법령이 정한 기간 동안 별도로 보관합니다.
+                <p>테스트 주문 세션은 생성 후 최대 30분이 지나면 서버 메모리에서 만료됩니다. PortOne 테스트 채널의 거래 기록은 해당 서비스의 테스트 데이터 정책에 따릅니다. 정식 운영
+                    시에는 상담 정보는 상담 완료일로부터 1년간 보관 후 파기합니다. 다만, 계약·결제·분쟁 등 관계 법령에 따라 보존할 필요가 있는 정보는 해당 법령이 정한 기간 동안 별도로
+                    보관합니다.
                     전자상거래 등에서의 소비자보호에 관한 법률에 따른 계약·청약철회, 대금결제·재화 공급 기록은 5년, 소비자 불만·분쟁 처리 기록은 3년 보관 대상이 될 수 있습니다.</p>
-                <p>현재 데모 폼으로 입력한 정보는 서버에 전송되지 않습니다. 기기에서 재생하는 녹음 파일과 인식 문장은 페이지 메모리에서 임시 처리하며 페이지를 닫거나 새로고침하면 소멸합니다.
+                <p>수강 신청 입력 정보는 결제 세션 생성을 위해 데이나이즈 API로 전송되고, 카드 결제 처리는 PortOne 및 선택한 테스트 PG 채널에서 수행됩니다. 결제 정보가 일치하지 않거나
+                    테스트 설정이 끝나지 않은 경우 결제 완료로 처리하지 않습니다. 기기에서 재생하는 녹음 파일과 인식 문장은 페이지 메모리에서 임시 처리하며 페이지를 닫거나 새로고침하면 소멸합니다.
                     Google Gemini 음성 변환에 동의한 경우 녹음 음성은 실시간 또는 녹음 후 변환 요청에 포함되어 Google로 전송됩니다.</p>
 
                 <h3>4. 개인정보의 제3자 제공</h3>
@@ -2354,8 +2405,8 @@
                 <h3>5. 개인정보 처리 업무의 위탁</h3>
                 <p>웹페이지 호스팅·콘텐츠 전송 및 보안 기능을 위해 GitHub Pages, Cloudflare CDN 등 인프라가 사용될 수 있고, 글꼴·이미지 제공을 위해 Google Fonts
                     및 Unsplash 서버에 브라우저 요청이 발생할 수 있습니다. 이 과정에서 각 사업자가 자신의 서비스 운영을 위한 접속 정보를 처리할 수 있습니다.</p>
-                <p>현재 결제 기능과 결제대행사(PG)는 연결되어 있지 않습니다. 향후 PG사를 통한 결제를 도입할 경우 업체명, 위탁 업무, 처리 항목과 보유 기간을 결제 전에 이 방침과 결제 화면에
-                    공개하고 필요한 동의를 받겠습니다.</p>
+                <p>테스트 결제 처리를 위해 PortOne 및 선택한 PG 테스트 채널을 이용합니다. 정식 결제 도입 전에는 업체명, 위탁 업무, 처리 항목과 보유 기간을 확인해 이 방침과 결제 화면에
+                    공개하겠습니다.</p>
 
                 <h3>6. 개인정보의 파기 절차 및 방법</h3>
                 <p>보유 기간이 끝나거나 처리 목적이 달성된 개인정보는 내부 확인 절차를 거쳐 지체 없이 파기합니다. 전자 파일은 복구할 수 없도록 삭제하고, 종이 문서는 분쇄 또는 소각합니다. 법정
@@ -2370,8 +2421,8 @@
                     맞는 보호 조치를 확정합니다.</p>
 
                 <h3>9. 개인정보 보호책임자 및 문의처</h3>
-                <p>개인정보 보호책임자: 강성준(대표자)<br>전화: <a href="tel:01087650070">010-8765-0070</a><br>이메일: <a
-                        href="mailto:ifonly1204@gmail.com">ifonly1204@gmail.com</a></p>
+                <p>개인정보 보호책임자: 강성준(대표자)<br>전화: <a href="tel:070-4010-1147">070-4010-1147</a><br>이메일: <a
+                        href="mailto:contact@daynize.co.kr">contact@daynize.co.kr</a></p>
 
                 <h3>10. 방침의 변경</h3>
                 <p>법령, 서비스 또는 개인정보 처리 방식이 변경되면 변경 내용과 시행일을 이 페이지에 공지합니다.</p>
@@ -2386,8 +2437,8 @@
         </div>
         <div class="legal-modal-body">
             <p class="legal-effective-date">시행일: 2026년 10월 4일</p>
-            <p class="legal-notice"><strong>서비스 준비 안내</strong><br>현재 홈페이지는 수강 상담 및 학습 기능의 시연 페이지이며, 상담 신청 전송·회원 계정·온라인
-                결제는 연결되어 있지 않습니다. 유료 강의 신청과 결제는 실제 제공 조건과 결제 금액을 별도로 안내한 후 진행됩니다.</p>
+            <p class="legal-notice"><strong>테스트 결제 안내</strong><br>현재 수강 신청은 PortOne 테스트 채널로만 진행되며 실제 청구나 정식 회원 계정 생성은
+                이루어지지 않습니다. 유료 강의의 실제 신청과 결제는 제공 조건·금액·환불 기준을 별도로 안내한 뒤 진행됩니다.</p>
             <article class="legal-article">
                 <h3>제1조 목적 및 용어</h3>
                 <p>이 약관은 데이나이즈(DAYNIZE, 이하 “회사”)가 제공하는 시니어 영어 학습·상담 서비스(이하 “서비스”)의 이용 조건과 회사 및 이용자의 권리·의무를 정합니다. “이용자”는
@@ -2406,7 +2457,7 @@
                     회사가 승낙을 통지하면 계약이 성립합니다. 결제 기능이 제공되는 경우 결제 전에 총 금액과 조건을 표시합니다.</p>
 
                 <h3>제5조 수강료 결제와 환불</h3>
-                <p>수강료는 개별 강의 또는 계약 화면에 표시된 금액과 결제 방법에 따릅니다. 현재 홈페이지에는 결제 기능이 연결되어 있지 않습니다. 환불 및 청약철회는 계약 형태와 실제 서비스 제공
+                <p>수강료는 개별 강의 또는 계약 화면에 표시된 금액과 결제 방법에 따릅니다. 현재 연결된 PortOne 결제는 테스트 채널입니다. 환불 및 청약철회는 계약 형태와 실제 서비스 제공
                     방식에 적용되는 관계 법령의 강행 규정을 우선 적용합니다.</p>
                 <p>전자상거래에 해당하는 계약에는 「전자상거래 등에서의 소비자보호에 관한 법률」 등 관계 법령에 따른 청약철회와 디지털 콘텐츠 제공 개시 관련 제한·예외가 적용됩니다. 법령상 청약철회
                     제한 사유가 있는 경우 회사는 사전에 그 사실과 필요한 조치를 알립니다.</p>
@@ -2457,8 +2508,8 @@
 
                 <h3>사업자 및 문의처</h3>
                 <p>상호: 데이나이즈(DAYNIZE) · 대표자: 강성준<br>사업자등록번호: 665-13-02896 · 통신판매업신고번호: 제2026-경기오산-0299호<br>주소: 경기도 오산시
-                    오산로212번길 11-3, 301-N06호 (원동)<br>전화: <a href="tel:01087650070">010-8765-0070</a> · 이메일: <a
-                        href="mailto:ifonly1204@gmail.com">ifonly1204@gmail.com</a></p>
+                    오산로212번길 11-3, 301-N06호 (원동)<br>전화: <a href="tel:070-4010-1147">070-4010-1147</a> · 이메일: <a
+                        href="mailto:contact@daynize.co.kr">contact@daynize.co.kr</a></p>
             </article>
         </div>
     </dialog>
@@ -3854,14 +3905,211 @@
                     playback.play().catch(() => { voiceStatus.textContent = '재생 버튼을 한 번 더 눌러 오디오를 들어 보세요.'; });
                 }
             });
-            document.querySelector('#registration-form').addEventListener('submit', (event) => {
+            const registrationForm = document.querySelector('#registration-form');
+            const registrationSubmit = registrationForm.querySelector('.form-submit');
+            const registrationMessage = document.querySelector('#form-message');
+            const registrationValidationMessage = document.querySelector('#form-validation-message');
+            const checkoutApiBase = document.querySelector('meta[name="daynize-payment-api"]')?.content || window.location.origin;
+            const checkoutResumeKey = 'daynize.checkout.resume.v1';
+            const paymentSuccessPath = '/payment/success';
+            let checkoutConfig;
+            let checkoutInProgress = false;
+
+            const apiRequest = async (path, options = {}) => {
+                const response = await fetch(`${checkoutApiBase}${path}`, {
+                    credentials: 'include',
+                    ...options,
+                    headers: { 'Content-Type': 'application/json', ...options.headers }
+                });
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok) throw new Error(result.error || '요청을 처리하지 못했습니다. 잠시 후 다시 시도해 주세요.');
+                return result;
+            };
+
+            const showRegistrationMessage = (message, isError = false) => {
+                registrationMessage.textContent = message;
+                registrationMessage.classList.toggle('is-error', isError);
+                registrationMessage.setAttribute('role', isError ? 'alert' : 'status');
+            };
+
+            const updateRegistrationSubmitState = () => {
+                const nameInput = registrationForm.elements.namedItem('name');
+                const phoneInput = registrationForm.elements.namedItem('phone');
+                const phoneDigits = phoneInput.value.replace(/\D/g, '');
+                nameInput.setCustomValidity(nameInput.value.trim() ? '' : '성함을 입력해 주세요.');
+                phoneInput.setCustomValidity(phoneDigits.length >= 9 && phoneDigits.length <= 15 ? '' : '연락처를 확인해 주세요.');
+                const isValid = registrationForm.checkValidity();
+                registrationSubmit.disabled = checkoutInProgress || !isValid;
+                registrationValidationMessage.hidden = isValid;
+            };
+            const preserveCheckoutInput = () => {
+                const values = Object.fromEntries(new FormData(registrationForm));
+                try { sessionStorage.setItem(checkoutResumeKey, JSON.stringify(values)); } catch (_) { }
+            };
+            const restoreCheckoutInput = () => {
+                try {
+                    const values = JSON.parse(sessionStorage.getItem(checkoutResumeKey) || 'null');
+                    if (!values || typeof values !== 'object') return;
+                    for (const name of ['name', 'phone', 'email']) {
+                        if (typeof values[name] === 'string') registrationForm.elements.namedItem(name).value = values[name];
+                    }
+                    for (const name of ['privacyConsent', 'termsConsent']) {
+                        registrationForm.elements.namedItem(name).checked = values[name] === 'on';
+                    }
+                    sessionStorage.removeItem(checkoutResumeKey);
+                } catch (_) { }
+                updateRegistrationSubmitState();
+            };
+
+            if (new URLSearchParams(window.location.search).get('checkout') === 'cancelled') {
+                restoreCheckoutInput();
+                history.replaceState(null, '', `${window.location.pathname}${window.location.hash || '#register'}`);
+                showRegistrationMessage('결제가 취소되었습니다. 입력하신 신청 정보는 그대로 두었습니다.', true);
+            } else if (window.location.pathname === '/' && window.location.hash === '#register') {
+                try {
+                    if (sessionStorage.getItem(checkoutResumeKey)) restoreCheckoutInput();
+                } catch (_) { }
+            }
+
+            const handlePaymentRedirect = async () => {
+                if (window.location.pathname !== paymentSuccessPath) return;
+                document.title = '결제 확인 중 | 데이나이즈';
+                const params = new URLSearchParams(window.location.search);
+                const paymentId = params.get('paymentId') || params.get('orderId') || '';
+                const message = params.get('message');
+                if (!paymentId || params.has('code')) {
+                    const resume = params.get('resume') === '1';
+                    if (resume) {
+                        history.replaceState(null, '', '/#register');
+                        restoreCheckoutInput();
+                        showRegistrationMessage('결제가 취소되었습니다. 입력하신 신청 정보는 그대로 두었습니다.', true);
+                    } else {
+                        showRegistrationMessage(message || '결제가 취소되었습니다. 다시 신청하실 수 있습니다.', true);
+                    }
+                    return;
+                }
+                try {
+                    const verified = await apiRequest('/api/payment/verify', {
+                        method: 'POST',
+                        body: JSON.stringify({ paymentId })
+                    });
+                    if (verified.status !== 'PAID' || verified.orderId !== paymentId) {
+                        throw new Error('결제 완료 상태를 확인하지 못했습니다. 고객센터에 문의해 주세요.');
+                    }
+                    try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }
+                    const success = new URL('/payment/success', window.location.origin);
+                    success.searchParams.set('orderId', verified.orderId);
+                    success.searchParams.set('amount', String(verified.amount));
+                    success.searchParams.set('email', verified.email);
+                    history.replaceState(null, '', `${success.pathname}${success.search}`);
+                    document.title = '수강 신청 완료 | 데이나이즈';
+                    document.querySelector('#register-title').innerHTML = '수강 신청이<br>완료되었습니다';
+                    document.querySelector('.registration-copy > p:not(.eyebrow)').textContent = '테스트 결제 승인이 확인되었습니다. 정식 강의 수강이나 회원 계정은 생성되지 않았습니다.';
+                    registrationForm.hidden = true;
+                    showRegistrationMessage('PortOne 테스트 결제가 확인되었습니다. 테스트 결제이므로 실제 청구는 발생하지 않았습니다.');
+                } catch (error) {
+                    const registerUrl = new URL('/', window.location.origin);
+                    registerUrl.hash = 'register';
+                    history.replaceState(null, '', `${registerUrl.pathname}${registerUrl.search}${registerUrl.hash}`);
+                    restoreCheckoutInput();
+                    showRegistrationMessage(error.message, true);
+                }
+            };
+
+            const loadCheckoutConfig = async () => {
+                try {
+                    checkoutConfig = await apiRequest('/api/payment/config', { headers: {} });
+                    document.querySelector('#product-summary-price').textContent = `${Number(checkoutConfig.amount).toLocaleString('ko-KR')}원 · 테스트 결제`;
+                    if (!checkoutConfig.enabled) {
+                        showRegistrationMessage('PortOne 테스트 결제가 아직 설정되지 않았습니다. 관리자 설정을 확인해 주세요.', true);
+                    }
+                } catch {
+                    showRegistrationMessage('결제 서버에 연결할 수 없습니다. 잠시 후 다시 시도해 주세요.', true);
+                }
+            };
+
+            registrationForm.addEventListener('input', updateRegistrationSubmitState);
+            registrationForm.addEventListener('change', updateRegistrationSubmitState);
+            registrationForm.addEventListener('submit', async (event) => {
                 event.preventDefault();
-                const form = event.currentTarget;
-                if (!form.reportValidity()) return;
-                const name = form.elements.name.value.trim();
-                document.querySelector('#form-message').textContent = `${name}님, 신청 내용이 입력되었습니다. 실제 접수와 안내를 위해서는 운영 서버 연결이 필요합니다.`;
-                form.reset();
+                updateRegistrationSubmitState();
+                if (!registrationForm.reportValidity()) {
+                    showRegistrationMessage('성함, 연락처, 이메일과 필수 약관 동의를 확인해 주세요.', true);
+                    return;
+                }
+                if (checkoutInProgress) return;
+                if (!checkoutConfig?.enabled) {
+                    await loadCheckoutConfig();
+                    if (!checkoutConfig?.enabled) return;
+                }
+                if (!window.PortOne?.requestPayment) {
+                    showRegistrationMessage('결제 모듈을 불러오지 못했습니다. 페이지를 새로고침한 뒤 다시 시도해 주세요.', true);
+                    return;
+                }
+
+                checkoutInProgress = true;
+                updateRegistrationSubmitState();
+                registrationSubmit.textContent = '결제창을 준비하고 있습니다…';
+                showRegistrationMessage('신청 정보를 확인하고 안전한 결제창을 준비하고 있습니다.');
+                try {
+                    const order = await apiRequest('/api/payment/orders', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            name: registrationForm.elements.name.value.trim(),
+                            phone: registrationForm.elements.phone.value.trim(),
+                            email: registrationForm.elements.email.value.trim(),
+                            privacyConsent: registrationForm.elements.privacyConsent.checked,
+                            termsConsent: registrationForm.elements.termsConsent.checked
+                        })
+                    });
+                    const redirect = new URL(paymentSuccessPath, window.location.origin);
+                    redirect.searchParams.set('resume', '1');
+                    preserveCheckoutInput();
+                    const payment = await window.PortOne.requestPayment({
+                        storeId: order.storeId,
+                        channelKey: order.channelKey,
+                        paymentId: order.orderId,
+                        orderName: order.orderName,
+                        totalAmount: order.amount,
+                        currency: order.currency,
+                        payMethod: order.payMethod,
+                        customer: {
+                            fullName: registrationForm.elements.name.value.trim(),
+                            phoneNumber: registrationForm.elements.phone.value.trim(),
+                            email: registrationForm.elements.email.value.trim()
+                        },
+                        redirectUrl: redirect.href,
+                        forceRedirect: true
+                    });
+                    if (payment?.code || !payment?.paymentId) {
+                        try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }
+                        showRegistrationMessage(payment?.code ? '결제가 취소되었습니다. 입력하신 신청 정보는 그대로 두었습니다.' : '결제 요청 결과를 확인할 수 없습니다. 다시 시도해 주세요.', true);
+                        return;
+                    }
+                    const verified = await apiRequest('/api/payment/verify', {
+                        method: 'POST',
+                        body: JSON.stringify({ paymentId: payment.paymentId })
+                    });
+                    if (verified.status !== 'PAID' || verified.orderId !== payment.paymentId) {
+                        throw new Error('결제 완료 상태를 확인하지 못했습니다. 고객센터에 문의해 주세요.');
+                    }
+                    try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }
+                    const success = new URL(paymentSuccessPath, window.location.origin);
+                    success.searchParams.set('orderId', verified.orderId);
+                    success.searchParams.set('amount', String(verified.amount));
+                    success.searchParams.set('email', verified.email);
+                    window.location.assign(`${success.pathname}${success.search}`);
+                } catch (error) {
+                    try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }
+                    showRegistrationMessage(error.message || '결제가 취소되었습니다. 입력하신 신청 정보는 그대로 두었습니다.', true);
+                } finally {
+                    checkoutInProgress = false;
+                    registrationSubmit.innerHTML = '수강 신청하기 <span aria-hidden="true">→</span>';
+                    updateRegistrationSubmitState();
+                }
             });
+            void handlePaymentRedirect();
+            void loadCheckoutConfig();
 
             // GSAP is progressive enhancement; the page remains fully usable without the CDN.
             window.addEventListener('load', () => {

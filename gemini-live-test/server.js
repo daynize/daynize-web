@@ -2,6 +2,7 @@ const http = require('node:http');
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const { WebSocket, WebSocketServer } = require('ws');
+const { createPaymentApi } = require('./payment-api');
 require('dotenv').config({ path: path.join(__dirname, '.env'), quiet: true });
 
 const GEMINI_ENDPOINT = 'wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent';
@@ -51,6 +52,17 @@ function createRelayServer(options = {}) {
     const maxTranscriptionBytes = options.maxTranscriptionBytes ?? 8 * 1024 * 1024;
     const maxTranscriptionsPerMinute = options.maxTranscriptionsPerMinute ?? 20;
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
+    const paymentApi = createPaymentApi({
+        storeId: options.portoneStoreId,
+        channelKey: options.portoneChannelKey,
+        apiSecret: options.portoneApiSecret,
+        mode: options.portoneMode,
+        pgProvider: options.portonePgProvider,
+        amount: options.portoneAmount,
+        allowedOrigins: trustedOrigins,
+        fetchImpl: options.paymentFetchImpl ?? fetchImpl,
+        now: options.paymentNow
+    });
     if (!Number.isInteger(maxTranscriptionBytes) || maxTranscriptionBytes < 44 || !Number.isInteger(maxTranscriptionsPerMinute) || maxTranscriptionsPerMinute < 1) {
         throw new Error('Invalid transcription limits.');
     }
@@ -79,6 +91,7 @@ function createRelayServer(options = {}) {
             return;
         }
         const pathname = new URL(request.url, 'http://localhost').pathname;
+        if (await paymentApi.handle(request, response, pathname)) return;
         if (pathname === '/transcribe') {
             const origin = request.headers.origin;
             const host = request.headers.host || '';
