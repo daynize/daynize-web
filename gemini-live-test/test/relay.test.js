@@ -84,8 +84,8 @@ test('setup gates audio; PCM and replies relay both ways; disconnect closes upst
     const prefixedSetup = await nextMessage(prefixedGemini);
     assert.equal(prefixedSetup.setup.model, 'models/gemini-2.0-flash-exp');
     assert.equal(prefixedSetup.setup.generationConfig.speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName, 'Puck');
-    assert.deepEqual(prefixedSetup.setup.inputAudioTranscription, {});
-    assert.deepEqual(prefixedSetup.setup.outputAudioTranscription, {});
+    assert.equal(prefixedSetup.setup.inputAudioTranscription, undefined);
+    assert.equal(prefixedSetup.setup.outputAudioTranscription, undefined);
     const prefixedClosed = once(prefixedGemini, 'close');
     prefixedClient.close();
     await prefixedClosed;

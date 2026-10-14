@@ -35,7 +35,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         const signal = this.abort.signal;
         const icon = (name, light = false) => `<img class="icon${light ? ' light' : ''}" src="${asset(`icons/${name}.svg`)}" alt="" aria-hidden="true">`;
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="${asset('spotlight-bar.css')}?v=dark-horizontal-1">
+            <link rel="stylesheet" href="${asset('spotlight-bar.css')}?v=glass-learning-1">
             <button class="launch" type="button" aria-haspopup="dialog">${icon('mic', true)}<span>AI 음성 회화 시작하기</span></button>
             <dialog id="spotlight-modal" aria-labelledby="tutor-title" aria-describedby="privacy">
                 <div class="spotlight-bar">
@@ -47,14 +47,12 @@ export class DaynizeVoiceTutor extends HTMLElement {
                     <div class="icon-tray">
                         <button class="icon-button mute" type="button" aria-label="마이크 끄기" title="마이크 끄기" aria-pressed="false" disabled>${icon('mic')}</button>
                         <button class="icon-button speaker" type="button" aria-label="스피커 끄기" title="스피커 끄기" aria-pressed="false">${icon('volume-2')}</button>
-                        <button class="icon-button captions" type="button" aria-label="대화 자막" title="대화 자막" aria-expanded="false" aria-controls="text-drawer">${icon('message-square')}</button>
                         <button class="icon-button preferences" type="button" aria-label="환경설정" title="환경설정" aria-expanded="false" aria-controls="preferences-drawer">${icon('settings-2')}</button>
                         <button class="icon-button end" type="button" aria-label="세션 종료" title="세션 종료">${icon('x')}</button>
                     </div>
                 </div>
                 <div class="session-strip"><div class="status-line" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span class="status-label"></span></div><p class="message"></p><span class="time">00:00</span></div>
                 <p class="safety-notice" role="status" aria-live="polite" hidden></p>
-                <section id="text-drawer" class="drawer" hidden><h3>대화 자막</h3><p class="caption-empty">음성이 인식되면 자막이 표시됩니다.</p><div class="transcripts" role="log" aria-live="polite" aria-label="실시간 대화 자막"></div></section>
                 <section id="preferences-drawer" class="drawer" hidden>
                     <h3>음성 환경설정</h3><div class="settings-grid">
                     <label>선생님 음성<select class="voice"><option value="Kore">Kore</option><option value="Puck">Puck</option></select></label>
@@ -91,7 +89,6 @@ export class DaynizeVoiceTutor extends HTMLElement {
         }, { signal });
         this.muteButton.addEventListener('click', () => this.toggleMute(), { signal });
         this.endButton.addEventListener('click', () => this.close(), { signal });
-        query('.captions').addEventListener('click', () => this.toggleDrawer('text-drawer', '.captions'), { signal });
         query('.preferences').addEventListener('click', () => this.toggleDrawer('preferences-drawer', '.preferences'), { signal });
         query('.speaker').addEventListener('click', async () => {
             const muted = !this.audio.speakerMuted;
@@ -116,6 +113,9 @@ export class DaynizeVoiceTutor extends HTMLElement {
             if (this.service?.sendAudio(event.detail)) {
                 this.sentFrames++;
                 if (this.sentFrames % 10 === 0) this.updateTransport();
+            } else if (this.callActive && this.pendingFreshSession) {
+                if (this.pendingAudioFrames.length >= 50) this.pendingAudioFrames.shift();
+                this.pendingAudioFrames.push(event.detail);
             }
         }, { signal });
         this.audio.addEventListener('playing', () => this.setState('speaking'), { signal });
@@ -195,7 +195,8 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.safetyTimer = setInterval(() => this.checkSafety(), 100);
         this.duration = 0;
         this.sentFrames = this.receivedFrames = 0;
-        this.transcriptRows = {};
+        this.pendingFreshSession = false;
+        this.pendingAudioFrames = [];
         this.updateTransport();
         this.bargeIn = false;
         this.timeElement.textContent = '00:00';
@@ -206,9 +207,6 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.setState('connecting');
         this.service = new LiveService({ ...this.config, endpoint: this.endpoint, voice: this.shadowRoot.querySelector('.voice').value });
         const service = this.service;
-        service.addEventListener('transcript', event => {
-            if (generation === this.generation && this.callActive) this.appendTranscript(event.detail);
-        });
         service.addEventListener('audio', event => {
             if (!this.callActive || generation !== this.generation) return;
             this.receivedFrames++;
@@ -224,27 +222,41 @@ export class DaynizeVoiceTutor extends HTMLElement {
             this.audio.interrupt();
             if (this.callActive) this.setState(this.audio.muted ? 'muted' : 'listening');
         });
-        service.addEventListener('turnComplete', () => { this.bargeIn = false; this.transcriptRows = {}; });
+        service.addEventListener('turnComplete', () => {
+            this.bargeIn = false;
+            service.resetSession();
+        });
         service.addEventListener('connectionstate', event => {
             if (generation !== this.generation) return;
             const { state, attempt, delay } = event.detail;
             this.dataset.connectionState = state;
-            this.audio.setStreaming(state === 'CONNECTED');
+            this.audio.setStreaming(state === 'CONNECTED' || Boolean(event.detail.freshSession));
             if (state === 'RECONNECTING') {
+                const freshSession = Boolean(event.detail.freshSession);
+                this.pendingFreshSession = freshSession;
+                if (freshSession) this.pendingAudioFrames = [];
+                else this.audio.interrupt();
                 clearTimeout(this.responseTimer);
-                this.audio.interrupt();
                 this.bargeIn = false;
                 this.muteButton.disabled = true;
-                this.startButton.hidden = false;
+                this.startButton.hidden = freshSession;
                 this.startButton.disabled = delay === 0;
                 this.startButton.querySelector('span').textContent = '지금 다시 연결';
-                this.setState('reconnecting', `${Math.ceil(delay / 1000)}초 후 다시 연결합니다. (${attempt}/${service.options.maxRetries})`);
+                this.setState('reconnecting', freshSession ? '새 대화로 전환하고 있어요.' : `${Math.ceil(delay / 1000)}초 후 다시 연결합니다. (${attempt}/${service.options.maxRetries})`);
             } else if (state === 'CONNECTED') {
                 this.startButton.hidden = true;
                 this.startButton.disabled = false;
                 this.safety.lastSoundAt = performance.now();
                 this.muteButton.disabled = false;
-                this.setState(this.audio.muted ? 'muted' : 'listening');
+                if (this.pendingFreshSession) {
+                    for (const frame of this.pendingAudioFrames) {
+                        if (service.sendAudio(frame)) this.sentFrames++;
+                    }
+                    this.pendingAudioFrames = [];
+                    this.pendingFreshSession = false;
+                    this.updateTransport();
+                }
+                this.setState(this.audio.sources.size ? 'speaking' : this.audio.muted ? 'muted' : 'listening');
                 if (!this.clock) this.clock = setInterval(() => {
                     if (service.ready && !this.audio.muted) this.duration++;
                     this.timeElement.textContent = `${String(Math.floor(this.duration / 60)).padStart(2, '0')}:${String(this.duration % 60).padStart(2, '0')}`;
@@ -258,14 +270,6 @@ export class DaynizeVoiceTutor extends HTMLElement {
             await Promise.all([microphoneReady, sessionReady]);
             if (generation !== this.generation || !this.callActive) return;
             this.audio.setStreaming(service.ready);
-            if (service.requestGreeting()) {
-                this.setState('waiting');
-                this.responseTimer = setTimeout(() => {
-                    if (generation === this.generation && !this.audio.sources.size) {
-                        this.setState(this.audio.muted ? 'muted' : 'listening', '아직 음성 응답이 도착하지 않았습니다. 마이크를 켜고 말씀해주세요.');
-                    }
-                }, 15000);
-            }
         } catch (error) {
             if (generation !== this.generation || !this.callActive) return;
             this.fail(error);
@@ -305,34 +309,8 @@ export class DaynizeVoiceTutor extends HTMLElement {
     toggleDrawer(id, selector) {
         const panel = this.shadowRoot.getElementById(id);
         const opening = panel.hidden;
-        for (const [otherId, otherSelector] of [['text-drawer', '.captions'], ['preferences-drawer', '.preferences']]) {
-            if (otherId !== id) {
-                this.shadowRoot.getElementById(otherId).hidden = true;
-                this.shadowRoot.querySelector(otherSelector).setAttribute('aria-expanded', 'false');
-            }
-        }
         panel.hidden = !opening;
         this.shadowRoot.querySelector(selector).setAttribute('aria-expanded', String(!panel.hidden));
-    }
-
-    appendTranscript({ speaker, text }) {
-        const log = this.shadowRoot.querySelector('.transcripts');
-        this.transcriptRows ??= {};
-        if (!this.transcriptRows[speaker]) {
-            const row = document.createElement('p');
-            row.className = `transcript ${speaker}`;
-            const label = document.createElement('strong');
-            label.textContent = speaker === 'user' ? '나' : '선생님';
-            const content = document.createElement('span');
-            row.append(label, content);
-            log.append(row);
-            this.transcriptRows[speaker] = content;
-            while (log.children.length > 100) log.firstElementChild.remove();
-        }
-        const content = this.transcriptRows[speaker];
-        content.textContent = (content.textContent + text).slice(-6000);
-        this.shadowRoot.querySelector('.caption-empty').hidden = true;
-        log.scrollTop = log.scrollHeight;
     }
 
     updateTransport() {
@@ -342,6 +320,8 @@ export class DaynizeVoiceTutor extends HTMLElement {
     end() {
         this.generation++;
         this.callActive = false;
+        this.pendingFreshSession = false;
+        this.pendingAudioFrames = [];
         this.service?.stop();
         this.service = undefined;
         this.audio.stop();

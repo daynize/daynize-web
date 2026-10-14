@@ -48,6 +48,26 @@ test('manual retry keeps session identity and a throwing send enters recovery', 
     assert.equal(service.connectionState, 'CONNECTED');
 });
 
+test('resetSession rotates the session identity and reconnects without its resumption handle', async () => {
+    const service = new LiveService({ endpoint: 'wss://example.test/ws', retryDelay: 1, WebSocketClass: MockSocket });
+    const started = service.start();
+    const firstSocket = service.socket;
+    await firstSocket.message({ setupComplete: {} });
+    await started;
+    await firstSocket.message({ sessionResumptionUpdate: { resumable: true, newHandle: 'old-context' } });
+    const previousSession = new URL(firstSocket.url).searchParams.get('session');
+
+    assert.equal(service.resetSession(), true);
+    assert.notEqual(service.sessionId, previousSession);
+    assert.equal(service.resumeHandle, undefined);
+    await new Promise(resolve => setTimeout(resolve, 5));
+    assert.notEqual(service.socket, firstSocket);
+    assert.notEqual(new URL(service.socket.url).searchParams.get('session'), previousSession);
+    await service.socket.message({ setupComplete: {} });
+    assert.equal(service.connectionState, 'CONNECTED');
+    service.stop();
+});
+
 test('a stable connection clears the recovery deadline and future outages get a fresh deadline', async context => {
     context.mock.timers.enable({ apis: ['setTimeout', 'setInterval'] });
     const service = new LiveService({ endpoint: 'wss://example.test/ws', recoveryTimeout: 1000, stableConnectionTime: 100, WebSocketClass: MockSocket });
@@ -66,8 +86,8 @@ test('a stable connection clears the recovery deadline and future outages get a 
 test('setup includes tutor voice and protocol waits for setupComplete', async () => {
     const setup = createSetup();
     assert.deepEqual(setup.setup.generationConfig.thinkingConfig, { thinkingBudget: 0 });
-    assert.deepEqual(setup.setup.inputAudioTranscription, {});
-    assert.deepEqual(setup.setup.outputAudioTranscription, {});
+    assert.equal(setup.setup.inputAudioTranscription, undefined);
+    assert.equal(setup.setup.outputAudioTranscription, undefined);
     assert.equal(setup.setup.generationConfig.speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName, 'Kore');
     assert.match(setup.setup.systemInstruction.parts[0].text, /senior learners/);
     assert.deepEqual(setup.setup.realtimeInputConfig.automaticActivityDetection, {

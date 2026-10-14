@@ -10,8 +10,6 @@ export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voic
                 speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } } }
             },
             systemInstruction: { parts: [{ text: TUTOR_INSTRUCTION }] },
-            inputAudioTranscription: {},
-            outputAudioTranscription: {},
             realtimeInputConfig: {
                 automaticActivityDetection: {
                     disabled: false,
@@ -272,6 +270,8 @@ export class LiveService extends EventTarget {
             socket.onclose = event => {
                 if (!current()) return;
                 closed = true;
+                const freshSession = this.freshSessionRequested;
+                this.freshSessionRequested = false;
                 this.ready = false;
                 this.clearHeartbeat();
                 clearTimeout(this.stableTimer);
@@ -279,13 +279,13 @@ export class LiveService extends EventTarget {
                 settle(connectionError || new Error('음성 연결이 끊어졌습니다.'));
                 this.reconnectRequested = false;
                 if (!fatal && event.code !== 1008 && this.retries < this.options.maxRetries) {
-                    const delay = Math.min(this.options.maxRetryDelay, this.options.retryDelay * 2 ** this.retries++);
-                    this.setConnectionState(CONNECTION_STATES.RECONNECTING, { delay });
+                    const delay = freshSession ? 0 : Math.min(this.options.maxRetryDelay, this.options.retryDelay * 2 ** this.retries++);
+                    this.setConnectionState(CONNECTION_STATES.RECONNECTING, { delay, freshSession });
                     this.emit('state', 'reconnecting');
                     this.retryTimer = setTimeout(() => {
                         this.retryTimer = undefined;
                         if (this.active && generation === this.generation) {
-                            this.setConnectionState(CONNECTION_STATES.RECONNECTING, { delay: 0 });
+                            this.setConnectionState(CONNECTION_STATES.RECONNECTING, { delay: 0, freshSession });
                             this.open(generation).catch(() => { });
                         }
                     }, delay);
@@ -321,14 +321,15 @@ export class LiveService extends EventTarget {
         return this.sendMessage({ realtimeInput: { audioStreamEnd: true } });
     }
 
-    requestGreeting() {
-        if (!this.ready || this.socket?.readyState !== this.Socket.OPEN) return false;
-        return this.sendMessage({
-            clientContent: {
-                turns: [{ role: 'user', parts: [{ text: 'Please greet me warmly in one short English sentence, then wait for me to speak.' }] }],
-                turnComplete: true
-            }
-        });
+    resetSession() {
+        const socket = this.socket;
+        if (!this.active || !this.ready || socket?.readyState !== this.Socket.OPEN) return false;
+        this.sessionId = globalThis.crypto.randomUUID();
+        this.resumeHandle = undefined;
+        this.freshSessionRequested = true;
+        try { socket.close(1000, 'User ended call'); }
+        catch { this.disconnectSocket?.('Fresh session'); }
+        return true;
     }
 
     stop() {
@@ -346,6 +347,7 @@ export class LiveService extends EventTarget {
         this.rejectStart?.(new Error('연결이 취소되었습니다.'));
         this.resolveStart = this.rejectStart = undefined;
         this.resumeHandle = undefined;
+        this.freshSessionRequested = false;
         this.reconnectRequested = false;
         const socket = this.socket;
         this.socket = undefined;
