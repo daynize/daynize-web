@@ -64,7 +64,7 @@ export function resolveWebSocketUrl({ endpoint, env = globalThis.process?.env, c
 }
 
 export class LiveService extends EventTarget {
-    constructor({ endpoint, mode = 'proxy', apiKey, model, voice = 'Kore', protocol = 'audio', silenceDurationMs = 200, maxRetries = 10, retryDelay = 1000, maxRetryDelay = 30000, timeout = 20000, recoveryTimeout = 60000, stableConnectionTime = 30000, heartbeatInterval = 20000, heartbeatTimeout = 10000, onConnectionState, WebSocketClass = globalThis.WebSocket } = {}) {
+    constructor({ endpoint, mode = 'proxy', apiKey, model, voice = 'Kore', protocol = 'audio', silenceDurationMs = 200, maxRetries = 20, retryDelay = 1000, maxRetryDelay = 30000, timeout = 20000, recoveryTimeout = 300000, stableConnectionTime = 30000, heartbeatInterval = 20000, heartbeatTimeout = 10000, onConnectionState, WebSocketClass = globalThis.WebSocket } = {}) {
         super();
         if (!Number.isInteger(maxRetries) || maxRetries < 0 || [retryDelay, maxRetryDelay, timeout, heartbeatInterval, heartbeatTimeout].some(value => !Number.isFinite(value) || value <= 0)) throw new TypeError('Invalid connection retry or timeout options.');
         if ([recoveryTimeout, stableConnectionTime].some(value => !Number.isFinite(value) || value <= 0)) throw new TypeError('Invalid recovery timeout options.');

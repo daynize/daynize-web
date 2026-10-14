@@ -56,9 +56,10 @@ test('10-minute wall-clock limit closes minimized session despite ongoing sound'
 });
 
 test('reconnection beyond 30 seconds does not trigger silence termination', async ({ page }) => {
-    await startSession(page, { recoveryTimeout: 90000 });
+    await startSession(page);
     await page.evaluate(() => {
         const service = document.querySelector('daynize-voice-tutor').service;
+        if (service.options.recoveryTimeout !== 300000 || service.options.maxRetries !== 20) throw new Error('Expected a five-minute recovery window with 20 attempts');
         service.options.retryDelay = service.options.maxRetryDelay = 60000;
         service.socket.onerror();
     });
