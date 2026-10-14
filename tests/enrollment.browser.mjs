@@ -31,7 +31,7 @@ test('course enrollment form is clear and validates required details on desktop 
     const browser = await chromium.launch({ headless: true });
     try {
         for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
-            const page = await browser.newPage({ viewport });
+            const page = await browser.newPage({ viewport, reducedMotion: 'reduce' });
             const errors = [];
             page.on('pageerror', error => errors.push(error.message));
             await page.addInitScript(() => {
@@ -43,10 +43,15 @@ test('course enrollment form is clear and validates required details on desktop 
                 const orders = readSession('mock-orders', {});
                 window.__paymentRequests = readSession('mock-payment-requests', []);
                 window.__cancelNextPayment = true;
+                window.__throwNextPayment = false;
                 window.PortOne = {
                     requestPayment: async options => {
                         window.__paymentRequests.push(options);
                         writeSession('mock-payment-requests', window.__paymentRequests);
+                        if (window.__throwNextPayment) {
+                            window.__throwNextPayment = false;
+                            throw new Error('SDK failure');
+                        }
                         if (window.__cancelNextPayment) return { code: 'USER_CANCEL', message: '결제가 취소되었습니다.' };
                         return { paymentId: options.paymentId };
                     }
@@ -56,7 +61,7 @@ test('course enrollment form is clear and validates required details on desktop 
                     const url = new URL(typeof input === 'string' ? input : input.url, window.location.href);
                     if (url.origin !== 'https://api.daynize.co.kr') return originalFetch(input, init);
                     if (url.pathname === '/api/payment/config') {
-                        return Response.json({ enabled: true, mode: 'test', amount: 49000, pgProvider: 'HTML5_INICIS', storeId: 'store-test', channelKey: 'channel-test' });
+                        return Response.json({ enabled: true, mode: 'test', amount: 19000, pgProvider: 'NHN_KCP', storeId: 'store-test', channelKey: 'channel-test' });
                     }
                     if (url.pathname === '/api/payment/orders') {
                         const buyer = JSON.parse(init.body);
@@ -64,13 +69,13 @@ test('course enrollment form is clear and validates required details on desktop 
                         const orderId = `order_${orderSequence}`;
                         orders[orderId] = buyer;
                         writeSession('mock-orders', orders);
-                        return Response.json({ orderId, amount: 49000, orderName: '데이나이즈 매일 영어 라이브 패스', currency: 'CURRENCY_KRW', payMethod: 'CARD', storeId: 'store-test', channelKey: 'channel-test' }, { status: 201 });
+                        return Response.json({ orderId, amount: 19000, orderName: '데이나이즈 매일 영어 라이브 패스', currency: 'CURRENCY_KRW', payMethod: 'CARD', pgProvider: 'NHN_KCP', storeId: 'store-test', channelKey: 'channel-test' }, { status: 201 });
                     }
                     if (url.pathname === '/api/payment/verify') {
                         const { paymentId } = JSON.parse(init.body);
                         const buyer = orders[paymentId];
                         if (!buyer) return Response.json({ error: 'unknown order' }, { status: 401 });
-                        return Response.json({ orderId: paymentId, amount: 49000, email: buyer.email, status: 'PAID' });
+                        return Response.json({ orderId: paymentId, amount: 19000, email: buyer.email, status: 'PAID' });
                     }
                     return Response.json({ error: 'not found' }, { status: 404 });
                 };
@@ -81,6 +86,15 @@ test('course enrollment form is clear and validates required details on desktop 
             const form = page.locator('#registration-form');
             const submit = form.locator('[type="submit"]');
             assert.match(await form.locator('.product-summary').innerText(), /선택 중인 코스[\s\S]*데이나이즈 매일 영어 라이브 패스/);
+            assert.equal(await form.locator('.product-summary-price').innerText(), '19,000원 (VAT 포함)');
+            assert.doesNotMatch(await form.innerText(), /테스트|Test/i);
+            const mainFooter = page.locator('.site-footer');
+            assert.match(await mainFooter.locator('.business-info').evaluate(element => element.textContent), /데이나이즈[\s\S]*강성준[\s\S]*665-13-02896[\s\S]*070-4010-1147[\s\S]*contact@daynize\.co\.kr/);
+            assert.equal(await mainFooter.locator('.footer-links [data-open-legal]').count(), 2);
+            for (const dialogId of ['terms-dialog', 'privacy-dialog']) {
+                const dialog = page.locator(`#${dialogId}`);
+                assert.doesNotMatch(await dialog.evaluate(element => element.textContent), /테스트|Test/i);
+            }
             assert.equal(await form.locator('select, #time').count(), 0);
             assert.equal(await form.locator('.legal-notice').count(), 0);
             assert.equal(await form.locator('input[name="email"][type="email"][required]').count(), 1);
@@ -113,9 +127,16 @@ test('course enrollment form is clear and validates required details on desktop 
             assert.equal(await submit.isDisabled(), false);
             assert.equal(await form.locator('#form-validation-message').isHidden(), true);
 
+            await page.evaluate(() => { window.__throwNextPayment = true; });
             await submit.click();
             await page.waitForFunction(() => window.__paymentRequests.length === 1);
-            assert.equal(await page.evaluate(() => window.__paymentRequests.length), 1, await page.locator('#form-message').innerText());
+            await page.waitForFunction(() => document.querySelector('#form-message')?.textContent.includes('결제를 진행하지 못했습니다'));
+            assert.equal(await page.evaluate(() => window.__paymentRequests.length), 1);
+            assert.equal(await submit.isDisabled(), false);
+            assert.deepEqual(errors, []);
+
+            await submit.click();
+            await page.waitForFunction(() => window.__paymentRequests.length === 2);
             assert.match(await page.locator('#form-message').innerText(), /결제가 취소되었습니다/);
             assert.equal(await form.locator('#name').inputValue(), '김하늘');
             assert.equal(await form.locator('#email').inputValue(), 'learner@example.com');
@@ -134,22 +155,58 @@ test('course enrollment form is clear and validates required details on desktop 
 
             await page.evaluate(() => { window.__cancelNextPayment = false; });
             await submit.click();
-            await page.waitForURL(/\/payment\/success\?orderId=order_\d{13}&amount=49000&email=learner%40example\.com/);
+            await page.waitForURL(/\/payment\/success\?orderId=order_\d{13}&amount=19000&email=learner%40example\.com/);
             await page.locator('#title').waitFor();
             await page.waitForFunction(() => document.querySelector('#title')?.textContent === '수강 신청이 완료되었습니다');
             const paymentRequest = await page.evaluate(() => window.__paymentRequests.at(-1));
             assert.equal(paymentRequest.orderName, '데이나이즈 매일 영어 라이브 패스');
-            assert.equal(paymentRequest.totalAmount, 49000);
+            assert.equal(paymentRequest.totalAmount, 19000);
             assert.equal(paymentRequest.payMethod, 'CARD');
             assert.equal(paymentRequest.customer.fullName, '김하늘');
             assert.equal(paymentRequest.customer.phoneNumber, '010-1234-5678');
             assert.equal(paymentRequest.customer.email, 'learner@example.com');
             assert.equal(new URL(paymentRequest.redirectUrl).pathname, '/payment/success');
             assert.equal(new URL(paymentRequest.redirectUrl).searchParams.get('resume'), '1');
-            assert.match(await page.locator('#status').innerText(), /실제 청구는 발생하지 않았습니다/);
+            assert.match(await page.locator('#status').innerText(), /결제가 확인되었습니다/);
+            assert.match(await page.locator('.business-info').innerText(), /데이나이즈[\s\S]*강성준[\s\S]*665-13-02896[\s\S]*070-4010-1147[\s\S]*contact@daynize\.co\.kr/);
+            assert.equal(await page.locator('.footer-links a').count(), 2);
+            assert.match(await page.locator('.footer-links a[href="/#terms-dialog"]').getAttribute('href'), /terms-dialog/);
+            assert.match(await page.locator('.footer-links a[href="/#privacy-dialog"]').getAttribute('href'), /privacy-dialog/);
             assert.deepEqual(errors, []);
             await page.close();
         }
+
+        const staleConfigPage = await browser.newPage({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
+        await staleConfigPage.addInitScript(() => {
+            window.__orderRequests = 0;
+            window.__paymentCalls = 0;
+            window.PortOne = { requestPayment: async () => { window.__paymentCalls += 1; } };
+            const originalFetch = window.fetch.bind(window);
+            window.fetch = async (input, init = {}) => {
+                const url = new URL(typeof input === 'string' ? input : input.url, window.location.href);
+                if (url.origin === 'https://api.daynize.co.kr' && url.pathname === '/api/payment/config') {
+                    return Response.json({ enabled: true, mode: 'test', amount: 49000, pgProvider: 'HTML5_INICIS', storeId: 'store-old', channelKey: 'channel-old' });
+                }
+                if (url.origin === 'https://api.daynize.co.kr' && url.pathname === '/api/payment/orders') {
+                    window.__orderRequests += 1;
+                    return Response.json({ orderId: 'old-order', amount: 49000, pgProvider: 'HTML5_INICIS' }, { status: 201 });
+                }
+                return originalFetch(input, init);
+            };
+        });
+        await staleConfigPage.goto(base);
+        const staleForm = staleConfigPage.locator('#registration-form');
+        await staleForm.locator('#name').fill('김하늘');
+        await staleForm.locator('#phone').fill('010-1234-5678');
+        await staleForm.locator('#email').fill('learner@example.com');
+        await staleForm.locator('#privacy-consent').check();
+        await staleForm.locator('#terms-consent').check();
+        assert.equal(await staleForm.locator('.product-summary-price').innerText(), '19,000원 (VAT 포함)');
+        await staleForm.locator('[type="submit"]').click();
+        await staleConfigPage.waitForFunction(() => document.querySelector('#form-message')?.textContent.includes('결제 서비스가 아직 준비되지 않았습니다'));
+        assert.equal(await staleConfigPage.evaluate(() => window.__orderRequests), 0);
+        assert.equal(await staleConfigPage.evaluate(() => window.__paymentCalls), 0);
+        await staleConfigPage.close();
     } finally {
         await browser.close();
         await new Promise(resolve => server.close(resolve));

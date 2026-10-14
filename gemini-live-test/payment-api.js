@@ -1,7 +1,7 @@
 const { randomBytes } = require('node:crypto');
 
 const PRODUCT_NAME = '데이나이즈 매일 영어 라이브 패스';
-const DEFAULT_AMOUNT = 49000;
+const DEFAULT_AMOUNT = 19000;
 const SESSION_COOKIE = 'daynize_checkout';
 const SESSION_TTL_MS = 30 * 60 * 1000;
 const MAX_BODY_BYTES = 8192;
@@ -41,8 +41,8 @@ function createPaymentApi(options = {}) {
     const channelKey = options.channelKey ?? process.env.PORTONE_CHANNEL_KEY ?? '';
     const apiSecret = options.apiSecret ?? process.env.PORTONE_API_SECRET ?? '';
     const mode = options.mode ?? process.env.PORTONE_MODE ?? '';
-    const pgProvider = options.pgProvider ?? process.env.PORTONE_PG_PROVIDER ?? 'HTML5_INICIS';
-    const amount = Number(options.amount ?? process.env.PORTONE_AMOUNT ?? DEFAULT_AMOUNT);
+    const pgProvider = options.pgProvider ?? process.env.PORTONE_PG_PROVIDER ?? 'NHN_KCP';
+    const amount = DEFAULT_AMOUNT;
     const allowedOrigins = options.allowedOrigins ?? (process.env.ALLOWED_ORIGINS || '').split(',').filter(Boolean);
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
     const now = options.now ?? Date.now;
@@ -52,7 +52,7 @@ function createPaymentApi(options = {}) {
     if (!['HTML5_INICIS', 'NHN_KCP'].includes(pgProvider)) throw new Error('PORTONE_PG_PROVIDER must be HTML5_INICIS or NHN_KCP.');
     if (!Number.isSafeInteger(amount) || amount < 1) throw new Error('PORTONE_AMOUNT must be a positive integer.');
 
-    const ready = () => mode === 'test' && Boolean(storeId.trim() && channelKey.trim() && apiSecret.trim());
+    const ready = () => ['test', 'live'].includes(mode) && Boolean(storeId.trim() && channelKey.trim() && apiSecret.trim());
     const allowedOrigin = (origin, request) => {
         if (typeof origin !== 'string') return false;
         if (allowedOrigins.includes(origin)) return true;
@@ -90,7 +90,7 @@ function createPaymentApi(options = {}) {
         if (pathname === '/api/payment/config' && request.method === 'GET') {
             json(response, 200, {
                 enabled: ready(),
-                mode: 'test',
+                mode: mode === 'live' ? 'live' : 'test',
                 productName: PRODUCT_NAME,
                 amount,
                 pgProvider,
@@ -107,7 +107,7 @@ function createPaymentApi(options = {}) {
             return true;
         }
         if (!ready()) {
-            json(response, 503, { error: 'PortOne 테스트 결제 설정이 완료되지 않았습니다.' }, cors);
+            json(response, 503, { error: '결제 서비스가 아직 준비되지 않았습니다. 고객센터로 문의해 주세요.' }, cors);
             return true;
         }
         if (!/^application\/json(?:\s*;|$)/i.test(request.headers['content-type'] || '')) {
@@ -190,7 +190,7 @@ function createPaymentApi(options = {}) {
                 (!customer.phoneNumber || normalizePhone(customer.phoneNumber) === normalizePhone(order.phone));
             if (payment.id !== orderId || payment.status !== 'PAID' || payment.amount?.total !== amount ||
                 payment.currency !== 'KRW' || payment.orderName !== PRODUCT_NAME ||
-                selectedChannel?.type !== 'TEST' ||
+                selectedChannel?.type !== (mode === 'test' ? 'TEST' : 'LIVE') ||
                 (paymentMethodType && paymentMethodType !== 'CARD') || !matchingCustomer) {
                 json(response, 409, { error: '결제 정보가 신청 내용과 일치하지 않아 완료할 수 없습니다. 고객센터에 문의해 주세요.' }, cors);
                 return true;

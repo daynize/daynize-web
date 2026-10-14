@@ -2275,7 +2275,7 @@
                     <div class="product-summary" aria-label="신청 상품">
                         <p class="product-summary-label">선택 중인 코스</p>
                         <p class="product-summary-title">데이나이즈 매일 영어 라이브 패스</p>
-                        <p class="product-summary-price" id="product-summary-price">49,000원 · 테스트 결제</p>
+                        <p class="product-summary-price" id="product-summary-price">19,000원 (VAT 포함)</p>
                     </div>
                     <div class="form-grid">
                         <div class="field">
@@ -2335,6 +2335,10 @@
             </div>
             <dl class="business-info" aria-label="사업자 정보">
                 <div>
+                    <dt>상호</dt>
+                    <dd>데이나이즈</dd>
+                </div>
+                <div>
                     <dt>대표자</dt>
                     <dd>강성준</dd>
                 </div>
@@ -2370,9 +2374,9 @@
         </div>
         <div class="legal-modal-body">
             <p class="legal-effective-date">시행일: 2026년 10월 4일</p>
-            <p class="legal-notice"><strong>테스트 결제 안내</strong><br>수강 신청 정보는 HTTPS로 데이나이즈 API와 PortOne 테스트 결제 채널에 전송됩니다.
-                주문 세션은 결제 확인을 위해 서버 메모리에서 최대 30분간 유지되며, 테스트 결제는 실제 청구되지 않습니다. 정식 운영 전 실제 처리 시스템과 위탁 내용을 확정해 본 방침을
-                갱신하겠습니다.</p>
+            <p class="legal-notice"><strong>결제 안내</strong><br>현재 온라인 결제 서비스는 준비 중입니다. 서비스가 활성화되면 신청 정보는 HTTPS로 데이나이즈
+                API에 전송되고,
+                결제는 PortOne 결제창과 NHN KCP를 통해 처리됩니다. 주문 확인을 위한 세션은 서버 메모리에서 최대 30분간 유지됩니다.</p>
             <article class="legal-article">
                 <h3>1. 수집하는 개인정보 항목</h3>
                 <p>수강 상담 및 서비스 제공을 위해 다음 정보를 수집·이용합니다.</p>
@@ -2387,15 +2391,16 @@
                     경우에도 DAYNIZE는 음성 원본을 자체 서버에 저장하지 않으며, 전송된 음성은 Google의 API 서비스 약관 및 개인정보 처리 기준에 따라 처리됩니다.</p>
 
                 <h3>2. 개인정보의 수집 및 이용 목적</h3>
-                <p>테스트 결제 세션 생성과 결제 상태 확인, 신청자 식별 및 향후 수강 계정 연결 준비를 위해 이용합니다.</p>
+                <p>수강 신청 접수, 결제 상태 확인, 신청자 식별 및 수강 안내를 위해 이용합니다.</p>
 
                 <h3>3. 보유 및 이용 기간</h3>
-                <p>테스트 주문 세션은 생성 후 최대 30분이 지나면 서버 메모리에서 만료됩니다. PortOne 테스트 채널의 거래 기록은 해당 서비스의 테스트 데이터 정책에 따릅니다. 정식 운영
-                    시에는 상담 정보는 상담 완료일로부터 1년간 보관 후 파기합니다. 다만, 계약·결제·분쟁 등 관계 법령에 따라 보존할 필요가 있는 정보는 해당 법령이 정한 기간 동안 별도로
+                <p>결제 주문 세션은 생성 후 최대 30분이 지나면 서버 메모리에서 만료됩니다. 결제 기록은 결제 서비스 제공자의 정책과 관계 법령에 따라 처리됩니다. 신청 정보는 수강 안내 및 계약
+                    이행에 필요한 기간 동안 보관하며, 계약·결제·분쟁 등 관계 법령에 따라 보존할 필요가 있는 정보는 해당 법령이 정한 기간 동안 별도로
                     보관합니다.
                     전자상거래 등에서의 소비자보호에 관한 법률에 따른 계약·청약철회, 대금결제·재화 공급 기록은 5년, 소비자 불만·분쟁 처리 기록은 3년 보관 대상이 될 수 있습니다.</p>
-                <p>수강 신청 입력 정보는 결제 세션 생성을 위해 데이나이즈 API로 전송되고, 카드 결제 처리는 PortOne 및 선택한 테스트 PG 채널에서 수행됩니다. 결제 정보가 일치하지 않거나
-                    테스트 설정이 끝나지 않은 경우 결제 완료로 처리하지 않습니다. 기기에서 재생하는 녹음 파일과 인식 문장은 페이지 메모리에서 임시 처리하며 페이지를 닫거나 새로고침하면 소멸합니다.
+                <p>수강 신청 입력 정보는 결제 세션 생성을 위해 데이나이즈 API로 전송되고, 카드 결제 처리는 PortOne 및 NHN KCP를 통해 수행됩니다. 결제 정보가 일치하지 않는 경우
+                    결제 완료로
+                    처리하지 않습니다. 기기에서 재생하는 녹음 파일과 인식 문장은 페이지 메모리에서 임시 처리하며 페이지를 닫거나 새로고침하면 소멸합니다.
                     Google Gemini 음성 변환에 동의한 경우 녹음 음성은 실시간 또는 녹음 후 변환 요청에 포함되어 Google로 전송됩니다.</p>
 
                 <h3>4. 개인정보의 제3자 제공</h3>
@@ -2405,8 +2410,8 @@
                 <h3>5. 개인정보 처리 업무의 위탁</h3>
                 <p>웹페이지 호스팅·콘텐츠 전송 및 보안 기능을 위해 GitHub Pages, Cloudflare CDN 등 인프라가 사용될 수 있고, 글꼴·이미지 제공을 위해 Google Fonts
                     및 Unsplash 서버에 브라우저 요청이 발생할 수 있습니다. 이 과정에서 각 사업자가 자신의 서비스 운영을 위한 접속 정보를 처리할 수 있습니다.</p>
-                <p>테스트 결제 처리를 위해 PortOne 및 선택한 PG 테스트 채널을 이용합니다. 정식 결제 도입 전에는 업체명, 위탁 업무, 처리 항목과 보유 기간을 확인해 이 방침과 결제 화면에
-                    공개하겠습니다.</p>
+                <p>결제 처리 업무는 PortOne 및 NHN KCP에 위탁합니다. 결제 과정에서 결제에 필요한 정보가 각 사업자에게 전달되며, 각 사업자의 개인정보 처리 기준에 따라 처리됩니다.
+                </p>
 
                 <h3>6. 개인정보의 파기 절차 및 방법</h3>
                 <p>보유 기간이 끝나거나 처리 목적이 달성된 개인정보는 내부 확인 절차를 거쳐 지체 없이 파기합니다. 전자 파일은 복구할 수 없도록 삭제하고, 종이 문서는 분쇄 또는 소각합니다. 법정
@@ -2437,8 +2442,9 @@
         </div>
         <div class="legal-modal-body">
             <p class="legal-effective-date">시행일: 2026년 10월 4일</p>
-            <p class="legal-notice"><strong>테스트 결제 안내</strong><br>현재 수강 신청은 PortOne 테스트 채널로만 진행되며 실제 청구나 정식 회원 계정 생성은
-                이루어지지 않습니다. 유료 강의의 실제 신청과 결제는 제공 조건·금액·환불 기준을 별도로 안내한 뒤 진행됩니다.</p>
+            <p class="legal-notice"><strong>수강 신청 안내</strong><br>수강료는 19,000원이며 부가가치세가 포함되어 있습니다. 결제 서비스가 활성화되면 신청자가
+                결제창에서
+                결제를 완료한 후 신청이 접수됩니다. 강의 제공 및 환불은 아래 약관과 관계 법령을 따릅니다.</p>
             <article class="legal-article">
                 <h3>제1조 목적 및 용어</h3>
                 <p>이 약관은 데이나이즈(DAYNIZE, 이하 “회사”)가 제공하는 시니어 영어 학습·상담 서비스(이하 “서비스”)의 이용 조건과 회사 및 이용자의 권리·의무를 정합니다. “이용자”는
@@ -2453,11 +2459,12 @@
                     점검·장애·천재지변 등 불가피한 사유로 제공을 일시 중단할 수 있으며, 중요한 변경이나 중단은 가능한 한 사전에 공지합니다.</p>
 
                 <h3>제4조 수강 신청과 계약 성립</h3>
-                <p>홈페이지의 상담 신청만으로 유료 수강 계약이나 결제가 성립하지 않습니다. 회사가 수강 내용, 일정, 총액, 결제 방법 및 환불 조건을 안내하고 이용자가 이를 확인하여 신청한 뒤,
-                    회사가 승낙을 통지하면 계약이 성립합니다. 결제 기능이 제공되는 경우 결제 전에 총 금액과 조건을 표시합니다.</p>
+                <p>이용자는 수강 신청 전에 과정, 제공 내용, 총액 및 환불 조건을 확인합니다. 결제창에서 결제가 승인되고 회사가 신청을 확인하면 수강 신청이 접수됩니다. 총 결제 금액은
+                    19,000원
+                    (부가가치세 포함)입니다.</p>
 
                 <h3>제5조 수강료 결제와 환불</h3>
-                <p>수강료는 개별 강의 또는 계약 화면에 표시된 금액과 결제 방법에 따릅니다. 현재 연결된 PortOne 결제는 테스트 채널입니다. 환불 및 청약철회는 계약 형태와 실제 서비스 제공
+                <p>수강료는 결제 화면에 표시된 금액과 결제 방법에 따릅니다. 현재 신청 상품의 총액은 19,000원(부가가치세 포함)입니다. 환불 및 청약철회는 계약 형태와 실제 서비스 제공
                     방식에 적용되는 관계 법령의 강행 규정을 우선 적용합니다.</p>
                 <p>전자상거래에 해당하는 계약에는 「전자상거래 등에서의 소비자보호에 관한 법률」 등 관계 법령에 따른 청약철회와 디지털 콘텐츠 제공 개시 관련 제한·예외가 적용됩니다. 법령상 청약철회
                     제한 사유가 있는 경우 회사는 사전에 그 사실과 필요한 조치를 알립니다.</p>
@@ -2546,6 +2553,10 @@
                     if (dialog instanceof HTMLDialogElement && !dialog.open) dialog.showModal();
                 });
             });
+            if (['#terms-dialog', '#privacy-dialog'].includes(window.location.hash)) {
+                const legalDialog = document.querySelector(window.location.hash);
+                if (legalDialog instanceof HTMLDialogElement) legalDialog.showModal();
+            }
             document.querySelectorAll('.legal-modal').forEach((dialog) => {
                 dialog.addEventListener('keydown', (event) => {
                     if (event.key === 'Escape') {
@@ -3910,6 +3921,8 @@
             const registrationMessage = document.querySelector('#form-message');
             const registrationValidationMessage = document.querySelector('#form-validation-message');
             const checkoutApiBase = document.querySelector('meta[name="daynize-payment-api"]')?.content || window.location.origin;
+            const checkoutAmount = 19000;
+            const checkoutProvider = 'NHN_KCP';
             const checkoutResumeKey = 'daynize.checkout.resume.v1';
             const paymentSuccessPath = '/payment/success';
             let checkoutConfig;
@@ -4004,9 +4017,9 @@
                     history.replaceState(null, '', `${success.pathname}${success.search}`);
                     document.title = '수강 신청 완료 | 데이나이즈';
                     document.querySelector('#register-title').innerHTML = '수강 신청이<br>완료되었습니다';
-                    document.querySelector('.registration-copy > p:not(.eyebrow)').textContent = '테스트 결제 승인이 확인되었습니다. 정식 강의 수강이나 회원 계정은 생성되지 않았습니다.';
+                    document.querySelector('.registration-copy > p:not(.eyebrow)').textContent = '결제가 확인되었습니다. 수강 신청이 완료되었습니다.';
                     registrationForm.hidden = true;
-                    showRegistrationMessage('PortOne 테스트 결제가 확인되었습니다. 테스트 결제이므로 실제 청구는 발생하지 않았습니다.');
+                    showRegistrationMessage('결제가 확인되었습니다. 등록하신 이메일로 수강 안내를 보내드리겠습니다.');
                 } catch (error) {
                     const registerUrl = new URL('/', window.location.origin);
                     registerUrl.hash = 'register';
@@ -4019,9 +4032,14 @@
             const loadCheckoutConfig = async () => {
                 try {
                     checkoutConfig = await apiRequest('/api/payment/config', { headers: {} });
-                    document.querySelector('#product-summary-price').textContent = `${Number(checkoutConfig.amount).toLocaleString('ko-KR')}원 · 테스트 결제`;
+                    document.querySelector('#product-summary-price').textContent = `${checkoutAmount.toLocaleString('ko-KR')}원 (VAT 포함)`;
+                    if (Number(checkoutConfig.amount) !== checkoutAmount || checkoutConfig.pgProvider !== checkoutProvider) {
+                        checkoutConfig.enabled = false;
+                        showRegistrationMessage('결제 서비스가 아직 준비되지 않았습니다. 고객센터로 문의해 주세요.', true);
+                        return;
+                    }
                     if (!checkoutConfig.enabled) {
-                        showRegistrationMessage('PortOne 테스트 결제가 아직 설정되지 않았습니다. 관리자 설정을 확인해 주세요.', true);
+                        showRegistrationMessage('결제 서비스가 아직 준비되지 않았습니다. 고객센터로 문의해 주세요.', true);
                     }
                 } catch {
                     showRegistrationMessage('결제 서버에 연결할 수 없습니다. 잠시 후 다시 시도해 주세요.', true);
@@ -4062,6 +4080,9 @@
                             termsConsent: registrationForm.elements.termsConsent.checked
                         })
                     });
+                    if (Number(order.amount) !== checkoutAmount || order.pgProvider !== checkoutProvider) {
+                        throw new Error('결제 서비스가 아직 준비되지 않았습니다. 고객센터로 문의해 주세요.');
+                    }
                     const redirect = new URL(paymentSuccessPath, window.location.origin);
                     redirect.searchParams.set('resume', '1');
                     preserveCheckoutInput();
@@ -4070,7 +4091,7 @@
                         channelKey: order.channelKey,
                         paymentId: order.orderId,
                         orderName: order.orderName,
-                        totalAmount: order.amount,
+                        totalAmount: checkoutAmount,
                         currency: order.currency,
                         payMethod: order.payMethod,
                         customer: {
@@ -4101,7 +4122,7 @@
                     window.location.assign(`${success.pathname}${success.search}`);
                 } catch (error) {
                     try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }
-                    showRegistrationMessage(error.message || '결제가 취소되었습니다. 입력하신 신청 정보는 그대로 두었습니다.', true);
+                    showRegistrationMessage('결제를 진행하지 못했습니다. 입력 정보를 확인하거나 고객센터로 문의해 주세요.', true);
                 } finally {
                     checkoutInProgress = false;
                     registrationSubmit.innerHTML = '수강 신청하기 <span aria-hidden="true">→</span>';

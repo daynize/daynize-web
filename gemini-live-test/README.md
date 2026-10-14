@@ -27,11 +27,10 @@ PORTONE_MODE=test
 PORTONE_STORE_ID=store-...
 PORTONE_CHANNEL_KEY=channel-...
 PORTONE_API_SECRET=...
-PORTONE_PG_PROVIDER=HTML5_INICIS
-PORTONE_AMOUNT=49000
+PORTONE_PG_PROVIDER=NHN_KCP
 ```
 
-Choose `HTML5_INICIS` for KG Inicis or `NHN_KCP` for KCP and use the matching **test** channel key from the PortOne console. Set the server secret with `fly secrets set PORTONE_MODE=test PORTONE_STORE_ID=... PORTONE_CHANNEL_KEY=... PORTONE_API_SECRET=... PORTONE_PG_PROVIDER=HTML5_INICIS PORTONE_AMOUNT=49000 -a daynize-relay-api`; replace `...` locally with credentials and never commit them. The deploy must include `payment-api.js` through the existing `COPY gemini-live-test/ ./` Docker build step.
+Use the matching NHN KCP channel configured in the PortOne console. For sandbox verification, set `PORTONE_MODE=test` and use a test channel; for real payments, `PORTONE_MODE=live` requires approved live credentials and a live channel. Configure the server with `fly secrets set PORTONE_MODE=test PORTONE_STORE_ID=... PORTONE_CHANNEL_KEY=... PORTONE_API_SECRET=... PORTONE_PG_PROVIDER=NHN_KCP -a daynize-relay-api`; replace `...` locally with credentials and never commit them. The product amount is fixed server-side at 19,000 KRW (VAT included). The deploy must include `payment-api.js` through the existing `COPY gemini-live-test/ ./` Docker build step.
 
 The static result route is `payment/success/index.html`, deployed at `/payment/success`. PortOne redirects there for both mobile checkout and server-verified success. Cancelled checkout links back to the form, which restores its in-tab draft. Order metadata is currently process-memory only; before live payments, persist orders and consent records durably, add fulfillment/account provisioning and cancellation/refund handling, update the privacy notice and terms, and switch to a live channel only after those controls are in place.
 

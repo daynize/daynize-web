@@ -40,6 +40,7 @@ test('PortOne test config creates a guest session and verifies a paid order once
         portoneApiSecret: 'secret-test-only',
         portoneMode: 'test',
         portonePgProvider: 'NHN_KCP',
+        amount: 49000,
         paymentFetchImpl: async (url, request) => {
             verificationCount += 1;
             assert.match(url, /\/payments\/order_\d{13}$/);
@@ -48,7 +49,7 @@ test('PortOne test config creates a guest session and verifies a paid order once
             return new Response(JSON.stringify({
                 id: orderId,
                 status: 'PAID',
-                amount: { total: 49000 },
+                amount: { total: 19000 },
                 currency: 'KRW',
                 orderName: '데이나이즈 매일 영어 라이브 패스',
                 selectedChannel: { type: 'TEST' },
@@ -61,8 +62,8 @@ test('PortOne test config creates a guest session and verifies a paid order once
     const configResponse = await fetch(`${base}/api/payment/config`, { headers: { Origin: new URL(base).origin } });
     const config = await configResponse.json();
     assert.equal(config.enabled, true);
+    assert.equal(config.amount, 19000);
     assert.equal(config.pgProvider, 'NHN_KCP');
-    assert.equal(config.amount, 49000);
     assert.equal('apiSecret' in config, false);
 
     const created = await createOrder(base);
@@ -81,7 +82,7 @@ test('PortOne test config creates a guest session and verifies a paid order once
     assert.equal(first.status, 200);
     assert.deepEqual(await first.json(), {
         orderId: created.body.orderId,
-        amount: 49000,
+        amount: 19000,
         email: buyer.email,
         status: 'PAID'
     });
@@ -140,6 +141,49 @@ test('PortOne endpoint rejects missing consent, wrong amount, foreign origins an
     assert.equal(foreign.status, 403);
 });
 
+test('live NHN KCP checkout verifies only the configured live channel at the fixed price', { timeout: 10000 }, async context => {
+    let channelType = 'LIVE';
+    const base = await withServer(context, {
+        portoneStoreId: 'store-live',
+        portoneChannelKey: 'channel-live',
+        portoneApiSecret: 'secret-live-only',
+        portoneMode: 'live',
+        portonePgProvider: 'NHN_KCP',
+        paymentFetchImpl: async url => new Response(JSON.stringify({
+            id: decodeURIComponent(new URL(url).pathname.split('/').at(-1)),
+            status: 'PAID',
+            amount: { total: 19000 },
+            currency: 'KRW',
+            orderName: '데이나이즈 매일 영어 라이브 패스',
+            selectedChannel: { type: channelType },
+            paymentMethod: { type: 'CARD' }
+        }), { status: 200 })
+    });
+    const config = await (await fetch(`${base}/api/payment/config`, { headers: { Origin: new URL(base).origin } })).json();
+    assert.equal(config.enabled, true);
+    assert.equal(config.mode, 'live');
+    assert.equal(config.pgProvider, 'NHN_KCP');
+    assert.equal(config.amount, 19000);
+
+    const created = await createOrder(base);
+    assert.equal(created.response.status, 201);
+    assert.equal(created.body.amount, 19000);
+    const verify = () => fetch(`${base}/api/payment/verify`, {
+        method: 'POST',
+        headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', Cookie: created.cookie },
+        body: JSON.stringify({ paymentId: created.body.orderId })
+    });
+    assert.equal((await verify()).status, 200);
+
+    const sandboxOrder = await createOrder(base);
+    channelType = 'TEST';
+    assert.equal((await fetch(`${base}/api/payment/verify`, {
+        method: 'POST',
+        headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', Cookie: sandboxOrder.cookie },
+        body: JSON.stringify({ paymentId: sandboxOrder.body.orderId })
+    })).status, 409);
+});
+
 test('PortOne checkout remains disabled until test credentials and mode are configured', { timeout: 10000 }, async context => {
     const base = await withServer(context);
     const config = await fetch(`${base}/api/payment/config`, { headers: { Origin: new URL(base).origin } });
@@ -147,8 +191,8 @@ test('PortOne checkout remains disabled until test credentials and mode are conf
         enabled: false,
         mode: 'test',
         productName: '데이나이즈 매일 영어 라이브 패스',
-        amount: 49000,
-        pgProvider: 'HTML5_INICIS'
+        amount: 19000,
+        pgProvider: 'NHN_KCP'
     });
     const order = await createOrder(base);
     assert.equal(order.response.status, 503);
