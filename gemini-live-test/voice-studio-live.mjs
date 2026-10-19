@@ -1,7 +1,7 @@
 import { AudioEngine } from './audio-engine.mjs';
 import { LiveService } from './live-service.mjs';
 
-export async function startVoiceStudioLiveTranscription({ onTranscript, onState } = {}) {
+export async function startVoiceStudioLiveTranscription({ onTranscript, onState, onTurnComplete } = {}) {
     const loader = document.querySelector('script[data-daynize-tutor]');
     const configured = loader?.dataset.transcriptionEndpoint || 'https://api.daynize.co.kr/transcribe';
     const endpoint = new URL(configured);

@@ -73,6 +73,20 @@ The modules do not access browser globals until loaded in the browser. The custo
 
 ### Teaching Mode (Default)
 
+Keep a single Live session across greeting, learner answers and tutor feedback.
+`turnComplete` ends only the model's turn; it must not call `resetSession()`.
+Only the relay sends the opening prompt, guarded by `hasGreeted`; resumed sessions
+do not get another opening. Voice Studio uses `/ws/transcribe` with `sessionInit: null`
+and never sends a teaching greeting.
+
+The tutor enables input/output transcription and Gemini automatic voice activity
+detection with `START_OF_ACTIVITY_INTERRUPTS` and a default 700ms silence window
+(`VAD_SILENCE_MS` overrides it). Microphone PCM continues during tutor playback.
+Sustained local speech stops queued playback immediately; late audio from that
+model turn is discarded until Gemini acknowledges interruption or completes the
+turn. Silence buffers alone do not interrupt playback. Feedback uses the same
+conversation history, not a new session or a second synthetic greeting.
+
 The main page records the most recently **opened** lesson, not verified video completion.
 Pop & Culture, root-verb dialogues/videos, Numbers, Basic and other course dialogs use
 `trackRecentLesson()` from `lesson-context.mjs`. It stores `lessonId`, `source`,

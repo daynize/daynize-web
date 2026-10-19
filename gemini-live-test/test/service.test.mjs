@@ -86,8 +86,9 @@ test('a stable connection clears the recovery deadline and future outages get a 
 test('setup includes tutor voice and protocol waits for setupComplete', async () => {
     const setup = createSetup();
     assert.deepEqual(setup.setup.generationConfig.thinkingConfig, { thinkingBudget: 0 });
-    assert.equal(setup.setup.inputAudioTranscription, undefined);
-    assert.equal(setup.setup.outputAudioTranscription, undefined);
+    assert.deepEqual(setup.setup.inputAudioTranscription, {});
+    assert.deepEqual(setup.setup.outputAudioTranscription, {});
+    assert.equal(setup.setup.realtimeInputConfig.activityHandling, 'START_OF_ACTIVITY_INTERRUPTS');
     assert.equal(setup.setup.generationConfig.speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName, 'Kore');
     assert.match(setup.setup.systemInstruction.parts[0].text, /senior learners/);
     assert.deepEqual(setup.setup.realtimeInputConfig.automaticActivityDetection, {
@@ -95,7 +96,7 @@ test('setup includes tutor voice and protocol waits for setupComplete', async ()
         startOfSpeechSensitivity: 'START_SENSITIVITY_HIGH',
         endOfSpeechSensitivity: 'END_SENSITIVITY_HIGH',
         prefixPaddingMs: 200,
-        silenceDurationMs: 200
+        silenceDurationMs: 700
     });
     const service = new LiveService({ endpoint: 'wss://example.test/ws', WebSocketClass: MockSocket });
     const started = service.start();
@@ -128,6 +129,27 @@ test('transcription-only setup requests text input transcription without spoken 
     assert.match(setup.setup.systemInstruction.parts[0].text, /Do not answer or converse/i);
     assert.equal(setup.setup.realtimeInputConfig.automaticActivityDetection.silenceDurationMs, 500);
     assert.equal(setup.setup.generationConfig.speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName, 'Kore');
+});
+
+test('an interrupted packet never plays its stale audio but the next response can play', async context => {
+    const service = new LiveService({ endpoint: 'wss://example.test/ws', WebSocketClass: MockSocket });
+    context.after(() => service.stop());
+    const started = service.start();
+    await service.socket.message({ setupComplete: {} });
+    await started;
+    let interruptions = 0;
+    const audio = [];
+    const transcripts = [];
+    service.addEventListener('interrupted', () => interruptions++);
+    service.addEventListener('audio', event => audio.push(event.detail));
+    service.addEventListener('transcript', event => transcripts.push(event.detail));
+    const modelTurn = { parts: [{ inlineData: { mimeType: 'audio/pcm;rate=24000', data: 'AAA=' } }] };
+    await service.socket.message({ serverContent: { interrupted: true, modelTurn, inputTranscription: { text: 'I care.' } } });
+    assert.equal(interruptions, 1);
+    assert.deepEqual(audio, []);
+    assert.equal(transcripts[0].text, 'I care.');
+    await service.socket.message({ serverContent: { modelTurn } });
+    assert.equal(audio.length, 1);
 });
 
 test('transient disconnect reconnects; stopping cancels pending retries', async () => {

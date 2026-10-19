@@ -22,7 +22,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-        this.audio = new AudioEngine();
+        this.audio = new AudioEngine({ localInterruption: true });
         this.generation = 0;
         this.callActive = false;
         this.duration = 0;
@@ -210,6 +210,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         const service = this.service;
         service.addEventListener('audio', event => {
             if (!this.callActive || generation !== this.generation) return;
+            if (this.bargeIn) return;
             this.receivedFrames++;
             this.updateTransport();
             clearTimeout(this.responseTimer);
@@ -221,11 +222,11 @@ export class DaynizeVoiceTutor extends HTMLElement {
         });
         service.addEventListener('interrupted', () => {
             this.audio.interrupt();
+            this.bargeIn = false;
             if (this.callActive) this.setState(this.audio.muted ? 'muted' : 'listening');
         });
         service.addEventListener('turnComplete', () => {
             this.bargeIn = false;
-            service.resetSession();
         });
         service.addEventListener('connectionstate', event => {
             if (generation !== this.generation) return;

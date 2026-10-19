@@ -59,6 +59,49 @@ test('INIT_SESSION context builds the teaching instruction and Dayna greets firs
     assert.deepEqual(extra, []);
 });
 
+test('learner PCM and tutor feedback share one session without another greeting', { timeout: 5000 }, async context => {
+    const { upstream, port } = await startRelay(context);
+    const connection = once(upstream, 'connection');
+    const client = new WebSocket(`ws://127.0.0.1:${port}/ws`);
+    context.after(() => client.terminate());
+    await once(client, 'open');
+    const [gemini] = await connection;
+    const setupMessage = nextMessage(gemini);
+    client.send(JSON.stringify({ type: 'INIT_SESSION', mode: 'TEACHING', context: lesson }));
+    const { setup } = await setupMessage;
+    assert.equal(setup.realtimeInputConfig.activityHandling, 'START_OF_ACTIVITY_INTERRUPTS');
+    assert.equal(setup.realtimeInputConfig.automaticActivityDetection.silenceDurationMs, 700);
+    assert.deepEqual(setup.inputAudioTranscription, {});
+    assert.match(setup.systemInstruction.parts[0].text, /딱 한 번/);
+    const kickoff = nextMessage(gemini);
+    const ready = nextMessage(client);
+    gemini.send(JSON.stringify({ setupComplete: {} }));
+    await Promise.all([ready, kickoff]);
+    const messages = [];
+    gemini.on('message', data => messages.push(JSON.parse(data.toString())));
+    const forward = async message => {
+        const received = nextMessage(client);
+        gemini.send(JSON.stringify(message));
+        assert.deepEqual(await received, message);
+    };
+    await forward({ serverContent: { turnComplete: true } });
+    for (let i = 0; i < 3; i++) {
+        const received = nextMessage(gemini);
+        const audio = { realtimeInput: { audio: { mimeType: 'audio/pcm;rate=16000', data: Buffer.alloc(3200, i).toString('base64') } } };
+        client.send(JSON.stringify(audio));
+        assert.deepEqual(await received, audio);
+    }
+    await forward({ serverContent: { interrupted: true } });
+    await forward({ serverContent: { inputTranscription: { text: 'Will you wait for me forever?' } } });
+    await forward({ serverContent: { outputTranscription: { text: '참 잘하셨어요! 확신을 잘 표현하셨어요.' }, turnComplete: true } });
+    await forward({ setupComplete: {} });
+    await new Promise(resolve => setTimeout(resolve, 30));
+    assert.equal(messages.length, 3);
+    assert.ok(messages.every(message => message.realtimeInput?.audio));
+    assert.equal(client.readyState, WebSocket.OPEN);
+    assert.equal(upstream.clients.size, 1);
+});
+
 test('handshake falls back to a context-free teaching session after the init timeout', { timeout: 5000 }, async context => {
     const { upstream, port } = await startRelay(context, { initTimeoutMs: 50 });
     const connection = once(upstream, 'connection');

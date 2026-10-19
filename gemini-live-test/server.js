@@ -44,7 +44,7 @@ function createRelayServer(options = {}) {
         if (new URL(origin).origin !== origin || !origin.startsWith('https://')) throw new Error('ALLOWED_ORIGINS must contain exact HTTPS origins.');
     }
     const publicOrigin = options.publicOrigin ?? process.env.PUBLIC_ORIGIN;
-    const vadSilenceMs = Math.min(1000, Number(options.vadSilenceMs ?? process.env.VAD_SILENCE_MS) || 200);
+    const vadSilenceMs = Math.min(1000, Number(options.vadSilenceMs ?? process.env.VAD_SILENCE_MS) || 700);
     const transcriptionSilenceMs = options.transcriptionSilenceMs ?? (Number(process.env.TRANSCRIPTION_VAD_SILENCE_MS) || 500);
     const authorizeRequest = options.authorizeRequest;
     const maxConnections = options.maxConnections ?? 8;
@@ -279,6 +279,7 @@ function createRelayServer(options = {}) {
         let setupSent = false;
         let teachingMode = false;
         let teachingKickoff;
+        let hasGreeted = Boolean(resumeHandle);
         let initTimer;
         const sessionTimer = setTimeout(() => fail('Your conversation time limit was reached. Start a new session.'), maxSessionMs);
         const heartbeat = setInterval(() => {
@@ -386,7 +387,8 @@ function createRelayServer(options = {}) {
                 ready = true;
                 clearTimeout(setupTimer);
                 // Teaching mode: Dayna greets first. A resumed session already has its greeting in history.
-                if (firstSetup && teachingMode && !resumeHandle && upstream.readyState === WebSocket.OPEN) {
+                if (firstSetup && teachingMode && !hasGreeted && upstream.readyState === WebSocket.OPEN) {
+                    hasGreeted = true;
                     try { upstream.send(JSON.stringify(teachingKickoff)); }
                     catch { return fail('Unable to start the teaching conversation.'); }
                 }

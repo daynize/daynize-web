@@ -135,8 +135,27 @@ test('real AudioWorklet PCM, playback, barge-in, mute, reconnect and cleanup', a
     await page.waitForFunction(() => document.querySelector('daynize-voice-tutor').waveLevels[1] > 0.01);
     await page.screenshot({ path: 'test-results/widget-speaking.png' });
     await page.evaluate(() => { window.audioTest.gain.gain.value = 0.2; });
-    await page.waitForTimeout(150);
+    await expect(page.locator('.status-line')).toHaveText('듣고 있어요...');
+    expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').audio.sources.size)).toBe(0);
+    const framesAtInterruption = await page.evaluate(() => window.audioTest.sent.filter(message => message.realtimeInput?.audio).length);
+    await page.evaluate(async () => {
+        const { encodePcm } = await import('/audio.mjs');
+        window.audioTest.sockets.at(-1).message({ serverContent: { modelTurn: { parts: [{
+            inlineData: { data: encodePcm(new Float32Array(24000)), mimeType: 'audio/pcm;rate=24000' }
+        }] } } });
+    });
+    expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').audio.sources.size)).toBe(0);
+    await page.waitForFunction(previous => window.audioTest.sent.filter(message => message.realtimeInput?.audio).length > previous + 2, framesAtInterruption);
+    await page.evaluate(() => { window.audioTest.gain.gain.value = 0.005; });
+    await page.evaluate(() => window.audioTest.sockets.at(-1).message({ serverContent: { interrupted: true } }));
+    await page.evaluate(async () => {
+        const { encodePcm } = await import('/audio.mjs');
+        window.audioTest.sockets.at(-1).message({ serverContent: { modelTurn: { parts: [{
+            inlineData: { data: encodePcm(new Float32Array(24000)), mimeType: 'audio/pcm;rate=24000' }
+        }] } } });
+    });
     await expect(page.locator('.status-line')).toHaveText('선생님이 말하는 중');
+    expect(await page.evaluate(() => window.audioTest.sockets.length)).toBe(1);
     await page.evaluate(() => window.audioTest.sockets.at(-1).message({ serverContent: { interrupted: true } }));
     await expect(page.locator('.status-line')).toHaveText('듣고 있어요...');
     expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').audio.sources.size)).toBe(0);
@@ -240,7 +259,7 @@ test('Spotlight hides transcripts and keeps speaker, playback speed and voice pr
     expect(await page.evaluate(() => window.audioTest.tracks.every(track => track.readyState === 'ended'))).toBe(true);
 });
 
-test('assistant turn starts a clean session and briefly buffers the next spoken turn', async ({ page }) => {
+test('greeting and feedback turns keep the same session and microphone stream', async ({ page }) => {
     await page.goto('/');
     await installAudioMocks(page);
     await page.getByRole('button', { name: 'AI 음성 회화 시작하기' }).click();
@@ -249,21 +268,44 @@ test('assistant turn starts a clean session and briefly buffers the next spoken 
     const previousAudioCount = await page.evaluate(() => window.audioTest.sent.filter(message => message.realtimeInput?.audio).length);
 
     await page.evaluate(() => {
-        window.audioTest.holdNextSetup = true;
         window.audioTest.sockets[0].message({ serverContent: { turnComplete: true } });
+        window.audioTest.sockets[0].message({ setupComplete: {} });
     });
-    await expect(page.locator('.message')).toHaveText('새 대화로 전환하고 있어요.');
-    await page.waitForFunction(() => document.querySelector('daynize-voice-tutor').pendingAudioFrames.length > 0);
-    const secondSession = await page.evaluate(() => new URL(window.audioTest.sockets.at(-1).url).searchParams.get('session'));
-    expect(secondSession).not.toBe(firstSession);
+    await page.waitForFunction(previous => window.audioTest.sent.filter(message => message.realtimeInput?.audio).length > previous + 3, previousAudioCount);
+    await page.evaluate(() => window.audioTest.sockets[0].message({ serverContent: { turnComplete: true } }));
+    expect(await page.evaluate(() => window.audioTest.sockets.length)).toBe(1);
+    expect(await page.evaluate(() => new URL(window.audioTest.sockets[0].url).searchParams.get('session'))).toBe(firstSession);
+    expect(await page.evaluate(() => window.audioTest.sent.filter(message => message.type === 'INIT_SESSION').length)).toBe(1);
     expect(await page.evaluate(() => window.audioTest.tracks.every(track => track.readyState === 'live'))).toBe(true);
 
-    await page.evaluate(() => window.audioTest.sockets.at(-1).message({ setupComplete: {} }));
     await expect(page.locator('.status-line')).toHaveText('듣고 있어요...');
     await page.waitForFunction(previous => window.audioTest.sent.filter(message => message.realtimeInput?.audio).length > previous, previousAudioCount);
     expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').pendingAudioFrames.length)).toBe(0);
     expect(await page.evaluate(() => window.audioTest.sent.some(message => message.clientContent))).toBe(false);
     await expect(page.getByRole('button', { name: '대화 자막', exact: true })).toHaveCount(0);
     await page.getByRole('button', { name: '세션 종료', exact: true }).click();
+    await page.evaluate(() => window.audioTest.context.close());
+});
+
+test('Voice Studio never sends a greeting and accepts turn completion without a callback', async ({ page }) => {
+    await page.goto('/');
+    await installAudioMocks(page);
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    await page.evaluate(async () => {
+        const { startVoiceStudioLiveTranscription } = await import('/voice-studio-live.mjs');
+        window.studioLive = await startVoiceStudioLiveTranscription();
+    });
+    await page.waitForFunction(() => window.audioTest.sent.some(message => message.realtimeInput?.audio));
+    await page.evaluate(() => {
+        const socket = window.audioTest.sockets[0];
+        socket.message({ setupComplete: {} });
+        socket.message({ serverContent: { turnComplete: true } });
+    });
+    expect(await page.evaluate(() => window.audioTest.sockets.length)).toBe(1);
+    expect(await page.evaluate(() => new URL(window.audioTest.sockets[0].url).pathname)).toBe('/ws/transcribe');
+    expect(await page.evaluate(() => window.audioTest.sent.some(message => message.type === 'INIT_SESSION' || message.clientContent))).toBe(false);
+    await page.evaluate(() => window.studioLive.stop());
+    expect(errors).toEqual([]);
     await page.evaluate(() => window.audioTest.context.close());
 });
