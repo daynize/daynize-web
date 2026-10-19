@@ -77,10 +77,26 @@ The main page records the most recently **opened** lesson, not verified video co
 Pop & Culture, root-verb dialogues/videos, Numbers, Basic and other course dialogs use
 `trackRecentLesson()` from `lesson-context.mjs`. It stores `lessonId`, `source`,
 `lessonTitle`, `targetExpressions`, `keyConcept` and `savedAt` under
-`daynize_recent_lesson`. Original practice sentences take priority for culture essays.
+`daynize_recent_lesson`. The stored record also exposes `title`, `keyExpressions`
+and `concept` aliases; both field formats can be read, while the relay handshake
+continues to use `lessonTitle`, `targetExpressions` and `keyConcept`.
+Flipping the daily reading card (including keyboard activation) or opening its
+translation also saves that sentence. Initial page rendering does not overwrite
+the user's last lesson. Original practice sentences take priority for culture essays.
 Limits are 120 characters for the title, six expressions of 160 characters each, and
 400 characters for the concept. These are learning metadata, not microphone recordings.
 Only the title, expressions and concept are sent to the relay/Google.
+
+### Main Website Deployment
+
+The production domain `www.daynize.co.kr` is served by GitHub Pages from
+`daynize/daynize-web`, branch `main`, repository root. Pushing to the development
+repository `ifonly1204-sketch/daynize-web` deploys neither this Pages site nor its
+static modules. Integrate the related frontend commits into the production
+repository and verify the Pages build and the live domain separately from Fly.
+Ship `runtime-config.json` alongside `daynize-tutor.mjs`; it contains only the
+public relay URL. The relay itself generates `/runtime-config.json` dynamically
+from its environment. The homepage favicon is `/favicon.ico`.
 
 ```js
 import { trackRecentLesson, createInitSessionMessage } from './lesson-context.mjs';

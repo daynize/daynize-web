@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f8f7f2">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
     <meta name="daynize-payment-api" content="https://api.daynize.co.kr">
     <meta name="description"
         content="데이나이즈(Daynize)에서 매일 생생한 대사를 검색하고 자연스럽게 실전 영어를 익혀보세요. 일상 영어 회화와 K-ECHO 드라마 쉐도잉으로 배우는 지난주 영어.">
@@ -2525,7 +2526,7 @@
     <script src="notes.js"></script>
     <script src="src/data/numbersCourseData.js"></script>
     <script type="module">
-        import { trackRecentLesson as saveLessonContext } from './gemini-live-test/lesson-context.mjs';
+        import { trackRecentLesson as saveLessonContext, saveRecentLesson } from './gemini-live-test/lesson-context.mjs';
         (() => {
             const menuButton = document.querySelector('.menu-toggle');
             const navigation = document.querySelector('#main-nav');
@@ -3394,6 +3395,7 @@
 
             const flipCard = document.querySelector('#conversation-card');
             flipCard.addEventListener('click', () => {
+                trackTodaySentence();
                 const flipped = flipCard.classList.toggle('is-flipped');
                 flipCard.setAttribute('aria-pressed', String(flipped));
                 flipCard.setAttribute('aria-label', flipped ? '카드를 뒤집어 한국어 상황 보기' : '카드를 뒤집어 영어 표현 보기');
@@ -3408,6 +3410,7 @@
             const translationPanel = document.querySelector('#translation-panel');
             translationToggle.addEventListener('click', () => {
                 const expanded = translationToggle.getAttribute('aria-expanded') === 'true';
+                if (!expanded) trackTodaySentence();
                 translationToggle.setAttribute('aria-expanded', String(!expanded));
                 translationPanel.hidden = expanded;
                 translationToggle.textContent = expanded ? '한국어 ↔ 영어 해설 보기' : '해설 닫기';
@@ -3419,6 +3422,15 @@
             let todaySentencePool = [];
             let todaySentence = null;
             let todaySentenceTimer = null;
+            const trackTodaySentence = () => {
+                if (!todaySentence) return;
+                saveRecentLesson({
+                    source: 'daily-reading',
+                    lessonTitle: todaySentence.situation,
+                    targetExpressions: [todaySentence.en_text],
+                    keyConcept: describeTodaySentence(todaySentence)
+                });
+            };
             const voiceStatus = document.querySelector('#voice-status');
             const setVoicePractice = (example, lesson) => {
                 phrase = example.en;
@@ -4146,8 +4158,10 @@
                 gsap.utils.toArray('.section-head, .conversation-aside, .conversation-card-wrap, .voice-panel, .transcript-panel, .registration-form').forEach((element) => {
                     gsap.from(element, { y: 28, opacity: 0, duration: .75, ease: 'power2.out', scrollTrigger: { trigger: element, start: 'top 88%', once: true } });
                 });
-                gsap.to('.note-one', { y: -13, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .7 } });
-                gsap.to('.note-two', { y: 18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .7 } });
+                const noteOne = document.querySelector('.note-one');
+                const noteTwo = document.querySelector('.note-two');
+                if (noteOne) gsap.to(noteOne, { y: -13, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .7 } });
+                if (noteTwo) gsap.to(noteTwo, { y: 18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .7 } });
 
                 gsap.utils.toArray('.hero, .video-section, #conversation, #voice, #register').forEach((section) => {
                     ScrollTrigger.create({

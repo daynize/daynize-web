@@ -27,11 +27,26 @@ test('real course data yields bounded, persistent teaching context and survives 
         assert.ok(saved.targetExpressions.length > 0 && saved.targetExpressions.length <= 6);
         assert.ok(saved.targetExpressions.every(text => text.length <= 160));
         assert.equal(JSON.parse(storage.getItem(RECENT_LESSON_KEY)).savedAt, saved.savedAt);
+        const stored = JSON.parse(storage.getItem(RECENT_LESSON_KEY));
+        assert.equal(stored.title, saved.lessonTitle);
+        assert.deepEqual(stored.keyExpressions, saved.targetExpressions);
+        assert.equal(stored.concept, saved.keyConcept);
         const reloaded = await freshModule();
         assert.deepEqual(reloaded.createInitSessionMessage({ storage }), createInitSessionMessage({ storage }));
     }
     trackRecentLesson(articles[0], { kind: 'article', storage });
     assert.equal(createInitSessionMessage({ storage }).context.targetExpressions[0], articles[0].practice[0].en);
+});
+
+test('frontend field names are normalized into the relay handshake after reload', async () => {
+    const module = await freshModule();
+    const storage = memoryStorage();
+    storage.setItem(module.RECENT_LESSON_KEY, JSON.stringify({
+        title: 'Reading card', keyExpressions: ['Take your time.'], concept: 'Encouragement'
+    }));
+    assert.deepEqual(module.createInitSessionMessage({ storage }).context, {
+        lessonTitle: 'Reading card', targetExpressions: ['Take your time.'], keyConcept: 'Encouragement'
+    });
 });
 
 test('blocked localStorage getter and write failures retain state and report a warning', async context => {

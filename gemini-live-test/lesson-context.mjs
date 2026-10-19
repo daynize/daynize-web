@@ -5,16 +5,17 @@ const clean = (value, max) => typeof value === 'string' ? value.replace(/\s+/g, 
 
 export function normalizeRecentLesson(value) {
     if (!value || typeof value !== 'object') return null;
-    const targetExpressions = (Array.isArray(value.targetExpressions) ? value.targetExpressions : [])
+    const expressions = value.targetExpressions ?? value.keyExpressions;
+    const targetExpressions = (Array.isArray(expressions) ? expressions : [])
         .map(expression => clean(expression, 160)).filter(Boolean).slice(0, 6);
-    const lessonTitle = clean(value.lessonTitle, 120);
+    const lessonTitle = clean(value.lessonTitle ?? value.title, 120);
     if (!lessonTitle && targetExpressions.length === 0) return null;
     return {
         lessonId: clean(value.lessonId, 80) || undefined,
         source: clean(value.source, 40) || undefined,
         lessonTitle,
         targetExpressions,
-        keyConcept: clean(value.keyConcept, 400),
+        keyConcept: clean(value.keyConcept ?? value.concept, 400),
         savedAt: Number.isFinite(value.savedAt) ? value.savedAt : undefined
     };
 }
@@ -33,7 +34,14 @@ export function saveRecentLesson(lesson, storage) {
     const normalized = normalizeRecentLesson({ ...lesson, savedAt: Date.now() });
     if (!normalized) throw new TypeError('A recent lesson requires a title or target expressions.');
     recentLesson = normalized;
-    try { (storage ?? globalThis.localStorage)?.setItem(RECENT_LESSON_KEY, JSON.stringify(normalized)); }
+    try {
+        (storage ?? globalThis.localStorage)?.setItem(RECENT_LESSON_KEY, JSON.stringify({
+            ...normalized,
+            title: normalized.lessonTitle,
+            keyExpressions: normalized.targetExpressions,
+            concept: normalized.keyConcept
+        }));
+    }
     catch {
         console.warn('[Daynize] Recent lesson could not be persisted; it remains available in this page.');
     }

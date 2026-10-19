@@ -6,8 +6,11 @@ let config = globalThis.DAYNIZE_CONFIG;
 if (!loader?.dataset.endpoint && !config?.wsUrl) {
     try {
         const response = await fetch(new URL('runtime-config.json', import.meta.url), { cache: 'no-store', signal: AbortSignal.timeout(3000) });
-        if (response.ok) config = await response.json();
-    } catch { }
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        config = await response.json();
+    } catch (error) {
+        console.warn('[Daynize] Public runtime configuration is unavailable; using the default relay endpoint.', error);
+    }
 }
 const endpoint = resolveWebSocketUrl({ endpoint: loader?.dataset.endpoint, config });
 const designPreview = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname) && new URLSearchParams(location.search).get('preview') === 'design';
