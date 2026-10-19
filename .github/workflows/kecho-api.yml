@@ -1,0 +1,25 @@
+name: Deploy K-ECHO API
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - K-ECHO/kecho-backend/**
+      - .github/workflows/kecho-api.yml
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy K-ECHO API
+    runs-on: ubuntu-latest
+    concurrency: kecho-api-deploy
+    defaults:
+      run:
+        working-directory: K-ECHO/kecho-backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

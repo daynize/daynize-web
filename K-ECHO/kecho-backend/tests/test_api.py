@@ -43,6 +43,17 @@ class SearchTests(unittest.TestCase):
         self.assertEqual(self.client.get("/api/search").json()["results"], [])
         self.connection.execute.assert_not_called()
 
+    def test_health_checks_database(self):
+        response = self.client.get("/healthz")
+        self.assertEqual(response.status_code, 200)
+        self.connection.execute.assert_called_once_with("SELECT 1")
+
+    def test_health_reports_database_failure(self):
+        failed_connection = patch.object(api.pool, "connection", side_effect=RuntimeError("offline"))
+        failed_connection.start()
+        self.addCleanup(failed_connection.stop)
+        self.assertEqual(self.client.get("/healthz").status_code, 503)
+
     def test_no_results_does_not_ingest(self):
         self.connection.execute.return_value.fetchone.return_value = {"total": 0}
         result = self.client.get("/api/search", params={"q": "hello"}).json()

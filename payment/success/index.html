@@ -203,6 +203,9 @@
         (() => {
             const params = new URLSearchParams(window.location.search);
             const paymentId = params.get('paymentId') || params.get('orderId') || '';
+            const subscription = params.get('type') === 'subscription';
+            const issueId = params.get('issueId') || '';
+            const billingKey = params.get('billingKey') || '';
             const title = document.querySelector('#title');
             const status = document.querySelector('#status');
             const details = document.querySelector('#details');
@@ -220,9 +223,33 @@
                 returnLink.hidden = false;
             };
 
-            if (!paymentId || params.has('code')) {
+            if ((subscription ? !issueId || !billingKey : !paymentId) || params.has('code')) {
                 const errorMessage = params.get('message');
                 showError(errorMessage ? `결제가 취소되었거나 완료되지 않았습니다. ${errorMessage}` : '결제가 취소되었습니다. 신청 정보를 다시 확인해 주세요.');
+                return;
+            }
+
+            if (subscription) {
+                history.replaceState(null, '', '/payment/success?type=subscription');
+                fetch(`${apiBase}/api/payment/billing/verify`, {
+                    method: 'POST', credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ issueId, billingKey })
+                }).then(async response => {
+                    const result = await response.json().catch(() => ({}));
+                    if (!response.ok || result.status !== 'BILLING_AUTHENTICATED' || result.orderId !== issueId) {
+                        throw new Error(result.error || '정기결제 카드 인증을 확인하지 못했습니다.');
+                    }
+                    try { sessionStorage.removeItem('daynize.checkout.resume.v1'); } catch (_) { }
+                    document.title = '카드 인증 완료 | 데이나이즈';
+                    title.textContent = '정기결제 카드 인증이 완료되었습니다';
+                    status.textContent = '카드 인증이 확인되었습니다. 아직 요금이 청구되지 않았습니다.';
+                    details.textContent = result.email;
+                    mark.textContent = '✓';
+                    returnLink.textContent = '데이나이즈로 돌아가기';
+                    returnLink.href = '/';
+                    returnLink.hidden = false;
+                }).catch(error => showError(error.message || '카드 인증 확인에 실패했습니다.'));
                 return;
             }
 

@@ -28,6 +28,7 @@ Configure the following variables in the private `gemini-live-test/.env` for loc
 PORTONE_MODE=test
 PORTONE_STORE_ID=store-...
 PORTONE_CHANNEL_KEY=channel-...
+PORTONE_BILLING_CHANNEL_KEY=channel-key-...
 PORTONE_API_SECRET=...
 PORTONE_PG_PROVIDER=NHN_KCP
 ```
@@ -35,6 +36,16 @@ PORTONE_PG_PROVIDER=NHN_KCP
 Use the matching NHN KCP channel configured in the PortOne console. For sandbox verification, set `PORTONE_MODE=test` and use a test channel; for real payments, `PORTONE_MODE=live` requires approved live credentials and a live channel. Configure the server with `fly secrets set PORTONE_MODE=test PORTONE_STORE_ID=... PORTONE_CHANNEL_KEY=... PORTONE_API_SECRET=... PORTONE_PG_PROVIDER=NHN_KCP -a daynize-relay-api`; replace `...` locally with credentials and never commit them. The product amount is fixed server-side at 19,000 KRW (VAT included). The deploy must include `payment-api.js` through the existing `COPY gemini-live-test/ ./` Docker build step.
 
 The static result route is `payment/success/index.html`, deployed at `/payment/success`. PortOne redirects there for both mobile checkout and server-verified success. Cancelled checkout links back to the form, which restores its in-tab draft. Order metadata is currently process-memory only; before live payments, persist orders and consent records durably, add fulfillment/account provisioning and cancellation/refund handling, update the privacy notice and terms, and switch to a live channel only after those controls are in place.
+
+### KCP Card Review: Payment and Billing Channels
+
+Register the separately issued KCP one-time and billing merchant codes as **two NHN KCP V2 channels** in the PortOne console. Set `PORTONE_CHANNEL_KEY` to the one-time channel key and `PORTONE_BILLING_CHANNEL_KEY` to the billing channel key. These are PortOne channel keys, not the KCP merchant codes. Both channels must belong to `PORTONE_STORE_ID` and match `PORTONE_MODE`. Do not use example credentials or substitute a one-time channel for billing. A missing channel returns `PAYMENT_CONFIGURATION_ERROR`; configured channels proceed directly from order creation to the SDK, without an enabled/config preload gate.
+
+The enrollment form sends `paymentType=payment` for a one-time pass (`PortOne.requestPayment`) or `paymentType=subscription` for monthly card registration (`PortOne.requestIssueBillingKey`, the actual V2 SDK method). Billing requires separate consent, uses `billingKeyMethod=CARD`, and supplies `issueId`, `issueName`, customer ID and monthly display amount. `/api/payment/billing/verify` checks the issued key against PortOne, including the store, issue ID, customer ID and billing channel. Billing keys and API secrets are not returned by verification or stored in browser storage; the mobile result page removes the billing key from its visible URL. Restrict/redact callback query strings in hosting logs as well.
+
+**Billing authentication does not charge the first installment or activate recurring billing.** The page reports card authentication only. Durable subscription/customer records, encrypted billing-key storage, first-charge verification, scheduled billing, cancellation and webhook reconciliation must be implemented before offering an active auto-renewing subscription. Current order sessions expire after 30 minutes and are lost on relay restart.
+
+Run `node --test gemini-live-test/test/payment-api.test.js` and `node tests/enrollment.browser.mjs` from the repository root. These tests mock PortOne; they do not prove a real KCP window opens. After entering the private settings locally, restart the managed relay (`launchctl kickstart -k gui/$(id -u)/kr.co.daynize.relay` for the current macOS deployment), deploy the static changes through the existing Pages workflow, and check both paths on desktop and mobile using the actual issued channels. Enter secrets directly in your editor/terminal, never in chat. Check `/api/payment/config` from an allowed origin for `enabled` and `billingEnabled`; neither response exposes the API secret.
 
 ## Temporary External Access
 

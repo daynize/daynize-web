@@ -166,6 +166,44 @@
 			"command": "node tests/hero-artwork.browser.mjs",
 			"isBackground": false,
 			"problemMatcher": []
+		},
+		{
+			"label": "Verify lightweight hero deployment",
+			"type": "shell",
+			"command": "GH_PAGER=cat gh run watch 38247301530 --exit-status && GH_PAGER=cat gh run view 38247301530 --json status,conclusion,url && node tests/hero-artwork.browser.mjs",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect transparent hero deployment",
+			"type": "shell",
+			"command": "GH_PAGER=cat gh run list --commit $(git rev-parse HEAD) --limit 3 --json databaseId,headSha,status,conclusion,workflowName && git status --short",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify transparent hero public deployment",
+			"type": "shell",
+			"command": "GH_PAGER=cat gh run watch 38251234607 --exit-status && GH_PAGER=cat gh run view 38251234607 --json status,conclusion,url && node tests/hero-artwork.browser.mjs",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Preview enrollment website",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"--yes",
+				"http-server",
+				".",
+				"-a",
+				"127.0.0.1",
+				"-p",
+				"4173",
+				"-c-1"
+			],
+			"isBackground": true,
+			"problemMatcher": []
 		}
 	]
 }

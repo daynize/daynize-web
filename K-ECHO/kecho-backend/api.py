@@ -13,7 +13,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from psycopg.rows import dict_row
 from psycopg_pool import ConnectionPool
@@ -55,6 +55,16 @@ cors_origins = [
     if origin.strip()
 ]
 app.add_middleware(CORSMiddleware, allow_origins=cors_origins, allow_methods=["GET"], allow_headers=["*"])
+
+
+@app.get("/healthz", include_in_schema=False)
+def healthz():
+    try:
+        with pool.connection() as conn:
+            conn.execute("SELECT 1")
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail="database unavailable") from exc
+    return {"status": "ok"}
 
 MAX_TOKENS = 8
 MAX_RELAX_DROP = 2

@@ -79,7 +79,7 @@ class SEOTests(unittest.TestCase):
 
     def test_domain_and_image(self):
         self.assertEqual((SITE_ROOT / "CNAME").read_text().strip(), "www.daynize.co.kr")
-        self.assertIn("VITE_KECHO_API_BASE=https://www.daynize.co.kr", (FRONTEND / ".env.production").read_text())
+        self.assertIn("VITE_KECHO_API_BASE=https://daynize-kecho-api.fly.dev", (FRONTEND / ".env.production").read_text())
         self.assertTrue((SITE_ROOT / "DAYNIZE LOGO ONLY.png").is_file())
 
 

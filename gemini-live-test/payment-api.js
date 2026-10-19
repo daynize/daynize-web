@@ -39,6 +39,7 @@ async function readJson(request) {
 function createPaymentApi(options = {}) {
     const storeId = options.storeId ?? process.env.PORTONE_STORE_ID ?? '';
     const channelKey = options.channelKey ?? process.env.PORTONE_CHANNEL_KEY ?? '';
+    const billingChannelKey = options.billingChannelKey ?? process.env.PORTONE_BILLING_CHANNEL_KEY ?? '';
     const apiSecret = options.apiSecret ?? process.env.PORTONE_API_SECRET ?? '';
     const mode = options.mode ?? process.env.PORTONE_MODE ?? '';
     const pgProvider = options.pgProvider ?? process.env.PORTONE_PG_PROVIDER ?? 'NHN_KCP';
@@ -52,7 +53,8 @@ function createPaymentApi(options = {}) {
     if (!['HTML5_INICIS', 'NHN_KCP'].includes(pgProvider)) throw new Error('PORTONE_PG_PROVIDER must be HTML5_INICIS or NHN_KCP.');
     if (!Number.isSafeInteger(amount) || amount < 1) throw new Error('PORTONE_AMOUNT must be a positive integer.');
 
-    const ready = () => ['test', 'live'].includes(mode) && Boolean(storeId.trim() && channelKey.trim() && apiSecret.trim());
+    const ready = (paymentType = 'payment') => ['test', 'live'].includes(mode) && Boolean(storeId.trim() &&
+        (paymentType === 'subscription' ? billingChannelKey : channelKey).trim() && apiSecret.trim());
     const allowedOrigin = (origin, request) => {
         if (typeof origin !== 'string') return false;
         if (allowedOrigins.includes(origin)) return true;
@@ -94,20 +96,17 @@ function createPaymentApi(options = {}) {
                 productName: PRODUCT_NAME,
                 amount,
                 pgProvider,
+                billingEnabled: ready('subscription'),
                 ...(ready() ? { storeId, channelKey } : {})
             }, cors);
             return true;
         }
-        if (!['/api/payment/orders', '/api/payment/verify'].includes(pathname)) {
+        if (!['/api/payment/orders', '/api/payment/verify', '/api/payment/billing/verify'].includes(pathname)) {
             json(response, 404, { error: '결제 API 경로를 찾을 수 없습니다.' }, cors);
             return true;
         }
         if (request.method !== 'POST') {
             json(response, 405, { error: '지원하지 않는 요청입니다.' }, { ...cors, Allow: 'POST, OPTIONS' });
-            return true;
-        }
-        if (!ready()) {
-            json(response, 503, { error: '결제 서비스가 아직 준비되지 않았습니다. 고객센터로 문의해 주세요.' }, cors);
             return true;
         }
         if (!/^application\/json(?:\s*;|$)/i.test(request.headers['content-type'] || '')) {
@@ -126,11 +125,20 @@ function createPaymentApi(options = {}) {
 
         cleanup();
         if (pathname === '/api/payment/orders') {
+            const paymentType = body.paymentType ?? 'payment';
+            if (!['payment', 'subscription'].includes(paymentType)) {
+                json(response, 400, { error: '지원하지 않는 결제 유형입니다.' }, cors);
+                return true;
+            }
+            if (!ready(paymentType)) {
+                json(response, 503, { error: `${paymentType === 'subscription' ? '정기결제' : '카드결제'} 채널 설정을 확인해 주세요. 고객센터: 070-4010-1147`, code: 'PAYMENT_CONFIGURATION_ERROR' }, cors);
+                return true;
+            }
             const name = typeof body.name === 'string' ? body.name.trim() : '';
             const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
             const phone = typeof body.phone === 'string' ? body.phone.trim() : '';
             const digits = phone.replace(/\D/g, '');
-            if (!body.privacyConsent || !body.termsConsent || !name || name.length > 80 ||
+            if (!body.privacyConsent || !body.termsConsent || (paymentType === 'subscription' && body.billingConsent !== true) || !name || name.length > 30 ||
                 !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || digits.length < 9 || digits.length > 15) {
                 json(response, 400, { error: '성함, 연락처, 이메일과 필수 약관 동의를 확인해 주세요.' }, cors);
                 return true;
@@ -143,28 +151,66 @@ function createPaymentApi(options = {}) {
                 name,
                 email,
                 phone,
+                paymentType,
+                channelKey: paymentType === 'subscription' ? billingChannelKey : channelKey,
                 status: 'PENDING',
                 expiresAt: timestamp + SESSION_TTL_MS
             });
             json(response, 201, {
                 orderId,
-                orderName: PRODUCT_NAME,
+                orderName: paymentType === 'subscription' ? `${PRODUCT_NAME} 월 구독` : PRODUCT_NAME,
                 amount,
                 currency: 'CURRENCY_KRW',
                 payMethod: 'CARD',
                 pgProvider,
                 storeId,
-                channelKey
+                paymentType,
+                channelKey: orders.get(orderId).channelKey
             }, { ...cors, 'Set-Cookie': `${SESSION_COOKIE}=${token}; ${cookieOptions(request)}` });
             orders.get(orderId).sessionToken = token;
             return true;
         }
 
-        const orderId = typeof body.paymentId === 'string' ? body.paymentId : '';
+        const isBilling = pathname === '/api/payment/billing/verify';
+        const orderId = typeof (isBilling ? body.issueId : body.paymentId) === 'string' ? (isBilling ? body.issueId : body.paymentId) : '';
         const order = orders.get(orderId);
         const token = cookieToken(request);
         if (!/^order_\d{13}$/.test(orderId) || !order || !token || token !== order.sessionToken) {
             json(response, 401, { error: '결제 세션이 만료되었습니다. 신청 정보를 다시 입력해 주세요.' }, cors);
+            return true;
+        }
+        if ((order.paymentType === 'subscription') !== isBilling) {
+            json(response, 400, { error: '주문 유형과 결제 확인 경로가 일치하지 않습니다.' }, cors);
+            return true;
+        }
+        if (isBilling) {
+            const billingKey = typeof body.billingKey === 'string' ? body.billingKey : '';
+            if (!billingKey || billingKey.length > 512) {
+                json(response, 400, { error: '카드 인증 결과를 확인해 주세요.' }, cors);
+                return true;
+            }
+            try {
+                const upstream = await fetchImpl(`https://api.portone.io/billing-keys/${encodeURIComponent(billingKey)}?storeId=${encodeURIComponent(storeId)}`, {
+                    headers: { Authorization: `PortOne ${apiSecret}` },
+                    signal: AbortSignal.timeout(10000)
+                });
+                if (!upstream.ok) {
+                    json(response, 402, { error: '정기결제 카드 인증을 확인하지 못했습니다.' }, cors);
+                    return true;
+                }
+                const info = await upstream.json();
+                if (info.status !== 'ISSUED' || info.billingKey !== billingKey || info.storeId !== storeId ||
+                    info.issueId !== orderId || info.customer?.id !== orderId ||
+                    !info.channels?.some(channel => channel.key === order.channelKey && channel.pgProvider === pgProvider && channel.type === (mode === 'test' ? 'TEST' : 'LIVE')) ||
+                    (info.methods && !info.methods.some(method => method.type === 'BillingKeyPaymentMethodCard'))) {
+                    json(response, 409, { error: '카드 인증 정보가 신청 내용과 일치하지 않습니다.' }, cors);
+                    return true;
+                }
+                order.status = 'BILLING_AUTHENTICATED';
+                json(response, 200, { orderId, status: order.status, email: order.email }, cors);
+            } catch {
+                json(response, 502, { error: '카드 인증 확인에 실패했습니다. 잠시 후 다시 시도해 주세요.' }, cors);
+            }
             return true;
         }
         if (order.status === 'PAID') {

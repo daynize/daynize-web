@@ -56,6 +56,14 @@ optional worker needs YouTube/translation egress. Do not configure a site-wide
 
 ## Separate Runtime Dependencies
 
+The read-only search API is deployed as the separate Fly app
+`daynize-kecho-api` in `nrt`; it must not replace the Node Gemini relay app.
+Set `DATABASE_URL` as a Fly secret using a provisioned production PostgreSQL
+database and run `db/migrate_search.sql` against that database before deploying
+the API. The `/healthz` endpoint checks database connectivity and is also the
+Fly machine health check. The frontend uses
+`https://daynize-kecho-api.fly.dev` as its production API origin.
+
 ```sh
 pip install -r requirements-api.txt
 uvicorn api:app --host 127.0.0.1 --port 8000

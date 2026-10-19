@@ -184,7 +184,7 @@ test('live NHN KCP checkout verifies only the configured live channel at the fix
     })).status, 409);
 });
 
-test('PortOne checkout remains disabled until test credentials and mode are configured', { timeout: 10000 }, async context => {
+test('PortOne checkout reports configuration errors without a preparation placeholder', { timeout: 10000 }, async context => {
     const base = await withServer(context);
     const config = await fetch(`${base}/api/payment/config`, { headers: { Origin: new URL(base).origin } });
     assert.deepEqual(await config.json(), {
@@ -192,8 +192,57 @@ test('PortOne checkout remains disabled until test credentials and mode are conf
         mode: 'test',
         productName: '데이나이즈 매일 영어 라이브 패스',
         amount: 19000,
+        billingEnabled: false,
         pgProvider: 'NHN_KCP'
     });
     const order = await createOrder(base);
     assert.equal(order.response.status, 503);
+    assert.equal(order.body.code, 'PAYMENT_CONFIGURATION_ERROR');
+    assert.doesNotMatch(order.body.error, /준비되지/);
+});
+
+test('payment and subscription orders use distinct KCP channels', async context => {
+    const base = await withServer(context, {
+        portoneStoreId: 'store-test', portoneChannelKey: 'channel-payment',
+        portoneApiSecret: 'secret-test-only', portoneMode: 'test'
+    });
+    const payment = await createOrder(base);
+    assert.equal(payment.body.paymentType, 'payment');
+    assert.equal(payment.body.channelKey, 'channel-payment');
+    const subscription = await createOrder(base, { ...buyer, paymentType: 'subscription' });
+    assert.equal(subscription.response.status, 503);
+    assert.equal(subscription.body.code, 'PAYMENT_CONFIGURATION_ERROR');
+    assert.equal((await createOrder(base, { ...buyer, paymentType: 'invalid' })).response.status, 400);
+});
+
+test('billing authentication verifies issued key, order, customer and dedicated KCP channel', async context => {
+    let channelKey = 'channel-billing';
+    let issueId;
+    const base = await withServer(context, {
+        portoneStoreId: 'store-test', portoneChannelKey: 'channel-payment', portoneBillingChannelKey: 'channel-billing',
+        portoneApiSecret: 'secret-test-only', portoneMode: 'test',
+        paymentFetchImpl: async url => {
+            assert.match(url, /\/billing-keys\/billing-test\?storeId=store-test$/);
+            return Response.json({
+                status: 'ISSUED', billingKey: 'billing-test', storeId: 'store-test', issueId,
+                customer: { id: issueId }, channels: [{ key: channelKey, type: 'TEST', pgProvider: 'NHN_KCP' }]
+            });
+        }
+    });
+    assert.equal((await createOrder(base, { ...buyer, paymentType: 'subscription' })).response.status, 400);
+    const created = await createOrder(base, { ...buyer, paymentType: 'subscription', billingConsent: true });
+    assert.equal(created.response.status, 201);
+    assert.equal(created.body.channelKey, 'channel-billing');
+    issueId = created.body.orderId;
+    const verify = cookie => fetch(`${base}/api/payment/billing/verify`, {
+        method: 'POST', headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', ...(cookie ? { Cookie: cookie } : {}) },
+        body: JSON.stringify({ issueId, billingKey: 'billing-test' })
+    });
+    assert.equal((await verify()).status, 401);
+    channelKey = 'channel-payment';
+    assert.equal((await verify(created.cookie)).status, 409);
+    channelKey = 'channel-billing';
+    const verified = await verify(created.cookie);
+    assert.equal(verified.status, 200);
+    assert.equal((await verified.json()).status, 'BILLING_AUTHENTICATED');
 });

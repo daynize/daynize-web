@@ -57,6 +57,7 @@ function createRelayServer(options = {}) {
     const paymentApi = createPaymentApi({
         storeId: options.portoneStoreId,
         channelKey: options.portoneChannelKey,
+        billingChannelKey: options.portoneBillingChannelKey,
         apiSecret: options.portoneApiSecret,
         mode: options.portoneMode,
         pgProvider: options.portonePgProvider,

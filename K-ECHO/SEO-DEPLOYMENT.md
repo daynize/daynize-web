@@ -27,7 +27,7 @@
 - 실제 배포 환경에 `KECHO_CORS_ORIGINS`가 있다면 기본 목록을 덮어쓰므로 `.env.example`과 동일한 두 주소를 설정하세요.
 - 프론트엔드 `.env.production`의 API 기본값은 `https://www.daynize.co.kr`입니다.
 - Vite 개발 프록시는 배포되지 않습니다. 대표 도메인의 `/api/*`를 실제 K-ECHO FastAPI 원본으로 연결해야 합니다.
-- 별도 API 도메인을 사용한다면 Cloudflare 빌드 변수 `VITE_KECHO_API_BASE`를 해당 공개 HTTPS origin으로 지정하고 재빌드하세요.
+- K-ECHO 검색 API는 음성 relay와 분리된 Fly 앱 `daynize-kecho-api`에서 운영하며 origin은 `https://daynize-kecho-api.fly.dev`입니다. 프론트엔드 운영 빌드는 `.env.production`의 `VITE_KECHO_API_BASE`를 사용합니다.
 - 기존 Node/Fly 음성 중계 서버는 K-ECHO 검색 API와 다릅니다. `/api/search`를 그 서버에 연결하면 안 됩니다.
 - HTTPS 페이지의 API 원본으로 로컬 주소나 잘못된 `daynize.com` 주소를 지정하면 운영 빌드가 실패합니다.
 - `.env.production`이 저장소의 ignore 규칙에 해당하면 Cloudflare 빌드 환경에 `VITE_KECHO_API_BASE=https://www.daynize.co.kr`을 반드시 별도로 설정하세요.

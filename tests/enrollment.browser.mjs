@@ -43,9 +43,14 @@ test('course enrollment form is clear and validates required details on desktop 
                 let orderSequence = Date.now();
                 const orders = readSession('mock-orders', {});
                 window.__paymentRequests = readSession('mock-payment-requests', []);
+                window.__billingRequests = [];
                 window.__cancelNextPayment = true;
                 window.__throwNextPayment = false;
                 window.PortOne = {
+                    requestIssueBillingKey: async options => {
+                        window.__billingRequests.push(options);
+                        return { billingKey: 'billing-test' };
+                    },
                     requestPayment: async options => {
                         window.__paymentRequests.push(options);
                         writeSession('mock-payment-requests', window.__paymentRequests);
@@ -70,7 +75,12 @@ test('course enrollment form is clear and validates required details on desktop 
                         const orderId = `order_${orderSequence}`;
                         orders[orderId] = buyer;
                         writeSession('mock-orders', orders);
-                        return Response.json({ orderId, amount: 19000, orderName: '데이나이즈 매일 영어 라이브 패스', currency: 'CURRENCY_KRW', payMethod: 'CARD', pgProvider: 'NHN_KCP', storeId: 'store-test', channelKey: 'channel-test' }, { status: 201 });
+                        return Response.json({ orderId, paymentType: buyer.paymentType, amount: 19000, orderName: '데이나이즈 매일 영어 라이브 패스', currency: 'CURRENCY_KRW', payMethod: 'CARD', pgProvider: 'NHN_KCP', storeId: 'store-test', channelKey: buyer.paymentType === 'subscription' ? 'channel-billing-test' : 'channel-test' }, { status: 201 });
+                    }
+                    if (url.pathname === '/api/payment/billing/verify') {
+                        const { issueId, billingKey } = JSON.parse(init.body);
+                        if (!orders[issueId] || billingKey !== 'billing-test') return Response.json({ error: 'invalid billing authentication' }, { status: 409 });
+                        return Response.json({ orderId: issueId, email: orders[issueId].email, status: 'BILLING_AUTHENTICATED' });
                     }
                     if (url.pathname === '/api/payment/verify') {
                         const { paymentId } = JSON.parse(init.body);
@@ -154,6 +164,31 @@ test('course enrollment form is clear and validates required details on desktop 
             assert.equal(await form.locator('#email').inputValue(), 'learner@example.com');
             assert.equal(await form.locator('#terms-consent').isChecked(), true);
 
+            await form.locator('[name="paymentType"][value="subscription"]').check();
+            assert.equal(await submit.isDisabled(), true);
+            assert.equal(await form.locator('#billing-consent-row').isVisible(), true);
+            await form.locator('#billing-consent').check();
+            await submit.click();
+            await page.waitForFunction(() => document.querySelector('#form-message')?.textContent.includes('정기결제 카드 인증이 완료되었습니다'));
+            const billingRequest = await page.evaluate(() => window.__billingRequests.at(-1));
+            assert.equal(billingRequest.channelKey, 'channel-billing-test');
+            assert.equal(billingRequest.billingKeyMethod, 'CARD');
+            assert.equal(billingRequest.customer.customerId, billingRequest.issueId);
+            assert.equal(billingRequest.offerPeriod.interval, '1m');
+            assert.equal(billingRequest.displayAmount, 19000);
+            assert.equal('paymentId' in billingRequest, false);
+            assert.equal(new URL(billingRequest.redirectUrl).searchParams.get('type'), 'subscription');
+            await page.goto(`${base}/payment/success?type=subscription&issueId=${billingRequest.issueId}&billingKey=billing-test`);
+            await page.waitForFunction(() => document.querySelector('#title')?.textContent === '정기결제 카드 인증이 완료되었습니다');
+            assert.equal(new URL(page.url()).searchParams.has('billingKey'), false);
+            assert.match(await page.locator('#status').innerText(), /아직 요금이 청구되지/);
+            await page.goto(base);
+            await form.locator('#name').fill('김하늘');
+            await form.locator('#phone').fill('010-1234-5678');
+            await form.locator('#email').fill('learner@example.com');
+            await form.locator('#privacy-consent').check();
+            await form.locator('#terms-consent').check();
+
             await page.evaluate(() => { window.__cancelNextPayment = false; });
             await submit.click();
             await page.waitForURL(/\/payment\/success\?orderId=order_\d{13}&amount=19000&email=learner%40example\.com/);
@@ -204,8 +239,8 @@ test('course enrollment form is clear and validates required details on desktop 
         await staleForm.locator('#terms-consent').check();
         assert.equal(await staleForm.locator('.product-summary-price').innerText(), '19,000원 (VAT 포함)');
         await staleForm.locator('[type="submit"]').click();
-        await staleConfigPage.waitForFunction(() => document.querySelector('#form-message')?.textContent.includes('결제 서비스가 아직 준비되지 않았습니다'));
-        assert.equal(await staleConfigPage.evaluate(() => window.__orderRequests), 0);
+        await staleConfigPage.waitForFunction(() => document.querySelector('#form-message')?.textContent.includes('주문 정보와 KCP 결제 채널이 일치하지 않습니다'));
+        assert.equal(await staleConfigPage.evaluate(() => window.__orderRequests), 1);
         assert.equal(await staleConfigPage.evaluate(() => window.__paymentCalls), 0);
         await staleConfigPage.close();
     } finally {
