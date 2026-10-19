@@ -2524,7 +2524,8 @@
     <script src="exit-quiz.js"></script>
     <script src="notes.js"></script>
     <script src="src/data/numbersCourseData.js"></script>
-    <script>
+    <script type="module">
+        import { trackRecentLesson as saveLessonContext } from './gemini-live-test/lesson-context.mjs';
         (() => {
             const menuButton = document.querySelector('.menu-toggle');
             const navigation = document.querySelector('#main-nav');
@@ -2700,52 +2701,8 @@
                 container.append(makeElement('mark', 'pop-article-highlight', text.slice(start, start + highlight.length)));
                 container.append(document.createTextNode(text.slice(start + highlight.length)));
             };
-            // AI 음성대화 티칭 모드용 최근 학습 기록 (gemini-live-test/lesson-context.mjs가 읽어 INIT_SESSION으로 전송)
-            const recentLessonKey = 'daynize_recent_lesson';
-            const uniqueTexts = (items) => [...new Set(items.filter((item) => typeof item === 'string' && item.trim()).map((item) => item.trim()))];
             const trackRecentLesson = (item, kind) => {
-                if (!item) return;
-                let lesson;
-                if (kind === 'article' && item.type === 'culture-essay') {
-                    lesson = {
-                        source: 'pop-culture',
-                        lessonTitle: item.title,
-                        targetExpressions: uniqueTexts([item.focusQuote?.en, ...(item.sections || []).flatMap((section) => (section.points || []).map((point) => point.term))]),
-                        keyConcept: [item.subtitle, item.focusQuote?.translation].filter(Boolean).join(' · ')
-                    };
-                } else if (kind === 'article') {
-                    lesson = {
-                        source: 'pop-culture',
-                        lessonTitle: item.title,
-                        targetExpressions: uniqueTexts((item.lyricsSection?.items || []).map((line) => line.en)),
-                        keyConcept: [item.subtitle, item.explanationSection?.title].filter(Boolean).join(' · ')
-                    };
-                } else if (Array.isArray(item.dialogue_lines)) {
-                    lesson = {
-                        source: 'root-verbs',
-                        lessonTitle: item.title,
-                        targetExpressions: uniqueTexts(item.dialogue_lines.slice(0, 4).map((line) => line.en_text)),
-                        keyConcept: `뿌리동사 ${(item.root_verbs_used || []).join(', ')} 활용 · 상황 표현: ${(item.colloquial_keywords || []).join(', ')}`
-                    };
-                } else if (Array.isArray(item.examples)) {
-                    lesson = {
-                        source: 'numbers',
-                        lessonTitle: item.title,
-                        targetExpressions: uniqueTexts(item.examples.slice(0, 4).map((example) => example.en)),
-                        keyConcept: typeof item.concept === 'string' ? item.concept.slice(0, 300) : ''
-                    };
-                } else {
-                    lesson = {
-                        source: selectedCategory?.categoryId || 'course',
-                        lessonTitle: item.title,
-                        targetExpressions: uniqueTexts([item.keyPhrase, ...(item.script || []).slice(0, 3).map((line) => line.en)]),
-                        keyConcept: [item.curriculumTopic, item.explanation || item.desc].filter(Boolean).join(' · ')
-                    };
-                }
-                if (!lesson.lessonTitle && lesson.targetExpressions.length === 0) return;
-                try {
-                    localStorage.setItem(recentLessonKey, JSON.stringify({ ...lesson, lessonId: item.id, targetExpressions: lesson.targetExpressions.slice(0, 6), savedAt: Date.now() }));
-                } catch (_) { }
+                saveLessonContext(item, { kind, source: selectedCategory?.categoryId || 'course' });
             };
             const openArticle = (article) => {
                 pausePopAudio();

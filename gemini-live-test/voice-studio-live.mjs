@@ -14,6 +14,7 @@ export async function startVoiceStudioLiveTranscription({ onTranscript, onState 
     const service = new LiveService({
         endpoint: endpoint.toString(),
         mode: 'proxy',
+        sessionInit: null,
         protocol: 'audio',
         timeout: 10000,
         recoveryTimeout: 30000,

@@ -70,6 +70,16 @@ test('pop culture modals and listening audio on desktop and mobile', { timeout: 
                 assert.equal(await card.locator('img').getAttribute('src'), episodes.find((item) => item.id === episode.id).coverImage.replace('w=1200&q=88', 'w=800&q=80'));
                 await card.locator('[data-article-id]').click();
                 assert.equal(await page.locator('#pop-article-title').textContent(), episode.title);
+                const teachingContext = await page.evaluate(async () => {
+                    const { createInitSessionMessage } = await import('/gemini-live-test/lesson-context.mjs');
+                    return createInitSessionMessage();
+                });
+                assert.equal(teachingContext.type, 'INIT_SESSION');
+                assert.equal(teachingContext.mode, 'TEACHING');
+                assert.equal(teachingContext.context.lessonTitle, episode.title);
+                assert.ok(teachingContext.context.targetExpressions.length > 0);
+                assert.ok(teachingContext.context.targetExpressions.length <= 6);
+                assert.ok(teachingContext.context.keyConcept.includes(episode.subtitle));
                 assert.equal(await page.locator('#pop-article-dialog').evaluate((dialog) => dialog.open), true);
                 assert.equal(await page.locator('#video-dialog').evaluate((dialog) => dialog.open), false);
                 assert.equal(await page.locator('.pop-holiday-section').count(), 3);
@@ -153,6 +163,20 @@ test('pop culture modals and listening audio on desktop and mobile', { timeout: 
             await page.locator('[data-article-note]').click();
             const stored = await page.evaluate(() => Object.keys(localStorage).map((key) => localStorage.getItem(key)).join('\n'));
             assert.ok(stored.includes('This bag belongs to Mina.'));
+            for (const [category, lessonId, source] of [
+                ['root-verb-usage', 'root-dialogue-01', 'root-verbs'],
+                ['numbers', 'numbers-01', 'numbers'],
+                ['basic-course', 'basic-01', 'basic-course']
+            ]) {
+                await page.goto(`${baseURL}/?category=${category}`);
+                await page.locator(`#lesson-grid [data-lesson-id="${lessonId}"]`).click();
+                const recent = await page.evaluate(() => JSON.parse(localStorage.getItem('daynize_recent_lesson')));
+                assert.equal(recent.lessonId, lessonId);
+                assert.equal(recent.source, source);
+                assert.ok(recent.lessonTitle);
+                assert.ok(recent.keyConcept);
+                assert.ok(recent.targetExpressions.length > 0);
+            }
             assert.deepEqual(errors, []);
             await page.close();
         }

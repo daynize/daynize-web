@@ -18,7 +18,8 @@ const server = createServer(async (request, response) => {
         const relative = path.relative(root, file);
         if (relative.startsWith('..') || path.isAbsolute(relative)) return response.writeHead(403).end();
         const metadata = await stat(file);
-        response.setHeader('Content-Type', path.extname(file) === '.html' ? 'text/html' : 'application/octet-stream');
+        const mime = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript' };
+        response.setHeader('Content-Type', mime[path.extname(file)] || 'application/octet-stream');
         response.setHeader('Content-Length', metadata.size);
         response.writeHead(200);
         createReadStream(file).pipe(response);

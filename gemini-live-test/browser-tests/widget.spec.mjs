@@ -39,6 +39,22 @@ async function installAudioMocks(page) {
     });
 }
 
+test('a new tutor call sends the saved recent lesson before microphone audio', async ({ page }) => {
+    await page.goto('/');
+    await installAudioMocks(page);
+    const lesson = { lessonTitle: '숫자와 순서', targetExpressions: ['She came in first.'], keyConcept: '서수로 순서를 말해요.' };
+    await page.evaluate(async lesson => {
+        const { saveRecentLesson } = await import('/lesson-context.mjs');
+        saveRecentLesson(lesson);
+    }, lesson);
+    await page.getByRole('button', { name: 'AI 음성 회화 시작하기' }).click();
+    await expect(page.locator('.status-line')).toHaveText('듣고 있어요...');
+    const messages = await page.evaluate(() => window.audioTest.sent);
+    expect(messages[0]).toEqual({ type: 'INIT_SESSION', mode: 'TEACHING', context: lesson });
+    expect(messages.filter(message => message.type === 'INIT_SESSION')).toHaveLength(1);
+    await page.getByRole('button', { name: '세션 종료', exact: true }).click();
+});
+
 for (const viewport of [{ width: 1280, height: 900 }, { width: 375, height: 812 }]) {
     test(`modal layout and keyboard focus at ${viewport.width}px`, async ({ page }) => {
         await page.setViewportSize(viewport);

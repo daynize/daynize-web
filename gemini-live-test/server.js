@@ -229,7 +229,7 @@ function createRelayServer(options = {}) {
         const requestUrl = new URL(request.url, 'http://localhost');
         const requestedVoice = requestUrl.searchParams.get('voice') || voice;
         const sessionId = requestUrl.searchParams.get('session');
-        const expectsInit = requestUrl.searchParams.get('handshake') === 'init';
+        const expectsInit = requestUrl.pathname === '/ws' || requestUrl.searchParams.get('handshake') === 'init';
         if (sessionId && !/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(sessionId)) {
             socket.end('HTTP/1.1 400 Bad Request\r\nConnection: close\r\n\r\n');
             return;
@@ -250,7 +250,7 @@ function createRelayServer(options = {}) {
             socket.end('HTTP/1.1 401 Unauthorized\r\nConnection: close\r\n\r\n');
             return;
         }
-        if (!['/', '/ws/gemini-live', '/ws/transcribe'].includes(requestUrl.pathname) || !localHosts.includes(request.headers.host) ||
+        if (!['/', '/ws', '/ws/gemini-live', '/ws/transcribe'].includes(requestUrl.pathname) || !localHosts.includes(request.headers.host) ||
             (request.headers.origin && !allowedOrigins.includes(request.headers.origin))) {
             socket.end('HTTP/1.1 403 Forbidden\r\nConnection: close\r\n\r\n');
             return;
@@ -278,6 +278,7 @@ function createRelayServer(options = {}) {
         let upstreamOpened = false;
         let setupSent = false;
         let teachingMode = false;
+        let teachingKickoff;
         let initTimer;
         const sessionTimer = setTimeout(() => fail('Your conversation time limit was reached. Start a new session.'), maxSessionMs);
         const heartbeat = setInterval(() => {
@@ -338,6 +339,7 @@ function createRelayServer(options = {}) {
                 const teaching = sessionInit && await import('./teaching-prompt.mjs');
                 if (ended) return stopUpstream();
                 teachingMode = Boolean(teaching) && teaching.normalizeSessionMode(sessionInit.mode) === teaching.SESSION_MODES.TEACHING;
+                if (teachingMode) teachingKickoff = teaching.createTeachingKickoff();
                 const setupOptions = { silenceDurationMs: vadSilenceMs };
                 if (teachingMode) setupOptions.systemInstruction = teaching.buildTeachingInstruction(sessionInit.context);
                 const setup = transcriptionOnly
@@ -351,6 +353,7 @@ function createRelayServer(options = {}) {
         };
         if (awaitingInit) initTimer = setTimeout(() => {
             if (sessionInit !== undefined) return;
+            send({ type: 'session-warning', message: '학습 정보를 받지 못해 기본 인사 표현으로 복습을 시작합니다.' });
             sessionInit = { mode: 'TEACHING', context: null };
             sendSetup();
         }, initTimeoutMs);
@@ -384,11 +387,8 @@ function createRelayServer(options = {}) {
                 clearTimeout(setupTimer);
                 // Teaching mode: Dayna greets first. A resumed session already has its greeting in history.
                 if (firstSetup && teachingMode && !resumeHandle && upstream.readyState === WebSocket.OPEN) {
-                    import('./teaching-prompt.mjs')
-                        .then(({ createTeachingKickoff }) => {
-                            if (!ended && upstream.readyState === WebSocket.OPEN) upstream.send(JSON.stringify(createTeachingKickoff()));
-                        })
-                        .catch(() => { });
+                    try { upstream.send(JSON.stringify(teachingKickoff)); }
+                    catch { return fail('Unable to start the teaching conversation.'); }
                 }
             }
             if (transcriptionOnly && message.serverContent?.modelTurn) {

@@ -1,3 +1,5 @@
+import { createInitSessionMessage } from './lesson-context.mjs';
+
 export const TUTOR_INSTRUCTION = 'You are a warm, patient, and empathetic English conversation tutor for senior learners on Daynize (데이나이즈). Speak clearly, concisely, and encouragingly in a gentle tone. Mix Korean explanations when helpful, but encourage natural English conversation.';
 
 export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voice = 'Kore', { silenceDurationMs = 200, prefixPaddingMs = 200, systemInstruction = TUTOR_INSTRUCTION } = {}) {
@@ -64,12 +66,12 @@ export function resolveWebSocketUrl({ endpoint, env = globalThis.process?.env, c
 }
 
 export class LiveService extends EventTarget {
-    constructor({ endpoint, mode = 'proxy', apiKey, model, voice = 'Kore', protocol = 'audio', silenceDurationMs = 200, maxRetries = 20, retryDelay = 1000, maxRetryDelay = 30000, timeout = 20000, recoveryTimeout = 300000, stableConnectionTime = 30000, heartbeatInterval = 20000, heartbeatTimeout = 10000, sessionInit, onConnectionState, WebSocketClass = globalThis.WebSocket } = {}) {
+    constructor({ endpoint, mode = 'proxy', apiKey, model, voice = 'Kore', protocol = 'audio', silenceDurationMs = 200, maxRetries = 20, retryDelay = 1000, maxRetryDelay = 30000, timeout = 20000, recoveryTimeout = 300000, stableConnectionTime = 30000, heartbeatInterval = 20000, heartbeatTimeout = 10000, sessionInit = createInitSessionMessage, onConnectionState, WebSocketClass = globalThis.WebSocket } = {}) {
         super();
         if (!Number.isInteger(maxRetries) || maxRetries < 0 || [retryDelay, maxRetryDelay, timeout, heartbeatInterval, heartbeatTimeout].some(value => !Number.isFinite(value) || value <= 0)) throw new TypeError('Invalid connection retry or timeout options.');
         if ([recoveryTimeout, stableConnectionTime].some(value => !Number.isFinite(value) || value <= 0)) throw new TypeError('Invalid recovery timeout options.');
         this.options = { endpoint, mode, apiKey, model, voice, protocol, silenceDurationMs, maxRetries, retryDelay, maxRetryDelay, timeout, recoveryTimeout, stableConnectionTime, heartbeatInterval, heartbeatTimeout };
-        // Optional INIT_SESSION handshake (object or function returning one), sent on every proxy socket open.
+        // Set to null for transcription-only or legacy proxy connections.
         this.sessionInit = sessionInit;
         this.onConnectionState = onConnectionState;
         this.connectionState = CONNECTION_STATES.DISCONNECTED;
@@ -124,6 +126,14 @@ export class LiveService extends EventTarget {
 
     start() {
         this.stop();
+        try {
+            this.initMessage = this.options.mode === 'direct' || !this.sessionInit ? null
+                : { mode: 'TEACHING', context: null, ...(typeof this.sessionInit === 'function' ? this.sessionInit() : this.sessionInit), type: 'INIT_SESSION' };
+        } catch (cause) {
+            const error = new Error('학습 정보를 준비하지 못했습니다. 다시 연결해주세요.', { cause });
+            this.emit('error', error);
+            return Promise.reject(error);
+        }
         this.active = true;
         this.retries = 0;
         this.sessionId = globalThis.crypto.randomUUID();
@@ -147,7 +157,7 @@ export class LiveService extends EventTarget {
                 } else {
                     url.searchParams.set('voice', this.options.voice);
                     url.searchParams.set('session', this.sessionId);
-                    if (this.sessionInit) url.searchParams.set('handshake', 'init');
+                    if (this.initMessage) url.searchParams.set('handshake', 'init');
                 }
                 this.socket = new this.Socket(url.toString());
             } catch (error) {
@@ -193,11 +203,8 @@ export class LiveService extends EventTarget {
                     if (this.resumeHandle) setup.setup.sessionResumption.handle = this.resumeHandle;
                     try { socket.send(JSON.stringify(setup)); }
                     catch { disconnect('Setup send failed'); }
-                } else if (this.sessionInit) {
-                    let init;
-                    try { init = typeof this.sessionInit === 'function' ? this.sessionInit() : this.sessionInit; }
-                    catch { init = undefined; }
-                    try { socket.send(JSON.stringify({ mode: 'TEACHING', context: null, ...init, type: 'INIT_SESSION' })); }
+                } else if (this.initMessage) {
+                    try { socket.send(JSON.stringify(this.initMessage)); }
                     catch { disconnect('Session init send failed'); }
                 }
             };
@@ -207,6 +214,11 @@ export class LiveService extends EventTarget {
                     const text = typeof event.data === 'string' ? event.data : await event.data.text();
                     if (!current()) return;
                     const message = JSON.parse(text);
+                    if (message.type === 'session-warning') {
+                        console.warn('[Daynize]', message.message);
+                        this.emit('warning', message.message);
+                        return;
+                    }
                     if (message.type === 'pong') {
                         if (message.id === this.pendingPing) {
                             clearTimeout(this.pongTimer);

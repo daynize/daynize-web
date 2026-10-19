@@ -14,7 +14,9 @@ Before starting a conversation, set `GEMINI_API_KEY` in this folder's `.env` to 
 
 Open http://localhost:8080 in a current browser and click the floating voice button once. Spotlight opens inline and immediately begins microphone permission and Gemini connection without page navigation or another start click. Muting sends `audioStreamEnd` but keeps response playback alive. Speaker mute, live captions, voice and playback speed are available in the icon tray. Ending the call or closing the modal releases audio resources. Headphones are recommended to avoid feedback. Microphone audio is sent to Google while enabled.
 
-The server listens only on the loopback interface, at port 8080. Both HTTP assets and `ws://localhost:8080/ws/gemini-live` use that port (the legacy `/` WebSocket path also works). Open the served URL, not the HTML as a local file: AudioWorklet and microphone capture need a secure context (localhost qualifies). Port 8080 must be free.
+The server listens only on the loopback interface, at port 8080. Both HTTP assets and `ws://localhost:8080/ws/gemini-live` use that port (`/ws` and the legacy `/` WebSocket paths also work). Open the served URL, not the HTML as a local file: AudioWorklet and microphone capture need a secure context (localhost qualifies). Port 8080 must be free.
+
+Teaching Mode is the default for the widget and `LiveService`: the most recently opened lesson is saved as `daynize_recent_lesson` and sent in an `INIT_SESSION` handshake. The relay builds Dayna's dynamic instruction and requests the first greeting/question after Gemini setup. With no history it starts a basic greeting lesson. Storage failures retain in-page state and log a warning. See [Teaching Mode](INTEGRATION.md#teaching-mode-default) for the payload, explicit `FREE` mode, reconnect behavior, metadata limits and legacy-client compatibility. `/ws` accepts initialization without a query flag; `/ws/gemini-live` uses `?handshake=init` (automatically added by `LiveService`).
 
 ## PortOne Test Checkout
 

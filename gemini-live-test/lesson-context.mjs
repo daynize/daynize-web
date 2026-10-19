@@ -1,4 +1,5 @@
 export const RECENT_LESSON_KEY = 'daynize_recent_lesson';
+let recentLesson = null;
 
 const clean = (value, max) => typeof value === 'string' ? value.replace(/\s+/g, ' ').trim().slice(0, max) : '';
 
@@ -18,18 +19,66 @@ export function normalizeRecentLesson(value) {
     };
 }
 
-// localStorage can be missing or throw (private windows, blocked site data); treat that as "no history".
-export function readRecentLesson(storage = globalThis.localStorage) {
-    try { return normalizeRecentLesson(JSON.parse(storage?.getItem(RECENT_LESSON_KEY) ?? 'null')); }
-    catch { return null; }
+export function readRecentLesson(storage) {
+    try {
+        const stored = normalizeRecentLesson(JSON.parse((storage ?? globalThis.localStorage)?.getItem(RECENT_LESSON_KEY) ?? 'null'));
+        if (stored && (!recentLesson || (stored.savedAt ?? 0) > (recentLesson.savedAt ?? 0))) recentLesson = stored;
+    } catch {
+        console.warn('[Daynize] Recent lesson storage could not be read; using in-memory lesson state.');
+    }
+    return recentLesson;
 }
 
-export function saveRecentLesson(lesson, storage = globalThis.localStorage) {
+export function saveRecentLesson(lesson, storage) {
     const normalized = normalizeRecentLesson({ ...lesson, savedAt: Date.now() });
-    if (!normalized) return null;
-    try { storage?.setItem(RECENT_LESSON_KEY, JSON.stringify(normalized)); }
-    catch { }
+    if (!normalized) throw new TypeError('A recent lesson requires a title or target expressions.');
+    recentLesson = normalized;
+    try { (storage ?? globalThis.localStorage)?.setItem(RECENT_LESSON_KEY, JSON.stringify(normalized)); }
+    catch {
+        console.warn('[Daynize] Recent lesson could not be persisted; it remains available in this page.');
+    }
     return normalized;
+}
+
+export function trackRecentLesson(item, { kind = 'lesson', source = 'course', storage } = {}) {
+    if (!item || typeof item !== 'object') throw new TypeError('A lesson object is required.');
+    const uniqueTexts = items => [...new Set(items.filter(value => typeof value === 'string' && value.trim()).map(value => value.trim()))];
+    let lesson;
+    if (kind === 'article') {
+        lesson = {
+            source: 'pop-culture',
+            lessonTitle: item.title,
+            targetExpressions: uniqueTexts([
+                ...(item.practice || []).map(line => line.en),
+                ...(item.sections || []).flatMap(section => (section.points || []).map(point => point.term)),
+                ...(item.lyricsSection?.items || []).map(line => line.en),
+                item.focusQuote?.en
+            ]),
+            keyConcept: [item.subtitle, item.focusQuote?.translation, item.explanationSection?.title].filter(Boolean).join(' · ')
+        };
+    } else if (Array.isArray(item.dialogue_lines)) {
+        lesson = {
+            source: 'root-verbs',
+            lessonTitle: item.title,
+            targetExpressions: uniqueTexts(item.dialogue_lines.map(line => line.en_text)),
+            keyConcept: `뿌리동사 ${(item.root_verbs_used || []).join(', ')} 활용 · 상황 표현: ${(item.colloquial_keywords || []).join(', ')}`
+        };
+    } else if (Array.isArray(item.examples)) {
+        lesson = {
+            source: 'numbers',
+            lessonTitle: item.title,
+            targetExpressions: uniqueTexts(item.examples.map(example => example.en)),
+            keyConcept: item.concept
+        };
+    } else {
+        lesson = {
+            source,
+            lessonTitle: item.title,
+            targetExpressions: uniqueTexts([item.keyPhrase, ...(item.script || []).map(line => line.en)]),
+            keyConcept: [item.curriculumTopic, item.explanation || item.desc].filter(Boolean).join(' · ')
+        };
+    }
+    return saveRecentLesson({ ...lesson, lessonId: item.id }, storage);
 }
 
 export function createInitSessionMessage({ mode = 'TEACHING', storage } = {}) {

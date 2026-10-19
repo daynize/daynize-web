@@ -8,6 +8,8 @@
 | `audio-engine.mjs` | Microphone lifecycle, analysers, mute, PCM playback scheduling and interruption |
 | `pcm-worklet.mjs` / `audio.mjs` | Off-main-thread mono resampling, sustained voice detection, PCM16 little-endian conversion |
 | `live-service.mjs` | WebSocket setup, message parsing, interruption, bounded retries and direct-test configuration |
+| `lesson-context.mjs` | Shared lesson tracking, bounded localStorage/state and INIT_SESSION payload |
+| `teaching-prompt.mjs` | Server-owned Dayna teaching instruction and proactive opening turn |
 | `daynize-tutor.mjs` | One-time automatic mount and deployment endpoint selection |
 | `server.js` | Server-only Gemini credentials, tutor setup, auth, origin checks, upstream relay and session limits |
 
@@ -69,6 +71,63 @@ The modules do not access browser globals until loaded in the browser. The custo
 
 ## Protocol And Audio
 
+### Teaching Mode (Default)
+
+The main page records the most recently **opened** lesson, not verified video completion.
+Pop & Culture, root-verb dialogues/videos, Numbers, Basic and other course dialogs use
+`trackRecentLesson()` from `lesson-context.mjs`. It stores `lessonId`, `source`,
+`lessonTitle`, `targetExpressions`, `keyConcept` and `savedAt` under
+`daynize_recent_lesson`. Original practice sentences take priority for culture essays.
+Limits are 120 characters for the title, six expressions of 160 characters each, and
+400 characters for the concept. These are learning metadata, not microphone recordings.
+Only the title, expressions and concept are sent to the relay/Google.
+
+```js
+import { trackRecentLesson, createInitSessionMessage } from './lesson-context.mjs';
+import { LiveService } from './live-service.mjs';
+
+trackRecentLesson(lesson, { source: 'basic-course' });
+const service = new LiveService({ endpoint: 'wss://api.daynize.co.kr/ws' });
+await service.start(); // Default INIT_SESSION comes from the latest lesson.
+// Equivalent explicit configuration: sessionInit: () => createInitSessionMessage()
+```
+
+Blocked/unavailable storage keeps the latest lesson in module state for this page.
+Storage read/write failures log a warning without lesson text; reload persistence is
+not available when writes are blocked. The main page and widget must import the same
+module URL to share that state. A newer stored record (for example from another tab)
+wins over older state. Clearing `daynize_recent_lesson` removes persisted history.
+
+`LiveService.start()` captures a lesson snapshot; every automatic reconnect sends the
+same `{ type: 'INIT_SESSION', mode: 'TEACHING', context: { lessonTitle,
+targetExpressions, keyConcept } }` before any audio. A new call reads the latest lesson.
+Proxy connections add `?handshake=init`. `/ws` also accepts this message without that
+query parameter, as in the standalone WebSocket example. `/ws/gemini-live` remains
+supported. The relay waits up to five seconds for initialization; on timeout it reports
+a `session-warning` and starts a basic greeting lesson. No saved/valid context also uses
+the basic greeting lesson. The server normalizes context independently of the browser.
+
+After `setupComplete`, the server sends one synthetic user turn requesting Dayna's
+greeting and first question. This is necessary: a system instruction alone does not
+start model generation. It is not sent again for a successfully resumed Gemini session.
+The prompt requests praise, gentle correction, brief nuance explanations, Korean
+guidance and slow English practice, with 2–3 sentences per turn. These are model
+instructions, not a hard sentence-count enforcement mechanism.
+
+For an intentional free-conversation call, pass
+`sessionInit: () => createInitSessionMessage({ mode: 'FREE' })`.
+`FREE` retains the original instruction and does not request an opening turn.
+Unknown/omitted session modes normalize to `TEACHING`. This session mode is separate
+from the transport option `mode: 'proxy' | 'direct'`.
+Legacy `/` and `/ws/gemini-live` clients **without** `handshake=init` keep their immediate,
+original free-conversation setup for backwards compatibility. Updated clients use the
+handshake by default. Set `sessionInit: null` for transcription-only `/ws/transcribe`
+clients (as Voice Studio does); transcription and direct API test setup are unchanged.
+
+Deploy the relay separately with the existing Fly configuration after running tests.
+The `api.daynize.co.kr` custom domain, DNS/TLS and `PUBLIC_ORIGIN` must point to the
+running relay to use the custom-domain example; code changes do not provision DNS.
+
 - Default input is current Gemini JSON: `realtimeInput.audio` with `mimeType: "audio/pcm;rate=16000"` and Base64 data.
 - Select `protocol: "media_chunks"` for the requested legacy `realtime_input.media_chunks` / `mime_type` wire format. The bundled proxy normalizes either format to current Gemini input. Direct compatibility depends on the chosen API version.
 - Resampling uses the actual AudioContext rate, not the requested microphone constraint. AudioWorklet emits 1600 samples per chunk (100 ms, 3200 PCM bytes). Frames are never sent before `setupComplete` and are dropped, not stored, during reconnection.
@@ -118,7 +177,7 @@ This deliberately puts a key in browser memory and the WebSocket URL. Use only a
 
 ## Production Backend Checklist
 
-GitHub Pages publishes static browser assets only; pushing this repository does not start `server.js` or provision `api.daynize.co.kr`. The homepage no longer pins a temporary tunnel URL. Production defaults to `wss://api.daynize.co.kr/ws/gemini-live`; deploy a stable backend at that address or explicitly configure your actual backend. Localhost and temporary-tunnel pages default to same-origin `/ws/gemini-live` with WS/WSS matching the page. Without a page, development defaults to `ws://localhost:8080/ws/gemini-live` and `NODE_ENV=production` selects the production default.
+GitHub Pages publishes static browser assets only; pushing this repository does not start `server.js` or provision `api.daynize.co.kr`. The homepage no longer pins a temporary tunnel URL. The resolver and current Fly configuration default to `wss://daynize-relay-api.fly.dev/ws/gemini-live`; use `data-endpoint` or public configuration for `wss://api.daynize.co.kr/ws` after configuring that custom domain. Localhost and temporary-tunnel pages default to same-origin `/ws/gemini-live` with WS/WSS matching the page. Without a page, development defaults to `ws://localhost:8080/ws/gemini-live` and `NODE_ENV=production` selects the production default.
 
 Set `NEXT_PUBLIC_WS_URL` (or `WS_URL`) in the relay environment and restart it. The loader reads `runtime-config.json` next to its module with a three-second timeout and no cache; the server exposes only this public URL, never the API key or other environment variables. Explicit `endpoint`/`data-endpoint` takes precedence, followed by `globalThis.DAYNIZE_CONFIG.wsUrl`, public relay configuration and defaults. Browser ES modules cannot read Node `process.env`: on a static host, inject `globalThis.DAYNIZE_CONFIG = { wsUrl: 'wss://your-stable-relay.example/ws/gemini-live' }` before the module or supply `data-endpoint`. Bundled/Node clients can use the environment resolver directly. HTTPS pages reject insecure WS overrides rather than silently downgrading.
 
