@@ -13,7 +13,7 @@ const FILES = new Map([
     ['/index.html', ['index.html', 'text/html; charset=utf-8']],
     ['/audio.mjs', ['audio.mjs', 'text/javascript; charset=utf-8']],
     ['/pcm-worklet.mjs', ['pcm-worklet.mjs', 'text/javascript; charset=utf-8']],
-    ...['live-service.mjs', 'audio-engine.mjs', 'ambient-orb.mjs', 'session-safety.mjs', 'tutor-widget.mjs', 'daynize-tutor.mjs', 'voice-studio-live.mjs'].map(file => [`/${file}`, [file, 'text/javascript; charset=utf-8']]),
+    ...['live-service.mjs', 'audio-engine.mjs', 'ambient-orb.mjs', 'session-safety.mjs', 'tutor-widget.mjs', 'daynize-tutor.mjs', 'voice-studio-live.mjs', 'lesson-context.mjs'].map(file => [`/${file}`, [file, 'text/javascript; charset=utf-8']]),
     ['/spotlight-bar.css', ['spotlight-bar.css', 'text/css; charset=utf-8']],
     ['/daynize-logo.png', ['../DAYNIZE LOGO ONLY.png', 'image/png']],
     ...['mic', 'mic-off', 'phone-off', 'x', 'volume-2', 'rotate-ccw', 'volume-x', 'message-square', 'settings-2'].map(icon => [`/icons/${icon}.svg`, [`icons/${icon}.svg`, 'image/svg+xml']])
@@ -49,6 +49,7 @@ function createRelayServer(options = {}) {
     const authorizeRequest = options.authorizeRequest;
     const maxConnections = options.maxConnections ?? 8;
     const maxSessionMs = options.maxSessionMs ?? 10 * 60 * 1000;
+    const initTimeoutMs = options.initTimeoutMs ?? 5000;
     const maxTranscriptionBytes = options.maxTranscriptionBytes ?? 8 * 1024 * 1024;
     const maxTranscriptionsPerMinute = options.maxTranscriptionsPerMinute ?? 20;
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
@@ -74,6 +75,7 @@ function createRelayServer(options = {}) {
     if (!Number.isInteger(maxConnections) || maxConnections < 1 || !Number.isFinite(maxSessionMs) || maxSessionMs < 1000) {
         throw new Error('Invalid connection or session limits.');
     }
+    if (!Number.isFinite(initTimeoutMs) || initTimeoutMs <= 0) throw new Error('Invalid session init timeout.');
     if (authorizeRequest && typeof authorizeRequest !== 'function') throw new TypeError('authorizeRequest must be a synchronous function.');
     if (publicOrigin && new URL(publicOrigin).protocol !== 'https:') {
         throw new Error('Public access requires an HTTPS PUBLIC_ORIGIN.');
@@ -227,6 +229,7 @@ function createRelayServer(options = {}) {
         const requestUrl = new URL(request.url, 'http://localhost');
         const requestedVoice = requestUrl.searchParams.get('voice') || voice;
         const sessionId = requestUrl.searchParams.get('session');
+        const expectsInit = requestUrl.searchParams.get('handshake') === 'init';
         if (sessionId && !/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(sessionId)) {
             socket.end('HTTP/1.1 400 Bad Request\r\nConnection: close\r\n\r\n');
             return;
@@ -256,10 +259,10 @@ function createRelayServer(options = {}) {
             socket.end('HTTP/1.1 429 Too Many Requests\r\nConnection: close\r\n\r\n');
             return;
         }
-        clients.handleUpgrade(request, socket, head, client => clients.emit('connection', client, requestedVoice, sessionId, requestUrl.pathname === '/ws/transcribe'));
+        clients.handleUpgrade(request, socket, head, client => clients.emit('connection', client, requestedVoice, sessionId, requestUrl.pathname === '/ws/transcribe', expectsInit));
     });
 
-    clients.on('connection', (client, requestedVoice, sessionId, transcriptionOnly = false) => {
+    clients.on('connection', (client, requestedVoice, sessionId, transcriptionOnly = false, expectsInit = false) => {
         for (const [key, session] of resumableSessions) if (session.expiresAt <= Date.now()) resumableSessions.delete(key);
         const resumeKey = sessionId ? `${sessionId}:${requestedVoice}` : undefined;
         const resumeHandle = resumableSessions.get(resumeKey)?.handle;
@@ -269,6 +272,13 @@ function createRelayServer(options = {}) {
         let setupTimer;
         let alive = true;
         let upstreamAlive = true;
+        // INIT_SESSION handshake: setup waits for the client's lesson context (or the init timeout).
+        const awaitingInit = expectsInit && !transcriptionOnly;
+        let sessionInit = awaitingInit ? undefined : null;
+        let upstreamOpened = false;
+        let setupSent = false;
+        let teachingMode = false;
+        let initTimer;
         const sessionTimer = setTimeout(() => fail('Your conversation time limit was reached. Start a new session.'), maxSessionMs);
         const heartbeat = setInterval(() => {
             if (!alive) return client.terminate();
@@ -289,6 +299,7 @@ function createRelayServer(options = {}) {
         const redact = value => apiKey ? String(value).split(apiKey).join('[redacted]') : String(value);
         const stopUpstream = () => {
             clearTimeout(setupTimer);
+            clearTimeout(initTimer);
             if (!upstream) return;
             if (upstream.readyState === WebSocket.CONNECTING) upstream.terminate();
             else if (upstream.readyState === WebSocket.OPEN) upstream.close();
@@ -318,18 +329,34 @@ function createRelayServer(options = {}) {
         upstream = new WebSocket(url, { handshakeTimeout: 10000, maxPayload: 4 * MAX_BUFFER });
         upstream.on('pong', () => { upstreamAlive = true; });
         setupTimer = setTimeout(() => fail('Gemini setup timed out. Check your key and model availability.', true), 15000);
-        upstream.on('open', async () => {
+        const sendSetup = async () => {
+            if (setupSent || !upstreamOpened || sessionInit === undefined) return;
+            setupSent = true;
+            clearTimeout(initTimer);
             try {
                 const { createSetup, createTranscriptionSetup } = await import('./live-service.mjs');
+                const teaching = sessionInit && await import('./teaching-prompt.mjs');
                 if (ended) return stopUpstream();
+                teachingMode = Boolean(teaching) && teaching.normalizeSessionMode(sessionInit.mode) === teaching.SESSION_MODES.TEACHING;
+                const setupOptions = { silenceDurationMs: vadSilenceMs };
+                if (teachingMode) setupOptions.systemInstruction = teaching.buildTeachingInstruction(sessionInit.context);
                 const setup = transcriptionOnly
                     ? createTranscriptionSetup(options.transcriptionLiveModel ?? process.env.GEMINI_TRANSCRIPTION_LIVE_MODEL ?? DEFAULT_MODEL, { silenceDurationMs: transcriptionSilenceMs })
-                    : createSetup(model, requestedVoice, { silenceDurationMs: vadSilenceMs });
+                    : createSetup(model, requestedVoice, setupOptions);
                 if (resumeHandle) setup.setup.sessionResumption.handle = resumeHandle;
                 upstream.send(JSON.stringify(setup));
             } catch {
                 fail('Unable to initialize the voice tutor session.');
             }
+        };
+        if (awaitingInit) initTimer = setTimeout(() => {
+            if (sessionInit !== undefined) return;
+            sessionInit = { mode: 'TEACHING', context: null };
+            sendSetup();
+        }, initTimeoutMs);
+        upstream.on('open', () => {
+            upstreamOpened = true;
+            sendSetup();
         });
         upstream.on('message', data => {
             if (ended) return;
@@ -352,8 +379,17 @@ function createRelayServer(options = {}) {
                 } else resumableSessions.delete(resumeKey);
             }
             if (message.setupComplete) {
+                const firstSetup = !ready;
                 ready = true;
                 clearTimeout(setupTimer);
+                // Teaching mode: Dayna greets first. A resumed session already has its greeting in history.
+                if (firstSetup && teachingMode && !resumeHandle && upstream.readyState === WebSocket.OPEN) {
+                    import('./teaching-prompt.mjs')
+                        .then(({ createTeachingKickoff }) => {
+                            if (!ended && upstream.readyState === WebSocket.OPEN) upstream.send(JSON.stringify(createTeachingKickoff()));
+                        })
+                        .catch(() => { });
+                }
             }
             if (transcriptionOnly && message.serverContent?.modelTurn) {
                 const { modelTurn, ...content } = message.serverContent;
@@ -382,6 +418,14 @@ function createRelayServer(options = {}) {
             if (message?.type === 'ping' && Number.isSafeInteger(message.id) && message.id > 0) {
                 alive = true;
                 send({ type: 'pong', id: message.id });
+                return;
+            }
+            if (message?.type === 'INIT_SESSION') {
+                // Only the first handshake on an opted-in connection counts; later copies are ignored.
+                if (awaitingInit && sessionInit === undefined) {
+                    sessionInit = { mode: message.mode, context: message.context };
+                    sendSetup();
+                }
                 return;
             }
             if (!ready || upstream.readyState !== WebSocket.OPEN) {

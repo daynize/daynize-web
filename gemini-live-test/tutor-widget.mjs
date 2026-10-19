@@ -2,6 +2,7 @@ import { AudioEngine } from './audio-engine.mjs';
 import { LiveService, resolveWebSocketUrl } from './live-service.mjs';
 import { AmbientOrb } from './ambient-orb.mjs';
 import { SessionSafety } from './session-safety.mjs';
+import { createInitSessionMessage } from './lesson-context.mjs';
 
 const asset = name => new URL(name, import.meta.url).href;
 const STATES = {
@@ -205,7 +206,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.muteButton.hidden = false;
         this.muteButton.disabled = true;
         this.setState('connecting');
-        this.service = new LiveService({ ...this.config, endpoint: this.endpoint, voice: this.shadowRoot.querySelector('.voice').value });
+        this.service = new LiveService({ sessionInit: () => createInitSessionMessage({ mode: 'TEACHING' }), ...this.config, endpoint: this.endpoint, voice: this.shadowRoot.querySelector('.voice').value });
         const service = this.service;
         service.addEventListener('audio', event => {
             if (!this.callActive || generation !== this.generation) return;

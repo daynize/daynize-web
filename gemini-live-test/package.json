@@ -5,6 +5,7 @@
     "description": "Standalone local Gemini Live PCM audio relay",
     "scripts": {
         "start": "node server.js",
+        "deploy": "npm test && cd .. && fly deploy --config fly.toml --remote-only",
         "start:relay": "PUBLIC_ORIGIN=https://daynize-relay-api.fly.dev ALLOWED_ORIGINS=https://www.daynize.co.kr,https://daynize.co.kr NEXT_PUBLIC_WS_URL=wss://daynize-relay-api.fly.dev/ws/gemini-live node server.js",
         "start:tunnel": "node scripts/start-tunnel.mjs",
         "autostart:install": "node scripts/autostart.mjs install",
@@ -12,7 +13,7 @@
         "autostart:stop": "node scripts/autostart.mjs stop",
         "test": "node --test test/*.test.*",
         "test:browser": "playwright test",
-        "check": "node --check server.js && node --check payment-api.js && node --check session-safety.mjs && node --check live-service.mjs && node --check audio-engine.mjs && node --check ambient-orb.mjs && node --check tutor-widget.mjs && node --check daynize-tutor.mjs && node --check audio.mjs && node --check pcm-worklet.mjs"
+        "check": "node --check server.js && node --check payment-api.js && node --check session-safety.mjs && node --check live-service.mjs && node --check audio-engine.mjs && node --check ambient-orb.mjs && node --check tutor-widget.mjs && node --check daynize-tutor.mjs && node --check audio.mjs && node --check pcm-worklet.mjs && node --check teaching-prompt.mjs && node --check lesson-context.mjs"
     },
     "engines": {
         "node": ">=20"

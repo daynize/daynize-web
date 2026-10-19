@@ -1,6 +1,6 @@
 export const TUTOR_INSTRUCTION = 'You are a warm, patient, and empathetic English conversation tutor for senior learners on Daynize (데이나이즈). Speak clearly, concisely, and encouragingly in a gentle tone. Mix Korean explanations when helpful, but encourage natural English conversation.';
 
-export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voice = 'Kore', { silenceDurationMs = 200, prefixPaddingMs = 200 } = {}) {
+export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voice = 'Kore', { silenceDurationMs = 200, prefixPaddingMs = 200, systemInstruction = TUTOR_INSTRUCTION } = {}) {
     return {
         setup: {
             model: model.startsWith('models/') ? model : `models/${model}`,
@@ -9,7 +9,7 @@ export function createSetup(model = 'gemini-2.5-flash-native-audio-latest', voic
                 thinkingConfig: { thinkingBudget: 0 },
                 speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } } }
             },
-            systemInstruction: { parts: [{ text: TUTOR_INSTRUCTION }] },
+            systemInstruction: { parts: [{ text: systemInstruction }] },
             realtimeInputConfig: {
                 automaticActivityDetection: {
                     disabled: false,
@@ -64,11 +64,13 @@ export function resolveWebSocketUrl({ endpoint, env = globalThis.process?.env, c
 }
 
 export class LiveService extends EventTarget {
-    constructor({ endpoint, mode = 'proxy', apiKey, model, voice = 'Kore', protocol = 'audio', silenceDurationMs = 200, maxRetries = 20, retryDelay = 1000, maxRetryDelay = 30000, timeout = 20000, recoveryTimeout = 300000, stableConnectionTime = 30000, heartbeatInterval = 20000, heartbeatTimeout = 10000, onConnectionState, WebSocketClass = globalThis.WebSocket } = {}) {
+    constructor({ endpoint, mode = 'proxy', apiKey, model, voice = 'Kore', protocol = 'audio', silenceDurationMs = 200, maxRetries = 20, retryDelay = 1000, maxRetryDelay = 30000, timeout = 20000, recoveryTimeout = 300000, stableConnectionTime = 30000, heartbeatInterval = 20000, heartbeatTimeout = 10000, sessionInit, onConnectionState, WebSocketClass = globalThis.WebSocket } = {}) {
         super();
         if (!Number.isInteger(maxRetries) || maxRetries < 0 || [retryDelay, maxRetryDelay, timeout, heartbeatInterval, heartbeatTimeout].some(value => !Number.isFinite(value) || value <= 0)) throw new TypeError('Invalid connection retry or timeout options.');
         if ([recoveryTimeout, stableConnectionTime].some(value => !Number.isFinite(value) || value <= 0)) throw new TypeError('Invalid recovery timeout options.');
         this.options = { endpoint, mode, apiKey, model, voice, protocol, silenceDurationMs, maxRetries, retryDelay, maxRetryDelay, timeout, recoveryTimeout, stableConnectionTime, heartbeatInterval, heartbeatTimeout };
+        // Optional INIT_SESSION handshake (object or function returning one), sent on every proxy socket open.
+        this.sessionInit = sessionInit;
         this.onConnectionState = onConnectionState;
         this.connectionState = CONNECTION_STATES.DISCONNECTED;
         this.Socket = WebSocketClass;
@@ -145,6 +147,7 @@ export class LiveService extends EventTarget {
                 } else {
                     url.searchParams.set('voice', this.options.voice);
                     url.searchParams.set('session', this.sessionId);
+                    if (this.sessionInit) url.searchParams.set('handshake', 'init');
                 }
                 this.socket = new this.Socket(url.toString());
             } catch (error) {
@@ -190,6 +193,12 @@ export class LiveService extends EventTarget {
                     if (this.resumeHandle) setup.setup.sessionResumption.handle = this.resumeHandle;
                     try { socket.send(JSON.stringify(setup)); }
                     catch { disconnect('Setup send failed'); }
+                } else if (this.sessionInit) {
+                    let init;
+                    try { init = typeof this.sessionInit === 'function' ? this.sessionInit() : this.sessionInit; }
+                    catch { init = undefined; }
+                    try { socket.send(JSON.stringify({ mode: 'TEACHING', context: null, ...init, type: 'INIT_SESSION' })); }
+                    catch { disconnect('Session init send failed'); }
                 }
             };
             socket.onmessage = async event => {
