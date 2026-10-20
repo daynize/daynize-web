@@ -224,6 +224,8 @@ export class LiveService extends EventTarget {
                     }
                     if (message.type === 'pong') {
                         if (message.id === this.pendingPing) {
+                            this.lastRttMs = Math.round(performance.now() - this.pingSentAt);
+                            this.emit('rtt', { ms: this.lastRttMs });
                             clearTimeout(this.pongTimer);
                             this.pongTimer = this.pendingPing = undefined;
                         }
@@ -256,6 +258,7 @@ export class LiveService extends EventTarget {
                         if (current() && this.options.mode !== 'direct') this.heartbeatTimer = setInterval(() => {
                             if (!current() || !this.ready || this.pendingPing !== undefined) return;
                             this.pendingPing = ++this.pingSequence;
+                            this.pingSentAt = performance.now();
                             this.pongTimer = setTimeout(() => {
                                 connectionError = new Error('서버 응답이 없어 다시 연결합니다.');
                                 disconnect('Heartbeat timeout');

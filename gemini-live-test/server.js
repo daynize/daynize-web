@@ -3,6 +3,7 @@ const fs = require('node:fs/promises');
 const path = require('node:path');
 const { WebSocket, WebSocketServer } = require('ws');
 const { createPaymentApi } = require('./payment-api');
+const { createLatencyTrace } = require('./latency-trace');
 require('dotenv').config({ path: path.join(__dirname, '.env'), quiet: true });
 
 const GEMINI_ENDPOINT = 'wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent';
@@ -70,6 +71,9 @@ function createRelayServer(options = {}) {
     if (!Number.isInteger(transcriptionSilenceMs) || transcriptionSilenceMs < 100 || transcriptionSilenceMs > 1500) {
         throw new Error('TRANSCRIPTION_VAD_SILENCE_MS must be an integer between 100 and 1500.');
     }
+    // Latency tracing (`[latency]` JSON lines in `fly logs`): on in production, LATENCY_LOG=0/1 or options.latencyLog overrides.
+    const latencyLog = options.latencyLog ?? (process.env.LATENCY_LOG ? !['0', 'false', 'off'].includes(process.env.LATENCY_LOG.toLowerCase()) : process.env.NODE_ENV === 'production');
+    const latencyLogger = options.latencyLogger ?? (line => console.log(line));
     const heartbeatInterval = options.heartbeatInterval ?? 20000;
     if (!Number.isFinite(heartbeatInterval) || heartbeatInterval <= 0) throw new Error('Invalid heartbeat interval.');
     if (!Number.isInteger(maxConnections) || maxConnections < 1 || !Number.isFinite(maxSessionMs) || maxSessionMs < 1000) {
@@ -281,20 +285,30 @@ function createRelayServer(options = {}) {
         let teachingKickoff;
         let hasGreeted = Boolean(resumeHandle);
         let initTimer;
+        const noTrace = { event() { }, clientAudio() { }, modelMessage() { }, close() { } };
+        const trace = latencyLog ? createLatencyTrace({ log: latencyLogger }) : noTrace;
+        trace.event('session_open', { mode: transcriptionOnly ? 'transcribe' : 'live' });
+        let clientPingAt;
+        let upstreamPingAt;
         const sessionTimer = setTimeout(() => fail('Your conversation time limit was reached. Start a new session.'), maxSessionMs);
         const heartbeat = setInterval(() => {
             if (!alive) return client.terminate();
             alive = false;
-            if (client.readyState === WebSocket.OPEN) client.ping();
+            if (client.readyState === WebSocket.OPEN) { clientPingAt = performance.now(); client.ping(); }
             if (upstream?.readyState === WebSocket.OPEN) {
                 if (!upstreamAlive) return fail('Gemini heartbeat timed out. Reconnecting.', true);
                 upstreamAlive = false;
+                upstreamPingAt = performance.now();
                 upstream.ping();
             }
         }, heartbeatInterval);
         sessionTimer.unref();
         heartbeat.unref();
-        client.on('pong', () => { alive = true; });
+        client.on('pong', () => {
+            alive = true;
+            if (clientPingAt !== undefined) trace.event('client_rtt', { ms: Math.round(performance.now() - clientPingAt) });
+            clientPingAt = undefined;
+        });
         const send = message => {
             if (client.readyState === WebSocket.OPEN) client.send(JSON.stringify(message));
         };
@@ -319,6 +333,7 @@ function createRelayServer(options = {}) {
             clearInterval(heartbeat);
             if (code === 1000 && reason.toString() === 'User ended call') resumableSessions.delete(resumeKey);
             ended = true;
+            trace.close(`client closed (${code})`);
             stopUpstream();
         });
         if (!apiKey?.trim()) {
@@ -329,7 +344,11 @@ function createRelayServer(options = {}) {
         const url = new URL(upstreamUrl);
         url.searchParams.set('key', apiKey);
         upstream = new WebSocket(url, { handshakeTimeout: 10000, maxPayload: 4 * MAX_BUFFER });
-        upstream.on('pong', () => { upstreamAlive = true; });
+        upstream.on('pong', () => {
+            upstreamAlive = true;
+            if (upstreamPingAt !== undefined) trace.event('gemini_rtt', { ms: Math.round(performance.now() - upstreamPingAt) });
+            upstreamPingAt = undefined;
+        });
         setupTimer = setTimeout(() => fail('Gemini setup timed out. Check your key and model availability.', true), 15000);
         const sendSetup = async () => {
             if (setupSent || !upstreamOpened || sessionInit === undefined) return;
@@ -348,6 +367,7 @@ function createRelayServer(options = {}) {
                     : createSetup(model, requestedVoice, setupOptions);
                 if (resumeHandle) setup.setup.sessionResumption.handle = resumeHandle;
                 upstream.send(JSON.stringify(setup));
+                trace.event('setup_sent');
             } catch {
                 fail('Unable to initialize the voice tutor session.');
             }
@@ -359,11 +379,13 @@ function createRelayServer(options = {}) {
             sendSetup();
         }, initTimeoutMs);
         upstream.on('open', () => {
+            trace.event('upstream_open');
             upstreamOpened = true;
             sendSetup();
         });
         upstream.on('message', data => {
             if (ended) return;
+            const receivedAt = performance.now();
             let message;
             try { message = JSON.parse(data.toString()); }
             catch { return fail('Gemini returned an invalid JSON message.'); }
@@ -385,11 +407,12 @@ function createRelayServer(options = {}) {
             if (message.setupComplete) {
                 const firstSetup = !ready;
                 ready = true;
+                trace.event('setup_complete');
                 clearTimeout(setupTimer);
                 // Teaching mode: Dayna greets first. A resumed session already has its greeting in history.
                 if (firstSetup && teachingMode && !hasGreeted && upstream.readyState === WebSocket.OPEN) {
                     hasGreeted = true;
-                    try { upstream.send(JSON.stringify(teachingKickoff)); }
+                    try { upstream.send(JSON.stringify(teachingKickoff)); trace.event('kickoff_sent'); }
                     catch { return fail('Unable to start the teaching conversation.'); }
                 }
             }
@@ -400,6 +423,7 @@ function createRelayServer(options = {}) {
             }
             if (client.bufferedAmount > MAX_BUFFER) return fail('Audio playback connection is too slow. Reconnect.', true);
             send(message);
+            trace.modelMessage(message, performance.now() - receivedAt, client.bufferedAmount);
         });
         upstream.on('error', () => fail('Gemini connection failed. Check the API key, network, and model availability.', true));
         upstream.on('close', (code, reason) => {
@@ -414,6 +438,7 @@ function createRelayServer(options = {}) {
             client.close(1000, 'Gemini session completed');
         });
         client.on('message', (data, isBinary) => {
+            const receivedAt = performance.now();
             let message;
             try { message = isBinary ? null : JSON.parse(data.toString()); }
             catch { message = null; }
@@ -426,6 +451,7 @@ function createRelayServer(options = {}) {
                 // Only the first handshake on an opted-in connection counts; later copies are ignored.
                 if (awaitingInit && sessionInit === undefined) {
                     sessionInit = { mode: message.mode, context: message.context };
+                    trace.event('init_received');
                     sendSetup();
                 }
                 return;
@@ -459,6 +485,8 @@ function createRelayServer(options = {}) {
                     ? { audio: { mimeType: audio.mimeType, data: audio.data } }
                     : { audioStreamEnd: true }
             }));
+            if (validAudio) trace.clientAudio(performance.now() - receivedAt, upstream.bufferedAmount);
+            else trace.event('audio_stream_end');
         });
     });
 

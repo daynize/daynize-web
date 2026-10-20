@@ -27,10 +27,19 @@ function safeCloseContext(context) {
 }
 
 export class AudioEngine extends EventTarget {
-    constructor({ workletUrl = new URL('./pcm-worklet.mjs', import.meta.url), maxQueuedSeconds = 20, localInterruption = false } = {}) {
+    // Playback queue policy. Gemini may send audio faster than real time, so a deep queue is
+    // normal and is never cut up. Only a stalled-network backlog is handled:
+    //  - above catchUpAfterSeconds the queue plays slightly faster to catch up;
+    //  - above maxQueuedSeconds the stale audio is skipped so the tutor never talks seconds late;
+    //  - startLeadSeconds gives a restart after an empty queue a tiny safety margin against glitches.
+    constructor({ workletUrl = new URL('./pcm-worklet.mjs', import.meta.url), maxQueuedSeconds = 8, catchUpAfterSeconds = 4, maxCatchUpRate = 1.15, startLeadSeconds = 0.04, localInterruption = false } = {}) {
         super();
         this.workletUrl = workletUrl;
         this.maxQueuedSeconds = maxQueuedSeconds;
+        this.catchUpAfterSeconds = catchUpAfterSeconds;
+        this.maxCatchUpRate = maxCatchUpRate;
+        this.startLeadSeconds = startLeadSeconds;
+        this.stats = { chunks: 0, maxBacklog: 0, skipped: 0 };
         this.localInterruption = localInterruption;
         this.sources = new Set();
         this.generation = 0;
@@ -47,6 +56,11 @@ export class AudioEngine extends EventTarget {
         return this.sources.size > 0 && this.context?.state === 'running';
     }
 
+    // Seconds of tutor audio scheduled but not yet played.
+    get queuedSeconds() {
+        return this.context ? Math.max(0, this.nextPlayback - this.context.currentTime) : 0;
+    }
+
     emit(type, detail) { this.dispatchEvent(new CustomEvent(type, { detail })); }
 
     async start() {
@@ -55,6 +69,7 @@ export class AudioEngine extends EventTarget {
         }
         this.stop();
         this.active = true;
+        this.stats = { chunks: 0, maxBacklog: 0, skipped: 0 };
         const generation = this.generation;
         const context = new (globalThis.AudioContext || globalThis.webkitAudioContext)({ latencyHint: 'interactive' });
         this.context = context;
@@ -252,7 +267,11 @@ export class AudioEngine extends EventTarget {
         if (!samples.length) return;
         const rate = Number(/rate=(\d+)/.exec(mimeType)?.[1] || 24000);
         if (rate < 8000 || rate > 96000) throw new Error('지원되지 않는 음성 형식입니다.');
-        if (this.nextPlayback - context.currentTime > this.maxQueuedSeconds) throw new Error('음성 재생이 지연되었습니다. 연결을 다시 시작해주세요.');
+        if (this.queuedSeconds > this.maxQueuedSeconds) {
+            this.stats.skipped++;
+            this.emit('skipped', { seconds: this.queuedSeconds });
+            this.interrupt();
+        }
         // The context is created before the analyser/gain graph is ready
         // (getUserMedia is still pending) and is torn down by stop(); drop
         // chunks in that window instead of connecting to a missing node.
@@ -262,8 +281,10 @@ export class AudioEngine extends EventTarget {
         const source = context.createBufferSource();
         const gain = context.createGain();
         source.buffer = buffer;
-        if (source.playbackRate) source.playbackRate.value = this.playbackRate;
-        const duration = buffer.duration / this.playbackRate;
+        const backlog = this.queuedSeconds;
+        const rateNow = this.playbackRate * (backlog > this.catchUpAfterSeconds ? this.maxCatchUpRate : 1);
+        if (source.playbackRate) source.playbackRate.value = rateNow;
+        const duration = buffer.duration / rateNow;
         try { connectNodes(context, source, gain, this.outputAnalyser); }
         catch (error) {
             safeDisconnect(source);
@@ -272,7 +293,7 @@ export class AudioEngine extends EventTarget {
             throw error;
         }
         const isFirstChunk = !this.sources.size;
-        const start = Math.max(this.nextPlayback, context.currentTime);
+        const start = this.nextPlayback <= context.currentTime ? context.currentTime + this.startLeadSeconds : this.nextPlayback;
         if (isFirstChunk) {
             gain.gain.setValueAtTime(0, start);
             gain.gain.linearRampToValueAtTime(1, start + Math.min(0.003, buffer.duration / 2));
@@ -292,7 +313,9 @@ export class AudioEngine extends EventTarget {
             safeDisconnect(gain);
             throw error;
         }
-        this.emit('playing');
+        this.stats.chunks++;
+        this.stats.maxBacklog = Math.max(this.stats.maxBacklog, backlog);
+        this.emit('playing', { backlog, rate: rateNow });
     }
 
     interrupt() {

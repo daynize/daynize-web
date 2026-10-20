@@ -44,8 +44,30 @@ test('mute disables capture tracks and playback rate/queue bounds are enforced',
     engine.context = fakeContext();
     const audio = encodePcm(new Float32Array(2400));
     assert.throws(() => engine.play(audio, 'audio/pcm;rate=999999'), /형식/);
+    engine.outputAnalyser = {};
     engine.nextPlayback = 4;
-    assert.throws(() => engine.play(audio), /지연/);
+    const skipped = [];
+    engine.addEventListener('skipped', event => skipped.push(event.detail.seconds));
+    assert.doesNotThrow(() => engine.play(audio));
+    assert.deepEqual(skipped, [3]);
+    assert.equal(engine.sources.size, 1);
+    assert.equal(engine.stats.skipped, 1);
+});
+
+test('normal and bursty backlog is never cut; only a stalled backlog catches up faster, then skips', () => {
+    const engine = new AudioEngine({ maxQueuedSeconds: 8, catchUpAfterSeconds: 4 });
+    engine.context = fakeContext();
+    engine.outputAnalyser = {};
+    const rates = [];
+    engine.addEventListener('playing', event => rates.push(event.detail.rate));
+    const chunk = encodePcm(new Float32Array(24000));
+    for (let index = 0; index < 4; index++) engine.play(chunk);
+    assert.equal(engine.sources.size, 4);
+    assert.ok(rates.every(rate => rate === 1));
+    assert.ok(Math.abs(engine.queuedSeconds - (4 - 0.04)) < 0.05 || engine.queuedSeconds > 3.9);
+    for (let index = 0; index < 3; index++) engine.play(chunk);
+    assert.ok(rates.at(-1) > 1 && rates.at(-1) <= 1.15);
+    assert.equal(engine.stats.skipped, 0);
 });
 test('play() drops chunks instead of connecting to a missing graph or closed context', () => {
     const engine = new AudioEngine();
@@ -85,7 +107,7 @@ test('outputActive is true only while chunks are queued on a running context', (
     assert.equal(engine.outputActive, false);
 });
 
-test('first tutor chunk is scheduled with no added delay and later chunks continue gap-free in 100ms steps', () => {
+test('first tutor chunk starts within a 40ms safety lead and later chunks continue gap-free in 100ms steps', () => {
     const engine = new AudioEngine();
     engine.context = fakeContext();
     engine.outputAnalyser = {};
@@ -94,7 +116,8 @@ test('first tutor chunk is scheduled with no added delay and later chunks contin
     engine.addEventListener('playing', () => played.push(engine.context.scheduled.length));
     for (let index = 0; index < 5; index++) engine.play(chunk);
     const { scheduled } = engine.context;
-    assert.equal(scheduled[0], engine.context.currentTime);
+    assert.ok(Math.abs(scheduled[0] - engine.context.currentTime - engine.startLeadSeconds) < 1e-9);
+    assert.ok(engine.startLeadSeconds <= 0.05);
     for (let index = 1; index < 5; index++) assert.ok(Math.abs(scheduled[index] - scheduled[index - 1] - 0.1) < 1e-9);
     assert.deepEqual(played, [1, 2, 3, 4, 5]);
 });

@@ -136,6 +136,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         }, { signal });
         this.audio.addEventListener('playing', () => this.setState('speaking'), { signal });
         this.audio.addEventListener('blocked', () => { this.playbackBlocked = true; }, { signal });
+        this.audio.addEventListener('skipped', event => console.warn('[Daynize latency] stale tutor audio skipped', event.detail), { signal });
         query('.speaker-check').addEventListener('click', async () => {
             const button = query('.speaker-check');
             button.disabled = true;
@@ -245,6 +246,13 @@ export class DaynizeVoiceTutor extends HTMLElement {
                 this.turnCompleted = false;
                 if (this.safety) {
                     const now = performance.now();
+                    if (this.safety.phase !== PHASES.SPEAKING) {
+                        // Latency probe (visible with ?debug or in the console): time from the user going
+                        // quiet to the tutor's first audio chunk, plus connection and queue state.
+                        const waitedMs = this.safety.phase === PHASES.THINKING ? Math.round(now - this.safety.phaseSince) : undefined;
+                        this.dataset.firstAudioWaitMs = String(waitedMs ?? '');
+                        console.info('[Daynize latency]', { firstAudioAfterUserQuietMs: waitedMs, rttMs: service.lastRttMs, queuedSeconds: Number(this.audio.queuedSeconds.toFixed(2)), ...this.audio.stats });
+                    }
                     this.safety.noteAudio(now);
                     this.safety.setPhase(PHASES.SPEAKING, now);
                 }
@@ -252,6 +260,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
             }
             catch (error) { this.fail(error); }
         });
+        service.addEventListener('rtt', event => { this.dataset.rttMs = String(event.detail.ms); });
         service.addEventListener('interrupted', () => {
             this.audio.interrupt();
             this.enterListening();
