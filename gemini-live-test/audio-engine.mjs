@@ -13,6 +13,10 @@ function connectNodes(context, ...nodes) {
     }
 }
 
+// Mobile browsers duck/attenuate output while the microphone is open (voice-call mode),
+// so output is lifted above unity and a limiter keeps the boost from clipping.
+export const OUTPUT_GAIN = 1.4;
+
 function safely(action) {
     try { return action(); } catch { return undefined; }
 }
@@ -28,17 +32,15 @@ function safeCloseContext(context) {
 
 export class AudioEngine extends EventTarget {
     // Playback queue policy. Gemini may send audio faster than real time, so a deep queue is
-    // normal and is never cut up. Only a stalled-network backlog is handled:
-    //  - above catchUpAfterSeconds the queue plays slightly faster to catch up;
-    //  - above maxQueuedSeconds the stale audio is skipped so the tutor never talks seconds late;
-    //  - startLeadSeconds gives a restart after an empty queue a tiny safety margin against glitches.
-    constructor({ workletUrl = new URL('./pcm-worklet.mjs', import.meta.url), maxQueuedSeconds = 8, catchUpAfterSeconds = 4, maxCatchUpRate = 1.15, startLeadSeconds = 0.04, localInterruption = false } = {}) {
+    // normal and is never cut up or sped up (AudioBufferSource playback speed shifts pitch and
+    // makes the voice thin). Only a pathological backlog above maxQueuedSeconds is skipped, and
+    // startLeadSeconds gives a restart after an empty queue a tiny safety margin against glitches.
+    constructor({ workletUrl = new URL('./pcm-worklet.mjs', import.meta.url), maxQueuedSeconds = 20, startLeadSeconds = 0.04, micConstraints = {}, localInterruption = false } = {}) {
         super();
         this.workletUrl = workletUrl;
         this.maxQueuedSeconds = maxQueuedSeconds;
-        this.catchUpAfterSeconds = catchUpAfterSeconds;
-        this.maxCatchUpRate = maxCatchUpRate;
         this.startLeadSeconds = startLeadSeconds;
+        this.micConstraints = micConstraints;
         this.stats = { chunks: 0, maxBacklog: 0, skipped: 0 };
         this.localInterruption = localInterruption;
         this.sources = new Set();
@@ -90,15 +92,26 @@ export class AudioEngine extends EventTarget {
             this.outputBins = new Uint8Array(this.outputAnalyser.frequencyBinCount);
             this.outputSamples = new Float32Array(this.outputAnalyser.fftSize);
             this.outputGain = context.createGain();
-            this.outputGain.gain.value = this.speakerMuted ? 0 : 1;
+            this.outputGain.gain.value = this.speakerMuted ? 0 : OUTPUT_GAIN;
             connectNodes(context, this.outputAnalyser, this.outputGain);
+            // Brick-wall limiter after the boost so loud passages are limited instead of clipped.
+            const limiter = context.createDynamicsCompressor?.();
+            if (limiter) {
+                limiter.threshold.value = -2;
+                limiter.knee.value = 0;
+                limiter.ratio.value = 20;
+                limiter.attack.value = 0.003;
+                limiter.release.value = 0.1;
+                this.limiter = limiter;
+            }
             // iOS Safari (and some Android Chrome builds) route raw AudioContext
             // output to the call receiver/earpiece while a getUserMedia mic stream
             // is active. Routing through a real <audio> element forces playback
             // through the main loudspeaker instead.
             const sinkDestination = context.createMediaStreamDestination();
-            connectNodes(context, this.outputGain, sinkDestination);
+            connectNodes(context, ...[this.outputGain, this.limiter, sinkDestination].filter(Boolean));
             const sinkElement = new Audio();
+            sinkElement.volume = 1;
             sinkElement.autoplay = true;
             sinkElement.playsInline = true;
             sinkElement.setAttribute('playsinline', '');
@@ -113,7 +126,8 @@ export class AudioEngine extends EventTarget {
             const stream = await navigator.mediaDevices.getUserMedia({
                 audio: {
                     sampleRate: { ideal: 16000 }, channelCount: 1,
-                    echoCancellation: true, noiseSuppression: true, autoGainControl: true
+                    echoCancellation: true, noiseSuppression: true, autoGainControl: true,
+                    ...this.micConstraints
                 }
             });
             if (generation !== this.generation) {
@@ -206,7 +220,7 @@ export class AudioEngine extends EventTarget {
 
     setSpeakerMuted(muted) {
         this.speakerMuted = muted;
-        if (this.outputGain && this.context) this.outputGain.gain.setTargetAtTime(muted ? 0 : 1, this.context.currentTime, 0.015);
+        if (this.outputGain && this.context) this.outputGain.gain.setTargetAtTime(muted ? 0 : OUTPUT_GAIN, this.context.currentTime, 0.015);
     }
 
     setPlaybackRate(rate) {
@@ -282,7 +296,7 @@ export class AudioEngine extends EventTarget {
         const gain = context.createGain();
         source.buffer = buffer;
         const backlog = this.queuedSeconds;
-        const rateNow = this.playbackRate * (backlog > this.catchUpAfterSeconds ? this.maxCatchUpRate : 1);
+        const rateNow = this.playbackRate;
         if (source.playbackRate) source.playbackRate.value = rateNow;
         const duration = buffer.duration / rateNow;
         try { connectNodes(context, source, gain, this.outputAnalyser); }
@@ -354,6 +368,7 @@ export class AudioEngine extends EventTarget {
         safeDisconnect(this.inputAnalyser);
         safeDisconnect(this.outputAnalyser);
         safeDisconnect(this.outputGain);
+        safeDisconnect(this.limiter);
         if (this.sinkElement) {
             safely(() => this.sinkElement.pause());
             safely(() => { this.sinkElement.srcObject = null; });
@@ -366,7 +381,7 @@ export class AudioEngine extends EventTarget {
         }
         this.context = this.stream = this.microphone = this.processor = this.silence = undefined;
         this.inputAnalyser = this.outputAnalyser = this.inputBins = this.outputBins = undefined;
-        this.outputGain = undefined;
+        this.outputGain = this.limiter = undefined;
         this.inputSamples = undefined;
         this.outputSamples = undefined;
     }

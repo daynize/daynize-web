@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { AudioEngine } from '../audio-engine.mjs';
+import { AudioEngine, OUTPUT_GAIN } from '../audio-engine.mjs';
 import { encodePcm } from '../audio.mjs';
 
 function fakeContext() {
@@ -54,20 +54,23 @@ test('mute disables capture tracks and playback rate/queue bounds are enforced',
     assert.equal(engine.stats.skipped, 1);
 });
 
-test('normal and bursty backlog is never cut; only a stalled backlog catches up faster, then skips', () => {
-    const engine = new AudioEngine({ maxQueuedSeconds: 8, catchUpAfterSeconds: 4 });
+test('a deep or bursty backlog is never sped up or cut: pitch stays natural; only a pathological backlog is skipped', () => {
+    const engine = new AudioEngine();
     engine.context = fakeContext();
     engine.outputAnalyser = {};
     const rates = [];
     engine.addEventListener('playing', event => rates.push(event.detail.rate));
     const chunk = encodePcm(new Float32Array(24000));
-    for (let index = 0; index < 4; index++) engine.play(chunk);
-    assert.equal(engine.sources.size, 4);
+    for (let index = 0; index < 15; index++) engine.play(chunk);
+    assert.equal(engine.sources.size, 15);
+    assert.ok(engine.queuedSeconds > 10);
     assert.ok(rates.every(rate => rate === 1));
-    assert.ok(Math.abs(engine.queuedSeconds - (4 - 0.04)) < 0.05 || engine.queuedSeconds > 3.9);
-    for (let index = 0; index < 3; index++) engine.play(chunk);
-    assert.ok(rates.at(-1) > 1 && rates.at(-1) <= 1.15);
     assert.equal(engine.stats.skipped, 0);
+    const sources = engine.context.sources;
+    assert.ok(sources.every(source => !source.playbackRate || source.playbackRate.value === 1));
+    engine.setPlaybackRate(1.1);
+    engine.play(chunk);
+    assert.equal(rates.at(-1), 1.1);
 });
 test('play() drops chunks instead of connecting to a missing graph or closed context', () => {
     const engine = new AudioEngine();
@@ -134,7 +137,8 @@ test('start() builds the playback graph before awaiting mic permission so the fi
         createMediaStreamDestination: () => { created.push('sink'); return { ...makeNode('sink'), stream: {} }; },
         audioWorklet: { addModule: () => Promise.resolve() },
         createBuffer: (channels, length, rate) => ({ duration: length / rate, copyToChannel() { } }),
-        createBufferSource: () => ({ connect() { }, disconnect() { }, start() { }, stop() { } })
+        createBufferSource: () => ({ connect() { }, disconnect() { }, start() { }, stop() { } }),
+        createDynamicsCompressor: () => ({ ...makeNode('limiter'), threshold: { value: 0 }, knee: { value: 0 }, ratio: { value: 0 }, attack: { value: 0 }, release: { value: 0 } })
     };
     const globals = ['isSecureContext', 'AudioContext', 'AudioWorkletNode', 'Audio', 'navigator'];
     const saved = Object.fromEntries(globals.map(name => [name, Object.getOwnPropertyDescriptor(globalThis, name)]));
@@ -149,6 +153,10 @@ test('start() builds the playback graph before awaiting mic permission so the fi
         void engine.start();
         assert.ok(engine.outputAnalyser);
         assert.ok(engine.outputGain);
+        assert.equal(engine.outputGain.gain.value, OUTPUT_GAIN);
+        assert.ok(OUTPUT_GAIN >= 1.2 && OUTPUT_GAIN <= 1.5);
+        assert.equal(engine.limiter.threshold.value, -2);
+        assert.equal(engine.limiter.ratio.value, 20);
         assert.ok(engine.sinkElement);
         assert.equal(engine.microphone, undefined);
         assert.doesNotThrow(() => engine.play(encodePcm(new Float32Array(2400))));
@@ -157,4 +165,19 @@ test('start() builds the playback graph before awaiting mic permission so the fi
         engine.stop();
         for (const name of globals) saved[name] ? Object.defineProperty(globalThis, name, saved[name]) : delete globalThis[name];
     }
+});
+
+test('speaker mute and unmute restore the boosted output gain, not unity', () => {
+    const engine = new AudioEngine();
+    const targets = [];
+    engine.context = { currentTime: 0, state: 'running' };
+    engine.outputGain = { gain: { setTargetAtTime: value => targets.push(value) } };
+    engine.setSpeakerMuted(true);
+    engine.setSpeakerMuted(false);
+    assert.deepEqual(targets, [0, OUTPUT_GAIN]);
+});
+
+test('microphone constraints keep echo cancellation by default and can be overridden', () => {
+    assert.deepEqual(new AudioEngine().micConstraints, {});
+    assert.deepEqual(new AudioEngine({ micConstraints: { autoGainControl: false } }).micConstraints, { autoGainControl: false });
 });

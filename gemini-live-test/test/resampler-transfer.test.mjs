@@ -50,3 +50,19 @@ test('microphone packets are fixed at 40 ms (640 samples, 1280 PCM bytes) for ev
         assert.ok(sizes.every(bytes => bytes === 1280));
     }
 });
+
+test('microphone resampler keeps low and mid voice frequencies flat (no bass loss) at common device rates', () => {
+    for (const inputRate of [44100, 48000]) {
+        for (const frequency of [100, 200, 400, 1000]) {
+            const resampler = new PcmResampler(inputRate, 16000, MIC_CHUNK_SAMPLES);
+            const out = [];
+            const total = inputRate;
+            const input = new Float32Array(total);
+            for (let index = 0; index < total; index++) input[index] = 0.5 * Math.sin(2 * Math.PI * frequency * index / inputRate);
+            for (let offset = 0; offset < total; offset += 128) resampler.push(input.subarray(offset, Math.min(total, offset + 128)), chunk => out.push(...chunk));
+            const tail = out.slice(2000);
+            const rms = Math.sqrt(tail.reduce((sum, sample) => sum + sample * sample, 0) / tail.length);
+            assert.ok(Math.abs(rms / (0.5 / Math.SQRT2) - 1) < 0.02, `${frequency} Hz at ${inputRate} Hz changed level by ${(rms / (0.5 / Math.SQRT2)).toFixed(3)}`);
+        }
+    }
+});
