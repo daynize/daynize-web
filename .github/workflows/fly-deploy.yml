@@ -11,9 +11,15 @@ jobs:
     name: Deploy app
     runs-on: ubuntu-latest
     concurrency: deploy-group    # optional: ensure only one action runs at a time
+    env:
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
     steps:
+      - name: Skip when FLY_API_TOKEN is not configured
+        if: ${{ env.FLY_API_TOKEN == '' }}
+        run: echo "::notice::FLY_API_TOKEN secret is not set, so the Fly deploy was skipped. Deploy manually with 'npm run deploy' in gemini-live-test, or add the secret."
       - uses: actions/checkout@v4
+        if: ${{ env.FLY_API_TOKEN != '' }}
       - uses: superfly/flyctl-actions/setup-flyctl@master
+        if: ${{ env.FLY_API_TOKEN != '' }}
       - run: flyctl deploy --remote-only
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+        if: ${{ env.FLY_API_TOKEN != '' }}
