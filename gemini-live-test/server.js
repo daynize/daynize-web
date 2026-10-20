@@ -44,7 +44,7 @@ function createRelayServer(options = {}) {
         if (new URL(origin).origin !== origin || !origin.startsWith('https://')) throw new Error('ALLOWED_ORIGINS must contain exact HTTPS origins.');
     }
     const publicOrigin = options.publicOrigin ?? process.env.PUBLIC_ORIGIN;
-    const vadSilenceMs = Math.min(1000, Number(options.vadSilenceMs ?? process.env.VAD_SILENCE_MS) || 700);
+    const vadSilenceMs = Math.min(1000, Number(options.vadSilenceMs ?? process.env.VAD_SILENCE_MS) || 450);
     const transcriptionSilenceMs = options.transcriptionSilenceMs ?? (Number(process.env.TRANSCRIPTION_VAD_SILENCE_MS) || 500);
     const authorizeRequest = options.authorizeRequest;
     const maxConnections = options.maxConnections ?? 8;
@@ -340,7 +340,7 @@ function createRelayServer(options = {}) {
                 const teaching = sessionInit && await import('./teaching-prompt.mjs');
                 if (ended) return stopUpstream();
                 teachingMode = Boolean(teaching) && teaching.normalizeSessionMode(sessionInit.mode) === teaching.SESSION_MODES.TEACHING;
-                if (teachingMode) teachingKickoff = teaching.createTeachingKickoff();
+                if (teachingMode) teachingKickoff = teaching.createTeachingKickoff(sessionInit.context);
                 const setupOptions = { silenceDurationMs: vadSilenceMs };
                 if (teachingMode) setupOptions.systemInstruction = teaching.buildTeachingInstruction(sessionInit.context);
                 const setup = transcriptionOnly

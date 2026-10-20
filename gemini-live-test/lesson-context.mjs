@@ -2,6 +2,19 @@ export const RECENT_LESSON_KEY = 'daynize_recent_lesson';
 let recentLesson = null;
 
 const clean = (value, max) => typeof value === 'string' ? value.replace(/\s+/g, ' ').trim().slice(0, max) : '';
+const position = value => Number.isInteger(value) && value > 0 && value < 10000 ? value : undefined;
+
+// Optional course-progress fields; omitted (not undefined) when unknown so payloads stay minimal.
+const progressFields = value => {
+    const courseName = clean(value.courseName, 80);
+    const lessonNumber = position(value.lessonNumber);
+    const totalLessons = position(value.totalLessons);
+    return {
+        ...(courseName && { courseName }),
+        ...(lessonNumber && { lessonNumber }),
+        ...(lessonNumber && totalLessons >= lessonNumber && { totalLessons })
+    };
+};
 
 export function normalizeRecentLesson(value) {
     if (!value || typeof value !== 'object') return null;
@@ -16,6 +29,7 @@ export function normalizeRecentLesson(value) {
         lessonTitle,
         targetExpressions,
         keyConcept: clean(value.keyConcept ?? value.concept, 400),
+        ...progressFields(value),
         savedAt: Number.isFinite(value.savedAt) ? value.savedAt : undefined
     };
 }
@@ -48,7 +62,7 @@ export function saveRecentLesson(lesson, storage) {
     return normalized;
 }
 
-export function trackRecentLesson(item, { kind = 'lesson', source = 'course', storage } = {}) {
+export function trackRecentLesson(item, { kind = 'lesson', source = 'course', storage, courseName, lessonNumber, totalLessons } = {}) {
     if (!item || typeof item !== 'object') throw new TypeError('A lesson object is required.');
     const uniqueTexts = items => [...new Set(items.filter(value => typeof value === 'string' && value.trim()).map(value => value.trim()))];
     let lesson;
@@ -86,7 +100,7 @@ export function trackRecentLesson(item, { kind = 'lesson', source = 'course', st
             keyConcept: [item.curriculumTopic, item.explanation || item.desc].filter(Boolean).join(' · ')
         };
     }
-    return saveRecentLesson({ ...lesson, lessonId: item.id }, storage);
+    return saveRecentLesson({ ...lesson, lessonId: item.id, courseName, lessonNumber, totalLessons }, storage);
 }
 
 export function createInitSessionMessage({ mode = 'TEACHING', storage } = {}) {
@@ -97,7 +111,8 @@ export function createInitSessionMessage({ mode = 'TEACHING', storage } = {}) {
         context: lesson && {
             lessonTitle: lesson.lessonTitle,
             targetExpressions: lesson.targetExpressions,
-            keyConcept: lesson.keyConcept
+            keyConcept: lesson.keyConcept,
+            ...progressFields(lesson)
         }
     };
 }

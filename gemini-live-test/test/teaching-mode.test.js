@@ -70,7 +70,7 @@ test('learner PCM and tutor feedback share one session without another greeting'
     client.send(JSON.stringify({ type: 'INIT_SESSION', mode: 'TEACHING', context: lesson }));
     const { setup } = await setupMessage;
     assert.equal(setup.realtimeInputConfig.activityHandling, 'START_OF_ACTIVITY_INTERRUPTS');
-    assert.equal(setup.realtimeInputConfig.automaticActivityDetection.silenceDurationMs, 700);
+    assert.equal(setup.realtimeInputConfig.automaticActivityDetection.silenceDurationMs, 450);
     assert.deepEqual(setup.inputAudioTranscription, {});
     assert.match(setup.systemInstruction.parts[0].text, /딱 한 번/);
     const kickoff = nextMessage(gemini);
@@ -261,4 +261,26 @@ test('teaching reconnection resumes history without asking the opening question 
     await resumedReady;
     await new Promise(resolve => setTimeout(resolve, 30));
     assert.deepEqual(turns, []);
+});
+
+test('tracked course progress is injected into the instruction and the opening prompt; short-turn rules are present', async () => {
+    const { buildTeachingInstruction, createTeachingKickoff, normalizeLessonContext } = await import('../teaching-prompt.mjs');
+    const context = { courseName: 'BASIC COURSE', lessonNumber: 5, totalLessons: 21, lessonTitle: '5강 · 동사 GO', targetExpressions: ['I go to work by bus.'], keyConcept: '이동 동사' };
+    const instruction = buildTeachingInstruction(context);
+    assert.match(instruction, /수강 강좌: BASIC COURSE/);
+    assert.match(instruction, /수강 진도: 5회차까지 수강 완료 \(전체 21회차\)/);
+    assert.match(instruction, /지난번 수강하신 'BASIC COURSE · 5강 · 동사 GO'까지 완수하셨네요/);
+    assert.match(instruction, /1~2문장/);
+    assert.match(instruction, /Aha!/);
+    assert.match(instruction, /Oh, I see!/);
+    assert.match(instruction, /Great!/);
+    assert.match(instruction, /즉시 말하기를 멈추고/);
+    const kickoff = createTeachingKickoff(context).clientContent.turns[0].parts[0].text;
+    assert.match(kickoff, /수강 강좌: BASIC COURSE/);
+    assert.match(kickoff, /5회차까지 수강 완료/);
+    assert.match(kickoff, /I go to work by bus\./);
+    assert.match(createTeachingKickoff().clientContent.turns[0].parts[0].text, /먼저/);
+    assert.equal(normalizeLessonContext({ lessonTitle: 'x', lessonNumber: 9, totalLessons: 3 }).totalLessons, undefined);
+    assert.doesNotMatch(buildTeachingInstruction({ lessonTitle: 'x', courseName: '{{keyConcept}}' }), /\{\{/);
+    assert.match(buildTeachingInstruction({ lessonTitle: 'x' }), /수강 강좌: 기록 없음/);
 });

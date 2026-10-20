@@ -31,6 +31,41 @@ export class PcmResampler {
     }
 }
 
+// Treats ambient/mobile-mic noise as digital silence so server-side VAD can
+// detect end of speech quickly. The floor adapts to the environment; a short
+// hangover keeps word endings and brief pauses intact.
+export class NoiseGate {
+    constructor(sampleRate, { minThreshold = 0.006, maxThreshold = 0.03, multiplier = 3, hangoverSeconds = 0.25, initialFloor = 0.003 } = {}) {
+        this.minThreshold = minThreshold;
+        this.maxThreshold = maxThreshold;
+        this.multiplier = multiplier;
+        this.hangoverSamples = Math.round(sampleRate * hangoverSeconds);
+        this.floor = initialFloor;
+        this.hangover = 0;
+    }
+
+    get threshold() {
+        return Math.min(this.maxThreshold, Math.max(this.minThreshold, this.floor * this.multiplier));
+    }
+
+    // Returns true while the signal should be passed through.
+    process(samples) {
+        let energy = 0;
+        for (const sample of samples) energy += sample * sample;
+        const rms = Math.sqrt(energy / (samples.length || 1));
+        if (rms >= this.threshold) {
+            this.hangover = this.hangoverSamples;
+            return true;
+        }
+        this.floor = this.floor * 0.995 + rms * 0.005;
+        if (this.hangover > 0) {
+            this.hangover -= samples.length;
+            return true;
+        }
+        return false;
+    }
+}
+
 export function encodePcm(samples) {
     const bytes = new Uint8Array(samples.length * 2);
     const view = new DataView(bytes.buffer);

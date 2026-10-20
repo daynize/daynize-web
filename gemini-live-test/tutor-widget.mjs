@@ -1,7 +1,7 @@
 import { AudioEngine } from './audio-engine.mjs';
 import { LiveService, resolveWebSocketUrl } from './live-service.mjs';
 import { AmbientOrb } from './ambient-orb.mjs';
-import { SessionSafety } from './session-safety.mjs';
+import { SessionSafety, PHASES, SILENCE_LIMIT_MS } from './session-safety.mjs';
 import { createInitSessionMessage } from './lesson-context.mjs';
 
 const asset = name => new URL(name, import.meta.url).href;
@@ -77,6 +77,17 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.orb = new AmbientOrb(query('.ambient-orb'));
         this.resize = new ResizeObserver(() => this.resizeCanvas());
         this.resize.observe(this.canvas);
+        const unlockAudio = () => {
+            this.audio.unlock();
+        };
+        // iOS/Android fire 'click' after 'touchend', and on some mobile WebKit
+        // builds resume() only reliably inherits user-activation when it runs
+        // directly inside the touch handler rather than after awaits further
+        // down the call chain, so grab the gesture here as early as possible.
+        this.launch.addEventListener('touchend', unlockAudio, { signal, passive: true });
+        this.startButton.addEventListener('touchend', unlockAudio, { signal, passive: true });
+        this.dialog.addEventListener('touchend', unlockAudio, { signal, passive: true });
+        this.dialog.addEventListener('pointerdown', unlockAudio, { signal, passive: true });
         this.launch.addEventListener('click', () => this.open(), { signal });
         this.dialog.addEventListener('cancel', event => { event.preventDefault(); this.close(); }, { signal });
         this.dialog.addEventListener('click', event => {
@@ -99,7 +110,11 @@ export class DaynizeVoiceTutor extends HTMLElement {
             query('.speaker').title = muted ? '스피커 켜기' : '스피커 끄기';
             query('.speaker img').src = asset(`icons/${muted ? 'volume-x' : 'volume-2'}.svg`);
             if (!muted && this.audio.context) {
-                try { await this.audio.context.resume(); } catch (error) { query('.audio-check').textContent = error.message; }
+                try {
+                    if (this.audio.context.state === 'closed') this.audio.unlock();
+                    else await this.audio.context.resume();
+                    await this.audio.sinkElement?.play();
+                } catch (error) { query('.audio-check').textContent = error.message; }
             }
         }, { signal });
         query('.speed').addEventListener('input', () => {
@@ -134,15 +149,25 @@ export class DaynizeVoiceTutor extends HTMLElement {
             finally { button.disabled = false; }
         }, { signal });
         this.audio.addEventListener('drained', () => {
+            // Queue fully played out (last onended): only now may the call return to LISTENING.
+            if (this.turnCompleted) this.enterListening();
             if (this.service?.ready) this.setState(this.audio.muted ? 'muted' : 'listening');
         }, { signal });
         this.audio.addEventListener('interrupted', () => {
+            this.enterListening();
             this.bargeIn = true;
             this.setState('listening');
         }, { signal });
         this.audio.addEventListener('error', event => this.fail(event.detail), { signal });
         window.addEventListener('pagehide', () => this.end(), { signal });
-        document.addEventListener('visibilitychange', () => this.checkSafety(), { signal });
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible' && this.callActive) {
+                this.audio.unlock();
+                // Time spent in the background (timers/audio frozen) is not user silence.
+                this.safety?.resetActivity(performance.now());
+            }
+            this.checkSafety();
+        }, { signal });
         this.setState('idle');
     }
 
@@ -192,6 +217,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         const generation = ++this.generation;
         this.callActive = true;
         this.safety = new SessionSafety(performance.now());
+        this.turnCompleted = false;
         this.shadowRoot.querySelector('.safety-notice').hidden = true;
         this.safetyTimer = setInterval(() => this.checkSafety(), 100);
         this.duration = 0;
@@ -216,17 +242,26 @@ export class DaynizeVoiceTutor extends HTMLElement {
             clearTimeout(this.responseTimer);
             try {
                 this.audio.play(event.detail.data, event.detail.mimeType);
+                this.turnCompleted = false;
+                if (this.safety) {
+                    const now = performance.now();
+                    this.safety.noteAudio(now);
+                    this.safety.setPhase(PHASES.SPEAKING, now);
+                }
                 if (this.playbackBlocked) this.setState('blocked');
             }
             catch (error) { this.fail(error); }
         });
         service.addEventListener('interrupted', () => {
             this.audio.interrupt();
+            this.enterListening();
             this.bargeIn = false;
             if (this.callActive) this.setState(this.audio.muted ? 'muted' : 'listening');
         });
         service.addEventListener('turnComplete', () => {
             this.bargeIn = false;
+            this.turnCompleted = true;
+            if (!this.audio.outputActive) this.enterListening();
         });
         service.addEventListener('connectionstate', event => {
             if (generation !== this.generation) return;
@@ -240,6 +275,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
                 else this.audio.interrupt();
                 clearTimeout(this.responseTimer);
                 this.bargeIn = false;
+                this.safety?.setPhase(PHASES.IDLE, performance.now());
                 this.muteButton.disabled = true;
                 this.startButton.hidden = freshSession;
                 this.startButton.disabled = delay === 0;
@@ -249,6 +285,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
                 this.startButton.hidden = true;
                 this.startButton.disabled = false;
                 this.safety.lastSoundAt = performance.now();
+                this.safety.setPhase(this.audio.outputActive ? PHASES.SPEAKING : PHASES.LISTENING, performance.now());
                 this.muteButton.disabled = false;
                 if (this.pendingFreshSession) {
                     for (const frame of this.pendingAudioFrames) {
@@ -291,13 +328,27 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.updateTransport();
     }
 
+    enterListening() {
+        if (this.safety && !this.audio.outputActive) this.safety.setPhase(PHASES.LISTENING, performance.now());
+    }
+
     checkSafety() {
         if (!this.callActive || !this.safety) return;
-        if (this.service?.active && !this.service.ready) this.safety.lastSoundAt = performance.now();
-        const result = this.safety.check(performance.now(), this.audio.inputVolume());
+        const now = performance.now();
+        // Not connected (connecting / reconnecting) is IDLE; connected again resumes LISTENING.
+        if (this.service?.active && !this.service.ready) this.safety.setPhase(PHASES.IDLE, now);
+        else if (this.service?.ready && this.safety.phase === PHASES.IDLE) this.safety.setPhase(this.audio.outputActive ? PHASES.SPEAKING : PHASES.LISTENING, now);
+        const result = this.safety.check(now, this.audio.inputVolume(), this.audio.outputActive);
+        // Second, independent guard: inactivity may only fire while truly listening on a live connection.
+        if ((result.warning || result.reason === 'silence') && (result.phase !== PHASES.LISTENING || this.audio.outputActive || !this.service?.ready)) {
+            this.safety.resetActivity(now);
+            result.warning = false;
+            if (result.reason === 'silence') result.reason = undefined;
+        }
+        this.dataset.safetyPhase = result.phase;
         const notice = this.shadowRoot.querySelector('.safety-notice');
         if (result.reason) {
-            const message = result.reason === 'timeout' ? '오늘의 튜터링 시간이 완료되었습니다!' : '30초 동안 음성 입력이 없어 대화를 자동 종료했습니다.';
+            const message = result.reason === 'timeout' ? '오늘의 튜터링 시간이 완료되었습니다!' : `${Math.round(SILENCE_LIMIT_MS / 1000)}초 동안 음성 입력이 없어 대화를 자동 종료했습니다.`;
             this.end();
             this.setState('ended', message);
             notice.textContent = message;

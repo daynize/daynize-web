@@ -29,16 +29,19 @@ async function startSession(page, config = {}) {
     await page.waitForFunction(() => document.querySelector('daynize-voice-tutor').service?.ready);
 }
 
-test('20s silence warning resets on sound; 30s silence releases session', async ({ page }) => {
+test('45s silence warning resets on sound; 60s silence releases session', async ({ page }) => {
+    test.setTimeout(300000);
     await startSession(page);
-    await page.clock.fastForward(20000);
+    // runFor ticks the 100ms safety interval; a single big jump is treated as a frozen clock, not silence.
+    await page.clock.runFor(45000);
     await expect(page.locator('.safety-notice')).toContainText('생각 중이신가요?');
-    await expect(page.locator('.safety-notice')).toContainText('10초 후');
+    await expect(page.locator('.safety-notice')).toContainText('15초 후');
     await page.evaluate(() => { window.safetyTest.rms = 0.04; });
     await page.clock.runFor(200);
     await expect(page.locator('.safety-notice')).not.toBeVisible();
     await page.evaluate(() => { window.safetyTest.rms = 0; });
-    await page.clock.fastForward(30001);
+    // After the user spoke the machine waits in THINKING (no countdown, max 60s) before LISTENING counts 60s.
+    await page.clock.runFor(500 + 60000 + 61000);
     await expect(page.locator('.safety-notice')).toContainText('대화를 자동 종료했습니다');
     expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').callActive)).toBe(false);
     expect(await page.evaluate(() => window.safetyTest.sockets.every(socket => socket.readyState === 3))).toBe(true);
@@ -124,3 +127,31 @@ for (const width of [1280, 375]) {
         await page.keyboard.press('Escape');
     });
 }
+test('a long tutor answer never shows the warning or ends the call; countdown restarts at turn complete', async ({ page }) => {
+    test.setTimeout(150000);
+    await startSession(page);
+    await page.evaluate(() => {
+        const widget = document.querySelector('daynize-voice-tutor');
+        window.safetyTest.playing = true;
+        widget.audio.play = () => { };
+        Object.defineProperty(widget.audio, 'outputActive', { get: () => window.safetyTest.playing, configurable: true });
+        widget.service.dispatchEvent(new CustomEvent('audio', { detail: { data: 'AAA=', mimeType: 'audio/pcm;rate=24000' } }));
+    });
+    for (let second = 0; second < 90; second += 5) {
+        await page.clock.runFor(5000);
+        await page.evaluate(() => document.querySelector('daynize-voice-tutor').service.dispatchEvent(new CustomEvent('audio', { detail: { data: 'AAA=', mimeType: 'audio/pcm;rate=24000' } })));
+    }
+    await expect(page.locator('.safety-notice')).not.toBeVisible();
+    expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').callActive)).toBe(true);
+    expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').dataset.safetyPhase)).toBe('SPEAKING');
+    await page.evaluate(() => {
+        window.safetyTest.playing = false;
+        document.querySelector('daynize-voice-tutor').service.dispatchEvent(new CustomEvent('turnComplete'));
+    });
+    await page.clock.runFor(500);
+    expect(await page.evaluate(() => document.querySelector('daynize-voice-tutor').dataset.safetyPhase)).toBe('LISTENING');
+    await page.clock.runFor(44000);
+    await expect(page.locator('.safety-notice')).not.toBeVisible();
+    await page.clock.runFor(1500);
+    await expect(page.locator('.safety-notice')).toContainText('생각 중이신가요?');
+});

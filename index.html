@@ -2703,7 +2703,14 @@
                 container.append(document.createTextNode(text.slice(start + highlight.length)));
             };
             const trackRecentLesson = (item, kind) => {
-                saveLessonContext(item, { kind, source: selectedCategory?.categoryId || 'course' });
+                const lessons = Array.isArray(selectedCategory?.lessons) ? selectedCategory.lessons : [];
+                const index = lessons.findIndex((candidate) => candidate === item || (item?.id !== undefined && candidate?.id === item.id));
+                saveLessonContext(item, {
+                    kind,
+                    source: selectedCategory?.categoryId || 'course',
+                    courseName: selectedCategory?.categoryName,
+                    ...(index >= 0 && { lessonNumber: index + 1, totalLessons: lessons.length })
+                });
             };
             const openArticle = (article) => {
                 pausePopAudio();

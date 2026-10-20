@@ -110,7 +110,7 @@ test('real AudioWorklet PCM, playback, barge-in, mute, reconnect and cleanup', a
         const widget = document.querySelector('daynize-voice-tutor');
         return { mime: audio.mimeType, bytes: atob(audio.data).length, analyser: widget.audio.levels().input.some(value => value > 0) };
     });
-    expect(input).toEqual({ mime: 'audio/pcm;rate=16000', bytes: 3200, analyser: true });
+    expect(input).toEqual({ mime: 'audio/pcm;rate=16000', bytes: 1280, analyser: true });
     const socketCount = await page.evaluate(() => window.audioTest.sockets.length);
     const framesBeforeMinimize = await page.evaluate(() => document.querySelector('daynize-voice-tutor').sentFrames);
     await page.evaluate(() => document.querySelector('daynize-voice-tutor').minimize());

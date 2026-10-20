@@ -1,12 +1,17 @@
-import { PcmResampler } from './audio.mjs';
+import { PcmResampler, NoiseGate } from './audio.mjs';
+
+// 640 samples @16 kHz = 40 ms packets so the backend hears speech (and its end) sooner.
+const CHUNK_SAMPLES = 640;
 
 class MicrophoneProcessor extends AudioWorkletProcessor {
     constructor() {
         super();
-        this.resampler = new PcmResampler(sampleRate);
+        this.resampler = new PcmResampler(sampleRate, 16000, CHUNK_SAMPLES);
+        this.gate = new NoiseGate(sampleRate);
         this.speechFrames = 0;
         this.port.onmessage = () => {
-            this.resampler = new PcmResampler(sampleRate);
+            this.resampler = new PcmResampler(sampleRate, 16000, CHUNK_SAMPLES);
+            this.gate = new NoiseGate(sampleRate);
             this.speechFrames = 0;
         };
     }
@@ -22,7 +27,7 @@ class MicrophoneProcessor extends AudioWorkletProcessor {
                 this.port.postMessage({ type: 'speech' });
                 this.speechFrames = 0;
             }
-            this.resampler.push(samples, chunk => this.port.postMessage(chunk, [chunk.buffer]));
+            this.resampler.push(this.gate.process(samples) ? samples : new Float32Array(samples.length), chunk => this.port.postMessage(chunk, [chunk.buffer]));
         }
         return true;
     }

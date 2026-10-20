@@ -18,3 +18,21 @@ test('resampler keeps emitting after AudioWorklet transfers and detaches each bu
         assert.equal(resampler.chunk.length, 1600);
     }
 });
+import { NoiseGate } from '../audio.mjs';
+
+test('noise gate silences steady ambient noise, passes speech, and holds briefly after it', () => {
+    const gate = new NoiseGate(16000);
+    const block = level => new Float32Array(128).fill(level);
+    for (let i = 0; i < 20; i++) assert.equal(gate.process(block(0.004)), false);
+    assert.equal(gate.process(block(0.1)), true);
+    assert.equal(gate.process(block(0.002)), true);
+    for (let i = 0; i < 40; i++) gate.process(block(0.002));
+    assert.equal(gate.process(block(0.002)), false);
+});
+
+test('noise gate floor adapts to louder rooms but caps the threshold', () => {
+    const gate = new NoiseGate(16000);
+    for (let i = 0; i < 2000; i++) gate.process(new Float32Array(128).fill(0.007));
+    assert.ok(gate.threshold > 0.008 && gate.threshold <= 0.03);
+    assert.equal(gate.process(new Float32Array(128).fill(0.2)), true);
+});

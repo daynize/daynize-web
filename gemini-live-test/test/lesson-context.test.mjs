@@ -90,3 +90,16 @@ test('a newer stored lesson refreshes state, which survives subsequent storage r
     assert.equal(module.readRecentLesson(storage).lessonTitle, 'From another tab');
     assert.equal(module.readRecentLesson({ getItem() { throw new Error('blocked'); } }).lessonTitle, 'From another tab');
 });
+
+test('course name and lesson position travel in the handshake only when known', async () => {
+    const module = await freshModule();
+    const storage = memoryStorage();
+    module.trackRecentLesson({ id: 'b5', title: '5강', keyPhrase: 'I go.', script: [] }, { storage, courseName: 'BASIC COURSE', lessonNumber: 5, totalLessons: 21 });
+    const { context } = module.createInitSessionMessage({ storage });
+    assert.equal(context.courseName, 'BASIC COURSE');
+    assert.equal(context.lessonNumber, 5);
+    assert.equal(context.totalLessons, 21);
+    const bare = memoryStorage();
+    module.trackRecentLesson({ id: 'x', title: 'No position', keyPhrase: 'Hi.', script: [] }, { storage: bare });
+    assert.equal('courseName' in module.createInitSessionMessage({ storage: bare }).context, false);
+});
