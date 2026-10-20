@@ -84,3 +84,54 @@ test('outputActive is true only while chunks are queued on a running context', (
     engine.interrupt();
     assert.equal(engine.outputActive, false);
 });
+
+test('first tutor chunk is scheduled with no added delay and later chunks continue gap-free in 100ms steps', () => {
+    const engine = new AudioEngine();
+    engine.context = fakeContext();
+    engine.outputAnalyser = {};
+    const chunk = encodePcm(new Float32Array(2400));
+    const played = [];
+    engine.addEventListener('playing', () => played.push(engine.context.scheduled.length));
+    for (let index = 0; index < 5; index++) engine.play(chunk);
+    const { scheduled } = engine.context;
+    assert.equal(scheduled[0], engine.context.currentTime);
+    for (let index = 1; index < 5; index++) assert.ok(Math.abs(scheduled[index] - scheduled[index - 1] - 0.1) < 1e-9);
+    assert.deepEqual(played, [1, 2, 3, 4, 5]);
+});
+
+test('start() builds the playback graph before awaiting mic permission so the first chunk is never dropped', async () => {
+    const created = [];
+    const makeNode = name => ({ name, connect() { }, disconnect() { }, gain: { value: 1, setValueAtTime() { }, linearRampToValueAtTime() { }, cancelScheduledValues() { } }, frequencyBinCount: 128, fftSize: 256 });
+    const context = {
+        state: 'suspended', currentTime: 0, destination: makeNode('destination'),
+        resume() { return new Promise(() => { }); },
+        close() { return Promise.resolve(); },
+        createAnalyser: () => { created.push('analyser'); return makeNode('analyser'); },
+        createGain: () => { created.push('gain'); return makeNode('gain'); },
+        createMediaStreamDestination: () => { created.push('sink'); return { ...makeNode('sink'), stream: {} }; },
+        audioWorklet: { addModule: () => Promise.resolve() },
+        createBuffer: (channels, length, rate) => ({ duration: length / rate, copyToChannel() { } }),
+        createBufferSource: () => ({ connect() { }, disconnect() { }, start() { }, stop() { } })
+    };
+    const globals = ['isSecureContext', 'AudioContext', 'AudioWorkletNode', 'Audio', 'navigator'];
+    const saved = Object.fromEntries(globals.map(name => [name, Object.getOwnPropertyDescriptor(globalThis, name)]));
+    const define = (name, value) => Object.defineProperty(globalThis, name, { value, configurable: true, writable: true });
+    define('isSecureContext', true);
+    define('AudioContext', function () { return context; });
+    define('AudioWorkletNode', function () { });
+    define('Audio', function () { this.setAttribute = () => { }; this.play = () => Promise.resolve(); this.pause = () => { }; });
+    define('navigator', { mediaDevices: { getUserMedia: () => new Promise(() => { }) } });
+    const engine = new AudioEngine();
+    try {
+        void engine.start();
+        assert.ok(engine.outputAnalyser);
+        assert.ok(engine.outputGain);
+        assert.ok(engine.sinkElement);
+        assert.equal(engine.microphone, undefined);
+        assert.doesNotThrow(() => engine.play(encodePcm(new Float32Array(2400))));
+        assert.equal(engine.sources.size, 1);
+    } finally {
+        engine.stop();
+        for (const name of globals) saved[name] ? Object.defineProperty(globalThis, name, saved[name]) : delete globalThis[name];
+    }
+});

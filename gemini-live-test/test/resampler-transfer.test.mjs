@@ -36,3 +36,17 @@ test('noise gate floor adapts to louder rooms but caps the threshold', () => {
     assert.ok(gate.threshold > 0.008 && gate.threshold <= 0.03);
     assert.equal(gate.process(new Float32Array(128).fill(0.2)), true);
 });
+
+import { MIC_CHUNK_SAMPLES } from '../audio.mjs';
+import { encodePcm } from '../audio.mjs';
+
+test('microphone packets are fixed at 40 ms (640 samples, 1280 PCM bytes) for every device rate', () => {
+    assert.equal(MIC_CHUNK_SAMPLES, 640);
+    for (const inputRate of [16000, 44100, 48000]) {
+        const resampler = new PcmResampler(inputRate, 16000, MIC_CHUNK_SAMPLES);
+        const sizes = [];
+        for (let block = 0; block < inputRate / 128; block++) resampler.push(new Float32Array(128).fill(0.1), chunk => sizes.push(atob(encodePcm(chunk)).length));
+        assert.ok(sizes.length >= 24);
+        assert.ok(sizes.every(bytes => bytes === 1280));
+    }
+});

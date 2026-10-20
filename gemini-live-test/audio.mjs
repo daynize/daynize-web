@@ -1,3 +1,6 @@
+// Microphone packets sent to the model: 640 samples @ 16 kHz = 40 ms (1280 PCM bytes).
+export const MIC_CHUNK_SAMPLES = 640;
+
 export class PcmResampler {
     constructor(inputRate, outputRate = 16000, chunkSize = 1600) {
         this.ratio = inputRate / outputRate;

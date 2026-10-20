@@ -66,6 +66,31 @@ export class AudioEngine extends EventTarget {
             else if (context.state === 'closed' && this.active) void this.reinitialize();
         };
         try {
+            // The playback graph is built synchronously, before any await (mic permission,
+            // worklet download), so the tutor's very first audio chunk always has an output
+            // path and plays immediately instead of waiting for the microphone.
+            this.outputAnalyser = context.createAnalyser();
+            this.outputAnalyser.fftSize = 256;
+            this.outputAnalyser.smoothingTimeConstant = 0.94;
+            this.outputBins = new Uint8Array(this.outputAnalyser.frequencyBinCount);
+            this.outputSamples = new Float32Array(this.outputAnalyser.fftSize);
+            this.outputGain = context.createGain();
+            this.outputGain.gain.value = this.speakerMuted ? 0 : 1;
+            connectNodes(context, this.outputAnalyser, this.outputGain);
+            // iOS Safari (and some Android Chrome builds) route raw AudioContext
+            // output to the call receiver/earpiece while a getUserMedia mic stream
+            // is active. Routing through a real <audio> element forces playback
+            // through the main loudspeaker instead.
+            const sinkDestination = context.createMediaStreamDestination();
+            connectNodes(context, this.outputGain, sinkDestination);
+            const sinkElement = new Audio();
+            sinkElement.autoplay = true;
+            sinkElement.playsInline = true;
+            sinkElement.setAttribute('playsinline', '');
+            sinkElement.srcObject = sinkDestination.stream;
+            this.sinkElement = sinkElement;
+            // Started inside the user-gesture call stack; if blocked, the next gesture unlocks it.
+            sinkElement.play().catch(() => { });
             await context.resume();
             if (context.state === 'closed') throw new Error('오디오 장치가 종료되었습니다. 다시 연결해주세요.');
             await context.audioWorklet.addModule(this.workletUrl);
@@ -89,35 +114,10 @@ export class AudioEngine extends EventTarget {
             }
             audioTrack.onended = () => this.emit('error', new Error('마이크 연결이 종료되었습니다. 마이크를 확인해주세요.'));
             this.inputAnalyser = context.createAnalyser();
-            this.outputAnalyser = context.createAnalyser();
-            for (const analyser of [this.inputAnalyser, this.outputAnalyser]) {
-                analyser.fftSize = 256;
-                analyser.smoothingTimeConstant = 0.94;
-            }
+            this.inputAnalyser.fftSize = 256;
+            this.inputAnalyser.smoothingTimeConstant = 0.94;
             this.inputBins = new Uint8Array(this.inputAnalyser.frequencyBinCount);
             this.inputSamples = new Float32Array(this.inputAnalyser.fftSize);
-            this.outputBins = new Uint8Array(this.outputAnalyser.frequencyBinCount);
-            this.outputSamples = new Float32Array(this.outputAnalyser.fftSize);
-            this.outputGain = context.createGain();
-            this.outputGain.gain.value = this.speakerMuted ? 0 : 1;
-            connectNodes(context, this.outputAnalyser, this.outputGain);
-            // iOS Safari (and some Android Chrome builds) route raw AudioContext
-            // output to the call receiver/earpiece while a getUserMedia mic stream
-            // is active. Routing through a real <audio> element forces playback
-            // through the main loudspeaker instead.
-            const sinkDestination = context.createMediaStreamDestination();
-            connectNodes(context, this.outputGain, sinkDestination);
-            const sinkElement = new Audio();
-            sinkElement.autoplay = true;
-            sinkElement.playsInline = true;
-            sinkElement.setAttribute('playsinline', '');
-            sinkElement.srcObject = sinkDestination.stream;
-            this.sinkElement = sinkElement;
-            try { await sinkElement.play(); } catch { /* unlocked by the next user gesture */ }
-            if (generation !== this.generation) {
-                sinkElement.pause();
-                return;
-            }
             this.microphone = context.createMediaStreamSource(stream);
             this.processor = new AudioWorkletNode(context, 'microphone-pcm', {
                 channelCount: 1, channelCountMode: 'explicit', outputChannelCount: [1]

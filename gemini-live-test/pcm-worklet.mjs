@@ -1,7 +1,4 @@
-import { PcmResampler, NoiseGate } from './audio.mjs';
-
-// 640 samples @16 kHz = 40 ms packets so the backend hears speech (and its end) sooner.
-const CHUNK_SAMPLES = 640;
+import { PcmResampler, NoiseGate, MIC_CHUNK_SAMPLES as CHUNK_SAMPLES } from './audio.mjs';
 
 class MicrophoneProcessor extends AudioWorkletProcessor {
     constructor() {
