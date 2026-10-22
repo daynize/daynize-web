@@ -96,6 +96,14 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        button,
+        a,
+        label,
+        input,
+        select {
+            touch-action: manipulation;
+        }
+
         button {
             color: inherit;
         }
@@ -4209,6 +4217,8 @@
             window.addEventListener('load', () => {
                 if (!window.gsap || !window.ScrollTrigger || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
                 gsap.registerPlugin(ScrollTrigger);
+                // The on-screen keyboard fires resize events; refreshing pinned sections then re-parents their DOM and blurs the focused input.
+                ScrollTrigger.config({ ignoreMobileResize: true });
                 gsap.from('.hero-copy > *', { y: 22, opacity: 0, duration: .8, stagger: .1, ease: 'power2.out' });
                 gsap.utils.toArray('.section-head, .conversation-aside, .conversation-card-wrap, .voice-panel, .transcript-panel, .registration-form').forEach((element) => {
                     gsap.from(element, { y: 28, opacity: 0, duration: .75, ease: 'power2.out', scrollTrigger: { trigger: element, start: 'top 88%', once: true } });
@@ -4218,7 +4228,9 @@
                 if (noteOne) gsap.to(noteOne, { y: -13, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .7 } });
                 if (noteTwo) gsap.to(noteTwo, { y: 18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .7 } });
 
-                gsap.utils.toArray('.hero, .video-section, #conversation, #voice, #register').forEach((section) => {
+                // Pinning and snapping only on desktop-like pointers, and never around the enrollment form.
+                if (!window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 901px)').matches) return;
+                gsap.utils.toArray('.hero, .video-section, #conversation, #voice').forEach((section) => {
                     ScrollTrigger.create({
                         trigger: section,
                         start: 'top top+=78',
