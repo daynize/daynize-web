@@ -211,7 +211,9 @@
             const details = document.querySelector('#details');
             const mark = document.querySelector('#mark');
             const returnLink = document.querySelector('#return-link');
-            const apiBase = document.querySelector('meta[name="daynize-payment-api"]')?.content || window.location.origin;
+            const apiBase = ['localhost', '127.0.0.1'].includes(window.location.hostname) && window.location.port !== '8081'
+                ? `http://${window.location.hostname}:8081`
+                : document.querySelector('meta[name="daynize-payment-api"]')?.content || window.location.origin;
             const showError = message => {
                 document.title = '결제 확인 필요 | 데이나이즈';
                 title.textContent = '결제를 완료하지 못했습니다';

@@ -139,6 +139,18 @@ test('PortOne endpoint rejects missing consent, wrong amount, foreign origins an
 
     const foreign = await fetch(`${base}/api/payment/config`, { headers: { Origin: 'https://evil.example' } });
     assert.equal(foreign.status, 403);
+
+    for (const origin of ['http://127.0.0.1:5500', 'http://localhost:5500', 'http://localhost:8081']) {
+        const preflight = await fetch(`${base}/api/payment/orders`, {
+            method: 'OPTIONS',
+            headers: { Origin: origin, 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'content-type' }
+        });
+        assert.equal(preflight.status, 204, origin);
+        assert.equal(preflight.headers.get('access-control-allow-origin'), origin);
+        assert.equal(preflight.headers.get('access-control-allow-credentials'), 'true');
+    }
+    const otherPort = await fetch(`${base}/api/payment/config`, { headers: { Origin: 'http://127.0.0.1:9999' } });
+    assert.equal(otherPort.status, 403);
 });
 
 test('live NHN KCP checkout verifies only the configured live channel at the fixed price', { timeout: 10000 }, async context => {
@@ -185,7 +197,7 @@ test('live NHN KCP checkout verifies only the configured live channel at the fix
 });
 
 test('PortOne checkout reports configuration errors without a preparation placeholder', { timeout: 10000 }, async context => {
-    const base = await withServer(context);
+    const base = await withServer(context, { portoneStoreId: '', portoneChannelKey: '', portoneBillingChannelKey: '', portoneApiSecret: '', portoneMode: '' });
     const config = await fetch(`${base}/api/payment/config`, { headers: { Origin: new URL(base).origin } });
     assert.deepEqual(await config.json(), {
         enabled: false,
@@ -203,7 +215,7 @@ test('PortOne checkout reports configuration errors without a preparation placeh
 
 test('payment and subscription orders use distinct KCP channels', async context => {
     const base = await withServer(context, {
-        portoneStoreId: 'store-test', portoneChannelKey: 'channel-payment',
+        portoneStoreId: 'store-test', portoneChannelKey: 'channel-payment', portoneBillingChannelKey: '',
         portoneApiSecret: 'secret-test-only', portoneMode: 'test'
     });
     const payment = await createOrder(base);
@@ -217,6 +229,7 @@ test('payment and subscription orders use distinct KCP channels', async context 
 
 test('billing authentication verifies issued key, order, customer and dedicated KCP channel', async context => {
     let channelKey = 'channel-billing';
+    let channelPgProvider = 'NHN_KCP';
     let issueId;
     const base = await withServer(context, {
         portoneStoreId: 'store-test', portoneChannelKey: 'channel-payment', portoneBillingChannelKey: 'channel-billing',
@@ -225,7 +238,7 @@ test('billing authentication verifies issued key, order, customer and dedicated 
             assert.match(url, /\/billing-keys\/billing-test\?storeId=store-test$/);
             return Response.json({
                 status: 'ISSUED', billingKey: 'billing-test', storeId: 'store-test', issueId,
-                customer: { id: issueId }, channels: [{ key: channelKey, type: 'TEST', pgProvider: 'NHN_KCP' }]
+                customer: { id: issueId }, channels: [{ key: channelKey, type: 'TEST', pgProvider: channelPgProvider }]
             });
         }
     });
@@ -242,7 +255,34 @@ test('billing authentication verifies issued key, order, customer and dedicated 
     channelKey = 'channel-payment';
     assert.equal((await verify(created.cookie)).status, 409);
     channelKey = 'channel-billing';
+    channelPgProvider = 'KCP_V2';
     const verified = await verify(created.cookie);
     assert.equal(verified.status, 200);
     assert.equal((await verified.json()).status, 'BILLING_AUTHENTICATED');
+});
+test('misconfiguration returns JSON errors instead of crashing the relay', async context => {
+    const originalError = console.error;
+    console.error = () => { };
+    context.after(() => { console.error = originalError; });
+    const badProvider = await withServer(context, {
+        portoneStoreId: 'store-test', portoneChannelKey: 'channel-payment', portoneApiSecret: 'secret-test-only',
+        portoneMode: 'test', portonePgProvider: 'NOT_A_PG'
+    });
+    const rejected = await createOrder(badProvider);
+    assert.equal(rejected.response.status, 503);
+    assert.equal(rejected.body.code, 'PAYMENT_CONFIGURATION_ERROR');
+    assert.deepEqual(rejected.body.missing, ['PORTONE_PG_PROVIDER']);
+
+    let broken = false;
+    const failing = await withServer(context, {
+        portoneStoreId: 'store-test', portoneChannelKey: 'channel-payment', portoneApiSecret: 'secret-test-only',
+        portoneMode: 'test', paymentNow: () => { if (broken) throw new Error('boom'); return Date.now(); }
+    });
+    broken = true;
+    const crashed = await createOrder(failing);
+    assert.equal(crashed.response.status, 500);
+    assert.equal(crashed.body.code, 'PAYMENT_INTERNAL_ERROR');
+    assert.equal(crashed.response.headers.get('access-control-allow-origin'), new URL(failing).origin);
+    broken = false;
+    assert.equal((await createOrder(failing)).response.status, 201);
 });

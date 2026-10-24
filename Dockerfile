@@ -7,6 +7,8 @@ RUN npm ci --omit=dev
 
 COPY gemini-live-test/ ./
 COPY ["DAYNIZE LOGO ONLY.png", "/DAYNIZE LOGO ONLY.png"]
+COPY timeline.json ./timeline.json
+COPY public/ ./public/
 
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0

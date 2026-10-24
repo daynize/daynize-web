@@ -358,3 +358,23 @@ test('server session deadline closes client and upstream independently of browse
     await closedClient;
     await closedUpstream;
 });
+
+test('timeline.json and public audio assets are served with proper headers', async context => {
+    const relay = createRelayServer({ apiKey: 'test-key' });
+    relay.server.listen(0, '127.0.0.1');
+    await once(relay.server, 'listening');
+    context.after(() => relay.close());
+    const port = relay.server.address().port;
+
+    const timelineRes = await fetch(`http://127.0.0.1:${port}/timeline.json`);
+    assert.equal(timelineRes.status, 200);
+    assert.equal(timelineRes.headers.get('content-type'), 'application/json; charset=utf-8');
+    assert.equal(timelineRes.headers.get('access-control-allow-origin'), '*');
+    const timelineData = await timelineRes.json();
+    assert.equal(timelineData.sceneCount, 36);
+
+    const audioRes = await fetch(`http://127.0.0.1:${port}/public/audio/scene-01.mp3`);
+    assert.equal(audioRes.status, 200);
+    assert.equal(audioRes.headers.get('content-type'), 'audio/mpeg');
+    assert.equal(audioRes.headers.get('access-control-allow-origin'), '*');
+});

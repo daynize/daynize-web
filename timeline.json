@@ -1,0 +1,775 @@
+{
+  "title": "타동사와 자동사 (Transitive & Intransitive Verbs)",
+  "version": "1.0.0",
+  "totalDuration": 152,
+  "unit": "seconds",
+  "sceneCount": 36,
+  "scenes": [
+    {
+      "id": 1,
+      "start": 0,
+      "end": 5.3,
+      "duration": 5.3,
+      "text": "우리말은 동사가 문장 맨 끝에 오면서 말을 끝내는 역할을 합니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "동사"
+        ],
+        "type": "concept",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-01.mp3",
+      "speechText": "우리말은 동사가 문장 맨 끝에 오면서 말을 끝내는 역할을 합니다.",
+      "measuredAudioDuration": 4.8,
+      "actualStart": 0,
+      "actualEnd": 4.8,
+      "actualDuration": 4.8
+    },
+    {
+      "id": 2,
+      "start": 5.3,
+      "end": 9.1,
+      "duration": 3.8,
+      "text": "하지만, 영어는 주어 다음에 동사가 바로 옵니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "동사"
+        ],
+        "type": "concept",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-02.mp3",
+      "speechText": "하지만, 영어는 주어 다음에 동사가 바로 옵니다.",
+      "measuredAudioDuration": 3.73,
+      "actualStart": 5.15,
+      "actualEnd": 8.88,
+      "actualDuration": 3.73
+    },
+    {
+      "id": 3,
+      "start": 9.1,
+      "end": 12.9,
+      "duration": 3.8,
+      "text": "그 동사 뒤에 오는 명사는 목적어로 해석합니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "명사",
+          "목적어"
+        ],
+        "type": "concept",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-03.mp3",
+      "speechText": "그 동사 뒤에 오는 명사는 목적어로 해석합니다.",
+      "measuredAudioDuration": 3.4,
+      "actualStart": 9.23,
+      "actualEnd": 12.63,
+      "actualDuration": 3.4
+    },
+    {
+      "id": 4,
+      "start": 12.9,
+      "end": 16.3,
+      "duration": 3.4,
+      "text": "우리말로는 ‘에게, 을, 를’ 로 해석됩니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "에게",
+          "을",
+          "를"
+        ],
+        "type": "particle",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-04.mp3",
+      "speechText": "우리말로는 에게, 을, 를 로 해석됩니다.",
+      "measuredAudioDuration": 3.51,
+      "actualStart": 12.98,
+      "actualEnd": 16.49,
+      "actualDuration": 3.51
+    },
+    {
+      "id": 5,
+      "start": 16.3,
+      "end": 21,
+      "duration": 4.7,
+      "text": "그래서 어던 동사 뒤에는 전치사가 온 후에 명사가 옵니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "전치사",
+          "명사"
+        ],
+        "type": "preposition-bridge",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-05.mp3",
+      "speechText": "그래서 어떤 동사 뒤에는 전치사가 온 후에 명사가 옵니다.",
+      "measuredAudioDuration": 4.61,
+      "actualStart": 16.84,
+      "actualEnd": 21.45,
+      "actualDuration": 4.61
+    },
+    {
+      "id": 6,
+      "start": 21,
+      "end": 24.4,
+      "duration": 3.4,
+      "text": "그것을 알아야 영어의 기초가 됩니다.",
+      "verbHighlighting": {
+        "verbs": [],
+        "type": "intro",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-06.mp3",
+      "speechText": "그것을 알아야 영어의 기초가 됩니다.",
+      "measuredAudioDuration": 2.64,
+      "actualStart": 21.8,
+      "actualEnd": 24.44,
+      "actualDuration": 2.64
+    },
+    {
+      "id": 7,
+      "start": 24.4,
+      "end": 27.9,
+      "duration": 3.5,
+      "text": "바로 타동사와 자동사 입니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "타동사",
+          "자동사"
+        ],
+        "type": "core-topic",
+        "visualEffect": "split-title"
+      },
+      "audioFile": "/public/audio/scene-07.mp3",
+      "speechText": "바로 타동사와 자동사 입니다.",
+      "measuredAudioDuration": 2.19,
+      "actualStart": 24.79,
+      "actualEnd": 26.98,
+      "actualDuration": 2.19
+    },
+    {
+      "id": 8,
+      "start": 27.9,
+      "end": 32.4,
+      "duration": 4.5,
+      "text": "타동사는 다른 것을 움직아는 품사입니다 /: 이때 배경에는 한문으로 타동사’ 라고 쓰여 있어야 함. 그리고 성우 발화에 맞춰 ‘핀치확대’ 된다:/.",
+      "verbHighlighting": {
+        "verbs": [
+          "타동사",
+          "他動詞"
+        ],
+        "type": "transitive",
+        "visualEffect": "pinch-zoom",
+        "hanja": "他動詞",
+        "triggerTime": 28.5
+      },
+      "audioFile": "/public/audio/scene-08.mp3",
+      "speechText": "타동사는 다른 것을 움직이는 품사입니다 .",
+      "measuredAudioDuration": 2.81,
+      "actualStart": 27.33,
+      "actualEnd": 30.14,
+      "actualDuration": 2.81
+    },
+    {
+      "id": 9,
+      "start": 32.4,
+      "end": 35.7,
+      "duration": 3.3,
+      "text": "다른 것이 필요하니까, 목적어가 옵니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "목적어"
+        ],
+        "type": "transitive",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-09.mp3",
+      "speechText": "다른 것이 필요하니까, 목적어가 옵니다.",
+      "measuredAudioDuration": 3.05,
+      "actualStart": 30.49,
+      "actualEnd": 33.54,
+      "actualDuration": 3.05
+    },
+    {
+      "id": 10,
+      "start": 35.7,
+      "end": 38.1,
+      "duration": 2.4,
+      "text": "이것이 타동사입니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "타동사"
+        ],
+        "type": "transitive",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-10.mp3",
+      "speechText": "이것이 타동사입니다.",
+      "measuredAudioDuration": 1.53,
+      "actualStart": 33.89,
+      "actualEnd": 35.42,
+      "actualDuration": 1.53
+    },
+    {
+      "id": 11,
+      "start": 38.1,
+      "end": 41.7,
+      "duration": 3.6,
+      "text": "**자동사는 혼자서 할 수 있는 행동**입니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "자동사"
+        ],
+        "type": "intransitive",
+        "visualEffect": "emphasis"
+      },
+      "audioFile": "/public/audio/scene-11.mp3",
+      "speechText": "자동사는 혼자서 할 수 있는 행동입니다.",
+      "measuredAudioDuration": 2.58,
+      "actualStart": 35.77,
+      "actualEnd": 38.35,
+      "actualDuration": 2.58
+    },
+    {
+      "id": 12,
+      "start": 41.7,
+      "end": 46.2,
+      "duration": 4.5,
+      "text": "스스로를 움작이는 품사/: 이때 배경에는 한문으로 자동사’ 라고 쓰여 있어야 함. 그리고 성우 발화에 맞춰 ‘핀치확대’ 된다:/, 자동사입니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "자동사",
+          "自動詞"
+        ],
+        "type": "intransitive",
+        "visualEffect": "pinch-zoom",
+        "hanja": "自動詞",
+        "triggerTime": 42
+      },
+      "audioFile": "/public/audio/scene-12.mp3",
+      "speechText": "스스로를 움직이는 품사, 자동사입니다.",
+      "measuredAudioDuration": 2.97,
+      "actualStart": 38.7,
+      "actualEnd": 41.67,
+      "actualDuration": 2.97
+    },
+    {
+      "id": 13,
+      "start": 46.2,
+      "end": 63.7,
+      "duration": 17.5,
+      "text": "혼자 누워 있다가(**LIE**), 자다가(**SLEEP**), 꿈을 꾸다가(**DREAM**), 깨어나고(**WAKE**), 기어다니다가(**CRAWL**), 쭈그려 앉았다가(**SQUAT**), 일어나고(**STAND**), 걷고(**WALK**), 뛰다가(**RUN**), 깡충깡충 뛰다가(**HOP**), 점프도 하고(**JUMP**), 날아가는(**FLY**) 동사들입니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "LIE",
+          "SLEEP",
+          "DREAM",
+          "WAKE",
+          "CRAWL",
+          "SQUAT",
+          "STAND",
+          "WALK",
+          "RUN",
+          "HOP",
+          "JUMP",
+          "FLY"
+        ],
+        "type": "intransitive-list",
+        "visualEffect": "word-stagger"
+      },
+      "audioFile": "/public/audio/scene-13.mp3",
+      "speechText": "혼자 누워 있다가 LIE , 자다가 SLEEP , 꿈을 꾸다가 DREAM , 깨어나고 WAKE , 기어다니다가 CRAWL , 쭈그려 앉았다가 SQUAT , 일어나고 STAND , 걷고 WALK , 뛰다가 RUN , 깡충깡충 뛰다가 HOP , 점프도 하고 JUMP , 날아가는 FLY 동사들입니다.",
+      "measuredAudioDuration": 19.1,
+      "actualStart": 42.02,
+      "actualEnd": 61.12,
+      "actualDuration": 19.1
+    },
+    {
+      "id": 14,
+      "start": 63.7,
+      "end": 71.2,
+      "duration": 7.5,
+      "text": "예를 들어, She lied him.이라고 쓰면 \"그녀는 그를 거짓말했다\"로 해석되어 어색한 문장이 됩니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "lied"
+        ],
+        "incorrectUsage": "She lied him.",
+        "type": "error-example",
+        "visualEffect": "error-strike"
+      },
+      "audioFile": "/public/audio/scene-14.mp3",
+      "speechText": "예를 들어, She lied him.이라고 쓰면 그녀는 그를 거짓말했다 로 해석되어 어색한 문장이 됩니다.",
+      "measuredAudioDuration": 6.86,
+      "actualStart": 61.47,
+      "actualEnd": 68.33,
+      "actualDuration": 6.86
+    },
+    {
+      "id": 15,
+      "start": 71.2,
+      "end": 79,
+      "duration": 7.8,
+      "text": "She lied to him.처럼 중간에 **to**를 넣어야 \"그녀는 그**에게** 거짓말을 했다\"라는 완성된 문장이 됩니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "lied to"
+        ],
+        "preposition": "to",
+        "correctUsage": "She lied to him.",
+        "type": "correct-example",
+        "visualEffect": "highlight-preposition"
+      },
+      "audioFile": "/public/audio/scene-15.mp3",
+      "speechText": "She lied to him.처럼 중간에 to를 넣어야 그녀는 그에게 거짓말을 했다 라는 완성된 문장이 됩니다.",
+      "measuredAudioDuration": 7.55,
+      "actualStart": 68.68,
+      "actualEnd": 76.23,
+      "actualDuration": 7.55
+    },
+    {
+      "id": 16,
+      "start": 79,
+      "end": 80.8,
+      "duration": 1.8,
+      "text": "다시 한 번 말하자면,",
+      "verbHighlighting": {
+        "verbs": [],
+        "type": "transition",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-16.mp3",
+      "speechText": "다시 한 번 말하자면,",
+      "measuredAudioDuration": 1.64,
+      "actualStart": 76.58,
+      "actualEnd": 78.22,
+      "actualDuration": 1.64
+    },
+    {
+      "id": 17,
+      "start": 80.8,
+      "end": 86,
+      "duration": 5.2,
+      "text": "**자동사 바로 뒤에는 명사, 목적어(~을/를)가 직접 오지 못합니다.**",
+      "verbHighlighting": {
+        "verbs": [
+          "자동사"
+        ],
+        "blockedTarget": [
+          "명사",
+          "목적어"
+        ],
+        "type": "key-rule",
+        "visualEffect": "rule-box"
+      },
+      "audioFile": "/public/audio/scene-17.mp3",
+      "speechText": "자동사 바로 뒤에는 명사, 목적어 을/를 가 직접 오지 못합니다.",
+      "measuredAudioDuration": 4.72,
+      "actualStart": 78.57,
+      "actualEnd": 83.29,
+      "actualDuration": 4.72
+    },
+    {
+      "id": 18,
+      "start": 86,
+      "end": 93.4,
+      "duration": 7.4,
+      "text": "따라서 자동사 뒤에 대상이나 장소 같은 명사를 붙이려면, 반드시 **전치사**가 다리 역할을 해주어야 합니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "전치사"
+        ],
+        "type": "rule-explanation",
+        "visualEffect": "bridge-icon"
+      },
+      "audioFile": "/public/audio/scene-18.mp3",
+      "speechText": "따라서 자동사 뒤에 대상이나 장소 같은 명사를 붙이려면, 반드시 전치사가 다리 역할을 해주어야 합니다.",
+      "measuredAudioDuration": 7.76,
+      "actualStart": 83.64,
+      "actualEnd": 91.4,
+      "actualDuration": 7.76
+    },
+    {
+      "id": 19,
+      "start": 93.4,
+      "end": 98.2,
+      "duration": 4.8,
+      "text": "- She sat the chair. (X) $\\rightarrow$ 그녀는 그 의자를 앉았다. (어색함)",
+      "verbHighlighting": {
+        "verbs": [
+          "sat"
+        ],
+        "targetSentence": "She sat the chair.",
+        "isCorrect": false,
+        "type": "contrast-incorrect",
+        "visualEffect": "x-mark"
+      },
+      "audioFile": "/public/audio/scene-19.mp3",
+      "speechText": "She sat the chair. 틀린 문장으로, 는, 그녀는 그 의자를 앉았다. 어색함",
+      "measuredAudioDuration": 6.09,
+      "actualStart": 91.75,
+      "actualEnd": 97.84,
+      "actualDuration": 6.09
+    },
+    {
+      "id": 20,
+      "start": 98.2,
+      "end": 103,
+      "duration": 4.8,
+      "text": "- She sat on the chair. (O) $\\rightarrow$ 그녀는 그 의자**에** 앉았다.",
+      "verbHighlighting": {
+        "verbs": [
+          "sat on"
+        ],
+        "preposition": "on",
+        "targetSentence": "She sat on the chair.",
+        "isCorrect": true,
+        "type": "contrast-correct",
+        "visualEffect": "o-mark"
+      },
+      "audioFile": "/public/audio/scene-20.mp3",
+      "speechText": "She sat on the chair. 올바른 문장으로, 는, 그녀는 그 의자에 앉았다.",
+      "measuredAudioDuration": 5.67,
+      "actualStart": 98.19,
+      "actualEnd": 103.86,
+      "actualDuration": 5.67
+    },
+    {
+      "id": 21,
+      "start": 103,
+      "end": 111.5,
+      "duration": 8.5,
+      "text": "즉, 자동사는 단독으로 쓰이거나, 뒤에 장소·방향·대상 등을 추가하고 싶을 때 **전치사나 부사**와 함께 결합하여 사용됩니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "자동사",
+          "전치사",
+          "부사"
+        ],
+        "type": "summary",
+        "visualEffect": "formula-card"
+      },
+      "audioFile": "/public/audio/scene-21.mp3",
+      "speechText": "즉, 자동사는 단독으로 쓰이거나, 뒤에 장소·방향·대상 등을 추가하고 싶을 때 전치사나 부사와 함께 결합하여 사용됩니다.",
+      "measuredAudioDuration": 9.95,
+      "actualStart": 104.21,
+      "actualEnd": 114.16,
+      "actualDuration": 9.95
+    },
+    {
+      "id": 22,
+      "start": 111.5,
+      "end": 115.3,
+      "duration": 3.8,
+      "text": "**3. 대표적인 자동사 예시 10선 (한글 $\\rightarrow$ 영어)**",
+      "verbHighlighting": {
+        "verbs": [],
+        "type": "section-header",
+        "visualEffect": "badge"
+      },
+      "audioFile": "/public/audio/scene-22.mp3",
+      "speechText": "3. 대표적인 자동사 예시 10선 한글 는, 영어",
+      "measuredAudioDuration": 3.87,
+      "actualStart": 114.51,
+      "actualEnd": 118.38,
+      "actualDuration": 3.87
+    },
+    {
+      "id": 23,
+      "start": 115.3,
+      "end": 121,
+      "duration": 5.7,
+      "text": "이해를 돕기 위해 **[한글 의미 $\\rightarrow$ 영어 동사 $\\rightarrow$ 전치사와 결합한 대표 예문]** 순서로 정리했습니다.",
+      "verbHighlighting": {
+        "verbs": [],
+        "type": "guide",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-23.mp3",
+      "speechText": "이해를 돕기 위해 한글 의미 는, 영어 동사 는, 전치사와 결합한 대표 예문 순서로 정리했습니다.",
+      "measuredAudioDuration": 7.17,
+      "actualStart": 118.73,
+      "actualEnd": 125.9,
+      "actualDuration": 7.17
+    },
+    {
+      "id": 24,
+      "start": 121,
+      "end": 123.5,
+      "duration": 2.5,
+      "text": "1. **도착하다** $\\rightarrow$ **ARRIVE******",
+      "verbHighlighting": {
+        "verbs": [
+          "ARRIVE"
+        ],
+        "koreanMeaning": "도착하다",
+        "rank": 1,
+        "type": "verb-card",
+        "visualEffect": "card-highlight"
+      },
+      "audioFile": "/public/audio/scene-24.mp3",
+      "speechText": "1. 도착하다 는, ARRIVE",
+      "measuredAudioDuration": 2.41,
+      "actualStart": 126.25,
+      "actualEnd": 128.66,
+      "actualDuration": 2.41
+    },
+    {
+      "id": 25,
+      "start": 123.5,
+      "end": 125.9,
+      "duration": 2.4,
+      "text": "2. **기다리다** $\\rightarrow$ **WAIT******",
+      "verbHighlighting": {
+        "verbs": [
+          "WAIT"
+        ],
+        "koreanMeaning": "기다리다",
+        "rank": 2,
+        "type": "verb-card",
+        "visualEffect": "card-highlight"
+      },
+      "audioFile": "/public/audio/scene-25.mp3",
+      "speechText": "2. 기다리다 는, WAIT",
+      "measuredAudioDuration": 2.38,
+      "actualStart": 129.01,
+      "actualEnd": 131.39,
+      "actualDuration": 2.38
+    },
+    {
+      "id": 26,
+      "start": 125.9,
+      "end": 128.3,
+      "duration": 2.4,
+      "text": "3. **미소 짓다** $\\rightarrow$ **SMILE******",
+      "verbHighlighting": {
+        "verbs": [
+          "SMILE"
+        ],
+        "koreanMeaning": "미소 짓다",
+        "rank": 3,
+        "type": "verb-card",
+        "visualEffect": "card-highlight"
+      },
+      "audioFile": "/public/audio/scene-26.mp3",
+      "speechText": "3. 미소 짓다 는, SMILE",
+      "measuredAudioDuration": 2.47,
+      "actualStart": 131.74,
+      "actualEnd": 134.21,
+      "actualDuration": 2.47
+    },
+    {
+      "id": 27,
+      "start": 128.3,
+      "end": 131.1,
+      "duration": 2.8,
+      "text": "4. **경청하다 / 듣다** $\\rightarrow$ **LISTEN******",
+      "verbHighlighting": {
+        "verbs": [
+          "LISTEN"
+        ],
+        "koreanMeaning": "경청하다 / 듣다",
+        "rank": 4,
+        "type": "verb-card",
+        "visualEffect": "card-highlight"
+      },
+      "audioFile": "/public/audio/scene-27.mp3",
+      "speechText": "4. 경청하다 / 듣다 는, LISTEN",
+      "measuredAudioDuration": 3.17,
+      "actualStart": 134.56,
+      "actualEnd": 137.73,
+      "actualDuration": 3.17
+    },
+    {
+      "id": 28,
+      "start": 131.1,
+      "end": 134,
+      "duration": 2.9,
+      "text": "5. **나타나다 / 등장하다** $\\rightarrow$ **APPEAR******",
+      "verbHighlighting": {
+        "verbs": [
+          "APPEAR"
+        ],
+        "koreanMeaning": "나타나다 / 등장하다",
+        "rank": 5,
+        "type": "verb-card",
+        "visualEffect": "card-highlight"
+      },
+      "audioFile": "/public/audio/scene-28.mp3",
+      "speechText": "5. 나타나다 / 등장하다 는, APPEAR",
+      "measuredAudioDuration": 3.28,
+      "actualStart": 138.08,
+      "actualEnd": 141.36,
+      "actualDuration": 3.28
+    },
+    {
+      "id": 29,
+      "start": 134,
+      "end": 136.5,
+      "duration": 2.5,
+      "text": "6. **사라지다** $\\rightarrow$ **DISAPPEAR******",
+      "verbHighlighting": {
+        "verbs": [
+          "DISAPPEAR"
+        ],
+        "koreanMeaning": "사라지다",
+        "rank": 6,
+        "type": "verb-card",
+        "visualEffect": "card-highlight"
+      },
+      "audioFile": "/public/audio/scene-29.mp3",
+      "speechText": "6. 사라지다 는, DISAPPEAR",
+      "measuredAudioDuration": 2.32,
+      "actualStart": 141.71,
+      "actualEnd": 144.03,
+      "actualDuration": 2.32
+    },
+    {
+      "id": 30,
+      "start": 136.5,
+      "end": 138.9,
+      "duration": 2.4,
+      "text": "7. **동의하다** $\\rightarrow$ **AGREE******",
+      "verbHighlighting": {
+        "verbs": [
+          "AGREE"
+        ],
+        "koreanMeaning": "동의하다",
+        "rank": 7,
+        "type": "verb-card",
+        "visualEffect": "card-highlight"
+      },
+      "audioFile": "/public/audio/scene-30.mp3",
+      "speechText": "7. 동의하다 는, AGREE",
+      "measuredAudioDuration": 2.32,
+      "actualStart": 144.38,
+      "actualEnd": 146.7,
+      "actualDuration": 2.32
+    },
+    {
+      "id": 31,
+      "start": 138.9,
+      "end": 141.7,
+      "duration": 2.8,
+      "text": "8. **출발하다 / 떠나다** $\\rightarrow$ **DEPART******",
+      "verbHighlighting": {
+        "verbs": [
+          "DEPART"
+        ],
+        "koreanMeaning": "출발하다 / 떠나다",
+        "rank": 8,
+        "type": "verb-card",
+        "visualEffect": "card-highlight"
+      },
+      "audioFile": "/public/audio/scene-31.mp3",
+      "speechText": "8. 출발하다 / 떠나다 는, DEPART",
+      "measuredAudioDuration": 3.34,
+      "actualStart": 147.05,
+      "actualEnd": 150.39,
+      "actualDuration": 3.34
+    },
+    {
+      "id": 32,
+      "start": 141.7,
+      "end": 144.4,
+      "duration": 2.7,
+      "text": "9. **바라보다 / 보다** $\\rightarrow$ **LOOK******",
+      "verbHighlighting": {
+        "verbs": [
+          "LOOK"
+        ],
+        "koreanMeaning": "바라보다 / 보다",
+        "rank": 9,
+        "type": "verb-card",
+        "visualEffect": "card-highlight"
+      },
+      "audioFile": "/public/audio/scene-32.mp3",
+      "speechText": "9. 바라보다 / 보다 는, LOOK",
+      "measuredAudioDuration": 2.7,
+      "actualStart": 150.74,
+      "actualEnd": 153.44,
+      "actualDuration": 2.7
+    },
+    {
+      "id": 33,
+      "start": 144.4,
+      "end": 146.9,
+      "duration": 2.5,
+      "text": "10. **속하다** $\\rightarrow$ **BELONG******",
+      "verbHighlighting": {
+        "verbs": [
+          "BELONG"
+        ],
+        "koreanMeaning": "속하다",
+        "rank": 10,
+        "type": "verb-card",
+        "visualEffect": "card-highlight"
+      },
+      "audioFile": "/public/audio/scene-33.mp3",
+      "speechText": "10. 속하다 는, BELONG",
+      "measuredAudioDuration": 2.25,
+      "actualStart": 153.79,
+      "actualEnd": 156.04,
+      "actualDuration": 2.25
+    },
+    {
+      "id": 34,
+      "start": 146.9,
+      "end": 147.9,
+      "duration": 1,
+      "text": "-",
+      "verbHighlighting": {
+        "verbs": [],
+        "type": "pause-break",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-34.mp3",
+      "speechText": "",
+      "measuredAudioDuration": 0.5,
+      "actualStart": 156.39,
+      "actualEnd": 156.89,
+      "actualDuration": 0.5
+    },
+    {
+      "id": 35,
+      "start": 147.9,
+      "end": 150.4,
+      "duration": 2.5,
+      "text": "자동사에 대한 설명이었습니다.",
+      "verbHighlighting": {
+        "verbs": [
+          "자동사"
+        ],
+        "type": "outro",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-35.mp3",
+      "speechText": "자동사에 대한 설명이었습니다.",
+      "measuredAudioDuration": 1.92,
+      "actualStart": 157.24,
+      "actualEnd": 159.16,
+      "actualDuration": 1.92
+    },
+    {
+      "id": 36,
+      "start": 150.4,
+      "end": 152,
+      "duration": 1.6,
+      "text": "감사합니다.",
+      "verbHighlighting": {
+        "verbs": [],
+        "type": "closing",
+        "visualEffect": null
+      },
+      "audioFile": "/public/audio/scene-36.mp3",
+      "speechText": "감사합니다.",
+      "measuredAudioDuration": 0.86,
+      "actualStart": 159.51,
+      "actualEnd": 160.37,
+      "actualDuration": 0.86
+    }
+  ],
+  "fullAudioFile": "/public/audio/full-lecture.mp3",
+  "totalMeasuredDuration": 148.1
+}

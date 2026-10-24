@@ -50,16 +50,39 @@ function createPaymentApi(options = {}) {
     const orders = new Map();
     let lastOrderTimestamp = 0;
 
-    if (!['HTML5_INICIS', 'NHN_KCP'].includes(pgProvider)) throw new Error('PORTONE_PG_PROVIDER must be HTML5_INICIS or NHN_KCP.');
+    const providerValid = ['HTML5_INICIS', 'NHN_KCP'].includes(pgProvider);
+    if (!providerValid) console.error(`[payment] PORTONE_PG_PROVIDER must be HTML5_INICIS or NHN_KCP; payments are disabled until it is fixed.`);
+    // PortOne's REST API reports channels by its own enum (KCP V2 channels are "KCP_V2"), not by our "NHN_KCP" label.
+    const apiPgProviders = pgProvider === 'NHN_KCP' ? ['KCP_V2', 'KCP', 'NHN_KCP'] : ['HTML5_INICIS', 'INICIS_V2', 'INICIS', 'INICIS_UNIFIED'];
+    const channelKeyPattern = /^channel-key-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+    for (const [label, key] of [['PORTONE_CHANNEL_KEY', channelKey], ['PORTONE_BILLING_CHANNEL_KEY', billingChannelKey]]) {
+        if (key && !channelKeyPattern.test(key)) console.warn(`[payment] ${label} does not look like a PortOne channel key (channel-key-<uuid>). Re-copy it from the console.`);
+    }
+    if (channelKey && channelKey === billingChannelKey) console.warn('[payment] PORTONE_CHANNEL_KEY and PORTONE_BILLING_CHANNEL_KEY must be different channels.');
     if (!Number.isSafeInteger(amount) || amount < 1) throw new Error('PORTONE_AMOUNT must be a positive integer.');
 
-    const ready = (paymentType = 'payment') => ['test', 'live'].includes(mode) && Boolean(storeId.trim() &&
-        (paymentType === 'subscription' ? billingChannelKey : channelKey).trim() && apiSecret.trim());
+    // Names of the settings that block this payment type (never their values).
+    const missingSettings = (paymentType = 'payment') => [
+        ...(['test', 'live'].includes(mode) ? [] : ['PORTONE_MODE (test|live)']),
+        ...(providerValid ? [] : ['PORTONE_PG_PROVIDER']),
+        ...(String(storeId).trim() ? [] : ['PORTONE_STORE_ID']),
+        ...(String(paymentType === 'subscription' ? billingChannelKey : channelKey).trim() ? [] : [paymentType === 'subscription' ? 'PORTONE_BILLING_CHANNEL_KEY' : 'PORTONE_CHANNEL_KEY']),
+        ...(String(apiSecret).trim() ? [] : ['PORTONE_API_SECRET'])
+    ];
+    const ready = (paymentType = 'payment') => missingSettings(paymentType).length === 0;
+    for (const type of ['payment', 'subscription']) {
+        const missing = missingSettings(type);
+        console.info(`[payment] ${type}: ${missing.length ? `DISABLED, missing ${missing.join(', ')}` : `ready (${mode})`}`);
+    }
+    // Local dev pages (e.g. VS Code Live Server on :5500) may call a backend that is itself running on loopback.
+    // The deployed API never matches this branch because its Host header is not loopback.
+    const loopbackHost = /^(localhost|127\.0\.0\.1|\[::1\]):\d+$/;
+    const devOrigin = /^http:\/\/(localhost|127\.0\.0\.1):(5500|8081)$/;
     const allowedOrigin = (origin, request) => {
         if (typeof origin !== 'string') return false;
         if (allowedOrigins.includes(origin)) return true;
         const host = request.headers.host || '';
-        return /^(localhost|127\.0\.0\.1|\[::1\]):\d+$/.test(host) && origin === `http://${host}`;
+        return loopbackHost.test(host) && (origin === `http://${host}` || devOrigin.test(origin));
     };
     const cookieOptions = request => `HttpOnly; Path=/api/payment; Max-Age=${SESSION_TTL_MS / 1000}; SameSite=Lax${request.socket.encrypted || request.headers['x-forwarded-proto'] === 'https' ? '; Secure' : ''}`;
     const cookieToken = request => (request.headers.cookie || '').split(';').map(part => part.trim()).find(part => part.startsWith(`${SESSION_COOKIE}=`))?.slice(SESSION_COOKIE.length + 1);
@@ -68,18 +91,31 @@ function createPaymentApi(options = {}) {
         for (const [id, order] of orders) if (order.expiresAt <= timestamp) orders.delete(id);
     };
 
+    const corsHeaders = request => allowedOrigin(request.headers.origin, request) ? {
+        'Access-Control-Allow-Origin': request.headers.origin,
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Max-Age': '600',
+        Vary: 'Origin'
+    } : {};
+
     async function handle(request, response, pathname) {
         if (!pathname.startsWith('/api/payment/')) return false;
+        try {
+            return await route(request, response, pathname);
+        } catch (error) {
+            console.error(`[payment] unexpected error on ${request.method} ${pathname}`, error);
+            if (response.headersSent) response.destroy();
+            else json(response, 500, { error: '결제 서버에서 오류가 발생했습니다. 잠시 후 다시 시도해 주세요. 고객센터: 070-4010-1147', code: 'PAYMENT_INTERNAL_ERROR' }, corsHeaders(request));
+            return true;
+        }
+    }
+
+    async function route(request, response, pathname) {
         const origin = request.headers.origin;
         const isAllowed = allowedOrigin(origin, request);
-        const cors = isAllowed ? {
-            'Access-Control-Allow-Origin': origin,
-            'Access-Control-Allow-Credentials': 'true',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type',
-            'Access-Control-Max-Age': '600',
-            Vary: 'Origin'
-        } : {};
+        const cors = corsHeaders(request);
 
         if (request.method === 'OPTIONS') {
             response.writeHead(isAllowed ? 204 : 403, { ...cors, 'Cache-Control': 'no-store' }).end();
@@ -131,7 +167,13 @@ function createPaymentApi(options = {}) {
                 return true;
             }
             if (!ready(paymentType)) {
-                json(response, 503, { error: `${paymentType === 'subscription' ? '정기결제' : '카드결제'} 채널 설정을 확인해 주세요. 고객센터: 070-4010-1147`, code: 'PAYMENT_CONFIGURATION_ERROR' }, cors);
+                const missing = missingSettings(paymentType);
+                console.error(`[payment] ${paymentType} order rejected (503): missing ${missing.join(', ')}`);
+                json(response, 503, {
+                    error: `${paymentType === 'subscription' ? '정기결제' : '카드결제'} 채널 설정을 확인해 주세요. 고객센터: 070-4010-1147`,
+                    code: 'PAYMENT_CONFIGURATION_ERROR',
+                    ...(loopbackHost.test(request.headers.host || '') ? { missing } : {})
+                }, cors);
                 return true;
             }
             const name = typeof body.name === 'string' ? body.name.trim() : '';
@@ -201,7 +243,7 @@ function createPaymentApi(options = {}) {
                 const info = await upstream.json();
                 if (info.status !== 'ISSUED' || info.billingKey !== billingKey || info.storeId !== storeId ||
                     info.issueId !== orderId || info.customer?.id !== orderId ||
-                    !info.channels?.some(channel => channel.key === order.channelKey && channel.pgProvider === pgProvider && channel.type === (mode === 'test' ? 'TEST' : 'LIVE')) ||
+                    !info.channels?.some(channel => channel.key === order.channelKey && apiPgProviders.includes(channel.pgProvider) && channel.type === (mode === 'test' ? 'TEST' : 'LIVE')) ||
                     (info.methods && !info.methods.some(method => method.type === 'BillingKeyPaymentMethodCard'))) {
                     json(response, 409, { error: '카드 인증 정보가 신청 내용과 일치하지 않습니다.' }, cors);
                     return true;

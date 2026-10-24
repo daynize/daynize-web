@@ -97,8 +97,21 @@ function createRelayServer(options = {}) {
             response.writeHead(401, { 'Cache-Control': 'no-store' }).end('Authentication required');
             return;
         }
-        const pathname = new URL(request.url, 'http://localhost').pathname;
-        if (await paymentApi.handle(request, response, pathname)) return;
+        let pathname;
+        try {
+            pathname = new URL(request.url, 'http://localhost').pathname;
+        } catch {
+            response.writeHead(400, { 'Cache-Control': 'no-store' }).end('Bad request');
+            return;
+        }
+        try {
+            if (await paymentApi.handle(request, response, pathname)) return;
+        } catch (error) {
+            console.error('[payment] handler failure', error);
+            if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
+            response.end();
+            return;
+        }
         if (pathname === '/transcribe') {
             const origin = request.headers.origin;
             const host = request.headers.host || '';
@@ -210,6 +223,42 @@ function createRelayServer(options = {}) {
             response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
             response.end(request.method === 'HEAD' ? undefined : JSON.stringify({ wsUrl: wsUrl || null }));
             return;
+        }
+        if (pathname === '/timeline.json') {
+            try {
+                const timelineContent = await fs.readFile(path.join(__dirname, 'timeline.json')).catch(() => fs.readFile(path.join(__dirname, '..', 'timeline.json')));
+                response.writeHead(200, {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Access-Control-Allow-Origin': '*',
+                    'Cache-Control': 'no-cache',
+                    'X-Content-Type-Options': 'nosniff'
+                });
+                response.end(request.method === 'HEAD' ? undefined : timelineContent);
+                return;
+            } catch {
+                response.writeHead(404).end('Not found');
+                return;
+            }
+        }
+        if (pathname.startsWith('/public/audio/') || pathname.startsWith('/audio/')) {
+            const rawFileName = path.basename(pathname);
+            if (/^[\w-]+\.mp3$/.test(rawFileName)) {
+                try {
+                    const audioBuffer = await fs.readFile(path.join(__dirname, 'public', 'audio', rawFileName)).catch(() => fs.readFile(path.join(__dirname, '..', 'public', 'audio', rawFileName)));
+                    response.writeHead(200, {
+                        'Content-Type': 'audio/mpeg',
+                        'Access-Control-Allow-Origin': '*',
+                        'Cache-Control': 'public, max-age=86400',
+                        'Content-Length': audioBuffer.length,
+                        'Accept-Ranges': 'bytes'
+                    });
+                    response.end(request.method === 'HEAD' ? undefined : audioBuffer);
+                    return;
+                } catch {
+                    response.writeHead(404).end('Not found');
+                    return;
+                }
+            }
         }
         const asset = FILES.get(pathname);
         if (!asset) {

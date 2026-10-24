@@ -3988,22 +3988,92 @@
             const registrationSubmit = registrationForm.querySelector('.form-submit');
             const registrationMessage = document.querySelector('#form-message');
             const registrationValidationMessage = document.querySelector('#form-validation-message');
-            const checkoutApiBase = document.querySelector('meta[name="daynize-payment-api"]')?.content || window.location.origin;
+            // Local pages (Live Server :5500 etc.) talk to the local relay on :8081; production uses the meta tag.
+            const checkoutApiBase = ['localhost', '127.0.0.1'].includes(window.location.hostname) && window.location.port !== '8081'
+                ? `http://${window.location.hostname}:8081`
+                : document.querySelector('meta[name="daynize-payment-api"]')?.content || window.location.origin;
             const checkoutAmount = 19000;
             const checkoutProvider = 'NHN_KCP';
             const checkoutResumeKey = 'daynize.checkout.resume.v1';
             const paymentSuccessPath = '/payment/success';
             let checkoutInProgress = false;
+            let checkoutAttempt = 0;
 
             const apiRequest = async (path, options = {}) => {
-                const response = await fetch(`${checkoutApiBase}${path}`, {
-                    credentials: 'include',
-                    ...options,
-                    headers: { 'Content-Type': 'application/json', ...options.headers }
+                const controller = new AbortController();
+                const timer = setTimeout(() => controller.abort(), 15000);
+                try {
+                    const response = await fetch(`${checkoutApiBase}${path}`, {
+                        credentials: 'include',
+                        signal: controller.signal,
+                        ...options,
+                        headers: { 'Content-Type': 'application/json', ...options.headers }
+                    });
+                    const result = await response.json().catch(() => ({}));
+                    if (!response.ok) throw Object.assign(new Error(result.error || '요청을 처리하지 못했습니다. 잠시 후 다시 시도해 주세요.'), { status: response.status, code: result.code });
+                    return result;
+                } catch (error) {
+                    console.error(`[checkout] ${path} failed (${checkoutApiBase})`, error, error.status ? `HTTP ${error.status} ${error.code || ''}` : '(no HTTP response: network/CORS/DNS)');
+                    if (error.name === 'AbortError') throw new Error('서버 응답이 지연되고 있습니다. 잠시 후 다시 시도해 주세요.');
+                    if (error instanceof TypeError) throw new Error('결제 서버에 연결하지 못했습니다. 서버 실행 상태와 네트워크(CORS)를 확인해 주세요.');
+                    throw error;
+                } finally {
+                    clearTimeout(timer);
+                }
+            };
+
+            // The PortOne SDK is a deferred CDN script: wait for it, and retry the download once before giving up.
+            const ensurePortOneSdk = async (method) => {
+                const ready = () => typeof window.PortOne?.[method] === 'function';
+                const waitReady = async (ms) => {
+                    const until = Date.now() + ms;
+                    while (!ready() && Date.now() < until) await new Promise(resolve => setTimeout(resolve, 100));
+                    return ready();
+                };
+                if (await waitReady(3000)) return true;
+                console.warn('[checkout] PortOne SDK not ready after 3s; reloading the script once');
+                await new Promise(resolve => {
+                    const script = document.createElement('script');
+                    script.src = `https://cdn.portone.io/v2/browser-sdk.js?retry=${Date.now()}`;
+                    script.onload = script.onerror = resolve;
+                    document.head.appendChild(script);
                 });
-                const result = await response.json().catch(() => ({}));
-                if (!response.ok) throw new Error(result.error || '요청을 처리하지 못했습니다. 잠시 후 다시 시도해 주세요.');
-                return result;
+                return waitReady(3000);
+            };
+
+            // KCP rejects malformed phone numbers; send 010-XXXX-XXXX style whenever the digits allow it.
+            const toKcpPhone = (value) => {
+                const digits = String(value || '').replace(/\D/g, '').replace(/^82/, '0');
+                const match = /^(01\d)(\d{3,4})(\d{4})$/.exec(digits);
+                return match ? `${match[1]}-${match[2]}-${match[3]}` : digits;
+            };
+
+            // Fail before the SDK call (with a readable console table) when a required field is missing or mistyped.
+            const validatePaymentPayload = (payload) => {
+                const problems = [];
+                if (!String(payload.storeId || '').trim()) problems.push('storeId empty');
+                if (!String(payload.channelKey || '').trim()) problems.push('channelKey empty');
+                if (!payload.paymentId && !payload.issueId) problems.push('paymentId/issueId empty');
+                if (!payload.orderName && !payload.issueName) problems.push('orderName/issueName empty');
+                if ('totalAmount' in payload && !(Number.isInteger(payload.totalAmount) && payload.totalAmount > 0)) problems.push(`totalAmount must be a positive integer number (got ${typeof payload.totalAmount}: ${payload.totalAmount})`);
+                if ('displayAmount' in payload && !(Number.isInteger(payload.displayAmount) && payload.displayAmount > 0)) problems.push('displayAmount must be a positive integer number');
+                if (payload.currency !== 'CURRENCY_KRW') problems.push(`currency (got ${payload.currency})`);
+                for (const key of ['fullName', 'phoneNumber', 'email']) if (!String(payload.customer?.[key] || '').trim()) problems.push(`customer.${key} empty`);
+                if (!/^\d{2,3}-?\d{3,4}-?\d{4}$/.test(payload.customer?.phoneNumber || '')) problems.push('customer.phoneNumber format');
+                return problems;
+            };
+
+            // Maps PortOne/KCP failure codes to the first thing worth checking.
+            const explainPortOneFailure = (result) => {
+                const code = result?.code || '';
+                const hints = {
+                    FAILURE_TYPE_PG: 'KCP(PG)가 요청을 거절했습니다. pgCode/pgMessage와 PortOne 콘솔 > 결제내역을 확인하세요 (중복 주문번호, 휴대폰 형식, 채널 계약 상태).',
+                    PAYMENT_CANCELLED: '사용자가 결제창을 닫았습니다.',
+                    ISSUE_BILLING_KEY_CANCELLED: '사용자가 카드 등록창을 닫았습니다.',
+                    INVALID_REQUEST: '요청 파라미터 형식 오류입니다. 위의 payload 검증 결과를 확인하세요.',
+                    UNAUTHORIZED: 'storeId/channelKey가 맞지 않습니다.'
+                };
+                return hints[code] || (result?.pgCode ? `PG 오류 ${result.pgCode}: ${result.pgMessage || ''}` : '');
             };
 
             const showRegistrationMessage = (message, isError = false) => {
@@ -4113,16 +4183,24 @@
                 if (checkoutInProgress) return;
                 const subscription = registrationForm.elements.paymentType.value === 'subscription';
                 const sdkMethod = subscription ? 'requestIssueBillingKey' : 'requestPayment';
-                if (!window.PortOne?.[sdkMethod]) {
-                    showRegistrationMessage('결제 모듈을 불러오지 못했습니다. 페이지를 새로고침한 뒤 다시 시도해 주세요.', true);
-                    return;
-                }
-
                 checkoutInProgress = true;
+                const attempt = ++checkoutAttempt;
+                let watchdog;
+                const resetSubmitButton = () => {
+                    checkoutInProgress = false;
+                    registrationSubmit.innerHTML = '수강 신청하기 <span aria-hidden="true">→</span>';
+                    updateRegistrationSubmitState();
+                };
                 updateRegistrationSubmitState();
                 registrationSubmit.textContent = '결제창을 준비하고 있습니다…';
                 showRegistrationMessage('신청 정보를 확인하고 안전한 결제창을 준비하고 있습니다.');
                 try {
+                    if (!await ensurePortOneSdk(sdkMethod)) {
+                        console.error('[checkout] PortOne SDK unavailable (blocked by ad-blocker/network/CSP?)');
+                        showRegistrationMessage('결제 모듈을 불러오지 못했습니다. 광고 차단 기능을 끄거나 페이지를 새로고침한 뒤 다시 시도해 주세요.', true);
+                        return;
+                    }
+                    console.info(`[checkout] ${sdkMethod}: creating order at ${checkoutApiBase}`);
                     const order = await apiRequest('/api/payment/orders', {
                         method: 'POST',
                         body: JSON.stringify({
@@ -4149,32 +4227,56 @@
                     const customer = {
                         customerId: order.orderId,
                         fullName: registrationForm.elements.name.value.trim(),
-                        phoneNumber: registrationForm.elements.phone.value.trim(),
+                        phoneNumber: toKcpPhone(registrationForm.elements.phone.value),
                         email: registrationForm.elements.email.value.trim()
                     };
-                    const payment = await window.PortOne[sdkMethod]({
+                    const amount = Number(order.amount);
+                    const payload = {
                         storeId: order.storeId,
                         channelKey: order.channelKey,
                         ...(subscription ? {
                             issueId: order.orderId,
                             issueName: order.orderName,
                             billingKeyMethod: 'CARD',
-                            displayAmount: order.amount,
+                            displayAmount: amount,
                             currency: order.currency,
                             offerPeriod: { interval: '1m' }
                         } : {
                             paymentId: order.orderId,
                             orderName: order.orderName,
-                            totalAmount: order.amount,
+                            totalAmount: amount,
                             currency: order.currency,
                             payMethod: order.payMethod,
                             bypass: { kcp_v2: { site_name: '데이나이즈' } }
                         }),
                         customer,
+                        // PC: in-page iframe layer (no window.open, so the await above cannot trip popup blockers). Mobile: full redirect.
+                        windowType: { pc: 'IFRAME', mobile: 'REDIRECTION' },
                         redirectUrl: redirect.href,
                         forceRedirect: false
-                    });
+                    };
+                    const problems = validatePaymentPayload(payload);
+                    console.info(`[checkout] order ${order.orderId} created; payload check`, { problems, types: { totalAmount: typeof payload.totalAmount, paymentId: typeof payload.paymentId }, customer: { ...customer, phoneNumber: customer.phoneNumber.replace(/\d(?=\d{4})/g, '*') } });
+                    if (problems.length) {
+                        console.error('[checkout] invalid PortOne payload', problems);
+                        showRegistrationMessage(`결제 요청 정보를 확인해 주세요. (${problems.join(', ')})`, true);
+                        return;
+                    }
+                    const payment = await (async () => {
+                        registrationSubmit.textContent = subscription ? '카드 등록창을 여는 중…' : '결제창을 여는 중…';
+                        showRegistrationMessage(subscription ? '카드 등록창을 여는 중입니다.' : '결제창을 여는 중입니다.');
+                        // The SDK promise stays pending while the customer pays, so this is only a hint; it must not unlock the form
+                        // (a second order would replace the checkout cookie and break verification of the first).
+                        watchdog = setTimeout(() => {
+                            console.warn(`[checkout] PortOne.${sdkMethod} still pending after 20s (order ${order.orderId}).`);
+                            showRegistrationMessage('결제창이 보이지 않으면 팝업 차단 또는 인앱 브라우저 제한일 수 있습니다. 기본 브라우저(Chrome/Safari)로 열어 다시 시도해 주세요.');
+                        }, 20000);
+                        return window.PortOne[sdkMethod](payload);
+                    })();
+                    clearTimeout(watchdog);
+                    console.info(`[checkout] PortOne.${sdkMethod} result`, { code: payment?.code, message: payment?.message, pgCode: payment?.pgCode, pgMessage: payment?.pgMessage, hasResult: Boolean(subscription ? payment?.billingKey : payment?.paymentId) });
                     if (payment?.code || !(subscription ? payment?.billingKey : payment?.paymentId)) {
+                        console.error(`[checkout] PortOne.${sdkMethod} returned a failure`, payment, explainPortOneFailure(payment));
                         try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }
                         const cancelled = payment?.code && /CANCEL/i.test(payment.code);
                         showRegistrationMessage(cancelled ? '결제가 취소되었습니다. 입력하신 신청 정보는 그대로 두었습니다.' : `결제 요청에 실패했습니다. ${payment?.message || '다시 시도해 주세요.'}`, true);
@@ -4203,12 +4305,12 @@
                     success.searchParams.set('email', verified.email);
                     window.location.assign(`${success.pathname}${success.search}`);
                 } catch (error) {
+                    console.error(`[checkout] ${sdkMethod} flow failed`, error);
                     try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }
                     showRegistrationMessage(`결제를 진행하지 못했습니다. ${error.message || '입력 정보를 확인하거나 고객센터로 문의해 주세요.'}`, true);
                 } finally {
-                    checkoutInProgress = false;
-                    registrationSubmit.innerHTML = '수강 신청하기 <span aria-hidden="true">→</span>';
-                    updateRegistrationSubmitState();
+                    clearTimeout(watchdog);
+                    if (attempt === checkoutAttempt) resetSubmitButton();
                 }
             });
             void handlePaymentRedirect();

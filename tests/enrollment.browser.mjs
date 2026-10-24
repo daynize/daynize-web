@@ -65,7 +65,7 @@ test('course enrollment form is clear and validates required details on desktop 
                 const originalFetch = window.fetch.bind(window);
                 window.fetch = async (input, init = {}) => {
                     const url = new URL(typeof input === 'string' ? input : input.url, window.location.href);
-                    if (url.origin !== 'https://api.daynize.co.kr') return originalFetch(input, init);
+                    if (url.origin !== 'http://127.0.0.1:8081') return originalFetch(input, init);
                     if (url.pathname === '/api/payment/config') {
                         return Response.json({ enabled: true, mode: 'test', amount: 19000, pgProvider: 'NHN_KCP', storeId: 'store-test', channelKey: 'channel-test' });
                     }
@@ -220,10 +220,10 @@ test('course enrollment form is clear and validates required details on desktop 
             const originalFetch = window.fetch.bind(window);
             window.fetch = async (input, init = {}) => {
                 const url = new URL(typeof input === 'string' ? input : input.url, window.location.href);
-                if (url.origin === 'https://api.daynize.co.kr' && url.pathname === '/api/payment/config') {
+                if (url.origin === 'http://127.0.0.1:8081' && url.pathname === '/api/payment/config') {
                     return Response.json({ enabled: true, mode: 'test', amount: 49000, pgProvider: 'HTML5_INICIS', storeId: 'store-old', channelKey: 'channel-old' });
                 }
-                if (url.origin === 'https://api.daynize.co.kr' && url.pathname === '/api/payment/orders') {
+                if (url.origin === 'http://127.0.0.1:8081' && url.pathname === '/api/payment/orders') {
                     window.__orderRequests += 1;
                     return Response.json({ orderId: 'old-order', amount: 49000, pgProvider: 'HTML5_INICIS' }, { status: 201 });
                 }
@@ -243,6 +243,38 @@ test('course enrollment form is clear and validates required details on desktop 
         assert.equal(await staleConfigPage.evaluate(() => window.__orderRequests), 1);
         assert.equal(await staleConfigPage.evaluate(() => window.__paymentCalls), 0);
         await staleConfigPage.close();
+
+        const stuckPage = await browser.newPage({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
+        const stuckLogs = [];
+        stuckPage.on('console', message => stuckLogs.push(`${message.type()}: ${message.text()}`));
+        await stuckPage.addInitScript(() => {
+            window.PortOne = { requestIssueBillingKey: () => new Promise(() => { }) };
+            const originalFetch = window.fetch.bind(window);
+            window.fetch = async (input, init = {}) => {
+                const url = new URL(typeof input === 'string' ? input : input.url, window.location.href);
+                if (url.origin !== 'http://127.0.0.1:8081') return originalFetch(input, init);
+                return Response.json({ orderId: 'order_1792721130439', paymentType: 'subscription', amount: 19000, orderName: '월 구독', currency: 'CURRENCY_KRW', payMethod: 'CARD', pgProvider: 'NHN_KCP', storeId: 'store-test', channelKey: 'channel-billing-test' }, { status: 201 });
+            };
+        });
+        await stuckPage.clock.install();
+        await stuckPage.goto(base);
+        const stuckForm = stuckPage.locator('#registration-form');
+        await stuckForm.locator('input[name="paymentType"][value="subscription"]').check();
+        await stuckForm.locator('#name').fill('김하늘');
+        await stuckForm.locator('#phone').fill('010-1234-5678');
+        await stuckForm.locator('#email').fill('learner@example.com');
+        await stuckForm.locator('#privacy-consent').check();
+        await stuckForm.locator('#terms-consent').check();
+        await stuckForm.locator('#billing-consent').check();
+        await stuckForm.locator('[type="submit"]').click();
+        await stuckPage.waitForFunction(() => document.querySelector('#form-message')?.textContent.includes('카드 등록창을 여는 중'));
+        assert.equal(await stuckForm.locator('[type="submit"]').isDisabled(), true);
+        await stuckPage.clock.fastForward(21000);
+        await stuckPage.waitForFunction(() => document.querySelector('#form-message')?.textContent.includes('결제창이 보이지 않으면'));
+        // A slow-but-open payment window must stay locked so a second order cannot replace the checkout cookie.
+        assert.equal(await stuckForm.locator('[type="submit"]').isDisabled(), true);
+        assert.ok(stuckLogs.some(line => line.startsWith('warning:') && line.includes('requestIssueBillingKey still pending')), stuckLogs.join('\n'));
+        await stuckPage.close();
     } finally {
         await browser.close();
         await new Promise(resolve => server.close(resolve));
