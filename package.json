@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@remotion/cli": "^4.0.537",
+    "gsap": "^3.15.0",
+    "remotion": "^4.0.537"
+  }
+}
