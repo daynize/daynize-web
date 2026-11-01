@@ -1,7 +1,7 @@
 // Replaces ONLY the `basic-course` category of courses.json with the 12 new lessons built in
 // "NEW BASIC COURSE MASTER", and publishes their mp4/thumbnail files into the new folders:
 //   VIDEOS/basic-course-12/renders/basic-NN.mp4   IMAGE/basic-course-12/basic-NN.jpg
-// Every other category in courses.json is written back unchanged. The previous 21-lesson files are left in place.
+// Every other category in courses.json is written back unchanged; the category card image (`thumbnail`) is kept as is. The previous 21-lesson files are left in place.
 //
 // Usage (repo root):  node scripts/register-basic-course-12.mjs
 import { execFileSync } from 'node:child_process';
@@ -72,7 +72,6 @@ const previous = categories[position];
 categories[position] = {
     ...previous,
     categoryDesc: '영어의 구조를 이해하는 12강. 한 강의, 한 원리, 도시동화 예문으로 익힙니다.',
-    thumbnail: lessons[0].thumbnail,
     curriculumVersion: 3,
     lessons,
 };
