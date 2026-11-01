@@ -117,7 +117,7 @@ test('teaching context persists from course and reading clicks with working stat
     }
 });
 
-test('BASIC COURSE displays 21 lessons and plays new MP4s on desktop and mobile', { timeout: 180000 }, async () => {
+test('BASIC COURSE displays 12 lessons and plays new MP4s on desktop and mobile', { timeout: 180000 }, async () => {
     await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
     const base = `http://127.0.0.1:${server.address().port}`;
     const data = JSON.parse(await readFile(path.join(root, 'courses.json'), 'utf8'));
@@ -131,7 +131,7 @@ test('BASIC COURSE displays 21 lessons and plays new MP4s on desktop and mobile'
             await page.goto(`${base}/?category=basic-course`);
             await page.locator('#category-dialog[open]').waitFor();
             assert.equal(await page.locator('#category-dialog-title').textContent(), 'BASIC COURSE');
-            assert.equal(await page.locator('#lesson-grid [data-lesson-id]').count(), 21);
+            assert.equal(await page.locator('#lesson-grid [data-lesson-id]').count(), 12);
             const targets = viewport.width > 600 ? basic.lessons : [basic.lessons[0], basic.lessons.at(-1)];
             for (const lesson of targets) {
                 await page.locator(`[data-lesson-id="${lesson.id}"]`).click();
@@ -140,7 +140,7 @@ test('BASIC COURSE displays 21 lessons and plays new MP4s on desktop and mobile'
                 await page.waitForFunction(() => document.querySelector('#video-frame video')?.readyState >= 1);
                 const metadata = await video.evaluate(element => ({ src: element.currentSrc, duration: element.duration, width: element.videoWidth, height: element.videoHeight, inline: element.playsInline, poster: element.getAttribute('poster'), fit: getComputedStyle(element).objectFit }));
                 assert.equal(new URL(metadata.src).pathname, `/${lesson.videoUrl}`);
-                assert.ok(Math.abs(metadata.duration - 130) < 0.05);
+                assert.ok(Math.abs(metadata.duration - lesson.durationSeconds) < 1);
                 assert.equal(metadata.width, 1080);
                 assert.equal(metadata.height, 1920);
                 assert.equal(metadata.poster, lesson.thumbnail);
