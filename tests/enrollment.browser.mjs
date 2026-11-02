@@ -45,6 +45,7 @@ test('course enrollment form is clear and validates required details on desktop 
                 window.__paymentRequests = readSession('mock-payment-requests', []);
                 window.__billingRequests = [];
                 window.__cancelNextPayment = true;
+                window.__approveNextPaymentDespiteCancel = false;
                 window.__throwNextPayment = false;
                 window.PortOne = {
                     requestIssueBillingKey: async options => {
@@ -58,7 +59,14 @@ test('course enrollment form is clear and validates required details on desktop 
                             window.__throwNextPayment = false;
                             throw new Error('SDK failure');
                         }
-                        if (window.__cancelNextPayment) return { code: 'USER_CANCEL', message: '결제가 취소되었습니다.' };
+                        if (window.__approveNextPaymentDespiteCancel || !window.__cancelNextPayment) {
+                            orders[options.paymentId].paid = true;
+                            writeSession('mock-orders', orders);
+                        }
+                        if (window.__cancelNextPayment) {
+                            window.__approveNextPaymentDespiteCancel = false;
+                            return { code: 'USER_CANCEL', message: '결제가 취소되었습니다.' };
+                        }
                         return { paymentId: options.paymentId };
                     }
                 };
@@ -86,7 +94,8 @@ test('course enrollment form is clear and validates required details on desktop 
                         const { paymentId } = JSON.parse(init.body);
                         const buyer = orders[paymentId];
                         if (!buyer) return Response.json({ error: 'unknown order' }, { status: 401 });
-                        return Response.json({ orderId: paymentId, amount: 19000, email: buyer.email, status: 'PAID' });
+                        if (!buyer.paid) return Response.json({ error: '결제가 완료되지 않았습니다.', status: 'READY' }, { status: 402 });
+                        return Response.json({ success: true, orderId: paymentId, amount: 19000, email: buyer.email, status: 'PAID' });
                     }
                     return Response.json({ error: 'not found' }, { status: 404 });
                 };
@@ -148,10 +157,29 @@ test('course enrollment form is clear and validates required details on desktop 
 
             await submit.click();
             await page.waitForFunction(() => window.__paymentRequests.length === 2);
+            // The cancel message only appears after the server cross-check confirms the order is unpaid.
+            await page.waitForFunction(() => document.querySelector('#form-message')?.textContent.includes('결제가 취소되었습니다'));
             assert.match(await page.locator('#form-message').innerText(), /결제가 취소되었습니다/);
             assert.equal(await form.locator('#name').inputValue(), '김하늘');
             assert.equal(await form.locator('#email').inputValue(), 'learner@example.com');
             assert.equal(await form.locator('#privacy-consent').isChecked(), true);
+
+            // PG misfire: the SDK reports USER_CANCEL even though the card was approved.
+            // The server cross-check must still land on the success page.
+            await page.evaluate(() => { window.__approveNextPaymentDespiteCancel = true; });
+            await submit.click();
+            await page.waitForURL(/\/payment\/success\?orderId=order_\d{13}&amount=19000&email=learner%40example\.com/);
+            await page.waitForFunction(() => document.querySelector('#title')?.textContent === '수강 신청이 완료되었습니다');
+            const mockOrderIds = await page.evaluate(() => Object.keys(JSON.parse(sessionStorage.getItem('mock-orders'))));
+            const paidOrderId = mockOrderIds.at(-1);
+            const cancelledOrderId = mockOrderIds.at(-2);
+            // The same misfire through the mobile redirect URL: an error code plus a PAID paymentId still
+            // succeeds, while an unpaid paymentId with the same code fails.
+            await page.goto(`${base}/payment/success?paymentId=${paidOrderId}&code=USER_CANCEL&message=closed`);
+            await page.waitForFunction(() => document.querySelector('#title')?.textContent === '수강 신청이 완료되었습니다');
+            await page.goto(`${base}/payment/success?paymentId=${cancelledOrderId}&code=USER_CANCEL&message=closed`);
+            await page.waitForFunction(() => document.querySelector('#title')?.textContent === '결제를 완료하지 못했습니다');
+            await page.goto(base);
 
             await page.evaluate(() => sessionStorage.setItem('daynize.checkout.resume.v1', JSON.stringify({
                 name: '김하늘', phone: '010-1234-5678', email: 'learner@example.com', privacyConsent: 'on', termsConsent: 'on'

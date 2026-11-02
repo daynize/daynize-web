@@ -81,6 +81,7 @@ test('PortOne test config creates a guest session and verifies a paid order once
     const first = await verify();
     assert.equal(first.status, 200);
     assert.deepEqual(await first.json(), {
+        success: true,
         orderId: created.body.orderId,
         amount: 19000,
         email: buyer.email,
@@ -194,6 +195,41 @@ test('live NHN KCP checkout verifies only the configured live channel at the fix
         headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', Cookie: sandboxOrder.cookie },
         body: JSON.stringify({ paymentId: sandboxOrder.body.orderId })
     })).status, 409);
+});
+
+test('verify reports 402 with the PortOne status when the payment is not completed, then succeeds once paid', { timeout: 10000 }, async context => {
+    let portoneStatus = 'READY';
+    const base = await withServer(context, {
+        portoneStoreId: 'store-test',
+        portoneChannelKey: 'channel-test',
+        portoneApiSecret: 'secret-test-only',
+        portoneMode: 'test',
+        paymentFetchImpl: async url => Response.json({
+            id: decodeURIComponent(new URL(url).pathname.split('/').at(-1)),
+            status: portoneStatus,
+            amount: { total: 19000 },
+            currency: 'KRW',
+            orderName: '데이나이즈 매일 영어 라이브 패스',
+            selectedChannel: { type: 'TEST' },
+            paymentMethod: { type: 'CARD' },
+            customer: { email: buyer.email, fullName: buyer.name, phoneNumber: buyer.phone }
+        })
+    });
+    const created = await createOrder(base);
+    const verify = () => fetch(`${base}/api/payment/verify`, {
+        method: 'POST',
+        headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', Cookie: created.cookie },
+        body: JSON.stringify({ paymentId: created.body.orderId })
+    });
+    const notPaid = await verify();
+    assert.equal(notPaid.status, 402);
+    assert.equal((await notPaid.json()).status, 'READY');
+    portoneStatus = 'PAID';
+    const paid = await verify();
+    assert.equal(paid.status, 200);
+    const result = await paid.json();
+    assert.equal(result.success, true);
+    assert.equal(result.status, 'PAID');
 });
 
 test('PortOne checkout reports configuration errors without a preparation placeholder', { timeout: 10000 }, async context => {

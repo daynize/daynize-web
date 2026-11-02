@@ -4132,15 +4132,19 @@
                 const params = new URLSearchParams(window.location.search);
                 const paymentId = params.get('paymentId') || params.get('orderId') || '';
                 const message = params.get('message');
-                if (!paymentId || params.has('code')) {
-                    const resume = params.get('resume') === '1';
-                    if (resume) {
+                const reportCancelled = () => {
+                    if (params.get('resume') === '1') {
                         history.replaceState(null, '', '/#register');
                         restoreCheckoutInput();
                         showRegistrationMessage('결제가 취소되었습니다. 입력하신 신청 정보는 그대로 두었습니다.', true);
                     } else {
                         showRegistrationMessage(message || '결제가 취소되었습니다. 다시 신청하실 수 있습니다.', true);
                     }
+                };
+                // A redirect carrying an error code can still belong to an approved payment (mobile PG windows
+                // misreport closes as cancels), so any redirect with a paymentId is cross-checked with the server.
+                if (!paymentId) {
+                    reportCancelled();
                     return;
                 }
                 try {
@@ -4163,6 +4167,12 @@
                     registrationForm.hidden = true;
                     showRegistrationMessage('결제가 확인되었습니다. 등록하신 이메일로 수강 안내를 보내드리겠습니다.');
                 } catch (error) {
+                    // The server says this paymentId is not PAID; with an error code on the URL this is a real
+                    // cancel/failure, so fall back to the cancel flow instead of a generic error.
+                    if (params.has('code')) {
+                        reportCancelled();
+                        return;
+                    }
                     const registerUrl = new URL('/', window.location.origin);
                     registerUrl.hash = 'register';
                     history.replaceState(null, '', `${registerUrl.pathname}${registerUrl.search}${registerUrl.hash}`);
@@ -4275,8 +4285,27 @@
                     })();
                     clearTimeout(watchdog);
                     console.info(`[checkout] PortOne.${sdkMethod} result`, { code: payment?.code, message: payment?.message, pgCode: payment?.pgCode, pgMessage: payment?.pgMessage, hasResult: Boolean(subscription ? payment?.billingKey : payment?.paymentId) });
+                    const goToSuccessPage = (verified) => {
+                        try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }
+                        const success = new URL(paymentSuccessPath, window.location.origin);
+                        success.searchParams.set('orderId', verified.orderId);
+                        success.searchParams.set('amount', String(verified.amount));
+                        success.searchParams.set('email', verified.email);
+                        window.location.assign(`${success.pathname}${success.search}`);
+                    };
                     if (payment?.code || !(subscription ? payment?.billingKey : payment?.paymentId)) {
                         console.error(`[checkout] PortOne.${sdkMethod} returned a failure`, payment, explainPortOneFailure(payment));
+                        // Mobile PG windows can close with a bogus cancel/error callback after the card was in fact
+                        // approved, so the server's view of the payment overrides the SDK result before failing.
+                        const crossCheck = subscription ? null : await apiRequest('/api/payment/verify', {
+                            method: 'POST',
+                            body: JSON.stringify({ paymentId: payment?.paymentId || order.orderId })
+                        }).catch(() => null);
+                        if (crossCheck?.status === 'PAID' && crossCheck.orderId === order.orderId) {
+                            console.info(`[checkout] cross-check: order ${order.orderId} is PAID despite SDK code ${payment?.code || '(none)'}; completing checkout`);
+                            goToSuccessPage(crossCheck);
+                            return;
+                        }
                         try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }
                         const cancelled = payment?.code && /CANCEL/i.test(payment.code);
                         showRegistrationMessage(cancelled ? '결제가 취소되었습니다. 입력하신 신청 정보는 그대로 두었습니다.' : `결제 요청에 실패했습니다. ${payment?.message || '다시 시도해 주세요.'}`, true);
@@ -4298,12 +4327,7 @@
                     if (verified.status !== 'PAID' || verified.orderId !== payment.paymentId) {
                         throw new Error('결제 완료 상태를 확인하지 못했습니다. 고객센터에 문의해 주세요.');
                     }
-                    try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }
-                    const success = new URL(paymentSuccessPath, window.location.origin);
-                    success.searchParams.set('orderId', verified.orderId);
-                    success.searchParams.set('amount', String(verified.amount));
-                    success.searchParams.set('email', verified.email);
-                    window.location.assign(`${success.pathname}${success.search}`);
+                    goToSuccessPage(verified);
                 } catch (error) {
                     console.error(`[checkout] ${sdkMethod} flow failed`, error);
                     try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }

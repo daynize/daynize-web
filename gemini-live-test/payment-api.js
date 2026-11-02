@@ -256,7 +256,7 @@ function createPaymentApi(options = {}) {
             return true;
         }
         if (order.status === 'PAID') {
-            json(response, 200, { orderId, amount, email: order.email, status: 'PAID' }, cors);
+            json(response, 200, { success: true, orderId, amount, email: order.email, status: 'PAID' }, cors);
             return true;
         }
 
@@ -270,13 +270,19 @@ function createPaymentApi(options = {}) {
                 return true;
             }
             const payment = await upstream.json();
+            if (payment.status !== 'PAID') {
+                // Not a data mismatch: PortOne itself says no money moved yet (READY/FAILED/CANCELLED...).
+                // Clients use this to tell a misreported SDK cancel apart from a genuinely unpaid order.
+                json(response, 402, { error: '결제가 완료되지 않았습니다. 결제창에서 다시 시도해 주세요.', status: payment.status ?? 'UNKNOWN' }, cors);
+                return true;
+            }
             const selectedChannel = payment.selectedChannel ?? payment.channel;
             const customer = payment.customer || {};
             const paymentMethodType = payment.paymentMethod?.type ?? payment.method?.type;
             const matchingCustomer = (!customer.email || customer.email.trim().toLowerCase() === order.email) &&
                 (!customer.fullName || customer.fullName.trim() === order.name) &&
                 (!customer.phoneNumber || normalizePhone(customer.phoneNumber) === normalizePhone(order.phone));
-            if (payment.id !== orderId || payment.status !== 'PAID' || payment.amount?.total !== amount ||
+            if (payment.id !== orderId || payment.amount?.total !== amount ||
                 payment.currency !== 'KRW' || payment.orderName !== PRODUCT_NAME ||
                 selectedChannel?.type !== (mode === 'test' ? 'TEST' : 'LIVE') ||
                 (paymentMethodType && paymentMethodType !== 'CARD') || !matchingCustomer) {
@@ -284,7 +290,7 @@ function createPaymentApi(options = {}) {
                 return true;
             }
             order.status = 'PAID';
-            json(response, 200, { orderId, amount, email: order.email, status: 'PAID' }, cors);
+            json(response, 200, { success: true, orderId, amount, email: order.email, status: 'PAID' }, cors);
         } catch {
             json(response, 502, { error: '결제 확인에 실패했습니다. 잠시 후 다시 확인해 주세요.' }, cors);
         }

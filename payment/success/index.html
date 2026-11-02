@@ -225,9 +225,13 @@
                 returnLink.hidden = false;
             };
 
-            if ((subscription ? !issueId || !billingKey : !paymentId) || params.has('code')) {
-                const errorMessage = params.get('message');
-                showError(errorMessage ? `결제가 취소되었거나 완료되지 않았습니다. ${errorMessage}` : '결제가 취소되었습니다. 신청 정보를 다시 확인해 주세요.');
+            // PortOne can append an error code to the redirect even though KCP approved the card (mobile PG
+            // windows closing are misreported as cancels). An error code alone never fails this page: whenever
+            // a paymentId/billingKey is present, the server-side verification decides the final state.
+            const pgError = params.get('code') ? (params.get('message') || `오류 코드 ${params.get('code')}`) : '';
+            const cancelledMessage = pgError ? `결제가 취소되었거나 완료되지 않았습니다. ${pgError}` : '결제가 취소되었습니다. 신청 정보를 다시 확인해 주세요.';
+            if (subscription ? (!issueId || !billingKey) : !paymentId) {
+                showError(cancelledMessage);
                 return;
             }
 
@@ -251,7 +255,7 @@
                     returnLink.textContent = '데이나이즈로 돌아가기';
                     returnLink.href = '/';
                     returnLink.hidden = false;
-                }).catch(error => showError(error.message || '카드 인증 확인에 실패했습니다.'));
+                }).catch(error => showError(pgError ? cancelledMessage : (error.message || '카드 인증 확인에 실패했습니다.')));
                 return;
             }
 
@@ -278,7 +282,7 @@
                 returnLink.textContent = '데이나이즈로 돌아가기';
                 returnLink.href = '/';
                 returnLink.hidden = false;
-            }).catch(error => showError(error.message || '결제 확인에 실패했습니다. 고객센터에 문의해 주세요.'));
+            }).catch(error => showError(pgError ? cancelledMessage : (error.message || '결제 확인에 실패했습니다. 고객센터에 문의해 주세요.')));
         })();
     </script>
 </body>
