@@ -1,9 +1,0 @@
-{
-  "name": "new-basic-course-21",
-  "private": true,
-  "description": "Remotion project root for 02강 불가산명사. Dependencies resolve from the repository root node_modules.",
-  "scripts": {
-    "studio": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts Lesson02-Uncountable out/lesson02.mp4"
-  }
-}

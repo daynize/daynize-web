@@ -45,6 +45,8 @@ function createRelayServer(options = {}) {
         if (new URL(origin).origin !== origin || !origin.startsWith('https://')) throw new Error('ALLOWED_ORIGINS must contain exact HTTPS origins.');
     }
     const publicOrigin = options.publicOrigin ?? process.env.PUBLIC_ORIGIN;
+    // Extra Host header values (e.g. a custom API domain in front of the same Fly app) accepted for WebSocket upgrades.
+    const publicHosts = options.publicHosts ?? (process.env.PUBLIC_HOSTS || '').split(',').map(host => host.trim()).filter(Boolean);
     const triggerTokens = Math.max(500, Number(options.triggerTokens ?? process.env.GEMINI_TRIGGER_TOKENS) || 2500);
     const targetTokens = Math.max(300, Number(options.targetTokens ?? process.env.GEMINI_TARGET_TOKENS) || 1500);
     const vadSilenceMs = Math.min(1000, Number(options.vadSilenceMs ?? process.env.VAD_SILENCE_MS) || 450);
@@ -301,6 +303,7 @@ function createRelayServer(options = {}) {
             localHosts.push(new URL(publicOrigin).host);
             allowedOrigins.push(publicOrigin);
         }
+        localHosts.push(...publicHosts);
         allowedOrigins.push(...trustedOrigins);
         if (!authorized(request)) {
             socket.end('HTTP/1.1 401 Unauthorized\r\nConnection: close\r\n\r\n');

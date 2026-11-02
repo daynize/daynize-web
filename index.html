@@ -2925,7 +2925,7 @@
             const normalizeVideoPath = (raw, categoryId) => {
                 if (typeof raw !== 'string' || !raw.trim() || /^https?:/i.test(raw.trim())) return raw;
                 const localPath = raw.trim().replace(/^(?:\.?\/)+/, '');
-                if (/^VIDEOS\/basic-course-12\/renders\/basic-(?:0[1-9]|1[0-2])\.mp4$/i.test(localPath)) return localPath;
+                if (/^VIDEOS\/basic-course-20\/renders\/basic-(?:0[1-9]|1\d|20)\.mp4$/i.test(localPath)) return localPath;
                 const parts = raw.trim().replace(/^(?:\.?\/)+/, '').split('/').filter(Boolean);
                 const file = parts.pop().replace(/\.mp4$/i, '') + '.mp4';
                 const folder = [...parts].reverse().find((part) => VIDEO_FOLDERS.includes(part.toLowerCase()))?.toLowerCase() || CATEGORY_FOLDER[categoryId] || 'verbs';

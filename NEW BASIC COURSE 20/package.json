@@ -1,9 +1,0 @@
-{
-  "name": "new-basic-course-20",
-  "private": true,
-  "description": "Remotion project root for 01강 자동사와 타동사. Dependencies resolve from the repository root node_modules.",
-  "scripts": {
-    "studio": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts IntransitiveBridge out/lecture.mp4"
-  }
-}

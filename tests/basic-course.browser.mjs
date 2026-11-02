@@ -117,7 +117,7 @@ test('teaching context persists from course and reading clicks with working stat
     }
 });
 
-test('BASIC COURSE displays 12 lessons and plays new MP4s on desktop and mobile', { timeout: 180000 }, async () => {
+test('BASIC COURSE displays 20 lessons and plays new MP4s on desktop and mobile', { timeout: 180000 }, async () => {
     await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
     const base = `http://127.0.0.1:${server.address().port}`;
     const data = JSON.parse(await readFile(path.join(root, 'courses.json'), 'utf8'));
@@ -131,7 +131,7 @@ test('BASIC COURSE displays 12 lessons and plays new MP4s on desktop and mobile'
             await page.goto(`${base}/?category=basic-course`);
             await page.locator('#category-dialog[open]').waitFor();
             assert.equal(await page.locator('#category-dialog-title').textContent(), 'BASIC COURSE');
-            assert.equal(await page.locator('#lesson-grid [data-lesson-id]').count(), 12);
+            assert.equal(await page.locator('#lesson-grid [data-lesson-id]').count(), 20);
             const targets = viewport.width > 600 ? basic.lessons : [basic.lessons[0], basic.lessons.at(-1)];
             for (const lesson of targets) {
                 await page.locator(`[data-lesson-id="${lesson.id}"]`).click();
