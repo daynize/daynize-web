@@ -2,7 +2,7 @@
     {
         "categoryId": "basic-course",
         "categoryName": "BASIC COURSE",
-        "categoryDesc": "영어의 구조를 이해하는 12강. 한 강의, 한 원리, 도시동화 예문으로 익힙니다.",
+        "categoryDesc": "영어의 구조를 이해하는 20강. 한 강의, 한 원리, 도시동화 예문으로 익힙니다.",
         "thumbnail": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=85",
         "curriculumVersion": 3,
         "lessons": [
@@ -13,8 +13,8 @@
                 "desc": "목적어 없이 문장이 완성되는 자동사와, 장소·시간 정보를 잇는 전치사를 익힌다.",
                 "duration": "4분 10초",
                 "durationSeconds": 250,
-                "videoUrl": "VIDEOS/basic-course-12/renders/basic-01.mp4",
-                "thumbnail": "IMAGE/basic-course-12/basic-01.jpg",
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-01.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-01.jpg",
                 "keyPhrase": "He arrived at the airport.",
                 "explanation": "자동사는 목적어 없이 문장이 끝나요. 장소나 시간 정보는 전치사로 덧붙이세요.",
                 "curriculumTopic": "자동사",
@@ -98,8 +98,8 @@
                 "desc": "셀 수 없는 명사는 a/an이나 복수형 없이 쓰고, 단위 표현으로 양을 나타낸다.",
                 "duration": "3분 50초",
                 "durationSeconds": 230,
-                "videoUrl": "VIDEOS/basic-course-12/renders/basic-02.mp4",
-                "thumbnail": "IMAGE/basic-course-12/basic-02.jpg",
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-02.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-02.jpg",
                 "keyPhrase": "A glass of water is on the table.",
                 "explanation": "물·공기처럼 셀 수 없는 명사는 a glass of 같은 단위를 붙여서 세요.",
                 "curriculumTopic": "불가산명사",
@@ -155,8 +155,8 @@
                 "desc": "명사를 꾸미는 현재분사(-ing)와 과거분사(-ed)의 능동·수동 차이를 구분한다.",
                 "duration": "4분 10초",
                 "durationSeconds": 250,
-                "videoUrl": "VIDEOS/basic-course-12/renders/basic-03.mp4",
-                "thumbnail": "IMAGE/basic-course-12/basic-03.jpg",
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-03.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-03.jpg",
                 "keyPhrase": "The rising sun illuminates the city.",
                 "explanation": "-ing는 스스로 하는 쪽, -ed는 당했거나 끝난 쪽의 명사를 꾸며요.",
                 "curriculumTopic": "현재분사와 과거분사",
@@ -212,8 +212,8 @@
                 "desc": "동사에 따라 목적어로 오는 동명사(-ing)와 to부정사를 구분한다.",
                 "duration": "4분 2초",
                 "durationSeconds": 242,
-                "videoUrl": "VIDEOS/basic-course-12/renders/basic-04.mp4",
-                "thumbnail": "IMAGE/basic-course-12/basic-04.jpg",
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-04.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-04.jpg",
                 "keyPhrase": "He enjoyed listening to his favorite music.",
                 "explanation": "enjoy·finish 뒤에는 -ing, 목적이나 계획에는 to부정사를 써요. stop 뒤에서는 뜻이 달라져요.",
                 "curriculumTopic": "동명사와 to부정사",
@@ -261,8 +261,8 @@
                 "desc": "시간과 장소를 나타내는 at(한 점), on(날짜·표면), in(기간·공간)을 구분한다.",
                 "duration": "4분 40초",
                 "durationSeconds": 280,
-                "videoUrl": "VIDEOS/basic-course-12/renders/basic-05.mp4",
-                "thumbnail": "IMAGE/basic-course-12/basic-05.jpg",
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-05.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-05.jpg",
                 "keyPhrase": "He agreed to meet his friend at noon.",
                 "explanation": "at은 한 시점, on은 날짜와 표면, in은 넓은 기간과 공간에 써요.",
                 "curriculumTopic": "시간·장소 전치사",
@@ -310,8 +310,8 @@
                 "desc": "행위자보다 대상을 앞세우는 수동태(be + 과거분사)와 by를 쓰는 경우를 익힌다.",
                 "duration": "3분 48초",
                 "durationSeconds": 228,
-                "videoUrl": "VIDEOS/basic-course-12/renders/basic-06.mp4",
-                "thumbnail": "IMAGE/basic-course-12/basic-06.jpg",
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-06.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-06.jpg",
                 "keyPhrase": "The bookstore was built by a famous architect.",
                 "explanation": "대상이 주어가 되면 be + 과거분사로 쓰고, 행위자를 밝힐 때 by를 붙여요.",
                 "curriculumTopic": "수동태",
@@ -355,8 +355,8 @@
                 "desc": "동사·형용사·문장을 꾸미는 부사와, fast·hard·late, friendly·lovely 같은 형태의 함정을 구분한다.",
                 "duration": "4분 36초",
                 "durationSeconds": 276,
-                "videoUrl": "VIDEOS/basic-course-12/renders/basic-07.mp4",
-                "thumbnail": "IMAGE/basic-course-12/basic-07.jpg",
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-07.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-07.jpg",
                 "keyPhrase": "She walked fast to arrive early for her meeting.",
                 "explanation": "fast·hard·late는 -ly 없이도 부사이고, friendly·lovely는 -ly가 붙어도 형용사예요.",
                 "curriculumTopic": "부사",
@@ -392,8 +392,8 @@
                 "desc": "감정을 일으키는 -ing와 감정을 느끼는 -ed를 구분한다.",
                 "duration": "3분 59초",
                 "durationSeconds": 239,
-                "videoUrl": "VIDEOS/basic-course-12/renders/basic-08.mp4",
-                "thumbnail": "IMAGE/basic-course-12/basic-08.jpg",
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-08.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-08.jpg",
                 "keyPhrase": "He felt extremely excited about the news.",
                 "explanation": "감정을 주는 원인에는 -ing, 그 감정을 느끼는 사람에는 -ed를 써요.",
                 "curriculumTopic": "감정형용사",
@@ -441,8 +441,8 @@
                 "desc": "접속사와 대명사 역할을 함께 하는 who·which·that·what을 구분한다.",
                 "duration": "7분 9초",
                 "durationSeconds": 429,
-                "videoUrl": "VIDEOS/basic-course-12/renders/basic-09.mp4",
-                "thumbnail": "IMAGE/basic-course-12/basic-09.jpg",
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-09.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-09.jpg",
                 "keyPhrase": "He met a woman who was smiling brightly.",
                 "explanation": "사람 뒤에는 who, 사물 뒤에는 which, 둘 다 되는 that, 명사 없이 ‘~하는 것’은 what을 써요.",
                 "curriculumTopic": "관계대명사",
@@ -494,8 +494,8 @@
                 "desc": "전치사가 which 바로 앞으로 당겨져 오는 원리를 in·on·at which로 익힌다.",
                 "duration": "4분 4초",
                 "durationSeconds": 244,
-                "videoUrl": "VIDEOS/basic-course-12/renders/basic-10.mp4",
-                "thumbnail": "IMAGE/basic-course-12/basic-10.jpg",
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-10.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-10.jpg",
                 "keyPhrase": "There was a small table on which an old box was placed.",
                 "explanation": "문장 끝에 남은 전치사가 which 앞으로 와요. 전치사 뜻 + “그런데 그것은!”으로 해석하세요.",
                 "curriculumTopic": "전치사 + 관계대명사 (in, on, at)",
@@ -523,8 +523,8 @@
                 "desc": "전치사가 which 앞으로 당겨져 오는 원리를 of·for·from·by·with which로 익힌다.",
                 "duration": "5분 21초",
                 "durationSeconds": 321,
-                "videoUrl": "VIDEOS/basic-course-12/renders/basic-11.mp4",
-                "thumbnail": "IMAGE/basic-course-12/basic-11.jpg",
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-11.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-11.jpg",
                 "keyPhrase": "It was a key by which their hearts were connected.",
                 "explanation": "소유·목적·출처·수단·도구처럼 전치사의 원래 뜻에 “그런데 그것은!”을 붙여 해석하세요.",
                 "curriculumTopic": "전치사 + 관계대명사 (of, for, from, by, with)",
@@ -560,8 +560,8 @@
                 "desc": "남은 개수가 막연한지 정해졌는지에 따라 another, other, the other를 구분한다.",
                 "duration": "4분 9초",
                 "durationSeconds": 249,
-                "videoUrl": "VIDEOS/basic-course-12/renders/basic-12.mp4",
-                "thumbnail": "IMAGE/basic-course-12/basic-12.jpg",
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-12.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-12.jpg",
                 "keyPhrase": "He packed the other apples into his bag.",
                 "explanation": "남은 게 많아 막연하면 another·other, 눈에 딱 정해진 나머지는 the other(s)를 써요.",
                 "curriculumTopic": "another · other · the other",
@@ -587,6 +587,558 @@
                     {
                         "ko": "주머니 속을 뒤져보니 동전 두 개가 잡혔습니다. 하나는 100원짜리였고, 마지막 남은 동전 하나는 500원짜리였죠.",
                         "en": "He had two coins; one was 100 won, and the other was 500 won."
+                    }
+                ]
+            },
+            {
+                "id": "basic-13",
+                "episode": "13",
+                "title": "13강 · 조동사",
+                "desc": "can·will·shall·must·should 등 조동사가 동사에 능력·의지·의무·확신의 색깔을 입히는 원리를 익힌다.",
+                "duration": "6분 36초",
+                "durationSeconds": 396,
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-13.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-13.jpg",
+                "keyPhrase": "We must enter the building before the clock strikes one.",
+                "explanation": "조동사는 동사 앞에서 말하는 사람의 태도를 더하고, 뒤에는 항상 동사원형이 와요.",
+                "curriculumTopic": "조동사",
+                "koreanVoice": "ElevenLabs 한국어 성우",
+                "englishVoice": "ElevenLabs 영어 성우",
+                "script": [
+                    {
+                        "ko": "어두운 골목길 너머로 희미한 피아노 선율을 들을 수 있다.",
+                        "en": "You can hear a faint piano melody from the dark alley."
+                    },
+                    {
+                        "ko": "내가 자정에 누군가 연주하는 그 음악의 정체를 찾아내고 말겠다.",
+                        "en": "I will find out who is playing the music at midnight."
+                    },
+                    {
+                        "ko": "우리 함께 이 침묵에 휩싸인 건물 안으로 걸어 들어가 볼까요?",
+                        "en": "Shall we step into the silent building together?"
+                    },
+                    {
+                        "ko": "시계가 1시를 치기 전에 우리는 저 건물 안으로 들어가야만 한다.",
+                        "en": "We must enter the building before the clock strikes one."
+                    },
+                    {
+                        "ko": "너는 밤의 리듬에 마땅히 귀를 기울이는 것이 좋다.",
+                        "en": "You should listen closely to the rhythm of the night."
+                    },
+                    {
+                        "ko": "밤이 되면 네온사인 간판이 당연히 자동으로 켜질 것이다.",
+                        "en": "The neon sign should turn on automatically at night."
+                    },
+                    {
+                        "ko": "어쩌면 그 신비로운 피아니스트는 도시의 정령일 수도 있다.",
+                        "en": "The mysterious pianist could be a spirit of the city."
+                    },
+                    {
+                        "ko": "그는 피아노 의자 밑에 비밀 일기장을 숨겨두었을지도 모른다.",
+                        "en": "He might have hidden a secret diary under the piano seat."
+                    },
+                    {
+                        "ko": "저 푸른 불꽃이라면 아마 텅 빈 방 전체를 밝혀줄 텐데.",
+                        "en": "That blue flame would illuminate the entire empty room."
+                    },
+                    {
+                        "ko": "누군가 불과 1분 전에 이 커피 잔을 남겨두고 떠났을 수도 있다.",
+                        "en": "Someone could have left this coffee cup just a minute ago."
+                    },
+                    {
+                        "ko": "우리가 작은 랜턴을 챙겨왔어야 했는데 그러지 못했다.",
+                        "en": "We should have brought a small lantern with us."
+                    },
+                    {
+                        "ko": "이런 마법 같은 밤이라면 우리의 지루한 일상을 영원히 바꿔놓을 텐데.",
+                        "en": "A magical night like this would change our daily routine forever."
+                    }
+                ]
+            },
+            {
+                "id": "basic-14",
+                "episode": "14",
+                "title": "14강 · 비교급 총정리",
+                "desc": "음절 수에 따라 -er을 붙일지 more를 쓸지 정하는 비교급 규칙을 정리한다.",
+                "duration": "5분 0초",
+                "durationSeconds": 300,
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-14.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-14.jpg",
+                "keyPhrase": "This secret library is much older than the alley outside.",
+                "explanation": "짧은 단어는 -er, 긴 단어는 more를 붙이고, 비교 대상 앞에는 than을 써요.",
+                "curriculumTopic": "비교급",
+                "koreanVoice": "ElevenLabs 한국어 성우",
+                "englishVoice": "ElevenLabs 영어 성우",
+                "script": [
+                    {
+                        "ko": "이 비밀 서재는 밖에서 보던 골목길보다 훨씬 더 오래되었다.",
+                        "en": "This secret library is much older than the alley outside."
+                    },
+                    {
+                        "ko": "2층에서 들려오는 피아노 소리가 아까보다 더 명확해진다.",
+                        "en": "The piano sound from the second floor becomes clearer than before."
+                    },
+                    {
+                        "ko": "이 오래된 책장이 저 현대적인 스피커보다 더 크게 보인다.",
+                        "en": "This old bookshelf looks bigger than that modern speaker."
+                    },
+                    {
+                        "ko": "방 안의 은빛 조명이 밤하늘의 달보다 더 밝게 빛난다.",
+                        "en": "The silver light in the room shines brighter than the moon in the night sky."
+                    },
+                    {
+                        "ko": "그녀의 걸음걸이가 바람 소리보다 더 가벼워진다.",
+                        "en": "Her footsteps become lighter than the sound of the wind."
+                    },
+                    {
+                        "ko": "이 오래된 일기장이 생각했던 것보다 훨씬 더 무겁다.",
+                        "en": "This ancient diary is much heavier than I thought."
+                    },
+                    {
+                        "ko": "이곳의 분위기는 도심의 카페보다 훨씬 더 신비롭다.",
+                        "en": "The atmosphere here is far more mysterious than a downtown cafe."
+                    },
+                    {
+                        "ko": "벽에 걸린 붉은 그림이 실물보다 더 아름답게 보인다.",
+                        "en": "The red painting on the wall looks more beautiful than real life."
+                    },
+                    {
+                        "ko": "이 공간을 탐험하는 것이 평범한 일상보다 훨씬 더 흥미진진하다.",
+                        "en": "Exploring this space is even more exciting than daily routine."
+                    },
+                    {
+                        "ko": "피아니스트의 비밀은 우리가 상상했던 것보다 더 복잡하다.",
+                        "en": "The pianist's secret is more complicated than we imagined."
+                    },
+                    {
+                        "ko": "이 마법 같은 밤이 어제보다 훨씬 더 값지게 느껴진다.",
+                        "en": "This magical night feels much more valuable than yesterday."
+                    },
+                    {
+                        "ko": "진실에 가까워질수록 모든 순간이 이전보다 더 위험해진다.",
+                        "en": "As we get closer to the truth, every moment becomes more dangerous than before."
+                    }
+                ]
+            },
+            {
+                "id": "basic-15",
+                "episode": "15",
+                "title": "15강 · much vs more, 스머프 강조법, 최상급",
+                "desc": "much와 more의 뿌리, 비교급 강조 표현, 최상급 the -est / the most를 한 번에 정리한다.",
+                "duration": "5분 2초",
+                "durationSeconds": 302,
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-15.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-15.jpg",
+                "keyPhrase": "The piano sound we hear now is the clearest of the night.",
+                "explanation": "비교급은 much·far 등으로 강조하고, 최상급은 the -est 또는 the most로 “가장 ~한”을 나타내요.",
+                "curriculumTopic": "비교급 강조와 최상급",
+                "koreanVoice": "ElevenLabs 한국어 성우",
+                "englishVoice": "ElevenLabs 영어 성우",
+                "script": [
+                    {
+                        "ko": "이곳은 이 건물 안에서 가장 오래된 비밀 공간이다.",
+                        "en": "This is the oldest secret space in this building."
+                    },
+                    {
+                        "ko": "지금 들려오는 피아노 소리가 오늘 밤 들은 것 중 가장 맑다.",
+                        "en": "The piano sound we hear now is the clearest of the night."
+                    },
+                    {
+                        "ko": "저 서재 구석에 놓인 상자가 방에서 가장 크다.",
+                        "en": "The box in the corner of that library is the biggest in the room."
+                    },
+                    {
+                        "ko": "선반 위에 놓인 은색 열쇠가 세상에서 가장 밝게 빛난다.",
+                        "en": "The silver key on the shelf shines the brightest in the world."
+                    },
+                    {
+                        "ko": "그녀의 발걸음은 빗소리보다 가볍고, 도시 전체에서 가장 가볍다.",
+                        "en": "Her footsteps are lighter than the rain, and the lightest in the whole city."
+                    },
+                    {
+                        "ko": "이 일기장이 책장에 꽂힌 모든 책들 중에서 가장 두껍다.",
+                        "en": "This diary is the thickest of all the books on the bookshelf."
+                    },
+                    {
+                        "ko": "이 오르골은 비밀 서재에서 가장 신비로운 물건이다.",
+                        "en": "This music box is the most mysterious object in the secret library."
+                    },
+                    {
+                        "ko": "악보 끝에 적힌 문장이 내 인생에서 가장 아름다운 유언이다.",
+                        "en": "The sentence at the end of the sheet music is the most beautiful testament of my life."
+                    },
+                    {
+                        "ko": "이 기밀 문서를 읽는 것이 우리의 탐험 중 가장 흥미진진한 순간이다.",
+                        "en": "Reading this secret document is the most exciting moment of our exploration."
+                    },
+                    {
+                        "ko": "도시의 밤에 얽힌 비밀은 우리가 풀어야 할 가장 복잡한 수수께끼이다.",
+                        "en": "The secret of the city night is the most complicated puzzle we must solve."
+                    },
+                    {
+                        "ko": "서재 2층의 기적은 우리가 찾은 것 중 가장 값진 보물이다.",
+                        "en": "The miracle on the second floor is the most valuable treasure we found."
+                    },
+                    {
+                        "ko": "마침내 진실을 만나는 것은 이 길고 긴 여행에서 가장 마법 같은 일이다.",
+                        "en": "Meeting the truth at last is the most magical thing in this long journey."
+                    }
+                ]
+            },
+            {
+                "id": "basic-16",
+                "episode": "16",
+                "title": "16강 · 접속사 & 관계부사",
+                "desc": "and·but·or 등 접속사와 장소·시간·이유·방법을 이끄는 관계부사로 문장을 이어 붙인다.",
+                "duration": "4분 4초",
+                "durationSeconds": 244,
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-16.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-16.jpg",
+                "keyPhrase": "She picked up the old key, and she slowly opened the secret box.",
+                "explanation": "and는 덧붙임, but은 대조, or는 선택을 이어 주고, 관계부사는 장소·시간·이유·방법 정보를 덧붙여요.",
+                "curriculumTopic": "접속사와 관계부사",
+                "koreanVoice": "ElevenLabs 한국어 성우",
+                "englishVoice": "ElevenLabs 영어 성우",
+                "script": [
+                    {
+                        "ko": "그녀는 옛날 열쇠를 집어 들었고, 천천히 비밀 상자를 열었다.",
+                        "en": "She picked up the old key, and she slowly opened the secret box."
+                    },
+                    {
+                        "ko": "문은 무거웠지만, 우리는 힘껏 당겨서 안으로 들어갔다.",
+                        "en": "The door was heavy, but we pulled it hard and went inside."
+                    },
+                    {
+                        "ko": "너는 서재 안에 남아도 되고, 나와 함께 밖으로 나가도 된다.",
+                        "en": "You can stay inside the library, or you can go outside with me."
+                    },
+                    {
+                        "ko": "피아노 소리는 멈췄지만, 그 울림은 여전히 방 안에 남아있었다.",
+                        "en": "The piano sound stopped, but its echo still remained in the room."
+                    },
+                    {
+                        "ko": "우리는 오래된 일기장을 챙겼고, 조용히 카페 2층을 내려왔다.",
+                        "en": "We packed the ancient diary, and we quietly walked down from the second floor."
+                    },
+                    {
+                        "ko": "그 음악이 내 마음을 울렸기 때문에, 나는 발걸음을 멈출 수밖에 없었다.",
+                        "en": "Because that music touched my heart, I had to stop my steps."
+                    },
+                    {
+                        "ko": "이곳은 우리가 비밀 피아노 소리를 들었던 그 장소이다.",
+                        "en": "This is the place where we heard the secret piano sound."
+                    },
+                    {
+                        "ko": "자정이 되었을 때가 바로 모든 네온사인이 빛나기 시작한 순간이다.",
+                        "en": "Midnight is the time when all the neon signs started to shine."
+                    },
+                    {
+                        "ko": "이것이 그 피아니스트가 매일 밤 홀로 연주했던 이유이다.",
+                        "en": "This is the reason why the pianist played alone every night."
+                    },
+                    {
+                        "ko": "그녀는 서재의 잠긴 문을 쉽게 여는 방법을 알고 있었다.",
+                        "en": "She knew how she could open the locked door easily."
+                    },
+                    {
+                        "ko": "우리가 다시 만날 그날이 오면, 더 놀라운 이야기들을 나누게 될 것이다.",
+                        "en": "When the day comes when we meet again, we will share even more amazing stories."
+                    },
+                    {
+                        "ko": "이 비밀스러운 밤은 우리가 함께 새로운 추억을 만든 방식이었다.",
+                        "en": "This secret night was how we created a new memory together."
+                    }
+                ]
+            },
+            {
+                "id": "basic-17",
+                "episode": "17",
+                "title": "17강 · 가정법",
+                "desc": "현실과 반대되는 상상을 시제를 한 칸 과거로 밀어 표현하는 가정법을 익힌다.",
+                "duration": "5분 18초",
+                "durationSeconds": 318,
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-17.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-17.jpg",
+                "keyPhrase": "If I had the secret key, I would open that door right now.",
+                "explanation": "현실과 다른 상상은 if절에 과거형, 주절에 would·could를 써서 한 칸 뒤로 밀어요.",
+                "curriculumTopic": "가정법",
+                "koreanVoice": "ElevenLabs 한국어 성우",
+                "englishVoice": "ElevenLabs 영어 성우",
+                "script": [
+                    {
+                        "ko": "먼저 지금 현재 상황을 반대로 상상해보는 이야기들입니다.",
+                        "en": ""
+                    },
+                    {
+                        "ko": "만약 내가 그 비밀 열쇠를 갖고 있다면, 나는 지금 당장 저 문을 열 텐데.",
+                        "en": "If I had the secret key, I would open that door right now."
+                    },
+                    {
+                        "ko": "만약 그녀가 지금 이곳에 있다면, 우리에게 피아노에 얽힌 진실을 말해줄 텐데.",
+                        "en": "If she were here right now, she could tell us the truth behind the piano."
+                    },
+                    {
+                        "ko": "만약 저 골목길이 그렇게 어둡지 않다면, 우리는 더 멀리까지 탐험할 수 있을 텐데.",
+                        "en": "If that alley were not so dark, we could explore even further."
+                    },
+                    {
+                        "ko": "만약 이 오래된 오르골이 작동한다면, 아름다운 멜로디가 온 방에 퍼질 텐데.",
+                        "en": "If this ancient music box worked a beautiful melody would spread across the room."
+                    },
+                    {
+                        "ko": "만약 내가 도시의 모든 비밀을 안다면, 나는 더 이상 아무것도 두렵지 않을 텐데.",
+                        "en": "If I knew all the secrets of the city, I would not be afraid of anything."
+                    },
+                    {
+                        "ko": "만약 우리가 지금 자유롭다면, 그 마법 같은 음악을 찾아 다시 떠날 텐데.",
+                        "en": "If we were free right now, we might set off again to find that magical music."
+                    },
+                    {
+                        "ko": "이번에는 이미 지나간 과거의 그 밤을 돌아보며, 그때 그랬더라면, 하고 아쉬워하는 이야기들입니다.",
+                        "en": ""
+                    },
+                    {
+                        "ko": "만약 우리가 그때 랜턴을 챙겼었더라면, 어두운 서재 구석을 더 자세히 보았을 텐데.",
+                        "en": "If we had brought a lantern back then, we would have seen the dark corner of the library better."
+                    },
+                    {
+                        "ko": "만약 내가 그 일기장을 읽지 않았었더라면, 피아니스트의 슬픔을 절대 몰랐을 텐데.",
+                        "en": "If I had not read that diary, I would have never known the sadness of the pianist."
+                    },
+                    {
+                        "ko": "만약 시계가 1시를 치지 않았었더라면, 우리는 더 오래 그곳에 머물 수 있었을 텐데.",
+                        "en": "If the clock had not struck one, we could have stayed there much longer."
+                    },
+                    {
+                        "ko": "만약 그녀가 지난밤에 문을 잠그지 않았었더라면, 누군가 그 비밀 보물을 가져갔을지도 모른다.",
+                        "en": "If she had not locked the door last night, someone might have taken that secret treasure."
+                    },
+                    {
+                        "ko": "만약 우리가 자정에 그 골목길을 지나가지 않았었더라면, 이 모든 기적을 놓쳤을 텐데.",
+                        "en": "If we had not passed by the alley at midnight, we would have missed all these miracles."
+                    },
+                    {
+                        "ko": "만약 네가 그때 나에게 용기를 주지 않았었더라면, 나는 2층 계단을 올라가지 못했을 텐데.",
+                        "en": "If you had not given me courage at that time, I could not have climbed the stairs to the second floor."
+                    }
+                ]
+            },
+            {
+                "id": "basic-18",
+                "episode": "18",
+                "title": "18강 · 조건문",
+                "desc": "실제로 일어날 수 있는 조건과 결과를 말하는 조건문과 if절의 현재시제 규칙을 익힌다.",
+                "duration": "4분 48초",
+                "durationSeconds": 288,
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-18.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-18.jpg",
+                "keyPhrase": "If you turn that old key, the locked door will open softly.",
+                "explanation": "미래의 일이어도 if절에서는 will 없이 현재시제를 쓰고, 결과는 will로 말해요.",
+                "curriculumTopic": "조건문",
+                "koreanVoice": "ElevenLabs 한국어 성우",
+                "englishVoice": "ElevenLabs 영어 성우",
+                "script": [
+                    {
+                        "ko": "먼저 If를 써서 현실적인 조건과 미래 결과를 말하는 문장들입니다.",
+                        "en": ""
+                    },
+                    {
+                        "ko": "만약 네가 그 옛날 열쇠를 돌린다면, 잠긴 문이 스르륵 열릴 것이다.",
+                        "en": "If you turn that old key, the locked door will open softly."
+                    },
+                    {
+                        "ko": "만약 밤 12시에 그 골목길을 지나간다면, 너는 피아노 소리를 들을 수 있을 것이다.",
+                        "en": "If you pass by the alley at midnight, you can hear the piano sound."
+                    },
+                    {
+                        "ko": "만약 우리가 이 오래된 지도에 귀를 기울인다면, 비밀 서재의 위치를 찾게 될 것이다.",
+                        "en": "If we listen to this ancient map, we will find the secret library."
+                    },
+                    {
+                        "ko": "만약 그녀가 다시 피아노를 연주한다면, 도심 전체가 밤의 마법에 빠질 것이다.",
+                        "en": "If she plays the piano again, the whole city will fall into night magic."
+                    },
+                    {
+                        "ko": "만약 우리가 지금 출발한다면, 자정이 되기 전에 그 빌딩에 도착할 수 있다.",
+                        "en": "If we leave right now, we can arrive at that building before midnight."
+                    },
+                    {
+                        "ko": "만약 네가 나와 함께 가겠다고 약속한다면, 내가 그 비밀 일기장을 보여줄게.",
+                        "en": "If you promise to go with me, I will show you the secret diary."
+                    },
+                    {
+                        "ko": "이번에는 만약 하지 않는다면을 뜻하는 Unless 표현들입니다.",
+                        "en": ""
+                    },
+                    {
+                        "ko": "만약 우리가 지금 서두르지 않는다면, 그 마지막 멜로디를 놓치게 될 것이다.",
+                        "en": "Unless we hurry right now, we will miss that last melody."
+                    },
+                    {
+                        "ko": "만약 네가 용기를 내지 않는다면, 진실의 문은 절대 열리지 않을 것이다.",
+                        "en": "Unless you take courage, the door of truth will never open."
+                    },
+                    {
+                        "ko": "만약 비가 내리지 않는다면, 우리는 오늘 밤 다시 그 카페 2층으로 갈 것이다.",
+                        "en": "Unless it rains, we will go back to that second-floor cafe tonight."
+                    },
+                    {
+                        "ko": "만약 우리가 조용히 하지 않는다면, 도시의 정령이 순식간에 사라져 버릴지도 모른다.",
+                        "en": "Unless we stay quiet, the spirit of the city might vanish in a second."
+                    },
+                    {
+                        "ko": "만약 그 음악이 멈추지 않는다면, 우리는 밤새 그 골목에 머물게 될 것이다.",
+                        "en": "Unless the music stops, we will stay in that alley all night long."
+                    },
+                    {
+                        "ko": "만약 네가 비밀을 지키지 않는다면, 다시는 이 마법 같은 경험을 할 수 없을 것이다.",
+                        "en": "Unless you keep the secret, you will never experience this magic again."
+                    }
+                ]
+            },
+            {
+                "id": "basic-19",
+                "episode": "19",
+                "title": "19강 · 도치",
+                "desc": "Never·Seldom 등 부정어를 앞세워 주어와 동사의 자리를 바꾸는 도치를 익힌다.",
+                "duration": "6분 20초",
+                "durationSeconds": 380,
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-19.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-19.jpg",
+                "keyPhrase": "Never have I heard such a beautiful piano melody in my life.",
+                "explanation": "부정어가 문장 앞에 오면 조동사가 주어 앞으로 나가 의문문 어순이 돼요.",
+                "curriculumTopic": "도치",
+                "koreanVoice": "ElevenLabs 한국어 성우",
+                "englishVoice": "ElevenLabs 영어 성우",
+                "script": [
+                    {
+                        "ko": "먼저 부정어 Never, Seldom, Rarely, Little이 앞으로 나가는 이야기들입니다.",
+                        "en": ""
+                    },
+                    {
+                        "ko": "나는 내 인생에서 이렇게 아름다운 피아노 멜로디를 들어본 적이 없다.",
+                        "en": "Never have I heard such a beautiful piano melody in my life."
+                    },
+                    {
+                        "ko": "그녀는 좀처럼 밤 12시 전에는 그 비밀 서재의 문을 열지 않는다.",
+                        "en": "Seldom does she open the door of the secret library before midnight."
+                    },
+                    {
+                        "ko": "우리는 그 어두운 골목길에서 그런 마법 같은 기적을 거의 본 적이 없다.",
+                        "en": "Rarely have we seen such a magical miracle in that dark alley."
+                    },
+                    {
+                        "ko": "나는 그 피아니스트가 누구인지 꿈에도 상상하지 못했다.",
+                        "en": "Little did I dream who the pianist actually was."
+                    },
+                    {
+                        "ko": "우리는 그 시계가 멈추기 전까지 그 긴박한 상황을 전혀 알지 못했다.",
+                        "en": "Little did we know the urgent situation until the clock stopped."
+                    },
+                    {
+                        "ko": "그녀는 자신의 음악이 온 도시를 밝게 비추리라고는 전혀 예상하지 못했다.",
+                        "en": "Never did she expect that her music would illuminate the whole city."
+                    },
+                    {
+                        "ko": "이번에는 장소와 방향의 단어들과 Only가 스포트라이트를 받는 이야기들입니다.",
+                        "en": ""
+                    },
+                    {
+                        "ko": "저 멀리 서재 구석에 우리가 그토록 찾던 은색 열쇠가 놓여 있었다.",
+                        "en": "There on the shelf lay the silver key we had been looking for so eagerly."
+                    },
+                    {
+                        "ko": "비밀 계단 아래로 그 피아니스트가 조용히 걸어 내려왔다.",
+                        "en": "Down the secret stairs walked the pianist very quietly."
+                    },
+                    {
+                        "ko": "오직 자정이 되어서야 비로소 도심의 모든 네온사인이 밝게 빛났다.",
+                        "en": "Only at midnight did all the neon signs in the city shine brightly."
+                    },
+                    {
+                        "ko": "오직 그 마법 오르골을 통해서만 우리는 진실의 문을 열 수 있었다.",
+                        "en": "Only through the magic music box could we open the door of truth."
+                    },
+                    {
+                        "ko": "저 멀리 어둠 속에서 온 도시를 울리는 그 클래식 소리가 퍼져 나갔다.",
+                        "en": "Far away into the darkness echoed the classic sound across the city."
+                    },
+                    {
+                        "ko": "오직 우리가 마음을 열었을 때 비로소 그 밤의 비밀이 드러났다.",
+                        "en": "Only when we opened our hearts was the secret of the night revealed."
+                    }
+                ]
+            },
+            {
+                "id": "basic-20",
+                "episode": "20",
+                "title": "20강 · 대단원 총정리",
+                "desc": "조동사부터 도치까지 배운 핵심 표현을 하나의 완성된 도심 동화 속에서 종합해 복습한다.",
+                "duration": "4분 41초",
+                "durationSeconds": 281,
+                "videoUrl": "VIDEOS/basic-course-20/renders/basic-20.mp4",
+                "thumbnail": "IMAGE/basic-course-20/basic-20.jpg",
+                "keyPhrase": "We can open the door of the secret library without hesitation now.",
+                "explanation": "13강~19강에서 배운 조동사·비교급·접속사·가정법·조건문·도치를 이야기 속에서 다시 만나요.",
+                "curriculumTopic": "종합 정리",
+                "koreanVoice": "ElevenLabs 한국어 성우",
+                "englishVoice": "ElevenLabs 영어 성우",
+                "script": [
+                    {
+                        "ko": "먼저 13강부터 19강까지, 핵심 문법이 하나씩 피어나는 일곱 문장입니다.",
+                        "en": ""
+                    },
+                    {
+                        "ko": "우리는 이제 비밀 서재의 문을 주저함 없이 열 수 있다.",
+                        "en": "We can open the door of the secret library without hesitation now."
+                    },
+                    {
+                        "ko": "지금 흐르는 멜로디는 우리가 어제 들었던 것보다 훨씬 더 감동적이다.",
+                        "en": "The melody flowing now is much more touching than what we heard yesterday."
+                    },
+                    {
+                        "ko": "이 순간이 올여름 밤 도심 속에서 우리가 경험한 가장 아름다운 기적이다.",
+                        "en": "This moment is the most beautiful miracle we experienced in the city this summer night."
+                    },
+                    {
+                        "ko": "자정이 되었을 때 그 피아노 소리가 퍼졌기 때문에, 온 도시가 조용히 숨을 죽였다.",
+                        "en": "Because the piano sound spread when midnight arrived, the whole city held its breath quietly."
+                    },
+                    {
+                        "ko": "만약 네가 나와 함께 있지 않았더라면, 나는 이 기적의 순간을 절대 만나지 못했을 텐데.",
+                        "en": "If you had not been with me, I would have never met this moment of miracle."
+                    },
+                    {
+                        "ko": "만약 우리가 매일 밤 이 골목길을 기억한다면, 마법은 영원히 우리 곁에 남아있을 것이다.",
+                        "en": "If we remember this alley every night, the magic will stay by our side forever."
+                    },
+                    {
+                        "ko": "나는 내 인생에서 이렇게 깊은 울림을 주는 음악을 단 한 번도 들어본 적이 없다.",
+                        "en": "Never have I heard such a deeply touching music in my whole life."
+                    },
+                    {
+                        "ko": "이어서 도심 동화의 마지막을 장식하는 완결 문장들입니다.",
+                        "en": ""
+                    },
+                    {
+                        "ko": "오래된 일기장 마지막 페이지에 적힌 문장은 우리 모두에게 전하는 희망의 메시지였다.",
+                        "en": "The sentence written on the last page of the old diary was a message of hope to us all."
+                    },
+                    {
+                        "ko": "카페 2층의 불빛은 꺼졌지만, 그 울림은 우리의 가슴속에 영원히 꺼지지 않을 것이다.",
+                        "en": "Though the light on the second floor went out, its echo will never fade in our hearts."
+                    },
+                    {
+                        "ko": "이제 우리는 각자의 일상으로 돌아가지만, 우리의 언어는 이전보다 훨씬 더 풍성해졌다.",
+                        "en": "Now we return to our daily lives, but our language has become much richer than before."
+                    },
+                    {
+                        "ko": "만약 네가 다시 영어 문장을 세우고 싶다면, 언제든 이 도심 동화의 골목길로 찾아오면 된다.",
+                        "en": "If you want to build English sentences again, you can always visit this alley of urban fairy tale."
+                    },
+                    {
+                        "ko": "마침내 우리의 긴 여행은 끝났고, 새로운 시작을 향해 기분 좋게 발걸음을 옮긴다.",
+                        "en": "At last our long journey has ended, and we take a pleasant step toward a new beginning."
                     }
                 ]
             }
