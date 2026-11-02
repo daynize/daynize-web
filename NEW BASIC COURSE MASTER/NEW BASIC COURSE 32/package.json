@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-32",
+  "private": true,
+  "description": "Remotion project root for 13강 조동사. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson13-ModalVerbs out/lesson13.mp4"
+  }
+}

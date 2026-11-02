@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-26",
+  "private": true,
+  "description": "Remotion project root for 08강 감정형용사. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson08-EmotionAdjectives out/lesson08.mp4"
+  }
+}

@@ -1,0 +1,675 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리가 지난 시간에 배웠듯이, 관계대명사는 접속사와 대명사가 하나로 합쳐진 요술봉이라고 했습니다.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "53718da19d079f06",
+          "seconds": 7.34
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 7.34,
+      "frames": 220
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "사물 뒤에서 “그런데 이것은...” 하고 부드럽게 말을 이어주는 것이 바로",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "3dfc0abebeecc3e2",
+          "seconds": 5.094
+        },
+        {
+          "lang": "en",
+          "text": "which",
+          "file": "parts/i2_02_en.mp3",
+          "hash": "e5936f8a7b2484a2",
+          "seconds": 0.731
+        },
+        {
+          "lang": "kr",
+          "text": "였죠.",
+          "file": "parts/i2_03_kr.mp3",
+          "hash": "554007097b9d0cad",
+          "seconds": 1.097
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 7.262,
+      "frames": 218
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그렇다면",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "602365d86833af92",
+          "seconds": 1.097
+        },
+        {
+          "lang": "en",
+          "text": "in which, on which, at which",
+          "file": "parts/i3_02_en.mp3",
+          "hash": "c6dcad2d450a8ef2",
+          "seconds": 2.403
+        },
+        {
+          "lang": "kr",
+          "text": "같은 녀석들은 대체 왜 이렇게 길고 복잡해 보이는 걸까요?",
+          "file": "parts/i3_03_kr.mp3",
+          "hash": "3bfd9948a7acb738",
+          "seconds": 4.362
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 8.202,
+      "frames": 246
+    },
+    "i4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이유는 아주 간단하고 명쾌합니다!",
+          "file": "parts/i4_01_kr.mp3",
+          "hash": "503943c19372daaf",
+          "seconds": 2.22
+        }
+      ],
+      "file": "i4.mp3",
+      "seconds": 2.22,
+      "frames": 67
+    },
+    "i5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "원래 문장 맨 뒤에서 명사와 짝을 이루던 전치사,",
+          "file": "parts/i5_01_kr.mp3",
+          "hash": "6c8a6db36703c751",
+          "seconds": 4.362
+        },
+        {
+          "lang": "en",
+          "text": "in, on, at",
+          "file": "parts/i5_02_en.mp3",
+          "hash": "55d2f7dda94f1f66",
+          "seconds": 1.202
+        },
+        {
+          "lang": "kr",
+          "text": "가, 문장이 길어지면서 뒤에 혼자 덩그러니 남겨져 외로워졌기 때문입니다.",
+          "file": "parts/i5_03_kr.mp3",
+          "hash": "4006c651aa8d9ea1",
+          "seconds": 7.184
+        }
+      ],
+      "file": "i5.mp3",
+      "seconds": 13.061,
+      "frames": 392
+    },
+    "i6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그래서 이 전치사가 자신의 짝꿍이었던 대명사를 끌어안은 관계대명사",
+          "file": "parts/i6_01_kr.mp3",
+          "hash": "b45c7e55928a3b89",
+          "seconds": 6.504
+        },
+        {
+          "lang": "en",
+          "text": "which",
+          "file": "parts/i6_02_en.mp3",
+          "hash": "e5936f8a7b2484a2",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": "바로 앞으로 찰싹 붙어 이동한 것뿐입니다!",
+          "file": "parts/i6_03_kr.mp3",
+          "hash": "9860f2784e4ce865",
+          "seconds": 2.691
+        }
+      ],
+      "file": "i6.mp3",
+      "seconds": 10.318,
+      "frames": 310
+    },
+    "i7": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "원리를 알면 해석도 직관적입니다.",
+          "file": "parts/i7_01_kr.mp3",
+          "hash": "bca7d0e116867773",
+          "seconds": 2.769
+        }
+      ],
+      "file": "i7.mp3",
+      "seconds": 2.769,
+      "frames": 83
+    },
+    "i8": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "in which",
+          "file": "parts/i8_01_en.mp3",
+          "hash": "a1934a37828d10c1",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "는 “그런데 그 공간, 시간 안에서...”",
+          "file": "parts/i8_02_kr.mp3",
+          "hash": "a09a9d47790d562d",
+          "seconds": 2.691
+        }
+      ],
+      "file": "i8.mp3",
+      "seconds": 3.814,
+      "frames": 114
+    },
+    "i9": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "on which",
+          "file": "parts/i9_01_en.mp3",
+          "hash": "33e815d116ee5e61",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "는 “그런데 그 표면, 날짜 위에...”",
+          "file": "parts/i9_02_kr.mp3",
+          "hash": "45e8ccff968751cf",
+          "seconds": 2.691
+        }
+      ],
+      "file": "i9.mp3",
+      "seconds": 3.866,
+      "frames": 116
+    },
+    "i10": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "at which",
+          "file": "parts/i10_01_en.mp3",
+          "hash": "b0fea9705831ccff",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "는 “그런데 그 특정 시점, 장소에서...”",
+          "file": "parts/i10_02_kr.mp3",
+          "hash": "77afa1aca82fe12b",
+          "seconds": 2.873
+        }
+      ],
+      "file": "i10.mp3",
+      "seconds": 3.997,
+      "frames": 120
+    },
+    "b1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그렇다면 왜 전치사가 앞으로 당겨져 올까요? 예를 들어, “나는 집을 한 채 샀는데, 그 집 안에서 살고 있다”라고 할 때",
+          "file": "parts/b1_01_kr.mp3",
+          "hash": "a5224f45f7ba3563",
+          "seconds": 12.983
+        }
+      ],
+      "file": "b1.mp3",
+      "seconds": 12.983,
+      "frames": 389
+    },
+    "b2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "두 문장으로 쓰면",
+          "file": "parts/b2_01_kr.mp3",
+          "hash": "0adf746d6ddeea17",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "I bought a house",
+          "file": "parts/b2_02_en.mp3",
+          "hash": "a8589733228aea3d",
+          "seconds": 1.28
+        },
+        {
+          "lang": "kr",
+          "text": "와",
+          "file": "parts/b2_03_kr.mp3",
+          "hash": "b6536b50ed87f7ff",
+          "seconds": 0.731
+        },
+        {
+          "lang": "en",
+          "text": "I live in the house",
+          "file": "parts/b2_04_en.mp3",
+          "hash": "99fe31797a3cb601",
+          "seconds": 1.384
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/b2_05_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 0.914
+        }
+      ],
+      "file": "b2.mp3",
+      "seconds": 6.452,
+      "frames": 194
+    },
+    "b3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 두 문장을 관계대명사",
+          "file": "parts/b3_01_kr.mp3",
+          "hash": "90e2c9c0233ed35e",
+          "seconds": 2.038
+        },
+        {
+          "lang": "en",
+          "text": "which",
+          "file": "parts/b3_02_en.mp3",
+          "hash": "e5936f8a7b2484a2",
+          "seconds": 0.784
+        },
+        {
+          "lang": "kr",
+          "text": "로 잇되 전치사를 맨 뒤에 그냥 두면",
+          "file": "parts/b3_03_kr.mp3",
+          "hash": "a5fb98fcae8ed178",
+          "seconds": 3.056
+        },
+        {
+          "lang": "en",
+          "text": "I bought a house which I live in",
+          "file": "parts/b3_04_en.mp3",
+          "hash": "618cac7b6ea83c49",
+          "seconds": 1.75
+        },
+        {
+          "lang": "kr",
+          "text": "이 됩니다.",
+          "file": "parts/b3_05_kr.mp3",
+          "hash": "c1e171889a66b415",
+          "seconds": 1.019
+        }
+      ],
+      "file": "b3.mp3",
+      "seconds": 9.3,
+      "frames": 279
+    },
+    "b4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "하지만 문장 끝에",
+          "file": "parts/b4_01_kr.mp3",
+          "hash": "8ebe8123ec889556",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "in",
+          "file": "parts/b4_02_en.mp3",
+          "hash": "987ac6bdbbb250de",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": "혼자 덩그러니 남겨져 있으면 외롭고 세련되지 못한 문장이 되죠.",
+          "file": "parts/b4_03_kr.mp3",
+          "hash": "ba0288c9b6d09cb1",
+          "seconds": 5.381
+        }
+      ],
+      "file": "b4.mp3",
+      "seconds": 7.863,
+      "frames": 236
+    },
+    "b5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그래서 전치사",
+          "file": "parts/b5_01_kr.mp3",
+          "hash": "7e16de792db29572",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "in",
+          "file": "parts/b5_02_en.mp3",
+          "hash": "987ac6bdbbb250de",
+          "seconds": 0.601
+        },
+        {
+          "lang": "kr",
+          "text": "이 자신의 짝이었던",
+          "file": "parts/b5_03_kr.mp3",
+          "hash": "6fdabf59db993770",
+          "seconds": 1.567
+        },
+        {
+          "lang": "en",
+          "text": "which",
+          "file": "parts/b5_04_en.mp3",
+          "hash": "e5936f8a7b2484a2",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": "바로 앞으로 찰싹 당겨져 와",
+          "file": "parts/b5_05_kr.mp3",
+          "hash": "cec4654e1d86fa61",
+          "seconds": 1.933
+        },
+        {
+          "lang": "en",
+          "text": "I bought a house in which I live",
+          "file": "parts/b5_06_en.mp3",
+          "hash": "efd700f7c8bb42e0",
+          "seconds": 2.09
+        },
+        {
+          "lang": "kr",
+          "text": "가 되는 것입니다.",
+          "file": "parts/b5_07_kr.mp3",
+          "hash": "bac60ce48879b870",
+          "seconds": 1.384
+        }
+      ],
+      "file": "b5.mp3",
+      "seconds": 10.841,
+      "frames": 325
+    },
+    "k0": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "3가지 주요 전치사 결합형을 직관적으로 확인해 볼까요?",
+          "file": "parts/k0_01_kr.mp3",
+          "hash": "0333f1a6e439686b",
+          "seconds": 4.127
+        }
+      ],
+      "file": "k0.mp3",
+      "seconds": 4.127,
+      "frames": 124
+    },
+    "k1": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "in which",
+          "file": "parts/k1_01_en.mp3",
+          "hash": "a1934a37828d10c1",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "는 공간, 장소, 시간입니다.",
+          "file": "parts/k1_02_kr.mp3",
+          "hash": "9e967d4743e8e996",
+          "seconds": 2.22
+        },
+        {
+          "lang": "en",
+          "text": "This is the room in which I study.",
+          "file": "parts/k1_03_en.mp3",
+          "hash": "4fc955e1564c970b",
+          "seconds": 2.168
+        },
+        {
+          "lang": "kr",
+          "text": "이것은 방이다, 그런데 그 방 안에서 나는 공부한다.",
+          "file": "parts/k1_04_kr.mp3",
+          "hash": "e54cecaaa15cc762",
+          "seconds": 3.657
+        }
+      ],
+      "file": "k1.mp3",
+      "seconds": 9.509,
+      "frames": 285
+    },
+    "k2": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "on which",
+          "file": "parts/k2_01_en.mp3",
+          "hash": "33e815d116ee5e61",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "는 표면, 날짜입니다.",
+          "file": "parts/k2_02_kr.mp3",
+          "hash": "ef616355bc307d7b",
+          "seconds": 1.672
+        },
+        {
+          "lang": "en",
+          "text": "There is a table on which books are placed.",
+          "file": "parts/k2_03_en.mp3",
+          "hash": "3a097e948ea25b3a",
+          "seconds": 2.22
+        },
+        {
+          "lang": "kr",
+          "text": "테이블이 하나 있다, 그런데 그 표면 위에 책들이 놓여 있다.",
+          "file": "parts/k2_04_kr.mp3",
+          "hash": "927006173d2fd5c4",
+          "seconds": 5.433
+        }
+      ],
+      "file": "k2.mp3",
+      "seconds": 10.762,
+      "frames": 323
+    },
+    "k3": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "at which",
+          "file": "parts/k3_01_en.mp3",
+          "hash": "b0fea9705831ccff",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "는 특정 시점, 장소입니다.",
+          "file": "parts/k3_02_kr.mp3",
+          "hash": "68f3739cd5b1c5fc",
+          "seconds": 2.351
+        },
+        {
+          "lang": "en",
+          "text": "He specified the time at which we should meet.",
+          "file": "parts/k3_03_en.mp3",
+          "hash": "39cefc3773e935e6",
+          "seconds": 2.586
+        },
+        {
+          "lang": "kr",
+          "text": "그는 시간을 지정했다, 그런데 그 시점에 우리가 만나야 한다.",
+          "file": "parts/k3_04_kr.mp3",
+          "hash": "bc35c60a869a86b1",
+          "seconds": 5.799
+        }
+      ],
+      "file": "k3.mp3",
+      "seconds": 12.199,
+      "frames": 366
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 아름다운 도시 하나를 방문했습니다. 그런데 그 도시 안에서 새로운 꿈이 시작되었죠.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "a61c80a47ac5d249",
+          "seconds": 6.452
+        },
+        {
+          "lang": "en",
+          "text": "He visited a beautiful city in which his new dream began.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "8410da75814451d6",
+          "seconds": 3.422
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 10.031,
+      "frames": 301
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "거리 한쪽에 자그마한 테이블이 놓여 있었습니다. 그런데 그 테이블 위에 오래된 상자가 하나 놓여 있었죠.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "42c368faf8802b12",
+          "seconds": 7.367
+        },
+        {
+          "lang": "en",
+          "text": "There was a small table on which an old box was placed.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "0c1e903de7e34eaf",
+          "seconds": 3.187
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 10.736,
+      "frames": 322
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "마침내 서점 문이 열리는 정각이 되었습니다. 그런데 그 시점에 한 여인이 서점으로 걸어왔습니다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "646a899fe837b896",
+          "seconds": 7.654
+        },
+        {
+          "lang": "en",
+          "text": "It reached the exact time at which the bookstore opened.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "d4cef4f76a6868e6",
+          "seconds": 3.109
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 10.919,
+      "frames": 328
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘은 문장 맨 뒤에 홀로 남아 외로워하던 전치사가 관계대명사 앞으로 당겨져 오는",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "5ec02307a1d895d1",
+          "seconds": 6.687
+        },
+        {
+          "lang": "en",
+          "text": "in, on, at which",
+          "file": "parts/o1_02_en.mp3",
+          "hash": "c27877f467fed18c",
+          "seconds": 1.567
+        },
+        {
+          "lang": "kr",
+          "text": "의 원리를 배웠습니다.",
+          "file": "parts/o1_03_kr.mp3",
+          "hash": "57942281a4d919e4",
+          "seconds": 2.038
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 10.606,
+      "frames": 318
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "어렵게 생각할 필요 없이 “전치사의 원래 뜻 + 그런데 그것은!”으로 직관적으로 해석하는 원리를 꼭 기억하세요.",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "fa74bb0e0e532381",
+          "seconds": 9.979
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 9.979,
+      "frames": 299
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "7504c05925950cfa",
+          "seconds": 4.206
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 4.206,
+      "frames": 126
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감사합니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "529f016c9727d15d",
+          "seconds": 1.149
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 1.149,
+      "frames": 34
+    },
+    "i16": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "복잡한 공식을 암기할 필요 없이, “전치사 뜻 + 그런데 그것은!” 하고 매끄럽게 해석하면 깔끔하게 직관을 얻을 수 있습니다.",
+          "file": "parts/i16_01_kr.mp3",
+          "hash": "cd541dd3646613e6",
+          "seconds": 10.762
+        }
+      ],
+      "file": "i16.mp3",
+      "seconds": 10.762,
+      "frames": 323
+    }
+  }
+}

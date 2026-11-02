@@ -1,0 +1,486 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "16강, 접속사와 관계부사 총정리. 문장을 단단하고 풍성하게 이어주는 다리입니다.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "00019eb2c413e3e6",
+          "seconds": 7.367
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 7.367,
+      "frames": 221
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "단순히 문장을 이어주는 접속사부터, 장소, 시간, 이유, 방법의 정보로 문장을 다채롭게 꾸며주는 관계부사까지, 한 번에 정리합니다.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "bf4232f5bb9d211a",
+          "seconds": 12.382
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 12.382,
+      "frames": 371
+    },
+    "a0": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "첫째, 3대 등위접속사입니다. 앤드, 벗, 오어.",
+          "file": "parts/a0_01_kr.mp3",
+          "hash": "4f38a79f888b7822",
+          "seconds": 4.023
+        }
+      ],
+      "file": "a0.mp3",
+      "seconds": 4.023,
+      "frames": 121
+    },
+    "a1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "앤드, 그리고, 하고. 내용의 덧붙임입니다.",
+          "file": "parts/a1_01_kr.mp3",
+          "hash": "9eb9720ef9351b96",
+          "seconds": 4.362
+        }
+      ],
+      "file": "a1.mp3",
+      "seconds": 4.362,
+      "frames": 131
+    },
+    "a2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "벗, 하지만, 그러나. 앞뒤 내용의 반전입니다.",
+          "file": "parts/a2_01_kr.mp3",
+          "hash": "279f4b5be81df526",
+          "seconds": 4.258
+        }
+      ],
+      "file": "a2.mp3",
+      "seconds": 4.258,
+      "frames": 128
+    },
+    "a3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오어, 또는, 아니면. 선택의 기로입니다.",
+          "file": "parts/a3_01_kr.mp3",
+          "hash": "2f1f3b213bd31808",
+          "seconds": 3.422
+        }
+      ],
+      "file": "a3.mp3",
+      "seconds": 3.422,
+      "frames": 103
+    },
+    "b0": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "둘째, 종속접속사와 관계부사의 비밀입니다. 관계부사는 접속사 더하기 부사의 역할을 동시에 하면서, 앞선 명사, 즉 선행사를 뒤에서 부드럽게 설명해 주는 아주 편리한 연결 도구입니다.",
+          "file": "parts/b0_01_kr.mp3",
+          "hash": "b3fc9d377abbdf7f",
+          "seconds": 20.48
+        }
+      ],
+      "file": "b0.mp3",
+      "seconds": 20.48,
+      "frames": 614
+    },
+    "b1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "Because, 때문에. 확실한 원인과 이유입니다.",
+          "file": "parts/b1_01_kr.mp3",
+          "hash": "0293f81f58132d49",
+          "seconds": 3.161
+        }
+      ],
+      "file": "b1.mp3",
+      "seconds": 3.161,
+      "frames": 95
+    },
+    "b2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "Where, 장소, 하는 곳. 더 place where, 하는 그 장소입니다.",
+          "file": "parts/b2_01_kr.mp3",
+          "hash": "5f616791898a96de",
+          "seconds": 4.833
+        }
+      ],
+      "file": "b2.mp3",
+      "seconds": 4.833,
+      "frames": 145
+    },
+    "b3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "When, 시간, 하는 때. 더 time when, 하는 그 시간입니다.",
+          "file": "parts/b3_01_kr.mp3",
+          "hash": "8ecd93d6794d4fb7",
+          "seconds": 5.851
+        }
+      ],
+      "file": "b3.mp3",
+      "seconds": 5.851,
+      "frames": 176
+    },
+    "b4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "Why, 이유, 하는 이유. 더 reason why, 하는 그 이유입니다.",
+          "file": "parts/b4_01_kr.mp3",
+          "hash": "d9dd766a4d75f8e8",
+          "seconds": 4.075
+        }
+      ],
+      "file": "b4.mp3",
+      "seconds": 4.075,
+      "frames": 122
+    },
+    "b5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "How, 방법, 하는 방식. 더 way 또는 how, 둘 중 하나만 쓰입니다.",
+          "file": "parts/b5_01_kr.mp3",
+          "hash": "c9763621fc30a148",
+          "seconds": 6.296
+        }
+      ],
+      "file": "b5.mp3",
+      "seconds": 6.296,
+      "frames": 189
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀는 옛날 열쇠를 집어 들었고, 천천히 비밀 상자를 열었다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "3bed95068d92e039",
+          "seconds": 5.016
+        },
+        {
+          "lang": "en",
+          "text": "She picked up the old key, and she slowly opened the secret box.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "0430931b8168f997",
+          "seconds": 3.579
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 8.725,
+      "frames": 262
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "문은 무거웠지만, 우리는 힘껏 당겨서 안으로 들어갔다.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "97fb654f11cd78cb",
+          "seconds": 5.016
+        },
+        {
+          "lang": "en",
+          "text": "The door was heavy, but we pulled it hard and went inside.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "d1288ba4d5a90887",
+          "seconds": 3.004
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 8.176,
+      "frames": 245
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "너는 서재 안에 남아도 되고, 나와 함께 밖으로 나가도 된다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "02bd0fda17c73d58",
+          "seconds": 4.911
+        },
+        {
+          "lang": "en",
+          "text": "You can stay inside the library, or you can go outside with me.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "b125ce273368e1bd",
+          "seconds": 3.605
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 8.699,
+      "frames": 261
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "피아노 소리는 멈췄지만, 그 울림은 여전히 방 안에 남아있었다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "6a0d98f6fe4ae089",
+          "seconds": 5.146
+        },
+        {
+          "lang": "en",
+          "text": "The piano sound stopped, but its echo still remained in the room.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "8357f84262fb8f6e",
+          "seconds": 3.605
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 8.934,
+      "frames": 268
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리는 오래된 일기장을 챙겼고, 조용히 카페 2층을 내려왔다.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "cd94aad3799565f8",
+          "seconds": 5.329
+        },
+        {
+          "lang": "en",
+          "text": "We packed the ancient diary, and we quietly walked down from the second floor.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "d766ec04d5bc6d5f",
+          "seconds": 4.415
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 9.9,
+      "frames": 297
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그 음악이 내 마음을 울렸기 때문에, 나는 발걸음을 멈출 수밖에 없었다.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "545b8e700988918e",
+          "seconds": 6.087
+        },
+        {
+          "lang": "en",
+          "text": "Because that music touched my heart, I had to stop my steps.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "ca11da6fed50b5f3",
+          "seconds": 3.709
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 9.953,
+      "frames": 299
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이곳은 우리가 비밀 피아노 소리를 들었던 그 장소이다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "d8c7f074f16f4bd0",
+          "seconds": 3.788
+        },
+        {
+          "lang": "en",
+          "text": "This is the place where we heard the secret piano sound.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "417f3f7de40d4490",
+          "seconds": 3.056
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 7.027,
+      "frames": 211
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "자정이 되었을 때가 바로 모든 네온사인이 빛나기 시작한 순간이다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "50cd02692b617cc0",
+          "seconds": 4.911
+        },
+        {
+          "lang": "en",
+          "text": "Midnight is the time when all the neon signs started to shine.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "a218c2e2d8004dea",
+          "seconds": 3.474
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 8.542,
+      "frames": 256
+    },
+    "s09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이것이 그 피아니스트가 매일 밤 홀로 연주했던 이유이다.",
+          "file": "parts/s09_01_kr.mp3",
+          "hash": "df2232e827e2fc14",
+          "seconds": 3.84
+        },
+        {
+          "lang": "en",
+          "text": "This is the reason why the pianist played alone every night.",
+          "file": "parts/s09_02_en.mp3",
+          "hash": "11dfa90318192bcc",
+          "seconds": 2.926
+        }
+      ],
+      "file": "s09.mp3",
+      "seconds": 6.922,
+      "frames": 208
+    },
+    "s10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀는 서재의 잠긴 문을 쉽게 여는 방법을 알고 있었다.",
+          "file": "parts/s10_01_kr.mp3",
+          "hash": "7ed1dc73b09113dc",
+          "seconds": 3.944
+        },
+        {
+          "lang": "en",
+          "text": "She knew how she could open the locked door easily.",
+          "file": "parts/s10_02_en.mp3",
+          "hash": "88067e074d05a4c2",
+          "seconds": 2.638
+        }
+      ],
+      "file": "s10.mp3",
+      "seconds": 6.74,
+      "frames": 202
+    },
+    "s11": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리가 다시 만날 그날이 오면, 더 놀라운 이야기들을 나누게 될 것이다.",
+          "file": "parts/s11_01_kr.mp3",
+          "hash": "daa3b08b30eebf48",
+          "seconds": 5.433
+        },
+        {
+          "lang": "en",
+          "text": "When the day comes when we meet again, we will share even more amazing stories.",
+          "file": "parts/s11_02_en.mp3",
+          "hash": "548e4dbfac5ddd32",
+          "seconds": 4.676
+        }
+      ],
+      "file": "s11.mp3",
+      "seconds": 10.266,
+      "frames": 308
+    },
+    "s12": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 비밀스러운 밤은 우리가 함께 새로운 추억을 만든 방식이었다.",
+          "file": "parts/s12_01_kr.mp3",
+          "hash": "41e0540f856c5277",
+          "seconds": 5.016
+        },
+        {
+          "lang": "en",
+          "text": "This secret night was how we created a new memory together.",
+          "file": "parts/s12_02_en.mp3",
+          "hash": "8a69a81e0b0cb74e",
+          "seconds": 3.37
+        }
+      ],
+      "file": "s12.mp3",
+      "seconds": 8.542,
+      "frames": 256
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "등위접속사 앤드, 벗, 오어는 단어와 단어, 문장과 문장을 대등하게 연결합니다.",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "b85ea8ee86001dcd",
+          "seconds": 7.184
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 7.184,
+      "frames": 216
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "종속접속사와 관계부사 Because, Where, When, Why, How는 문장에 이유, 시간, 장소의 깊이를 더해줍니다.",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "0e0af350a2103beb",
+          "seconds": 7.602
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 7.602,
+      "frames": 228
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "특히 더 way와 how는 중복해서 쓰지 않고, 둘 중 하나만 깔끔하게 사용하는 점을 꼭 기억해 주세요.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "c2c08cd4dc506a41",
+          "seconds": 7.967
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 7.967,
+      "frames": 239
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 배운 예문들을 입으로 소리 내어 연습해 보시고, 다음 17강 가정법 강좌에서 다시 뵙겠습니다. 수고하셨습니다!",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "1aaec53c93b82b46",
+          "seconds": 8.96
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 8.96,
+      "frames": 269
+    }
+  }
+}

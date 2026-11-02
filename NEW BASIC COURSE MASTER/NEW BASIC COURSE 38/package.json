@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-38",
+  "private": true,
+  "description": "Remotion project root for 19강 도치. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson19-Inversion out/lesson19.mp4"
+  }
+}

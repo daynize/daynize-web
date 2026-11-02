@@ -1,0 +1,194 @@
+[
+  {
+    "id": "i1a",
+    "scene": "intro",
+    "kr": "우리말은 “7시에 만나”, “월요일에 봐”, “여름에 가자”처럼 시공간에 똑같이 ‘~에’나 ‘~에서’를 붙입니다.",
+    "en": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "하지만 영어는 24시간이라는 확실한 시간의 기준점을 가지고 전치사를 세밀하게 다르게 씁니다.",
+    "en": null
+  },
+  {
+    "id": "i3",
+    "scene": "intro",
+    "kr": "그것을 알아야 영어의 기초가 됩니다. 바로 전치사 {p|at}, {p|on}, {p|in}입니다.",
+    "en": null
+  },
+  {
+    "id": "i4",
+    "scene": "intro",
+    "kr": "24시간을 기준으로 나뉘는 시공간의 나침반, 전치사입니다.",
+    "en": null
+  },
+  {
+    "id": "i5",
+    "scene": "intro",
+    "kr": "기준은 아주 명확합니다. 딱 하루, 정확히 24시간은 {p|on}을 씁니다.",
+    "en": null
+  },
+  {
+    "id": "i6",
+    "scene": "intro",
+    "kr": "월요일에({p|on Monday}), 생일에({p|on my birthday}), 크리스마스 날에({p|on Christmas Day})처럼 정확히 24시간 분량의 날짜입니다.",
+    "en": null
+  },
+  {
+    "id": "i7",
+    "scene": "intro",
+    "kr": "이 24시간보다 단 1초라도 적은 시간은 {p|at}을 씁니다. 콕 집어내는 점의 느낌이죠.",
+    "en": null
+  },
+  {
+    "id": "i8",
+    "scene": "intro",
+    "kr": "7시에({p|at 7 o’clock}), 정오에({p|at noon}), 밤에({p|at night})처럼 24시간보다 짧은 특정 시점입니다.",
+    "en": null
+  },
+  {
+    "id": "i9",
+    "scene": "intro",
+    "kr": "반대로 24시간보다 단 12초라도 많은 길고 넓은 시간은 {p|in}을 씁니다.",
+    "en": null
+  },
+  {
+    "id": "i10",
+    "scene": "intro",
+    "kr": "아침에({p|in the morning}), 이번 달에({p|in this month}), 여름에({p|in summer}), 2026년에({p|in 2026})처럼 24시간을 훌쩍 넘어가는 기간입니다.",
+    "en": null
+  },
+  {
+    "id": "i11",
+    "scene": "intro",
+    "kr": "아! 여기서 정말 중요한 꿀팁 하나! 아무리 짧은 시간이나 장소라도, 그 안의 ‘칸막이 공간’ 내부로 들어가면 무조건 {p|in}으로 변한다는 것도 꼭 기억해 두세요.",
+    "en": null
+  },
+  {
+    "id": "b1a",
+    "scene": "bridge",
+    "kr": "예를 들어, “나 월요일에 만나”라고 할 때,",
+    "en": null
+  },
+  {
+    "id": "b1b",
+    "scene": "bridge",
+    "kr": "{e|I meet him in Monday}라고 쓰면 24시간짜리 특정 하루를 긴 기간으로 착각해 아주 어색하고 틀린 표현이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b1c",
+    "scene": "bridge",
+    "kr": "월요일은 딱 24시간짜리 하루이므로 {e|I meet him on Monday}라고 써야 비로소 완성된 문장이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b2a",
+    "scene": "bridge",
+    "kr": "마찬가지로 7시는 24시간보다 훨씬 짧은 점이므로 {e|at 7 o’clock}, 한 달이나 일 년은 24시간보다 긴 기간이므로 {e|in May}가 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b2b",
+    "scene": "bridge",
+    "kr": "다시 한 번 말하자면,",
+    "en": null
+  },
+  {
+    "id": "b2c",
+    "scene": "bridge",
+    "kr": "24시간보다 적으면 {p|at}, 딱 24시간은 {p|on}, 24시간보다 많으면 {p|in}입니다.",
+    "en": null
+  },
+  {
+    "id": "b2d",
+    "scene": "bridge",
+    "kr": "따라서 시간의 길이에 맞게 전치사의 다리를 정확히 놓아주어야 합니다.",
+    "en": null
+  },
+  {
+    "id": "b3a",
+    "scene": "bridge",
+    "kr": "{e|I arrive in 7 o’clock}은 7시라는 넓은 기간 안에 도착한다는 어색한 문장이고,",
+    "en": null
+  },
+  {
+    "id": "b3b",
+    "scene": "bridge",
+    "kr": "{e|I arrive at 7 o’clock}은 7시라는 정확한 점에 도착한다는 올바른 문장입니다.",
+    "en": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "상쾌한 월요일 아침, 그는 기분 좋게 눈을 떴습니다.",
+    "en": "{p|On} {e|Monday} {e|morning,} {e|he} {e|woke} {e|up} {e|cheerfully.}"
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "24시간보다 긴 넓은 아침 시간 동안, 그는 약속 준비를 마쳤죠.",
+    "en": "{e|He} {e|prepared} {e|for} {e|his} {e|meeting} {p|in} {e|the} {e|morning.}"
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "그는 24시간보다 짧은 시점인 정오 12시에 친구를 만나기로 했습니다.",
+    "en": "{e|He} {e|agreed} {e|to} {e|meet} {e|his} {e|friend} {p|at} {e|noon.}"
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "약속 장소인 버스 정류장에서 조용히 친구를 기다렸습니다.",
+    "en": "{e|He} {e|waited} {e|quietly} {p|at} {e|the} {e|bus} {e|stop.}"
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "그리고 카페라는 칸막이 공간 안으로 함께 들어갔습니다.",
+    "en": "{e|They} {e|stepped} {p|into} {e|the} {e|cozy} {e|cafe.}"
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "테이블이라는 평평한 면 위에서 따뜻한 차를 함께 즐겼죠.",
+    "en": "{e|Warm} {e|tea} {e|was} {e|served} {p|on} {e|the} {e|table.}"
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "24시간보다 훨씬 길고 넓은 올여름은 그에게 잊지 못할 계절이 되었습니다.",
+    "en": "{e|This} {p|summer} {e|became} {e|an} {e|unforgettable} {e|season} {e|for} {e|him.}"
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "24시간보다 짧은 조용한 밤에, 그는 오늘의 추억을 담아 집으로 돌아왔습니다.",
+    "en": "{p|At} {e|night,} {e|he} {e|returned} {e|home} {e|with} {e|happy} {e|memories.}"
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘은 시간 전치사의 명확한 기준을 배웠습니다.",
+    "en": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "24시간보다 적으면 {p|at}, 딱 24시간은 {p|on}, 24시간보다 많으면 {p|in}! 그리고 칸막이 공간 속으로 들어가면 {p|in}이 된다는 원리를 꼭 기억하세요.",
+    "en": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+    "en": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "감사합니다.",
+    "en": null
+  }
+]

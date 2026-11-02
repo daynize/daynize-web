@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-23",
+  "private": true,
+  "description": "Remotion project root for 04강 동명사와 to부정사. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson04-GerundInfinitive out/lesson04.mp4"
+  }
+}

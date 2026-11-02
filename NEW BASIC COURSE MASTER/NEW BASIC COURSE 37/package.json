@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-37",
+  "private": true,
+  "description": "Remotion project root for 18강 조건문. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson18-Conditionals out/lesson18.mp4"
+  }
+}

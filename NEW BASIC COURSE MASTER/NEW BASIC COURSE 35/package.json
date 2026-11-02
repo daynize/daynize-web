@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-35",
+  "private": true,
+  "description": "Remotion project root for 16강 접속사 & 관계부사. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson16-Conjunctions out/lesson16.mp4"
+  }
+}

@@ -1,0 +1,198 @@
+[
+  {
+    "id": "i1",
+    "scene": "intro",
+    "kr": "16강, 접속사와 관계부사 총정리. 문장을 단단하고 풍성하게 이어주는 다리입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "단순히 문장을 이어주는 접속사부터, 장소, 시간, 이유, 방법의 정보로 문장을 다채롭게 꾸며주는 {y|관계부사}까지, 한 번에 정리합니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "a0",
+    "scene": "bridge",
+    "kr": "첫째, 3대 등위접속사입니다. {v|And}, {c|But}, {b|Or}.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "a1",
+    "scene": "bridge",
+    "kr": "{v|And}, 그리고, 하고. 내용의 덧붙임입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "a2",
+    "scene": "bridge",
+    "kr": "{c|But}, 하지만, 그러나. 앞뒤 내용의 반전입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "a3",
+    "scene": "bridge",
+    "kr": "{b|Or}, 또는, 아니면. 선택의 기로입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "b0",
+    "scene": "bridge",
+    "kr": "둘째, 종속접속사와 관계부사의 비밀입니다. 관계부사는 접속사 더하기 부사의 역할을 동시에 하면서, 앞선 명사, 즉 선행사를 뒤에서 부드럽게 설명해 주는 아주 편리한 연결 도구입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "b1",
+    "scene": "bridge",
+    "kr": "{p|Because}, 때문에. 확실한 원인과 이유입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "b2",
+    "scene": "bridge",
+    "kr": "{g|Where}, 장소, 하는 곳. {e|the place} {g|where}, 하는 그 장소입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "b3",
+    "scene": "bridge",
+    "kr": "{l|When}, 시간, 하는 때. {e|the time} {l|when}, 하는 그 시간입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "b4",
+    "scene": "bridge",
+    "kr": "{m|Why}, 이유, 하는 이유. {e|the reason} {m|why}, 하는 그 이유입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "b5",
+    "scene": "bridge",
+    "kr": "{y|How}, 방법, 하는 방식. {e|the way} 또는 {y|how}, 둘 중 하나만 쓰입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "그녀는 옛날 열쇠를 집어 들었고, 천천히 비밀 상자를 열었다.",
+    "en": "{e|She} {e|picked} {e|up} {e|the} {e|old} {e|key,} {v|and} {e|she} {e|slowly} {e|opened} {e|the} {e|secret} {e|box.}",
+    "say": null
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "문은 무거웠지만, 우리는 힘껏 당겨서 안으로 들어갔다.",
+    "en": "{e|The} {e|door} {e|was} {e|heavy,} {c|but} {e|we} {e|pulled} {e|it} {e|hard} {e|and} {e|went} {e|inside.}",
+    "say": null
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "너는 서재 안에 남아도 되고, 나와 함께 밖으로 나가도 된다.",
+    "en": "{e|You} {e|can} {e|stay} {e|inside} {e|the} {e|library,} {b|or} {e|you} {e|can} {e|go} {e|outside} {e|with} {e|me.}",
+    "say": null
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "피아노 소리는 멈췄지만, 그 울림은 여전히 방 안에 남아있었다.",
+    "en": "{e|The} {e|piano} {e|sound} {e|stopped,} {c|but} {e|its} {e|echo} {e|still} {e|remained} {e|in} {e|the} {e|room.}",
+    "say": null
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "우리는 오래된 일기장을 챙겼고, 조용히 카페 2층을 내려왔다.",
+    "en": "{e|We} {e|packed} {e|the} {e|ancient} {e|diary,} {v|and} {e|we} {e|quietly} {e|walked} {e|down} {e|from} {e|the} {e|second} {e|floor.}",
+    "say": null
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "그 음악이 내 마음을 울렸기 때문에, 나는 발걸음을 멈출 수밖에 없었다.",
+    "en": "{p|Because} {e|that} {e|music} {e|touched} {e|my} {e|heart,} {e|I} {e|had} {e|to} {e|stop} {e|my} {e|steps.}",
+    "say": null
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "이곳은 우리가 비밀 피아노 소리를 들었던 그 장소이다.",
+    "en": "{e|This} {e|is} {e|the} {e|place} {g|where} {e|we} {e|heard} {e|the} {e|secret} {e|piano} {e|sound.}",
+    "say": null
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "자정이 되었을 때가 바로 모든 네온사인이 빛나기 시작한 순간이다.",
+    "en": "{e|Midnight} {e|is} {e|the} {e|time} {l|when} {e|all} {e|the} {e|neon} {e|signs} {e|started} {e|to} {e|shine.}",
+    "say": null
+  },
+  {
+    "id": "s09",
+    "scene": "story",
+    "kr": "이것이 그 피아니스트가 매일 밤 홀로 연주했던 이유이다.",
+    "en": "{e|This} {e|is} {e|the} {e|reason} {m|why} {e|the} {e|pianist} {e|played} {e|alone} {e|every} {e|night.}",
+    "say": null
+  },
+  {
+    "id": "s10",
+    "scene": "story",
+    "kr": "그녀는 서재의 잠긴 문을 쉽게 여는 방법을 알고 있었다.",
+    "en": "{e|She} {e|knew} {y|how} {e|she} {e|could} {e|open} {e|the} {e|locked} {e|door} {e|easily.}",
+    "say": null
+  },
+  {
+    "id": "s11",
+    "scene": "story",
+    "kr": "우리가 다시 만날 그날이 오면, 더 놀라운 이야기들을 나누게 될 것이다.",
+    "en": "{e|When} {e|the} {e|day} {e|comes} {l|when} {e|we} {e|meet} {e|again,} {e|we} {e|will} {e|share} {e|even} {e|more} {e|amazing} {e|stories.}",
+    "say": null
+  },
+  {
+    "id": "s12",
+    "scene": "story",
+    "kr": "이 비밀스러운 밤은 우리가 함께 새로운 추억을 만든 방식이었다.",
+    "en": "{e|This} {e|secret} {e|night} {e|was} {y|how} {e|we} {e|created} {e|a} {e|new} {e|memory} {e|together.}",
+    "say": null
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "등위접속사 {v|And}, {c|But}, {b|Or}는 단어와 단어, 문장과 문장을 대등하게 연결합니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "종속접속사와 관계부사 {p|Because}, {g|Where}, {l|When}, {m|Why}, {y|How}는 문장에 이유, 시간, 장소의 깊이를 더해줍니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "특히 {e|the way}와 {y|how}는 중복해서 쓰지 않고, 둘 중 하나만 깔끔하게 사용하는 점을 꼭 기억해 주세요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "오늘 배운 예문들을 입으로 소리 내어 연습해 보시고, 다음 17강 가정법 강좌에서 다시 뵙겠습니다. 수고하셨습니다!",
+    "en": null,
+    "say": null
+  }
+]

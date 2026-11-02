@@ -1,0 +1,191 @@
+[
+  {
+    "id": "i1",
+    "scene": "intro",
+    "kr": "지난 17강에서는 현실과 반대로 상상해 보는 가정법을 배웠죠? 이번 시간에 다룰 {y|조건문}은 가정법과 비슷해 보이지만, 뉘앙스가 완전히 다릅니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "가정법이, 지금 안 그런데 만약 이라면 얼마나 좋을까? 하고 {y|가상의 세계}를 그려보는 거였다면,",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "i3",
+    "scene": "intro",
+    "kr": "조건문은, {y|만약 이렇게 한다면, 진짜로 이렇게 될 거야!} 하고, 충분히 일어날 수 있는 현실적인 조건과 결과를 말하는 거거든요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "b1",
+    "scene": "bridge",
+    "kr": "여기서 아주 재미있는 시제의 비밀이 하나 있습니다. 조건문에서는 아직 일어나지 않은 미래의 일이라도, {b|If}절 안에서는 미래시제 {p|will}을 쓰지 않고, {v|현재시제}를 씁니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "b2",
+    "scene": "bridge",
+    "kr": "조건이 성립하는 순간을 현재로 딱 잡아두고, 그 뒤에 나오는 결과 문장에 {p|will}이나 {p|can}을 붙여서, 앞으로 일어날 미래를 보여주는 거죠.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "c1",
+    "scene": "bridge",
+    "kr": "반면에 만약 하지 않는다면, 하고 반대로 조건을 걸 때는, {b|If} {g|not}을 줄여서 {c|Unless}라는 단어 하나로 부드럽게 표현할 수도 있습니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "d1",
+    "scene": "bridge",
+    "kr": "그럼 도심 동화 속 카페 2층 서재의 다음 이야기로 들어가 볼까요? 현실로 돌아온 우리가 앞으로 펼쳐질 일들을 전제로 이야기하는 문장들입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "d2",
+    "scene": "bridge",
+    "kr": "한글 의미를 먼저 마음에 새기시고, 영어 소리를 들어보세요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "p1",
+    "scene": "story",
+    "kr": "먼저 {b|If}를 써서 현실적인 조건과 미래 결과를 말하는 문장들입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "만약 네가 그 옛날 열쇠를 돌린다면, 잠긴 문이 스르륵 열릴 것이다.",
+    "en": "{e|If} {e|you} {v|turn} {e|that} {e|old} {e|key,} {e|the} {e|locked} {e|door} {p|will} {e|open} {e|softly.}",
+    "say": null
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "만약 밤 12시에 그 골목길을 지나간다면, 너는 피아노 소리를 들을 수 있을 것이다.",
+    "en": "{e|If} {e|you} {v|pass by} {e|the} {e|alley} {e|at} {e|midnight,} {e|you} {p|can} {e|hear} {e|the} {e|piano} {e|sound.}",
+    "say": null
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "만약 우리가 이 오래된 지도에 귀를 기울인다면, 비밀 서재의 위치를 찾게 될 것이다.",
+    "en": "{e|If} {e|we} {v|listen} {e|to} {e|this} {e|ancient} {e|map,} {e|we} {p|will} {e|find} {e|the} {e|secret} {e|library.}",
+    "say": null
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "만약 그녀가 다시 피아노를 연주한다면, 도심 전체가 밤의 마법에 빠질 것이다.",
+    "en": "{e|If} {e|she} {v|plays} {e|the} {e|piano} {e|again,} {e|the} {e|whole} {e|city} {p|will} {e|fall} {e|into} {e|night} {e|magic.}",
+    "say": null
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "만약 우리가 지금 출발한다면, 자정이 되기 전에 그 빌딩에 도착할 수 있다.",
+    "en": "{e|If} {e|we} {v|leave} {e|right} {e|now,} {e|we} {p|can} {e|arrive} {e|at} {e|that} {e|building} {e|before} {e|midnight.}",
+    "say": null
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "만약 네가 나와 함께 가겠다고 약속한다면, 내가 그 비밀 일기장을 보여줄게.",
+    "en": "{e|If} {e|you} {v|promise} {e|to} {e|go} {e|with} {e|me,} {e|I} {p|will} {e|show} {e|you} {e|the} {e|secret} {e|diary.}",
+    "say": null
+  },
+  {
+    "id": "p2",
+    "scene": "story",
+    "kr": "이번에는 만약 하지 않는다면을 뜻하는 {c|Unless} 표현들입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "만약 우리가 지금 서두르지 않는다면, 그 마지막 멜로디를 놓치게 될 것이다.",
+    "en": "{c|Unless} {e|we} {e|hurry} {e|right} {e|now,} {e|we} {p|will} {e|miss} {e|that} {e|last} {e|melody.}",
+    "say": null
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "만약 네가 용기를 내지 않는다면, 진실의 문은 절대 열리지 않을 것이다.",
+    "en": "{c|Unless} {e|you} {e|take} {e|courage,} {e|the} {e|door} {e|of} {e|truth} {p|will never} {e|open.}",
+    "say": null
+  },
+  {
+    "id": "s09",
+    "scene": "story",
+    "kr": "만약 비가 내리지 않는다면, 우리는 오늘 밤 다시 그 카페 2층으로 갈 것이다.",
+    "en": "{c|Unless} {e|it} {e|rains,} {e|we} {p|will} {e|go} {e|back} {e|to} {e|that} {e|second-floor} {e|cafe} {e|tonight.}",
+    "say": null
+  },
+  {
+    "id": "s10",
+    "scene": "story",
+    "kr": "만약 우리가 조용히 하지 않는다면, 도시의 정령이 순식간에 사라져 버릴지도 모른다.",
+    "en": "{c|Unless} {e|we} {e|stay} {e|quiet,} {e|the} {e|spirit} {e|of} {e|the} {e|city} {p|might} {e|vanish} {e|in} {e|a} {e|second.}",
+    "say": null
+  },
+  {
+    "id": "s11",
+    "scene": "story",
+    "kr": "만약 그 음악이 멈추지 않는다면, 우리는 밤새 그 골목에 머물게 될 것이다.",
+    "en": "{c|Unless} {e|the} {e|music} {e|stops,} {e|we} {p|will} {e|stay} {e|in} {e|that} {e|alley} {e|all} {e|night} {e|long.}",
+    "say": null
+  },
+  {
+    "id": "s12",
+    "scene": "story",
+    "kr": "만약 네가 비밀을 지키지 않는다면, 다시는 이 마법 같은 경험을 할 수 없을 것이다.",
+    "en": "{c|Unless} {e|you} {e|keep} {e|the} {e|secret,} {e|you} {p|will never} {e|experience} {e|this} {e|magic} {e|again.}",
+    "say": null
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘 배운 조건문의 핵심, 딱 두 가지만 정리해 볼까요?",
+    "en": null,
+    "say": "오늘 배운 조건문의 핵심, 딱 두 가지만 정리해 볼까요."
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "첫째, 조건문은 가상이 아니라, {y|실제로 일어날 법한 현실의 조건과 결과}를 말한다는 점입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "둘째, {b|If}절 안에서는 미래 일이라도 {v|현재시제}를 쓰고, 부정 조건은 {c|Unless} 하나로 깔끔하게 처리한다는 사실입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "오늘 배운 12개 문장을, 한글 해석부터 천천히 스며들게 하면서, 입으로 직접 소리 내어 중얼거려 보세요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o5",
+    "scene": "outro",
+    "kr": "다음 19강에서는 문장의 분위기를 단번에 반전시키는 {y|도치}, {e|Inversion} 표현으로 찾아오겠습니다. 수고 많으셨습니다!",
+    "en": null,
+    "say": null
+  }
+]

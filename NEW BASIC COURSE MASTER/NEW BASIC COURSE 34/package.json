@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-34",
+  "private": true,
+  "description": "Remotion project root for 15강 much vs more, 스머프 강조법, 최상급. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson15-Superlatives out/lesson15.mp4"
+  }
+}

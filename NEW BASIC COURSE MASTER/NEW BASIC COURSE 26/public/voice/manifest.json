@@ -1,0 +1,745 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리말은 “나 참 지루해”라고 할 때나 “그 영화 진짜 지루해”라고 할 때 똑같이 ‘지루하다’라는 말을 씁니다.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "18ab4409d2953a03",
+          "seconds": 7.941
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 7.941,
+      "frames": 238
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "하지만 영어는 주체가 감정을 직접 느끼는지, 아니면 그 감정을 밖으로 내뿜어 남에게 주는지에 따라 단어의 모양을 완전히 다르게 씁니다.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "d92d1bba4eb9bbac",
+          "seconds": 10.893
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 10.893,
+      "frames": 327
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것을 알아야 영어의 기초가 됩니다. 바로 감정형용사의",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "76067b98747da40e",
+          "seconds": 5.695
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/i3_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 0.784
+        },
+        {
+          "lang": "kr",
+          "text": "와",
+          "file": "parts/i3_03_kr.mp3",
+          "hash": "b6536b50ed87f7ff",
+          "seconds": 0.784
+        },
+        {
+          "lang": "en",
+          "text": "-ed",
+          "file": "parts/i3_04_en.mp3",
+          "hash": "4600df7d02bbe422",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/i3_05_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 1.071
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 9.665,
+      "frames": 290
+    },
+    "i4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "사람의 마음을 흔드는 감정의 화살표, 감정형용사입니다.",
+          "file": "parts/i4_01_kr.mp3",
+          "hash": "c0be0d9dd9c6e2f0",
+          "seconds": 5.016
+        }
+      ],
+      "file": "i4.mp3",
+      "seconds": 5.016,
+      "frames": 150
+    },
+    "i5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "현재분사(",
+          "file": "parts/i5_01_kr.mp3",
+          "hash": "ed2568e0e7584c68",
+          "seconds": 1.202
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/i5_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": ")는 감정을 밖으로 내뿜어 남에게 전달하는 에너지를 가진 형용사입니다.",
+          "file": "parts/i5_03_kr.mp3",
+          "hash": "9ab666cf251634d1",
+          "seconds": 5.46
+        }
+      ],
+      "file": "i5.mp3",
+      "seconds": 8.02,
+      "frames": 241
+    },
+    "i6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "지루함을 주는(",
+          "file": "parts/i6_01_kr.mp3",
+          "hash": "2735c5aa940498e5",
+          "seconds": 1.384
+        },
+        {
+          "lang": "en",
+          "text": "BORING",
+          "file": "parts/i6_02_en.mp3",
+          "hash": "5609badd5e59c452",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "), 흥미를 유발하는(",
+          "file": "parts/i6_03_kr.mp3",
+          "hash": "7ee5b91b1453d59e",
+          "seconds": 1.75
+        },
+        {
+          "lang": "en",
+          "text": "INTERESTING",
+          "file": "parts/i6_04_en.mp3",
+          "hash": "3b4f4b465c29cd12",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": "), 놀라움을 선사하는(",
+          "file": "parts/i6_05_kr.mp3",
+          "hash": "85eec0cc1fe73c42",
+          "seconds": 1.62
+        },
+        {
+          "lang": "en",
+          "text": "SURPRISING",
+          "file": "parts/i6_06_en.mp3",
+          "hash": "d51697f147565b2f",
+          "seconds": 1.254
+        },
+        {
+          "lang": "kr",
+          "text": "), 신나게 만드는(",
+          "file": "parts/i6_07_kr.mp3",
+          "hash": "8f8916d732ebbba0",
+          "seconds": 1.62
+        },
+        {
+          "lang": "en",
+          "text": "EXCITING",
+          "file": "parts/i6_08_en.mp3",
+          "hash": "f9a6b623b83a108c",
+          "seconds": 1.097
+        },
+        {
+          "lang": "kr",
+          "text": ") 단어들입니다.",
+          "file": "parts/i6_09_kr.mp3",
+          "hash": "95a5a18cc0adc487",
+          "seconds": 1.202
+        }
+      ],
+      "file": "i6.mp3",
+      "seconds": 13.296,
+      "frames": 399
+    },
+    "i7": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "과거분사(",
+          "file": "parts/i7_01_kr.mp3",
+          "hash": "aee4bebc9d286873",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "-ed",
+          "file": "parts/i7_02_en.mp3",
+          "hash": "4600df7d02bbe422",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": ")는 외부의 영향으로 그 감정을 직접 받아서 느끼는 형용사입니다.",
+          "file": "parts/i7_03_kr.mp3",
+          "hash": "5cd5c353e45ab7cc",
+          "seconds": 5.512
+        }
+      ],
+      "file": "i7.mp3",
+      "seconds": 8.15,
+      "frames": 245
+    },
+    "i8": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "지루함을 느낀(",
+          "file": "parts/i8_01_kr.mp3",
+          "hash": "4a8539718a26d079",
+          "seconds": 1.28
+        },
+        {
+          "lang": "en",
+          "text": "BORED",
+          "file": "parts/i8_02_en.mp3",
+          "hash": "3d23edad6dd0cd85",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": "), 흥미를 느끼게 된(",
+          "file": "parts/i8_03_kr.mp3",
+          "hash": "81e907cfb56fc930",
+          "seconds": 1.672
+        },
+        {
+          "lang": "en",
+          "text": "INTERESTED",
+          "file": "parts/i8_04_en.mp3",
+          "hash": "89f0ff4ed639f6be",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": "), 깜짝 놀란(",
+          "file": "parts/i8_05_kr.mp3",
+          "hash": "520848aaff57ae0d",
+          "seconds": 1.437
+        },
+        {
+          "lang": "en",
+          "text": "SURPRISED",
+          "file": "parts/i8_06_en.mp3",
+          "hash": "5e5a9c4b8f6f03ab",
+          "seconds": 1.149
+        },
+        {
+          "lang": "kr",
+          "text": "), 신이 난(",
+          "file": "parts/i8_07_kr.mp3",
+          "hash": "032b77d28fef7dc2",
+          "seconds": 1.097
+        },
+        {
+          "lang": "en",
+          "text": "EXCITED",
+          "file": "parts/i8_08_en.mp3",
+          "hash": "199a7e2a86acb0c5",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": ") 단어들입니다.",
+          "file": "parts/i8_09_kr.mp3",
+          "hash": "95a5a18cc0adc487",
+          "seconds": 1.332
+        }
+      ],
+      "file": "i8.mp3",
+      "seconds": 12.225,
+      "frames": 367
+    },
+    "b1a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "예를 들어, 내가 지루함을 느껴서 “나 너무 심심하고 지루해”라고 말할 때,",
+          "file": "parts/b1a_01_kr.mp3",
+          "hash": "69a8b0765cc7b4a6",
+          "seconds": 5.851
+        }
+      ],
+      "file": "b1a.mp3",
+      "seconds": 5.851,
+      "frames": 176
+    },
+    "b1b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "I am boring",
+          "file": "parts/b1b_01_en.mp3",
+          "hash": "17c61bedb0b77efd",
+          "seconds": 1.097
+        },
+        {
+          "lang": "kr",
+          "text": "이라고 쓰면 “나는 남을 지루하게 만드는 아주 따분한 사람이다”라는 완전히 엉뚱하고 자학적인 표현이 됩니다.",
+          "file": "parts/b1b_02_kr.mp3",
+          "hash": "7d68baf62e60fcaf",
+          "seconds": 10.292
+        }
+      ],
+      "file": "b1b.mp3",
+      "seconds": 11.572,
+      "frames": 347
+    },
+    "b1c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "내가 그 감정을 받아 느낀 것이므로",
+          "file": "parts/b1c_01_kr.mp3",
+          "hash": "459df4527d6029d5",
+          "seconds": 2.586
+        },
+        {
+          "lang": "en",
+          "text": "I am bored",
+          "file": "parts/b1c_02_en.mp3",
+          "hash": "9d63857e2c50532a",
+          "seconds": 1.149
+        },
+        {
+          "lang": "kr",
+          "text": "라고 써야 비로소 완성된 문장이 됩니다.",
+          "file": "parts/b1c_03_kr.mp3",
+          "hash": "a32f42a5c03716ed",
+          "seconds": 2.952
+        }
+      ],
+      "file": "b1c.mp3",
+      "seconds": 7.027,
+      "frames": 211
+    },
+    "b2a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다시 한 번 말하자면,",
+          "file": "parts/b2a_01_kr.mp3",
+          "hash": "1993970729239591",
+          "seconds": 1.62
+        }
+      ],
+      "file": "b2a.mp3",
+      "seconds": 1.62,
+      "frames": 49
+    },
+    "b2b": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감정을 내뿜는 원인에는",
+          "file": "parts/b2b_01_kr.mp3",
+          "hash": "e3cd32757d2c5688",
+          "seconds": 2.22
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/b2b_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": ", 그 감정을 받아서 느끼는 사람에게는",
+          "file": "parts/b2b_03_kr.mp3",
+          "hash": "04027f1fcea1a7f4",
+          "seconds": 3.161
+        },
+        {
+          "lang": "en",
+          "text": "-ed",
+          "file": "parts/b2b_04_en.mp3",
+          "hash": "4600df7d02bbe422",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "를 씁니다.",
+          "file": "parts/b2b_05_kr.mp3",
+          "hash": "8171ba6dc4e65252",
+          "seconds": 1.149
+        }
+      ],
+      "file": "b2b.mp3",
+      "seconds": 8.96,
+      "frames": 269
+    },
+    "b2c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "따라서 감정의 화살표가 어디로 향하는지 정확히 다리를 놓아주어야 합니다.",
+          "file": "parts/b2c_01_kr.mp3",
+          "hash": "2d8b2cc6f8326b85",
+          "seconds": 6.217
+        }
+      ],
+      "file": "b2c.mp3",
+      "seconds": 6.217,
+      "frames": 187
+    },
+    "b3a": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "The movie was bored",
+          "file": "parts/b3a_01_en.mp3",
+          "hash": "6444dea7634e3257",
+          "seconds": 1.515
+        },
+        {
+          "lang": "kr",
+          "text": "는 그 영화가 지루함을 느꼈다는 어색한 문장이고,",
+          "file": "parts/b3a_02_kr.mp3",
+          "hash": "2119d77b05efc1f2",
+          "seconds": 3.422
+        }
+      ],
+      "file": "b3a.mp3",
+      "seconds": 5.12,
+      "frames": 154
+    },
+    "b3b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "The movie was boring",
+          "file": "parts/b3b_01_en.mp3",
+          "hash": "a1e338f28479c92b",
+          "seconds": 1.672
+        },
+        {
+          "lang": "kr",
+          "text": "은 그 영화가 지루함을 주는 영화였다는 올바른 문장입니다.",
+          "file": "parts/b3b_02_kr.mp3",
+          "hash": "12068d71e68db300",
+          "seconds": 4.127
+        }
+      ],
+      "file": "b3b.mp3",
+      "seconds": 5.956,
+      "frames": 179
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "주말 아침, 그는 도심에서 열린 아주 흥미로운 전시회 소식을 들었습니다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "886e148421ba2863",
+          "seconds": 5.381
+        },
+        {
+          "lang": "en",
+          "text": "He heard about a very interesting exhibition in the city.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "1531f3b795b4b49f",
+          "seconds": 3.161
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 8.699,
+      "frames": 261
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그 새로운 소식에 그는 마음이 몹시 신나고 설레었죠.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "9fddff7a884e9fb5",
+          "seconds": 3.239
+        },
+        {
+          "lang": "en",
+          "text": "He felt extremely excited about the news.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "988dc45fd6460aeb",
+          "seconds": 2.586
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 6.008,
+      "frames": 180
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "전시장 안으로 들어서자, 놀라운 예술 작품들이 눈앞에 펼쳐졌습니다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "f57df87a3efc0322",
+          "seconds": 5.851
+        },
+        {
+          "lang": "en",
+          "text": "Surprising artworks unfolded before his eyes.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "a865324241a63b98",
+          "seconds": 2.873
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 8.882,
+      "frames": 266
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "작품의 웅장함에 그는 입을 벌린 채 깊이 놀랐습니다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "5cdbcb9985b81ee2",
+          "seconds": 4.18
+        },
+        {
+          "lang": "en",
+          "text": "He was completely surprised by the grandeur of the art.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "474b4a03e9dfc734",
+          "seconds": 3.004
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 7.34,
+      "frames": 220
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "지루할 틈이 전혀 없는 정말 감동적인 순간이었죠.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "4dc7690ad2df8842",
+          "seconds": 3.579
+        },
+        {
+          "lang": "en",
+          "text": "It was a touching moment with no boring second.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "a781a403c79e936f",
+          "seconds": 2.873
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 6.609,
+      "frames": 198
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오랫동안 거리를 거닐었기에 몸은 조금 피곤해졌지만,",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "ff9da88ab1f40f6d",
+          "seconds": 4.859
+        },
+        {
+          "lang": "en",
+          "text": "Although he felt a bit tired from walking,",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "17f62dcca21851ba",
+          "seconds": 2.273
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 7.288,
+      "frames": 219
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그의 마음만은 깊은 만족감으로 가득 차 있었습니다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "555166e85c8b4c73",
+          "seconds": 3.579
+        },
+        {
+          "lang": "en",
+          "text": "His heart was filled with a satisfying warmth.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "db25fc40e405b6a6",
+          "seconds": 2.769
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 6.504,
+      "frames": 195
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "집으로 돌아오는 길, 그는 오늘 하루가 선물해 준 감동에 깊이 감사했습니다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "5080b2ebe97daf1b",
+          "seconds": 5.46
+        },
+        {
+          "lang": "en",
+          "text": "He was deeply moved by the memories of the day.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "88cba8c39953e44e",
+          "seconds": 2.691
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 8.307,
+      "frames": 249
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘은 감정을 표현하는 형용사,",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "5d61915239fec9aa",
+          "seconds": 2.743
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/o1_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": "와",
+          "file": "parts/o1_03_kr.mp3",
+          "hash": "b6536b50ed87f7ff",
+          "seconds": 0.784
+        },
+        {
+          "lang": "en",
+          "text": "-ed",
+          "file": "parts/o1_04_en.mp3",
+          "hash": "4600df7d02bbe422",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "의 차이를 배웠습니다.",
+          "file": "parts/o1_05_kr.mp3",
+          "hash": "f8f79deb7ea7a706",
+          "seconds": 1.489
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 7.445,
+      "frames": 223
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감정을 밖으로 뿜어내면",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "3982f2a567a9c097",
+          "seconds": 2.09
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/o2_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ", 그 감정을 내 마음으로 받아 느끼면",
+          "file": "parts/o2_03_kr.mp3",
+          "hash": "dc76c3d26dd68fcf",
+          "seconds": 2.952
+        },
+        {
+          "lang": "en",
+          "text": "-ed",
+          "file": "parts/o2_04_en.mp3",
+          "hash": "4600df7d02bbe422",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "라는 공식, 꼭 기억하세요.",
+          "file": "parts/o2_05_kr.mp3",
+          "hash": "f2f24f851bd9b322",
+          "seconds": 2.22
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 9.744,
+      "frames": 292
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "7504c05925950cfa",
+          "seconds": 3.997
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 3.997,
+      "frames": 120
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감사합니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "529f016c9727d15d",
+          "seconds": 1.28
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 1.28,
+      "frames": 38
+    }
+  }
+}

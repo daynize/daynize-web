@@ -1,0 +1,236 @@
+[
+  {
+    "id": "i1",
+    "scene": "intro",
+    "kr": "우리말은 “그녀는 달린다”라고도 하지만, “그녀는 {v|빠르게} 달린다”처럼 행동을 더 생생하게 꾸며줍니다.",
+    "en": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "영어에서도 동사나 형용사, 혹은 문장 전체에 양념을 쳐서 뜻을 풍성하게 만들어주는 특별한 단어들이 있습니다.",
+    "en": null
+  },
+  {
+    "id": "i3",
+    "scene": "intro",
+    "kr": "그것을 알아야 영어의 기초가 됩니다. 바로 {v|부사}, {v|Adverb}입니다.",
+    "en": null
+  },
+  {
+    "id": "i4",
+    "scene": "intro",
+    "kr": "밋밋한 문장에 감칠맛을 더해주는 만능 양념장, {v|부사}입니다.",
+    "en": null
+  },
+  {
+    "id": "i5",
+    "scene": "intro",
+    "kr": "명사를 직접 꾸미는 {p|형용사}와 달리,",
+    "en": null
+  },
+  {
+    "id": "i6",
+    "scene": "intro",
+    "kr": "{v|부사}는 동사가 어떻게 일어나는지, 빠르게, 천천히,",
+    "en": null
+  },
+  {
+    "id": "i7",
+    "scene": "intro",
+    "kr": "형용사가 얼마나 강력한지, 매우, 정말로,",
+    "en": null
+  },
+  {
+    "id": "i8",
+    "scene": "intro",
+    "kr": "그리고 문장 전체의 분위기를 다채롭게 꾸며줍니다.",
+    "en": null
+  },
+  {
+    "id": "t1",
+    "scene": "bridge",
+    "kr": "보통은 {p|형용사} 뒤에 {e|-ly}를 붙이면 {v|부사}가 됩니다.",
+    "en": null
+  },
+  {
+    "id": "t2",
+    "scene": "bridge",
+    "kr": "하지만 여기서 수많은 영어 학습자들이 헷갈려하는 치명적인 예외 2가지가 있습니다!",
+    "en": null
+  },
+  {
+    "id": "a1",
+    "scene": "bridge",
+    "kr": "함정 1! {e|-ly}가 없어도 형용사와 부사 형태가 똑같은 단어들입니다.",
+    "en": null
+  },
+  {
+    "id": "a2",
+    "scene": "bridge",
+    "kr": "{e|-ly}를 붙이지 않고 모양 그대로 형용사와 부사 역할을 모두 하는 단어들이 있습니다.",
+    "en": null
+  },
+  {
+    "id": "f1",
+    "scene": "bridge",
+    "kr": "{e|FAST}. ‘빠른’도 {e|fast}, ‘빠르게’도 {e|fast}입니다.",
+    "en": null
+  },
+  {
+    "id": "f2",
+    "scene": "bridge",
+    "kr": "{e|fastly}라는 단어는 존재하지 않습니다!",
+    "en": null
+  },
+  {
+    "id": "h1",
+    "scene": "bridge",
+    "kr": "{e|HARD}. ‘단단한’, ‘어려운’도 {e|hard}, ‘열심히’, ‘단단하게’도 {e|hard}입니다.",
+    "en": null
+  },
+  {
+    "id": "l1",
+    "scene": "bridge",
+    "kr": "{e|LATE}. ‘늦은’도 {e|late}, ‘늦게’도 {e|late}입니다.",
+    "en": null
+  },
+  {
+    "id": "l2",
+    "scene": "bridge",
+    "kr": "{e|lately}는 ‘최근에’라는 전혀 다른 뜻이 됩니다!",
+    "en": null
+  },
+  {
+    "id": "e1",
+    "scene": "bridge",
+    "kr": "{e|EARLY}. ‘이른’도 {e|early}, ‘일찍’도 {e|early}입니다.",
+    "en": null
+  },
+  {
+    "id": "c1",
+    "scene": "bridge",
+    "kr": "함정 2! {e|-ly}가 붙었는데 부사가 아니라 {p|형용사}인 단어들입니다.",
+    "en": null
+  },
+  {
+    "id": "c2",
+    "scene": "bridge",
+    "kr": "명사 뒤에 {e|-ly}가 붙으면 부사가 아니라 명사를 꾸며주는 {p|형용사}가 됩니다!",
+    "en": null
+  },
+  {
+    "id": "y1",
+    "scene": "bridge",
+    "kr": "{e|FRIENDLY}. 친구 같은, 친근한 {p|형용사}입니다.",
+    "en": null
+  },
+  {
+    "id": "y2",
+    "scene": "bridge",
+    "kr": "{e|LOVELY}. 사랑스러운, {p|형용사}입니다.",
+    "en": null
+  },
+  {
+    "id": "y3",
+    "scene": "bridge",
+    "kr": "{e|LONELY}. 외로운, {p|형용사}입니다.",
+    "en": null
+  },
+  {
+    "id": "y4",
+    "scene": "bridge",
+    "kr": "이 단어들은 모양만 보고 부사라고 착각하기 쉽지만, 명사를 꾸며주는 어엿한 {p|형용사}들입니다!",
+    "en": null
+  },
+  {
+    "id": "w1",
+    "scene": "bridge",
+    "kr": "예를 들어, “그는 일을 열심히 한다”라고 할 때",
+    "en": null
+  },
+  {
+    "id": "w2",
+    "scene": "bridge",
+    "kr": "{e|He works hardly}라고 쓰면 “그는 거의 일을 하지 않는다”라는 완전히 반대의 부정적인 뜻이 되어 버립니다.",
+    "en": null
+  },
+  {
+    "id": "w3",
+    "scene": "bridge",
+    "kr": "‘열심히’라는 뜻의 {v|부사}는 그대로 {e|hard}를 써서 {e|He works hard}라고 해야 비로소 올바른 표현이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "w4",
+    "scene": "bridge",
+    "kr": "마찬가지로 “그녀는 빠르게 달린다”라고 할 때",
+    "en": null
+  },
+  {
+    "id": "w5",
+    "scene": "bridge",
+    "kr": "{e|She runs fastly}가 아니라 {e|She runs fast}라고 써야 합니다.",
+    "en": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "따스한 아침 햇살 아래, 그녀는 친근한 바리스타에게 밝게 인사를 건넸습니다.",
+    "en": "{e|She} {e|greeted} {e|a} {p|friendly} {e|barista} {v|brightly} {e|in} {e|the} {e|morning.}"
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "커피를 마신 후, 그녀는 일찍 약속 장소로 향하기 위해 빠르게 걸었습니다.",
+    "en": "{e|She} {e|walked} {v|fast} {e|to} {e|arrive} {v|early} {e|for} {e|her} {e|meeting.}"
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "약속 장소에서는 한 남자가 그녀를 위해 열심히 프로젝트를 준비하고 있었죠.",
+    "en": "{e|A} {e|man} {e|was} {e|working} {v|hard} {e|for} {e|her} {e|project.}"
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "비록 약속 시간이 조금 늦게 시작되었지만, 두 사람의 대화는 매우 즐거웠습니다.",
+    "en": "{e|Although} {e|the} {e|meeting} {e|started} {v|late,} {e|they} {e|had} {e|a} {e|very} {p|lovely} {e|time.}"
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "마침내 두 사람은 마음에 품었던 생각을 서로에게 솔직하게 털어놓았습니다.",
+    "en": "{v|Finally,} {e|they} {e|shared} {e|their} {e|thoughts} {v|honestly} {e|with} {e|each} {e|other.}"
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘은 행동과 상태를 꾸며주는 {v|부사}, 그리고 {e|-ly}가 없어도 {v|부사}인 {v|fast}, {v|hard}, {v|late}와,",
+    "en": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "{e|-ly}가 붙어도 {p|형용사}인 {p|friendly}, {p|lovely}의 차이를 배웠습니다.",
+    "en": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "형태의 함정에 속지 않는 직관을 꼭 기억하세요.",
+    "en": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+    "en": null
+  },
+  {
+    "id": "o5",
+    "scene": "outro",
+    "kr": "감사합니다.",
+    "en": null
+  }
+]

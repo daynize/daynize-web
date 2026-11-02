@@ -1,0 +1,194 @@
+[
+  {
+    "id": "i1",
+    "scene": "intro",
+    "kr": "두 대상을 비교할 때 우리는 보통 “보다 더 한”이라는 표현을 씁니다.",
+    "en": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "그런데 영어에서 비교급, 즉 {v|-er}을 붙일지, {p|more}를 붙일지 결정하는 절대적인 기준은 바로 {y|음절}, {e|Syllable}입니다.",
+    "en": null
+  },
+  {
+    "id": "a1",
+    "scene": "bridge",
+    "kr": "먼저 기본기입니다. 많은 분들이 글자 수만 보고 음절을 오해하곤 합니다. 하지만 영어에서 음절은 글자의 개수가 아니라, {y|모음 소리가 몇 번 들리는가}입니다.",
+    "en": null
+  },
+  {
+    "id": "a2",
+    "scene": "bridge",
+    "kr": "핵심 원칙, 영어에서 {y|으 발음}은 소리, 즉 음절이 아닙니다!",
+    "en": null
+  },
+  {
+    "id": "a3",
+    "scene": "bridge",
+    "kr": "{b|Old}, 올드. 한국어로 쓰면 올드, 두 글자 같지만, 영어의 {e|d}에는 모음 소리가 없습니다. 으 소리는 껍데기일 뿐입니다. 모음 소리가 하나뿐이므로 {y|1음절}입니다.",
+    "en": null
+  },
+  {
+    "id": "a4",
+    "scene": "bridge",
+    "kr": "{b|Pretty}, 프리티. 한국어로는 프리티, 세 글자처럼 느껴지지만, 실제 모음 소리는 {b|Pre}와 {b|tty}, 2개뿐입니다. 따라서 3음절이 아니라 {y|2음절}입니다.",
+    "en": null
+  },
+  {
+    "id": "r1",
+    "scene": "bridge",
+    "kr": "음절에 따른 비교급 규칙입니다. 첫째, 1음절 단어와 짧은 2음절 단어는 뒤에 {v|-er}을 붙입니다.",
+    "en": null
+  },
+  {
+    "id": "r2",
+    "scene": "bridge",
+    "kr": "둘째, 3음절 이상 단어는 앞에 {p|more}를 붙입니다.",
+    "en": null
+  },
+  {
+    "id": "b1",
+    "scene": "bridge",
+    "kr": "두 번째 핵심 뉘앙스입니다. 비교급 뒤에는 기준이 되는 대상을 가리키는 {l|than}, 보다가 따라옵니다.",
+    "en": null
+  },
+  {
+    "id": "b2",
+    "scene": "bridge",
+    "kr": "그리고 비교의 차이를 강조하거나 부드럽게 만들 때는, 비교급 앞에 강조 어휘를 붙여줍니다.",
+    "en": null
+  },
+  {
+    "id": "b3",
+    "scene": "bridge",
+    "kr": "훨씬 더 한, 강조할 때는 {c|much}, {c|even}, {c|far} 더하기 비교급입니다.",
+    "en": null
+  },
+  {
+    "id": "b4",
+    "scene": "bridge",
+    "kr": "조금 더 한, 부드러운 차이는 {g|a little}, {g|slightly} 더하기 비교급입니다.",
+    "en": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "이 비밀 서재는 밖에서 보던 골목길보다 훨씬 더 오래되었다.",
+    "en": "{e|This} {e|secret} {e|library} {e|is} {v|much older} {e|than} {e|the} {e|alley} {e|outside.}"
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "2층에서 들려오는 피아노 소리가 아까보다 더 명확해진다.",
+    "en": "{e|The} {e|piano} {e|sound} {e|from} {e|the} {e|second} {e|floor} {e|becomes} {v|clearer} {e|than} {e|before.}"
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "이 오래된 책장이 저 현대적인 스피커보다 더 크게 보인다.",
+    "en": "{e|This} {e|old} {e|bookshelf} {e|looks} {v|bigger} {e|than} {e|that} {e|modern} {e|speaker.}"
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "방 안의 은빛 조명이 밤하늘의 달보다 더 밝게 빛난다.",
+    "en": "{e|The} {e|silver} {e|light} {e|in} {e|the} {e|room} {e|shines} {v|brighter} {e|than} {e|the} {e|moon} {e|in} {e|the} {e|night} {e|sky.}"
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "그녀의 걸음걸이가 바람 소리보다 더 가벼워진다.",
+    "en": "{e|Her} {e|footsteps} {e|become} {v|lighter} {e|than} {e|the} {e|sound} {e|of} {e|the} {e|wind.}"
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "이 오래된 일기장이 생각했던 것보다 훨씬 더 무겁다.",
+    "en": "{e|This} {e|ancient} {e|diary} {e|is} {v|much heavier} {e|than} {e|I} {e|thought.}"
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "이곳의 분위기는 도심의 카페보다 훨씬 더 신비롭다.",
+    "en": "{e|The} {e|atmosphere} {e|here} {e|is} {p|far more mysterious} {e|than} {e|a} {e|downtown} {e|cafe.}"
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "벽에 걸린 붉은 그림이 실물보다 더 아름답게 보인다.",
+    "en": "{e|The} {e|red} {e|painting} {e|on} {e|the} {e|wall} {e|looks} {p|more beautiful} {e|than} {e|real} {e|life.}"
+  },
+  {
+    "id": "s09",
+    "scene": "story",
+    "kr": "이 공간을 탐험하는 것이 평범한 일상보다 훨씬 더 흥미진진하다.",
+    "en": "{e|Exploring} {e|this} {e|space} {e|is} {p|even more exciting} {e|than} {e|daily} {e|routine.}"
+  },
+  {
+    "id": "s10",
+    "scene": "story",
+    "kr": "피아니스트의 비밀은 우리가 상상했던 것보다 더 복잡하다.",
+    "en": "{e|The} {e|pianist's} {e|secret} {e|is} {p|more complicated} {e|than} {e|we} {e|imagined.}"
+  },
+  {
+    "id": "s11",
+    "scene": "story",
+    "kr": "이 마법 같은 밤이 어제보다 훨씬 더 값지게 느껴진다.",
+    "en": "{e|This} {e|magical} {e|night} {e|feels} {p|much more valuable} {e|than} {e|yesterday.}"
+  },
+  {
+    "id": "s12",
+    "scene": "story",
+    "kr": "진실에 가까워질수록 모든 순간이 이전보다 더 위험해진다.",
+    "en": "{e|As} {e|we} {e|get} {e|closer} {e|to} {e|the} {e|truth,} {e|every} {e|moment} {e|becomes} {p|more dangerous} {e|than} {e|before.}"
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘 배운 비교급의 핵심, 딱 두 가지만 정리해 볼까요?",
+    "en": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "첫째, 비교급의 형태, {v|-er}을 쓸지 {p|more}를 쓸지 결정하는 것은 글자 수가 아니라 {y|모음 소리의 개수}, 음절입니다.",
+    "en": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "한국어의 으 발음은 영어에서 소리가 아니라는 점, 절대 잊지 마세요. {b|old}는 1음절, {b|pretty}는 2음절입니다.",
+    "en": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "둘째, 비교급은 단순히 두 대상을 겨루는 것이 아니라, 문장에 {y|격차와 입체감}을 주는 도구입니다.",
+    "en": null
+  },
+  {
+    "id": "o5",
+    "scene": "outro",
+    "kr": "{c|much}나 {c|even} 같은 단어를 덧붙여 소리의 깊이를 더해 보세요.",
+    "en": null
+  },
+  {
+    "id": "o6",
+    "scene": "outro",
+    "kr": "비밀 서재의 불빛이 밖보다 더 밝게 빛나듯, 여러분의 영어 문장도 오늘 배운 비교급을 통해 훨씬 더 풍성해질 것입니다.",
+    "en": null
+  },
+  {
+    "id": "o7",
+    "scene": "outro",
+    "kr": "오늘 배운 12개의 도심 동화 예문들을 한글 의미부터 천천히 느끼며 직접 소리 내어 연습해 보세요.",
+    "en": null
+  },
+  {
+    "id": "o8",
+    "scene": "outro",
+    "kr": "다음 15강에서는 최상급 표현과 함께 찾아오겠습니다. 수고 많으셨습니다!",
+    "en": null
+  }
+]

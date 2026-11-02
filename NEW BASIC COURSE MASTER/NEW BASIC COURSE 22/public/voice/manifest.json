@@ -1,0 +1,773 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것을 알아야 영어의 기초가 됩니다. 바로 현재분사(",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "eeff34bf1be0cd87",
+          "seconds": 4.78
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/i3_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 0.653
+        },
+        {
+          "lang": "kr",
+          "text": ")와 과거분사(",
+          "file": "parts/i3_03_kr.mp3",
+          "hash": "d2191eea81a8ae96",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "-p.p.",
+          "file": "parts/i3_04_en.mp3",
+          "hash": "65aab7af48aeea1f",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ")입니다.",
+          "file": "parts/i3_05_kr.mp3",
+          "hash": "ae1ce6db2c389a0e",
+          "seconds": 1.019
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 9.195,
+      "frames": 276
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감사합니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "529f016c9727d15d",
+          "seconds": 1.202
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 1.202,
+      "frames": 36
+    },
+    "i1a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리말은 동사에 ‘~하는’이나 ‘~된’을 붙여서 뒤에 오는 명사를 꾸며줍니다.",
+          "file": "parts/i1a_01_kr.mp3",
+          "hash": "225db2f8cf2f0c33",
+          "seconds": 6.087
+        }
+      ],
+      "file": "i1a.mp3",
+      "seconds": 6.087,
+      "frames": 183
+    },
+    "i1b": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "‘잠자는 아기’, ‘부서진 창문’처럼 말이죠.",
+          "file": "parts/i1b_01_kr.mp3",
+          "hash": "ed9c1b0966f9c52f",
+          "seconds": 3.187
+        }
+      ],
+      "file": "i1b.mp3",
+      "seconds": 3.187,
+      "frames": 96
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "영어에서도 동사를 형용사처럼 바꿔서 명사를 꾸며주는 아주 특별한 장치가 있습니다.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "e952810de7ffc2f9",
+          "seconds": 9.012
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 9.012,
+      "frames": 270
+    },
+    "i4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "동사라는 뿌리에서 갈라져 나와 명사를 꾸며주는 품사, 분사입니다.",
+          "file": "parts/i4_01_kr.mp3",
+          "hash": "3852a86b0baddd93",
+          "seconds": 5.277
+        }
+      ],
+      "file": "i4.mp3",
+      "seconds": 5.277,
+      "frames": 158
+    },
+    "i5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "현재분사(",
+          "file": "parts/i5_01_kr.mp3",
+          "hash": "ed2568e0e7584c68",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/i5_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": ")는 스스로 하고 있는 능동과 진행의 의미를 가집니다.",
+          "file": "parts/i5_03_kr.mp3",
+          "hash": "19f1b106c31d0f2c",
+          "seconds": 4.362
+        }
+      ],
+      "file": "i5.mp3",
+      "seconds": 6.766,
+      "frames": 203
+    },
+    "i6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "자고 있는(",
+          "file": "parts/i6_01_kr.mp3",
+          "hash": "0a297e085301205d",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "sleeping",
+          "file": "parts/i6_02_en.mp3",
+          "hash": "5b0d69a73b453b2f",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "), 날아가고 있는(",
+          "file": "parts/i6_03_kr.mp3",
+          "hash": "6c83c624ee727fec",
+          "seconds": 1.384
+        },
+        {
+          "lang": "en",
+          "text": "flying",
+          "file": "parts/i6_04_en.mp3",
+          "hash": "f9afc039f10599b8",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "), 흥미를 주는(",
+          "file": "parts/i6_05_kr.mp3",
+          "hash": "9ba0b28fe91ed822",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "interesting",
+          "file": "parts/i6_06_en.mp3",
+          "hash": "1491bf4d08d42a59",
+          "seconds": 1.149
+        },
+        {
+          "lang": "kr",
+          "text": "), 놀라게 하는(",
+          "file": "parts/i6_07_kr.mp3",
+          "hash": "7ebac9feafcefa67",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "surprising",
+          "file": "parts/i6_08_en.mp3",
+          "hash": "1fc7663c544dde18",
+          "seconds": 1.097
+        },
+        {
+          "lang": "kr",
+          "text": ") 형용사들입니다.",
+          "file": "parts/i6_09_kr.mp3",
+          "hash": "66b1c16d760fa8ba",
+          "seconds": 1.515
+        }
+      ],
+      "file": "i6.mp3",
+      "seconds": 12.513,
+      "frames": 375
+    },
+    "i7": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "과거분사(",
+          "file": "parts/i7_01_kr.mp3",
+          "hash": "aee4bebc9d286873",
+          "seconds": 1.149
+        },
+        {
+          "lang": "en",
+          "text": "-ed, p.p.",
+          "file": "parts/i7_02_en.mp3",
+          "hash": "cba5ccd25eca19ae",
+          "seconds": 1.254
+        },
+        {
+          "lang": "kr",
+          "text": ")는 남에 의해 당하거나 이미 완료된 수동과 완료의 의미를 가집니다.",
+          "file": "parts/i7_03_kr.mp3",
+          "hash": "c31cf1f15690addb",
+          "seconds": 4.859
+        }
+      ],
+      "file": "i7.mp3",
+      "seconds": 7.602,
+      "frames": 228
+    },
+    "i8": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "부서진(",
+          "file": "parts/i8_01_kr.mp3",
+          "hash": "e96669d399fbee4f",
+          "seconds": 1.149
+        },
+        {
+          "lang": "en",
+          "text": "broken",
+          "file": "parts/i8_02_en.mp3",
+          "hash": "16c388d08ac69506",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "), 감동받은(",
+          "file": "parts/i8_03_kr.mp3",
+          "hash": "1ceda808ef9b30ee",
+          "seconds": 1.384
+        },
+        {
+          "lang": "en",
+          "text": "touched",
+          "file": "parts/i8_04_en.mp3",
+          "hash": "77ddbf14274cd382",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "), 놀란(",
+          "file": "parts/i8_05_kr.mp3",
+          "hash": "0fa890e5bed79b56",
+          "seconds": 1.097
+        },
+        {
+          "lang": "en",
+          "text": "surprised",
+          "file": "parts/i8_06_en.mp3",
+          "hash": "90da210f2c887774",
+          "seconds": 1.149
+        },
+        {
+          "lang": "kr",
+          "text": "), 힘들어진(",
+          "file": "parts/i8_07_kr.mp3",
+          "hash": "3beb62caee06a404",
+          "seconds": 1.437
+        },
+        {
+          "lang": "en",
+          "text": "tired",
+          "file": "parts/i8_08_en.mp3",
+          "hash": "5296651181b31e7e",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": ") 형용사들입니다.",
+          "file": "parts/i8_09_kr.mp3",
+          "hash": "66b1c16d760fa8ba",
+          "seconds": 1.489
+        }
+      ],
+      "file": "i8.mp3",
+      "seconds": 11.807,
+      "frames": 354
+    },
+    "b1a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "예를 들어, “나 정말 지루해”라고 할 때,",
+          "file": "parts/b1a_01_kr.mp3",
+          "hash": "35da13b8a434b565",
+          "seconds": 3.187
+        }
+      ],
+      "file": "b1a.mp3",
+      "seconds": 3.187,
+      "frames": 96
+    },
+    "b1b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "I am boring",
+          "file": "parts/b1b_01_en.mp3",
+          "hash": "17c61bedb0b77efd",
+          "seconds": 1.149
+        },
+        {
+          "lang": "kr",
+          "text": "이라고 쓰면 “나는 남을 지루하게 만드는 재미없는 사람이다”라는 뜻이 되어 아주 어색하고 황당한 문장이 됩니다.",
+          "file": "parts/b1b_02_kr.mp3",
+          "hash": "00d4482f2f4a2841",
+          "seconds": 9.091
+        }
+      ],
+      "file": "b1b.mp3",
+      "seconds": 10.397,
+      "frames": 312
+    },
+    "b1c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "내 감정이 지루함을 느낀 것이므로",
+          "file": "parts/b1c_01_kr.mp3",
+          "hash": "af59749585eb095d",
+          "seconds": 2.456
+        },
+        {
+          "lang": "en",
+          "text": "I am bored",
+          "file": "parts/b1c_02_en.mp3",
+          "hash": "9d63857e2c50532a",
+          "seconds": 1.097
+        },
+        {
+          "lang": "kr",
+          "text": "처럼 과거분사를 써야 완성된 문장이 됩니다.",
+          "file": "parts/b1c_03_kr.mp3",
+          "hash": "d6310fa344ca1f4b",
+          "seconds": 3.187
+        }
+      ],
+      "file": "b1c.mp3",
+      "seconds": 7.079,
+      "frames": 212
+    },
+    "b2a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다시 한 번 말하자면,",
+          "file": "parts/b2a_01_kr.mp3",
+          "hash": "1993970729239591",
+          "seconds": 1.437
+        }
+      ],
+      "file": "b2a.mp3",
+      "seconds": 1.437,
+      "frames": 43
+    },
+    "b2b": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "현재분사(",
+          "file": "parts/b2b_01_kr.mp3",
+          "hash": "ed2568e0e7584c68",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/b2b_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": ")는 주체가 직접 행동을 내뿜는 것, 과거분사(",
+          "file": "parts/b2b_03_kr.mp3",
+          "hash": "af3be1aac6027dea",
+          "seconds": 3.709
+        },
+        {
+          "lang": "en",
+          "text": "-ed",
+          "file": "parts/b2b_04_en.mp3",
+          "hash": "4600df7d02bbe422",
+          "seconds": 0.444
+        },
+        {
+          "lang": "kr",
+          "text": ")는 행동이나 감정을 전달받아 당하는 것입니다.",
+          "file": "parts/b2b_05_kr.mp3",
+          "hash": "522768425fa30e86",
+          "seconds": 3.579
+        }
+      ],
+      "file": "b2b.mp3",
+      "seconds": 10.58,
+      "frames": 317
+    },
+    "b2c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "따라서 명사의 관계에 따라 능동과 수동의 다리를 정확히 놓아주어야 합니다.",
+          "file": "parts/b2c_01_kr.mp3",
+          "hash": "28404f3e98b57534",
+          "seconds": 7.105
+        }
+      ],
+      "file": "b2c.mp3",
+      "seconds": 7.105,
+      "frames": 213
+    },
+    "b3a": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "a sleeping baby",
+          "file": "parts/b3a_01_en.mp3",
+          "hash": "02ec744a6363e0ed",
+          "seconds": 1.384
+        },
+        {
+          "lang": "kr",
+          "text": "는 스스로 자고 있는 아기, 능동과 진행의 뜻이고,",
+          "file": "parts/b3a_02_kr.mp3",
+          "hash": "b2683d18d758c95d",
+          "seconds": 4.415
+        }
+      ],
+      "file": "b3a.mp3",
+      "seconds": 5.956,
+      "frames": 179
+    },
+    "b3b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "a broken window",
+          "file": "parts/b3b_01_en.mp3",
+          "hash": "bba7eb2bff0f2ea2",
+          "seconds": 1.384
+        },
+        {
+          "lang": "kr",
+          "text": "는 깨짐을 당해버린 창문, 수동과 완료의 뜻입니다.",
+          "file": "parts/b3b_02_kr.mp3",
+          "hash": "c98d8a079dbfc8f0",
+          "seconds": 4.127
+        }
+      ],
+      "file": "b3b.mp3",
+      "seconds": 5.669,
+      "frames": 170
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "아침 햇살 아래, 떠오르는 태양이 도시를 환하게 비춥니다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "6f285d8bca542d95",
+          "seconds": 4.728
+        },
+        {
+          "lang": "en",
+          "text": "The rising sun illuminates the city.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "47162a075f3ce06c",
+          "seconds": 2.273
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 7.158,
+      "frames": 215
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "공원 한쪽에서는 자고 있는 아기 곁으로 바람이 스쳐 지나갑니다.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "df330b4f04418a77",
+          "seconds": 4.362
+        },
+        {
+          "lang": "en",
+          "text": "A gentle breeze passes by a sleeping baby.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "5994dcde04ace290",
+          "seconds": 2.508
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 7.027,
+      "frames": 211
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 거리에서 바닥에 떨어진 나뭇잎들을 바라보았습니다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "c120f025c8a8d3ed",
+          "seconds": 3.997
+        },
+        {
+          "lang": "en",
+          "text": "He looked at the fallen leaves on the ground.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "ad5c5dfd67e0fab3",
+          "seconds": 2.403
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 6.557,
+      "frames": 197
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "길 건너 카페에서는 흥미로운 음악이 흘러나오고 있었죠.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "7dd371f0b99e2cb9",
+          "seconds": 4.258
+        },
+        {
+          "lang": "en",
+          "text": "An interesting melody was playing from the cafe.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "23628a4511bdf438",
+          "seconds": 2.743
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 7.158,
+      "frames": 215
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "카페 안으로 들어선 그는 감동적인 이야기가 담긴 책을 펼쳤습니다.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "0310d8868816d245",
+          "seconds": 5.198
+        },
+        {
+          "lang": "en",
+          "text": "He opened a book with a touching story.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "e1c084b9ac9049dc",
+          "seconds": 2.116
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 7.471,
+      "frames": 224
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이야기를 읽어내려가며, 그는 깊은 감동을 받았습니다.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "67eda2f8e12ae7e6",
+          "seconds": 4.728
+        },
+        {
+          "lang": "en",
+          "text": "Reading through the pages, he felt deeply touched",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "8e87f03c5fed447e",
+          "seconds": 2.952
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 7.863,
+      "frames": 236
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "바로 그때, 닫힌 창문 너머로 반가운 친구의 모습이 보였습니다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "23f789ce463b9dd6",
+          "seconds": 5.329
+        },
+        {
+          "lang": "en",
+          "text": "He saw a dear friend beyond the closed window.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "61b636adccd374eb",
+          "seconds": 2.743
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 8.229,
+      "frames": 247
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "생각지도 못한 뜻밖의 재회에 그는 몹시 놀랐습니다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "d3359c7bedbcef41",
+          "seconds": 4.859
+        },
+        {
+          "lang": "en",
+          "text": "He was greatly surprised by the unexpected reunion.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "c55517df408e4777",
+          "seconds": 3.161
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 8.176,
+      "frames": 245
+    },
+    "s09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "지쳐 있던 그의 마음에 다시금 따뜻한 활력이 감돌기 시작했습니다.",
+          "file": "parts/s09_01_kr.mp3",
+          "hash": "5d08d0715481dc98",
+          "seconds": 5.851
+        },
+        {
+          "lang": "en",
+          "text": "Warm energy returned to his tired heart.",
+          "file": "parts/s09_02_en.mp3",
+          "hash": "3a8d991710bc66f0",
+          "seconds": 2.456
+        }
+      ],
+      "file": "s09.mp3",
+      "seconds": 8.464,
+      "frames": 254
+    },
+    "s10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그렇게 두 사람은 서로에게 환하게 미소 짓는 얼굴로 인사를 건넸습니다.",
+          "file": "parts/s10_01_kr.mp3",
+          "hash": "92029929bd727769",
+          "seconds": 5.695
+        },
+        {
+          "lang": "en",
+          "text": "They greeted each other with smiling faces.",
+          "file": "parts/s10_02_en.mp3",
+          "hash": "cf8a16368762032b",
+          "seconds": 2.534
+        }
+      ],
+      "file": "s10.mp3",
+      "seconds": 8.411,
+      "frames": 252
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘은 동사의 변신, 현재분사와 과거분사에 대해 배웠습니다.",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "6b2ac1852ce385ff",
+          "seconds": 5.329
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 5.329,
+      "frames": 160
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "내가 직접 내뿜는 능동은",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "0f2b52ac87590b79",
+          "seconds": 2.22
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/o2_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ", 남에게 전달받아 당하는 수동은",
+          "file": "parts/o2_03_kr.mp3",
+          "hash": "336ac63a18ae15a5",
+          "seconds": 2.403
+        },
+        {
+          "lang": "en",
+          "text": "-ed",
+          "file": "parts/o2_04_en.mp3",
+          "hash": "4600df7d02bbe422",
+          "seconds": 1.097
+        },
+        {
+          "lang": "kr",
+          "text": "라는 점, 잊지 마세요.",
+          "file": "parts/o2_05_kr.mp3",
+          "hash": "8361c7450981499d",
+          "seconds": 1.567
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 8.829,
+      "frames": 265
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "7504c05925950cfa",
+          "seconds": 4.075
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 4.075,
+      "frames": 122
+    }
+  }
+}

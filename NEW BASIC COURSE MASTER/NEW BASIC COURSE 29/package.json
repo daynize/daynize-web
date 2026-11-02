@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-29",
+  "private": true,
+  "description": "Remotion project root for 09-2강 of, for, from, by, with which. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson09b-PrepRelatives out/lesson09-2.mp4"
+  }
+}

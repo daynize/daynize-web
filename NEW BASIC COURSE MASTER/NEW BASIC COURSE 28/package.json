@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-28",
+  "private": true,
+  "description": "Remotion project root for 07강 부사. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson07-Adverbs out/lesson07.mp4"
+  }
+}

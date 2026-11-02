@@ -1,0 +1,948 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "t1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "보통은 형용사 뒤에",
+          "file": "parts/t1_01_kr.mp3",
+          "hash": "cc745310efba23f1",
+          "seconds": 1.907
+        },
+        {
+          "lang": "en",
+          "text": "-ly",
+          "file": "parts/t1_02_en.mp3",
+          "hash": "7f51630b0a38f1ce",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "를 붙이면 부사가 됩니다.",
+          "file": "parts/t1_03_kr.mp3",
+          "hash": "fe5d405f64767bf1",
+          "seconds": 1.855
+        }
+      ],
+      "file": "t1.mp3",
+      "seconds": 4.989,
+      "frames": 150
+    },
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리말은 “그녀는 달린다”라고도 하지만, “그녀는 빠르게 달린다”처럼 행동을 더 생생하게 꾸며줍니다.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "cb9deb4bfb079d01",
+          "seconds": 9.378
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 9.378,
+      "frames": 281
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "영어에서도 동사나 형용사, 혹은 문장 전체에 양념을 쳐서 뜻을 풍성하게 만들어주는 특별한 단어들이 있습니다.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "a949842c3d13b93d",
+          "seconds": 10.475
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 10.475,
+      "frames": 314
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것을 알아야 영어의 기초가 됩니다. 바로 부사,",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "97d07bac588aa2cf",
+          "seconds": 3.84
+        },
+        {
+          "lang": "en",
+          "text": "Adverb",
+          "file": "parts/i3_02_en.mp3",
+          "hash": "9548920f40f12353",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/i3_03_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 0.862
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 5.956,
+      "frames": 179
+    },
+    "i4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "밋밋한 문장에 감칠맛을 더해주는 만능 양념장, 부사입니다.",
+          "file": "parts/i4_01_kr.mp3",
+          "hash": "9d5f08ec674a9915",
+          "seconds": 5.381
+        }
+      ],
+      "file": "i4.mp3",
+      "seconds": 5.381,
+      "frames": 161
+    },
+    "i5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "명사를 직접 꾸미는 형용사와 달리,",
+          "file": "parts/i5_01_kr.mp3",
+          "hash": "22274bb5541b7ce8",
+          "seconds": 3.004
+        }
+      ],
+      "file": "i5.mp3",
+      "seconds": 3.004,
+      "frames": 90
+    },
+    "i6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "부사는 동사가 어떻게 일어나는지, 빠르게, 천천히,",
+          "file": "parts/i6_01_kr.mp3",
+          "hash": "0b8165d13ca346b1",
+          "seconds": 4.206
+        }
+      ],
+      "file": "i6.mp3",
+      "seconds": 4.206,
+      "frames": 126
+    },
+    "i7": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "형용사가 얼마나 강력한지, 매우, 정말로,",
+          "file": "parts/i7_01_kr.mp3",
+          "hash": "4caf3bf4b0fb79fe",
+          "seconds": 3.944
+        }
+      ],
+      "file": "i7.mp3",
+      "seconds": 3.944,
+      "frames": 118
+    },
+    "i8": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그리고 문장 전체의 분위기를 다채롭게 꾸며줍니다.",
+          "file": "parts/i8_01_kr.mp3",
+          "hash": "6b377594df563242",
+          "seconds": 3.84
+        }
+      ],
+      "file": "i8.mp3",
+      "seconds": 3.84,
+      "frames": 115
+    },
+    "t2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "하지만 여기서 수많은 영어 학습자들이 헷갈려하는 치명적인 예외 2가지가 있습니다!",
+          "file": "parts/t2_01_kr.mp3",
+          "hash": "38db3dfa98bfd0e9",
+          "seconds": 7.184
+        }
+      ],
+      "file": "t2.mp3",
+      "seconds": 7.184,
+      "frames": 216
+    },
+    "a1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "함정 1!",
+          "file": "parts/a1_01_kr.mp3",
+          "hash": "04ac089329cb46d1",
+          "seconds": 1.097
+        },
+        {
+          "lang": "en",
+          "text": "-ly",
+          "file": "parts/a1_02_en.mp3",
+          "hash": "7f51630b0a38f1ce",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "가 없어도 형용사와 부사 형태가 똑같은 단어들입니다.",
+          "file": "parts/a1_03_kr.mp3",
+          "hash": "926751c27eab531b",
+          "seconds": 3.892
+        }
+      ],
+      "file": "a1.mp3",
+      "seconds": 6.296,
+      "frames": 189
+    },
+    "a2": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "-ly",
+          "file": "parts/a2_01_en.mp3",
+          "hash": "7f51630b0a38f1ce",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": "를 붙이지 않고 모양 그대로 형용사와 부사 역할을 모두 하는 단어들이 있습니다.",
+          "file": "parts/a2_02_kr.mp3",
+          "hash": "4cdd6e440928cd78",
+          "seconds": 5.878
+        }
+      ],
+      "file": "a2.mp3",
+      "seconds": 6.922,
+      "frames": 208
+    },
+    "f1": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "FAST",
+          "file": "parts/f1_01_en.mp3",
+          "hash": "d56b82a244c761dd",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": ". ‘빠른’도",
+          "file": "parts/f1_02_kr.mp3",
+          "hash": "01a5bfd358abb98d",
+          "seconds": 1.28
+        },
+        {
+          "lang": "en",
+          "text": "fast",
+          "file": "parts/f1_03_en.mp3",
+          "hash": "8ceb8650772897da",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": ", ‘빠르게’도",
+          "file": "parts/f1_04_kr.mp3",
+          "hash": "93a7e1e830af9723",
+          "seconds": 1.28
+        },
+        {
+          "lang": "en",
+          "text": "fast",
+          "file": "parts/f1_05_en.mp3",
+          "hash": "8ceb8650772897da",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/f1_06_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 0.914
+        }
+      ],
+      "file": "f1.mp3",
+      "seconds": 7.131,
+      "frames": 214
+    },
+    "f2": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "fastly",
+          "file": "parts/f2_01_en.mp3",
+          "hash": "77c7e4b9981d4036",
+          "seconds": 0.731
+        },
+        {
+          "lang": "kr",
+          "text": "라는 단어는 존재하지 않습니다!",
+          "file": "parts/f2_02_kr.mp3",
+          "hash": "c6c21966b232c99b",
+          "seconds": 2.168
+        }
+      ],
+      "file": "f2.mp3",
+      "seconds": 3.082,
+      "frames": 92
+    },
+    "h1": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "HARD",
+          "file": "parts/h1_01_en.mp3",
+          "hash": "ff783ce7abe29ee3",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ". ‘단단한’, ‘어려운’도",
+          "file": "parts/h1_02_kr.mp3",
+          "hash": "7edb12dbba290aa9",
+          "seconds": 1.907
+        },
+        {
+          "lang": "en",
+          "text": "hard",
+          "file": "parts/h1_03_en.mp3",
+          "hash": "26748c0f9c28695d",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ", ‘열심히’, ‘단단하게’도",
+          "file": "parts/h1_04_kr.mp3",
+          "hash": "e8cb1c1d6e18d23b",
+          "seconds": 1.802
+        },
+        {
+          "lang": "en",
+          "text": "hard",
+          "file": "parts/h1_05_en.mp3",
+          "hash": "26748c0f9c28695d",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/h1_06_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 0.862
+        }
+      ],
+      "file": "h1.mp3",
+      "seconds": 8.046,
+      "frames": 241
+    },
+    "l1": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "LATE",
+          "file": "parts/l1_01_en.mp3",
+          "hash": "7d8dc230fec1a1cf",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": ". ‘늦은’도",
+          "file": "parts/l1_02_kr.mp3",
+          "hash": "718776cf09cdb368",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "late",
+          "file": "parts/l1_03_en.mp3",
+          "hash": "fbf65d6d225026ce",
+          "seconds": 0.731
+        },
+        {
+          "lang": "kr",
+          "text": ", ‘늦게’도",
+          "file": "parts/l1_04_kr.mp3",
+          "hash": "01fcb951fb6e955d",
+          "seconds": 1.202
+        },
+        {
+          "lang": "en",
+          "text": "late",
+          "file": "parts/l1_05_en.mp3",
+          "hash": "fbf65d6d225026ce",
+          "seconds": 0.601
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/l1_06_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 0.914
+        }
+      ],
+      "file": "l1.mp3",
+      "seconds": 6.191,
+      "frames": 186
+    },
+    "l2": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "lately",
+          "file": "parts/l2_01_en.mp3",
+          "hash": "6bb1b6bdc926932e",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": "는 ‘최근에’라는 전혀 다른 뜻이 됩니다!",
+          "file": "parts/l2_02_kr.mp3",
+          "hash": "4c6a4edcfd922da0",
+          "seconds": 2.769
+        }
+      ],
+      "file": "l2.mp3",
+      "seconds": 3.814,
+      "frames": 114
+    },
+    "e1": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "EARLY",
+          "file": "parts/e1_01_en.mp3",
+          "hash": "6678e5ca2226dee9",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": ". ‘이른’도",
+          "file": "parts/e1_02_kr.mp3",
+          "hash": "8e4b6c23e7a40614",
+          "seconds": 1.28
+        },
+        {
+          "lang": "en",
+          "text": "early",
+          "file": "parts/e1_03_en.mp3",
+          "hash": "c285f8edfdcd663b",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ", ‘일찍’도",
+          "file": "parts/e1_04_kr.mp3",
+          "hash": "45ae94a026e82016",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "early",
+          "file": "parts/e1_05_en.mp3",
+          "hash": "c285f8edfdcd663b",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/e1_06_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 0.862
+        }
+      ],
+      "file": "e1.mp3",
+      "seconds": 6.975,
+      "frames": 209
+    },
+    "c1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "함정 2!",
+          "file": "parts/c1_01_kr.mp3",
+          "hash": "5ae56a857c65ef24",
+          "seconds": 1.202
+        },
+        {
+          "lang": "en",
+          "text": "-ly",
+          "file": "parts/c1_02_en.mp3",
+          "hash": "7f51630b0a38f1ce",
+          "seconds": 0.784
+        },
+        {
+          "lang": "kr",
+          "text": "가 붙었는데 부사가 아니라 형용사인 단어들입니다.",
+          "file": "parts/c1_03_kr.mp3",
+          "hash": "ea5458934e4aac51",
+          "seconds": 3.187
+        }
+      ],
+      "file": "c1.mp3",
+      "seconds": 5.512,
+      "frames": 165
+    },
+    "c2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "명사 뒤에",
+          "file": "parts/c2_01_kr.mp3",
+          "hash": "a250879d2118c844",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "-ly",
+          "file": "parts/c2_02_en.mp3",
+          "hash": "7f51630b0a38f1ce",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "가 붙으면 부사가 아니라 명사를 꾸며주는 형용사가 됩니다!",
+          "file": "parts/c2_03_kr.mp3",
+          "hash": "fcd7cf15bee48e88",
+          "seconds": 5.016
+        }
+      ],
+      "file": "c2.mp3",
+      "seconds": 7.549,
+      "frames": 226
+    },
+    "y1": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "FRIENDLY",
+          "file": "parts/y1_01_en.mp3",
+          "hash": "10593db3724643ec",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": ". 친구 같은, 친근한 형용사입니다.",
+          "file": "parts/y1_02_kr.mp3",
+          "hash": "ab429ca6f0750cc3",
+          "seconds": 2.638
+        }
+      ],
+      "file": "y1.mp3",
+      "seconds": 3.709,
+      "frames": 111
+    },
+    "y2": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "LOVELY",
+          "file": "parts/y2_01_en.mp3",
+          "hash": "0e3873a58435617b",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": ". 사랑스러운, 형용사입니다.",
+          "file": "parts/y2_02_kr.mp3",
+          "hash": "43e316f51f10b7d8",
+          "seconds": 2.168
+        }
+      ],
+      "file": "y2.mp3",
+      "seconds": 3.265,
+      "frames": 98
+    },
+    "y3": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "LONELY",
+          "file": "parts/y3_01_en.mp3",
+          "hash": "8f19a06816136623",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ". 외로운, 형용사입니다.",
+          "file": "parts/y3_02_kr.mp3",
+          "hash": "3811fd1e51bd7c6c",
+          "seconds": 1.855
+        }
+      ],
+      "file": "y3.mp3",
+      "seconds": 2.873,
+      "frames": 86
+    },
+    "y4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 단어들은 모양만 보고 부사라고 착각하기 쉽지만, 명사를 꾸며주는 어엿한 형용사들입니다!",
+          "file": "parts/y4_01_kr.mp3",
+          "hash": "1135edd949987ec0",
+          "seconds": 7.471
+        }
+      ],
+      "file": "y4.mp3",
+      "seconds": 7.471,
+      "frames": 224
+    },
+    "w1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "예를 들어, “그는 일을 열심히 한다”라고 할 때",
+          "file": "parts/w1_01_kr.mp3",
+          "hash": "6bd18f0cdc22847f",
+          "seconds": 3.605
+        }
+      ],
+      "file": "w1.mp3",
+      "seconds": 3.605,
+      "frames": 108
+    },
+    "w2": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "He works hardly",
+          "file": "parts/w2_01_en.mp3",
+          "hash": "c502c0ab2c004df0",
+          "seconds": 1.384
+        },
+        {
+          "lang": "kr",
+          "text": "라고 쓰면 “그는 거의 일을 하지 않는다”라는 완전히 반대의 부정적인 뜻이 되어 버립니다.",
+          "file": "parts/w2_02_kr.mp3",
+          "hash": "ff6c664cbc7245c8",
+          "seconds": 7.967
+        }
+      ],
+      "file": "w2.mp3",
+      "seconds": 9.535,
+      "frames": 286
+    },
+    "w3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "‘열심히’라는 뜻의 부사는 그대로",
+          "file": "parts/w3_01_kr.mp3",
+          "hash": "f6eb1b8208790494",
+          "seconds": 2.351
+        },
+        {
+          "lang": "en",
+          "text": "hard",
+          "file": "parts/w3_02_en.mp3",
+          "hash": "26748c0f9c28695d",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": "를 써서",
+          "file": "parts/w3_03_kr.mp3",
+          "hash": "b012664952a7083e",
+          "seconds": 1.149
+        },
+        {
+          "lang": "en",
+          "text": "He works hard",
+          "file": "parts/w3_04_en.mp3",
+          "hash": "bfad8ed292f1aeb7",
+          "seconds": 1.254
+        },
+        {
+          "lang": "kr",
+          "text": "라고 해야 비로소 올바른 표현이 됩니다.",
+          "file": "parts/w3_05_kr.mp3",
+          "hash": "d871e879e55d1677",
+          "seconds": 2.456
+        }
+      ],
+      "file": "w3.mp3",
+      "seconds": 8.699,
+      "frames": 261
+    },
+    "w4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "마찬가지로 “그녀는 빠르게 달린다”라고 할 때",
+          "file": "parts/w4_01_kr.mp3",
+          "hash": "d439e81413008c3b",
+          "seconds": 3.579
+        }
+      ],
+      "file": "w4.mp3",
+      "seconds": 3.579,
+      "frames": 107
+    },
+    "w5": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "She runs fastly",
+          "file": "parts/w5_01_en.mp3",
+          "hash": "758ef2a07ac5a5d3",
+          "seconds": 1.489
+        },
+        {
+          "lang": "kr",
+          "text": "가 아니라",
+          "file": "parts/w5_02_kr.mp3",
+          "hash": "2dfe64f532925998",
+          "seconds": 1.019
+        },
+        {
+          "lang": "en",
+          "text": "She runs fast",
+          "file": "parts/w5_03_en.mp3",
+          "hash": "c8a963b8694225c6",
+          "seconds": 1.28
+        },
+        {
+          "lang": "kr",
+          "text": "라고 써야 합니다.",
+          "file": "parts/w5_04_kr.mp3",
+          "hash": "bef21fd29cc36bfb",
+          "seconds": 1.384
+        }
+      ],
+      "file": "w5.mp3",
+      "seconds": 5.642,
+      "frames": 169
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "따스한 아침 햇살 아래, 그녀는 친근한 바리스타에게 밝게 인사를 건넸습니다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "963ecacfef038dd6",
+          "seconds": 6.113
+        },
+        {
+          "lang": "en",
+          "text": "She greeted a friendly barista brightly in the morning.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "d5d96393563b7465",
+          "seconds": 2.952
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 9.247,
+      "frames": 277
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "커피를 마신 후, 그녀는 일찍 약속 장소로 향하기 위해 빠르게 걸었습니다.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "e295941c243c258c",
+          "seconds": 6.687
+        },
+        {
+          "lang": "en",
+          "text": "She walked fast to arrive early for her meeting.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "e8c26ce92d2efc70",
+          "seconds": 2.638
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 9.482,
+      "frames": 284
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "약속 장소에서는 한 남자가 그녀를 위해 열심히 프로젝트를 준비하고 있었죠.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "acaec1e8fe86b980",
+          "seconds": 5.669
+        },
+        {
+          "lang": "en",
+          "text": "A man was working hard for her project.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "4aad39a223117cd2",
+          "seconds": 2.273
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 8.098,
+      "frames": 243
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "비록 약속 시간이 조금 늦게 시작되었지만, 두 사람의 대화는 매우 즐거웠습니다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "aa4b1e2afdb46c5c",
+          "seconds": 6.034
+        },
+        {
+          "lang": "en",
+          "text": "Although the meeting started late, they had a very lovely time.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "fa86342a937426dc",
+          "seconds": 3.422
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 9.613,
+      "frames": 288
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "마침내 두 사람은 마음에 품었던 생각을 서로에게 솔직하게 털어놓았습니다.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "7d6d87e298ae970f",
+          "seconds": 5.669
+        },
+        {
+          "lang": "en",
+          "text": "Finally, they shared their thoughts honestly with each other.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "95e5111afdf0afdf",
+          "seconds": 3.291
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 9.117,
+      "frames": 274
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘은 행동과 상태를 꾸며주는 부사, 그리고",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "c719d050baa27adf",
+          "seconds": 3.344
+        },
+        {
+          "lang": "en",
+          "text": "-ly",
+          "file": "parts/o1_02_en.mp3",
+          "hash": "7f51630b0a38f1ce",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "가 없어도 부사인",
+          "file": "parts/o1_03_kr.mp3",
+          "hash": "30c3f1458c0325c6",
+          "seconds": 1.437
+        },
+        {
+          "lang": "en",
+          "text": "fast, hard, late",
+          "file": "parts/o1_04_en.mp3",
+          "hash": "cb6181d5840b51af",
+          "seconds": 1.489
+        },
+        {
+          "lang": "kr",
+          "text": "와,",
+          "file": "parts/o1_05_kr.mp3",
+          "hash": "cdaf7ec83dff6c39",
+          "seconds": 0.601
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 8.464,
+      "frames": 254
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "-ly",
+          "file": "parts/o2_01_en.mp3",
+          "hash": "7f51630b0a38f1ce",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "가 붙어도 형용사인",
+          "file": "parts/o2_02_kr.mp3",
+          "hash": "64e4f373a751aa1d",
+          "seconds": 1.515
+        },
+        {
+          "lang": "en",
+          "text": "friendly, lovely",
+          "file": "parts/o2_03_en.mp3",
+          "hash": "a3783f312e730ddf",
+          "seconds": 1.802
+        },
+        {
+          "lang": "kr",
+          "text": "의 차이를 배웠습니다.",
+          "file": "parts/o2_04_kr.mp3",
+          "hash": "f8f79deb7ea7a706",
+          "seconds": 1.62
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 6.452,
+      "frames": 194
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "형태의 함정에 속지 않는 직관을 꼭 기억하세요.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "843b24a50595d98a",
+          "seconds": 3.657
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 3.657,
+      "frames": 110
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "7504c05925950cfa",
+          "seconds": 4.127
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 4.127,
+      "frames": 124
+    },
+    "o5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감사합니다.",
+          "file": "parts/o5_01_kr.mp3",
+          "hash": "529f016c9727d15d",
+          "seconds": 1.202
+        }
+      ],
+      "file": "o5.mp3",
+      "seconds": 1.202,
+      "frames": 36
+    }
+  }
+}

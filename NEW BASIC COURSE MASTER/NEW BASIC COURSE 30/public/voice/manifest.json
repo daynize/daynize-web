@@ -1,0 +1,745 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리가 상자 안에서 사과나 볼펜을 하나씩 꺼낼 때, 영어는 손에 남은 나머지가 몇 개인지, 그리고 그 개수가 확실히 정해져 있는지에 따라 쓰는 단어를 철저하게 구별합니다.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "9aa85bbc12c528d9",
+          "seconds": 14.759
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 14.759,
+      "frames": 443
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것을 알아야 영어의 기초가 됩니다. 바로",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "7f1e9a1811de238d",
+          "seconds": 3.291
+        },
+        {
+          "lang": "en",
+          "text": "another, other, the other",
+          "file": "parts/i2_02_en.mp3",
+          "hash": "83baa2bf880f7fca",
+          "seconds": 2.168
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/i2_03_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 1.019
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 6.792,
+      "frames": 204
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "어려운 문법 용어 대신, 손에 남은 사과의 개수만 떠올리면 됩니다!",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "35f1cb75f8057419",
+          "seconds": 5.094
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 5.094,
+      "frames": 153
+    },
+    "i4": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "another",
+          "file": "parts/i4_01_en.mp3",
+          "hash": "c26aed35c6a60782",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "는",
+          "file": "parts/i4_02_kr.mp3",
+          "hash": "d301b3e70c055570",
+          "seconds": 1.071
+        },
+        {
+          "lang": "en",
+          "text": "an",
+          "file": "parts/i4_03_en.mp3",
+          "hash": "51621c891a57b4fd",
+          "seconds": 0.549
+        },
+        {
+          "lang": "kr",
+          "text": "에",
+          "file": "parts/i4_04_kr.mp3",
+          "hash": "83e9b697eba2b3f2",
+          "seconds": 0.679
+        },
+        {
+          "lang": "en",
+          "text": "other",
+          "file": "parts/i4_05_en.mp3",
+          "hash": "85b9edc5fd8d2bc6",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": "가 합쳐진 말로, 나머지가 있는 하나 더, 단수입니다.",
+          "file": "parts/i4_06_kr.mp3",
+          "hash": "406523409ae3b692",
+          "seconds": 4.023
+        }
+      ],
+      "file": "i4.mp3",
+      "seconds": 8.934,
+      "frames": 268
+    },
+    "i5": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "other, others",
+          "file": "parts/i5_01_en.mp3",
+          "hash": "f6e3bce1607af082",
+          "seconds": 1.567
+        },
+        {
+          "lang": "kr",
+          "text": "는 나머지가 있는 여러 개, 복수입니다.",
+          "file": "parts/i5_02_kr.mp3",
+          "hash": "63575eeedc483826",
+          "seconds": 2.821
+        }
+      ],
+      "file": "i5.mp3",
+      "seconds": 4.545,
+      "frames": 136
+    },
+    "i6": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "the other",
+          "file": "parts/i6_01_en.mp3",
+          "hash": "f0c6c258ddd4e59e",
+          "seconds": 1.097
+        },
+        {
+          "lang": "kr",
+          "text": "는 마지막으로 딱 정해진 남은 하나, 단수이거나,",
+          "file": "parts/i6_02_kr.mp3",
+          "hash": "8a061aef7cc7f2bb",
+          "seconds": 3.709
+        },
+        {
+          "lang": "en",
+          "text": "the others",
+          "file": "parts/i6_03_en.mp3",
+          "hash": "424779822171d416",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": ", 정해진 남은 여러 개, 복수입니다.",
+          "file": "parts/i6_04_kr.mp3",
+          "hash": "8a94a17968a89844",
+          "seconds": 2.534
+        }
+      ],
+      "file": "i6.mp3",
+      "seconds": 8.908,
+      "frames": 267
+    },
+    "i7": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "여기서",
+          "file": "parts/i7_01_kr.mp3",
+          "hash": "d177587878e850a0",
+          "seconds": 0.914
+        },
+        {
+          "lang": "en",
+          "text": "the",
+          "file": "parts/i7_02_en.mp3",
+          "hash": "95ab84c5db667482",
+          "seconds": 0.653
+        },
+        {
+          "lang": "kr",
+          "text": "는 “너도 알고 나도 아는 정해진 그것”을 딱 집어내는 족집게 손가락 역할을 합니다!",
+          "file": "parts/i7_03_kr.mp3",
+          "hash": "1880839016b000a7",
+          "seconds": 7.053
+        }
+      ],
+      "file": "i7.mp3",
+      "seconds": 8.934,
+      "frames": 268
+    },
+    "a0": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "여기에 탐스러운 사과 10개가 담긴 바구니가 있다고 생각해 봅시다.",
+          "file": "parts/a0_01_kr.mp3",
+          "hash": "7c3f8a58a178021f",
+          "seconds": 4.415
+        }
+      ],
+      "file": "a0.mp3",
+      "seconds": 4.415,
+      "frames": 132
+    },
+    "a1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "가장 처음에 꺼내는 사과 하나는 당연히",
+          "file": "parts/a1_01_kr.mp3",
+          "hash": "eaf1ce6d5ada0831",
+          "seconds": 3.109
+        },
+        {
+          "lang": "en",
+          "text": "one",
+          "file": "parts/a1_02_en.mp3",
+          "hash": "7f402ae911167deb",
+          "seconds": 0.653
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/a1_03_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 1.019
+        }
+      ],
+      "file": "a1.mp3",
+      "seconds": 5.094,
+      "frames": 153
+    },
+    "a2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "아직 바구니에 사과가 많이 남아있죠? 그래서 그다음 꺼내는 하나는 막연한 하나 더,",
+          "file": "parts/a2_01_kr.mp3",
+          "hash": "0195ff0dc877226f",
+          "seconds": 7.941
+        },
+        {
+          "lang": "en",
+          "text": "another apple",
+          "file": "parts/a2_02_en.mp3",
+          "hash": "f3b79facded071ea",
+          "seconds": 1.149
+        },
+        {
+          "lang": "kr",
+          "text": "이 됩니다.",
+          "file": "parts/a2_03_kr.mp3",
+          "hash": "c1e171889a66b415",
+          "seconds": 1.071
+        }
+      ],
+      "file": "a2.mp3",
+      "seconds": 10.475,
+      "frames": 314
+    },
+    "a3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "사과 2개나 3개를 한 번에 집어 올릴 때는, 막연한 여러 개이므로",
+          "file": "parts/a3_01_kr.mp3",
+          "hash": "63b60f0d51dd44bd",
+          "seconds": 5.146
+        },
+        {
+          "lang": "en",
+          "text": "other apples",
+          "file": "parts/a3_02_en.mp3",
+          "hash": "362709ee03ae518f",
+          "seconds": 1.202
+        },
+        {
+          "lang": "kr",
+          "text": "가 됩니다.",
+          "file": "parts/a3_03_kr.mp3",
+          "hash": "b2e84569846dfed0",
+          "seconds": 1.149
+        }
+      ],
+      "file": "a3.mp3",
+      "seconds": 7.811,
+      "frames": 234
+    },
+    "a4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "사과를 계속 꺼내고 바구니에 딱 2개가 남았습니다. 이제 남은 사과 전체가 눈에 딱 보이죠?",
+          "file": "parts/a4_01_kr.mp3",
+          "hash": "c19cae2b112d14c3",
+          "seconds": 7.706
+        }
+      ],
+      "file": "a4.mp3",
+      "seconds": 7.706,
+      "frames": 231
+    },
+    "a5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 남은 사과 2개 전부를 가리킬 때는 족집게",
+          "file": "parts/a5_01_kr.mp3",
+          "hash": "f56488fea90b8f1c",
+          "seconds": 3.187
+        },
+        {
+          "lang": "en",
+          "text": "the",
+          "file": "parts/a5_02_en.mp3",
+          "hash": "95ab84c5db667482",
+          "seconds": 0.653
+        },
+        {
+          "lang": "kr",
+          "text": "가 붙어",
+          "file": "parts/a5_03_kr.mp3",
+          "hash": "a7fc8c0f178552ac",
+          "seconds": 1.071
+        },
+        {
+          "lang": "en",
+          "text": "the other apples",
+          "file": "parts/a5_04_en.mp3",
+          "hash": "778d93fa45c4e242",
+          "seconds": 1.384
+        },
+        {
+          "lang": "kr",
+          "text": "가 되는 것입니다!",
+          "file": "parts/a5_05_kr.mp3",
+          "hash": "e69216d970b7c83a",
+          "seconds": 1.384
+        }
+      ],
+      "file": "a5.mp3",
+      "seconds": 8.307,
+      "frames": 249
+    },
+    "c1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다시 사과 10개를 바구니에 넣고 시작해 볼까요? 10개 중 처음에 집어 든 사과 하나는",
+          "file": "parts/c1_01_kr.mp3",
+          "hash": "189485d52645a971",
+          "seconds": 5.747
+        },
+        {
+          "lang": "en",
+          "text": "one",
+          "file": "parts/c1_02_en.mp3",
+          "hash": "7f402ae911167deb",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/c1_03_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 1.019
+        }
+      ],
+      "file": "c1.mp3",
+      "seconds": 8.15,
+      "frames": 245
+    },
+    "c2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그렇다면 손에 든 1개를 뺀 나머지 9개 전부는 눈에 명확히 보이는 정해진 남은 전부죠?",
+          "file": "parts/c2_01_kr.mp3",
+          "hash": "f14e7523e78d97b3",
+          "seconds": 7.889
+        }
+      ],
+      "file": "c2.mp3",
+      "seconds": 7.889,
+      "frames": 237
+    },
+    "c3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그래서 이 나머지 9개 전부는 바로",
+          "file": "parts/c3_01_kr.mp3",
+          "hash": "95631cd68c4d2023",
+          "seconds": 2.273
+        },
+        {
+          "lang": "en",
+          "text": "the other apples",
+          "file": "parts/c3_02_en.mp3",
+          "hash": "778d93fa45c4e242",
+          "seconds": 1.28
+        },
+        {
+          "lang": "kr",
+          "text": ", 또는",
+          "file": "parts/c3_03_kr.mp3",
+          "hash": "11a024b96ab906fb",
+          "seconds": 1.202
+        },
+        {
+          "lang": "en",
+          "text": "the others",
+          "file": "parts/c3_04_en.mp3",
+          "hash": "424779822171d416",
+          "seconds": 1.149
+        },
+        {
+          "lang": "kr",
+          "text": "가 되는 것입니다!",
+          "file": "parts/c3_05_kr.mp3",
+          "hash": "e69216d970b7c83a",
+          "seconds": 1.384
+        }
+      ],
+      "file": "c3.mp3",
+      "seconds": 7.941,
+      "frames": 238
+    },
+    "d1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 사과가 딱 2개밖에 없는데, 하나를 먹고 마지막 남은 사과 하나를 가리키면서",
+          "file": "parts/d1_01_kr.mp3",
+          "hash": "61232d5c933fa3b1",
+          "seconds": 7.184
+        }
+      ],
+      "file": "d1.mp3",
+      "seconds": 7.184,
+      "frames": 216
+    },
+    "d2": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "Give me another apple",
+          "file": "parts/d2_01_en.mp3",
+          "hash": "b3861cf8be3f6efe",
+          "seconds": 1.515
+        },
+        {
+          "lang": "kr",
+          "text": "이라고 말하면 아주 어색하고 틀린 표현이 됩니다.",
+          "file": "parts/d2_02_kr.mp3",
+          "hash": "25f49ff9ef771947",
+          "seconds": 3.239
+        }
+      ],
+      "file": "d2.mp3",
+      "seconds": 4.937,
+      "frames": 148
+    },
+    "d3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "남은 1개가 눈에 확실히 정해져 있으므로",
+          "file": "parts/d3_01_kr.mp3",
+          "hash": "cc18568bafcb9e5e",
+          "seconds": 3.37
+        },
+        {
+          "lang": "en",
+          "text": "Give me the other apple",
+          "file": "parts/d3_02_en.mp3",
+          "hash": "044be8199c63d326",
+          "seconds": 1.567
+        },
+        {
+          "lang": "kr",
+          "text": "이라고 말해야 비로소 완벽한 문장이 됩니다.",
+          "file": "parts/d3_03_kr.mp3",
+          "hash": "33616bec6f244fc0",
+          "seconds": 2.952
+        }
+      ],
+      "file": "d3.mp3",
+      "seconds": 8.229,
+      "frames": 247
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 테이블 위에 놓인 사과 10개 중 가장 먼저 빨간 사과 하나를 집어 들었습니다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "6a145a216a3a03f1",
+          "seconds": 6.531
+        },
+        {
+          "lang": "en",
+          "text": "He picked one red apple out of ten.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "16991ff420ae15e5",
+          "seconds": 2.116
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 8.829,
+      "frames": 265
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그리고 아직 많이 남아있는 사과들 중 또 다른 사과 하나를 맛있게 베어 물었죠.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "d3aa8271006b25c3",
+          "seconds": 6.087
+        },
+        {
+          "lang": "en",
+          "text": "He took a bite of another apple.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "e6b0aca815cff776",
+          "seconds": 1.75
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 7.993,
+      "frames": 240
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이어서 친구들에게 줄 다른 사과 두 개를 접시 위에 놓았습니다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "78ad1da7dfc5cd75",
+          "seconds": 4.362
+        },
+        {
+          "lang": "en",
+          "text": "He placed two other apples on the plate.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "003ba2db306d5716",
+          "seconds": 2.09
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 6.609,
+      "frames": 198
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이제 바구니에 남은 사과는 딱 두 개뿐이었습니다. 그는 남은 사과 전부를 가방에 챙겼습니다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "148664efa021221a",
+          "seconds": 7.131
+        },
+        {
+          "lang": "en",
+          "text": "He packed the other apples into his bag.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "aee27af7a21b4f29",
+          "seconds": 2.273
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 9.561,
+      "frames": 287
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "주머니 속을 뒤져보니 동전 두 개가 잡혔습니다. 하나는 100원짜리였고, 마지막 남은 동전 하나는 500원짜리였죠.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "585b45c5309a4726",
+          "seconds": 9.691
+        },
+        {
+          "lang": "en",
+          "text": "He had two coins; one was 100 won, and the other was 500 won.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "9161146b4c3ef2ee",
+          "seconds": 4.493
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 14.367,
+      "frames": 431
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘은 사과의 개수로",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "589ec55279e916c8",
+          "seconds": 1.515
+        },
+        {
+          "lang": "en",
+          "text": "another, other, the other",
+          "file": "parts/o1_02_en.mp3",
+          "hash": "83baa2bf880f7fca",
+          "seconds": 2.116
+        },
+        {
+          "lang": "kr",
+          "text": "의 차이를 배웠습니다.",
+          "file": "parts/o1_03_kr.mp3",
+          "hash": "f8f79deb7ea7a706",
+          "seconds": 1.567
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 5.538,
+      "frames": 166
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "남은 게 많아 막연하면",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "230491b73144712d",
+          "seconds": 1.907
+        },
+        {
+          "lang": "en",
+          "text": "another",
+          "file": "parts/o2_02_en.mp3",
+          "hash": "c26aed35c6a60782",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "와",
+          "file": "parts/o2_03_kr.mp3",
+          "hash": "b6536b50ed87f7ff",
+          "seconds": 0.836
+        },
+        {
+          "lang": "en",
+          "text": "other",
+          "file": "parts/o2_04_en.mp3",
+          "hash": "85b9edc5fd8d2bc6",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": ", 남은 게 눈에 딱 보여서 정해졌다면 족집게",
+          "file": "parts/o2_05_kr.mp3",
+          "hash": "d57022d98aceb629",
+          "seconds": 3.239
+        },
+        {
+          "lang": "en",
+          "text": "the",
+          "file": "parts/o2_06_en.mp3",
+          "hash": "95ab84c5db667482",
+          "seconds": 0.731
+        },
+        {
+          "lang": "kr",
+          "text": "가 붙은",
+          "file": "parts/o2_07_kr.mp3",
+          "hash": "027492c7f2368538",
+          "seconds": 1.071
+        },
+        {
+          "lang": "en",
+          "text": "the other",
+          "file": "parts/o2_08_en.mp3",
+          "hash": "f0c6c258ddd4e59e",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": "와",
+          "file": "parts/o2_09_kr.mp3",
+          "hash": "b6536b50ed87f7ff",
+          "seconds": 0.784
+        },
+        {
+          "lang": "en",
+          "text": "the others",
+          "file": "parts/o2_10_en.mp3",
+          "hash": "424779822171d416",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": "가 된다는 점을 꼭 기억하세요.",
+          "file": "parts/o2_11_kr.mp3",
+          "hash": "5701620689a9e609",
+          "seconds": 2.22
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 16.3,
+      "frames": 489
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "7504c05925950cfa",
+          "seconds": 3.788
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 3.788,
+      "frames": 114
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감사합니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "529f016c9727d15d",
+          "seconds": 1.097
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 1.097,
+      "frames": 33
+    }
+  }
+}

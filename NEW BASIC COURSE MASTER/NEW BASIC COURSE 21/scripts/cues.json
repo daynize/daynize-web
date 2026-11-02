@@ -1,0 +1,188 @@
+[
+  {
+    "id": "i1a",
+    "scene": "intro",
+    "kr": "우리말은 명사를 셀 때 개수만 붙이면 끝납니다.",
+    "en": null
+  },
+  {
+    "id": "i1b",
+    "scene": "intro",
+    "kr": "사과 한 개, 물 한 컵처럼 말이죠.",
+    "en": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "하지만 영어는 셀 수 있는 명사와, 절대로 하나둘 셀 수 없는 명사를 아주 까다롭게 구별합니다.",
+    "en": null
+  },
+  {
+    "id": "i3",
+    "scene": "intro",
+    "kr": "그것을 알아야 영어의 기초가 됩니다. 바로 {v|가산명사}와 {v|불가산명사}입니다.",
+    "en": null
+  },
+  {
+    "id": "i4",
+    "scene": "intro",
+    "kr": "{e|가산명사}는 손으로 하나씩 쥐거나 형태가 명확해서 ‘하나, 둘’ 셀 수 있는 명사입니다.",
+    "en": null
+  },
+  {
+    "id": "i5",
+    "scene": "intro",
+    "kr": "{v|불가산명사}는 쪼개도 형태가 사라지지 않거나, 눈에 보이지 않거나, 너무 형태가 가변적이어서 개수를 직접 셀 수 없는 명사입니다.",
+    "en": null
+  },
+  {
+    "id": "i6",
+    "scene": "intro",
+    "kr": "스스로 형태를 가지지 못하는 명사, {v|불가산명사}입니다.",
+    "en": null
+  },
+  {
+    "id": "i7a",
+    "scene": "intro",
+    "kr": "컵에 담긴 물({v|water}), 공기({v|air}), 돈이라는 개념({v|money}), 사랑({v|love}), 정보({v|information}),",
+    "en": null
+  },
+  {
+    "id": "i7b",
+    "scene": "intro",
+    "kr": "조언({v|advice}), 시간({v|time}), 소금({v|salt}), 행복({v|happiness}), 그리고 당신의 머리카락({v|hair}) 같은 명사들입니다.",
+    "en": null
+  },
+  {
+    "id": "b1a",
+    "scene": "bridge",
+    "kr": "예를 들어, “나 물 두 개만 줘”라고 할 때,",
+    "en": null
+  },
+  {
+    "id": "b1b",
+    "scene": "bridge",
+    "kr": "{e|I want two waters}라고 쓰면 아주 어색하고 틀린 문장이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b1c",
+    "scene": "bridge",
+    "kr": "물은 형태가 없기 때문에 {e|I want two} {p|glasses of} {e|water}처럼 중간에 ‘컵({p|glass})’이라는 다리가 수량을 나타내주어야 완성된 문장이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b2a",
+    "scene": "bridge",
+    "kr": "다시 한 번 말하자면, {v|불가산명사} 바로 앞에는 숫자({e|one}, {e|two})나 부정관사({e|a}, {e|an})가 직접 오지 못하고, 복수형 {e|s}도 붙지 못합니다.",
+    "en": null
+  },
+  {
+    "id": "b2b",
+    "scene": "bridge",
+    "kr": "따라서 {v|불가산명사}의 양을 표현하려면, 반드시 {p|단위}나 {p|용기}가 다리 역할을 해주어야 합니다.",
+    "en": null
+  },
+  {
+    "id": "b3a",
+    "scene": "bridge",
+    "kr": "{e|I bought a bread}라고 쓰면 어색하지만,",
+    "en": null
+  },
+  {
+    "id": "b3b",
+    "scene": "bridge",
+    "kr": "{e|I bought a} {p|loaf of} {e|bread}라고 써야",
+    "en": null
+  },
+  {
+    "id": "b3c",
+    "scene": "bridge",
+    "kr": "“나는 빵 한 덩어리를 샀다”라는 올바른 문장이 되는 것처럼 말이죠.",
+    "en": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "따뜻한 햇살 아래, 카페 창가에 앉아 시간을 보냅니다.",
+    "en": "{e|He} {e|spends} {v|time} {e|sitting} {e|by} {e|the} {e|window.}"
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "테이블 위에는 시원한 물 한 잔이 놓여 있죠.",
+    "en": "{e|A} {p|glass} {p|of} {v|water} {e|is} {e|on} {e|the} {e|table.}"
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "창밖으로 은은하게 불어오는 공기를 느껴봅니다.",
+    "en": "{e|He} {e|feels} {e|the} {e|fresh} {v|air} {e|from} {e|outside.}"
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "지인이 찾아와 인생에 대한 좋은 조언을 건넸습니다.",
+    "en": "{e|His} {e|friend} {e|gave} {e|him} {e|good} {v|advice}"
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "그 조언은 그에게 커다란 희망과 용기를 주었죠.",
+    "en": "{e|The} {e|advice} {e|brought} {e|him} {e|great} {v|hope}"
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "그는 고마운 마음으로 맛있는 음식을 대접했습니다.",
+    "en": "{e|He} {e|shared} {e|delicious} {v|food} {e|with} {e|gratitude.}"
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "함께 이야기를 나누며 가슴속에 행복이 차올랐습니다.",
+    "en": "{e|His} {e|heart} {e|was} {e|filled} {e|with} {v|happiness}"
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "지인은 미소를 지으며 새로운 정보도 공유해 주었습니다.",
+    "en": "{e|His} {e|friend} {e|shared} {e|useful} {v|information}"
+  },
+  {
+    "id": "s09",
+    "scene": "story",
+    "kr": "돈으로는 결코 살 수 없는 아주 소중한 시간이었죠.",
+    "en": "{e|It} {e|was} {e|a} {e|precious} {e|moment} {e|that} {v|money} {e|cannot} {e|buy.}"
+  },
+  {
+    "id": "s10",
+    "scene": "story",
+    "kr": "그렇게 두 사람의 우정 속에 따뜻한 사랑이 피어났습니다.",
+    "en": "{e|Warm} {v|love} {e|bloomed} {e|in} {e|their} {e|friendship.}"
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘은 셀 수 없는 명사, {v|불가산명사}에 대해 배웠습니다.",
+    "en": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "{v|불가산명사}는 직접 숫자를 붙이지 않고 {p|단위}나 {p|맥락}을 함께 써야 한다는 점, 잊지 마세요.",
+    "en": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+    "en": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "감사합니다.",
+    "en": null
+  }
+]

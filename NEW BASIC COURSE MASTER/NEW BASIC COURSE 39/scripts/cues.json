@@ -1,0 +1,163 @@
+[
+  {
+    "id": "i1",
+    "scene": "intro",
+    "kr": "20강. 마침내 완성된 이야기. 13강 조동사부터 19강 도치까지, 우리는 문법이라는 단단한 뼈대 위에 마음의 결을 입히며, 도심 속 비밀 서재의 이야기를 함께 이어왔습니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "마지막 20강에서는, 우리가 배운 핵심 표현들이 하나의 완성된 도심 동화 안에서 어떻게 눈부시게 피어나는지, 열두 개의 종합 예문을 통해 느껴보는 시간입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "d1",
+    "scene": "bridge",
+    "kr": "오늘의 이야기는 이렇습니다. 마침내 비밀 서재의 문을 열고, 피아니스트의 음악과 하나가 되어, 도심의 밤을 마법으로 물들이고, 새로운 내일을 향해 나아가는 대단원 이야기입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "p1",
+    "scene": "story",
+    "kr": "먼저 13강부터 19강까지, 핵심 문법이 하나씩 피어나는 일곱 문장입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "우리는 이제 비밀 서재의 문을 주저함 없이 열 수 있다.",
+    "en": "{e|We} {v|can} {e|open} {e|the} {e|door} {e|of} {e|the} {e|secret} {e|library} {e|without} {e|hesitation} {e|now.}",
+    "say": null
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "지금 흐르는 멜로디는 우리가 어제 들었던 것보다 훨씬 더 감동적이다.",
+    "en": "{e|The} {e|melody} {e|flowing} {e|now} {e|is} {p|much more touching} {e|than} {e|what} {e|we} {e|heard} {e|yesterday.}",
+    "say": null
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "이 순간이 올여름 밤 도심 속에서 우리가 경험한 가장 아름다운 기적이다.",
+    "en": "{e|This} {e|moment} {e|is} {g|the most beautiful} {e|miracle} {e|we} {e|experienced} {e|in} {e|the} {e|city} {e|this} {e|summer} {e|night.}",
+    "say": null
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "자정이 되었을 때 그 피아노 소리가 퍼졌기 때문에, 온 도시가 조용히 숨을 죽였다.",
+    "en": "{c|Because} {e|the} {e|piano} {e|sound} {e|spread} {e|when} {e|midnight} {e|arrived,} {e|the} {e|whole} {e|city} {e|held} {e|its} {e|breath} {e|quietly.}",
+    "say": null
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "만약 네가 나와 함께 있지 않았더라면, 나는 이 기적의 순간을 절대 만나지 못했을 텐데.",
+    "en": "{e|If} {e|you} {y|had not been} {e|with} {e|me,} {e|I} {e|would} {e|have} {e|never} {e|met} {e|this} {e|moment} {e|of} {e|miracle.}",
+    "say": null
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "만약 우리가 매일 밤 이 골목길을 기억한다면, 마법은 영원히 우리 곁에 남아있을 것이다.",
+    "en": "{e|If} {e|we} {b|remember} {e|this} {e|alley} {e|every} {e|night,} {e|the} {e|magic} {e|will} {e|stay} {e|by} {e|our} {e|side} {e|forever.}",
+    "say": null
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "나는 내 인생에서 이렇게 깊은 울림을 주는 음악을 단 한 번도 들어본 적이 없다.",
+    "en": "{l|Never} {e|have} {e|I} {e|heard} {e|such} {e|a} {e|deeply} {e|touching} {e|music} {e|in} {e|my} {e|whole} {e|life.}",
+    "say": null
+  },
+  {
+    "id": "p2",
+    "scene": "story",
+    "kr": "이어서 도심 동화의 마지막을 장식하는 완결 문장들입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "오래된 일기장 마지막 페이지에 적힌 문장은 우리 모두에게 전하는 희망의 메시지였다.",
+    "en": "{e|The} {e|sentence} {e|written} {e|on} {e|the} {e|last} {e|page} {e|of} {e|the} {e|old} {e|diary} {e|was} {e|a} {m|message of hope} {e|to} {e|us} {e|all.}",
+    "say": null
+  },
+  {
+    "id": "s09",
+    "scene": "story",
+    "kr": "카페 2층의 불빛은 꺼졌지만, 그 울림은 우리의 가슴속에 영원히 꺼지지 않을 것이다.",
+    "en": "{m|Though} {e|the} {e|light} {e|on} {e|the} {e|second} {e|floor} {e|went} {e|out,} {e|its} {e|echo} {e|will} {e|never} {e|fade} {e|in} {e|our} {e|hearts.}",
+    "say": null
+  },
+  {
+    "id": "s10",
+    "scene": "story",
+    "kr": "이제 우리는 각자의 일상으로 돌아가지만, 우리의 언어는 이전보다 훨씬 더 풍성해졌다.",
+    "en": "{e|Now} {e|we} {e|return} {e|to} {e|our} {e|daily} {e|lives,} {e|but} {e|our} {e|language} {e|has} {e|become} {m|much richer} {e|than} {e|before.}",
+    "say": null
+  },
+  {
+    "id": "s11",
+    "scene": "story",
+    "kr": "만약 네가 다시 영어 문장을 세우고 싶다면, 언제든 이 도심 동화의 골목길로 찾아오면 된다.",
+    "en": "{m|If} {e|you} {e|want} {e|to} {e|build} {e|English} {e|sentences} {e|again,} {e|you} {e|can} {e|always} {e|visit} {e|this} {e|alley} {e|of} {e|urban} {e|fairy} {e|tale.}",
+    "say": null
+  },
+  {
+    "id": "s12",
+    "scene": "story",
+    "kr": "마침내 우리의 긴 여행은 끝났고, 새로운 시작을 향해 기분 좋게 발걸음을 옮긴다.",
+    "en": "{m|At last} {e|our} {e|long} {e|journey} {e|has} {e|ended,} {e|and} {e|we} {e|take} {e|a} {e|pleasant} {e|step} {e|toward} {e|a} {e|new} {e|beginning.}",
+    "say": null
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "1강 기초 원리부터 시작해 오늘 20강 마침표를 찍기까지, 나와 함께 걸어오신 수강생 여러분, 참으로 고생 많으셨습니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "단순히 영단어를 암기하고 공식을 외우는 영어가 아니라, 문장 하나하나에 {y|마음의 결}을 담고, 입으로 소리 내어 중얼거리며 내 것으로 만드는 과정이었습니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "도심 속 비밀 서재에서 솟아오른 피아노 소리처럼, 여러분의 입에서 나오는 영어 문장도, 이제 세상에서 가장 아름답고 단단한 울림이 될 것입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "이번 기초 과정은 여기서 마침표를 찍지만, 여러분이 앞으로 마주할 수많은 영어 문장 속에서, 배운 원리들이 반짝이는 {y|이정표}가 되어줄 것입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o5",
+    "scene": "outro",
+    "kr": "함께해 주셔서 진심으로 감사드리며, 멋진 영어를 향해 나아갈 여러분의 새로운 시작을, 언제나 응원하겠습니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o6",
+    "scene": "outro",
+    "kr": "지금까지 함께한 가이드였습니다. 수고 많으셨습니다!",
+    "en": null,
+    "say": null
+  }
+]

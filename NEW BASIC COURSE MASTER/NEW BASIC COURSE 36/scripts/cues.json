@@ -1,0 +1,205 @@
+[
+  {
+    "id": "i1",
+    "scene": "intro",
+    "kr": "17강에서는 우리가 {y|가정법}이라는 걸 다뤄볼 건데요. 사실 가정법이라는 말이 좀 어렵게 느껴질 수 있지만, 알고 보면 정말 별거 아닙니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "쉽게 말해서, {y|지금 현실은 전혀 안 그런데, 만약 이라면 얼마나 좋을까?} 하고, 현실과 살짝 거리를 두고 마음속으로 예쁜 상상을 해보는 거거든요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "a1",
+    "scene": "bridge",
+    "kr": "여기서 가장 재미있는 포인트가 하나 있어요. 영어에서는 현실하고 전혀 다른 가상의 상상을 할 때, {y|시제를 일부러 과거로 쓱 밀어내서} 표현합니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "a2",
+    "scene": "bridge",
+    "kr": "13강에서 조동사 과거형 배울 때 기억나시죠? 시제를 과거로 밀면 현실과의 거리가 멀어지면서, 불확실함이나 가상의 뉘앙스가 만들어지거든요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "b1",
+    "scene": "bridge",
+    "kr": "그래서 지금 현재 사실과 반대로, 만약 지금 이라면, 할 텐데, 하고 상상할 때는 {v|과거동사}를 써요. 이걸 문법 책에서는 {y|가정법 과거}라고 부르는 거죠.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "b2",
+    "scene": "bridge",
+    "kr": "특히 이때 {e|be}동사는 인칭 상관없이 {g|were}를 쓰는 게 아주 매력적인 기본 규칙입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "c1",
+    "scene": "bridge",
+    "kr": "반대로, 아, 그때 내가 했었더라면, 그때 했을 텐데, 하고 이미 지나간 과거 일을 후회하거나 상상할 때는, 과거보다 한 단계 더 옛날인 {l|had p.p.}를 가져와서 써줍니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "c2",
+    "scene": "bridge",
+    "kr": "이걸 {y|가정법 과거완료}라고 하고요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "d1",
+    "scene": "bridge",
+    "kr": "그럼 우리가 계속 따라오던 그 도심 동화 이야기 있죠? 닫힌 카페 2층 서재의 비밀을 뒤로하고 일상으로 돌아온 주인공이 떠올리는 가상의 순간들을, 영어 문장으로 하나씩 느껴볼게요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "d2",
+    "scene": "bridge",
+    "kr": "한글 의미부터 먼저 마음에 담고, 그 뒤에 나오는 영어 소리에 귀를 기울여 보세요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "p1",
+    "scene": "story",
+    "kr": "먼저 지금 현재 상황을 반대로 상상해보는 이야기들입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "만약 내가 그 비밀 열쇠를 갖고 있다면, 나는 지금 당장 저 문을 열 텐데.",
+    "en": "{e|If} {e|I} {v|had} {e|the} {e|secret} {e|key,} {e|I} {p|would} {e|open} {e|that} {e|door} {e|right} {e|now.}",
+    "say": null
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "만약 그녀가 지금 이곳에 있다면, 우리에게 피아노에 얽힌 진실을 말해줄 텐데.",
+    "en": "{e|If} {e|she} {g|were} {e|here} {e|right} {e|now,} {e|she} {p|could} {e|tell} {e|us} {e|the} {e|truth} {e|behind} {e|the} {e|piano.}",
+    "say": null
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "만약 저 골목길이 그렇게 어둡지 않다면, 우리는 더 멀리까지 탐험할 수 있을 텐데.",
+    "en": "{e|If} {e|that} {e|alley} {g|were not} {e|so} {e|dark,} {e|we} {p|could} {e|explore} {e|even} {e|further.}",
+    "say": null
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "만약 이 오래된 오르골이 작동한다면, 아름다운 멜로디가 온 방에 퍼질 텐데.",
+    "en": "{e|If} {e|this} {e|ancient} {e|music} {e|box} {v|worked} {e|a} {e|beautiful} {e|melody} {p|would} {e|spread} {e|across} {e|the} {e|room.}",
+    "say": null
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "만약 내가 도시의 모든 비밀을 안다면, 나는 더 이상 아무것도 두렵지 않을 텐데.",
+    "en": "{e|If} {e|I} {v|knew} {e|all} {e|the} {e|secrets} {e|of} {e|the} {e|city,} {e|I} {p|would not} {e|be} {e|afraid} {e|of} {e|anything.}",
+    "say": null
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "만약 우리가 지금 자유롭다면, 그 마법 같은 음악을 찾아 다시 떠날 텐데.",
+    "en": "{e|If} {e|we} {g|were} {e|free} {e|right} {e|now,} {e|we} {p|might} {e|set} {e|off} {e|again} {e|to} {e|find} {e|that} {e|magical} {e|music.}",
+    "say": null
+  },
+  {
+    "id": "p2",
+    "scene": "story",
+    "kr": "이번에는 이미 지나간 과거의 그 밤을 돌아보며, 그때 그랬더라면, 하고 아쉬워하는 이야기들입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "만약 우리가 그때 랜턴을 챙겼었더라면, 어두운 서재 구석을 더 자세히 보았을 텐데.",
+    "en": "{e|If} {e|we} {l|had brought} {e|a} {e|lantern} {e|back} {e|then,} {e|we} {c|would have} {e|seen} {e|the} {e|dark} {e|corner} {e|of} {e|the} {e|library} {e|better.}",
+    "say": null
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "만약 내가 그 일기장을 읽지 않았었더라면, 피아니스트의 슬픔을 절대 몰랐을 텐데.",
+    "en": "{e|If} {e|I} {l|had not read} {e|that} {e|diary,} {e|I} {c|would have} {e|never} {e|known} {e|the} {e|sadness} {e|of} {e|the} {e|pianist.}",
+    "say": null
+  },
+  {
+    "id": "s09",
+    "scene": "story",
+    "kr": "만약 시계가 1시를 치지 않았었더라면, 우리는 더 오래 그곳에 머물 수 있었을 텐데.",
+    "en": "{e|If} {e|the} {e|clock} {l|had not struck} {e|one,} {e|we} {c|could have} {e|stayed} {e|there} {e|much} {e|longer.}",
+    "say": null
+  },
+  {
+    "id": "s10",
+    "scene": "story",
+    "kr": "만약 그녀가 지난밤에 문을 잠그지 않았었더라면, 누군가 그 비밀 보물을 가져갔을지도 모른다.",
+    "en": "{e|If} {e|she} {l|had not locked} {e|the} {e|door} {e|last} {e|night,} {e|someone} {c|might have} {e|taken} {e|that} {e|secret} {e|treasure.}",
+    "say": null
+  },
+  {
+    "id": "s11",
+    "scene": "story",
+    "kr": "만약 우리가 자정에 그 골목길을 지나가지 않았었더라면, 이 모든 기적을 놓쳤을 텐데.",
+    "en": "{e|If} {e|we} {l|had not passed} {e|by} {e|the} {e|alley} {e|at} {e|midnight,} {e|we} {c|would have} {e|missed} {e|all} {e|these} {e|miracles.}",
+    "say": null
+  },
+  {
+    "id": "s12",
+    "scene": "story",
+    "kr": "만약 네가 그때 나에게 용기를 주지 않았었더라면, 나는 2층 계단을 올라가지 못했을 텐데.",
+    "en": "{e|If} {e|you} {l|had not given} {e|me} {e|courage} {e|at} {e|that} {e|time,} {e|I} {c|could not have} {e|climbed} {e|the} {e|stairs} {e|to} {e|the} {e|second} {e|floor.}",
+    "say": null
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘 배운 가정법의 핵심, 딱 두 가지만 마음속에 담아두세요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "가정법은 과거 시제를 써서 현실과 거리를 두는 {y|마음의 상상}이라는 것.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "그리고 지금 일을 상상할 땐 {v|과거동사}를, 지나간 옛일을 상상할 땐 {l|had p.p.}를 쓴다는 점입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "오늘 익힌 예문들도 한글 의미부터 느끼시면서, 입으로 소리 내어 중얼거려 보세요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o5",
+    "scene": "outro",
+    "kr": "다음 18강에서는 가상이 아니라 진짜 일어날 법한 일을 전제로 하는 {y|조건문}으로 찾아오겠습니다. 수고 많으셨습니다!",
+    "en": null,
+    "say": null
+  }
+]

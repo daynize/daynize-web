@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-31",
+  "private": true,
+  "description": "Remotion project root for 09-1강 in, on, at which. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson09a-InOnAt out/lesson09-1.mp4"
+  }
+}

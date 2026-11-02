@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-39",
+  "private": true,
+  "description": "Remotion project root for 20강 대단원 총정리. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson20-Finale out/lesson20.mp4"
+  }
+}

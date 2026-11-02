@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-27",
+  "private": true,
+  "description": "Remotion project root for 09강 관계대명사. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson09-RelativePronouns out/lesson09.mp4"
+  }
+}

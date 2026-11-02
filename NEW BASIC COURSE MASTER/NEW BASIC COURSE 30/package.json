@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-30",
+  "private": true,
+  "description": "Remotion project root for 10강 another / other / the other. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson10-AnotherOther out/lesson10.mp4"
+  }
+}

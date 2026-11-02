@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-22",
+  "private": true,
+  "description": "Remotion project root for 03강 분사. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson03-Participles out/lesson03.mp4"
+  }
+}

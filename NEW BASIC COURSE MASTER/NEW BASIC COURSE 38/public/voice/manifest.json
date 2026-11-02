@@ -1,0 +1,864 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "19강, 도치. 문장에 스포트라이트를 비추는 어순의 반전입니다. 강의에 들어가기에 앞서, 주어와 동사의 자리가 어떻게 바뀌는지, 아주 짧은 문장 스무 개로 눈과 귀에 먼저 익혀봅시다!",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "3af462903450624e",
+          "seconds": 17.267
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 17.267,
+      "frames": 518
+    },
+    "q01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 전혀 몰랐다.",
+          "file": "parts/q01_01_kr.mp3",
+          "hash": "f18e368e484af2c7",
+          "seconds": 1.437
+        },
+        {
+          "lang": "en",
+          "text": "I never knew. Never did I know.",
+          "file": "parts/q01_02_en.mp3",
+          "hash": "fc888d415b465fe9",
+          "seconds": 2.168
+        }
+      ],
+      "file": "q01.mp3",
+      "seconds": 3.762,
+      "frames": 113
+    },
+    "q02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 그것을 전혀 보지 못했다.",
+          "file": "parts/q02_01_kr.mp3",
+          "hash": "5e336fd23b104aad",
+          "seconds": 2.273
+        },
+        {
+          "lang": "en",
+          "text": "I never saw it. Never did I see it.",
+          "file": "parts/q02_02_en.mp3",
+          "hash": "dd38d627d11f27e2",
+          "seconds": 2.873
+        }
+      ],
+      "file": "q02.mp3",
+      "seconds": 5.303,
+      "frames": 159
+    },
+    "q03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀는 좀처럼 울지 않는다.",
+          "file": "parts/q03_01_kr.mp3",
+          "hash": "7331638aac976f2f",
+          "seconds": 2.22
+        },
+        {
+          "lang": "en",
+          "text": "She seldom cries. Seldom does she cry.",
+          "file": "parts/q03_02_en.mp3",
+          "hash": "a78541b6666a930d",
+          "seconds": 2.638
+        }
+      ],
+      "file": "q03.mp3",
+      "seconds": 5.016,
+      "frames": 150
+    },
+    "q04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 좀처럼 말하지 않는다.",
+          "file": "parts/q04_01_kr.mp3",
+          "hash": "e4268a625043b8e6",
+          "seconds": 2.22
+        },
+        {
+          "lang": "en",
+          "text": "He rarely speaks. Rarely does he speak.",
+          "file": "parts/q04_02_en.mp3",
+          "hash": "018148819fd236dd",
+          "seconds": 2.821
+        }
+      ],
+      "file": "q04.mp3",
+      "seconds": 5.198,
+      "frames": 156
+    },
+    "q05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 꿈에도 생각지 못했다.",
+          "file": "parts/q05_01_kr.mp3",
+          "hash": "fe1a939bd26a70d4",
+          "seconds": 2.116
+        },
+        {
+          "lang": "en",
+          "text": "I little dreamed. Little did I dream.",
+          "file": "parts/q05_02_en.mp3",
+          "hash": "5f1f45fde448c8f2",
+          "seconds": 2.821
+        }
+      ],
+      "file": "q05.mp3",
+      "seconds": 5.12,
+      "frames": 154
+    },
+    "q06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리는 전혀 알지 못했다.",
+          "file": "parts/q06_01_kr.mp3",
+          "hash": "40b57b4ff2b620c0",
+          "seconds": 1.985
+        },
+        {
+          "lang": "en",
+          "text": "We little knew. Little did we know.",
+          "file": "parts/q06_02_en.mp3",
+          "hash": "0224f629f9af439c",
+          "seconds": 2.508
+        }
+      ],
+      "file": "q06.mp3",
+      "seconds": 4.65,
+      "frames": 139
+    },
+    "q07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 그것을 들어본 적이 없다.",
+          "file": "parts/q07_01_kr.mp3",
+          "hash": "61c07bff6b800fad",
+          "seconds": 2.038
+        },
+        {
+          "lang": "en",
+          "text": "I have never heard it. Never have I heard it.",
+          "file": "parts/q07_02_en.mp3",
+          "hash": "50add5d30511f20c",
+          "seconds": 2.873
+        }
+      ],
+      "file": "q07.mp3",
+      "seconds": 5.068,
+      "frames": 152
+    },
+    "q08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀는 떠난 적이 없다.",
+          "file": "parts/q08_01_kr.mp3",
+          "hash": "e5defaaeb3e31a58",
+          "seconds": 1.985
+        },
+        {
+          "lang": "en",
+          "text": "She has never left. Never has she left.",
+          "file": "parts/q08_02_en.mp3",
+          "hash": "0e5b9dbb19d7aeb6",
+          "seconds": 2.873
+        }
+      ],
+      "file": "q08.mp3",
+      "seconds": 5.016,
+      "frames": 150
+    },
+    "q09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그들은 그것을 본 적이 없었다.",
+          "file": "parts/q09_01_kr.mp3",
+          "hash": "719bb9fc06d4da47",
+          "seconds": 2.22
+        },
+        {
+          "lang": "en",
+          "text": "They had never seen it. Never had they seen it.",
+          "file": "parts/q09_02_en.mp3",
+          "hash": "9098f0a6169ef35e",
+          "seconds": 3.056
+        }
+      ],
+      "file": "q09.mp3",
+      "seconds": 5.433,
+      "frames": 163
+    },
+    "q10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 절대 잊을 수 없다.",
+          "file": "parts/q10_01_kr.mp3",
+          "hash": "0e9d7b05b9ffaa4a",
+          "seconds": 1.75
+        },
+        {
+          "lang": "en",
+          "text": "I can never forget. Never can I forget.",
+          "file": "parts/q10_02_en.mp3",
+          "hash": "a9575c7dab22881d",
+          "seconds": 2.586
+        }
+      ],
+      "file": "q10.mp3",
+      "seconds": 4.519,
+      "frames": 136
+    },
+    "q11": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "버스가 이리로 온다.",
+          "file": "parts/q11_01_kr.mp3",
+          "hash": "31ffad4ce77b9e16",
+          "seconds": 1.515
+        },
+        {
+          "lang": "en",
+          "text": "The bus comes here. Here comes the bus.",
+          "file": "parts/q11_02_en.mp3",
+          "hash": "45bce4d6f4e16e7e",
+          "seconds": 2.508
+        }
+      ],
+      "file": "q11.mp3",
+      "seconds": 4.18,
+      "frames": 125
+    },
+    "q12": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "비가 아래로 내린다.",
+          "file": "parts/q12_01_kr.mp3",
+          "hash": "3ccf2343ab24e0c3",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "The rain comes down. Down comes the rain.",
+          "file": "parts/q12_02_en.mp3",
+          "hash": "942f2872363f0154",
+          "seconds": 2.691
+        }
+      ],
+      "file": "q12.mp3",
+      "seconds": 4.336,
+      "frames": 130
+    },
+    "q13": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "해가 떠오른다.",
+          "file": "parts/q13_01_kr.mp3",
+          "hash": "47bab11c41253b20",
+          "seconds": 1.332
+        },
+        {
+          "lang": "en",
+          "text": "The sun goes up. Up goes the sun.",
+          "file": "parts/q13_02_en.mp3",
+          "hash": "b285c74ae81f9ea3",
+          "seconds": 2.769
+        }
+      ],
+      "file": "q13.mp3",
+      "seconds": 4.284,
+      "frames": 129
+    },
+    "q14": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "열쇠가 저기 놓여 있다.",
+          "file": "parts/q14_01_kr.mp3",
+          "hash": "69672013d3788772",
+          "seconds": 1.75
+        },
+        {
+          "lang": "en",
+          "text": "The key lies there. There lies the key.",
+          "file": "parts/q14_02_en.mp3",
+          "hash": "11ea90f19e612650",
+          "seconds": 2.508
+        }
+      ],
+      "file": "q14.mp3",
+      "seconds": 4.415,
+      "frames": 132
+    },
+    "q15": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "영웅이 안으로 들어온다.",
+          "file": "parts/q15_01_kr.mp3",
+          "hash": "0fc250e97dc6b436",
+          "seconds": 1.567
+        },
+        {
+          "lang": "en",
+          "text": "The hero enters in. In enters the hero.",
+          "file": "parts/q15_02_en.mp3",
+          "hash": "ed9391f1f2cca0bf",
+          "seconds": 2.821
+        }
+      ],
+      "file": "q15.mp3",
+      "seconds": 4.545,
+      "frames": 136
+    },
+    "q16": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 오직 그때서야 깨달았다.",
+          "file": "parts/q16_01_kr.mp3",
+          "hash": "df9628a51fa2a410",
+          "seconds": 2.168
+        },
+        {
+          "lang": "en",
+          "text": "I realized it only then. Only then did I realize.",
+          "file": "parts/q16_02_en.mp3",
+          "hash": "c7056df57af1099f",
+          "seconds": 3.422
+        }
+      ],
+      "file": "q16.mp3",
+      "seconds": 5.773,
+      "frames": 173
+    },
+    "q17": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀는 오직 이제야 떠났다.",
+          "file": "parts/q17_01_kr.mp3",
+          "hash": "94a8065c833b2461",
+          "seconds": 2.691
+        },
+        {
+          "lang": "en",
+          "text": "She left only now. Only now did she leave.",
+          "file": "parts/q17_02_en.mp3",
+          "hash": "f4b337859959760c",
+          "seconds": 2.638
+        }
+      ],
+      "file": "q17.mp3",
+      "seconds": 5.486,
+      "frames": 165
+    },
+    "q18": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리는 오직 한 번 이겼다.",
+          "file": "parts/q18_01_kr.mp3",
+          "hash": "4275ae6eef71d62d",
+          "seconds": 2.273
+        },
+        {
+          "lang": "en",
+          "text": "We won only once. Only once did we win.",
+          "file": "parts/q18_02_en.mp3",
+          "hash": "e00fd57c5a728fa4",
+          "seconds": 2.873
+        }
+      ],
+      "file": "q18.mp3",
+      "seconds": 5.303,
+      "frames": 159
+    },
+    "q19": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 오직 나중에야 그것을 알았다.",
+          "file": "parts/q19_01_kr.mp3",
+          "hash": "aca9c44e0c9950b6",
+          "seconds": 2.273
+        },
+        {
+          "lang": "en",
+          "text": "I knew it only later. Only later did I know.",
+          "file": "parts/q19_02_en.mp3",
+          "hash": "a832771a59dd9581",
+          "seconds": 3.004
+        }
+      ],
+      "file": "q19.mp3",
+      "seconds": 5.433,
+      "frames": 163
+    },
+    "q20": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리는 오직 오늘만 이길 수 있다.",
+          "file": "parts/q20_01_kr.mp3",
+          "hash": "81732709dfb5e437",
+          "seconds": 2.351
+        },
+        {
+          "lang": "en",
+          "text": "We can win only today. Only today can we win.",
+          "file": "parts/q20_02_en.mp3",
+          "hash": "ac194e2fc3bb1280",
+          "seconds": 3.109
+        }
+      ],
+      "file": "q20.mp3",
+      "seconds": 5.616,
+      "frames": 168
+    },
+    "c1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "방금 짧은 문장들에서 보신 것처럼, 도치는 문법적으로 틀린 게 아니라, 내가 가장 강조하고 싶은 단어를 문장 맨 앞으로 던질 때 일어나는, 자연스러운 어순 변화입니다.",
+          "file": "parts/c1_01_kr.mp3",
+          "hash": "227c4bfd68875242",
+          "seconds": 14.655
+        }
+      ],
+      "file": "c1.mp3",
+      "seconds": 14.655,
+      "frames": 440
+    },
+    "c2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "주인공에게 스포트라이트를 비추듯 강조어가 맨 앞으로 나가다 보니, 그 뒤에 오는 주어와 동사도, 질문할 때처럼 조동사 또는 비동사, 주어, 동사 순서로 자리를 비켜주는 거거든요.",
+          "file": "parts/c2_01_kr.mp3",
+          "hash": "223ded7338f6ed73",
+          "seconds": 17.737
+        }
+      ],
+      "file": "c2.mp3",
+      "seconds": 17.737,
+      "frames": 532
+    },
+    "c3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "부정어 네버, 셀덤, 레얼리, 리틀부터 장소와 방향의 히어, 데어, 다운, 그리고 온리 같은 단어들이 앞으로 튀어나갈 때, 이 멋진 도치 표현이 완성됩니다.",
+          "file": "parts/c3_01_kr.mp3",
+          "hash": "688e6e97de7928e5",
+          "seconds": 15.36
+        }
+      ],
+      "file": "c3.mp3",
+      "seconds": 15.36,
+      "frames": 461
+    },
+    "d1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그럼 도심 동화 속 카페 2층 서재와 밤의 골목길에서 펼쳐지는 이야기들을, 도치 문장으로 만나볼까요?",
+          "file": "parts/d1_01_kr.mp3",
+          "hash": "cc2bd996b7f37d59",
+          "seconds": 8.202
+        }
+      ],
+      "file": "d1.mp3",
+      "seconds": 8.202,
+      "frames": 246
+    },
+    "d2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "한글 의미를 먼저 가슴에 담으시고, 영어 소리에 귀를 기울여 보세요.",
+          "file": "parts/d2_01_kr.mp3",
+          "hash": "bb3297b3e02636e8",
+          "seconds": 5.564
+        }
+      ],
+      "file": "d2.mp3",
+      "seconds": 5.564,
+      "frames": 167
+    },
+    "p1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "먼저 부정어 네버, 셀덤, 레얼리, 리틀이 앞으로 나가는 이야기들입니다.",
+          "file": "parts/p1_01_kr.mp3",
+          "hash": "c6a860da8bb2d0f8",
+          "seconds": 5.747
+        }
+      ],
+      "file": "p1.mp3",
+      "seconds": 5.747,
+      "frames": 172
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 내 인생에서 이렇게 아름다운 피아노 멜로디를 들어본 적이 없다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "3d99ecf81eac546a",
+          "seconds": 5.016
+        },
+        {
+          "lang": "en",
+          "text": "Never have I heard such a beautiful piano melody in my life.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "aef450a6a4e6a15e",
+          "seconds": 3.37
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 8.542,
+      "frames": 256
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀는 좀처럼 밤 12시 전에는 그 비밀 서재의 문을 열지 않는다.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "c2e89c4ad56dd893",
+          "seconds": 5.251
+        },
+        {
+          "lang": "en",
+          "text": "Seldom does she open the door of the secret library before midnight.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "25fbd7fb67ae9fc3",
+          "seconds": 3.527
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 8.934,
+      "frames": 268
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리는 그 어두운 골목길에서 그런 마법 같은 기적을 거의 본 적이 없다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "361937b4c64d6dd2",
+          "seconds": 5.851
+        },
+        {
+          "lang": "en",
+          "text": "Rarely have we seen such a magical miracle in that dark alley.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "0b011d3cb643bf91",
+          "seconds": 3.474
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 9.482,
+      "frames": 284
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 그 피아니스트가 누구인지 꿈에도 상상하지 못했다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "c49f80dfa21d4426",
+          "seconds": 4.598
+        },
+        {
+          "lang": "en",
+          "text": "Little did I dream who the pianist actually was.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "90b7faba1a432a6b",
+          "seconds": 2.926
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 7.68,
+      "frames": 230
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리는 그 시계가 멈추기 전까지 그 긴박한 상황을 전혀 알지 못했다.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "3a9fbb769497d8ef",
+          "seconds": 5.799
+        },
+        {
+          "lang": "en",
+          "text": "Little did we know the urgent situation until the clock stopped.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "898a0845fee2195b",
+          "seconds": 3.579
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 9.535,
+      "frames": 286
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀는 자신의 음악이 온 도시를 밝게 비추리라고는 전혀 예상하지 못했다.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "0e12aa33fb04092f",
+          "seconds": 6.113
+        },
+        {
+          "lang": "en",
+          "text": "Never did she expect that her music would illuminate the whole city.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "c5485ee18e46cf94",
+          "seconds": 3.474
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 9.77,
+      "frames": 293
+    },
+    "p2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이번에는 장소와 방향의 단어들과 온리가 스포트라이트를 받는 이야기들입니다.",
+          "file": "parts/p2_01_kr.mp3",
+          "hash": "96dc6b681dd9c48f",
+          "seconds": 6.4
+        }
+      ],
+      "file": "p2.mp3",
+      "seconds": 6.4,
+      "frames": 192
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "저 멀리 서재 구석에 우리가 그토록 찾던 은색 열쇠가 놓여 있었다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "e324a926eb8dc53f",
+          "seconds": 5.094
+        },
+        {
+          "lang": "en",
+          "text": "There on the shelf lay the silver key we had been looking for so eagerly.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "cb75efaf1e72d31f",
+          "seconds": 4.023
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 9.3,
+      "frames": 279
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "비밀 계단 아래로 그 피아니스트가 조용히 걸어 내려왔다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "cf5a0e3b807de0a2",
+          "seconds": 4.859
+        },
+        {
+          "lang": "en",
+          "text": "Down the secret stairs walked the pianist very quietly.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "63928cdece5369e8",
+          "seconds": 3.291
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 8.307,
+      "frames": 249
+    },
+    "s09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오직 자정이 되어서야 비로소 도심의 모든 네온사인이 밝게 빛났다.",
+          "file": "parts/s09_01_kr.mp3",
+          "hash": "13df682d267813f6",
+          "seconds": 5.251
+        },
+        {
+          "lang": "en",
+          "text": "Only at midnight did all the neon signs in the city shine brightly.",
+          "file": "parts/s09_02_en.mp3",
+          "hash": "082f6882bd53e073",
+          "seconds": 3.788
+        }
+      ],
+      "file": "s09.mp3",
+      "seconds": 9.195,
+      "frames": 276
+    },
+    "s10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오직 그 마법 오르골을 통해서만 우리는 진실의 문을 열 수 있었다.",
+          "file": "parts/s10_01_kr.mp3",
+          "hash": "1b2f0c699a6221f6",
+          "seconds": 5.616
+        },
+        {
+          "lang": "en",
+          "text": "Only through the magic music box could we open the door of truth.",
+          "file": "parts/s10_02_en.mp3",
+          "hash": "de6a391fb5a283f8",
+          "seconds": 4.023
+        }
+      ],
+      "file": "s10.mp3",
+      "seconds": 9.796,
+      "frames": 294
+    },
+    "s11": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "저 멀리 어둠 속에서 온 도시를 울리는 그 클래식 소리가 퍼져 나갔다.",
+          "file": "parts/s11_01_kr.mp3",
+          "hash": "16b1ea5d39ea3943",
+          "seconds": 5.851
+        },
+        {
+          "lang": "en",
+          "text": "Far away into the darkness echoed the classic sound across the city.",
+          "file": "parts/s11_02_en.mp3",
+          "hash": "ff0954154d9bcaa0",
+          "seconds": 4.023
+        }
+      ],
+      "file": "s11.mp3",
+      "seconds": 10.031,
+      "frames": 301
+    },
+    "s12": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오직 우리가 마음을 열었을 때 비로소 그 밤의 비밀이 드러났다.",
+          "file": "parts/s12_01_kr.mp3",
+          "hash": "0a1a803bbb318a7f",
+          "seconds": 5.094
+        },
+        {
+          "lang": "en",
+          "text": "Only when we opened our hearts was the secret of the night revealed.",
+          "file": "parts/s12_02_en.mp3",
+          "hash": "a7f9c8c0456a0686",
+          "seconds": 3.84
+        }
+      ],
+      "file": "s12.mp3",
+      "seconds": 9.117,
+      "frames": 274
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 배운 도치 표현의 핵심, 딱 두 가지만 기억해 두세요.",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "0b7f32d515bd0fef",
+          "seconds": 4.545
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 4.545,
+      "frames": 136
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "첫째, 도치는 강조하고 싶은 말을 맨 앞으로 던져서, 극적인 분위기를 만드는 연출법이라는 점입니다.",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "f1de1f08a74944f0",
+          "seconds": 8.908
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 8.908,
+      "frames": 267
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "둘째, 강조하는 단어가 앞으로 나가면, 뒤의 주어와 동사는 의문문처럼 자리를 살짝 바꾼다는 사실입니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "1b0a4261cddbdbe5",
+          "seconds": 9.456
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 9.456,
+      "frames": 284
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 배운 문장들을, 한글 의미부터 천천히 새기시면서, 입으로 소리 내어 중얼거려 보세요.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "91fe37eca4343b4c",
+          "seconds": 7.184
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 7.184,
+      "frames": 216
+    },
+    "o5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다음 20강에서는 마침내 기초 과정 대단원의 마무리로 찾아오겠습니다. 수고 많으셨습니다!",
+          "file": "parts/o5_01_kr.mp3",
+          "hash": "2132b864f3a13faa",
+          "seconds": 6.583
+        }
+      ],
+      "file": "o5.mp3",
+      "seconds": 6.583,
+      "frames": 197
+    }
+  }
+}

@@ -1,0 +1,682 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이런 말을 한다고 칩시다. 같은 조건이었으면, 나도 했지… 나도 그랬겠지.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "cc34e3de746d6419",
+          "seconds": 6.687
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 6.687,
+      "frames": 201
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "아, 과거형이니까, I did so로 쓰면 되겠구나! 하지만, 여전히 그랬겠지는 표현이 안됩니다. 오늘 그 표현을 배웁니다.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "cf7482aa572a00aa",
+          "seconds": 12.251
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 12.251,
+      "frames": 368
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "문장에서 동사는 행동을 나타낸다면, 조동사는 그 행동에 말하는 사람의 태도, 능력, 의지, 확신의 정도라는 색깔을 입혀주는 역할을 합니다.",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "249cf0366f8dd34b",
+          "seconds": 13.636
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 13.636,
+      "frames": 409
+    },
+    "m0": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "먼저 조동사의 6대 핵심 기본기입니다. 조동사는 혼자 쓰이지 않고, 반드시 뒤에 동사원형을 동반하여 동사를 도와줍니다.",
+          "file": "parts/m0_01_kr.mp3",
+          "hash": "981dd07bc1bf579a",
+          "seconds": 10.266
+        }
+      ],
+      "file": "m0.mp3",
+      "seconds": 10.266,
+      "frames": 308
+    },
+    "m1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "첫째, Can, Be able to. 가능과 허가입니다. 할 수 있다, 해도 된다.",
+          "file": "parts/m1_01_kr.mp3",
+          "hash": "d6a837e4c5780346",
+          "seconds": 6.269
+        }
+      ],
+      "file": "m1.mp3",
+      "seconds": 6.269,
+      "frames": 188
+    },
+    "m2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "둘째, Will, Be going to. 의지와 미래입니다. 할 것이다, 하겠다.",
+          "file": "parts/m2_01_kr.mp3",
+          "hash": "53d5f5994b65cd74",
+          "seconds": 5.695
+        }
+      ],
+      "file": "m2.mp3",
+      "seconds": 5.695,
+      "frames": 171
+    },
+    "m3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "셋째, Shall. 제안, 청유, 격식입니다. 할까요? 그리고 법칙적으로 하리라.",
+          "file": "parts/m3_01_kr.mp3",
+          "hash": "f1d21c20b9fa135e",
+          "seconds": 5.616
+        }
+      ],
+      "file": "m3.mp3",
+      "seconds": 5.616,
+      "frames": 168
+    },
+    "m4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "넷째, May. 허가와 약한 추측입니다. 해도 좋다, 일지도 모른다.",
+          "file": "parts/m4_01_kr.mp3",
+          "hash": "8c8e7e918a9cd306",
+          "seconds": 6.818
+        }
+      ],
+      "file": "m4.mp3",
+      "seconds": 6.818,
+      "frames": 205
+    },
+    "m5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다섯째, Must. 강한 의무와 확신입니다. 반드시 해야 한다, 임에 틀림없다.",
+          "file": "parts/m5_01_kr.mp3",
+          "hash": "680df2c823b056a8",
+          "seconds": 7.706
+        }
+      ],
+      "file": "m5.mp3",
+      "seconds": 7.706,
+      "frames": 231
+    },
+    "m6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "여섯째, Should. 당위, 조언, 자연스러운 기대입니다. 하는 것이 좋다, 마땅히 일 것이다.",
+          "file": "parts/m6_01_kr.mp3",
+          "hash": "b58fa5879e1c0508",
+          "seconds": 7.053
+        }
+      ],
+      "file": "m6.mp3",
+      "seconds": 7.053,
+      "frames": 212
+    },
+    "f1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "핵심 반전입니다! 조동사의 과거형은 시제가 아니라, 확신의 농도입니다!",
+          "file": "parts/f1_01_kr.mp3",
+          "hash": "1ec8f399f0e2f306",
+          "seconds": 6.583
+        }
+      ],
+      "file": "f1.mp3",
+      "seconds": 6.583,
+      "frames": 197
+    },
+    "f2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "많은 분들이 could, would, might, should를 단순히 옛날에 했다는 과거 시제로만 생각합니다.",
+          "file": "parts/f2_01_kr.mp3",
+          "hash": "4640467326268cea",
+          "seconds": 8.908
+        }
+      ],
+      "file": "f2.mp3",
+      "seconds": 8.908,
+      "frames": 267
+    },
+    "f3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "하지만 실제 현대 영어 회화에서 조동사의 과거형은, 현실과 거리를 두어 불확실한 추측이나 조심스러운 뉘앙스를 만드는 안전장치로 훨씬 많이 쓰입니다.",
+          "file": "parts/f3_01_kr.mp3",
+          "hash": "570852d80d0aaf79",
+          "seconds": 14.446
+        }
+      ],
+      "file": "f3.mp3",
+      "seconds": 14.446,
+      "frames": 433
+    },
+    "g1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "Can은 100% 가능, Could는 50% 정도의 부드러운 가능성입니다.",
+          "file": "parts/g1_01_kr.mp3",
+          "hash": "052a0f2d70a1d141",
+          "seconds": 5.799
+        }
+      ],
+      "file": "g1.mp3",
+      "seconds": 5.799,
+      "frames": 174
+    },
+    "g2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "May는 50% 추측, Might는 30% 이하의 아슬아슬한 불확실성입니다.",
+          "file": "parts/g2_01_kr.mp3",
+          "hash": "e7f3a835b7b61969",
+          "seconds": 6.113
+        }
+      ],
+      "file": "g2.mp3",
+      "seconds": 6.113,
+      "frames": 183
+    },
+    "g3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "Will은 단정한 미래, Would는 가상의 상황을 전제로 한 추측입니다.",
+          "file": "parts/g3_01_kr.mp3",
+          "hash": "19a8aadd3c4feb08",
+          "seconds": 5.042
+        }
+      ],
+      "file": "g3.mp3",
+      "seconds": 5.042,
+      "frames": 151
+    },
+    "g4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "Shall은 정중한 제안과 의지, Should는 마땅한 당위입니다. 그리고 should have p.p.는, 했어야 했는데 안 했다는 후회나 추정을 나타냅니다.",
+          "file": "parts/g4_01_kr.mp3",
+          "hash": "f4e778b5016c2749",
+          "seconds": 11.311
+        }
+      ],
+      "file": "g4.mp3",
+      "seconds": 11.311,
+      "frames": 339
+    },
+    "n1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "Shall은 회화에서 Shall we...? 할까요? 형태로, 상대방의 의사를 부드럽게 물어볼 때 가장 많이 쓰입니다. 격식체에서는 법률이나 정해진 운명을 나타내기도 합니다.",
+          "file": "parts/n1_01_kr.mp3",
+          "hash": "e9cf070685e22844",
+          "seconds": 16.118
+        }
+      ],
+      "file": "n1.mp3",
+      "seconds": 16.118,
+      "frames": 484
+    },
+    "n2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "Should는 원래 shall의 과거형에서 출발했지만, 현대 영어에서는 이치상 당연히 하는 게 맞아라는 조언이나 기대를 나타냅니다.",
+          "file": "parts/n2_01_kr.mp3",
+          "hash": "298fc7aef79228a2",
+          "seconds": 10.292
+        }
+      ],
+      "file": "n2.mp3",
+      "seconds": 10.292,
+      "frames": 309
+    },
+    "n3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "추측으로 쓰일 때는, 상황을 볼 때 당연히 일 것이다라는 기대가 섞인 확신을 전달합니다.",
+          "file": "parts/n3_01_kr.mp3",
+          "hash": "6a3cdbb274758c67",
+          "seconds": 7.34
+        }
+      ],
+      "file": "n3.mp3",
+      "seconds": 7.34,
+      "frames": 220
+    },
+    "n4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그리고 should have p.p.가 되면, 그때 했어야 마땅했는데라는 불확실한 지난 일에 대한 아쉬움이나 추정을 표현합니다.",
+          "file": "parts/n4_01_kr.mp3",
+          "hash": "c29db5851b8f96ab",
+          "seconds": 10.109
+        }
+      ],
+      "file": "n4.mp3",
+      "seconds": 10.109,
+      "frames": 303
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "어두운 골목길 너머로 희미한 피아노 선율을 들을 수 있다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "4a6160d9e017f58b",
+          "seconds": 4.833
+        },
+        {
+          "lang": "en",
+          "text": "You can hear a faint piano melody from the dark alley.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "0b95e48c03a2d568",
+          "seconds": 2.952
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 7.941,
+      "frames": 238
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "내가 자정에 누군가 연주하는 그 음악의 정체를 찾아내고 말겠다.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "437b969379fcd6c3",
+          "seconds": 4.598
+        },
+        {
+          "lang": "en",
+          "text": "I will find out who is playing the music at midnight.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "581378317b8eddef",
+          "seconds": 2.769
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 7.523,
+      "frames": 226
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리 함께 이 침묵에 휩싸인 건물 안으로 걸어 들어가 볼까요?",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "c70d557aac6f2a5e",
+          "seconds": 4.624
+        },
+        {
+          "lang": "en",
+          "text": "Shall we step into the silent building together?",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "5811465af047400e",
+          "seconds": 2.534
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 7.34,
+      "frames": 220
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "시계가 1시를 치기 전에 우리는 저 건물 안으로 들어가야만 한다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "187a43a1259fecd9",
+          "seconds": 5.616
+        },
+        {
+          "lang": "en",
+          "text": "We must enter the building before the clock strikes one.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "777d8a9412f814a0",
+          "seconds": 2.952
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 8.725,
+      "frames": 262
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "너는 밤의 리듬에 마땅히 귀를 기울이는 것이 좋다.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "5d101d0288850fc5",
+          "seconds": 3.291
+        },
+        {
+          "lang": "en",
+          "text": "You should listen closely to the rhythm of the night.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "f34caf40f57b2f51",
+          "seconds": 2.926
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 6.374,
+      "frames": 191
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "밤이 되면 네온사인 간판이 당연히 자동으로 켜질 것이다.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "af027edbcd3f40cc",
+          "seconds": 3.762
+        },
+        {
+          "lang": "en",
+          "text": "The neon sign should turn on automatically at night.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "f38a0c30aa91c0a0",
+          "seconds": 3.056
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 6.975,
+      "frames": 209
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "어쩌면 그 신비로운 피아니스트는 도시의 정령일 수도 있다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "772699bd5b7400bd",
+          "seconds": 4.624
+        },
+        {
+          "lang": "en",
+          "text": "The mysterious pianist could be a spirit of the city.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "183fffd1ded87361",
+          "seconds": 3.109
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 7.889,
+      "frames": 237
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 피아노 의자 밑에 비밀 일기장을 숨겨두었을지도 모른다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "a33229139f6a798c",
+          "seconds": 4.545
+        },
+        {
+          "lang": "en",
+          "text": "He might have hidden a secret diary under the piano seat.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "89ba34c257410899",
+          "seconds": 2.952
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 7.68,
+      "frames": 230
+    },
+    "s09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "저 푸른 불꽃이라면 아마 텅 빈 방 전체를 밝혀줄 텐데.",
+          "file": "parts/s09_01_kr.mp3",
+          "hash": "fd63870bab2d6633",
+          "seconds": 4.206
+        },
+        {
+          "lang": "en",
+          "text": "That blue flame would illuminate the entire empty room.",
+          "file": "parts/s09_02_en.mp3",
+          "hash": "a71393c4da1b3234",
+          "seconds": 3.056
+        }
+      ],
+      "file": "s09.mp3",
+      "seconds": 7.445,
+      "frames": 223
+    },
+    "s10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "누군가 불과 1분 전에 이 커피 잔을 남겨두고 떠났을 수도 있다.",
+          "file": "parts/s10_01_kr.mp3",
+          "hash": "13cd06767fa1eb9f",
+          "seconds": 5.094
+        },
+        {
+          "lang": "en",
+          "text": "Someone could have left this coffee cup just a minute ago.",
+          "file": "parts/s10_02_en.mp3",
+          "hash": "bf750fa0235f573b",
+          "seconds": 3.109
+        }
+      ],
+      "file": "s10.mp3",
+      "seconds": 8.359,
+      "frames": 251
+    },
+    "s11": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리가 작은 랜턴을 챙겨왔어야 했는데 그러지 못했다.",
+          "file": "parts/s11_01_kr.mp3",
+          "hash": "2334ea965f937e65",
+          "seconds": 4.206
+        },
+        {
+          "lang": "en",
+          "text": "We should have brought a small lantern with us.",
+          "file": "parts/s11_02_en.mp3",
+          "hash": "11c01ce61c79ae36",
+          "seconds": 2.325
+        }
+      ],
+      "file": "s11.mp3",
+      "seconds": 6.687,
+      "frames": 201
+    },
+    "s12": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이런 마법 같은 밤이라면 우리의 지루한 일상을 영원히 바꿔놓을 텐데.",
+          "file": "parts/s12_01_kr.mp3",
+          "hash": "7375c21be93dbbed",
+          "seconds": 5.564
+        },
+        {
+          "lang": "en",
+          "text": "A magical night like this would change our daily routine forever.",
+          "file": "parts/s12_02_en.mp3",
+          "hash": "a3d871361786fd0d",
+          "seconds": 3.788
+        }
+      ],
+      "file": "s12.mp3",
+      "seconds": 9.535,
+      "frames": 286
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 다룬 조동사 핵심, 딱 두 가지만 기억해 주세요.",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "22526fe9ef6461b5",
+          "seconds": 3.004
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 3.004,
+      "frames": 90
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "첫째, 조동사의 본질은 행동이 아니라 말하는 사람의 마음의 태도를 입히는 것입니다.",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "83277a8f5cc6ffbc",
+          "seconds": 8.359
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 8.359,
+      "frames": 251
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "Shall we...?처럼 상대에게 다정하게 제안할 수도 있고, Must처럼 강한 확신을 남길 수도 있죠.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "823787acdebe4293",
+          "seconds": 7.837
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 7.837,
+      "frames": 235
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "둘째, 조동사의 과거형, could, might, would, should는 지나간 과거가 아니라 확신의 농도를 낮추는 부드러운 안전장치라는 점입니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "a155ffd09db8e751",
+          "seconds": 11.598
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 11.598,
+      "frames": 348
+    },
+    "o5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "100% 확신할 수 없거나, 조심스럽게 내 생각을 던지고 싶을 때 과거형 조동사를 떠올려 보세요.",
+          "file": "parts/o5_01_kr.mp3",
+          "hash": "dd861e946215e08f",
+          "seconds": 8.176
+        }
+      ],
+      "file": "o5.mp3",
+      "seconds": 8.176,
+      "frames": 245
+    },
+    "o6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "도심 속 닫힌 카페 2층의 피아노 소리처럼, 영어 문장도 조동사 하나로 순식간에 묘한 뉘앙스와 분위기를 만들어낼 수 있습니다.",
+          "file": "parts/o6_01_kr.mp3",
+          "hash": "1ad0ce2ca98da6ea",
+          "seconds": 10.109
+        }
+      ],
+      "file": "o6.mp3",
+      "seconds": 10.109,
+      "frames": 303
+    },
+    "o7": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그래서 처음에 언급했던 나도 그랬겠지라는 표현은, I did so가 아니라, I would do so로 표현한다는 겁니다.",
+          "file": "parts/o7_01_kr.mp3",
+          "hash": "935272be85dfaac5",
+          "seconds": 8.725
+        }
+      ],
+      "file": "o7.mp3",
+      "seconds": 8.725,
+      "frames": 262
+    },
+    "o8": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 배운 12개의 도심 동화 예문들을 입으로 직접 중얼거리며 내 것으로 만들어 보세요.",
+          "file": "parts/o8_01_kr.mp3",
+          "hash": "02067deeb0a09636",
+          "seconds": 7.602
+        }
+      ],
+      "file": "o8.mp3",
+      "seconds": 7.602,
+      "frames": 228
+    },
+    "o9": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다음 14강에서도 여러분의 영어가 한 층 더 가벼워지고 깊어질 수 있도록 알찬 콘텐츠로 찾아오겠습니다. 수고 많으셨습니다!",
+          "file": "parts/o9_01_kr.mp3",
+          "hash": "00bd98a3463e5cfc",
+          "seconds": 11.964
+        }
+      ],
+      "file": "o9.mp3",
+      "seconds": 11.964,
+      "frames": 359
+    }
+  }
+}

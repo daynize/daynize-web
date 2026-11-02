@@ -1,0 +1,773 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감사합니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "529f016c9727d15d",
+          "seconds": 1.202
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 1.202,
+      "frames": 36
+    },
+    "i1a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리말은 동사에 ‘~하는 것’이나 ‘~하기’를 붙여서 명사처럼 만들어 사용합니다.",
+          "file": "parts/i1a_01_kr.mp3",
+          "hash": "f1545b74a7b157a4",
+          "seconds": 7.889
+        }
+      ],
+      "file": "i1a.mp3",
+      "seconds": 7.889,
+      "frames": 237
+    },
+    "i1b": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "‘공부하기’, ‘여행하는 것’처럼 말이죠.",
+          "file": "parts/i1b_01_kr.mp3",
+          "hash": "2b71cb69eff0129e",
+          "seconds": 3.109
+        }
+      ],
+      "file": "i1b.mp3",
+      "seconds": 3.109,
+      "frames": 93
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "영어에서도 동사를 명사처럼 바꿔쓰는 두 가지 변신 장치가 있습니다.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "27e90da8aad80709",
+          "seconds": 5.799
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 5.799,
+      "frames": 174
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것을 알아야 영어의 기초가 됩니다. 바로 동명사(",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "67c661546d699b02",
+          "seconds": 3.579
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/i3_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 0.784
+        },
+        {
+          "lang": "kr",
+          "text": ")와 to부정사(",
+          "file": "parts/i3_03_kr.mp3",
+          "hash": "698812e17cf43726",
+          "seconds": 1.202
+        },
+        {
+          "lang": "en",
+          "text": "to-V",
+          "file": "parts/i3_04_en.mp3",
+          "hash": "0dd4cb048d9c7ffd",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": ")입니다.",
+          "file": "parts/i3_05_kr.mp3",
+          "hash": "ae1ce6db2c389a0e",
+          "seconds": 1.019
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 8.124,
+      "frames": 244
+    },
+    "i4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "동사의 옷을 벗고 명사의 자리로 들어가는 품사, 동명사와 부정사입니다.",
+          "file": "parts/i4_01_kr.mp3",
+          "hash": "cc13da56d50cf2b7",
+          "seconds": 6.818
+        }
+      ],
+      "file": "i4.mp3",
+      "seconds": 6.818,
+      "frames": 205
+    },
+    "i5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "동명사(",
+          "file": "parts/i5_01_kr.mp3",
+          "hash": "f48bf0248db0eeb3",
+          "seconds": 1.149
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/i5_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 0.784
+        },
+        {
+          "lang": "kr",
+          "text": ")는 이미 일어났거나 생생하게 경험해 본 과거와 현재의 느낌을 가집니다.",
+          "file": "parts/i5_03_kr.mp3",
+          "hash": "e21802a89f4ac9cf",
+          "seconds": 6.165
+        }
+      ],
+      "file": "i5.mp3",
+      "seconds": 8.438,
+      "frames": 253
+    },
+    "i6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "즐겼던 것(",
+          "file": "parts/i6_01_kr.mp3",
+          "hash": "4805bd3896128036",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "enjoying",
+          "file": "parts/i6_02_en.mp3",
+          "hash": "76f1d5d19d2cbcde",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "), 끝낸 것(",
+          "file": "parts/i6_03_kr.mp3",
+          "hash": "fb66ffcd2ff8a1ae",
+          "seconds": 1.332
+        },
+        {
+          "lang": "en",
+          "text": "finishing",
+          "file": "parts/i6_04_en.mp3",
+          "hash": "51184b4c7c955c8f",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": "), 포기했던 것(",
+          "file": "parts/i6_05_kr.mp3",
+          "hash": "6c2f614f17509549",
+          "seconds": 1.437
+        },
+        {
+          "lang": "en",
+          "text": "giving up",
+          "file": "parts/i6_06_en.mp3",
+          "hash": "27ff0665cfb151e3",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "), 피했던 것(",
+          "file": "parts/i6_07_kr.mp3",
+          "hash": "1a6f7d4109d7cb75",
+          "seconds": 1.28
+        },
+        {
+          "lang": "en",
+          "text": "avoiding",
+          "file": "parts/i6_08_en.mp3",
+          "hash": "432bf3625ec96560",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": ")을 나타내는 명사들입니다.",
+          "file": "parts/i6_09_kr.mp3",
+          "hash": "2a544d8f38d86dd5",
+          "seconds": 2.09
+        }
+      ],
+      "file": "i6.mp3",
+      "seconds": 12.774,
+      "frames": 383
+    },
+    "i7": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "to부정사(",
+          "file": "parts/i7_01_kr.mp3",
+          "hash": "910da1869ba72d57",
+          "seconds": 1.097
+        },
+        {
+          "lang": "en",
+          "text": "to-V",
+          "file": "parts/i7_02_en.mp3",
+          "hash": "0dd4cb048d9c7ffd",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": ")는 화살표(",
+          "file": "parts/i7_03_kr.mp3",
+          "hash": "78e3ac11046fd5a0",
+          "seconds": 1.202
+        },
+        {
+          "lang": "en",
+          "text": "to",
+          "file": "parts/i7_04_en.mp3",
+          "hash": "dab3d9af6ba6802d",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": ")처럼 앞으로 나아갈 미래의 계획과 의지의 느낌을 가집니다.",
+          "file": "parts/i7_05_kr.mp3",
+          "hash": "c2569a8e8e793cc8",
+          "seconds": 4.206
+        }
+      ],
+      "file": "i7.mp3",
+      "seconds": 8.777,
+      "frames": 263
+    },
+    "i8": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "원하는 것(",
+          "file": "parts/i8_01_kr.mp3",
+          "hash": "f4f0a70ad5e497fa",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "to want",
+          "file": "parts/i8_02_en.mp3",
+          "hash": "d35661e64a10d03d",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": "), 희망하는 것(",
+          "file": "parts/i8_03_kr.mp3",
+          "hash": "261dec66b8d847fa",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "to hope",
+          "file": "parts/i8_04_en.mp3",
+          "hash": "1ea540b8de88edd0",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "), 약속하는 것(",
+          "file": "parts/i8_05_kr.mp3",
+          "hash": "4b29be4ef89373c7",
+          "seconds": 1.567
+        },
+        {
+          "lang": "en",
+          "text": "to promise",
+          "file": "parts/i8_06_en.mp3",
+          "hash": "cd60bd9e2527f7bf",
+          "seconds": 1.202
+        },
+        {
+          "lang": "kr",
+          "text": "), 결정하는 것(",
+          "file": "parts/i8_07_kr.mp3",
+          "hash": "1f46bfffbd7ba85a",
+          "seconds": 1.28
+        },
+        {
+          "lang": "en",
+          "text": "to decide",
+          "file": "parts/i8_08_en.mp3",
+          "hash": "1f5a25db468df97f",
+          "seconds": 1.149
+        },
+        {
+          "lang": "kr",
+          "text": ")을 나타내는 명사들입니다.",
+          "file": "parts/i8_09_kr.mp3",
+          "hash": "2a544d8f38d86dd5",
+          "seconds": 2.116
+        }
+      ],
+      "file": "i8.mp3",
+      "seconds": 12.931,
+      "frames": 388
+    },
+    "b1a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "예를 들어, “나 담배 끊었어”라고 할 때,",
+          "file": "parts/b1a_01_kr.mp3",
+          "hash": "151f007bedb5d024",
+          "seconds": 3.762
+        }
+      ],
+      "file": "b1a.mp3",
+      "seconds": 3.762,
+      "frames": 113
+    },
+    "b1b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "I stopped to smoke",
+          "file": "parts/b1b_01_en.mp3",
+          "hash": "2cbef5f3bcd29d28",
+          "seconds": 1.489
+        },
+        {
+          "lang": "kr",
+          "text": "라고 쓰면 “나 길을 가다가 담배를 피우기 위해 멈춰 섰다”라는 완전히 반대의 뜻이 되어 아주 어색하고 위험한 문장이 됩니다.",
+          "file": "parts/b1b_02_kr.mp3",
+          "hash": "d94b5808d76a4c77",
+          "seconds": 11.363
+        }
+      ],
+      "file": "b1b.mp3",
+      "seconds": 13.009,
+      "frames": 390
+    },
+    "b1c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "내가 이전에 계속해 오던 행동을 그만둔 것이므로",
+          "file": "parts/b1c_01_kr.mp3",
+          "hash": "0036b4051e2af6e9",
+          "seconds": 3.109
+        },
+        {
+          "lang": "en",
+          "text": "I stopped smoking",
+          "file": "parts/b1c_02_en.mp3",
+          "hash": "8f3215db672d89d0",
+          "seconds": 1.384
+        },
+        {
+          "lang": "kr",
+          "text": "처럼 동명사를 써야 완성된 문장이 됩니다.",
+          "file": "parts/b1c_03_kr.mp3",
+          "hash": "9830087e2122d4d6",
+          "seconds": 3.474
+        }
+      ],
+      "file": "b1c.mp3",
+      "seconds": 8.281,
+      "frames": 248
+    },
+    "b2a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다시 한 번 말하자면,",
+          "file": "parts/b2a_01_kr.mp3",
+          "hash": "1993970729239591",
+          "seconds": 1.567
+        }
+      ],
+      "file": "b2a.mp3",
+      "seconds": 1.567,
+      "frames": 47
+    },
+    "b2b": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "동명사(",
+          "file": "parts/b2b_01_kr.mp3",
+          "hash": "f48bf0248db0eeb3",
+          "seconds": 1.097
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/b2b_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": ")는 지나온 과거의 생생한 경험, to부정사(",
+          "file": "parts/b2b_03_kr.mp3",
+          "hash": "778be5c90bbd39ba",
+          "seconds": 3.422
+        },
+        {
+          "lang": "en",
+          "text": "to-V",
+          "file": "parts/b2b_04_en.mp3",
+          "hash": "0dd4cb048d9c7ffd",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ")는 앞으로 나아갈 미래의 목적입니다.",
+          "file": "parts/b2b_05_kr.mp3",
+          "hash": "2b6c73d155baae50",
+          "seconds": 2.508
+        }
+      ],
+      "file": "b2b.mp3",
+      "seconds": 9.535,
+      "frames": 286
+    },
+    "b2c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "따라서 동사가 바라보는 시간의 방향에 따라",
+          "file": "parts/b2c_01_kr.mp3",
+          "hash": "81dffc1ae92edfa5",
+          "seconds": 3.474
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/b2c_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 0.784
+        },
+        {
+          "lang": "kr",
+          "text": "와",
+          "file": "parts/b2c_03_kr.mp3",
+          "hash": "b6536b50ed87f7ff",
+          "seconds": 0.653
+        },
+        {
+          "lang": "en",
+          "text": "to-V",
+          "file": "parts/b2c_04_en.mp3",
+          "hash": "0dd4cb048d9c7ffd",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "라는 다리를 정확히 선택해 주어야 합니다.",
+          "file": "parts/b2c_05_kr.mp3",
+          "hash": "a91533ffb5c52944",
+          "seconds": 2.743
+        }
+      ],
+      "file": "b2c.mp3",
+      "seconds": 9.195,
+      "frames": 276
+    },
+    "b3a": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "I plan visiting Seoul",
+          "file": "parts/b3a_01_en.mp3",
+          "hash": "515b0e1be91494d2",
+          "seconds": 1.62
+        },
+        {
+          "lang": "kr",
+          "text": "은 서울 방문했던 것을 계획한다는 어색한 문장이고,",
+          "file": "parts/b3a_02_kr.mp3",
+          "hash": "c9a7fe0221c5bab2",
+          "seconds": 4.18
+        }
+      ],
+      "file": "b3a.mp3",
+      "seconds": 5.956,
+      "frames": 179
+    },
+    "b3b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "I plan to visit Seoul",
+          "file": "parts/b3b_01_en.mp3",
+          "hash": "a96378269046c0e7",
+          "seconds": 1.515
+        },
+        {
+          "lang": "kr",
+          "text": "은 앞으로 서울을 방문할 것을 계획한다는 올바른 문장입니다.",
+          "file": "parts/b3b_02_kr.mp3",
+          "hash": "0d433f17468589f7",
+          "seconds": 4.545
+        }
+      ],
+      "file": "b3b.mp3",
+      "seconds": 6.217,
+      "frames": 187
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 조용한 카페에 앉아 좋아하는 음악 듣는 것을 즐겼습니다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "a4aaaeae8d219b81",
+          "seconds": 4.624
+        },
+        {
+          "lang": "en",
+          "text": "He enjoyed listening to his favorite music.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "5fd742ee2a1910db",
+          "seconds": 2.456
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 7.262,
+      "frames": 218
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그동안 해오던 일을 마침내 잘 마무리한 후였죠.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "42776f9df6037d68",
+          "seconds": 3.344
+        },
+        {
+          "lang": "en",
+          "text": "He finally finished working on his project.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "6fda1734273b589a",
+          "seconds": 2.456
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 5.956,
+      "frames": 179
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "복잡했던 지난날의 걱정들은 이제 모두 그만두기로 했습니다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "df75ab6a07c3cf05",
+          "seconds": 5.146
+        },
+        {
+          "lang": "en",
+          "text": "He stopped worrying about the past.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "6de620296cdae753",
+          "seconds": 2.116
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 7.445,
+      "frames": 223
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그리고 낯선 도시로 새로운 여행을 떠나기로 결정했습니다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "f18799354dcaf384",
+          "seconds": 4.493
+        },
+        {
+          "lang": "en",
+          "text": "He decided to travel to a new city.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "b944763cd246dbea",
+          "seconds": 2.325
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 6.975,
+      "frames": 209
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그곳에서 뜻밖의 소중한 인연을 만나기를 진심으로 희망했죠.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "6f098dd4d95211a0",
+          "seconds": 5.146
+        },
+        {
+          "lang": "en",
+          "text": "He hoped to meet a special person there.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "e9bffa6f15c9f3a5",
+          "seconds": 2.22
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 7.523,
+      "frames": 226
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "기차역에 도착한 그는 기차표를 사기 위해 차분히 줄을 섰습니다.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "9a9ef1f043d6f629",
+          "seconds": 5.198
+        },
+        {
+          "lang": "en",
+          "text": "He waited in line to buy a train ticket.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "ab92d78cc807d0eb",
+          "seconds": 2.273
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 7.628,
+      "frames": 229
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "창가에 앉아, 그는 떠나가는 풍경을 바라보는 것을 좋아했습니다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "96f874a2cc047e58",
+          "seconds": 5.016
+        },
+        {
+          "lang": "en",
+          "text": "He liked watching the passing scenery.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "85dd4e2277ee4d78",
+          "seconds": 2.168
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 7.34,
+      "frames": 220
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "동시에, 새로 마주할 그곳에서의 내일을 계속해서 꿈꾸었습니다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "4edad8b12deaffaa",
+          "seconds": 5.799
+        },
+        {
+          "lang": "en",
+          "text": "He wished to create unforgettable memories.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "cb494576756436f6",
+          "seconds": 2.586
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 8.542,
+      "frames": 256
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘은 동사의 명사 변신, 동명사와 to부정사에 대해 배웠습니다.",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "3bb9731382dbb09c",
+          "seconds": 6.165
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 6.165,
+      "frames": 185
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "지나온 생생한 경험은",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "67a49bb9bc6539e9",
+          "seconds": 2.325
+        },
+        {
+          "lang": "en",
+          "text": "-ing",
+          "file": "parts/o2_02_en.mp3",
+          "hash": "10537af9a6220ff0",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": ", 앞으로 나아갈 미래의 의지는",
+          "file": "parts/o2_03_kr.mp3",
+          "hash": "9538769f980b41cf",
+          "seconds": 2.325
+        },
+        {
+          "lang": "en",
+          "text": "to-V",
+          "file": "parts/o2_04_en.mp3",
+          "hash": "0dd4cb048d9c7ffd",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": "라는 시간의 방향을 꼭 기억하세요.",
+          "file": "parts/o2_05_kr.mp3",
+          "hash": "372a9ef86a18e36a",
+          "seconds": 2.351
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 9.535,
+      "frames": 286
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "7504c05925950cfa",
+          "seconds": 4.023
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 4.023,
+      "frames": 121
+    }
+  }
+}

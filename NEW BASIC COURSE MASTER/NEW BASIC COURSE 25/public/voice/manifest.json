@@ -1,0 +1,682 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리말은 “내가 문을 열었다”라고도 하지만, 시점을 바꿔 “문이 열렸다”라고도 표현합니다.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "4b6a87d7642e0a86",
+          "seconds": 7.288
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 7.288,
+      "frames": 219
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "영어에서도 문장의 주인(주어)이 직접 행동을 하는가, 아니면 그 행동을 ‘당하는가’에 따라 문장의 모습을 완전히 바꿔 씁니다.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "caf3496aa337112c",
+          "seconds": 11.363
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 11.363,
+      "frames": 341
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것을 알아야 영어의 기초가 됩니다. 바로 능동태와 수동태(",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "a1f90984b80ab0bf",
+          "seconds": 6.531
+        },
+        {
+          "lang": "en",
+          "text": "Be + p.p.",
+          "file": "parts/i3_02_en.mp3",
+          "hash": "014539a0aa65da88",
+          "seconds": 1.28
+        },
+        {
+          "lang": "kr",
+          "text": ")입니다.",
+          "file": "parts/i3_03_kr.mp3",
+          "hash": "ae1ce6db2c389a0e",
+          "seconds": 0.914
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 9.064,
+      "frames": 272
+    },
+    "i4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "주인공의 시점에 따라 시선이 뒤바뀌는 영화 카메라, 수동태입니다.",
+          "file": "parts/i4_01_kr.mp3",
+          "hash": "1892eba9559a21c4",
+          "seconds": 4.598
+        }
+      ],
+      "file": "i4.mp3",
+      "seconds": 4.598,
+      "frames": 138
+    },
+    "i5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "능동태는 주어가 주체적으로 행동을 내뿜는 문장입니다.",
+          "file": "parts/i5_01_kr.mp3",
+          "hash": "e7cecd28c24649d1",
+          "seconds": 4.833
+        }
+      ],
+      "file": "i5.mp3",
+      "seconds": 4.833,
+      "frames": 145
+    },
+    "i6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "내가 사랑하고(",
+          "file": "parts/i6_01_kr.mp3",
+          "hash": "8dcb95a323b3f4f6",
+          "seconds": 1.332
+        },
+        {
+          "lang": "en",
+          "text": "LOVE",
+          "file": "parts/i6_02_en.mp3",
+          "hash": "c9282a2961ece27f",
+          "seconds": 0.784
+        },
+        {
+          "lang": "kr",
+          "text": "), 누군가가 만들고(",
+          "file": "parts/i6_03_kr.mp3",
+          "hash": "76a2ef39ca8663ec",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "MAKE",
+          "file": "parts/i6_04_en.mp3",
+          "hash": "76ee386f3bb4f397",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": "), 그가 쓰고(",
+          "file": "parts/i6_05_kr.mp3",
+          "hash": "1925b22fa3e8b078",
+          "seconds": 1.332
+        },
+        {
+          "lang": "en",
+          "text": "WRITE",
+          "file": "parts/i6_06_en.mp3",
+          "hash": "03e117887dc25eb1",
+          "seconds": 0.731
+        },
+        {
+          "lang": "kr",
+          "text": "), 사람이 짓는(",
+          "file": "parts/i6_07_kr.mp3",
+          "hash": "2cfc5b42f4faaa2e",
+          "seconds": 1.384
+        },
+        {
+          "lang": "en",
+          "text": "BUILD",
+          "file": "parts/i6_08_en.mp3",
+          "hash": "893eac1879e34b52",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ") 문장들입니다.",
+          "file": "parts/i6_09_kr.mp3",
+          "hash": "9c358ef97876798c",
+          "seconds": 1.384
+        }
+      ],
+      "file": "i6.mp3",
+      "seconds": 11.311,
+      "frames": 339
+    },
+    "i7": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "수동태(",
+          "file": "parts/i7_01_kr.mp3",
+          "hash": "2b89283ec80fa1c3",
+          "seconds": 1.071
+        },
+        {
+          "lang": "en",
+          "text": "Be + p.p.",
+          "file": "parts/i7_02_en.mp3",
+          "hash": "014539a0aa65da88",
+          "seconds": 1.254
+        },
+        {
+          "lang": "kr",
+          "text": ")는 주어가 행동을 직접 하지 못하고 행동을 당하거나 받는 문장입니다.",
+          "file": "parts/i7_03_kr.mp3",
+          "hash": "44e0737eb6311834",
+          "seconds": 6.452
+        }
+      ],
+      "file": "i7.mp3",
+      "seconds": 9.064,
+      "frames": 272
+    },
+    "i8": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "사랑받고(",
+          "file": "parts/i8_01_kr.mp3",
+          "hash": "c6b4193758a66290",
+          "seconds": 1.071
+        },
+        {
+          "lang": "en",
+          "text": "BE LOVED",
+          "file": "parts/i8_02_en.mp3",
+          "hash": "e4d77ab4746db257",
+          "seconds": 1.097
+        },
+        {
+          "lang": "kr",
+          "text": "), 만들어지고(",
+          "file": "parts/i8_03_kr.mp3",
+          "hash": "b35239c6fee4245a",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "BE MADE",
+          "file": "parts/i8_04_en.mp3",
+          "hash": "474e4cdc2bd0352d",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": "), 쓰여지고(",
+          "file": "parts/i8_05_kr.mp3",
+          "hash": "bba4c84928e5b418",
+          "seconds": 1.332
+        },
+        {
+          "lang": "en",
+          "text": "BE WRITTEN",
+          "file": "parts/i8_06_en.mp3",
+          "hash": "d0b078edb26bce11",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "), 지어지는(",
+          "file": "parts/i8_07_kr.mp3",
+          "hash": "a311f63ccf95865c",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "BE BUILT",
+          "file": "parts/i8_08_en.mp3",
+          "hash": "ca547447ca96b1c6",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": ") 문장들입니다.",
+          "file": "parts/i8_09_kr.mp3",
+          "hash": "9c358ef97876798c",
+          "seconds": 1.489
+        }
+      ],
+      "file": "i8.mp3",
+      "seconds": 11.86,
+      "frames": 356
+    },
+    "b1a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "예를 들어, “이 책은 그에 의해 쓰여졌다”라고 할 때,",
+          "file": "parts/b1a_01_kr.mp3",
+          "hash": "aaf82e38cd87152e",
+          "seconds": 4.493
+        }
+      ],
+      "file": "b1a.mp3",
+      "seconds": 4.493,
+      "frames": 135
+    },
+    "b1b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "This book wrote by him",
+          "file": "parts/b1b_01_en.mp3",
+          "hash": "5698b019df5d8c5f",
+          "seconds": 1.567
+        },
+        {
+          "lang": "kr",
+          "text": "이라고 쓰면 “책이 스스로 펜을 들고 그에 의해 썼다”라는 말도 안 되는 괴기한 문장이 됩니다.",
+          "file": "parts/b1b_02_kr.mp3",
+          "hash": "3efb1f77a60a259e",
+          "seconds": 7.288
+        }
+      ],
+      "file": "b1b.mp3",
+      "seconds": 9.012,
+      "frames": 270
+    },
+    "b1c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "책은 쓰임을 ‘당한’ 대상이므로",
+          "file": "parts/b1c_01_kr.mp3",
+          "hash": "8ece0c47a03532b6",
+          "seconds": 2.351
+        },
+        {
+          "lang": "en",
+          "text": "This book was written by him",
+          "file": "parts/b1c_02_en.mp3",
+          "hash": "9b4a9678ab174261",
+          "seconds": 1.802
+        },
+        {
+          "lang": "kr",
+          "text": "처럼",
+          "file": "parts/b1c_03_kr.mp3",
+          "hash": "f5db4618fde8c8f7",
+          "seconds": 1.019
+        },
+        {
+          "lang": "en",
+          "text": "be + p.p.",
+          "file": "parts/b1c_04_en.mp3",
+          "hash": "bffaa21d753f785d",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": "라는 다리를 놓아주어야 비로소 완성된 문장이 됩니다.",
+          "file": "parts/b1c_05_kr.mp3",
+          "hash": "4ac3903c8848ed95",
+          "seconds": 3.579
+        }
+      ],
+      "file": "b1c.mp3",
+      "seconds": 10.449,
+      "frames": 313
+    },
+    "b2a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다시 한 번 말하자면,",
+          "file": "parts/b2a_01_kr.mp3",
+          "hash": "1993970729239591",
+          "seconds": 1.672
+        }
+      ],
+      "file": "b2a.mp3",
+      "seconds": 1.672,
+      "frames": 50
+    },
+    "b2b": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "주어가 직접 행동하면 능동태, 주어가 행동을 당하거나 전달받으면",
+          "file": "parts/b2b_01_kr.mp3",
+          "hash": "f0c931a16a025bf8",
+          "seconds": 6.531
+        },
+        {
+          "lang": "en",
+          "text": "be + p.p.",
+          "file": "parts/b2b_02_en.mp3",
+          "hash": "bffaa21d753f785d",
+          "seconds": 1.202
+        },
+        {
+          "lang": "kr",
+          "text": "수동태를 씁니다.",
+          "file": "parts/b2b_03_kr.mp3",
+          "hash": "333dc3cae6bfd0cf",
+          "seconds": 1.489
+        }
+      ],
+      "file": "b2b.mp3",
+      "seconds": 9.535,
+      "frames": 286
+    },
+    "b2c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그리고 행동을 가한 주체 앞에는",
+          "file": "parts/b2c_01_kr.mp3",
+          "hash": "27e064c9d908c75b",
+          "seconds": 2.22
+        },
+        {
+          "lang": "en",
+          "text": "by",
+          "file": "parts/b2c_02_en.mp3",
+          "hash": "001c999b0b993007",
+          "seconds": 0.784
+        },
+        {
+          "lang": "kr",
+          "text": "라는 다리가 놓입니다.",
+          "file": "parts/b2c_03_kr.mp3",
+          "hash": "e81057c0adc7d6d9",
+          "seconds": 1.515
+        }
+      ],
+      "file": "b2c.mp3",
+      "seconds": 4.859,
+      "frames": 146
+    },
+    "b3a": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "The window broke",
+          "file": "parts/b3a_01_en.mp3",
+          "hash": "e105469d57834b53",
+          "seconds": 1.332
+        },
+        {
+          "lang": "kr",
+          "text": "는 창문이 스스로 깨졌다는 어색한 문장이고,",
+          "file": "parts/b3a_02_kr.mp3",
+          "hash": "532fa3ff0cca30ab",
+          "seconds": 3.187
+        }
+      ],
+      "file": "b3a.mp3",
+      "seconds": 4.702,
+      "frames": 141
+    },
+    "b3b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "The window was broken by the wind",
+          "file": "parts/b3b_01_en.mp3",
+          "hash": "7da3bdf1e583f765",
+          "seconds": 2.116
+        },
+        {
+          "lang": "kr",
+          "text": "는 창문이 바람에 의해 깨짐을 당했다는 올바른 문장입니다.",
+          "file": "parts/b3b_02_kr.mp3",
+          "hash": "7f875cb968400487",
+          "seconds": 4.31
+        }
+      ],
+      "file": "b3b.mp3",
+      "seconds": 6.609,
+      "frames": 198
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "도심 한구석, 오랫동안 닫혀 있던 옛 서점의 문이 열렸습니다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "fca8c872bd9eeb57",
+          "seconds": 5.042
+        },
+        {
+          "lang": "en",
+          "text": "The door of the old bookstore was opened.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "b2a20d2bb5f86e5a",
+          "seconds": 2.273
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 7.471,
+      "frames": 224
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그 서점은 아주 오래전에 유명한 건축가에 의해 지어졌었죠.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "31c09cd086a286eb",
+          "seconds": 4.624
+        },
+        {
+          "lang": "en",
+          "text": "The bookstore was built by a famous architect.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "3e781c4b3416ecaa",
+          "seconds": 2.638
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 7.445,
+      "frames": 223
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "탁자 위에는 깊은 감동을 주는 아름다운 시집 한 권이 놓여 있었습니다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "20b716a651595db1",
+          "seconds": 4.833
+        },
+        {
+          "lang": "en",
+          "text": "A beautiful poetry book was placed on the table.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "f9873912716a753f",
+          "seconds": 2.821
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 7.811,
+      "frames": 234
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그 책은 먼 옛날, 어느 무명 시인에 의해 쓰여진 작품이었습니다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "921b2f45783ce521",
+          "seconds": 5.146
+        },
+        {
+          "lang": "en",
+          "text": "The book was written by an unknown poet.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "aaefa715fbeab31a",
+          "seconds": 2.168
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 7.471,
+      "frames": 224
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "따뜻한 햇살 아래, 그 공간은 세심한 손길로 깨끗이 청소되었습니다.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "7a661a6603b46212",
+          "seconds": 5.616
+        },
+        {
+          "lang": "en",
+          "text": "The cozy space was cleaned with great care.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "0d93f4f27f4d7a0b",
+          "seconds": 2.638
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 8.411,
+      "frames": 252
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "마침내 수많은 시민들에게 사랑받는 특별한 공간이 되었죠.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "1d1eed2b754ad054",
+          "seconds": 5.695
+        },
+        {
+          "lang": "en",
+          "text": "It was loved by many people in the city.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "54aed5a13a19f936",
+          "seconds": 2.325
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 8.176,
+      "frames": 245
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그렇게 잊혀가던 옛 장소는 아름다운 추억으로 다시 채워졌습니다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "94afc2e9e9a63669",
+          "seconds": 5.146
+        },
+        {
+          "lang": "en",
+          "text": "The forgotten place was filled with warm memories.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "67518060c4ef6ec7",
+          "seconds": 3.239
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 8.542,
+      "frames": 256
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘은 문장의 입장이 바뀌는 수동태(",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "59c8fcc592e78650",
+          "seconds": 2.508
+        },
+        {
+          "lang": "en",
+          "text": "be + p.p.",
+          "file": "parts/o1_02_en.mp3",
+          "hash": "bffaa21d753f785d",
+          "seconds": 1.202
+        },
+        {
+          "lang": "kr",
+          "text": ")에 대해 배웠습니다.",
+          "file": "parts/o1_03_kr.mp3",
+          "hash": "d12dc3acc95bfb0f",
+          "seconds": 1.567
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 5.59,
+      "frames": 168
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "주어가 직접 행동을 하는지, 아니면 당하는지에 따라 모양이 달라진다는 점, 그리고 행동을 한 주체 앞에는",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "76f24c73586919b8",
+          "seconds": 9.43
+        },
+        {
+          "lang": "en",
+          "text": "by",
+          "file": "parts/o2_02_en.mp3",
+          "hash": "001c999b0b993007",
+          "seconds": 0.496
+        },
+        {
+          "lang": "kr",
+          "text": "가 온다는 원리를 꼭 기억하세요.",
+          "file": "parts/o2_03_kr.mp3",
+          "hash": "bd1b17fc352ba7a0",
+          "seconds": 2.351
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 12.617,
+      "frames": 379
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "7504c05925950cfa",
+          "seconds": 3.997
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 3.997,
+      "frames": 120
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감사합니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "529f016c9727d15d",
+          "seconds": 1.149
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 1.149,
+      "frames": 34
+    }
+  }
+}

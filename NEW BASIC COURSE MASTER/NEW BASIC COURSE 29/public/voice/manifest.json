@@ -1,0 +1,829 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리가 지난 시간에 배웠듯이, 관계대명사는 접속사와 대명사가 하나로 합쳐진 요술봉이라고 했습니다.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "53718da19d079f06",
+          "seconds": 7.34
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 7.34,
+      "frames": 220
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "사물 뒤에서 “그런데 이것은...” 하고 부드럽게 말을 이어주는 것이 바로",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "3dfc0abebeecc3e2",
+          "seconds": 5.094
+        },
+        {
+          "lang": "en",
+          "text": "which",
+          "file": "parts/i2_02_en.mp3",
+          "hash": "e5936f8a7b2484a2",
+          "seconds": 0.731
+        },
+        {
+          "lang": "kr",
+          "text": "였죠.",
+          "file": "parts/i2_03_kr.mp3",
+          "hash": "554007097b9d0cad",
+          "seconds": 1.097
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 7.262,
+      "frames": 218
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그렇다면",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "602365d86833af92",
+          "seconds": 1.097
+        },
+        {
+          "lang": "en",
+          "text": "of which, for which, from which, by which, with which",
+          "file": "parts/i3_02_en.mp3",
+          "hash": "238ad82445c9a2ff",
+          "seconds": 3.187
+        },
+        {
+          "lang": "kr",
+          "text": "같은 녀석들은 대체 왜 이렇게 길고 복잡해 보이는 걸까요?",
+          "file": "parts/i3_03_kr.mp3",
+          "hash": "3bfd9948a7acb738",
+          "seconds": 4.362
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 8.986,
+      "frames": 270
+    },
+    "i4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이유는 아주 간단하고 명쾌합니다!",
+          "file": "parts/i4_01_kr.mp3",
+          "hash": "503943c19372daaf",
+          "seconds": 2.22
+        }
+      ],
+      "file": "i4.mp3",
+      "seconds": 2.22,
+      "frames": 67
+    },
+    "i5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "원래 문장 맨 뒤에서 명사와 짝을 이루던 전치사,",
+          "file": "parts/i5_01_kr.mp3",
+          "hash": "6c8a6db36703c751",
+          "seconds": 4.362
+        },
+        {
+          "lang": "en",
+          "text": "of, for, from, by, with",
+          "file": "parts/i5_02_en.mp3",
+          "hash": "3f21bde0da2864f7",
+          "seconds": 1.985
+        },
+        {
+          "lang": "kr",
+          "text": "가, 문장이 길어지면서 뒤에 혼자 덩그러니 남겨져 외로워졌기 때문입니다.",
+          "file": "parts/i5_03_kr.mp3",
+          "hash": "4006c651aa8d9ea1",
+          "seconds": 7.184
+        }
+      ],
+      "file": "i5.mp3",
+      "seconds": 13.871,
+      "frames": 416
+    },
+    "i6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그래서 이 전치사가 자신의 짝꿍이었던 대명사를 끌어안은 관계대명사",
+          "file": "parts/i6_01_kr.mp3",
+          "hash": "b45c7e55928a3b89",
+          "seconds": 6.504
+        },
+        {
+          "lang": "en",
+          "text": "which",
+          "file": "parts/i6_02_en.mp3",
+          "hash": "e5936f8a7b2484a2",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": "바로 앞으로 찰싹 붙어 이동한 것뿐입니다!",
+          "file": "parts/i6_03_kr.mp3",
+          "hash": "9860f2784e4ce865",
+          "seconds": 2.691
+        }
+      ],
+      "file": "i6.mp3",
+      "seconds": 10.318,
+      "frames": 310
+    },
+    "i7": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "원리를 알면 해석도 직관적입니다.",
+          "file": "parts/i7_01_kr.mp3",
+          "hash": "bca7d0e116867773",
+          "seconds": 2.769
+        }
+      ],
+      "file": "i7.mp3",
+      "seconds": 2.769,
+      "frames": 83
+    },
+    "i11": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "of which",
+          "file": "parts/i11_01_en.mp3",
+          "hash": "b665887ed99e5a83",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "는 “그런데 그것의...”, “그런데 그것 중에서...”",
+          "file": "parts/i11_02_kr.mp3",
+          "hash": "540f4b101d2513c1",
+          "seconds": 3.657
+        }
+      ],
+      "file": "i11.mp3",
+      "seconds": 4.754,
+      "frames": 143
+    },
+    "i12": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "for which",
+          "file": "parts/i12_01_en.mp3",
+          "hash": "ab5b91404f943810",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": "는 “그런데 그것을 위해...”, “그런데 그것 때문에...”",
+          "file": "parts/i12_02_kr.mp3",
+          "hash": "0134d64ec9f01fd8",
+          "seconds": 3.944
+        }
+      ],
+      "file": "i12.mp3",
+      "seconds": 5.172,
+      "frames": 155
+    },
+    "b1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그렇다면 왜 전치사가 앞으로 당겨져 올까요? 예를 들어, “나는 집을 한 채 샀는데, 그 집의 지붕은 빨간색이다”라고 할 때",
+          "file": "parts/b1_01_kr.mp3",
+          "hash": "4a8001feb2fd8ca5",
+          "seconds": 11.651
+        }
+      ],
+      "file": "b1.mp3",
+      "seconds": 11.651,
+      "frames": 350
+    },
+    "b2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "두 문장으로 쓰면",
+          "file": "parts/b2_01_kr.mp3",
+          "hash": "0adf746d6ddeea17",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "I bought a house",
+          "file": "parts/b2_02_en.mp3",
+          "hash": "a8589733228aea3d",
+          "seconds": 1.28
+        },
+        {
+          "lang": "kr",
+          "text": "와",
+          "file": "parts/b2_03_kr.mp3",
+          "hash": "b6536b50ed87f7ff",
+          "seconds": 0.731
+        },
+        {
+          "lang": "en",
+          "text": "The roof of the house is red",
+          "file": "parts/b2_04_en.mp3",
+          "hash": "42efe711c0d4d420",
+          "seconds": 1.907
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/b2_05_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 0.914
+        }
+      ],
+      "file": "b2.mp3",
+      "seconds": 6.975,
+      "frames": 209
+    },
+    "b3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 두 문장을 관계대명사",
+          "file": "parts/b3_01_kr.mp3",
+          "hash": "90e2c9c0233ed35e",
+          "seconds": 2.038
+        },
+        {
+          "lang": "en",
+          "text": "which",
+          "file": "parts/b3_02_en.mp3",
+          "hash": "e5936f8a7b2484a2",
+          "seconds": 0.784
+        },
+        {
+          "lang": "kr",
+          "text": "로 잇되 전치사를 그냥 두면",
+          "file": "parts/b3_03_kr.mp3",
+          "hash": "6148bacba16f793b",
+          "seconds": 2.22
+        },
+        {
+          "lang": "en",
+          "text": "I bought a house which the roof of is red",
+          "file": "parts/b3_04_en.mp3",
+          "hash": "eba3a8011baed851",
+          "seconds": 2.273
+        },
+        {
+          "lang": "kr",
+          "text": "가 됩니다.",
+          "file": "parts/b3_05_kr.mp3",
+          "hash": "b2e84569846dfed0",
+          "seconds": 1.071
+        }
+      ],
+      "file": "b3.mp3",
+      "seconds": 9.012,
+      "frames": 270
+    },
+    "b4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "하지만 문장 속에",
+          "file": "parts/b4_01_kr.mp3",
+          "hash": "46688051c24b4da3",
+          "seconds": 1.515
+        },
+        {
+          "lang": "en",
+          "text": "of",
+          "file": "parts/b4_02_en.mp3",
+          "hash": "736761dcb91e1090",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": "혼자 덩그러니 남겨져 있으면 외롭고 세련되지 못한 문장이 되죠.",
+          "file": "parts/b4_03_kr.mp3",
+          "hash": "ba0288c9b6d09cb1",
+          "seconds": 5.381
+        }
+      ],
+      "file": "b4.mp3",
+      "seconds": 7.915,
+      "frames": 237
+    },
+    "b5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그래서 전치사",
+          "file": "parts/b5_01_kr.mp3",
+          "hash": "7e16de792db29572",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "of",
+          "file": "parts/b5_02_en.mp3",
+          "hash": "736761dcb91e1090",
+          "seconds": 0.601
+        },
+        {
+          "lang": "kr",
+          "text": "가 자신의 짝이었던",
+          "file": "parts/b5_03_kr.mp3",
+          "hash": "a5701d50e8b77b0a",
+          "seconds": 1.567
+        },
+        {
+          "lang": "en",
+          "text": "which",
+          "file": "parts/b5_04_en.mp3",
+          "hash": "e5936f8a7b2484a2",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": "바로 앞으로 찰싹 당겨져 와",
+          "file": "parts/b5_05_kr.mp3",
+          "hash": "cec4654e1d86fa61",
+          "seconds": 1.933
+        },
+        {
+          "lang": "en",
+          "text": "I bought a house of which the roof is red",
+          "file": "parts/b5_06_en.mp3",
+          "hash": "da98249046794bed",
+          "seconds": 2.403
+        },
+        {
+          "lang": "kr",
+          "text": "가 되는 것입니다.",
+          "file": "parts/b5_07_kr.mp3",
+          "hash": "bac60ce48879b870",
+          "seconds": 1.384
+        }
+      ],
+      "file": "b5.mp3",
+      "seconds": 11.18,
+      "frames": 335
+    },
+    "k0": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "5가지 주요 전치사 결합형을 직관적으로 확인해 볼까요?",
+          "file": "parts/k0_01_kr.mp3",
+          "hash": "d25dbe3df45ba87f",
+          "seconds": 4.859
+        }
+      ],
+      "file": "k0.mp3",
+      "seconds": 4.859,
+      "frames": 146
+    },
+    "k4": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "of which",
+          "file": "parts/k4_01_en.mp3",
+          "hash": "b665887ed99e5a83",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "는 소유, 부분입니다.",
+          "file": "parts/k4_02_kr.mp3",
+          "hash": "da8433765926fa48",
+          "seconds": 1.672
+        },
+        {
+          "lang": "en",
+          "text": "I have a book of which the cover is blue.",
+          "file": "parts/k4_03_en.mp3",
+          "hash": "76d72de8fdf5ed01",
+          "seconds": 2.168
+        },
+        {
+          "lang": "kr",
+          "text": "나는 책을 가지고 있다, 그런데 그 책의 표지는 파란색이다.",
+          "file": "parts/k4_04_kr.mp3",
+          "hash": "b2452ab0bcac31b1",
+          "seconds": 4.493
+        }
+      ],
+      "file": "k4.mp3",
+      "seconds": 9.822,
+      "frames": 295
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그곳에는 고풍스러운 시집 한 권이 있었습니다. 그런데 그 시집의 표지는 은은하게 빛나고 있었죠.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "db9833dd343fe2ab",
+          "seconds": 8.542
+        },
+        {
+          "lang": "en",
+          "text": "There was an old poetry book of which the cover shone softly.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "88f09e39e2415dd3",
+          "seconds": 3.187
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 11.886,
+      "frames": 357
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것은 그가 이곳까지 먼 길을 찾아온 진짜 이유였습니다. 그런데 그 이유 때문에 그의 가슴이 두근거렸습니다.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "e634b9c52e380f76",
+          "seconds": 10.031
+        },
+        {
+          "lang": "en",
+          "text": "It was the reason for which he had traveled a long way.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "2124ca126a77357f",
+          "seconds": 2.691
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 12.878,
+      "frames": 386
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀가 상자를 열자 따뜻한 빛이 흘러나왔습니다. 그런데 그 상자로부터 잊고 있던 옛 기억이 피어올랐죠.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "65fb353fbbda7f72",
+          "seconds": 9.195
+        },
+        {
+          "lang": "en",
+          "text": "She opened the box from which warm memories emerged.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "a367b726491027b9",
+          "seconds": 3.056
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 12.408,
+      "frames": 372
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘은 문장 맨 뒤에 홀로 남아 외로워하던 전치사가 관계대명사 앞으로 당겨져 오는",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "5ec02307a1d895d1",
+          "seconds": 6.687
+        },
+        {
+          "lang": "en",
+          "text": "of, for, from, by, with which",
+          "file": "parts/o1_02_en.mp3",
+          "hash": "387553797873ca1c",
+          "seconds": 3.527
+        },
+        {
+          "lang": "kr",
+          "text": "의 원리를 배웠습니다.",
+          "file": "parts/o1_03_kr.mp3",
+          "hash": "57942281a4d919e4",
+          "seconds": 2.038
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 12.565,
+      "frames": 377
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "어렵게 생각할 필요 없이 “전치사의 원래 뜻 + 그런데 그것은!”으로 직관적으로 해석하는 원리를 꼭 기억하세요.",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "fa74bb0e0e532381",
+          "seconds": 9.979
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 9.979,
+      "frames": 299
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "7504c05925950cfa",
+          "seconds": 4.206
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 4.206,
+      "frames": 126
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감사합니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "529f016c9727d15d",
+          "seconds": 1.149
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 1.149,
+      "frames": 34
+    },
+    "i13": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "from which",
+          "file": "parts/i13_01_en.mp3",
+          "hash": "35851ae9d4755d8e",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "는 “그런데 그것으로부터...”, “그런데 그 출처에서...”",
+          "file": "parts/i13_02_kr.mp3",
+          "hash": "0741c4f2e5d91387",
+          "seconds": 4.18
+        }
+      ],
+      "file": "i13.mp3",
+      "seconds": 5.355,
+      "frames": 161
+    },
+    "i14": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "by which",
+          "file": "parts/i14_01_en.mp3",
+          "hash": "48f37ae5d776c60b",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "는 “그런데 그것에 의해...”, “그런데 그 수단으로...”",
+          "file": "parts/i14_02_kr.mp3",
+          "hash": "4ff5ce74da2d5455",
+          "seconds": 3.84
+        }
+      ],
+      "file": "i14.mp3",
+      "seconds": 5.016,
+      "frames": 150
+    },
+    "i15": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "with which",
+          "file": "parts/i15_01_en.mp3",
+          "hash": "f20b873a13315840",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "는 “그런데 그것을 가지고...”, “그런데 그 도구, 동반으로...”",
+          "file": "parts/i15_02_kr.mp3",
+          "hash": "caa8be312ce0677f",
+          "seconds": 5.381
+        }
+      ],
+      "file": "i15.mp3",
+      "seconds": 6.504,
+      "frames": 195
+    },
+    "i16": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "복잡한 공식을 암기할 필요 없이, “전치사 뜻 + 그런데 그것은!” 하고 매끄럽게 해석하면 깔끔하게 직관을 얻을 수 있습니다.",
+          "file": "parts/i16_01_kr.mp3",
+          "hash": "cd541dd3646613e6",
+          "seconds": 10.762
+        }
+      ],
+      "file": "i16.mp3",
+      "seconds": 10.762,
+      "frames": 323
+    },
+    "k5": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "for which",
+          "file": "parts/k5_01_en.mp3",
+          "hash": "ab5b91404f943810",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "는 목적, 이유입니다.",
+          "file": "parts/k5_02_kr.mp3",
+          "hash": "eece8173d591aa1a",
+          "seconds": 1.62
+        },
+        {
+          "lang": "en",
+          "text": "This is the reason for which I came here.",
+          "file": "parts/k5_03_en.mp3",
+          "hash": "61116ff0a3455a7d",
+          "seconds": 2.325
+        },
+        {
+          "lang": "kr",
+          "text": "이것이 이유이다, 그런데 그 이유 때문에 내가 여기 왔다.",
+          "file": "parts/k5_04_kr.mp3",
+          "hash": "9269f1cbd78f132a",
+          "seconds": 3.997
+        }
+      ],
+      "file": "k5.mp3",
+      "seconds": 9.404,
+      "frames": 282
+    },
+    "k6": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "from which",
+          "file": "parts/k6_01_en.mp3",
+          "hash": "35851ae9d4755d8e",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": "는 출처, 시작점입니다.",
+          "file": "parts/k6_02_kr.mp3",
+          "hash": "4da3b2fad5a653c1",
+          "seconds": 1.855
+        },
+        {
+          "lang": "en",
+          "text": "He opened the box from which a bird flew.",
+          "file": "parts/k6_03_en.mp3",
+          "hash": "efa526ba7a4b347c",
+          "seconds": 2.351
+        },
+        {
+          "lang": "kr",
+          "text": "그는 상자를 열었다, 그런데 그 상자로부터 새 한 마리가 날아올랐다.",
+          "file": "parts/k6_04_kr.mp3",
+          "hash": "416fa1a6fa347cfb",
+          "seconds": 5.747
+        }
+      ],
+      "file": "k6.mp3",
+      "seconds": 11.494,
+      "frames": 345
+    },
+    "k7": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "by which",
+          "file": "parts/k7_01_en.mp3",
+          "hash": "48f37ae5d776c60b",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "는 수단, 방법입니다.",
+          "file": "parts/k7_02_kr.mp3",
+          "hash": "8791f8f71eea1bb2",
+          "seconds": 1.62
+        },
+        {
+          "lang": "en",
+          "text": "She found a way by which she could solve it.",
+          "file": "parts/k7_03_en.mp3",
+          "hash": "145e2a6f601dd657",
+          "seconds": 2.116
+        },
+        {
+          "lang": "kr",
+          "text": "그녀는 방법을 찾았다, 그런데 그 수단에 의해 문제를 풀 수 있었다.",
+          "file": "parts/k7_04_kr.mp3",
+          "hash": "6db6b2f7d620dde3",
+          "seconds": 6.217
+        }
+      ],
+      "file": "k7.mp3",
+      "seconds": 11.416,
+      "frames": 342
+    },
+    "k8": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "with which",
+          "file": "parts/k8_01_en.mp3",
+          "hash": "f20b873a13315840",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": "는 도구, 동반입니다.",
+          "file": "parts/k8_02_kr.mp3",
+          "hash": "8ecb3415d2ee1ed2",
+          "seconds": 1.515
+        },
+        {
+          "lang": "en",
+          "text": "He bought a pen with which he wrote the letter.",
+          "file": "parts/k8_03_en.mp3",
+          "hash": "c3a0170e2e14a39e",
+          "seconds": 2.325
+        },
+        {
+          "lang": "kr",
+          "text": "그는 펜을 샀다, 그런데 그 펜을 가지고 편지를 썼다.",
+          "file": "parts/k8_04_kr.mp3",
+          "hash": "11379909663ab2ea",
+          "seconds": 5.512
+        }
+      ],
+      "file": "k8.mp3",
+      "seconds": 10.893,
+      "frames": 327
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것은 두 사람의 마음을 이어주는 소중한 열쇠였습니다. 그런데 그 열쇠에 의해 소중한 인연이 완성되었습니다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "8bdc245c7ab7f420",
+          "seconds": 10.449
+        },
+        {
+          "lang": "en",
+          "text": "It was a key by which their hearts were connected.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "49051a049f7efaa5",
+          "seconds": 2.769
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 13.375,
+      "frames": 401
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 품속에서 작고 예쁜 펜 하나를 꺼냈습니다. 그런데 그 펜을 가지고 그녀에게 첫 인사를 적어 건넸습니다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "3d3e2d48cd568b7e",
+          "seconds": 10.762
+        },
+        {
+          "lang": "en",
+          "text": "He took out a pen with which he wrote a warm greeting.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "62ee308db1d26e1c",
+          "seconds": 2.691
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 13.61,
+      "frames": 408
+    }
+  }
+}

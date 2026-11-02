@@ -1,0 +1,200 @@
+[
+  {
+    "id": "i1",
+    "scene": "intro",
+    "kr": "우리가 지난 시간에 배웠듯이, 관계대명사는 접속사와 대명사가 하나로 합쳐진 요술봉이라고 했습니다.",
+    "en": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "사물 뒤에서 “그런데 이것은...” 하고 부드럽게 말을 이어주는 것이 바로 {e|which}였죠.",
+    "en": null
+  },
+  {
+    "id": "i3",
+    "scene": "intro",
+    "kr": "그렇다면 {c|of which}, {g|for which}, {b|from which}, {m|by which}, {l|with which} 같은 녀석들은 대체 왜 이렇게 길고 복잡해 보이는 걸까요?",
+    "en": null
+  },
+  {
+    "id": "i4",
+    "scene": "intro",
+    "kr": "이유는 아주 간단하고 명쾌합니다!",
+    "en": null
+  },
+  {
+    "id": "i5",
+    "scene": "intro",
+    "kr": "원래 문장 맨 뒤에서 명사와 짝을 이루던 전치사, {c|of}, {g|for}, {b|from}, {m|by}, {l|with}가, 문장이 길어지면서 뒤에 혼자 덩그러니 남겨져 외로워졌기 때문입니다.",
+    "en": null
+  },
+  {
+    "id": "i6",
+    "scene": "intro",
+    "kr": "그래서 이 전치사가 자신의 짝꿍이었던 대명사를 끌어안은 관계대명사 {e|which} 바로 앞으로 찰싹 붙어 이동한 것뿐입니다!",
+    "en": null
+  },
+  {
+    "id": "i7",
+    "scene": "intro",
+    "kr": "원리를 알면 해석도 직관적입니다.",
+    "en": null
+  },
+  {
+    "id": "i11",
+    "scene": "intro",
+    "kr": "{c|of which}는 “그런데 그것의...”, “그런데 그것 중에서...”",
+    "en": null
+  },
+  {
+    "id": "i12",
+    "scene": "intro",
+    "kr": "{g|for which}는 “그런데 그것을 위해...”, “그런데 그것 때문에...”",
+    "en": null
+  },
+  {
+    "id": "i13",
+    "scene": "intro",
+    "kr": "{b|from which}는 “그런데 그것으로부터...”, “그런데 그 출처에서...”",
+    "en": null
+  },
+  {
+    "id": "i14",
+    "scene": "intro",
+    "kr": "{m|by which}는 “그런데 그것에 의해...”, “그런데 그 수단으로...”",
+    "en": null
+  },
+  {
+    "id": "i15",
+    "scene": "intro",
+    "kr": "{l|with which}는 “그런데 그것을 가지고...”, “그런데 그 도구, 동반으로...”",
+    "en": null
+  },
+  {
+    "id": "i16",
+    "scene": "intro",
+    "kr": "복잡한 공식을 암기할 필요 없이, “전치사 뜻 + 그런데 그것은!” 하고 매끄럽게 해석하면 깔끔하게 직관을 얻을 수 있습니다.",
+    "en": null
+  },
+  {
+    "id": "b1",
+    "scene": "bridge",
+    "kr": "그렇다면 왜 전치사가 앞으로 당겨져 올까요? 예를 들어, “나는 집을 한 채 샀는데, 그 집의 지붕은 빨간색이다”라고 할 때",
+    "en": null
+  },
+  {
+    "id": "b2",
+    "scene": "bridge",
+    "kr": "두 문장으로 쓰면 {e|I bought a house}와 {e|The roof of the house is red}입니다.",
+    "en": null
+  },
+  {
+    "id": "b3",
+    "scene": "bridge",
+    "kr": "이 두 문장을 관계대명사 {e|which}로 잇되 전치사를 그냥 두면 {e|I bought a house which the roof of is red}가 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b4",
+    "scene": "bridge",
+    "kr": "하지만 문장 속에 {c|of} 혼자 덩그러니 남겨져 있으면 외롭고 세련되지 못한 문장이 되죠.",
+    "en": null
+  },
+  {
+    "id": "b5",
+    "scene": "bridge",
+    "kr": "그래서 전치사 {c|of}가 자신의 짝이었던 {e|which} 바로 앞으로 찰싹 당겨져 와 {e|I bought a house of which the roof is red}가 되는 것입니다.",
+    "en": null
+  },
+  {
+    "id": "k0",
+    "scene": "bridge",
+    "kr": "5가지 주요 전치사 결합형을 직관적으로 확인해 볼까요?",
+    "en": null
+  },
+  {
+    "id": "k4",
+    "scene": "bridge",
+    "kr": "{c|of which}는 소유, 부분입니다. {e|I have a book} {c|of which} {e|the cover is blue.} 나는 책을 가지고 있다, 그런데 그 책의 표지는 파란색이다.",
+    "en": null
+  },
+  {
+    "id": "k5",
+    "scene": "bridge",
+    "kr": "{g|for which}는 목적, 이유입니다. {e|This is the reason} {g|for which} {e|I came here.} 이것이 이유이다, 그런데 그 이유 때문에 내가 여기 왔다.",
+    "en": null
+  },
+  {
+    "id": "k6",
+    "scene": "bridge",
+    "kr": "{b|from which}는 출처, 시작점입니다. {e|He opened the box} {b|from which} {e|a bird flew.} 그는 상자를 열었다, 그런데 그 상자로부터 새 한 마리가 날아올랐다.",
+    "en": null
+  },
+  {
+    "id": "k7",
+    "scene": "bridge",
+    "kr": "{m|by which}는 수단, 방법입니다. {e|She found a way} {m|by which} {e|she could solve it.} 그녀는 방법을 찾았다, 그런데 그 수단에 의해 문제를 풀 수 있었다.",
+    "en": null
+  },
+  {
+    "id": "k8",
+    "scene": "bridge",
+    "kr": "{l|with which}는 도구, 동반입니다. {e|He bought a pen} {l|with which} {e|he wrote the letter.} 그는 펜을 샀다, 그런데 그 펜을 가지고 편지를 썼다.",
+    "en": null
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "그곳에는 고풍스러운 시집 한 권이 있었습니다. 그런데 그 시집의 표지는 은은하게 빛나고 있었죠.",
+    "en": "{e|There} {e|was} {e|an} {e|old} {e|poetry} {e|book} {c|of which} {e|the} {e|cover} {e|shone} {e|softly.}"
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "그것은 그가 이곳까지 먼 길을 찾아온 진짜 이유였습니다. 그런데 그 이유 때문에 그의 가슴이 두근거렸습니다.",
+    "en": "{e|It} {e|was} {e|the} {e|reason} {g|for which} {e|he} {e|had} {e|traveled} {e|a} {e|long} {e|way.}"
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "그녀가 상자를 열자 따뜻한 빛이 흘러나왔습니다. 그런데 그 상자로부터 잊고 있던 옛 기억이 피어올랐죠.",
+    "en": "{e|She} {e|opened} {e|the} {e|box} {b|from which} {e|warm} {e|memories} {e|emerged.}"
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "그것은 두 사람의 마음을 이어주는 소중한 열쇠였습니다. 그런데 그 열쇠에 의해 소중한 인연이 완성되었습니다.",
+    "en": "{e|It} {e|was} {e|a} {e|key} {m|by which} {e|their} {e|hearts} {e|were} {e|connected.}"
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "그는 품속에서 작고 예쁜 펜 하나를 꺼냈습니다. 그런데 그 펜을 가지고 그녀에게 첫 인사를 적어 건넸습니다.",
+    "en": "{e|He} {e|took} {e|out} {e|a} {e|pen} {l|with which} {e|he} {e|wrote} {e|a} {e|warm} {e|greeting.}"
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘은 문장 맨 뒤에 홀로 남아 외로워하던 전치사가 관계대명사 앞으로 당겨져 오는 {c|of}, {g|for}, {b|from}, {m|by}, {l|with} {e|which}의 원리를 배웠습니다.",
+    "en": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "어렵게 생각할 필요 없이 “전치사의 원래 뜻 + 그런데 그것은!”으로 직관적으로 해석하는 원리를 꼭 기억하세요.",
+    "en": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+    "en": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "감사합니다.",
+    "en": null
+  }
+]

@@ -1,0 +1,542 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "두 대상을 비교할 때 우리는 보통 “보다 더 한”이라는 표현을 씁니다.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "f6a6905ccb238c47",
+          "seconds": 4.963
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 4.963,
+      "frames": 149
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그런데 영어에서 비교급, 즉 -er을 붙일지, 모어를 붙일지 결정하는 절대적인 기준은 바로 음절, Syllable입니다.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "700817167cfb56c4",
+          "seconds": 11.233
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 11.233,
+      "frames": 337
+    },
+    "a1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "먼저 기본기입니다. 많은 분들이 글자 수만 보고 음절을 오해하곤 합니다. 하지만 영어에서 음절은 글자의 개수가 아니라, 모음 소리가 몇 번 들리는가입니다.",
+          "file": "parts/a1_01_kr.mp3",
+          "hash": "96e1676268c06a36",
+          "seconds": 12.722
+        }
+      ],
+      "file": "a1.mp3",
+      "seconds": 12.722,
+      "frames": 382
+    },
+    "a2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "핵심 원칙, 영어에서 으 발음은 소리, 즉 음절이 아닙니다!",
+          "file": "parts/a2_01_kr.mp3",
+          "hash": "6cc64ae3ae6bc6b2",
+          "seconds": 5.799
+        }
+      ],
+      "file": "a2.mp3",
+      "seconds": 5.799,
+      "frames": 174
+    },
+    "a3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "Old, 올드. 한국어로 쓰면 올드, 두 글자 같지만, 영어의 d에는 모음 소리가 없습니다. 으 소리는 껍데기일 뿐입니다. 모음 소리가 하나뿐이므로 1음절입니다.",
+          "file": "parts/a3_01_kr.mp3",
+          "hash": "0d777fc23a86ed58",
+          "seconds": 15.726
+        }
+      ],
+      "file": "a3.mp3",
+      "seconds": 15.726,
+      "frames": 472
+    },
+    "a4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "Pretty, 프리티. 한국어로는 프리티, 세 글자처럼 느껴지지만, 실제 모음 소리는 Pre와 tty, 2개뿐입니다. 따라서 3음절이 아니라 2음절입니다.",
+          "file": "parts/a4_01_kr.mp3",
+          "hash": "e41317c39f487efd",
+          "seconds": 13.401
+        }
+      ],
+      "file": "a4.mp3",
+      "seconds": 13.401,
+      "frames": 402
+    },
+    "r1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "음절에 따른 비교급 규칙입니다. 첫째, 1음절 단어와 짧은 2음절 단어는 뒤에 -er을 붙입니다.",
+          "file": "parts/r1_01_kr.mp3",
+          "hash": "4fb453024c21a329",
+          "seconds": 9.691
+        }
+      ],
+      "file": "r1.mp3",
+      "seconds": 9.691,
+      "frames": 291
+    },
+    "r2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "둘째, 3음절 이상 단어는 앞에 모어를 붙입니다.",
+          "file": "parts/r2_01_kr.mp3",
+          "hash": "5ece41748f0dc2a4",
+          "seconds": 3.579
+        }
+      ],
+      "file": "r2.mp3",
+      "seconds": 3.579,
+      "frames": 107
+    },
+    "b1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "두 번째 핵심 뉘앙스입니다. 비교급 뒤에는 기준이 되는 대상을 가리키는 than, 보다가 따라옵니다.",
+          "file": "parts/b1_01_kr.mp3",
+          "hash": "ba2667d334556cb7",
+          "seconds": 8.307
+        }
+      ],
+      "file": "b1.mp3",
+      "seconds": 8.307,
+      "frames": 249
+    },
+    "b2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그리고 비교의 차이를 강조하거나 부드럽게 만들 때는, 비교급 앞에 강조 어휘를 붙여줍니다.",
+          "file": "parts/b2_01_kr.mp3",
+          "hash": "58d49db4635e905d",
+          "seconds": 7.602
+        }
+      ],
+      "file": "b2.mp3",
+      "seconds": 7.602,
+      "frames": 228
+    },
+    "b3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "훨씬 더 한, 강조할 때는 much, even, far 더하기 비교급입니다.",
+          "file": "parts/b3_01_kr.mp3",
+          "hash": "0a35a0cefbc96064",
+          "seconds": 5.616
+        }
+      ],
+      "file": "b3.mp3",
+      "seconds": 5.616,
+      "frames": 168
+    },
+    "b4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "조금 더 한, 부드러운 차이는 a little, slightly 더하기 비교급입니다.",
+          "file": "parts/b4_01_kr.mp3",
+          "hash": "654d3fb536d42398",
+          "seconds": 5.747
+        }
+      ],
+      "file": "b4.mp3",
+      "seconds": 5.747,
+      "frames": 172
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 비밀 서재는 밖에서 보던 골목길보다 훨씬 더 오래되었다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "15a86e334e4c9cdb",
+          "seconds": 4.911
+        },
+        {
+          "lang": "en",
+          "text": "This secret library is much older than the alley outside.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "cf5f61c1bc7134a9",
+          "seconds": 3.37
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 8.464,
+      "frames": 254
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "2층에서 들려오는 피아노 소리가 아까보다 더 명확해진다.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "e93d59b013186db2",
+          "seconds": 4.493
+        },
+        {
+          "lang": "en",
+          "text": "The piano sound from the second floor becomes clearer than before.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "86187bf7ec62cb5c",
+          "seconds": 3.579
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 8.229,
+      "frames": 247
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 오래된 책장이 저 현대적인 스피커보다 더 크게 보인다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "2c2e6d1b32a66290",
+          "seconds": 5.094
+        },
+        {
+          "lang": "en",
+          "text": "This old bookshelf looks bigger than that modern speaker.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "832176972417e8d9",
+          "seconds": 3.056
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 8.307,
+      "frames": 249
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "방 안의 은빛 조명이 밤하늘의 달보다 더 밝게 빛난다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "eae5cdf2670cc328",
+          "seconds": 3.944
+        },
+        {
+          "lang": "en",
+          "text": "The silver light in the room shines brighter than the moon in the night sky.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "6a9729a2ad30efb9",
+          "seconds": 4.18
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 8.281,
+      "frames": 248
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀의 걸음걸이가 바람 소리보다 더 가벼워진다.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "85faf33431952286",
+          "seconds": 3.344
+        },
+        {
+          "lang": "en",
+          "text": "Her footsteps become lighter than the sound of the wind.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "152458a861dc090b",
+          "seconds": 2.926
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 6.426,
+      "frames": 193
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 오래된 일기장이 생각했던 것보다 훨씬 더 무겁다.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "27963c386719d88d",
+          "seconds": 3.997
+        },
+        {
+          "lang": "en",
+          "text": "This ancient diary is much heavier than I thought.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "1cd44d89b981d8e2",
+          "seconds": 3.056
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 7.21,
+      "frames": 216
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이곳의 분위기는 도심의 카페보다 훨씬 더 신비롭다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "b320c1c221de4d26",
+          "seconds": 3.605
+        },
+        {
+          "lang": "en",
+          "text": "The atmosphere here is far more mysterious than a downtown cafe.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "194640ff845b38ca",
+          "seconds": 3.788
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 7.576,
+      "frames": 227
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "벽에 걸린 붉은 그림이 실물보다 더 아름답게 보인다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "41200ac5ccb23ed6",
+          "seconds": 3.762
+        },
+        {
+          "lang": "en",
+          "text": "The red painting on the wall looks more beautiful than real life.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "6b2db0047e5e8682",
+          "seconds": 3.657
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 7.576,
+      "frames": 227
+    },
+    "s09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 공간을 탐험하는 것이 평범한 일상보다 훨씬 더 흥미진진하다.",
+          "file": "parts/s09_01_kr.mp3",
+          "hash": "cc95aed6751ac984",
+          "seconds": 6.217
+        },
+        {
+          "lang": "en",
+          "text": "Exploring this space is even more exciting than daily routine.",
+          "file": "parts/s09_02_en.mp3",
+          "hash": "15b58b1b18437f17",
+          "seconds": 3.579
+        }
+      ],
+      "file": "s09.mp3",
+      "seconds": 9.953,
+      "frames": 299
+    },
+    "s10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "피아니스트의 비밀은 우리가 상상했던 것보다 더 복잡하다.",
+          "file": "parts/s10_01_kr.mp3",
+          "hash": "83290df128600293",
+          "seconds": 5.433
+        },
+        {
+          "lang": "en",
+          "text": "The pianist's secret is more complicated than we imagined.",
+          "file": "parts/s10_02_en.mp3",
+          "hash": "5aea3f5d7afd1cb2",
+          "seconds": 3.161
+        }
+      ],
+      "file": "s10.mp3",
+      "seconds": 8.725,
+      "frames": 262
+    },
+    "s11": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 마법 같은 밤이 어제보다 훨씬 더 값지게 느껴진다.",
+          "file": "parts/s11_01_kr.mp3",
+          "hash": "9c19ffd44cbe39a5",
+          "seconds": 4.493
+        },
+        {
+          "lang": "en",
+          "text": "This magical night feels much more valuable than yesterday.",
+          "file": "parts/s11_02_en.mp3",
+          "hash": "de114aa26c0edd82",
+          "seconds": 3.527
+        }
+      ],
+      "file": "s11.mp3",
+      "seconds": 8.176,
+      "frames": 245
+    },
+    "s12": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "진실에 가까워질수록 모든 순간이 이전보다 더 위험해진다.",
+          "file": "parts/s12_01_kr.mp3",
+          "hash": "c4ab79b6e9aed669",
+          "seconds": 5.381
+        },
+        {
+          "lang": "en",
+          "text": "As we get closer to the truth, every moment becomes more dangerous than before.",
+          "file": "parts/s12_02_en.mp3",
+          "hash": "faeaa6154992cc2a",
+          "seconds": 4.598
+        }
+      ],
+      "file": "s12.mp3",
+      "seconds": 10.136,
+      "frames": 304
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 배운 비교급의 핵심, 딱 두 가지만 정리해 볼까요?",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "2c24f1ec17d20656",
+          "seconds": 4.415
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 4.415,
+      "frames": 132
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "첫째, 비교급의 형태, -er을 쓸지 모어를 쓸지 결정하는 것은 글자 수가 아니라 모음 소리의 개수, 음절입니다.",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "be748f5271a5a799",
+          "seconds": 9.927
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 9.927,
+      "frames": 298
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "한국어의 으 발음은 영어에서 소리가 아니라는 점, 절대 잊지 마세요. old는 1음절, pretty는 2음절입니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "fd955ba7e4500ff3",
+          "seconds": 10.214
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 10.214,
+      "frames": 306
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "둘째, 비교급은 단순히 두 대상을 겨루는 것이 아니라, 문장에 격차와 입체감을 주는 도구입니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "54824a88ba4643eb",
+          "seconds": 7.367
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 7.367,
+      "frames": 221
+    },
+    "o5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "much나 even 같은 단어를 덧붙여 소리의 깊이를 더해 보세요.",
+          "file": "parts/o5_01_kr.mp3",
+          "hash": "3caf0bd87bc11d7c",
+          "seconds": 4.911
+        }
+      ],
+      "file": "o5.mp3",
+      "seconds": 4.911,
+      "frames": 147
+    },
+    "o6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "비밀 서재의 불빛이 밖보다 더 밝게 빛나듯, 여러분의 영어 문장도 오늘 배운 비교급을 통해 훨씬 더 풍성해질 것입니다.",
+          "file": "parts/o6_01_kr.mp3",
+          "hash": "ecabc749f2691423",
+          "seconds": 10.527
+        }
+      ],
+      "file": "o6.mp3",
+      "seconds": 10.527,
+      "frames": 316
+    },
+    "o7": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 배운 12개의 도심 동화 예문들을 한글 의미부터 천천히 느끼며 직접 소리 내어 연습해 보세요.",
+          "file": "parts/o7_01_kr.mp3",
+          "hash": "6418c9dd0ce5be18",
+          "seconds": 7.758
+        }
+      ],
+      "file": "o7.mp3",
+      "seconds": 7.758,
+      "frames": 233
+    },
+    "o8": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다음 15강에서는 최상급 표현과 함께 찾아오겠습니다. 수고 많으셨습니다!",
+          "file": "parts/o8_01_kr.mp3",
+          "hash": "6b603bb227083625",
+          "seconds": 7.367
+        }
+      ],
+      "file": "o8.mp3",
+      "seconds": 7.367,
+      "frames": 221
+    }
+  }
+}

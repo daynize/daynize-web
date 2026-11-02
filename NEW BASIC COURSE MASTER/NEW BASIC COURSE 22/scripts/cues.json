@@ -1,0 +1,188 @@
+[
+  {
+    "id": "i1a",
+    "scene": "intro",
+    "kr": "우리말은 동사에 ‘~하는’이나 ‘~된’을 붙여서 뒤에 오는 명사를 꾸며줍니다.",
+    "en": null
+  },
+  {
+    "id": "i1b",
+    "scene": "intro",
+    "kr": "‘잠자는 아기’, ‘부서진 창문’처럼 말이죠.",
+    "en": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "영어에서도 동사를 형용사처럼 바꿔서 명사를 꾸며주는 아주 특별한 장치가 있습니다.",
+    "en": null
+  },
+  {
+    "id": "i3",
+    "scene": "intro",
+    "kr": "그것을 알아야 영어의 기초가 됩니다. 바로 현재분사({v|-ing})와 과거분사({p|-p.p.})입니다.",
+    "en": null
+  },
+  {
+    "id": "i4",
+    "scene": "intro",
+    "kr": "동사라는 뿌리에서 갈라져 나와 명사를 꾸며주는 품사, 분사입니다.",
+    "en": null
+  },
+  {
+    "id": "i5",
+    "scene": "intro",
+    "kr": "현재분사({v|-ing})는 스스로 하고 있는 능동과 진행의 의미를 가집니다.",
+    "en": null
+  },
+  {
+    "id": "i6",
+    "scene": "intro",
+    "kr": "자고 있는({v|sleeping}), 날아가고 있는({v|flying}), 흥미를 주는({v|interesting}), 놀라게 하는({v|surprising}) 형용사들입니다.",
+    "en": null
+  },
+  {
+    "id": "i7",
+    "scene": "intro",
+    "kr": "과거분사({p|-ed}, {p|p.p.})는 남에 의해 당하거나 이미 완료된 수동과 완료의 의미를 가집니다.",
+    "en": null
+  },
+  {
+    "id": "i8",
+    "scene": "intro",
+    "kr": "부서진({p|broken}), 감동받은({p|touched}), 놀란({p|surprised}), 힘들어진({p|tired}) 형용사들입니다.",
+    "en": null
+  },
+  {
+    "id": "b1a",
+    "scene": "bridge",
+    "kr": "예를 들어, “나 정말 지루해”라고 할 때,",
+    "en": null
+  },
+  {
+    "id": "b1b",
+    "scene": "bridge",
+    "kr": "{e|I am boring}이라고 쓰면 “나는 남을 지루하게 만드는 재미없는 사람이다”라는 뜻이 되어 아주 어색하고 황당한 문장이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b1c",
+    "scene": "bridge",
+    "kr": "내 감정이 지루함을 느낀 것이므로 {e|I am bored}처럼 {p|과거분사}를 써야 완성된 문장이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b2a",
+    "scene": "bridge",
+    "kr": "다시 한 번 말하자면,",
+    "en": null
+  },
+  {
+    "id": "b2b",
+    "scene": "bridge",
+    "kr": "{v|현재분사}({v|-ing})는 주체가 직접 행동을 내뿜는 것, {p|과거분사}({p|-ed})는 행동이나 감정을 전달받아 당하는 것입니다.",
+    "en": null
+  },
+  {
+    "id": "b2c",
+    "scene": "bridge",
+    "kr": "따라서 명사의 관계에 따라 능동과 수동의 다리를 정확히 놓아주어야 합니다.",
+    "en": null
+  },
+  {
+    "id": "b3a",
+    "scene": "bridge",
+    "kr": "{e|a sleeping baby}는 스스로 자고 있는 아기, 능동과 진행의 뜻이고,",
+    "en": null
+  },
+  {
+    "id": "b3b",
+    "scene": "bridge",
+    "kr": "{e|a broken window}는 깨짐을 당해버린 창문, 수동과 완료의 뜻입니다.",
+    "en": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "아침 햇살 아래, 떠오르는 태양이 도시를 환하게 비춥니다.",
+    "en": "{e|The} {v|rising} {e|sun} {e|illuminates} {e|the} {e|city.}"
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "공원 한쪽에서는 자고 있는 아기 곁으로 바람이 스쳐 지나갑니다.",
+    "en": "{e|A} {e|gentle} {e|breeze} {e|passes} {e|by} {e|a} {v|sleeping} {e|baby.}"
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "그는 거리에서 바닥에 떨어진 나뭇잎들을 바라보았습니다.",
+    "en": "{e|He} {e|looked} {e|at} {e|the} {p|fallen} {e|leaves} {e|on} {e|the} {e|ground.}"
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "길 건너 카페에서는 흥미로운 음악이 흘러나오고 있었죠.",
+    "en": "{e|An} {v|interesting} {e|melody} {e|was} {e|playing} {e|from} {e|the} {e|cafe.}"
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "카페 안으로 들어선 그는 감동적인 이야기가 담긴 책을 펼쳤습니다.",
+    "en": "{e|He} {e|opened} {e|a} {e|book} {e|with} {e|a} {v|touching} {e|story.}"
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "이야기를 읽어내려가며, 그는 깊은 감동을 받았습니다.",
+    "en": "{e|Reading} {e|through} {e|the} {e|pages,} {e|he} {e|felt} {e|deeply} {p|touched}"
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "바로 그때, 닫힌 창문 너머로 반가운 친구의 모습이 보였습니다.",
+    "en": "{e|He} {e|saw} {e|a} {e|dear} {e|friend} {e|beyond} {e|the} {p|closed} {e|window.}"
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "생각지도 못한 뜻밖의 재회에 그는 몹시 놀랐습니다.",
+    "en": "{e|He} {e|was} {e|greatly} {p|surprised} {e|by} {e|the} {e|unexpected} {e|reunion.}"
+  },
+  {
+    "id": "s09",
+    "scene": "story",
+    "kr": "지쳐 있던 그의 마음에 다시금 따뜻한 활력이 감돌기 시작했습니다.",
+    "en": "{e|Warm} {e|energy} {e|returned} {e|to} {e|his} {p|tired} {e|heart.}"
+  },
+  {
+    "id": "s10",
+    "scene": "story",
+    "kr": "그렇게 두 사람은 서로에게 환하게 미소 짓는 얼굴로 인사를 건넸습니다.",
+    "en": "{e|They} {e|greeted} {e|each} {e|other} {e|with} {v|smiling} {e|faces.}"
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘은 동사의 변신, {v|현재분사}와 {p|과거분사}에 대해 배웠습니다.",
+    "en": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "내가 직접 내뿜는 능동은 {v|-ing}, 남에게 전달받아 당하는 수동은 {p|-ed}라는 점, 잊지 마세요.",
+    "en": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+    "en": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "감사합니다.",
+    "en": null
+  }
+]

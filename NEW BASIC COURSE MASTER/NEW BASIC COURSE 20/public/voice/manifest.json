@@ -1,0 +1,689 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리말은 동사가 문장 맨 끝에 오면서 말을 끝내는 역할을 하죠.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "8b2885699b391904",
+          "seconds": 4.598
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 4.598,
+      "frames": 138
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "하지만 영어는 주어 다음에 동사가 바로 옵니다.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "6f3f9cced2376e15",
+          "seconds": 3.37
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 3.37,
+      "frames": 101
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그 동사 뒤에 오는 명사는 목적어로 해석되는데요, 우리말로는 ‘에게’, ‘을’, ‘를’로 해석됩니다.",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "97c25c72ea76e2f7",
+          "seconds": 8.307
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 8.307,
+      "frames": 249
+    },
+    "i4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것을 알아야 영어의 기초가 잡힙니다. 바로 타동사와 자동사입니다.",
+          "file": "parts/i4_01_kr.mp3",
+          "hash": "17e5d7bdf043ee0d",
+          "seconds": 4.963
+        }
+      ],
+      "file": "i4.mp3",
+      "seconds": 4.963,
+      "frames": 149
+    },
+    "i5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "타동사는 남을 움직이는 품사입니다.",
+          "file": "parts/i5_01_kr.mp3",
+          "hash": "d707d4292ae5b7eb",
+          "seconds": 2.456
+        }
+      ],
+      "file": "i5.mp3",
+      "seconds": 2.456,
+      "frames": 74
+    },
+    "i6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "반면에 자동사는 혼자서 할 수 있는 행동, 즉 나 스스로를 움직이는 품사죠.",
+          "file": "parts/i6_01_kr.mp3",
+          "hash": "337019acddd5349c",
+          "seconds": 6.034
+        }
+      ],
+      "file": "i6.mp3",
+      "seconds": 6.034,
+      "frames": 181
+    },
+    "i7a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "혼자 누워 있다가, 자다가, 꿈을 꾸다가, 깨어나고, 기어다니다가, 쭈그려 앉았다가, 일어나고,",
+          "file": "parts/i7a_01_kr.mp3",
+          "hash": "6159cdcb5c70652a",
+          "seconds": 11.285
+        }
+      ],
+      "file": "i7a.mp3",
+      "seconds": 11.285,
+      "frames": 339
+    },
+    "i7b": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "걷고, 뛰다가, 깡충깡충 뛰다가, 점프도 하고, 날아가는 동사들이 바로 대표적인 자동사입니다.",
+          "file": "parts/i7b_01_kr.mp3",
+          "hash": "010db8ff092718b0",
+          "seconds": 9.143
+        }
+      ],
+      "file": "i7b.mp3",
+      "seconds": 9.143,
+      "frames": 274
+    },
+    "b1a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "예를 들어볼까요? “그녀는 그에게 거짓말을 했다”라고 할 때,",
+          "file": "parts/b1a_01_kr.mp3",
+          "hash": "8dba72863d08af8e",
+          "seconds": 5.381
+        }
+      ],
+      "file": "b1a.mp3",
+      "seconds": 5.381,
+      "frames": 161
+    },
+    "b1b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "She lied him",
+          "file": "parts/b1b_01_en.mp3",
+          "hash": "5ba108f84f9299d1",
+          "seconds": 1.149
+        },
+        {
+          "lang": "kr",
+          "text": "이라고 쓰면 “그녀는 그를 거짓말했다”라는 아주 어색한 문장이 됩니다.",
+          "file": "parts/b1b_02_kr.mp3",
+          "hash": "6acd8d40c27c52a2",
+          "seconds": 5.512
+        }
+      ],
+      "file": "b1b.mp3",
+      "seconds": 6.844,
+      "frames": 205
+    },
+    "b1c": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "She lied to him",
+          "file": "parts/b1c_01_en.mp3",
+          "hash": "f7da51bafbc47383",
+          "seconds": 1.254
+        },
+        {
+          "lang": "kr",
+          "text": "처럼 중간에",
+          "file": "parts/b1c_02_kr.mp3",
+          "hash": "bddc073b111644a5",
+          "seconds": 1.28
+        },
+        {
+          "lang": "en",
+          "text": "to",
+          "file": "parts/b1c_03_en.mp3",
+          "hash": "dab3d9af6ba6802d",
+          "seconds": 0.731
+        },
+        {
+          "lang": "kr",
+          "text": "를 넣어야 완성된 문장이 되죠.",
+          "file": "parts/b1c_04_kr.mp3",
+          "hash": "343bad41c4177815",
+          "seconds": 2.22
+        }
+      ],
+      "file": "b1c.mp3",
+      "seconds": 5.982,
+      "frames": 179
+    },
+    "b2a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다시 한 번 말하자면, 자동사 바로 뒤에는 목적어가 직접 오지 못합니다.",
+          "file": "parts/b2a_01_kr.mp3",
+          "hash": "f0350a312caf99db",
+          "seconds": 5.433
+        }
+      ],
+      "file": "b2a.mp3",
+      "seconds": 5.433,
+      "frames": 163
+    },
+    "b2b": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "따라서 자동사 뒤에 대상이나 장소를 붙이려면, 반드시 전치사가 다리 역할을 해주어야 합니다.",
+          "file": "parts/b2b_01_kr.mp3",
+          "hash": "aeb4caa71ea3794e",
+          "seconds": 7.471
+        }
+      ],
+      "file": "b2b.mp3",
+      "seconds": 7.471,
+      "frames": 224
+    },
+    "b3a": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "She sat the chair",
+          "file": "parts/b3a_01_en.mp3",
+          "hash": "0b84f6c94ffad60d",
+          "seconds": 1.489
+        },
+        {
+          "lang": "kr",
+          "text": "라고 쓰면 어색하지만,",
+          "file": "parts/b3a_02_kr.mp3",
+          "hash": "52e34dea2de14d8c",
+          "seconds": 1.698
+        }
+      ],
+      "file": "b3a.mp3",
+      "seconds": 3.344,
+      "frames": 100
+    },
+    "b3b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "She sat on the chair",
+          "file": "parts/b3b_01_en.mp3",
+          "hash": "b95ee5a75b9ae9c4",
+          "seconds": 1.489
+        },
+        {
+          "lang": "kr",
+          "text": "라고 써야",
+          "file": "parts/b3b_02_kr.mp3",
+          "hash": "97e465334c55c402",
+          "seconds": 1.097
+        }
+      ],
+      "file": "b3b.mp3",
+      "seconds": 2.743,
+      "frames": 82
+    },
+    "b3c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "“그녀는 그 의자에 앉았다”라는 올바른 문장이 되는 것처럼 말이죠.",
+          "file": "parts/b3c_01_kr.mp3",
+          "hash": "ee401ca94ae0282f",
+          "seconds": 5.094
+        }
+      ],
+      "file": "b3c.mp3",
+      "seconds": 5.094,
+      "frames": 153
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그가 마침내 공항에 도착했습니다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "59cdc95115627183",
+          "seconds": 2.403
+        },
+        {
+          "lang": "en",
+          "text": "He arrived at the airport.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "2f29052e811df933",
+          "seconds": 1.62
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 4.18,
+      "frames": 125
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 두근거리는 마음으로 그녀를 기다리고 있었죠.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "7057b04ba5d128f5",
+          "seconds": 3.474
+        },
+        {
+          "lang": "en",
+          "text": "He was waiting for her.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "b252e08384854e77",
+          "seconds": 1.437
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 5.068,
+      "frames": 152
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "바로 그때, 수많은 사람들 속에서 한 여자가 나타났습니다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "e5c54e4dced0c2bc",
+          "seconds": 5.669
+        },
+        {
+          "lang": "en",
+          "text": "A woman appeared from the crowd.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "80dd6056450523d3",
+          "seconds": 1.855
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 7.68,
+      "frames": 230
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀는 그를 발견하고 환하게 미소 지었습니다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "cf02e46359ab275c",
+          "seconds": 3.109
+        },
+        {
+          "lang": "en",
+          "text": "She smiled at him.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "45f295dbd6150da2",
+          "seconds": 1.332
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 4.598,
+      "frames": 138
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀는 수줍게 웃으며 그에게 다가왔습니다.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "5e23f8016b5247fe",
+          "seconds": 2.821
+        },
+        {
+          "lang": "en",
+          "text": "She walked to him with a shy laugh.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "9045bfa1a86eaf11",
+          "seconds": 1.985
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 4.963,
+      "frames": 149
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "두 사람은 분위기 좋은 카페로 들어가 서로의 이야기에 귀를 기울였습니다.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "4d8d5e8fb04377c8",
+          "seconds": 5.251
+        },
+        {
+          "lang": "en",
+          "text": "They listened to each other.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "fb35513bb797f6b7",
+          "seconds": 1.515
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 6.922,
+      "frames": 208
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 그녀가 나누는 모든 이야기에 깊이 동의했습니다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "9de69a66b944d864",
+          "seconds": 3.892
+        },
+        {
+          "lang": "en",
+          "text": "He agreed with her.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "cdb6e4c1303aaef1",
+          "seconds": 1.202
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 5.251,
+      "frames": 158
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그들은 서로의 꿈과 미래에 대해 한참 동안 이야기했습니다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "135a30a8bfedc021",
+          "seconds": 4.362
+        },
+        {
+          "lang": "en",
+          "text": "They talked about their dreams and future.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "feb694ed5b368f59",
+          "seconds": 2.351
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 6.87,
+      "frames": 206
+    },
+    "s09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 그녀의 모든 질문에 진심으로 응답했습니다.",
+          "file": "parts/s09_01_kr.mp3",
+          "hash": "08de01f29f7f22fb",
+          "seconds": 3.605
+        },
+        {
+          "lang": "en",
+          "text": "He responded to all her questions.",
+          "file": "parts/s09_02_en.mp3",
+          "hash": "2d159281b1d69943",
+          "seconds": 2.22
+        }
+      ],
+      "file": "s09.mp3",
+      "seconds": 6.008,
+      "frames": 180
+    },
+    "s10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그리고 사랑스러운 눈빛으로 그녀를 오랫동안 바라보았습니다.",
+          "file": "parts/s10_01_kr.mp3",
+          "hash": "596a3c0a7a232c48",
+          "seconds": 5.512
+        },
+        {
+          "lang": "en",
+          "text": "He looked at her.",
+          "file": "parts/s10_02_en.mp3",
+          "hash": "dcb197cea1613284",
+          "seconds": 1.149
+        }
+      ],
+      "file": "s10.mp3",
+      "seconds": 6.844,
+      "frames": 205
+    },
+    "s11": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "‘아, 나의 마음은 이제 그녀에게 속해 있구나.’",
+          "file": "parts/s11_01_kr.mp3",
+          "hash": "86ebe0a5679da175",
+          "seconds": 2.821
+        },
+        {
+          "lang": "en",
+          "text": "My heart belongs to her.",
+          "file": "parts/s11_02_en.mp3",
+          "hash": "b9a53f1e39933cf2",
+          "seconds": 1.698
+        }
+      ],
+      "file": "s11.mp3",
+      "seconds": 4.702,
+      "frames": 141
+    },
+    "s12": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "‘나는 정말 그녀에 대해 깊이 신경 쓰고 있구나.’",
+          "file": "parts/s12_01_kr.mp3",
+          "hash": "36be904287da6923",
+          "seconds": 3.161
+        },
+        {
+          "lang": "en",
+          "text": "I really care about her.",
+          "file": "parts/s12_02_en.mp3",
+          "hash": "f037efbf08c07d7b",
+          "seconds": 1.75
+        }
+      ],
+      "file": "s12.mp3",
+      "seconds": 5.068,
+      "frames": 152
+    },
+    "s13": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "바로 그 순간, 그에게 거짓말 같은 기적이 일어난 것이었습니다.",
+          "file": "parts/s13_01_kr.mp3",
+          "hash": "fcceb534da396cd1",
+          "seconds": 5.329
+        },
+        {
+          "lang": "en",
+          "text": "A miracle happened to him at that moment.",
+          "file": "parts/s13_02_en.mp3",
+          "hash": "44e03d62b10d35a6",
+          "seconds": 2.351
+        }
+      ],
+      "file": "s13.mp3",
+      "seconds": 7.863,
+      "frames": 236
+    },
+    "s14": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "하지만 꿈같던 시간이 지나가고, 그녀를 실은 택시가 서울로 출발했습니다.",
+          "file": "parts/s14_01_kr.mp3",
+          "hash": "170ac903bcf89792",
+          "seconds": 6.217
+        },
+        {
+          "lang": "en",
+          "text": "The taxi departed for Seoul.",
+          "file": "parts/s14_02_en.mp3",
+          "hash": "6cb3feb2f8c342ad",
+          "seconds": 1.907
+        }
+      ],
+      "file": "s14.mp3",
+      "seconds": 8.281,
+      "frames": 248
+    },
+    "s15": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "택시는 도로 멀리 시야에서 사라졌지만,",
+          "file": "parts/s15_01_kr.mp3",
+          "hash": "fc3acddfca713826",
+          "seconds": 2.743
+        },
+        {
+          "lang": "en",
+          "text": "The taxi disappeared from view,",
+          "file": "parts/s15_02_en.mp3",
+          "hash": "3471cb24a131d044",
+          "seconds": 2.168
+        }
+      ],
+      "file": "s15.mp3",
+      "seconds": 5.068,
+      "frames": 152
+    },
+    "s16": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀가 다시 이곳으로 돌아올 날을 그는 기쁨으로 생각했습니다.",
+          "file": "parts/s16_01_kr.mp3",
+          "hash": "af9e86930bc89e96",
+          "seconds": 5.329
+        },
+        {
+          "lang": "en",
+          "text": "He thought about the day she would return to this place.",
+          "file": "parts/s16_02_en.mp3",
+          "hash": "9a22554879978203",
+          "seconds": 2.952
+        }
+      ],
+      "file": "s16.mp3",
+      "seconds": 8.464,
+      "frames": 254
+    },
+    "s17": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그의 마음속에는 그녀의 따뜻한 여운이 오래도록 머물러 있었습니다.",
+          "file": "parts/s17_01_kr.mp3",
+          "hash": "dc057f68d9755b60",
+          "seconds": 4.963
+        },
+        {
+          "lang": "en",
+          "text": "Her warm presence stayed in his heart for a long time.",
+          "file": "parts/s17_02_en.mp3",
+          "hash": "dbfa9c9c00ed597e",
+          "seconds": 3.291
+        }
+      ],
+      "file": "s17.mp3",
+      "seconds": 8.411,
+      "frames": 252
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 자동사와 타동사의 구분을 배웠습니다.",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "9a21b53dcf3a9876",
+          "seconds": 3.239
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 3.239,
+      "frames": 97
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "자동사 뒤에는 목적어가 바로 올 수 없고, 반드시 전치사라는 다리가 와야 한다는 점을 잊지 마세요.",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "6234c86c4125a49b",
+          "seconds": 7.837
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 7.837,
+      "frames": 235
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "7504c05925950cfa",
+          "seconds": 4.362
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 4.362,
+      "frames": 131
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감사합니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "529f016c9727d15d",
+          "seconds": 1.28
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 1.28,
+      "frames": 38
+    }
+  }
+}

@@ -1,0 +1,317 @@
+[
+  {
+    "id": "i1",
+    "scene": "intro",
+    "kr": "19강, 도치. 문장에 스포트라이트를 비추는 어순의 반전입니다. 강의에 들어가기에 앞서, 주어와 동사의 자리가 어떻게 바뀌는지, 아주 짧은 문장 스무 개로 눈과 귀에 먼저 익혀봅시다!",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "q01",
+    "scene": "intro",
+    "kr": "나는 전혀 몰랐다.",
+    "en": "{v|I} {c|never} {p|knew.} {c|Never} {p|did} {v|I} {p|know.}",
+    "say": null
+  },
+  {
+    "id": "q02",
+    "scene": "intro",
+    "kr": "나는 그것을 전혀 보지 못했다.",
+    "en": "{v|I} {c|never} {p|saw} {e|it.} {c|Never} {p|did} {v|I} {p|see} {e|it.}",
+    "say": null
+  },
+  {
+    "id": "q03",
+    "scene": "intro",
+    "kr": "그녀는 좀처럼 울지 않는다.",
+    "en": "{v|She} {c|seldom} {p|cries.} {c|Seldom} {p|does} {v|she} {p|cry.}",
+    "say": null
+  },
+  {
+    "id": "q04",
+    "scene": "intro",
+    "kr": "그는 좀처럼 말하지 않는다.",
+    "en": "{v|He} {c|rarely} {p|speaks.} {c|Rarely} {p|does} {v|he} {p|speak.}",
+    "say": null
+  },
+  {
+    "id": "q05",
+    "scene": "intro",
+    "kr": "나는 꿈에도 생각지 못했다.",
+    "en": "{v|I} {c|little} {p|dreamed.} {c|Little} {p|did} {v|I} {p|dream.}",
+    "say": null
+  },
+  {
+    "id": "q06",
+    "scene": "intro",
+    "kr": "우리는 전혀 알지 못했다.",
+    "en": "{v|We} {c|little} {p|knew.} {c|Little} {p|did} {v|we} {p|know.}",
+    "say": null
+  },
+  {
+    "id": "q07",
+    "scene": "intro",
+    "kr": "나는 그것을 들어본 적이 없다.",
+    "en": "{v|I} {p|have} {c|never} {p|heard} {e|it.} {c|Never} {p|have} {v|I} {p|heard} {e|it.}",
+    "say": null
+  },
+  {
+    "id": "q08",
+    "scene": "intro",
+    "kr": "그녀는 떠난 적이 없다.",
+    "en": "{v|She} {p|has} {c|never} {p|left.} {c|Never} {p|has} {v|she} {p|left.}",
+    "say": null
+  },
+  {
+    "id": "q09",
+    "scene": "intro",
+    "kr": "그들은 그것을 본 적이 없었다.",
+    "en": "{v|They} {p|had} {c|never} {p|seen} {e|it.} {c|Never} {p|had} {v|they} {p|seen} {e|it.}",
+    "say": null
+  },
+  {
+    "id": "q10",
+    "scene": "intro",
+    "kr": "나는 절대 잊을 수 없다.",
+    "en": "{v|I} {p|can} {c|never} {p|forget.} {c|Never} {p|can} {v|I} {p|forget.}",
+    "say": null
+  },
+  {
+    "id": "q11",
+    "scene": "intro",
+    "kr": "버스가 이리로 온다.",
+    "en": "{v|The} {v|bus} {p|comes} {c|here.} {c|Here} {p|comes} {v|the} {v|bus.}",
+    "say": null
+  },
+  {
+    "id": "q12",
+    "scene": "intro",
+    "kr": "비가 아래로 내린다.",
+    "en": "{v|The} {v|rain} {p|comes} {c|down.} {c|Down} {p|comes} {v|the} {v|rain.}",
+    "say": null
+  },
+  {
+    "id": "q13",
+    "scene": "intro",
+    "kr": "해가 떠오른다.",
+    "en": "{v|The} {v|sun} {p|goes} {c|up.} {c|Up} {p|goes} {v|the} {v|sun.}",
+    "say": null
+  },
+  {
+    "id": "q14",
+    "scene": "intro",
+    "kr": "열쇠가 저기 놓여 있다.",
+    "en": "{v|The} {v|key} {p|lies} {c|there.} {c|There} {p|lies} {v|the} {v|key.}",
+    "say": null
+  },
+  {
+    "id": "q15",
+    "scene": "intro",
+    "kr": "영웅이 안으로 들어온다.",
+    "en": "{v|The} {v|hero} {p|enters} {c|in.} {c|In} {p|enters} {v|the} {v|hero.}",
+    "say": null
+  },
+  {
+    "id": "q16",
+    "scene": "intro",
+    "kr": "나는 오직 그때서야 깨달았다.",
+    "en": "{v|I} {p|realized} {e|it} {c|only} {c|then.} {c|Only} {c|then} {p|did} {v|I} {p|realize.}",
+    "say": null
+  },
+  {
+    "id": "q17",
+    "scene": "intro",
+    "kr": "그녀는 오직 이제야 떠났다.",
+    "en": "{v|She} {p|left} {c|only} {c|now.} {c|Only} {c|now} {p|did} {v|she} {p|leave.}",
+    "say": null
+  },
+  {
+    "id": "q18",
+    "scene": "intro",
+    "kr": "우리는 오직 한 번 이겼다.",
+    "en": "{v|We} {p|won} {c|only} {c|once.} {c|Only} {c|once} {p|did} {v|we} {p|win.}",
+    "say": null
+  },
+  {
+    "id": "q19",
+    "scene": "intro",
+    "kr": "나는 오직 나중에야 그것을 알았다.",
+    "en": "{v|I} {p|knew} {e|it} {c|only} {c|later.} {c|Only} {c|later} {p|did} {v|I} {p|know.}",
+    "say": null
+  },
+  {
+    "id": "q20",
+    "scene": "intro",
+    "kr": "우리는 오직 오늘만 이길 수 있다.",
+    "en": "{v|We} {p|can} {p|win} {c|only} {c|today.} {c|Only} {c|today} {p|can} {v|we} {p|win.}",
+    "say": null
+  },
+  {
+    "id": "c1",
+    "scene": "bridge",
+    "kr": "방금 짧은 문장들에서 보신 것처럼, 도치는 문법적으로 틀린 게 아니라, {y|내가 가장 강조하고 싶은 단어}를 문장 맨 앞으로 던질 때 일어나는, 자연스러운 어순 변화입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "c2",
+    "scene": "bridge",
+    "kr": "주인공에게 스포트라이트를 비추듯 {c|강조어}가 맨 앞으로 나가다 보니, 그 뒤에 오는 주어와 동사도, 질문할 때처럼 {p|조동사 또는 be동사} + {v|주어} + {p|동사} 순서로 자리를 비켜주는 거거든요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "c3",
+    "scene": "bridge",
+    "kr": "부정어 {c|Never}, {c|Seldom}, {c|Rarely}, {c|Little}부터 장소와 방향의 {l|Here}, {l|There}, {l|Down}, 그리고 {l|Only} 같은 단어들이 앞으로 튀어나갈 때, 이 멋진 도치 표현이 완성됩니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "d1",
+    "scene": "bridge",
+    "kr": "그럼 도심 동화 속 카페 2층 서재와 밤의 골목길에서 펼쳐지는 이야기들을, 도치 문장으로 만나볼까요?",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "d2",
+    "scene": "bridge",
+    "kr": "한글 의미를 먼저 가슴에 담으시고, 영어 소리에 귀를 기울여 보세요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "p1",
+    "scene": "story",
+    "kr": "먼저 부정어 {c|Never}, {c|Seldom}, {c|Rarely}, {c|Little}이 앞으로 나가는 이야기들입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "나는 내 인생에서 이렇게 아름다운 피아노 멜로디를 들어본 적이 없다.",
+    "en": "{c|Never} {c|have} {e|I} {e|heard} {e|such} {e|a} {e|beautiful} {e|piano} {e|melody} {e|in} {e|my} {e|life.}",
+    "say": null
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "그녀는 좀처럼 밤 12시 전에는 그 비밀 서재의 문을 열지 않는다.",
+    "en": "{c|Seldom} {c|does} {e|she} {e|open} {e|the} {e|door} {e|of} {e|the} {e|secret} {e|library} {e|before} {e|midnight.}",
+    "say": null
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "우리는 그 어두운 골목길에서 그런 마법 같은 기적을 거의 본 적이 없다.",
+    "en": "{c|Rarely} {c|have} {e|we} {e|seen} {e|such} {e|a} {e|magical} {e|miracle} {e|in} {e|that} {e|dark} {e|alley.}",
+    "say": null
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "나는 그 피아니스트가 누구인지 꿈에도 상상하지 못했다.",
+    "en": "{c|Little} {c|did} {e|I} {e|dream} {e|who} {e|the} {e|pianist} {e|actually} {e|was.}",
+    "say": null
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "우리는 그 시계가 멈추기 전까지 그 긴박한 상황을 전혀 알지 못했다.",
+    "en": "{c|Little} {c|did} {e|we} {e|know} {e|the} {e|urgent} {e|situation} {e|until} {e|the} {e|clock} {e|stopped.}",
+    "say": null
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "그녀는 자신의 음악이 온 도시를 밝게 비추리라고는 전혀 예상하지 못했다.",
+    "en": "{c|Never} {c|did} {e|she} {e|expect} {e|that} {e|her} {e|music} {e|would} {e|illuminate} {e|the} {e|whole} {e|city.}",
+    "say": null
+  },
+  {
+    "id": "p2",
+    "scene": "story",
+    "kr": "이번에는 장소와 방향의 단어들과 {l|Only}가 스포트라이트를 받는 이야기들입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "저 멀리 서재 구석에 우리가 그토록 찾던 은색 열쇠가 놓여 있었다.",
+    "en": "{l|There} {l|on the shelf lay} {e|the} {e|silver} {e|key} {e|we} {e|had} {e|been} {e|looking} {e|for} {e|so} {e|eagerly.}",
+    "say": null
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "비밀 계단 아래로 그 피아니스트가 조용히 걸어 내려왔다.",
+    "en": "{l|Down} {l|the secret stairs walked} {e|the} {e|pianist} {e|very} {e|quietly.}",
+    "say": null
+  },
+  {
+    "id": "s09",
+    "scene": "story",
+    "kr": "오직 자정이 되어서야 비로소 도심의 모든 네온사인이 밝게 빛났다.",
+    "en": "{l|Only} {l|at midnight did} {e|all} {e|the} {e|neon} {e|signs} {e|in} {e|the} {e|city} {e|shine} {e|brightly.}",
+    "say": null
+  },
+  {
+    "id": "s10",
+    "scene": "story",
+    "kr": "오직 그 마법 오르골을 통해서만 우리는 진실의 문을 열 수 있었다.",
+    "en": "{l|Only} {l|through the magic music box could} {e|we} {e|open} {e|the} {e|door} {e|of} {e|truth.}",
+    "say": null
+  },
+  {
+    "id": "s11",
+    "scene": "story",
+    "kr": "저 멀리 어둠 속에서 온 도시를 울리는 그 클래식 소리가 퍼져 나갔다.",
+    "en": "{l|Far} {l|away into the darkness echoed} {e|the} {e|classic} {e|sound} {e|across} {e|the} {e|city.}",
+    "say": null
+  },
+  {
+    "id": "s12",
+    "scene": "story",
+    "kr": "오직 우리가 마음을 열었을 때 비로소 그 밤의 비밀이 드러났다.",
+    "en": "{l|Only} {l|when we opened our hearts was} {e|the} {e|secret} {e|of} {e|the} {e|night} {e|revealed.}",
+    "say": null
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘 배운 도치 표현의 핵심, 딱 두 가지만 기억해 두세요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "첫째, 도치는 {y|강조하고 싶은 말을 맨 앞으로 던져서}, 극적인 분위기를 만드는 연출법이라는 점입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "둘째, 강조하는 단어가 앞으로 나가면, 뒤의 {v|주어}와 {p|동사}는 {y|의문문처럼} 자리를 살짝 바꾼다는 사실입니다.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "오늘 배운 문장들을, 한글 의미부터 천천히 새기시면서, 입으로 소리 내어 중얼거려 보세요.",
+    "en": null,
+    "say": null
+  },
+  {
+    "id": "o5",
+    "scene": "outro",
+    "kr": "다음 20강에서는 마침내 기초 과정 대단원의 마무리로 찾아오겠습니다. 수고 많으셨습니다!",
+    "en": null,
+    "say": null
+  }
+]

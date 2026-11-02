@@ -1,0 +1,170 @@
+[
+  {
+    "id": "i1",
+    "scene": "intro",
+    "kr": "우리말은 “나 참 지루해”라고 할 때나 “그 영화 진짜 지루해”라고 할 때 똑같이 ‘지루하다’라는 말을 씁니다.",
+    "en": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "하지만 영어는 주체가 감정을 직접 느끼는지, 아니면 그 감정을 밖으로 내뿜어 남에게 주는지에 따라 단어의 모양을 완전히 다르게 씁니다.",
+    "en": null
+  },
+  {
+    "id": "i3",
+    "scene": "intro",
+    "kr": "그것을 알아야 영어의 기초가 됩니다. 바로 감정형용사의 {v|-ing}와 {p|-ed}입니다.",
+    "en": null
+  },
+  {
+    "id": "i4",
+    "scene": "intro",
+    "kr": "사람의 마음을 흔드는 감정의 화살표, 감정형용사입니다.",
+    "en": null
+  },
+  {
+    "id": "i5",
+    "scene": "intro",
+    "kr": "{v|현재분사}({v|-ing})는 감정을 밖으로 내뿜어 남에게 전달하는 에너지를 가진 형용사입니다.",
+    "en": null
+  },
+  {
+    "id": "i6",
+    "scene": "intro",
+    "kr": "지루함을 주는({v|BORING}), 흥미를 유발하는({v|INTERESTING}), 놀라움을 선사하는({v|SURPRISING}), 신나게 만드는({v|EXCITING}) 단어들입니다.",
+    "en": null
+  },
+  {
+    "id": "i7",
+    "scene": "intro",
+    "kr": "{p|과거분사}({p|-ed})는 외부의 영향으로 그 감정을 직접 받아서 느끼는 형용사입니다.",
+    "en": null
+  },
+  {
+    "id": "i8",
+    "scene": "intro",
+    "kr": "지루함을 느낀({p|BORED}), 흥미를 느끼게 된({p|INTERESTED}), 깜짝 놀란({p|SURPRISED}), 신이 난({p|EXCITED}) 단어들입니다.",
+    "en": null
+  },
+  {
+    "id": "b1a",
+    "scene": "bridge",
+    "kr": "예를 들어, 내가 지루함을 느껴서 “나 너무 심심하고 지루해”라고 말할 때,",
+    "en": null
+  },
+  {
+    "id": "b1b",
+    "scene": "bridge",
+    "kr": "{e|I am boring}이라고 쓰면 “나는 남을 지루하게 만드는 아주 따분한 사람이다”라는 완전히 엉뚱하고 자학적인 표현이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b1c",
+    "scene": "bridge",
+    "kr": "내가 그 감정을 받아 느낀 것이므로 {e|I am bored}라고 써야 비로소 완성된 문장이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b2a",
+    "scene": "bridge",
+    "kr": "다시 한 번 말하자면,",
+    "en": null
+  },
+  {
+    "id": "b2b",
+    "scene": "bridge",
+    "kr": "감정을 내뿜는 원인에는 {v|-ing}, 그 감정을 받아서 느끼는 사람에게는 {p|-ed}를 씁니다.",
+    "en": null
+  },
+  {
+    "id": "b2c",
+    "scene": "bridge",
+    "kr": "따라서 감정의 화살표가 어디로 향하는지 정확히 다리를 놓아주어야 합니다.",
+    "en": null
+  },
+  {
+    "id": "b3a",
+    "scene": "bridge",
+    "kr": "{e|The movie was bored}는 그 영화가 지루함을 느꼈다는 어색한 문장이고,",
+    "en": null
+  },
+  {
+    "id": "b3b",
+    "scene": "bridge",
+    "kr": "{e|The movie was boring}은 그 영화가 지루함을 주는 영화였다는 올바른 문장입니다.",
+    "en": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "주말 아침, 그는 도심에서 열린 아주 흥미로운 전시회 소식을 들었습니다.",
+    "en": "{e|He} {e|heard} {e|about} {e|a} {e|very} {v|interesting} {e|exhibition} {e|in} {e|the} {e|city.}"
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "그 새로운 소식에 그는 마음이 몹시 신나고 설레었죠.",
+    "en": "{e|He} {e|felt} {e|extremely} {p|excited} {e|about} {e|the} {e|news.}"
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "전시장 안으로 들어서자, 놀라운 예술 작품들이 눈앞에 펼쳐졌습니다.",
+    "en": "{v|Surprising} {e|artworks} {e|unfolded} {e|before} {e|his} {e|eyes.}"
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "작품의 웅장함에 그는 입을 벌린 채 깊이 놀랐습니다.",
+    "en": "{e|He} {e|was} {e|completely} {p|surprised} {e|by} {e|the} {e|grandeur} {e|of} {e|the} {e|art.}"
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "지루할 틈이 전혀 없는 정말 감동적인 순간이었죠.",
+    "en": "{e|It} {e|was} {e|a} {v|touching} {e|moment} {e|with} {e|no} {v|boring} {e|second.}"
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "오랫동안 거리를 거닐었기에 몸은 조금 피곤해졌지만,",
+    "en": "{e|Although} {e|he} {e|felt} {e|a} {e|bit} {p|tired} {e|from} {e|walking,}"
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "그의 마음만은 깊은 만족감으로 가득 차 있었습니다.",
+    "en": "{e|His} {e|heart} {e|was} {e|filled} {e|with} {e|a} {v|satisfying} {e|warmth.}"
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "집으로 돌아오는 길, 그는 오늘 하루가 선물해 준 감동에 깊이 감사했습니다.",
+    "en": "{e|He} {e|was} {e|deeply} {p|moved} {e|by} {e|the} {e|memories} {e|of} {e|the} {e|day.}"
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘은 감정을 표현하는 형용사, {v|-ing}와 {p|-ed}의 차이를 배웠습니다.",
+    "en": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "감정을 밖으로 뿜어내면 {v|-ing}, 그 감정을 내 마음으로 받아 느끼면 {p|-ed}라는 공식, 꼭 기억하세요.",
+    "en": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+    "en": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "감사합니다.",
+    "en": null
+  }
+]

@@ -1,0 +1,528 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘은 much와 모어의 뿌리, 비교급 강조 5대장, 그리고 최상급을 한 번에 정리합니다.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "5fbac573c3402c36",
+          "seconds": 8.673
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 8.673,
+      "frames": 260
+    },
+    "c1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "선행 개념 하나, 가산 명사와 불가산 명사에 따른 구분입니다. 셀 수 있는 가산명사의 복수형 앞에는 메니를 씁니다. 예를 들어 메니 books.",
+          "file": "parts/c1_01_kr.mp3",
+          "hash": "1437e2b9b7772c23",
+          "seconds": 14.524
+        }
+      ],
+      "file": "c1.mp3",
+      "seconds": 14.524,
+      "frames": 436
+    },
+    "c2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "셀 수 없는 불가산명사 앞에는 much를 씁니다. 예를 들어 much water.",
+          "file": "parts/c2_01_kr.mp3",
+          "hash": "3b443cc5213e4f5a",
+          "seconds": 5.564
+        }
+      ],
+      "file": "c2.mp3",
+      "seconds": 5.564,
+      "frames": 167
+    },
+    "c3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 메니와 much가 “더 많은”으로 변신한 형태가 바로 모어입니다!",
+          "file": "parts/c3_01_kr.mp3",
+          "hash": "d0b3ceb664838fde",
+          "seconds": 5.799
+        }
+      ],
+      "file": "c3.mp3",
+      "seconds": 5.799,
+      "frames": 174
+    },
+    "c4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "즉 모어는 셀 수 있는 명사와 셀 수 없는 명사, 둘 다 뒤에 올 수 있습니다. 예를 들어 모어 books, 모어 water.",
+          "file": "parts/c4_01_kr.mp3",
+          "hash": "ba05450d3a00ef0b",
+          "seconds": 11.833
+        }
+      ],
+      "file": "c4.mp3",
+      "seconds": 11.833,
+      "frames": 355
+    },
+    "k1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "선행 개념 둘, 어라? 이봐, 스머프! 비교급 강조 5대장입니다.",
+          "file": "parts/k1_01_kr.mp3",
+          "hash": "868de9405e45d2c2",
+          "seconds": 6.531
+        }
+      ],
+      "file": "k1.mp3",
+      "seconds": 6.531,
+      "frames": 196
+    },
+    "k2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "“더 한”이라는 비교급, older나 모어 beautiful 앞에 붙어서, “훨씬 더 한”으로 격차를 팍 틔워주는 단어 5개가 있습니다.",
+          "file": "parts/k2_01_kr.mp3",
+          "hash": "a9070fae234145ca",
+          "seconds": 10.397
+        }
+      ],
+      "file": "k2.mp3",
+      "seconds": 10.397,
+      "frames": 312
+    },
+    "k3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이건 딱 한 번에 외웁니다.",
+          "file": "parts/k3_01_kr.mp3",
+          "hash": "f63b9b8ba332a43a",
+          "seconds": 1.75
+        }
+      ],
+      "file": "k3.mp3",
+      "seconds": 1.75,
+      "frames": 53
+    },
+    "k4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "어라? 이봐, 스, 머, 프!",
+          "file": "parts/k4_01_kr.mp3",
+          "hash": "afcdd065666333e8",
+          "seconds": 1.62
+        }
+      ],
+      "file": "k4.mp3",
+      "seconds": 1.62,
+      "frames": 49
+    },
+    "k5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "어라는 a lot, 이봐는 even, 스는 still, 머는 much, 프는 far입니다.",
+          "file": "parts/k5_01_kr.mp3",
+          "hash": "031f2be072b6d57f",
+          "seconds": 6.583
+        }
+      ],
+      "file": "k5.mp3",
+      "seconds": 6.583,
+      "frames": 197
+    },
+    "k6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 5개 단어는 비교급 바로 앞에서 “훨씬”이라는 뜻으로 쓰입니다. 예를 들어 a lot older, even 모어 beautiful, far better.",
+          "file": "parts/k6_01_kr.mp3",
+          "hash": "538920967247b10e",
+          "seconds": 12.539
+        }
+      ],
+      "file": "k6.mp3",
+      "seconds": 12.539,
+      "frames": 376
+    },
+    "t1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이제 최상급입니다. 핵심 원칙, 최상급 앞에는 왜 항상 더가 붙을까요?",
+          "file": "parts/t1_01_kr.mp3",
+          "hash": "b00c6730bf1ae251",
+          "seconds": 6.296
+        }
+      ],
+      "file": "t1.mp3",
+      "seconds": 6.296,
+      "frames": 189
+    },
+    "t2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "셋 이상 중에서 최고는 오직 단 하나로 정해지기 때문에, 정관사 더와 최상급은 항상 짝을 이룹니다.",
+          "file": "parts/t2_01_kr.mp3",
+          "hash": "4fcc896cc959e7a7",
+          "seconds": 8.438
+        }
+      ],
+      "file": "t2.mp3",
+      "seconds": 8.438,
+      "frames": 253
+    },
+    "t3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "1음절 단어와 짧은 2음절 단어는, 더 더하기 단어 더하기 est입니다. 예를 들어 더 oldest.",
+          "file": "parts/t3_01_kr.mp3",
+          "hash": "52ff1404dde7fa6a",
+          "seconds": 8.176
+        }
+      ],
+      "file": "t3.mp3",
+      "seconds": 8.176,
+      "frames": 245
+    },
+    "t4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "3음절 이상 단어와 긴 2음절 단어는, 더 most 더하기 단어입니다. 예를 들어 더 most mysterious.",
+          "file": "parts/t4_01_kr.mp3",
+          "hash": "5fbd47a7d6c2986b",
+          "seconds": 8.438
+        }
+      ],
+      "file": "t4.mp3",
+      "seconds": 8.438,
+      "frames": 253
+    },
+    "n1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "범위의 지정, in과 of의 차이입니다. 장소나 단수 집단 앞에는 in을 사용합니다. 예를 들어 in 더 city, in 더 world.",
+          "file": "parts/n1_01_kr.mp3",
+          "hash": "6ecef994864f6631",
+          "seconds": 11.598
+        }
+      ],
+      "file": "n1.mp3",
+      "seconds": 11.598,
+      "frames": 348
+    },
+    "n2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "여러 개체나 복수 대상들 앞에는 of를 사용합니다. 예를 들어 of all 더 books, of my life.",
+          "file": "parts/n2_01_kr.mp3",
+          "hash": "7836fb145bb991a6",
+          "seconds": 9.378
+        }
+      ],
+      "file": "n2.mp3",
+      "seconds": 9.378,
+      "frames": 281
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이곳은 이 건물 안에서 가장 오래된 비밀 공간이다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "eed86c918ef00d0e",
+          "seconds": 3.422
+        },
+        {
+          "lang": "en",
+          "text": "This is the oldest secret space in this building.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "152c15d4744b1620",
+          "seconds": 2.743
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 6.322,
+      "frames": 190
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "지금 들려오는 피아노 소리가 오늘 밤 들은 것 중 가장 맑다.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "adda631e864509e1",
+          "seconds": 4.963
+        },
+        {
+          "lang": "en",
+          "text": "The piano sound we hear now is the clearest of the night.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "c847fb48b0bd6c07",
+          "seconds": 3.239
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 8.359,
+      "frames": 251
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "저 서재 구석에 놓인 상자가 방에서 가장 크다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "e8e5f8419eaddd98",
+          "seconds": 3.579
+        },
+        {
+          "lang": "en",
+          "text": "The box in the corner of that library is the biggest in the room.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "a5bfb96520a26c37",
+          "seconds": 3.709
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 7.445,
+      "frames": 223
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "선반 위에 놓인 은색 열쇠가 세상에서 가장 밝게 빛난다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "8d748a5a0f62da11",
+          "seconds": 5.146
+        },
+        {
+          "lang": "en",
+          "text": "The silver key on the shelf shines the brightest in the world.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "569e05cbd519aa1c",
+          "seconds": 3.37
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 8.699,
+      "frames": 261
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀의 발걸음은 빗소리보다 가볍고, 도시 전체에서 가장 가볍다.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "6578b5961d91dadd",
+          "seconds": 5.616
+        },
+        {
+          "lang": "en",
+          "text": "Her footsteps are lighter than the rain, and the lightest in the whole city.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "33a0a496baddcc0c",
+          "seconds": 4.31
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 10.083,
+      "frames": 302
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 일기장이 책장에 꽂힌 모든 책들 중에서 가장 두껍다.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "f40defa7a3d4e438",
+          "seconds": 4.676
+        },
+        {
+          "lang": "en",
+          "text": "This diary is the thickest of all the books on the bookshelf.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "1e371837bb77e55c",
+          "seconds": 3.239
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 8.098,
+      "frames": 243
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 오르골은 비밀 서재에서 가장 신비로운 물건이다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "72617ca68ee0ad9c",
+          "seconds": 3.527
+        },
+        {
+          "lang": "en",
+          "text": "This music box is the most mysterious object in the secret library.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "d7fa4c6d5da2d40f",
+          "seconds": 4.415
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 8.098,
+      "frames": 243
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "악보 끝에 적힌 문장이 내 인생에서 가장 아름다운 유언이다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "bf620280a7ae970e",
+          "seconds": 5.329
+        },
+        {
+          "lang": "en",
+          "text": "The sentence at the end of the sheet music is the most beautiful testament of my life.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "6fbe0204a8188225",
+          "seconds": 4.728
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 10.214,
+      "frames": 306
+    },
+    "s09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 기밀 문서를 읽는 것이 우리의 탐험 중 가장 흥미진진한 순간이다.",
+          "file": "parts/s09_01_kr.mp3",
+          "hash": "6c7753e7ef8196f4",
+          "seconds": 5.616
+        },
+        {
+          "lang": "en",
+          "text": "Reading this secret document is the most exciting moment of our exploration.",
+          "file": "parts/s09_02_en.mp3",
+          "hash": "a7d201344625c8b0",
+          "seconds": 4.258
+        }
+      ],
+      "file": "s09.mp3",
+      "seconds": 10.031,
+      "frames": 301
+    },
+    "s10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "도시의 밤에 얽힌 비밀은 우리가 풀어야 할 가장 복잡한 수수께끼이다.",
+          "file": "parts/s10_01_kr.mp3",
+          "hash": "ca910277dbdded1f",
+          "seconds": 5.851
+        },
+        {
+          "lang": "en",
+          "text": "The secret of the city night is the most complicated puzzle we must solve.",
+          "file": "parts/s10_02_en.mp3",
+          "hash": "f31d6df348be7772",
+          "seconds": 4.362
+        }
+      ],
+      "file": "s10.mp3",
+      "seconds": 10.371,
+      "frames": 311
+    },
+    "s11": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "서재 2층의 기적은 우리가 찾은 것 중 가장 값진 보물이다.",
+          "file": "parts/s11_01_kr.mp3",
+          "hash": "9e410c53c33b3ad9",
+          "seconds": 4.075
+        },
+        {
+          "lang": "en",
+          "text": "The miracle on the second floor is the most valuable treasure we found.",
+          "file": "parts/s11_02_en.mp3",
+          "hash": "8d5e78ca67129692",
+          "seconds": 3.944
+        }
+      ],
+      "file": "s11.mp3",
+      "seconds": 8.176,
+      "frames": 245
+    },
+    "s12": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "마침내 진실을 만나는 것은 이 길고 긴 여행에서 가장 마법 같은 일이다.",
+          "file": "parts/s12_01_kr.mp3",
+          "hash": "2f6af49a87198660",
+          "seconds": 5.93
+        },
+        {
+          "lang": "en",
+          "text": "Meeting the truth at last is the most magical thing in this long journey.",
+          "file": "parts/s12_02_en.mp3",
+          "hash": "4fdcd904f3fcef62",
+          "seconds": 4.545
+        }
+      ],
+      "file": "s12.mp3",
+      "seconds": 10.632,
+      "frames": 319
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 배운 가산 명사와 불가산 명사의 구분, 어라? 이봐, 스머프! 비교급 강조 5대장, 그리고 정관사 더와 함께 쓰는 최상급 표현을 입으로 직접 연습해 보세요.",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "a9e4fc5aee20530f",
+          "seconds": 17.267
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 17.267,
+      "frames": 518
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다음 16강에서는 접속사 편으로 찾아오겠습니다. 수고 많으셨습니다!",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "3a432fbb7397c503",
+          "seconds": 4.911
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 4.911,
+      "frames": 147
+    }
+  }
+}

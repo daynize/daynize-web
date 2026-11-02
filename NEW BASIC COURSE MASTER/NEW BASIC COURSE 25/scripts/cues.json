@@ -1,0 +1,164 @@
+[
+  {
+    "id": "i1",
+    "scene": "intro",
+    "kr": "우리말은 “내가 문을 열었다”라고도 하지만, 시점을 바꿔 “문이 열렸다”라고도 표현합니다.",
+    "en": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "영어에서도 문장의 주인(주어)이 직접 행동을 하는가, 아니면 그 행동을 ‘당하는가’에 따라 문장의 모습을 완전히 바꿔 씁니다.",
+    "en": null
+  },
+  {
+    "id": "i3",
+    "scene": "intro",
+    "kr": "그것을 알아야 영어의 기초가 됩니다. 바로 {v|능동태}와 {p|수동태}({p|Be + p.p.})입니다.",
+    "en": null
+  },
+  {
+    "id": "i4",
+    "scene": "intro",
+    "kr": "주인공의 시점에 따라 시선이 뒤바뀌는 영화 카메라, 수동태입니다.",
+    "en": null
+  },
+  {
+    "id": "i5",
+    "scene": "intro",
+    "kr": "{v|능동태}는 주어가 주체적으로 행동을 내뿜는 문장입니다.",
+    "en": null
+  },
+  {
+    "id": "i6",
+    "scene": "intro",
+    "kr": "내가 사랑하고({v|LOVE}), 누군가가 만들고({v|MAKE}), 그가 쓰고({v|WRITE}), 사람이 짓는({v|BUILD}) 문장들입니다.",
+    "en": null
+  },
+  {
+    "id": "i7",
+    "scene": "intro",
+    "kr": "{p|수동태}({p|Be + p.p.})는 주어가 행동을 직접 하지 못하고 행동을 당하거나 받는 문장입니다.",
+    "en": null
+  },
+  {
+    "id": "i8",
+    "scene": "intro",
+    "kr": "사랑받고({p|BE LOVED}), 만들어지고({p|BE MADE}), 쓰여지고({p|BE WRITTEN}), 지어지는({p|BE BUILT}) 문장들입니다.",
+    "en": null
+  },
+  {
+    "id": "b1a",
+    "scene": "bridge",
+    "kr": "예를 들어, “이 책은 그에 의해 쓰여졌다”라고 할 때,",
+    "en": null
+  },
+  {
+    "id": "b1b",
+    "scene": "bridge",
+    "kr": "{e|This book wrote by him}이라고 쓰면 “책이 스스로 펜을 들고 그에 의해 썼다”라는 말도 안 되는 괴기한 문장이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b1c",
+    "scene": "bridge",
+    "kr": "책은 쓰임을 ‘당한’ 대상이므로 {e|This book was written by him}처럼 {p|be + p.p.}라는 다리를 놓아주어야 비로소 완성된 문장이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b2a",
+    "scene": "bridge",
+    "kr": "다시 한 번 말하자면,",
+    "en": null
+  },
+  {
+    "id": "b2b",
+    "scene": "bridge",
+    "kr": "주어가 직접 행동하면 {v|능동태}, 주어가 행동을 당하거나 전달받으면 {p|be + p.p.} {p|수동태}를 씁니다.",
+    "en": null
+  },
+  {
+    "id": "b2c",
+    "scene": "bridge",
+    "kr": "그리고 행동을 가한 주체 앞에는 {p|by}라는 다리가 놓입니다.",
+    "en": null
+  },
+  {
+    "id": "b3a",
+    "scene": "bridge",
+    "kr": "{e|The window broke}는 창문이 스스로 깨졌다는 어색한 문장이고,",
+    "en": null
+  },
+  {
+    "id": "b3b",
+    "scene": "bridge",
+    "kr": "{e|The window was broken by the wind}는 창문이 바람에 의해 깨짐을 당했다는 올바른 문장입니다.",
+    "en": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "도심 한구석, 오랫동안 닫혀 있던 옛 서점의 문이 열렸습니다.",
+    "en": "{e|The} {e|door} {e|of} {e|the} {e|old} {e|bookstore} {p|was} {p|opened.}"
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "그 서점은 아주 오래전에 유명한 건축가에 의해 지어졌었죠.",
+    "en": "{e|The} {e|bookstore} {p|was} {p|built} {p|by} {e|a} {e|famous} {e|architect.}"
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "탁자 위에는 깊은 감동을 주는 아름다운 시집 한 권이 놓여 있었습니다.",
+    "en": "{e|A} {e|beautiful} {e|poetry} {e|book} {p|was} {p|placed} {e|on} {e|the} {e|table.}"
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "그 책은 먼 옛날, 어느 무명 시인에 의해 쓰여진 작품이었습니다.",
+    "en": "{e|The} {e|book} {p|was} {p|written} {p|by} {e|an} {e|unknown} {e|poet.}"
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "따뜻한 햇살 아래, 그 공간은 세심한 손길로 깨끗이 청소되었습니다.",
+    "en": "{e|The} {e|cozy} {e|space} {p|was} {p|cleaned} {e|with} {e|great} {e|care.}"
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "마침내 수많은 시민들에게 사랑받는 특별한 공간이 되었죠.",
+    "en": "{e|It} {p|was} {p|loved} {p|by} {e|many} {e|people} {e|in} {e|the} {e|city.}"
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "그렇게 잊혀가던 옛 장소는 아름다운 추억으로 다시 채워졌습니다.",
+    "en": "{e|The} {e|forgotten} {e|place} {p|was} {p|filled} {e|with} {e|warm} {e|memories.}"
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘은 문장의 입장이 바뀌는 수동태({p|be + p.p.})에 대해 배웠습니다.",
+    "en": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "주어가 직접 행동을 하는지, 아니면 당하는지에 따라 모양이 달라진다는 점, 그리고 행동을 한 주체 앞에는 {p|by}가 온다는 원리를 꼭 기억하세요.",
+    "en": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+    "en": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "감사합니다.",
+    "en": null
+  }
+]

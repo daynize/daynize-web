@@ -1,0 +1,738 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "따뜻한 햇살 아래, 카페 창가에 앉아 시간을 보냅니다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "55f0ca8e81087803",
+          "seconds": 3.657
+        },
+        {
+          "lang": "en",
+          "text": "He spends time sitting by the window.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "4945651b927aafd8",
+          "seconds": 2.22
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 6.034,
+      "frames": 181
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감사합니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "529f016c9727d15d",
+          "seconds": 1.097
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 1.097,
+      "frames": 33
+    },
+    "i1a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리말은 명사를 셀 때 개수만 붙이면 끝납니다.",
+          "file": "parts/i1a_01_kr.mp3",
+          "hash": "00cf917c5b19f6bc",
+          "seconds": 3.37
+        }
+      ],
+      "file": "i1a.mp3",
+      "seconds": 3.37,
+      "frames": 101
+    },
+    "i1b": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "사과 한 개, 물 한 컵처럼 말이죠.",
+          "file": "parts/i1b_01_kr.mp3",
+          "hash": "1c12b4515413091a",
+          "seconds": 2.325
+        }
+      ],
+      "file": "i1b.mp3",
+      "seconds": 2.325,
+      "frames": 70
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "하지만 영어는 셀 수 있는 명사와, 절대로 하나둘 셀 수 없는 명사를 아주 까다롭게 구별합니다.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "1b5d1011ab5fa158",
+          "seconds": 7.967
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 7.967,
+      "frames": 239
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것을 알아야 영어의 기초가 됩니다. 바로 가산명사와 불가산명사입니다.",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "15388372eadaf44c",
+          "seconds": 5.616
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 5.616,
+      "frames": 168
+    },
+    "i4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "가산명사는 손으로 하나씩 쥐거나 형태가 명확해서 ‘하나, 둘’ 셀 수 있는 명사입니다.",
+          "file": "parts/i4_01_kr.mp3",
+          "hash": "0c506e2902738c75",
+          "seconds": 8.124
+        }
+      ],
+      "file": "i4.mp3",
+      "seconds": 8.124,
+      "frames": 244
+    },
+    "i5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "불가산명사는 쪼개도 형태가 사라지지 않거나, 눈에 보이지 않거나, 너무 형태가 가변적이어서 개수를 직접 셀 수 없는 명사입니다.",
+          "file": "parts/i5_01_kr.mp3",
+          "hash": "3c1fabcb2509ea24",
+          "seconds": 11.729
+        }
+      ],
+      "file": "i5.mp3",
+      "seconds": 11.729,
+      "frames": 352
+    },
+    "i6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "스스로 형태를 가지지 못하는 명사, 불가산명사입니다.",
+          "file": "parts/i6_01_kr.mp3",
+          "hash": "d3e28d0e77987e89",
+          "seconds": 4.624
+        }
+      ],
+      "file": "i6.mp3",
+      "seconds": 4.624,
+      "frames": 139
+    },
+    "i7a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "컵에 담긴 물(",
+          "file": "parts/i7a_01_kr.mp3",
+          "hash": "a8cf8992d7af0324",
+          "seconds": 1.332
+        },
+        {
+          "lang": "en",
+          "text": "water",
+          "file": "parts/i7a_02_en.mp3",
+          "hash": "bb8bc6cefaf70d55",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": "), 공기(",
+          "file": "parts/i7a_03_kr.mp3",
+          "hash": "1e1b1001572e13b3",
+          "seconds": 1.019
+        },
+        {
+          "lang": "en",
+          "text": "air",
+          "file": "parts/i7a_04_en.mp3",
+          "hash": "8a804a6aded901ad",
+          "seconds": 0.731
+        },
+        {
+          "lang": "kr",
+          "text": "), 돈이라는 개념(",
+          "file": "parts/i7a_05_kr.mp3",
+          "hash": "1ea4574522f05d89",
+          "seconds": 1.437
+        },
+        {
+          "lang": "en",
+          "text": "money",
+          "file": "parts/i7a_06_en.mp3",
+          "hash": "476c6c9ed0c5221c",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": "), 사랑(",
+          "file": "parts/i7a_07_kr.mp3",
+          "hash": "e4e4547594584f68",
+          "seconds": 1.097
+        },
+        {
+          "lang": "en",
+          "text": "love",
+          "file": "parts/i7a_08_en.mp3",
+          "hash": "3b2afe1da6de7723",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": "), 정보(",
+          "file": "parts/i7a_09_kr.mp3",
+          "hash": "22ee157829c4a8a4",
+          "seconds": 1.097
+        },
+        {
+          "lang": "en",
+          "text": "information),",
+          "file": "parts/i7a_10_en.mp3",
+          "hash": "fd27afed842043e9",
+          "seconds": 1.202
+        }
+      ],
+      "file": "i7a.mp3",
+      "seconds": 12.016,
+      "frames": 360
+    },
+    "i7b": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "조언(",
+          "file": "parts/i7b_01_kr.mp3",
+          "hash": "69477aefd9f98416",
+          "seconds": 0.862
+        },
+        {
+          "lang": "en",
+          "text": "advice",
+          "file": "parts/i7b_02_en.mp3",
+          "hash": "359029816ae8aeda",
+          "seconds": 0.967
+        },
+        {
+          "lang": "kr",
+          "text": "), 시간(",
+          "file": "parts/i7b_03_kr.mp3",
+          "hash": "6322ed564d490e72",
+          "seconds": 1.097
+        },
+        {
+          "lang": "en",
+          "text": "time",
+          "file": "parts/i7b_04_en.mp3",
+          "hash": "4efde95460a0fb54",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": "), 소금(",
+          "file": "parts/i7b_05_kr.mp3",
+          "hash": "f02ed83c32cb55e0",
+          "seconds": 1.202
+        },
+        {
+          "lang": "en",
+          "text": "salt",
+          "file": "parts/i7b_06_en.mp3",
+          "hash": "1be14ffe2749b6d8",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": "), 행복(",
+          "file": "parts/i7b_07_kr.mp3",
+          "hash": "84737da0d4400d4c",
+          "seconds": 1.254
+        },
+        {
+          "lang": "en",
+          "text": "happiness",
+          "file": "parts/i7b_08_en.mp3",
+          "hash": "232fa9c72f061bb1",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": "), 그리고 당신의 머리카락(",
+          "file": "parts/i7b_09_kr.mp3",
+          "hash": "90601dea59f6c3db",
+          "seconds": 2.116
+        },
+        {
+          "lang": "en",
+          "text": "hair",
+          "file": "parts/i7b_10_en.mp3",
+          "hash": "439c790c4a61aa2a",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ") 같은 명사들입니다.",
+          "file": "parts/i7b_11_kr.mp3",
+          "hash": "48f5974dd193f39a",
+          "seconds": 1.515
+        }
+      ],
+      "file": "i7b.mp3",
+      "seconds": 14.263,
+      "frames": 428
+    },
+    "b1a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "예를 들어, “나 물 두 개만 줘”라고 할 때,",
+          "file": "parts/b1a_01_kr.mp3",
+          "hash": "41c44c2f53249d14",
+          "seconds": 3.657
+        }
+      ],
+      "file": "b1a.mp3",
+      "seconds": 3.657,
+      "frames": 110
+    },
+    "b1b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "I want two waters",
+          "file": "parts/b1b_01_en.mp3",
+          "hash": "24b8eb6298a0cbe7",
+          "seconds": 1.489
+        },
+        {
+          "lang": "kr",
+          "text": "라고 쓰면 아주 어색하고 틀린 문장이 됩니다.",
+          "file": "parts/b1b_02_kr.mp3",
+          "hash": "473ead7441ca69b8",
+          "seconds": 3.004
+        }
+      ],
+      "file": "b1b.mp3",
+      "seconds": 4.65,
+      "frames": 139
+    },
+    "b1c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "물은 형태가 없기 때문에",
+          "file": "parts/b1c_01_kr.mp3",
+          "hash": "8242d7a935675d4b",
+          "seconds": 2.09
+        },
+        {
+          "lang": "en",
+          "text": "I want two glasses of water",
+          "file": "parts/b1c_02_en.mp3",
+          "hash": "8ed565a0e0fc1b4f",
+          "seconds": 1.933
+        },
+        {
+          "lang": "kr",
+          "text": "처럼 중간에 ‘컵(",
+          "file": "parts/b1c_03_kr.mp3",
+          "hash": "84bcbfa7b6c1e3c6",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "glass",
+          "file": "parts/b1c_04_en.mp3",
+          "hash": "8410f9c115accc04",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ")’이라는 다리가 수량을 나타내주어야 완성된 문장이 됩니다.",
+          "file": "parts/b1c_05_kr.mp3",
+          "hash": "81ffc43c5109ee73",
+          "seconds": 4.258
+        }
+      ],
+      "file": "b1c.mp3",
+      "seconds": 11.285,
+      "frames": 339
+    },
+    "b2a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다시 한 번 말하자면, 불가산명사 바로 앞에는 숫자(",
+          "file": "parts/b2a_01_kr.mp3",
+          "hash": "f289e28f3a00cfcd",
+          "seconds": 4.127
+        },
+        {
+          "lang": "en",
+          "text": "one, two",
+          "file": "parts/b2a_02_en.mp3",
+          "hash": "86ecc84bf71567d2",
+          "seconds": 1.071
+        },
+        {
+          "lang": "kr",
+          "text": ")나 부정관사(",
+          "file": "parts/b2a_03_kr.mp3",
+          "hash": "0d297a3cb5b52d11",
+          "seconds": 1.437
+        },
+        {
+          "lang": "en",
+          "text": "a, an",
+          "file": "parts/b2a_04_en.mp3",
+          "hash": "4cdd498549fd1bd3",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ")가 직접 오지 못하고, 복수형",
+          "file": "parts/b2a_05_kr.mp3",
+          "hash": "3029408f33f82d89",
+          "seconds": 2.534
+        },
+        {
+          "lang": "en",
+          "text": "s",
+          "file": "parts/b2a_06_en.mp3",
+          "hash": "abd14e4dc5dadddf",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": "도 붙지 못합니다.",
+          "file": "parts/b2a_07_kr.mp3",
+          "hash": "b61dde5660602e23",
+          "seconds": 1.437
+        }
+      ],
+      "file": "b2a.mp3",
+      "seconds": 13.14,
+      "frames": 394
+    },
+    "b2b": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "따라서 불가산명사의 양을 표현하려면, 반드시 단위나 용기가 다리 역할을 해주어야 합니다.",
+          "file": "parts/b2b_01_kr.mp3",
+          "hash": "4060f0abe5c88694",
+          "seconds": 6.818
+        }
+      ],
+      "file": "b2b.mp3",
+      "seconds": 6.818,
+      "frames": 205
+    },
+    "b3a": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "I bought a bread",
+          "file": "parts/b3a_01_en.mp3",
+          "hash": "e454e97279aa2c27",
+          "seconds": 1.28
+        },
+        {
+          "lang": "kr",
+          "text": "라고 쓰면 어색하지만,",
+          "file": "parts/b3a_02_kr.mp3",
+          "hash": "52e34dea2de14d8c",
+          "seconds": 1.698
+        }
+      ],
+      "file": "b3a.mp3",
+      "seconds": 3.161,
+      "frames": 95
+    },
+    "b3b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "I bought a loaf of bread",
+          "file": "parts/b3b_01_en.mp3",
+          "hash": "ab711c82c0810142",
+          "seconds": 1.489
+        },
+        {
+          "lang": "kr",
+          "text": "라고 써야",
+          "file": "parts/b3b_02_kr.mp3",
+          "hash": "97e465334c55c402",
+          "seconds": 1.019
+        }
+      ],
+      "file": "b3b.mp3",
+      "seconds": 2.664,
+      "frames": 80
+    },
+    "b3c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "“나는 빵 한 덩어리를 샀다”라는 올바른 문장이 되는 것처럼 말이죠.",
+          "file": "parts/b3c_01_kr.mp3",
+          "hash": "b9ee228bd978acbb",
+          "seconds": 4.728
+        }
+      ],
+      "file": "b3c.mp3",
+      "seconds": 4.728,
+      "frames": 142
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "테이블 위에는 시원한 물 한 잔이 놓여 있죠.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "0c53449c8b9baca8",
+          "seconds": 2.952
+        },
+        {
+          "lang": "en",
+          "text": "A glass of water is on the table.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "77af979107403ab9",
+          "seconds": 1.985
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 5.12,
+      "frames": 154
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "창밖으로 은은하게 불어오는 공기를 느껴봅니다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "11c0994e30e944a9",
+          "seconds": 3.344
+        },
+        {
+          "lang": "en",
+          "text": "He feels the fresh air from outside.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "b857a22d2324aa07",
+          "seconds": 2.403
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 5.904,
+      "frames": 177
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "지인이 찾아와 인생에 대한 좋은 조언을 건넸습니다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "9bdd8d2e6089a8c9",
+          "seconds": 4.258
+        },
+        {
+          "lang": "en",
+          "text": "His friend gave him good advice",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "039f0ec6d012d282",
+          "seconds": 1.985
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 6.426,
+      "frames": 193
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그 조언은 그에게 커다란 희망과 용기를 주었죠.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "bc8870a2d9a29e19",
+          "seconds": 3.37
+        },
+        {
+          "lang": "en",
+          "text": "The advice brought him great hope",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "512490e5b34b1d19",
+          "seconds": 2.116
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 5.669,
+      "frames": 170
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 고마운 마음으로 맛있는 음식을 대접했습니다.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "88144aa414a9c5fe",
+          "seconds": 3.84
+        },
+        {
+          "lang": "en",
+          "text": "He shared delicious food with gratitude.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "65fdaae39a851af9",
+          "seconds": 2.586
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 6.609,
+      "frames": 198
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "함께 이야기를 나누며 가슴속에 행복이 차올랐습니다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "eea3f2c22e5c45a7",
+          "seconds": 4.075
+        },
+        {
+          "lang": "en",
+          "text": "His heart was filled with happiness",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "af5fe0f61b96131a",
+          "seconds": 2.351
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 6.609,
+      "frames": 198
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "지인은 미소를 지으며 새로운 정보도 공유해 주었습니다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "a97bc9045e602782",
+          "seconds": 3.997
+        },
+        {
+          "lang": "en",
+          "text": "His friend shared useful information",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "c8008959fc228d80",
+          "seconds": 2.273
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 6.426,
+      "frames": 193
+    },
+    "s09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "돈으로는 결코 살 수 없는 아주 소중한 시간이었죠.",
+          "file": "parts/s09_01_kr.mp3",
+          "hash": "06eece878821e282",
+          "seconds": 3.605
+        },
+        {
+          "lang": "en",
+          "text": "It was a precious moment that money cannot buy.",
+          "file": "parts/s09_02_en.mp3",
+          "hash": "2c9ba65ddf7ec924",
+          "seconds": 2.743
+        }
+      ],
+      "file": "s09.mp3",
+      "seconds": 6.504,
+      "frames": 195
+    },
+    "s10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그렇게 두 사람의 우정 속에 따뜻한 사랑이 피어났습니다.",
+          "file": "parts/s10_01_kr.mp3",
+          "hash": "80530aef83436132",
+          "seconds": 3.892
+        },
+        {
+          "lang": "en",
+          "text": "Warm love bloomed in their friendship.",
+          "file": "parts/s10_02_en.mp3",
+          "hash": "6427a7d75f9eda1a",
+          "seconds": 2.325
+        }
+      ],
+      "file": "s10.mp3",
+      "seconds": 6.374,
+      "frames": 191
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘은 셀 수 없는 명사, 불가산명사에 대해 배웠습니다.",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "e69af2de234f6eb8",
+          "seconds": 4.493
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 4.493,
+      "frames": 135
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "불가산명사는 직접 숫자를 붙이지 않고 단위나 맥락을 함께 써야 한다는 점, 잊지 마세요.",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "fa9c06701ab1245e",
+          "seconds": 7.419
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 7.419,
+      "frames": 223
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "7504c05925950cfa",
+          "seconds": 3.997
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 3.997,
+      "frames": 120
+    }
+  }
+}

@@ -1,0 +1,472 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "지난 17강에서는 현실과 반대로 상상해 보는 가정법을 배웠죠? 이번 시간에 다룰 조건문은 가정법과 비슷해 보이지만, 뉘앙스가 완전히 다릅니다.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "9c0e781593beabdd",
+          "seconds": 13.61
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 13.61,
+      "frames": 408
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "가정법이, 지금 안 그런데 만약 이라면 얼마나 좋을까? 하고 가상의 세계를 그려보는 거였다면,",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "dbdad83abf1ebfee",
+          "seconds": 8.777
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 8.777,
+      "frames": 263
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "조건문은, 만약 이렇게 한다면, 진짜로 이렇게 될 거야! 하고, 충분히 일어날 수 있는 현실적인 조건과 결과를 말하는 거거든요.",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "1bb654eae49ed0f0",
+          "seconds": 11.651
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 11.651,
+      "frames": 350
+    },
+    "b1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "여기서 아주 재미있는 시제의 비밀이 하나 있습니다. 조건문에서는 아직 일어나지 않은 미래의 일이라도, 이프절 안에서는 미래시제 윌을 쓰지 않고, 현재시제를 씁니다.",
+          "file": "parts/b1_01_kr.mp3",
+          "hash": "3347fe44765484bf",
+          "seconds": 14.106
+        }
+      ],
+      "file": "b1.mp3",
+      "seconds": 14.106,
+      "frames": 423
+    },
+    "b2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "조건이 성립하는 순간을 현재로 딱 잡아두고, 그 뒤에 나오는 결과 문장에 윌이나 캔을 붙여서, 앞으로 일어날 미래를 보여주는 거죠.",
+          "file": "parts/b2_01_kr.mp3",
+          "hash": "f30b4c26a60812aa",
+          "seconds": 12.251
+        }
+      ],
+      "file": "b2.mp3",
+      "seconds": 12.251,
+      "frames": 368
+    },
+    "c1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "반면에 만약 하지 않는다면, 하고 반대로 조건을 걸 때는, 이프 낫을 줄여서 언레스라는 단어 하나로 부드럽게 표현할 수도 있습니다.",
+          "file": "parts/c1_01_kr.mp3",
+          "hash": "63066ce5cc8535ad",
+          "seconds": 10.998
+        }
+      ],
+      "file": "c1.mp3",
+      "seconds": 10.998,
+      "frames": 330
+    },
+    "d1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그럼 도심 동화 속 카페 2층 서재의 다음 이야기로 들어가 볼까요? 현실로 돌아온 우리가 앞으로 펼쳐질 일들을 전제로 이야기하는 문장들입니다.",
+          "file": "parts/d1_01_kr.mp3",
+          "hash": "f08008d47a1a8824",
+          "seconds": 9.796
+        }
+      ],
+      "file": "d1.mp3",
+      "seconds": 9.796,
+      "frames": 294
+    },
+    "d2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "한글 의미를 먼저 마음에 새기시고, 영어 소리를 들어보세요.",
+          "file": "parts/d2_01_kr.mp3",
+          "hash": "4fe8cd78779bbf9c",
+          "seconds": 4.441
+        }
+      ],
+      "file": "d2.mp3",
+      "seconds": 4.441,
+      "frames": 133
+    },
+    "p1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "먼저 이프를 써서 현실적인 조건과 미래 결과를 말하는 문장들입니다.",
+          "file": "parts/p1_01_kr.mp3",
+          "hash": "baa9e6cbff6cdda4",
+          "seconds": 6.269
+        }
+      ],
+      "file": "p1.mp3",
+      "seconds": 6.269,
+      "frames": 188
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 네가 그 옛날 열쇠를 돌린다면, 잠긴 문이 스르륵 열릴 것이다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "f0babb3332fcbb4b",
+          "seconds": 5.381
+        },
+        {
+          "lang": "en",
+          "text": "If you turn that old key, the locked door will open softly.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "e0ddb2608f521335",
+          "seconds": 3.291
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 8.829,
+      "frames": 265
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 밤 12시에 그 골목길을 지나간다면, 너는 피아노 소리를 들을 수 있을 것이다.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "b698bcae69eb867e",
+          "seconds": 6.583
+        },
+        {
+          "lang": "en",
+          "text": "If you pass by the alley at midnight, you can hear the piano sound.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "6bb5e8b8517f34e3",
+          "seconds": 3.709
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 10.449,
+      "frames": 313
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 우리가 이 오래된 지도에 귀를 기울인다면, 비밀 서재의 위치를 찾게 될 것이다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "4888604c825a4032",
+          "seconds": 7.053
+        },
+        {
+          "lang": "en",
+          "text": "If we listen to this ancient map, we will find the secret library.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "e30f39c55eba764e",
+          "seconds": 3.997
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 11.207,
+      "frames": 336
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 그녀가 다시 피아노를 연주한다면, 도심 전체가 밤의 마법에 빠질 것이다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "80e17035f70de86d",
+          "seconds": 7.288
+        },
+        {
+          "lang": "en",
+          "text": "If she plays the piano again, the whole city will fall into night magic.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "9c1264004ddaf398",
+          "seconds": 4.075
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 11.52,
+      "frames": 346
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 우리가 지금 출발한다면, 자정이 되기 전에 그 빌딩에 도착할 수 있다.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "4523bc19d69514e2",
+          "seconds": 5.512
+        },
+        {
+          "lang": "en",
+          "text": "If we leave right now, we can arrive at that building before midnight.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "d87b7bcd4cdfda2a",
+          "seconds": 3.527
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 9.195,
+      "frames": 276
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 네가 나와 함께 가겠다고 약속한다면, 내가 그 비밀 일기장을 보여줄게.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "577767915fd85c0b",
+          "seconds": 6.217
+        },
+        {
+          "lang": "en",
+          "text": "If you promise to go with me, I will show you the secret diary.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "1b30b40bc6f17a2e",
+          "seconds": 3.657
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 10.031,
+      "frames": 301
+    },
+    "p2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이번에는 만약 하지 않는다면을 뜻하는 언레스 표현들입니다.",
+          "file": "parts/p2_01_kr.mp3",
+          "hash": "eed84f7c4edb9161",
+          "seconds": 4.206
+        }
+      ],
+      "file": "p2.mp3",
+      "seconds": 4.206,
+      "frames": 126
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 우리가 지금 서두르지 않는다면, 그 마지막 멜로디를 놓치게 될 것이다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "5c425d2a0ede41d2",
+          "seconds": 5.46
+        },
+        {
+          "lang": "en",
+          "text": "Unless we hurry right now, we will miss that last melody.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "b2f13902a702e0b5",
+          "seconds": 3.344
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 8.96,
+      "frames": 269
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 네가 용기를 내지 않는다면, 진실의 문은 절대 열리지 않을 것이다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "205ce55622f48290",
+          "seconds": 6.087
+        },
+        {
+          "lang": "en",
+          "text": "Unless you take courage, the door of truth will never open.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "0f3c11df2215ed9c",
+          "seconds": 3.37
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 9.613,
+      "frames": 288
+    },
+    "s09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 비가 내리지 않는다면, 우리는 오늘 밤 다시 그 카페 2층으로 갈 것이다.",
+          "file": "parts/s09_01_kr.mp3",
+          "hash": "f507b6c36fdc047a",
+          "seconds": 6.087
+        },
+        {
+          "lang": "en",
+          "text": "Unless it rains, we will go back to that second-floor cafe tonight.",
+          "file": "parts/s09_02_en.mp3",
+          "hash": "fd03006136ff43bb",
+          "seconds": 3.762
+        }
+      ],
+      "file": "s09.mp3",
+      "seconds": 9.979,
+      "frames": 299
+    },
+    "s10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 우리가 조용히 하지 않는다면, 도시의 정령이 순식간에 사라져 버릴지도 모른다.",
+          "file": "parts/s10_01_kr.mp3",
+          "hash": "4c91ef2ac0b85250",
+          "seconds": 7.131
+        },
+        {
+          "lang": "en",
+          "text": "Unless we stay quiet, the spirit of the city might vanish in a second.",
+          "file": "parts/s10_02_en.mp3",
+          "hash": "9d124cfeac3e9ca9",
+          "seconds": 3.892
+        }
+      ],
+      "file": "s10.mp3",
+      "seconds": 11.207,
+      "frames": 336
+    },
+    "s11": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 그 음악이 멈추지 않는다면, 우리는 밤새 그 골목에 머물게 될 것이다.",
+          "file": "parts/s11_01_kr.mp3",
+          "hash": "a0b4edb9ab92d234",
+          "seconds": 6.165
+        },
+        {
+          "lang": "en",
+          "text": "Unless the music stops, we will stay in that alley all night long.",
+          "file": "parts/s11_02_en.mp3",
+          "hash": "0a367a3130a0bf06",
+          "seconds": 3.579
+        }
+      ],
+      "file": "s11.mp3",
+      "seconds": 9.9,
+      "frames": 297
+    },
+    "s12": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 네가 비밀을 지키지 않는다면, 다시는 이 마법 같은 경험을 할 수 없을 것이다.",
+          "file": "parts/s12_01_kr.mp3",
+          "hash": "35b4efa3dcbc21f5",
+          "seconds": 6.922
+        },
+        {
+          "lang": "en",
+          "text": "Unless you keep the secret, you will never experience this magic again.",
+          "file": "parts/s12_02_en.mp3",
+          "hash": "11e0d36fa8d96284",
+          "seconds": 4.31
+        }
+      ],
+      "file": "s12.mp3",
+      "seconds": 11.389,
+      "frames": 342
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 배운 조건문의 핵심, 딱 두 가지만 정리해 볼까요.",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "bf9e24f50a79abeb",
+          "seconds": 4.728
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 4.728,
+      "frames": 142
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "첫째, 조건문은 가상이 아니라, 실제로 일어날 법한 현실의 조건과 결과를 말한다는 점입니다.",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "6ca2f8d538828b6f",
+          "seconds": 7.471
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 7.471,
+      "frames": 224
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "둘째, 이프절 안에서는 미래 일이라도 현재시제를 쓰고, 부정 조건은 언레스 하나로 깔끔하게 처리한다는 사실입니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "f210f917a91b306c",
+          "seconds": 9.979
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 9.979,
+      "frames": 299
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 배운 12개 문장을, 한글 해석부터 천천히 스며들게 하면서, 입으로 직접 소리 내어 중얼거려 보세요.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "703f43231ce359c9",
+          "seconds": 8.856
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 8.856,
+      "frames": 266
+    },
+    "o5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다음 19강에서는 문장의 분위기를 단번에 반전시키는 도치, 인버전 표현으로 찾아오겠습니다. 수고 많으셨습니다!",
+          "file": "parts/o5_01_kr.mp3",
+          "hash": "e8548b8256c6d727",
+          "seconds": 9.273
+        }
+      ],
+      "file": "o5.mp3",
+      "seconds": 9.273,
+      "frames": 278
+    }
+  }
+}

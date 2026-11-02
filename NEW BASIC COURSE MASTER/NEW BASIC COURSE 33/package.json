@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-33",
+  "private": true,
+  "description": "Remotion project root for 14강 비교급 총정리. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson14-Comparatives out/lesson14.mp4"
+  }
+}

@@ -1,0 +1,500 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "17강에서는 우리가 가정법이라는 걸 다뤄볼 건데요. 사실 가정법이라는 말이 좀 어렵게 느껴질 수 있지만, 알고 보면 정말 별거 아닙니다.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "7d68a17dde530dbb",
+          "seconds": 11.416
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 11.416,
+      "frames": 342
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "쉽게 말해서, 지금 현실은 전혀 안 그런데, 만약 이라면 얼마나 좋을까? 하고, 현실과 살짝 거리를 두고 마음속으로 예쁜 상상을 해보는 거거든요.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "74c8337bc28c162e",
+          "seconds": 13.27
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 13.27,
+      "frames": 398
+    },
+    "a1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "여기서 가장 재미있는 포인트가 하나 있어요. 영어에서는 현실하고 전혀 다른 가상의 상상을 할 때, 시제를 일부러 과거로 쓱 밀어내서 표현합니다.",
+          "file": "parts/a1_01_kr.mp3",
+          "hash": "e37ecc9819ca499f",
+          "seconds": 11.363
+        }
+      ],
+      "file": "a1.mp3",
+      "seconds": 11.363,
+      "frames": 341
+    },
+    "a2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "13강에서 조동사 과거형 배울 때 기억나시죠? 시제를 과거로 밀면 현실과의 거리가 멀어지면서, 불확실함이나 가상의 뉘앙스가 만들어지거든요.",
+          "file": "parts/a2_01_kr.mp3",
+          "hash": "99347cc3f31551b2",
+          "seconds": 12.852
+        }
+      ],
+      "file": "a2.mp3",
+      "seconds": 12.852,
+      "frames": 386
+    },
+    "b1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그래서 지금 현재 사실과 반대로, 만약 지금 이라면, 할 텐데, 하고 상상할 때는 과거동사를 써요. 이걸 문법 책에서는 가정법 과거라고 부르는 거죠.",
+          "file": "parts/b1_01_kr.mp3",
+          "hash": "4ae2604f5633d302",
+          "seconds": 13.401
+        }
+      ],
+      "file": "b1.mp3",
+      "seconds": 13.401,
+      "frames": 402
+    },
+    "b2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "특히 이때 비동사는 인칭 상관없이 워를 쓰는 게 아주 매력적인 기본 규칙입니다.",
+          "file": "parts/b2_01_kr.mp3",
+          "hash": "a61772329f343d64",
+          "seconds": 7.105
+        }
+      ],
+      "file": "b2.mp3",
+      "seconds": 7.105,
+      "frames": 213
+    },
+    "c1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "반대로, 아, 그때 내가 했었더라면, 그때 했을 텐데, 하고 이미 지나간 과거 일을 후회하거나 상상할 때는, 과거보다 한 단계 더 옛날인 해드 피피를 가져와서 써줍니다.",
+          "file": "parts/c1_01_kr.mp3",
+          "hash": "011c950949d69aae",
+          "seconds": 16.196
+        }
+      ],
+      "file": "c1.mp3",
+      "seconds": 16.196,
+      "frames": 486
+    },
+    "c2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이걸 가정법 과거완료라고 하고요.",
+          "file": "parts/c2_01_kr.mp3",
+          "hash": "59373095f6b2de66",
+          "seconds": 2.325
+        }
+      ],
+      "file": "c2.mp3",
+      "seconds": 2.325,
+      "frames": 70
+    },
+    "d1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그럼 우리가 계속 따라오던 그 도심 동화 이야기 있죠? 닫힌 카페 2층 서재의 비밀을 뒤로하고 일상으로 돌아온 주인공이 떠올리는 가상의 순간들을, 영어 문장으로 하나씩 느껴볼게요.",
+          "file": "parts/d1_01_kr.mp3",
+          "hash": "f7c6cd87f7fc2d1c",
+          "seconds": 14.89
+        }
+      ],
+      "file": "d1.mp3",
+      "seconds": 14.89,
+      "frames": 447
+    },
+    "d2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "한글 의미부터 먼저 마음에 담고, 그 뒤에 나오는 영어 소리에 귀를 기울여 보세요.",
+          "file": "parts/d2_01_kr.mp3",
+          "hash": "32a472fc7519d719",
+          "seconds": 6.034
+        }
+      ],
+      "file": "d2.mp3",
+      "seconds": 6.034,
+      "frames": 181
+    },
+    "p1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "먼저 지금 현재 상황을 반대로 상상해보는 이야기들입니다.",
+          "file": "parts/p1_01_kr.mp3",
+          "hash": "10b2271a23d69a32",
+          "seconds": 4.545
+        }
+      ],
+      "file": "p1.mp3",
+      "seconds": 4.545,
+      "frames": 136
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 내가 그 비밀 열쇠를 갖고 있다면, 나는 지금 당장 저 문을 열 텐데.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "ab6d7ec49d9c0873",
+          "seconds": 5.799
+        },
+        {
+          "lang": "en",
+          "text": "If I had the secret key, I would open that door right now.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "193a5eec1621eefa",
+          "seconds": 3.187
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 9.143,
+      "frames": 274
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 그녀가 지금 이곳에 있다면, 우리에게 피아노에 얽힌 진실을 말해줄 텐데.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "56bd2d66dce5e5e4",
+          "seconds": 5.669
+        },
+        {
+          "lang": "en",
+          "text": "If she were here right now, she could tell us the truth behind the piano.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "954502f84fb58b80",
+          "seconds": 3.892
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 9.718,
+      "frames": 292
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 저 골목길이 그렇게 어둡지 않다면, 우리는 더 멀리까지 탐험할 수 있을 텐데.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "d9f29a9a69a32a35",
+          "seconds": 6.504
+        },
+        {
+          "lang": "en",
+          "text": "If that alley were not so dark, we could explore even further.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "48e2d09414c779cb",
+          "seconds": 3.579
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 10.214,
+      "frames": 306
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 이 오래된 오르골이 작동한다면, 아름다운 멜로디가 온 방에 퍼질 텐데.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "95033d5e0ac9a2a8",
+          "seconds": 5.616
+        },
+        {
+          "lang": "en",
+          "text": "If this ancient music box worked a beautiful melody would spread across the room.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "107f66646e310e74",
+          "seconds": 4.859
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 10.632,
+      "frames": 319
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 내가 도시의 모든 비밀을 안다면, 나는 더 이상 아무것도 두렵지 않을 텐데.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "a4ca76d89b72ef5d",
+          "seconds": 6.269
+        },
+        {
+          "lang": "en",
+          "text": "If I knew all the secrets of the city, I would not be afraid of anything.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "077f8925322222c1",
+          "seconds": 3.997
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 10.397,
+      "frames": 312
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 우리가 지금 자유롭다면, 그 마법 같은 음악을 찾아 다시 떠날 텐데.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "5238cdd7798d922b",
+          "seconds": 5.146
+        },
+        {
+          "lang": "en",
+          "text": "If we were free right now, we might set off again to find that magical music.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "b2d238258a99c785",
+          "seconds": 4.258
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 9.561,
+      "frames": 287
+    },
+    "p2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이번에는 이미 지나간 과거의 그 밤을 돌아보며, 그때 그랬더라면, 하고 아쉬워하는 이야기들입니다.",
+          "file": "parts/p2_01_kr.mp3",
+          "hash": "9931b6dd5b960fb9",
+          "seconds": 7.471
+        }
+      ],
+      "file": "p2.mp3",
+      "seconds": 7.471,
+      "frames": 224
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 우리가 그때 랜턴을 챙겼었더라면, 어두운 서재 구석을 더 자세히 보았을 텐데.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "bb8731c4164ef6a5",
+          "seconds": 6.4
+        },
+        {
+          "lang": "en",
+          "text": "If we had brought a lantern back then, we would have seen the dark corner of the library better.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "02d028e9baa2bc2f",
+          "seconds": 4.728
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 11.285,
+      "frames": 339
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 내가 그 일기장을 읽지 않았었더라면, 피아니스트의 슬픔을 절대 몰랐을 텐데.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "34af20136eae007f",
+          "seconds": 7.001
+        },
+        {
+          "lang": "en",
+          "text": "If I had not read that diary, I would have never known the sadness of the pianist.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "1414c985761d3b5e",
+          "seconds": 4.127
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 11.285,
+      "frames": 339
+    },
+    "s09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 시계가 1시를 치지 않았었더라면, 우리는 더 오래 그곳에 머물 수 있었을 텐데.",
+          "file": "parts/s09_01_kr.mp3",
+          "hash": "7c7f3c0aaacda58c",
+          "seconds": 6.113
+        },
+        {
+          "lang": "en",
+          "text": "If the clock had not struck one, we could have stayed there much longer.",
+          "file": "parts/s09_02_en.mp3",
+          "hash": "71240818c0823b98",
+          "seconds": 3.527
+        }
+      ],
+      "file": "s09.mp3",
+      "seconds": 9.796,
+      "frames": 294
+    },
+    "s10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 그녀가 지난밤에 문을 잠그지 않았었더라면, 누군가 그 비밀 보물을 가져갔을지도 모른다.",
+          "file": "parts/s10_01_kr.mp3",
+          "hash": "ec24a75bff1ea8dc",
+          "seconds": 7.184
+        },
+        {
+          "lang": "en",
+          "text": "If she had not locked the door last night, someone might have taken that secret treasure.",
+          "file": "parts/s10_02_en.mp3",
+          "hash": "2561b14420130e4d",
+          "seconds": 4.676
+        }
+      ],
+      "file": "s10.mp3",
+      "seconds": 12.042,
+      "frames": 361
+    },
+    "s11": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 우리가 자정에 그 골목길을 지나가지 않았었더라면, 이 모든 기적을 놓쳤을 텐데.",
+          "file": "parts/s11_01_kr.mp3",
+          "hash": "dff0389f3b623eec",
+          "seconds": 7.367
+        },
+        {
+          "lang": "en",
+          "text": "If we had not passed by the alley at midnight, we would have missed all these miracles.",
+          "file": "parts/s11_02_en.mp3",
+          "hash": "83512af5c3093ce6",
+          "seconds": 4.415
+        }
+      ],
+      "file": "s11.mp3",
+      "seconds": 11.938,
+      "frames": 358
+    },
+    "s12": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 네가 그때 나에게 용기를 주지 않았었더라면, 나는 2층 계단을 올라가지 못했을 텐데.",
+          "file": "parts/s12_01_kr.mp3",
+          "hash": "181a61d6a02515f0",
+          "seconds": 6.949
+        },
+        {
+          "lang": "en",
+          "text": "If you had not given me courage at that time, I could not have climbed the stairs to the second floor.",
+          "file": "parts/s12_02_en.mp3",
+          "hash": "a4ac9ccd41631bff",
+          "seconds": 5.616
+        }
+      ],
+      "file": "s12.mp3",
+      "seconds": 12.722,
+      "frames": 382
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 배운 가정법의 핵심, 딱 두 가지만 마음속에 담아두세요.",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "b3522bc746988cbb",
+          "seconds": 4.833
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 4.833,
+      "frames": 145
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "가정법은 과거 시제를 써서 현실과 거리를 두는 마음의 상상이라는 것.",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "140f5735c93afe56",
+          "seconds": 6.217
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 6.217,
+      "frames": 187
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그리고 지금 일을 상상할 땐 과거동사를, 지나간 옛일을 상상할 땐 해드 피피를 쓴다는 점입니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "a5c88de242e109e9",
+          "seconds": 8.49
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 8.49,
+      "frames": 255
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘 익힌 예문들도 한글 의미부터 느끼시면서, 입으로 소리 내어 중얼거려 보세요.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "c4cc07db01be0dae",
+          "seconds": 6.269
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 6.269,
+      "frames": 188
+    },
+    "o5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다음 18강에서는 가상이 아니라 진짜 일어날 법한 일을 전제로 하는 조건문으로 찾아오겠습니다. 수고 많으셨습니다!",
+          "file": "parts/o5_01_kr.mp3",
+          "hash": "c8065391c422823f",
+          "seconds": 10.475
+        }
+      ],
+      "file": "o5.mp3",
+      "seconds": 10.475,
+      "frames": 314
+    }
+  }
+}

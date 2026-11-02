@@ -1,0 +1,290 @@
+[
+  {
+    "id": "i1",
+    "scene": "intro",
+    "kr": "“나는 어제 그 사람을 만났다”는 {e|I met him yesterday}입니다. 하지만 “내가 어제 만난 그 사람”은 {e|He who I met yesterday}가 되죠.",
+    "en": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "“나는 카페에서 그 책을 읽었다”는 {e|I read the book at the cafe yesterday}이고, “카페에서 내가 읽은 책”은 {e|The book which I read}입니다.",
+    "en": null
+  },
+  {
+    "id": "i3",
+    "scene": "intro",
+    "kr": "우리말은 “내가 어제 만난 사람”, “카페에서 읽은 책”처럼 꾸며 주는 말을 명사 앞에 붙여 길게 만듭니다.",
+    "en": null
+  },
+  {
+    "id": "i4",
+    "scene": "intro",
+    "kr": "하지만 영어는 먼저 명사를 던져 놓고, 그 뒤에 “그런데 이 사람은...”, “그런데 이것은...” 하고 말을 덧붙여 나갑니다.",
+    "en": null
+  },
+  {
+    "id": "i5",
+    "scene": "intro",
+    "kr": "그것을 알아야 영어의 기초가 됩니다. 바로 관계대명사 {v|who}, {p|which}, {y|that}, 그리고 {c|what}입니다.",
+    "en": null
+  },
+  {
+    "id": "i6",
+    "scene": "intro",
+    "kr": "아! 그렇다면 관계대명사라는 이름은 대체 무슨 뜻일까요?",
+    "en": null
+  },
+  {
+    "id": "i7",
+    "scene": "intro",
+    "kr": "관계대명사는 관계를 맺어 주며 문장과 문장을 연결하는 접속사 {e|and}, {e|or}, {e|but} 등의 역할과, 명사를 대신해 주는 대명사의 역할, 두 가지를 한다는 뜻입니다.",
+    "en": null
+  },
+  {
+    "id": "i8",
+    "scene": "intro",
+    "kr": "문장을 연결해 주는 접속사와 명사를 받는 대명사가 하나로 합체된 요술봉, 관계대명사입니다.",
+    "en": null
+  },
+  {
+    "id": "i9",
+    "scene": "intro",
+    "kr": "사람 뒤에는 “그런데 이 사람은...” 하고 잇는 {v|who}, 사물이나 동물 뒤에는 “그런데 이것은...” 하고 잇는 {p|which},",
+    "en": null
+  },
+  {
+    "id": "i10",
+    "scene": "intro",
+    "kr": "그리고 이 둘을 모두 다재다능하게 붙여 주는 만능 접착제 {y|that}이 있습니다.",
+    "en": null
+  },
+  {
+    "id": "i11",
+    "scene": "intro",
+    "kr": "그리고 앞에 꾸며 줄 명사가 아예 없을 때, 스스로 “~하는 것”이라는 덩어리를 만들어 버리는 {c|what}이 있습니다.",
+    "en": null
+  },
+  {
+    "id": "p1",
+    "scene": "bridge",
+    "kr": "그래서 접속사 {e|and}, {e|or}, {e|but} 등이 있는 문장에서는 관계대명사를 쓰지 않습니다.",
+    "en": null
+  },
+  {
+    "id": "p2",
+    "scene": "bridge",
+    "kr": "관계대명사 자체에 이미 접속사의 역할이 포함되어 있기 때문이죠.",
+    "en": null
+  },
+  {
+    "id": "p3",
+    "scene": "bridge",
+    "kr": "{e|and which}는 “그리고 그래서”라는 중복된 뜻이 되고,",
+    "en": null
+  },
+  {
+    "id": "p4",
+    "scene": "bridge",
+    "kr": "{e|or which}는 “또한 그런데”라는 중복된 뜻,",
+    "en": null
+  },
+  {
+    "id": "p5",
+    "scene": "bridge",
+    "kr": "{e|but which}는 “그러나, 하지만”이라는 중복된 뜻이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "p6",
+    "scene": "bridge",
+    "kr": "이미 접속사가 두 문장을 잇고 있는데 그 뒤에 관계대명사를 또 쓰면 뜻이 중복되어 문장이 무너져 버립니다!",
+    "en": null
+  },
+  {
+    "id": "b1a",
+    "scene": "bridge",
+    "kr": "예를 들어, “나는 책을 한 권 샀는데, 그리고 그 책은 재밌다”라고 할 때 {e|I bought a book, and which is interesting}이라고 쓰면 {e|and}와 {e|which}가 중복되어 아주 어색하고 틀린 문장이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b1b",
+    "scene": "bridge",
+    "kr": "{e|and}를 쓰려면 대명사 {e|it}을 써서 {e|I bought a book, and it is interesting}이라고 하거나,",
+    "en": null
+  },
+  {
+    "id": "b1c",
+    "scene": "bridge",
+    "kr": "아니면 {e|and}를 빼고 관계대명사만 써서 {e|I bought a book which is interesting}이라고 써야 올바른 문장이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "ea0",
+    "scene": "bridge",
+    "kr": "접속사 {e|and}와 관계대명사를 중복하지 않는 올바른 예시 3가지를 들어볼까요?",
+    "en": null
+  },
+  {
+    "id": "ea1",
+    "scene": "bridge",
+    "kr": "나는 영화를 보았는데, 그 영화는 무서웠습니다.",
+    "en": "{e|I} {e|saw} {e|a} {e|movie} {p|which} {e|was} {e|scary.}"
+  },
+  {
+    "id": "ea2",
+    "scene": "bridge",
+    "kr": "그는 친구를 한 명 가지고 있는데, 그 친구는 서울에 삽니다.",
+    "en": "{e|He} {e|has} {e|a} {e|friend} {v|who} {e|lives} {e|in} {e|Seoul.}"
+  },
+  {
+    "id": "ea3",
+    "scene": "bridge",
+    "kr": "그녀는 자전거를 샀는데, 그 자전거는 매우 빨랐습니다.",
+    "en": "{e|She} {e|bought} {e|a} {e|bicycle} {p|which} {e|was} {e|very} {e|fast.}"
+  },
+  {
+    "id": "eo0",
+    "scene": "bridge",
+    "kr": "다음으로 접속사 {e|or}와의 중복을 피하는 예시 3가지입니다.",
+    "en": null
+  },
+  {
+    "id": "eo1",
+    "scene": "bridge",
+    "kr": "네가 좋아하는 펜을 고르거나 정해라.",
+    "en": "{e|Choose} {e|a} {e|pen} {p|which} {e|you} {e|like.}"
+  },
+  {
+    "id": "eo2",
+    "scene": "bridge",
+    "kr": "네가 신뢰하는 사람을 한 명 선택해라.",
+    "en": "{e|Pick} {e|a} {e|person} {v|who} {e|you} {e|trust.}"
+  },
+  {
+    "id": "eo3",
+    "scene": "bridge",
+    "kr": "네게 영감을 주는 상자를 하나 찾아라.",
+    "en": "{e|Find} {e|a} {e|box} {p|which} {e|inspires} {e|you.}"
+  },
+  {
+    "id": "eb0",
+    "scene": "bridge",
+    "kr": "마지막으로 접속사 {e|but}과의 중복을 피하는 예시 3가지입니다.",
+    "en": null
+  },
+  {
+    "id": "eb1",
+    "scene": "bridge",
+    "kr": "그는 차를 한 대 샀지만, 그 차는 오래된 것이었습니다.",
+    "en": "{e|He} {e|bought} {e|a} {e|car} {p|which} {e|was} {e|old.}"
+  },
+  {
+    "id": "eb2",
+    "scene": "bridge",
+    "kr": "그녀는 한 남자를 알고 있었지만, 그 남자는 수줍음이 많았습니다.",
+    "en": "{e|She} {e|knew} {e|a} {e|man} {v|who} {e|was} {e|shy.}"
+  },
+  {
+    "id": "eb3",
+    "scene": "bridge",
+    "kr": "나는 집을 한 채 방문했지만, 그 집은 비어 있었습니다.",
+    "en": "{e|I} {e|visited} {e|a} {e|house} {p|which} {e|was} {e|empty.}"
+  },
+  {
+    "id": "ew0",
+    "scene": "bridge",
+    "kr": "그렇다면 명사가 없을 때 쓰는 {c|what}은 어떻게 쓸까요? {c|what}은 “내가 ~하는 것”이라고 해석하면 됩니다.",
+    "en": null
+  },
+  {
+    "id": "ew1",
+    "scene": "bridge",
+    "kr": "나는 네가 말한 ‘것’을 원한다.",
+    "en": "{e|I} {e|want} {c|what} {e|you} {e|said.}"
+  },
+  {
+    "id": "ew2",
+    "scene": "bridge",
+    "kr": "이것이 내가 찾던 ‘것’이다.",
+    "en": "{e|This} {e|is} {c|what} {e|I} {e|looked} {e|for.}"
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "그는 한 여자를 만났습니다. 그런데 그 여자는 환하게 미소 짓고 있었죠.",
+    "en": "{e|He} {e|met} {e|a} {e|woman} {v|who} {e|was} {e|smiling} {e|brightly.}"
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "그녀는 아름다운 그림을 그리고 있었습니다. 그런데 그 그림은 마음을 따뜻하게 해주었죠.",
+    "en": "{e|She} {e|was} {e|painting} {e|a} {e|picture} {p|which} {e|warmed} {e|his} {e|heart.}"
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "그는 그녀가 진심으로 필요로 했던 ‘것’을 조심스럽게 선물했습니다.",
+    "en": "{e|He} {e|gave} {e|her} {c|what} {e|she} {e|really} {e|needed.}"
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "그것은 바로 그녀가 오랫동안 원했던 ‘것’이었습니다.",
+    "en": "{e|It} {e|was} {e|exactly} {c|what} {e|she} {e|had} {e|wanted} {e|for} {e|a} {e|long} {e|time.}"
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "두 사람은 작고 아늑한 카페로 들어갔습니다. 그런데 그 카페는 거리에 위치해 있었죠.",
+    "en": "{e|They} {e|entered} {e|a} {e|cozy} {e|cafe} {y|that} {e|was} {e|located} {e|on} {e|the} {e|street.}"
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "그곳에서 그들은 한 친절한 바리스타를 보았습니다. 그런데 그 사람은 따뜻한 차를 내어주었습니다.",
+    "en": "{e|They} {e|saw} {e|a} {e|kind} {e|barista} {v|who} {e|served} {e|warm} {e|tea.}"
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "그들은 오늘 서로가 마음속으로 배운 ‘것’에 대해 깊은 대화를 나누었습니다.",
+    "en": "{e|They} {e|talked} {e|about} {c|what} {e|they} {e|learned} {e|today.}"
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "테이블 위에는 오래된 시집 한 권이 놓여 있었습니다. 그런데 그 시집은 깊은 감동을 주었죠.",
+    "en": "{e|A} {e|poetry} {e|book} {y|that} {e|brought} {e|deep} {e|emotion} {e|was} {e|on} {e|the} {e|table.}"
+  },
+  {
+    "id": "s09",
+    "scene": "story",
+    "kr": "그것은 그에게 잊을 수 없는 소중한 기억이 되었습니다. 그런데 그 기억은 오래도록 머물렀습니다.",
+    "en": "{e|It} {e|became} {e|a} {e|precious} {e|memory} {p|which} {e|stayed} {e|with} {e|him} {e|for} {e|a} {e|long} {e|time.}"
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘은 관계대명사의 본질인 ‘접속사+대명사’의 역할과, {e|and}, {e|or}, {e|but}과 함께 중복해서 쓰지 않는다는 중요한 규칙을 배웠습니다.",
+    "en": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "사람이면 {v|who}, 사물이면 {p|which}, 다재다능한 {y|that}, 스스로 ‘~하는 것’을 만드는 {c|what}의 원리를 꼭 기억하세요.",
+    "en": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+    "en": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "감사합니다.",
+    "en": null
+  }
+]

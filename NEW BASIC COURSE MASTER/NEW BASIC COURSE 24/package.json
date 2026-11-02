@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-24",
+  "private": true,
+  "description": "Remotion project root for 05강 전치사 at, on, in. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson05-TimePrepositions out/lesson05.mp4"
+  }
+}

@@ -1,0 +1,885 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감사합니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "529f016c9727d15d",
+          "seconds": 1.097
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 1.097,
+      "frames": 33
+    },
+    "i1a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리말은 “7시에 만나”, “월요일에 봐”, “여름에 가자”처럼 시공간에 똑같이 ‘~에’나 ‘~에서’를 붙입니다.",
+          "file": "parts/i1a_01_kr.mp3",
+          "hash": "2e1a81e8fe954e0c",
+          "seconds": 10.057
+        }
+      ],
+      "file": "i1a.mp3",
+      "seconds": 10.057,
+      "frames": 302
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "하지만 영어는 24시간이라는 확실한 시간의 기준점을 가지고 전치사를 세밀하게 다르게 씁니다.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "17ab1d55c5fbd874",
+          "seconds": 7.889
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 7.889,
+      "frames": 237
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것을 알아야 영어의 기초가 됩니다. 바로 전치사",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "e2381c49330f2a92",
+          "seconds": 3.84
+        },
+        {
+          "lang": "en",
+          "text": "at, on, in",
+          "file": "parts/i3_02_en.mp3",
+          "hash": "bdd3b95b8d5f7872",
+          "seconds": 1.097
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/i3_03_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 1.019
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 6.296,
+      "frames": 189
+    },
+    "i4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "24시간을 기준으로 나뉘는 시공간의 나침반, 전치사입니다.",
+          "file": "parts/i4_01_kr.mp3",
+          "hash": "c2319d2a44071387",
+          "seconds": 5.695
+        }
+      ],
+      "file": "i4.mp3",
+      "seconds": 5.695,
+      "frames": 171
+    },
+    "i5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "기준은 아주 명확합니다. 딱 하루, 정확히 24시간은",
+          "file": "parts/i5_01_kr.mp3",
+          "hash": "b4190b23f9426cca",
+          "seconds": 4.206
+        },
+        {
+          "lang": "en",
+          "text": "on",
+          "file": "parts/i5_02_en.mp3",
+          "hash": "aaccee10c5d064a4",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": "을 씁니다.",
+          "file": "parts/i5_03_kr.mp3",
+          "hash": "0dd3832c4d7d0884",
+          "seconds": 1.097
+        }
+      ],
+      "file": "i5.mp3",
+      "seconds": 6.348,
+      "frames": 190
+    },
+    "i6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "월요일에(",
+          "file": "parts/i6_01_kr.mp3",
+          "hash": "9fd3e3f9b0e1d165",
+          "seconds": 1.071
+        },
+        {
+          "lang": "en",
+          "text": "on Monday",
+          "file": "parts/i6_02_en.mp3",
+          "hash": "1b62460b5402567e",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "), 생일에(",
+          "file": "parts/i6_03_kr.mp3",
+          "hash": "5346751d4b16f51c",
+          "seconds": 1.149
+        },
+        {
+          "lang": "en",
+          "text": "on my birthday",
+          "file": "parts/i6_04_en.mp3",
+          "hash": "bb8cb5c973516b4a",
+          "seconds": 1.202
+        },
+        {
+          "lang": "kr",
+          "text": "), 크리스마스 날에(",
+          "file": "parts/i6_05_kr.mp3",
+          "hash": "18f6ebeb206f35b6",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "on Christmas Day",
+          "file": "parts/i6_06_en.mp3",
+          "hash": "21ff662c899a9158",
+          "seconds": 1.384
+        },
+        {
+          "lang": "kr",
+          "text": ")처럼 정확히 24시간 분량의 날짜입니다.",
+          "file": "parts/i6_07_kr.mp3",
+          "hash": "be7eaf2342b41036",
+          "seconds": 3.344
+        }
+      ],
+      "file": "i6.mp3",
+      "seconds": 11.598,
+      "frames": 348
+    },
+    "i7": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 24시간보다 단 1초라도 적은 시간은",
+          "file": "parts/i7_01_kr.mp3",
+          "hash": "9b947273c32c9b4f",
+          "seconds": 2.638
+        },
+        {
+          "lang": "en",
+          "text": "at",
+          "file": "parts/i7_02_en.mp3",
+          "hash": "a21204b5704f8233",
+          "seconds": 0.653
+        },
+        {
+          "lang": "kr",
+          "text": "을 씁니다. 콕 집어내는 점의 느낌이죠.",
+          "file": "parts/i7_03_kr.mp3",
+          "hash": "edec995a16f4e692",
+          "seconds": 3.84
+        }
+      ],
+      "file": "i7.mp3",
+      "seconds": 7.445,
+      "frames": 223
+    },
+    "i8": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "7시에(",
+          "file": "parts/i8_01_kr.mp3",
+          "hash": "21fd1c4d0fc17623",
+          "seconds": 1.019
+        },
+        {
+          "lang": "en",
+          "text": "at 7 o’clock",
+          "file": "parts/i8_02_en.mp3",
+          "hash": "2a2dc51ffd4a1967",
+          "seconds": 1.28
+        },
+        {
+          "lang": "kr",
+          "text": "), 정오에(",
+          "file": "parts/i8_03_kr.mp3",
+          "hash": "1e759c44d4c7a1e9",
+          "seconds": 1.202
+        },
+        {
+          "lang": "en",
+          "text": "at noon",
+          "file": "parts/i8_04_en.mp3",
+          "hash": "b9ed512b8f30017c",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": "), 밤에(",
+          "file": "parts/i8_05_kr.mp3",
+          "hash": "41635764bc0e1b0b",
+          "seconds": 1.019
+        },
+        {
+          "lang": "en",
+          "text": "at night",
+          "file": "parts/i8_06_en.mp3",
+          "hash": "5854841993c1c25e",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": ")처럼 24시간보다 짧은 특정 시점입니다.",
+          "file": "parts/i8_07_kr.mp3",
+          "hash": "93e6e13a70262e52",
+          "seconds": 3.239
+        }
+      ],
+      "file": "i8.mp3",
+      "seconds": 10.475,
+      "frames": 314
+    },
+    "i9": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "반대로 24시간보다 단 12초라도 많은 길고 넓은 시간은",
+          "file": "parts/i9_01_kr.mp3",
+          "hash": "8193c5fc2c451c79",
+          "seconds": 5.016
+        },
+        {
+          "lang": "en",
+          "text": "in",
+          "file": "parts/i9_02_en.mp3",
+          "hash": "987ac6bdbbb250de",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": "을 씁니다.",
+          "file": "parts/i9_03_kr.mp3",
+          "hash": "0dd3832c4d7d0884",
+          "seconds": 1.149
+        }
+      ],
+      "file": "i9.mp3",
+      "seconds": 7.184,
+      "frames": 216
+    },
+    "i10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "아침에(",
+          "file": "parts/i10_01_kr.mp3",
+          "hash": "17c85b7ad66e1892",
+          "seconds": 1.071
+        },
+        {
+          "lang": "en",
+          "text": "in the morning",
+          "file": "parts/i10_02_en.mp3",
+          "hash": "cd6e59762d7a5368",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "), 이번 달에(",
+          "file": "parts/i10_03_kr.mp3",
+          "hash": "582a7315f6968ce6",
+          "seconds": 1.149
+        },
+        {
+          "lang": "en",
+          "text": "in this month",
+          "file": "parts/i10_04_en.mp3",
+          "hash": "b3e3ce435cafa931",
+          "seconds": 1.097
+        },
+        {
+          "lang": "kr",
+          "text": "), 여름에(",
+          "file": "parts/i10_05_kr.mp3",
+          "hash": "4828a0d206b81530",
+          "seconds": 1.149
+        },
+        {
+          "lang": "en",
+          "text": "in summer",
+          "file": "parts/i10_06_en.mp3",
+          "hash": "00b6427c00d274be",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "), 2026년에(",
+          "file": "parts/i10_07_kr.mp3",
+          "hash": "09468aee9138fc73",
+          "seconds": 1.515
+        },
+        {
+          "lang": "en",
+          "text": "in 2026",
+          "file": "parts/i10_08_en.mp3",
+          "hash": "3260d11c73c6e864",
+          "seconds": 1.515
+        },
+        {
+          "lang": "kr",
+          "text": ")처럼 24시간을 훌쩍 넘어가는 기간입니다.",
+          "file": "parts/i10_09_kr.mp3",
+          "hash": "0dbe753ad670260d",
+          "seconds": 3.344
+        }
+      ],
+      "file": "i10.mp3",
+      "seconds": 14.184,
+      "frames": 426
+    },
+    "i11": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "아! 여기서 정말 중요한 꿀팁 하나! 아무리 짧은 시간이나 장소라도, 그 안의 ‘칸막이 공간’ 내부로 들어가면 무조건",
+          "file": "parts/i11_01_kr.mp3",
+          "hash": "a6189cbd1050b3a3",
+          "seconds": 11.311
+        },
+        {
+          "lang": "en",
+          "text": "in",
+          "file": "parts/i11_02_en.mp3",
+          "hash": "987ac6bdbbb250de",
+          "seconds": 0.731
+        },
+        {
+          "lang": "kr",
+          "text": "으로 변한다는 것도 꼭 기억해 두세요.",
+          "file": "parts/i11_03_kr.mp3",
+          "hash": "50cfb1c4be38889b",
+          "seconds": 2.456
+        }
+      ],
+      "file": "i11.mp3",
+      "seconds": 14.838,
+      "frames": 445
+    },
+    "b1a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "예를 들어, “나 월요일에 만나”라고 할 때,",
+          "file": "parts/b1a_01_kr.mp3",
+          "hash": "94824799516e5be2",
+          "seconds": 3.37
+        }
+      ],
+      "file": "b1a.mp3",
+      "seconds": 3.37,
+      "frames": 101
+    },
+    "b1b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "I meet him in Monday",
+          "file": "parts/b1b_01_en.mp3",
+          "hash": "4ef9687c4e2c3c2f",
+          "seconds": 1.515
+        },
+        {
+          "lang": "kr",
+          "text": "라고 쓰면 24시간짜리 특정 하루를 긴 기간으로 착각해 아주 어색하고 틀린 표현이 됩니다.",
+          "file": "parts/b1b_02_kr.mp3",
+          "hash": "3d574b9f203175d4",
+          "seconds": 7.654
+        }
+      ],
+      "file": "b1b.mp3",
+      "seconds": 9.352,
+      "frames": 281
+    },
+    "b1c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "월요일은 딱 24시간짜리 하루이므로",
+          "file": "parts/b1c_01_kr.mp3",
+          "hash": "047f35474d606f69",
+          "seconds": 2.508
+        },
+        {
+          "lang": "en",
+          "text": "I meet him on Monday",
+          "file": "parts/b1c_02_en.mp3",
+          "hash": "fabb98abefba6272",
+          "seconds": 1.384
+        },
+        {
+          "lang": "kr",
+          "text": "라고 써야 비로소 완성된 문장이 됩니다.",
+          "file": "parts/b1c_03_kr.mp3",
+          "hash": "a32f42a5c03716ed",
+          "seconds": 2.821
+        }
+      ],
+      "file": "b1c.mp3",
+      "seconds": 7.027,
+      "frames": 211
+    },
+    "b2a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "마찬가지로 7시는 24시간보다 훨씬 짧은 점이므로",
+          "file": "parts/b2a_01_kr.mp3",
+          "hash": "7bc9e2734a4fc931",
+          "seconds": 3.657
+        },
+        {
+          "lang": "en",
+          "text": "at 7 o’clock",
+          "file": "parts/b2a_02_en.mp3",
+          "hash": "2a2dc51ffd4a1967",
+          "seconds": 1.254
+        },
+        {
+          "lang": "kr",
+          "text": ", 한 달이나 일 년은 24시간보다 긴 기간이므로",
+          "file": "parts/b2a_03_kr.mp3",
+          "hash": "499bc0d59d05d045",
+          "seconds": 3.84
+        },
+        {
+          "lang": "en",
+          "text": "in May",
+          "file": "parts/b2a_04_en.mp3",
+          "hash": "343eda3518368cc7",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "가 됩니다.",
+          "file": "parts/b2a_05_kr.mp3",
+          "hash": "b2e84569846dfed0",
+          "seconds": 1.071
+        }
+      ],
+      "file": "b2a.mp3",
+      "seconds": 11.468,
+      "frames": 344
+    },
+    "b2b": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다시 한 번 말하자면,",
+          "file": "parts/b2b_01_kr.mp3",
+          "hash": "1993970729239591",
+          "seconds": 1.62
+        }
+      ],
+      "file": "b2b.mp3",
+      "seconds": 1.62,
+      "frames": 49
+    },
+    "b2c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "24시간보다 적으면",
+          "file": "parts/b2c_01_kr.mp3",
+          "hash": "4030a586eb13b8f9",
+          "seconds": 1.698
+        },
+        {
+          "lang": "en",
+          "text": "at",
+          "file": "parts/b2c_02_en.mp3",
+          "hash": "a21204b5704f8233",
+          "seconds": 0.601
+        },
+        {
+          "lang": "kr",
+          "text": ", 딱 24시간은",
+          "file": "parts/b2c_03_kr.mp3",
+          "hash": "4abe3f5becb55768",
+          "seconds": 1.567
+        },
+        {
+          "lang": "en",
+          "text": "on",
+          "file": "parts/b2c_04_en.mp3",
+          "hash": "aaccee10c5d064a4",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": ", 24시간보다 많으면",
+          "file": "parts/b2c_05_kr.mp3",
+          "hash": "fe4e3e6b2600ec2e",
+          "seconds": 1.672
+        },
+        {
+          "lang": "en",
+          "text": "in",
+          "file": "parts/b2c_06_en.mp3",
+          "hash": "987ac6bdbbb250de",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/b2c_07_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 1.071
+        }
+      ],
+      "file": "b2c.mp3",
+      "seconds": 8.96,
+      "frames": 269
+    },
+    "b2d": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "따라서 시간의 길이에 맞게 전치사의 다리를 정확히 놓아주어야 합니다.",
+          "file": "parts/b2d_01_kr.mp3",
+          "hash": "45ee25c88ecd69a2",
+          "seconds": 5.329
+        }
+      ],
+      "file": "b2d.mp3",
+      "seconds": 5.329,
+      "frames": 160
+    },
+    "b3a": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "I arrive in 7 o’clock",
+          "file": "parts/b3a_01_en.mp3",
+          "hash": "2b3132ff9a34b8a1",
+          "seconds": 1.62
+        },
+        {
+          "lang": "kr",
+          "text": "은 7시라는 넓은 기간 안에 도착한다는 어색한 문장이고,",
+          "file": "parts/b3a_02_kr.mp3",
+          "hash": "159526d5154a3f29",
+          "seconds": 4.18
+        }
+      ],
+      "file": "b3a.mp3",
+      "seconds": 5.956,
+      "frames": 179
+    },
+    "b3b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "I arrive at 7 o’clock",
+          "file": "parts/b3b_01_en.mp3",
+          "hash": "720534ca4c55db93",
+          "seconds": 1.567
+        },
+        {
+          "lang": "kr",
+          "text": "은 7시라는 정확한 점에 도착한다는 올바른 문장입니다.",
+          "file": "parts/b3b_02_kr.mp3",
+          "hash": "4ddd8af5b7c79d47",
+          "seconds": 4.206
+        }
+      ],
+      "file": "b3b.mp3",
+      "seconds": 5.956,
+      "frames": 179
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "상쾌한 월요일 아침, 그는 기분 좋게 눈을 떴습니다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "de363b8999a0cd65",
+          "seconds": 4.415
+        },
+        {
+          "lang": "en",
+          "text": "On Monday morning, he woke up cheerfully.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "5eba5259128dd740",
+          "seconds": 2.403
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 6.975,
+      "frames": 209
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "24시간보다 긴 넓은 아침 시간 동안, 그는 약속 준비를 마쳤죠.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "7155bd963aa299e8",
+          "seconds": 5.616
+        },
+        {
+          "lang": "en",
+          "text": "He prepared for his meeting in the morning.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "17232323193895f2",
+          "seconds": 2.22
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 7.993,
+      "frames": 240
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 24시간보다 짧은 시점인 정오 12시에 친구를 만나기로 했습니다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "96e61c79c4c3d0a5",
+          "seconds": 5.982
+        },
+        {
+          "lang": "en",
+          "text": "He agreed to meet his friend at noon.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "1f00fbf4a0052f72",
+          "seconds": 2.168
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 8.307,
+      "frames": 249
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "약속 장소인 버스 정류장에서 조용히 친구를 기다렸습니다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "e769c19ab0d7fe0c",
+          "seconds": 5.277
+        },
+        {
+          "lang": "en",
+          "text": "He waited quietly at the bus stop.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "2283e90c3e7aa485",
+          "seconds": 2.09
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 7.523,
+      "frames": 226
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그리고 카페라는 칸막이 공간 안으로 함께 들어갔습니다.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "7a131e2b3ac34817",
+          "seconds": 3.997
+        },
+        {
+          "lang": "en",
+          "text": "They stepped into the cozy cafe.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "57cb00116dd148b8",
+          "seconds": 1.985
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 6.139,
+      "frames": 184
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "테이블이라는 평평한 면 위에서 따뜻한 차를 함께 즐겼죠.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "69ccdc0182ba5007",
+          "seconds": 4.441
+        },
+        {
+          "lang": "en",
+          "text": "Warm tea was served on the table.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "4d961d811a0942fc",
+          "seconds": 2.116
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 6.74,
+      "frames": 202
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "24시간보다 훨씬 길고 넓은 올여름은 그에게 잊지 못할 계절이 되었습니다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "0fb5964ec2093039",
+          "seconds": 6.296
+        },
+        {
+          "lang": "en",
+          "text": "This summer became an unforgettable season for him.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "0a494e5861fae03d",
+          "seconds": 2.952
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 9.43,
+      "frames": 283
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "24시간보다 짧은 조용한 밤에, 그는 오늘의 추억을 담아 집으로 돌아왔습니다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "c92b86fb1c8e507e",
+          "seconds": 6.217
+        },
+        {
+          "lang": "en",
+          "text": "At night, he returned home with happy memories.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "52ea00e6243ffa80",
+          "seconds": 2.769
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 9.143,
+      "frames": 274
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘은 시간 전치사의 명확한 기준을 배웠습니다.",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "1c9eab09060117bb",
+          "seconds": 4.676
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 4.676,
+      "frames": 140
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "24시간보다 적으면",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "4030a586eb13b8f9",
+          "seconds": 1.672
+        },
+        {
+          "lang": "en",
+          "text": "at",
+          "file": "parts/o2_02_en.mp3",
+          "hash": "a21204b5704f8233",
+          "seconds": 0.653
+        },
+        {
+          "lang": "kr",
+          "text": ", 딱 24시간은",
+          "file": "parts/o2_03_kr.mp3",
+          "hash": "4abe3f5becb55768",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "on",
+          "file": "parts/o2_04_en.mp3",
+          "hash": "aaccee10c5d064a4",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": ", 24시간보다 많으면",
+          "file": "parts/o2_05_kr.mp3",
+          "hash": "fe4e3e6b2600ec2e",
+          "seconds": 1.62
+        },
+        {
+          "lang": "en",
+          "text": "in",
+          "file": "parts/o2_06_en.mp3",
+          "hash": "987ac6bdbbb250de",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": "! 그리고 칸막이 공간 속으로 들어가면",
+          "file": "parts/o2_07_kr.mp3",
+          "hash": "1fba7fbbea3ca820",
+          "seconds": 2.952
+        },
+        {
+          "lang": "en",
+          "text": "in",
+          "file": "parts/o2_08_en.mp3",
+          "hash": "987ac6bdbbb250de",
+          "seconds": 0.444
+        },
+        {
+          "lang": "kr",
+          "text": "이 된다는 원리를 꼭 기억하세요.",
+          "file": "parts/o2_09_kr.mp3",
+          "hash": "d2e1a80492afed9f",
+          "seconds": 2.351
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 13.845,
+      "frames": 415
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "7504c05925950cfa",
+          "seconds": 4.18
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 4.18,
+      "frames": 125
+    }
+  }
+}

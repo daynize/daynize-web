@@ -1,0 +1,416 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "20강. 마침내 완성된 이야기. 13강 조동사부터 19강 도치까지, 우리는 문법이라는 단단한 뼈대 위에 마음의 결을 입히며, 도심 속 비밀 서재의 이야기를 함께 이어왔습니다.",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "ebc2a4a449936f3c",
+          "seconds": 17.737
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 17.737,
+      "frames": 532
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "마지막 20강에서는, 우리가 배운 핵심 표현들이 하나의 완성된 도심 동화 안에서 어떻게 눈부시게 피어나는지, 열두 개의 종합 예문을 통해 느껴보는 시간입니다.",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "995c8d0a57fbb918",
+          "seconds": 14.864
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 14.864,
+      "frames": 446
+    },
+    "d1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘의 이야기는 이렇습니다. 마침내 비밀 서재의 문을 열고, 피아니스트의 음악과 하나가 되어, 도심의 밤을 마법으로 물들이고, 새로운 내일을 향해 나아가는 대단원 이야기입니다.",
+          "file": "parts/d1_01_kr.mp3",
+          "hash": "9a2d0b65c57360fc",
+          "seconds": 13.923
+        }
+      ],
+      "file": "d1.mp3",
+      "seconds": 13.923,
+      "frames": 418
+    },
+    "p1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "먼저 13강부터 19강까지, 핵심 문법이 하나씩 피어나는 일곱 문장입니다.",
+          "file": "parts/p1_01_kr.mp3",
+          "hash": "9b5a8bb5fe6f18cf",
+          "seconds": 6.113
+        }
+      ],
+      "file": "p1.mp3",
+      "seconds": 6.113,
+      "frames": 183
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리는 이제 비밀 서재의 문을 주저함 없이 열 수 있다.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "8303db9e909dd9e9",
+          "seconds": 3.84
+        },
+        {
+          "lang": "en",
+          "text": "We can open the door of the secret library without hesitation now.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "46edbb8aba51497b",
+          "seconds": 3.605
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 7.628,
+      "frames": 229
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "지금 흐르는 멜로디는 우리가 어제 들었던 것보다 훨씬 더 감동적이다.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "1357479f3fcdaa05",
+          "seconds": 7.131
+        },
+        {
+          "lang": "en",
+          "text": "The melody flowing now is much more touching than what we heard yesterday.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "7c8c4ca5fb582702",
+          "seconds": 4.18
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 11.468,
+      "frames": 344
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이 순간이 올여름 밤 도심 속에서 우리가 경험한 가장 아름다운 기적이다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "e3d7aa159dff61cc",
+          "seconds": 6.034
+        },
+        {
+          "lang": "en",
+          "text": "This moment is the most beautiful miracle we experienced in the city this summer night.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "75f28cb8aa19ec0b",
+          "seconds": 4.728
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 10.919,
+      "frames": 328
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "자정이 되었을 때 그 피아노 소리가 퍼졌기 때문에, 온 도시가 조용히 숨을 죽였다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "95338c473a616660",
+          "seconds": 6.583
+        },
+        {
+          "lang": "en",
+          "text": "Because the piano sound spread when midnight arrived, the whole city held its breath quietly.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "be06bbc2243d9ed5",
+          "seconds": 5.094
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 11.86,
+      "frames": 356
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 네가 나와 함께 있지 않았더라면, 나는 이 기적의 순간을 절대 만나지 못했을 텐데.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "1ce7d0b01942c902",
+          "seconds": 7.471
+        },
+        {
+          "lang": "en",
+          "text": "If you had not been with me, I would have never met this moment of miracle.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "ef58b8fe67765bac",
+          "seconds": 4.258
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 11.886,
+      "frames": 357
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 우리가 매일 밤 이 골목길을 기억한다면, 마법은 영원히 우리 곁에 남아있을 것이다.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "82038adbd6a37ec2",
+          "seconds": 6.713
+        },
+        {
+          "lang": "en",
+          "text": "If we remember this alley every night, the magic will stay by our side forever.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "71fa35e859b535a1",
+          "seconds": 4.362
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 11.233,
+      "frames": 337
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 내 인생에서 이렇게 깊은 울림을 주는 음악을 단 한 번도 들어본 적이 없다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "0d630a2f06d71a74",
+          "seconds": 5.93
+        },
+        {
+          "lang": "en",
+          "text": "Never have I heard such a deeply touching music in my whole life.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "c67d8adcb7b98130",
+          "seconds": 3.84
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 9.953,
+      "frames": 299
+    },
+    "p2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이어서 도심 동화의 마지막을 장식하는 완결 문장들입니다.",
+          "file": "parts/p2_01_kr.mp3",
+          "hash": "ee1b20c6c2387358",
+          "seconds": 4.441
+        }
+      ],
+      "file": "p2.mp3",
+      "seconds": 4.441,
+      "frames": 133
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오래된 일기장 마지막 페이지에 적힌 문장은 우리 모두에게 전하는 희망의 메시지였다.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "9a9c91bf055e4e1d",
+          "seconds": 5.851
+        },
+        {
+          "lang": "en",
+          "text": "The sentence written on the last page of the old diary was a message of hope to us all.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "54888a69c7c224bb",
+          "seconds": 4.911
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 10.919,
+      "frames": 328
+    },
+    "s09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "카페 2층의 불빛은 꺼졌지만, 그 울림은 우리의 가슴속에 영원히 꺼지지 않을 것이다.",
+          "file": "parts/s09_01_kr.mp3",
+          "hash": "3665ffc5fc4a8def",
+          "seconds": 7.784
+        },
+        {
+          "lang": "en",
+          "text": "Though the light on the second floor went out, its echo will never fade in our hearts.",
+          "file": "parts/s09_02_en.mp3",
+          "hash": "14ae5e4b2c3aaefd",
+          "seconds": 5.094
+        }
+      ],
+      "file": "s09.mp3",
+      "seconds": 13.061,
+      "frames": 392
+    },
+    "s10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이제 우리는 각자의 일상으로 돌아가지만, 우리의 언어는 이전보다 훨씬 더 풍성해졌다.",
+          "file": "parts/s10_01_kr.mp3",
+          "hash": "35f5b1af8bb5c93a",
+          "seconds": 7.34
+        },
+        {
+          "lang": "en",
+          "text": "Now we return to our daily lives, but our language has become much richer than before.",
+          "file": "parts/s10_02_en.mp3",
+          "hash": "4f3ba92062ac7aa8",
+          "seconds": 4.911
+        }
+      ],
+      "file": "s10.mp3",
+      "seconds": 12.408,
+      "frames": 372
+    },
+    "s11": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "만약 네가 다시 영어 문장을 세우고 싶다면, 언제든 이 도심 동화의 골목길로 찾아오면 된다.",
+          "file": "parts/s11_01_kr.mp3",
+          "hash": "45a196bf8b59ee85",
+          "seconds": 7.131
+        },
+        {
+          "lang": "en",
+          "text": "If you want to build English sentences again, you can always visit this alley of urban fairy tale.",
+          "file": "parts/s11_02_en.mp3",
+          "hash": "f0a3597e7243d4fd",
+          "seconds": 4.963
+        }
+      ],
+      "file": "s11.mp3",
+      "seconds": 12.278,
+      "frames": 368
+    },
+    "s12": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "마침내 우리의 긴 여행은 끝났고, 새로운 시작을 향해 기분 좋게 발걸음을 옮긴다.",
+          "file": "parts/s12_01_kr.mp3",
+          "hash": "fd9a7ce2f70107b3",
+          "seconds": 6.635
+        },
+        {
+          "lang": "en",
+          "text": "At last our long journey has ended, and we take a pleasant step toward a new beginning.",
+          "file": "parts/s12_02_en.mp3",
+          "hash": "3abba572272586fa",
+          "seconds": 4.859
+        }
+      ],
+      "file": "s12.mp3",
+      "seconds": 11.651,
+      "frames": 350
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "1강 기초 원리부터 시작해 오늘 20강 마침표를 찍기까지, 나와 함께 걸어오신 수강생 여러분, 참으로 고생 많으셨습니다.",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "40af1ed8403c81e8",
+          "seconds": 10.945
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 10.945,
+      "frames": 328
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "단순히 영단어를 암기하고 공식을 외우는 영어가 아니라, 문장 하나하나에 마음의 결을 담고, 입으로 소리 내어 중얼거리며 내 것으로 만드는 과정이었습니다.",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "fb27723632e67517",
+          "seconds": 13.688
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 13.688,
+      "frames": 411
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "도심 속 비밀 서재에서 솟아오른 피아노 소리처럼, 여러분의 입에서 나오는 영어 문장도, 이제 세상에서 가장 아름답고 단단한 울림이 될 것입니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "0f7a22a4d00f8d64",
+          "seconds": 11.781
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 11.781,
+      "frames": 353
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이번 기초 과정은 여기서 마침표를 찍지만, 여러분이 앞으로 마주할 수많은 영어 문장 속에서, 배운 원리들이 반짝이는 이정표가 되어줄 것입니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "7bf4a680c8a75992",
+          "seconds": 11.416
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 11.416,
+      "frames": 342
+    },
+    "o5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "함께해 주셔서 진심으로 감사드리며, 멋진 영어를 향해 나아갈 여러분의 새로운 시작을, 언제나 응원하겠습니다.",
+          "file": "parts/o5_01_kr.mp3",
+          "hash": "53b583924abd1fdb",
+          "seconds": 9.613
+        }
+      ],
+      "file": "o5.mp3",
+      "seconds": 9.613,
+      "frames": 288
+    },
+    "o6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "지금까지 함께한 가이드였습니다. 수고 많으셨습니다!",
+          "file": "parts/o6_01_kr.mp3",
+          "hash": "aa5aea93a718e775",
+          "seconds": 3.657
+        }
+      ],
+      "file": "o6.mp3",
+      "seconds": 3.657,
+      "frames": 110
+    }
+  }
+}

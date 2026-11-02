@@ -1,0 +1,9 @@
+{
+  "name": "new-basic-course-36",
+  "private": true,
+  "description": "Remotion project root for 17강 가정법. Dependencies resolve from the repository root node_modules.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Lesson17-Subjunctive out/lesson17.mp4"
+  }
+}

@@ -1,0 +1,1249 @@
+{
+  "fps": 30,
+  "model": "eleven_multilingual_v2",
+  "voices": {
+    "kr": "0emXFRrt8HxjqJpgeQtr",
+    "en": "r1KmysJdVYZjJCm4mL3b"
+  },
+  "cues": {
+    "i1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "“나는 어제 그 사람을 만났다”는",
+          "file": "parts/i1_01_kr.mp3",
+          "hash": "bac53bf17cacb1de",
+          "seconds": 2.116
+        },
+        {
+          "lang": "en",
+          "text": "I met him yesterday",
+          "file": "parts/i1_02_en.mp3",
+          "hash": "7a9d3c99a90dad28",
+          "seconds": 1.384
+        },
+        {
+          "lang": "kr",
+          "text": "입니다. 하지만 “내가 어제 만난 그 사람”은",
+          "file": "parts/i1_03_kr.mp3",
+          "hash": "75b4827ed86271b3",
+          "seconds": 4.676
+        },
+        {
+          "lang": "en",
+          "text": "He who I met yesterday",
+          "file": "parts/i1_04_en.mp3",
+          "hash": "cbee73825b8ad63e",
+          "seconds": 1.698
+        },
+        {
+          "lang": "kr",
+          "text": "가 되죠.",
+          "file": "parts/i1_05_kr.mp3",
+          "hash": "b9b8cb01e3d25e30",
+          "seconds": 1.071
+        }
+      ],
+      "file": "i1.mp3",
+      "seconds": 11.624,
+      "frames": 349
+    },
+    "i2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "“나는 카페에서 그 책을 읽었다”는",
+          "file": "parts/i2_01_kr.mp3",
+          "hash": "e73b5c32fce11267",
+          "seconds": 2.325
+        },
+        {
+          "lang": "en",
+          "text": "I read the book at the cafe yesterday",
+          "file": "parts/i2_02_en.mp3",
+          "hash": "d120369f89819ad5",
+          "seconds": 2.168
+        },
+        {
+          "lang": "kr",
+          "text": "이고, “카페에서 내가 읽은 책”은",
+          "file": "parts/i2_03_kr.mp3",
+          "hash": "fc9ec890cef01d1c",
+          "seconds": 2.534
+        },
+        {
+          "lang": "en",
+          "text": "The book which I read",
+          "file": "parts/i2_04_en.mp3",
+          "hash": "36ff9982330a0543",
+          "seconds": 1.437
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/i2_05_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 0.967
+        }
+      ],
+      "file": "i2.mp3",
+      "seconds": 10.083,
+      "frames": 302
+    },
+    "i3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "우리말은 “내가 어제 만난 사람”, “카페에서 읽은 책”처럼 꾸며 주는 말을 명사 앞에 붙여 길게 만듭니다.",
+          "file": "parts/i3_01_kr.mp3",
+          "hash": "d599202901664b22",
+          "seconds": 8.725
+        }
+      ],
+      "file": "i3.mp3",
+      "seconds": 8.725,
+      "frames": 262
+    },
+    "i4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "하지만 영어는 먼저 명사를 던져 놓고, 그 뒤에 “그런데 이 사람은...”, “그런데 이것은...” 하고 말을 덧붙여 나갑니다.",
+          "file": "parts/i4_01_kr.mp3",
+          "hash": "148968773411a2ed",
+          "seconds": 11.18
+        }
+      ],
+      "file": "i4.mp3",
+      "seconds": 11.18,
+      "frames": 335
+    },
+    "i5": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것을 알아야 영어의 기초가 됩니다. 바로 관계대명사",
+          "file": "parts/i5_01_kr.mp3",
+          "hash": "f76d4d160fa50557",
+          "seconds": 4.493
+        },
+        {
+          "lang": "en",
+          "text": "who, which, that",
+          "file": "parts/i5_02_en.mp3",
+          "hash": "cca21cbc559fef81",
+          "seconds": 1.802
+        },
+        {
+          "lang": "kr",
+          "text": ", 그리고",
+          "file": "parts/i5_03_kr.mp3",
+          "hash": "55f06d8742961602",
+          "seconds": 1.149
+        },
+        {
+          "lang": "en",
+          "text": "what",
+          "file": "parts/i5_04_en.mp3",
+          "hash": "0928e8c23d74d358",
+          "seconds": 0.862
+        },
+        {
+          "lang": "kr",
+          "text": "입니다.",
+          "file": "parts/i5_05_kr.mp3",
+          "hash": "dfde21ee777abbc9",
+          "seconds": 1.019
+        }
+      ],
+      "file": "i5.mp3",
+      "seconds": 9.979,
+      "frames": 299
+    },
+    "i6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "아! 그렇다면 관계대명사라는 이름은 대체 무슨 뜻일까요?",
+          "file": "parts/i6_01_kr.mp3",
+          "hash": "46d3e3952d99c30f",
+          "seconds": 4.78
+        }
+      ],
+      "file": "i6.mp3",
+      "seconds": 4.78,
+      "frames": 143
+    },
+    "i7": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "관계대명사는 관계를 맺어 주며 문장과 문장을 연결하는 접속사",
+          "file": "parts/i7_01_kr.mp3",
+          "hash": "3de67b7cd4f4fa9b",
+          "seconds": 6.949
+        },
+        {
+          "lang": "en",
+          "text": "and, or, but",
+          "file": "parts/i7_02_en.mp3",
+          "hash": "c0a6d7ec9dd10eea",
+          "seconds": 1.672
+        },
+        {
+          "lang": "kr",
+          "text": "등의 역할과, 명사를 대신해 주는 대명사의 역할, 두 가지를 한다는 뜻입니다.",
+          "file": "parts/i7_03_kr.mp3",
+          "hash": "a638c2881e8c8acf",
+          "seconds": 7.131
+        }
+      ],
+      "file": "i7.mp3",
+      "seconds": 16.091,
+      "frames": 483
+    },
+    "i8": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "문장을 연결해 주는 접속사와 명사를 받는 대명사가 하나로 합체된 요술봉, 관계대명사입니다.",
+          "file": "parts/i8_01_kr.mp3",
+          "hash": "4a9747db505b10bd",
+          "seconds": 8.176
+        }
+      ],
+      "file": "i8.mp3",
+      "seconds": 8.176,
+      "frames": 245
+    },
+    "i9": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "사람 뒤에는 “그런데 이 사람은...” 하고 잇는",
+          "file": "parts/i9_01_kr.mp3",
+          "hash": "39dfd8f4bfabdc2f",
+          "seconds": 3.605
+        },
+        {
+          "lang": "en",
+          "text": "who",
+          "file": "parts/i9_02_en.mp3",
+          "hash": "72fc0e36d4b617b0",
+          "seconds": 0.784
+        },
+        {
+          "lang": "kr",
+          "text": ", 사물이나 동물 뒤에는 “그런데 이것은...” 하고 잇는",
+          "file": "parts/i9_03_kr.mp3",
+          "hash": "af30752946367edc",
+          "seconds": 3.997
+        },
+        {
+          "lang": "en",
+          "text": "which,",
+          "file": "parts/i9_04_en.mp3",
+          "hash": "ee62d99d99014e93",
+          "seconds": 0.731
+        }
+      ],
+      "file": "i9.mp3",
+      "seconds": 9.613,
+      "frames": 288
+    },
+    "i10": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그리고 이 둘을 모두 다재다능하게 붙여 주는 만능 접착제",
+          "file": "parts/i10_01_kr.mp3",
+          "hash": "a07a93013d8bee73",
+          "seconds": 4.415
+        },
+        {
+          "lang": "en",
+          "text": "that",
+          "file": "parts/i10_02_en.mp3",
+          "hash": "544cc90e11df9c41",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": "이 있습니다.",
+          "file": "parts/i10_03_kr.mp3",
+          "hash": "383711dfbc9470f0",
+          "seconds": 1.097
+        }
+      ],
+      "file": "i10.mp3",
+      "seconds": 6.531,
+      "frames": 196
+    },
+    "i11": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그리고 앞에 꾸며 줄 명사가 아예 없을 때, 스스로 “~하는 것”이라는 덩어리를 만들어 버리는",
+          "file": "parts/i11_01_kr.mp3",
+          "hash": "c7fa835df665f609",
+          "seconds": 6.922
+        },
+        {
+          "lang": "en",
+          "text": "what",
+          "file": "parts/i11_02_en.mp3",
+          "hash": "0928e8c23d74d358",
+          "seconds": 0.653
+        },
+        {
+          "lang": "kr",
+          "text": "이 있습니다.",
+          "file": "parts/i11_03_kr.mp3",
+          "hash": "383711dfbc9470f0",
+          "seconds": 1.202
+        }
+      ],
+      "file": "i11.mp3",
+      "seconds": 9.064,
+      "frames": 272
+    },
+    "p1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그래서 접속사",
+          "file": "parts/p1_01_kr.mp3",
+          "hash": "073cf5e588a1025b",
+          "seconds": 1.489
+        },
+        {
+          "lang": "en",
+          "text": "and, or, but",
+          "file": "parts/p1_02_en.mp3",
+          "hash": "c0a6d7ec9dd10eea",
+          "seconds": 1.28
+        },
+        {
+          "lang": "kr",
+          "text": "등이 있는 문장에서는 관계대명사를 쓰지 않습니다.",
+          "file": "parts/p1_03_kr.mp3",
+          "hash": "2475f6f854ec55ef",
+          "seconds": 3.944
+        }
+      ],
+      "file": "p1.mp3",
+      "seconds": 7.027,
+      "frames": 211
+    },
+    "p2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "관계대명사 자체에 이미 접속사의 역할이 포함되어 있기 때문이죠.",
+          "file": "parts/p2_01_kr.mp3",
+          "hash": "60bd4f4db0f41e9f",
+          "seconds": 4.728
+        }
+      ],
+      "file": "p2.mp3",
+      "seconds": 4.728,
+      "frames": 142
+    },
+    "p3": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "and which",
+          "file": "parts/p3_01_en.mp3",
+          "hash": "994fba967af2432f",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "는 “그리고 그래서”라는 중복된 뜻이 되고,",
+          "file": "parts/p3_02_kr.mp3",
+          "hash": "3a97d876074c4f3f",
+          "seconds": 3.291
+        }
+      ],
+      "file": "p3.mp3",
+      "seconds": 4.467,
+      "frames": 134
+    },
+    "p4": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "or which",
+          "file": "parts/p4_01_en.mp3",
+          "hash": "aac0404d69f9ed83",
+          "seconds": 0.914
+        },
+        {
+          "lang": "kr",
+          "text": "는 “또한 그런데”라는 중복된 뜻,",
+          "file": "parts/p4_02_kr.mp3",
+          "hash": "2be229e17256e05b",
+          "seconds": 2.456
+        }
+      ],
+      "file": "p4.mp3",
+      "seconds": 3.527,
+      "frames": 106
+    },
+    "p5": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "but which",
+          "file": "parts/p5_01_en.mp3",
+          "hash": "9de07b7b869a13d3",
+          "seconds": 1.019
+        },
+        {
+          "lang": "kr",
+          "text": "는 “그러나, 하지만”이라는 중복된 뜻이 됩니다.",
+          "file": "parts/p5_02_kr.mp3",
+          "hash": "b6ab8dced1a120fa",
+          "seconds": 3.239
+        }
+      ],
+      "file": "p5.mp3",
+      "seconds": 4.415,
+      "frames": 132
+    },
+    "p6": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이미 접속사가 두 문장을 잇고 있는데 그 뒤에 관계대명사를 또 쓰면 뜻이 중복되어 문장이 무너져 버립니다!",
+          "file": "parts/p6_01_kr.mp3",
+          "hash": "8c42de6191055324",
+          "seconds": 10.162
+        }
+      ],
+      "file": "p6.mp3",
+      "seconds": 10.162,
+      "frames": 305
+    },
+    "b1a": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "예를 들어, “나는 책을 한 권 샀는데, 그리고 그 책은 재밌다”라고 할 때",
+          "file": "parts/b1a_01_kr.mp3",
+          "hash": "bdb14877215d0775",
+          "seconds": 6.113
+        },
+        {
+          "lang": "en",
+          "text": "I bought a book, and which is interesting",
+          "file": "parts/b1a_02_en.mp3",
+          "hash": "7fae8f2a13a0805e",
+          "seconds": 2.691
+        },
+        {
+          "lang": "kr",
+          "text": "이라고 쓰면",
+          "file": "parts/b1a_03_kr.mp3",
+          "hash": "6a53ada89006705f",
+          "seconds": 1.149
+        },
+        {
+          "lang": "en",
+          "text": "and",
+          "file": "parts/b1a_04_en.mp3",
+          "hash": "36d8fbcf8b929ef4",
+          "seconds": 0.784
+        },
+        {
+          "lang": "kr",
+          "text": "와",
+          "file": "parts/b1a_05_kr.mp3",
+          "hash": "b6536b50ed87f7ff",
+          "seconds": 0.679
+        },
+        {
+          "lang": "en",
+          "text": "which",
+          "file": "parts/b1a_06_en.mp3",
+          "hash": "e5936f8a7b2484a2",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": "가 중복되어 아주 어색하고 틀린 문장이 됩니다.",
+          "file": "parts/b1a_07_kr.mp3",
+          "hash": "68a9c08fe8717839",
+          "seconds": 3.344
+        }
+      ],
+      "file": "b1a.mp3",
+      "seconds": 16.562,
+      "frames": 497
+    },
+    "b1b": {
+      "segments": [
+        {
+          "lang": "en",
+          "text": "and",
+          "file": "parts/b1b_01_en.mp3",
+          "hash": "36d8fbcf8b929ef4",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": "를 쓰려면 대명사",
+          "file": "parts/b1b_02_kr.mp3",
+          "hash": "4419642b59b467b4",
+          "seconds": 1.802
+        },
+        {
+          "lang": "en",
+          "text": "it",
+          "file": "parts/b1b_03_en.mp3",
+          "hash": "de859e8e240880bf",
+          "seconds": 0.653
+        },
+        {
+          "lang": "kr",
+          "text": "을 써서",
+          "file": "parts/b1b_04_kr.mp3",
+          "hash": "ce1e7a7895c529cc",
+          "seconds": 1.149
+        },
+        {
+          "lang": "en",
+          "text": "I bought a book, and it is interesting",
+          "file": "parts/b1b_05_en.mp3",
+          "hash": "fa0c551c3b51ec44",
+          "seconds": 2.508
+        },
+        {
+          "lang": "kr",
+          "text": "이라고 하거나,",
+          "file": "parts/b1b_06_kr.mp3",
+          "hash": "d4d3899d1d0379e9",
+          "seconds": 1.254
+        }
+      ],
+      "file": "b1b.mp3",
+      "seconds": 8.986,
+      "frames": 270
+    },
+    "b1c": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "아니면",
+          "file": "parts/b1c_01_kr.mp3",
+          "hash": "4cd9d79bbe3b7c3c",
+          "seconds": 1.149
+        },
+        {
+          "lang": "en",
+          "text": "and",
+          "file": "parts/b1c_02_en.mp3",
+          "hash": "36d8fbcf8b929ef4",
+          "seconds": 0.731
+        },
+        {
+          "lang": "kr",
+          "text": "를 빼고 관계대명사만 써서",
+          "file": "parts/b1c_03_kr.mp3",
+          "hash": "8ce75c4470d26546",
+          "seconds": 2.351
+        },
+        {
+          "lang": "en",
+          "text": "I bought a book which is interesting",
+          "file": "parts/b1c_04_en.mp3",
+          "hash": "28a03e48712a924f",
+          "seconds": 2.403
+        },
+        {
+          "lang": "kr",
+          "text": "이라고 써야 올바른 문장이 됩니다.",
+          "file": "parts/b1c_05_kr.mp3",
+          "hash": "96bde3af33d2f180",
+          "seconds": 2.116
+        }
+      ],
+      "file": "b1c.mp3",
+      "seconds": 9.43,
+      "frames": 283
+    },
+    "ea0": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "접속사",
+          "file": "parts/ea0_01_kr.mp3",
+          "hash": "0a9834b6f78c3968",
+          "seconds": 1.097
+        },
+        {
+          "lang": "en",
+          "text": "and",
+          "file": "parts/ea0_02_en.mp3",
+          "hash": "36d8fbcf8b929ef4",
+          "seconds": 0.784
+        },
+        {
+          "lang": "kr",
+          "text": "와 관계대명사를 중복하지 않는 올바른 예시 3가지를 들어볼까요?",
+          "file": "parts/ea0_03_kr.mp3",
+          "hash": "c58f04cd68c9ebee",
+          "seconds": 5.329
+        }
+      ],
+      "file": "ea0.mp3",
+      "seconds": 7.549,
+      "frames": 226
+    },
+    "ea1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 영화를 보았는데, 그 영화는 무서웠습니다.",
+          "file": "parts/ea1_01_kr.mp3",
+          "hash": "80ee0ede30d8e95e",
+          "seconds": 4.075
+        },
+        {
+          "lang": "en",
+          "text": "I saw a movie which was scary.",
+          "file": "parts/ea1_02_en.mp3",
+          "hash": "06a107c3e31898b1",
+          "seconds": 1.985
+        }
+      ],
+      "file": "ea1.mp3",
+      "seconds": 6.217,
+      "frames": 187
+    },
+    "ea2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 친구를 한 명 가지고 있는데, 그 친구는 서울에 삽니다.",
+          "file": "parts/ea2_01_kr.mp3",
+          "hash": "02f094497267ab31",
+          "seconds": 5.669
+        },
+        {
+          "lang": "en",
+          "text": "He has a friend who lives in Seoul.",
+          "file": "parts/ea2_02_en.mp3",
+          "hash": "e9e7a2b07260d7dd",
+          "seconds": 2.09
+        }
+      ],
+      "file": "ea2.mp3",
+      "seconds": 7.889,
+      "frames": 237
+    },
+    "ea3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀는 자전거를 샀는데, 그 자전거는 매우 빨랐습니다.",
+          "file": "parts/ea3_01_kr.mp3",
+          "hash": "31c74a795bed70fe",
+          "seconds": 5.433
+        },
+        {
+          "lang": "en",
+          "text": "She bought a bicycle which was very fast.",
+          "file": "parts/ea3_02_en.mp3",
+          "hash": "a63c5f4f801233dd",
+          "seconds": 2.351
+        }
+      ],
+      "file": "ea3.mp3",
+      "seconds": 7.941,
+      "frames": 238
+    },
+    "eo0": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "다음으로 접속사",
+          "file": "parts/eo0_01_kr.mp3",
+          "hash": "a5963cb13853a637",
+          "seconds": 1.437
+        },
+        {
+          "lang": "en",
+          "text": "or",
+          "file": "parts/eo0_02_en.mp3",
+          "hash": "ddfe33e9dec85b9b",
+          "seconds": 0.653
+        },
+        {
+          "lang": "kr",
+          "text": "와의 중복을 피하는 예시 3가지입니다.",
+          "file": "parts/eo0_03_kr.mp3",
+          "hash": "edab0db987926eb3",
+          "seconds": 2.586
+        }
+      ],
+      "file": "eo0.mp3",
+      "seconds": 4.989,
+      "frames": 150
+    },
+    "eo1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "네가 좋아하는 펜을 고르거나 정해라.",
+          "file": "parts/eo1_01_kr.mp3",
+          "hash": "66034bff7dfc7c13",
+          "seconds": 2.456
+        },
+        {
+          "lang": "en",
+          "text": "Choose a pen which you like.",
+          "file": "parts/eo1_02_en.mp3",
+          "hash": "cd7b06ef5efa622d",
+          "seconds": 1.75
+        }
+      ],
+      "file": "eo1.mp3",
+      "seconds": 4.362,
+      "frames": 131
+    },
+    "eo2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "네가 신뢰하는 사람을 한 명 선택해라.",
+          "file": "parts/eo2_01_kr.mp3",
+          "hash": "4e4abb16861b483c",
+          "seconds": 2.873
+        },
+        {
+          "lang": "en",
+          "text": "Pick a person who you trust.",
+          "file": "parts/eo2_02_en.mp3",
+          "hash": "60edf813e1e92b9f",
+          "seconds": 1.985
+        }
+      ],
+      "file": "eo2.mp3",
+      "seconds": 5.016,
+      "frames": 150
+    },
+    "eo3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "네게 영감을 주는 상자를 하나 찾아라.",
+          "file": "parts/eo3_01_kr.mp3",
+          "hash": "780e8f5fc5d1e66b",
+          "seconds": 2.743
+        },
+        {
+          "lang": "en",
+          "text": "Find a box which inspires you.",
+          "file": "parts/eo3_02_en.mp3",
+          "hash": "df4e54b9b59d232c",
+          "seconds": 2.09
+        }
+      ],
+      "file": "eo3.mp3",
+      "seconds": 4.963,
+      "frames": 149
+    },
+    "eb0": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "마지막으로 접속사",
+          "file": "parts/eb0_01_kr.mp3",
+          "hash": "11ebc728dff55abc",
+          "seconds": 1.437
+        },
+        {
+          "lang": "en",
+          "text": "but",
+          "file": "parts/eb0_02_en.mp3",
+          "hash": "3bcd931d673760ed",
+          "seconds": 0.601
+        },
+        {
+          "lang": "kr",
+          "text": "과의 중복을 피하는 예시 3가지입니다.",
+          "file": "parts/eb0_03_kr.mp3",
+          "hash": "49a8e337c4a19131",
+          "seconds": 2.691
+        }
+      ],
+      "file": "eb0.mp3",
+      "seconds": 5.042,
+      "frames": 151
+    },
+    "eb1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 차를 한 대 샀지만, 그 차는 오래된 것이었습니다.",
+          "file": "parts/eb1_01_kr.mp3",
+          "hash": "e5cc3e45475ed424",
+          "seconds": 4.676
+        },
+        {
+          "lang": "en",
+          "text": "He bought a car which was old.",
+          "file": "parts/eb1_02_en.mp3",
+          "hash": "671edf0933f4fc0d",
+          "seconds": 1.933
+        }
+      ],
+      "file": "eb1.mp3",
+      "seconds": 6.792,
+      "frames": 204
+    },
+    "eb2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀는 한 남자를 알고 있었지만, 그 남자는 수줍음이 많았습니다.",
+          "file": "parts/eb2_01_kr.mp3",
+          "hash": "0310439b502ef170",
+          "seconds": 5.277
+        },
+        {
+          "lang": "en",
+          "text": "She knew a man who was shy.",
+          "file": "parts/eb2_02_en.mp3",
+          "hash": "029608b3c2629015",
+          "seconds": 1.672
+        }
+      ],
+      "file": "eb2.mp3",
+      "seconds": 7.105,
+      "frames": 213
+    },
+    "eb3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 집을 한 채 방문했지만, 그 집은 비어 있었습니다.",
+          "file": "parts/eb3_01_kr.mp3",
+          "hash": "1c2d17d5222f0ee2",
+          "seconds": 4.676
+        },
+        {
+          "lang": "en",
+          "text": "I visited a house which was empty.",
+          "file": "parts/eb3_02_en.mp3",
+          "hash": "6c872ad1dce0199a",
+          "seconds": 2.116
+        }
+      ],
+      "file": "eb3.mp3",
+      "seconds": 6.975,
+      "frames": 209
+    },
+    "ew0": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그렇다면 명사가 없을 때 쓰는",
+          "file": "parts/ew0_01_kr.mp3",
+          "hash": "b9c1e2cd84a12ba0",
+          "seconds": 2.691
+        },
+        {
+          "lang": "en",
+          "text": "what",
+          "file": "parts/ew0_02_en.mp3",
+          "hash": "0928e8c23d74d358",
+          "seconds": 0.653
+        },
+        {
+          "lang": "kr",
+          "text": "은 어떻게 쓸까요?",
+          "file": "parts/ew0_03_kr.mp3",
+          "hash": "6304ba88e5756278",
+          "seconds": 1.332
+        },
+        {
+          "lang": "en",
+          "text": "what",
+          "file": "parts/ew0_04_en.mp3",
+          "hash": "0928e8c23d74d358",
+          "seconds": 0.731
+        },
+        {
+          "lang": "kr",
+          "text": "은 “내가 ~하는 것”이라고 해석하면 됩니다.",
+          "file": "parts/ew0_05_kr.mp3",
+          "hash": "c12106faa1ab353d",
+          "seconds": 3.527
+        }
+      ],
+      "file": "ew0.mp3",
+      "seconds": 9.561,
+      "frames": 287
+    },
+    "ew1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "나는 네가 말한 ‘것’을 원한다.",
+          "file": "parts/ew1_01_kr.mp3",
+          "hash": "f7e5b346533eef3d",
+          "seconds": 2.273
+        },
+        {
+          "lang": "en",
+          "text": "I want what you said.",
+          "file": "parts/ew1_02_en.mp3",
+          "hash": "24ba7613386547ed",
+          "seconds": 1.489
+        }
+      ],
+      "file": "ew1.mp3",
+      "seconds": 3.918,
+      "frames": 118
+    },
+    "ew2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "이것이 내가 찾던 ‘것’이다.",
+          "file": "parts/ew2_01_kr.mp3",
+          "hash": "6997732f5c23ae01",
+          "seconds": 1.933
+        },
+        {
+          "lang": "en",
+          "text": "This is what I looked for.",
+          "file": "parts/ew2_02_en.mp3",
+          "hash": "c894c500ae302f17",
+          "seconds": 1.515
+        }
+      ],
+      "file": "ew2.mp3",
+      "seconds": 3.631,
+      "frames": 109
+    },
+    "s01": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 한 여자를 만났습니다. 그런데 그 여자는 환하게 미소 짓고 있었죠.",
+          "file": "parts/s01_01_kr.mp3",
+          "hash": "37dd61a554fc9c63",
+          "seconds": 5.799
+        },
+        {
+          "lang": "en",
+          "text": "He met a woman who was smiling brightly.",
+          "file": "parts/s01_02_en.mp3",
+          "hash": "3cc635021d44f826",
+          "seconds": 2.325
+        }
+      ],
+      "file": "s01.mp3",
+      "seconds": 8.281,
+      "frames": 248
+    },
+    "s02": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그녀는 아름다운 그림을 그리고 있었습니다. 그런데 그 그림은 마음을 따뜻하게 해주었죠.",
+          "file": "parts/s02_01_kr.mp3",
+          "hash": "85bc2f9ca41ce128",
+          "seconds": 7.131
+        },
+        {
+          "lang": "en",
+          "text": "She was painting a picture which warmed his heart.",
+          "file": "parts/s02_02_en.mp3",
+          "hash": "291f7436ebc2b3c8",
+          "seconds": 2.769
+        }
+      ],
+      "file": "s02.mp3",
+      "seconds": 10.083,
+      "frames": 302
+    },
+    "s03": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그는 그녀가 진심으로 필요로 했던 ‘것’을 조심스럽게 선물했습니다.",
+          "file": "parts/s03_01_kr.mp3",
+          "hash": "71e7265cf1782a04",
+          "seconds": 5.329
+        },
+        {
+          "lang": "en",
+          "text": "He gave her what she really needed.",
+          "file": "parts/s03_02_en.mp3",
+          "hash": "69ed83519660597c",
+          "seconds": 2.09
+        }
+      ],
+      "file": "s03.mp3",
+      "seconds": 7.576,
+      "frames": 227
+    },
+    "s04": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것은 바로 그녀가 오랫동안 원했던 ‘것’이었습니다.",
+          "file": "parts/s04_01_kr.mp3",
+          "hash": "e251d28e249e1441",
+          "seconds": 3.944
+        },
+        {
+          "lang": "en",
+          "text": "It was exactly what she had wanted for a long time.",
+          "file": "parts/s04_02_en.mp3",
+          "hash": "f80cda1ea79a31bf",
+          "seconds": 3.239
+        }
+      ],
+      "file": "s04.mp3",
+      "seconds": 7.34,
+      "frames": 220
+    },
+    "s05": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "두 사람은 작고 아늑한 카페로 들어갔습니다. 그런데 그 카페는 거리에 위치해 있었죠.",
+          "file": "parts/s05_01_kr.mp3",
+          "hash": "b3eb7769827020b9",
+          "seconds": 6.922
+        },
+        {
+          "lang": "en",
+          "text": "They entered a cozy cafe that was located on the street.",
+          "file": "parts/s05_02_en.mp3",
+          "hash": "72e8d023a53682b7",
+          "seconds": 3.004
+        }
+      ],
+      "file": "s05.mp3",
+      "seconds": 10.083,
+      "frames": 302
+    },
+    "s06": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그곳에서 그들은 한 친절한 바리스타를 보았습니다. 그런데 그 사람은 따뜻한 차를 내어주었습니다.",
+          "file": "parts/s06_01_kr.mp3",
+          "hash": "7202661bea7f3257",
+          "seconds": 7.105
+        },
+        {
+          "lang": "en",
+          "text": "They saw a kind barista who served warm tea.",
+          "file": "parts/s06_02_en.mp3",
+          "hash": "0244950903a23b5a",
+          "seconds": 2.769
+        }
+      ],
+      "file": "s06.mp3",
+      "seconds": 10.031,
+      "frames": 301
+    },
+    "s07": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그들은 오늘 서로가 마음속으로 배운 ‘것’에 대해 깊은 대화를 나누었습니다.",
+          "file": "parts/s07_01_kr.mp3",
+          "hash": "2ea19f537a80b574",
+          "seconds": 5.094
+        },
+        {
+          "lang": "en",
+          "text": "They talked about what they learned today.",
+          "file": "parts/s07_02_en.mp3",
+          "hash": "5dbb28aa4b1018c3",
+          "seconds": 2.116
+        }
+      ],
+      "file": "s07.mp3",
+      "seconds": 7.393,
+      "frames": 222
+    },
+    "s08": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "테이블 위에는 오래된 시집 한 권이 놓여 있었습니다. 그런데 그 시집은 깊은 감동을 주었죠.",
+          "file": "parts/s08_01_kr.mp3",
+          "hash": "5eb66cc5fe1993cf",
+          "seconds": 8.385
+        },
+        {
+          "lang": "en",
+          "text": "A poetry book that brought deep emotion was on the table.",
+          "file": "parts/s08_02_en.mp3",
+          "hash": "a455e1bb3d1e05a6",
+          "seconds": 3.004
+        }
+      ],
+      "file": "s08.mp3",
+      "seconds": 11.572,
+      "frames": 347
+    },
+    "s09": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "그것은 그에게 잊을 수 없는 소중한 기억이 되었습니다. 그런데 그 기억은 오래도록 머물렀습니다.",
+          "file": "parts/s09_01_kr.mp3",
+          "hash": "3137200ba197d1a4",
+          "seconds": 7.941
+        },
+        {
+          "lang": "en",
+          "text": "It became a precious memory which stayed with him for a long time.",
+          "file": "parts/s09_02_en.mp3",
+          "hash": "57d2924a44572dc7",
+          "seconds": 4.023
+        }
+      ],
+      "file": "s09.mp3",
+      "seconds": 12.121,
+      "frames": 364
+    },
+    "o1": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "오늘은 관계대명사의 본질인 ‘접속사+대명사’의 역할과,",
+          "file": "parts/o1_01_kr.mp3",
+          "hash": "b342f48bc53b836b",
+          "seconds": 5.329
+        },
+        {
+          "lang": "en",
+          "text": "and, or, but",
+          "file": "parts/o1_02_en.mp3",
+          "hash": "c0a6d7ec9dd10eea",
+          "seconds": 1.202
+        },
+        {
+          "lang": "kr",
+          "text": "과 함께 중복해서 쓰지 않는다는 중요한 규칙을 배웠습니다.",
+          "file": "parts/o1_03_kr.mp3",
+          "hash": "046074a6597f1eb9",
+          "seconds": 4.963
+        }
+      ],
+      "file": "o1.mp3",
+      "seconds": 11.807,
+      "frames": 354
+    },
+    "o2": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "사람이면",
+          "file": "parts/o2_01_kr.mp3",
+          "hash": "7bafde9d5a2b2f63",
+          "seconds": 1.202
+        },
+        {
+          "lang": "en",
+          "text": "who",
+          "file": "parts/o2_02_en.mp3",
+          "hash": "72fc0e36d4b617b0",
+          "seconds": 0.679
+        },
+        {
+          "lang": "kr",
+          "text": ", 사물이면",
+          "file": "parts/o2_03_kr.mp3",
+          "hash": "cca4c2a4984b484d",
+          "seconds": 1.28
+        },
+        {
+          "lang": "en",
+          "text": "which",
+          "file": "parts/o2_04_en.mp3",
+          "hash": "e5936f8a7b2484a2",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": ", 다재다능한",
+          "file": "parts/o2_05_kr.mp3",
+          "hash": "d4acd1f17b655e6a",
+          "seconds": 1.384
+        },
+        {
+          "lang": "en",
+          "text": "that",
+          "file": "parts/o2_06_en.mp3",
+          "hash": "544cc90e11df9c41",
+          "seconds": 0.653
+        },
+        {
+          "lang": "kr",
+          "text": ", 스스로 ‘~하는 것’을 만드는",
+          "file": "parts/o2_07_kr.mp3",
+          "hash": "894309c2c1ff15fc",
+          "seconds": 2.116
+        },
+        {
+          "lang": "en",
+          "text": "what",
+          "file": "parts/o2_08_en.mp3",
+          "hash": "0928e8c23d74d358",
+          "seconds": 0.836
+        },
+        {
+          "lang": "kr",
+          "text": "의 원리를 꼭 기억하세요.",
+          "file": "parts/o2_09_kr.mp3",
+          "hash": "ab0ad51a2bd3a9a6",
+          "seconds": 1.985
+        }
+      ],
+      "file": "o2.mp3",
+      "seconds": 12.278,
+      "frames": 368
+    },
+    "o3": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+          "file": "parts/o3_01_kr.mp3",
+          "hash": "7504c05925950cfa",
+          "seconds": 4.023
+        }
+      ],
+      "file": "o3.mp3",
+      "seconds": 4.023,
+      "frames": 121
+    },
+    "o4": {
+      "segments": [
+        {
+          "lang": "kr",
+          "text": "감사합니다.",
+          "file": "parts/o4_01_kr.mp3",
+          "hash": "529f016c9727d15d",
+          "seconds": 1.202
+        }
+      ],
+      "file": "o4.mp3",
+      "seconds": 1.202,
+      "frames": 36
+    }
+  }
+}

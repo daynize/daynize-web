@@ -1,0 +1,176 @@
+[
+  {
+    "id": "i1a",
+    "scene": "intro",
+    "kr": "우리말은 동사에 ‘~하는 것’이나 ‘~하기’를 붙여서 명사처럼 만들어 사용합니다.",
+    "en": null
+  },
+  {
+    "id": "i1b",
+    "scene": "intro",
+    "kr": "‘공부하기’, ‘여행하는 것’처럼 말이죠.",
+    "en": null
+  },
+  {
+    "id": "i2",
+    "scene": "intro",
+    "kr": "영어에서도 동사를 명사처럼 바꿔쓰는 두 가지 변신 장치가 있습니다.",
+    "en": null
+  },
+  {
+    "id": "i3",
+    "scene": "intro",
+    "kr": "그것을 알아야 영어의 기초가 됩니다. 바로 동명사({v|-ing})와 to부정사({p|to-V})입니다.",
+    "en": null
+  },
+  {
+    "id": "i4",
+    "scene": "intro",
+    "kr": "동사의 옷을 벗고 명사의 자리로 들어가는 품사, 동명사와 부정사입니다.",
+    "en": null
+  },
+  {
+    "id": "i5",
+    "scene": "intro",
+    "kr": "동명사({v|-ing})는 이미 일어났거나 생생하게 경험해 본 과거와 현재의 느낌을 가집니다.",
+    "en": null
+  },
+  {
+    "id": "i6",
+    "scene": "intro",
+    "kr": "즐겼던 것({v|enjoying}), 끝낸 것({v|finishing}), 포기했던 것({v|giving up}), 피했던 것({v|avoiding})을 나타내는 명사들입니다.",
+    "en": null
+  },
+  {
+    "id": "i7",
+    "scene": "intro",
+    "kr": "to부정사({p|to-V})는 화살표({p|to})처럼 앞으로 나아갈 미래의 계획과 의지의 느낌을 가집니다.",
+    "en": null
+  },
+  {
+    "id": "i8",
+    "scene": "intro",
+    "kr": "원하는 것({p|to want}), 희망하는 것({p|to hope}), 약속하는 것({p|to promise}), 결정하는 것({p|to decide})을 나타내는 명사들입니다.",
+    "en": null
+  },
+  {
+    "id": "b1a",
+    "scene": "bridge",
+    "kr": "예를 들어, “나 담배 끊었어”라고 할 때,",
+    "en": null
+  },
+  {
+    "id": "b1b",
+    "scene": "bridge",
+    "kr": "{e|I stopped to smoke}라고 쓰면 “나 길을 가다가 담배를 피우기 위해 멈춰 섰다”라는 완전히 반대의 뜻이 되어 아주 어색하고 위험한 문장이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b1c",
+    "scene": "bridge",
+    "kr": "내가 이전에 계속해 오던 행동을 그만둔 것이므로 {e|I stopped smoking}처럼 {v|동명사}를 써야 완성된 문장이 됩니다.",
+    "en": null
+  },
+  {
+    "id": "b2a",
+    "scene": "bridge",
+    "kr": "다시 한 번 말하자면,",
+    "en": null
+  },
+  {
+    "id": "b2b",
+    "scene": "bridge",
+    "kr": "{v|동명사}({v|-ing})는 지나온 과거의 생생한 경험, {p|to부정사}({p|to-V})는 앞으로 나아갈 미래의 목적입니다.",
+    "en": null
+  },
+  {
+    "id": "b2c",
+    "scene": "bridge",
+    "kr": "따라서 동사가 바라보는 시간의 방향에 따라 {v|-ing}와 {p|to-V}라는 다리를 정확히 선택해 주어야 합니다.",
+    "en": null
+  },
+  {
+    "id": "b3a",
+    "scene": "bridge",
+    "kr": "{e|I plan visiting Seoul}은 서울 방문했던 것을 계획한다는 어색한 문장이고,",
+    "en": null
+  },
+  {
+    "id": "b3b",
+    "scene": "bridge",
+    "kr": "{e|I plan to visit Seoul}은 앞으로 서울을 방문할 것을 계획한다는 올바른 문장입니다.",
+    "en": null
+  },
+  {
+    "id": "s01",
+    "scene": "story",
+    "kr": "그는 조용한 카페에 앉아 좋아하는 음악 듣는 것을 즐겼습니다.",
+    "en": "{e|He} {e|enjoyed} {v|listening} {e|to} {e|his} {e|favorite} {e|music.}"
+  },
+  {
+    "id": "s02",
+    "scene": "story",
+    "kr": "그동안 해오던 일을 마침내 잘 마무리한 후였죠.",
+    "en": "{e|He} {e|finally} {e|finished} {v|working} {e|on} {e|his} {e|project.}"
+  },
+  {
+    "id": "s03",
+    "scene": "story",
+    "kr": "복잡했던 지난날의 걱정들은 이제 모두 그만두기로 했습니다.",
+    "en": "{e|He} {e|stopped} {v|worrying} {e|about} {e|the} {e|past.}"
+  },
+  {
+    "id": "s04",
+    "scene": "story",
+    "kr": "그리고 낯선 도시로 새로운 여행을 떠나기로 결정했습니다.",
+    "en": "{e|He} {e|decided} {p|to travel} {e|to} {e|a} {e|new} {e|city.}"
+  },
+  {
+    "id": "s05",
+    "scene": "story",
+    "kr": "그곳에서 뜻밖의 소중한 인연을 만나기를 진심으로 희망했죠.",
+    "en": "{e|He} {e|hoped} {p|to meet} {e|a} {e|special} {e|person} {e|there.}"
+  },
+  {
+    "id": "s06",
+    "scene": "story",
+    "kr": "기차역에 도착한 그는 기차표를 사기 위해 차분히 줄을 섰습니다.",
+    "en": "{e|He} {e|waited} {e|in} {e|line} {p|to buy} {e|a} {e|train} {e|ticket.}"
+  },
+  {
+    "id": "s07",
+    "scene": "story",
+    "kr": "창가에 앉아, 그는 떠나가는 풍경을 바라보는 것을 좋아했습니다.",
+    "en": "{e|He} {e|liked} {v|watching} {e|the} {e|passing} {e|scenery.}"
+  },
+  {
+    "id": "s08",
+    "scene": "story",
+    "kr": "동시에, 새로 마주할 그곳에서의 내일을 계속해서 꿈꾸었습니다.",
+    "en": "{e|He} {e|wished} {p|to create} {e|unforgettable} {e|memories.}"
+  },
+  {
+    "id": "o1",
+    "scene": "outro",
+    "kr": "오늘은 동사의 명사 변신, {v|동명사}와 {p|to부정사}에 대해 배웠습니다.",
+    "en": null
+  },
+  {
+    "id": "o2",
+    "scene": "outro",
+    "kr": "지나온 생생한 경험은 {v|-ing}, 앞으로 나아갈 미래의 의지는 {p|to-V}라는 시간의 방향을 꼭 기억하세요.",
+    "en": null
+  },
+  {
+    "id": "o3",
+    "scene": "outro",
+    "kr": "배운 내용을 스스로에게 다시 한 번 설명해 보시기 바랍니다.",
+    "en": null
+  },
+  {
+    "id": "o4",
+    "scene": "outro",
+    "kr": "감사합니다.",
+    "en": null
+  }
+]
