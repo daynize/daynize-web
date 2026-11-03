@@ -562,13 +562,14 @@
             modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
             window.addEventListener('keydown', event => { if (event.key === 'Escape') closeModal(); });
 
-            // 카카오/구글 OAuth가 아직 없으므로, 실제 존재하는 메인 사이트 수강 신청 폼으로 보낸다.
-            // 절대 URL이어야 file:// 미리보기나 서브도메인 호스팅에서도 깨지지 않는다.
-            // TODO: 소셜 로그인 도입 시 provider별 OAuth 시작 URL로 교체
-            const SIGNUP_BASE = 'https://www.daynize.co.kr/';
+            // 백엔드 OAuth 시작 엔드포인트로 이동 → 로그인 완료 후 메인 수강 신청 폼으로 복귀.
+            const API_BASE = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+                ? `http://${window.location.hostname}:8081`
+                : 'https://api.daynize.co.kr';
+            const RETURN_TO = 'https://www.daynize.co.kr/?via=landing#register';
             document.querySelectorAll('[data-provider]').forEach(button => {
                 button.addEventListener('click', () => {
-                    window.location.href = `${SIGNUP_BASE}?via=landing&provider=${button.dataset.provider}#register`;
+                    window.location.href = `${API_BASE}/api/auth/${button.dataset.provider}?return_to=${encodeURIComponent(RETURN_TO)}`;
                 });
             });
         })();

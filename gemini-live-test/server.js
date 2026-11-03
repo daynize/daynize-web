@@ -3,6 +3,7 @@ const fs = require('node:fs/promises');
 const path = require('node:path');
 const { WebSocket, WebSocketServer } = require('ws');
 const { createPaymentApi } = require('./payment-api');
+const { createAuthApi } = require('./auth-api');
 const { createLatencyTrace } = require('./latency-trace');
 require('dotenv').config({ path: path.join(__dirname, '.env'), quiet: true });
 
@@ -70,6 +71,19 @@ function createRelayServer(options = {}) {
         fetchImpl: options.paymentFetchImpl ?? fetchImpl,
         now: options.paymentNow
     });
+    const authApi = createAuthApi({
+        kakaoClientId: options.kakaoClientId,
+        kakaoClientSecret: options.kakaoClientSecret,
+        kakaoRedirectUri: options.kakaoRedirectUri,
+        googleClientId: options.googleClientId,
+        googleClientSecret: options.googleClientSecret,
+        googleRedirectUri: options.googleRedirectUri,
+        sessionSecret: options.authSessionSecret,
+        defaultReturnTo: options.authDefaultReturnTo,
+        allowedOrigins: trustedOrigins,
+        fetchImpl: options.authFetchImpl ?? fetchImpl,
+        now: options.authNow
+    });
     if (!Number.isInteger(maxTranscriptionBytes) || maxTranscriptionBytes < 44 || !Number.isInteger(maxTranscriptionsPerMinute) || maxTranscriptionsPerMinute < 1) {
         throw new Error('Invalid transcription limits.');
     }
@@ -112,6 +126,14 @@ function createRelayServer(options = {}) {
             if (await paymentApi.handle(request, response, pathname)) return;
         } catch (error) {
             console.error('[payment] handler failure', error);
+            if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
+            response.end();
+            return;
+        }
+        try {
+            if (await authApi.handle(request, response, pathname)) return;
+        } catch (error) {
+            console.error('[auth] handler failure', error);
             if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
             response.end();
             return;
