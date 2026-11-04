@@ -2,8 +2,12 @@ const http = require('node:http');
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const { WebSocket, WebSocketServer } = require('ws');
+const { randomBytes } = require('node:crypto');
 const { createPaymentApi } = require('./payment-api');
 const { createAuthApi } = require('./auth-api');
+const { createFreePassApi } = require('./free-pass-api');
+const { createStore } = require('./store');
+const { createCookieCodec } = require('./session-cookie');
 const { createLatencyTrace } = require('./latency-trace');
 require('dotenv').config({ path: path.join(__dirname, '.env'), quiet: true });
 
@@ -71,6 +75,30 @@ function createRelayServer(options = {}) {
         fetchImpl: options.paymentFetchImpl ?? fetchImpl,
         now: options.paymentNow
     });
+    let authSessionSecret = options.authSessionSecret ?? process.env.AUTH_SESSION_SECRET ?? '';
+    if (!authSessionSecret) {
+        authSessionSecret = randomBytes(32).toString('hex');
+        console.warn('[auth] AUTH_SESSION_SECRET is not set; using a per-boot secret, so logins and guest passes reset on every restart. Set it with: fly secrets set AUTH_SESSION_SECRET=$(openssl rand -hex 32)');
+    }
+    const cookieCodec = createCookieCodec({ secret: authSessionSecret, now: options.authNow ?? Date.now });
+    // DATA_DIR(플라이 볼륨)이 없으면 메모리 DB라 재시작 시 게스트 패스/학습 데이터가 사라진다.
+    const dataDir = options.dataDir ?? process.env.DATA_DIR;
+    const store = options.store ?? createStore({ path: dataDir ? path.join(dataDir, 'daynize.sqlite') : ':memory:' });
+    if (!dataDir && !options.store) console.warn('[free-pass] DATA_DIR is not set; guest passes and study data live in memory only.');
+    const freePassApi = createFreePassApi({
+        store,
+        codec: cookieCodec,
+        allowedOrigins: trustedOrigins,
+        now: options.authNow,
+        durationMs: options.freePassDurationMs,
+        maxVoiceSessions: options.freePassMaxVoiceSessions,
+        maxVoiceSessionMs: options.freePassMaxVoiceSessionMs,
+        maxPassesPerIpPerDay: options.freePassMaxPerIpPerDay,
+        maxStartsPerMinute: options.freePassMaxStartsPerMinute,
+        trustProxyHeaders: options.trustProxyHeaders
+    });
+    // 음성 WS 게이트는 프론트가 /api/free-pass/start 를 호출하고 WS 가 api 호스트(쿠키 전달)로 붙을 때만 켠다.
+    const enforceVoiceLimits = options.enforceVoiceLimits ?? ['1', 'true', 'on'].includes(String(process.env.FREE_PASS_ENFORCE_VOICE || '').toLowerCase());
     const authApi = createAuthApi({
         kakaoClientId: options.kakaoClientId,
         kakaoClientSecret: options.kakaoClientSecret,
@@ -78,11 +106,12 @@ function createRelayServer(options = {}) {
         googleClientId: options.googleClientId,
         googleClientSecret: options.googleClientSecret,
         googleRedirectUri: options.googleRedirectUri,
-        sessionSecret: options.authSessionSecret,
+        codec: cookieCodec,
         defaultReturnTo: options.authDefaultReturnTo,
         allowedOrigins: trustedOrigins,
         fetchImpl: options.authFetchImpl ?? fetchImpl,
-        now: options.authNow
+        now: options.authNow,
+        onLogin: freePassApi.onLogin
     });
     if (!Number.isInteger(maxTranscriptionBytes) || maxTranscriptionBytes < 44 || !Number.isInteger(maxTranscriptionsPerMinute) || maxTranscriptionsPerMinute < 1) {
         throw new Error('Invalid transcription limits.');
@@ -134,6 +163,14 @@ function createRelayServer(options = {}) {
             if (await authApi.handle(request, response, pathname)) return;
         } catch (error) {
             console.error('[auth] handler failure', error);
+            if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
+            response.end();
+            return;
+        }
+        try {
+            if (await freePassApi.handle(request, response, pathname)) return;
+        } catch (error) {
+            console.error('[free-pass] handler failure', error);
             if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
             response.end();
             return;
@@ -340,10 +377,19 @@ function createRelayServer(options = {}) {
             socket.end('HTTP/1.1 429 Too Many Requests\r\nConnection: close\r\n\r\n');
             return;
         }
-        clients.handleUpgrade(request, socket, head, client => clients.emit('connection', client, requestedVoice, sessionId, requestUrl.pathname === '/ws/transcribe', expectsInit));
+        let sessionLimitMs = maxSessionMs;
+        if (enforceVoiceLimits) {
+            const gate = freePassApi.checkVoice(request);
+            if (!gate.ok) {
+                socket.end(`HTTP/1.1 ${gate.status} ${gate.status === 429 ? 'Too Many Requests' : 'Forbidden'}\r\nX-Free-Pass: ${gate.reason}\r\nConnection: close\r\n\r\n`);
+                return;
+            }
+            if (!gate.member) sessionLimitMs = Math.min(maxSessionMs, gate.maxSessionMs);
+        }
+        clients.handleUpgrade(request, socket, head, client => clients.emit('connection', client, requestedVoice, sessionId, requestUrl.pathname === '/ws/transcribe', expectsInit, sessionLimitMs));
     });
 
-    clients.on('connection', (client, requestedVoice, sessionId, transcriptionOnly = false, expectsInit = false) => {
+    clients.on('connection', (client, requestedVoice, sessionId, transcriptionOnly = false, expectsInit = false, sessionLimitMs = maxSessionMs) => {
         for (const [key, session] of resumableSessions) if (session.expiresAt <= Date.now()) resumableSessions.delete(key);
         const resumeKey = sessionId ? `${sessionId}:${requestedVoice}` : undefined;
         const resumeHandle = resumableSessions.get(resumeKey)?.handle;
@@ -367,7 +413,7 @@ function createRelayServer(options = {}) {
         trace.event('session_open', { mode: transcriptionOnly ? 'transcribe' : 'live' });
         let clientPingAt;
         let upstreamPingAt;
-        const sessionTimer = setTimeout(() => fail('Your conversation time limit was reached. Start a new session.'), maxSessionMs);
+        const sessionTimer = setTimeout(() => fail('Your conversation time limit was reached. Start a new session.'), sessionLimitMs);
         const heartbeat = setInterval(() => {
             if (!alive) return client.terminate();
             alive = false;
@@ -573,6 +619,7 @@ function createRelayServer(options = {}) {
             for (const client of clients.clients) client.terminate();
             await new Promise(resolve => clients.close(resolve));
             if (server.listening) await new Promise(resolve => server.close(resolve));
+            if (!options.store) store.close();
         }
     };
 }

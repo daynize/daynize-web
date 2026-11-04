@@ -562,6 +562,13 @@
             modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
             window.addEventListener('keydown', event => { if (event.key === 'Escape') closeModal(); });
 
+            // 메인에서 10분 무료 체험이 끝나 넘어온 경우(free-pass.js → /landing/?expired=1): 만료 문구로 바로 모달을 연다.
+            if (new URLSearchParams(window.location.search).get('expired') === '1') {
+                modal.querySelector('.modal-head h3').textContent = '10분 무료 체험이 완료되었습니다!';
+                modal.querySelector('.modal-card > p').textContent = '3초 소셜 로그인하고 방금 공부한 기록을 이어가세요.';
+                openModal();
+            }
+
             // 백엔드 OAuth 시작 엔드포인트로 이동 → 로그인 완료 후 메인 수강 신청 폼으로 복귀.
             const API_BASE = ['localhost', '127.0.0.1'].includes(window.location.hostname)
                 ? `http://${window.location.hostname}:8081`

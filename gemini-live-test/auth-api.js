@@ -1,11 +1,11 @@
-const { randomBytes, createHmac, timingSafeEqual } = require('node:crypto');
+const { randomBytes } = require('node:crypto');
+const { SESSION_COOKIE, b64url, createCookieCodec, isSecure, setCookie, readCookie } = require('./session-cookie');
 
 // 카카오/구글 OAuth 2.0 인가 코드 플로우. payment-api와 같은 모듈 패턴:
 // createAuthApi(options) -> { handle(request, response, pathname) }.
-// 유저 DB가 없는 서버라서 세션은 HMAC 서명된 무상태 쿠키 하나로 유지한다
-// (재시작해도 로그인 유지, 서버에는 아무것도 저장하지 않음).
+// 세션은 HMAC 서명된 무상태 쿠키 하나로 유지한다(재시작해도 로그인 유지).
+// 로그인 성공 시 options.onLogin({ request, user }) 훅으로 회원 저장/게스트 패스 연결을 위임한다.
 
-const SESSION_COOKIE = 'daynize_session';
 const STATE_COOKIE = 'daynize_oauth_state';
 const SESSION_TTL_S = 30 * 24 * 60 * 60;
 const STATE_TTL_S = 10 * 60;
@@ -44,8 +44,6 @@ function json(response, status, value, headers = {}) {
     response.end(JSON.stringify(value));
 }
 
-const b64url = value => Buffer.from(value).toString('base64url');
-
 function createAuthApi(options = {}) {
     const credentials = {
         kakao: {
@@ -62,11 +60,17 @@ function createAuthApi(options = {}) {
     const allowedOrigins = options.allowedOrigins ?? (process.env.ALLOWED_ORIGINS || '').split(',').filter(Boolean);
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
     const now = options.now ?? Date.now;
-    let sessionSecret = options.sessionSecret ?? process.env.AUTH_SESSION_SECRET ?? '';
-    if (!sessionSecret) {
-        sessionSecret = randomBytes(32).toString('hex');
-        console.warn('[auth] AUTH_SESSION_SECRET is not set; using a per-boot secret, so logins reset on every restart. Set it with: fly secrets set AUTH_SESSION_SECRET=$(openssl rand -hex 32)');
+    const onLogin = options.onLogin;
+    let codec = options.codec;
+    if (!codec) {
+        let sessionSecret = options.sessionSecret ?? process.env.AUTH_SESSION_SECRET ?? '';
+        if (!sessionSecret) {
+            sessionSecret = randomBytes(32).toString('hex');
+            console.warn('[auth] AUTH_SESSION_SECRET is not set; using a per-boot secret, so logins reset on every restart. Set it with: fly secrets set AUTH_SESSION_SECRET=$(openssl rand -hex 32)');
+        }
+        codec = createCookieCodec({ secret: sessionSecret, now });
     }
+    const { seal, unseal } = codec;
     // 로그인 완료 후 돌아갈 기본 페이지(보통 www 메인). return_to는 허용 오리진으로 제한해 오픈 리다이렉트를 막는다.
     const defaultReturnTo = options.defaultReturnTo ?? (allowedOrigins[0] ? `${allowedOrigins[0]}/` : '/');
 
@@ -74,25 +78,6 @@ function createAuthApi(options = {}) {
     for (const provider of Object.keys(PROVIDERS)) {
         console.info(`[auth] ${provider}: ${ready(provider) ? 'ready' : `DISABLED, missing ${['CLIENT_ID', 'REDIRECT_URI'].filter(key => !credentials[provider][key === 'CLIENT_ID' ? 'clientId' : 'redirectUri']).map(key => `${provider.toUpperCase()}_${key}`).join(', ')}`}`);
     }
-
-    const sign = payload => createHmac('sha256', sessionSecret).update(payload).digest('base64url');
-    const seal = value => {
-        const payload = b64url(JSON.stringify(value));
-        return `${payload}.${sign(payload)}`;
-    };
-    const unseal = token => {
-        const [payload, signature] = String(token || '').split('.');
-        if (!payload || !signature) return null;
-        const expected = sign(payload);
-        const given = Buffer.from(signature);
-        if (given.length !== Buffer.from(expected).length || !timingSafeEqual(given, Buffer.from(expected))) return null;
-        try {
-            const value = JSON.parse(Buffer.from(payload, 'base64url').toString('utf8'));
-            return Number(value.exp) > Math.floor(now() / 1000) ? value : null;
-        } catch {
-            return null;
-        }
-    };
 
     const loopbackHost = /^(localhost|127\.0\.0\.1|\[::1\]):\d+$/;
     const devOrigin = /^http:\/\/(localhost|127\.0\.0\.1):(5500|8081)$/;
@@ -110,11 +95,8 @@ function createAuthApi(options = {}) {
         'Access-Control-Max-Age': '600',
         Vary: 'Origin'
     } : {};
-    const secure = request => request.socket.encrypted || request.headers['x-forwarded-proto'] === 'https';
-    const cookie = (request, name, value, maxAge, path = '/') =>
-        `${name}=${value}; HttpOnly; Path=${path}; Max-Age=${maxAge}; SameSite=Lax${secure(request) ? '; Secure' : ''}`;
-    const readCookie = (request, name) => (request.headers.cookie || '')
-        .split(';').map(part => part.trim()).find(part => part.startsWith(`${name}=`))?.slice(name.length + 1);
+    const secure = isSecure;
+    const cookie = setCookie;
 
     // return_to는 허용된 오리진(또는 로컬 개발 오리진)의 URL만 받는다.
     const safeReturnTo = raw => {
@@ -251,7 +233,14 @@ function createAuthApi(options = {}) {
         }
 
         const issuedAt = Math.floor(now() / 1000);
-        const session = seal({ provider, id: profile.id, name: profile.name, email: profile.email, iat: issuedAt, exp: issuedAt + SESSION_TTL_S });
+        const user = { provider, id: profile.id, name: profile.name, email: profile.email };
+        const session = seal({ ...user, iat: issuedAt, exp: issuedAt + SESSION_TTL_S });
+        // 회원 저장 실패가 로그인 자체를 막아서는 안 된다.
+        try {
+            await onLogin?.({ request, user });
+        } catch (error) {
+            console.error(`[auth] onLogin hook failed for ${provider}:${profile.id}`, error);
+        }
         const target = resolveTarget(request, returnTo);
         target.searchParams.set('login', provider);
         console.info(`[auth] ${provider} login ok (user ${profile.id})`);

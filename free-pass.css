@@ -1,0 +1,263 @@
+/* 비회원 10분 무료 체험 배너 + 가입 전환 모달 (free-pass.js) */
+
+.free-pass-banner {
+    position: fixed;
+    inset: 12px 0 auto;
+    z-index: 900;
+    display: flex;
+    justify-content: center;
+    padding: 0 12px;
+    pointer-events: none;
+}
+
+.free-pass-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 100%;
+    padding: 7px 14px;
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: 999px;
+    background: #053A41;
+    color: #fff;
+    font: 600 13px/1.2 var(--sans, "Noto Sans KR", sans-serif);
+    box-shadow: 0 10px 30px -12px rgba(5, 58, 65, .5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    pointer-events: auto;
+    transition: background .3s ease, border-color .3s ease;
+}
+
+.free-pass-banner.is-urgent .free-pass-pill {
+    background: #FF6648;
+    border-color: rgba(255, 102, 72, .4);
+}
+
+.free-pass-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.free-pass-clock {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #F67608;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.free-pass-banner.is-urgent .free-pass-clock {
+    background: rgba(255, 255, 255, .25);
+}
+
+.free-pass-divider {
+    width: 1px;
+    height: 16px;
+    background: rgba(255, 255, 255, .3);
+}
+
+.free-pass-cta {
+    padding: 2px 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    text-underline-offset: 4px;
+}
+
+.free-pass-cta:hover { text-decoration: underline; }
+
+.free-pass-label-short { display: none; }
+
+@media (max-width: 640px) {
+    .free-pass-label-long { display: none; }
+    .free-pass-label-short { display: inline; }
+    .free-pass-pill { gap: 8px; padding: 6px 12px; font-size: 12px; }
+}
+
+/* 배너가 sticky 헤더 위에 뜨므로 헤더 상단 여백을 조금 확보 */
+body:has(.free-pass-banner) .site-header { padding-top: 44px; }
+
+body.free-pass-lock { overflow: hidden; }
+
+.free-pass-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(5, 58, 65, .5);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+.free-pass-modal.open { opacity: 1; pointer-events: auto; }
+
+@media (min-width: 640px) {
+    .free-pass-modal { align-items: center; }
+}
+
+.free-pass-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .25);
+    font-family: var(--sans, "Noto Sans KR", sans-serif);
+    transform: translateY(24px);
+    transition: transform .3s ease;
+}
+
+.free-pass-modal.open .free-pass-card { transform: none; }
+
+.free-pass-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.free-pass-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(246, 118, 8, .1);
+    color: #F67608;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.free-pass-close {
+    display: grid;
+    place-items: center;
+    margin: -6px -6px 0 0;
+    padding: 6px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.free-pass-close:hover { background: #f1f5f9; }
+
+.free-pass-close svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.free-pass-modal.no-dismiss .free-pass-close,
+.free-pass-modal.no-dismiss .free-pass-later { display: none; }
+
+.free-pass-title {
+    margin: 16px 0 0;
+    color: #053A41;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.35;
+    word-break: keep-all;
+}
+
+.free-pass-sub {
+    margin: 8px 0 0;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+.free-pass-perks {
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+    color: #334155;
+    font-size: 13px;
+}
+
+.free-pass-perks li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.free-pass-perks li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #F67608;
+    flex-shrink: 0;
+}
+
+.free-pass-kakao,
+.free-pass-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    border: 0;
+    border-radius: 12px;
+    font: 700 15px/1 var(--sans, "Noto Sans KR", sans-serif);
+    cursor: pointer;
+    transition: transform .15s ease;
+}
+
+.free-pass-kakao:hover,
+.free-pass-google:hover { transform: scale(1.02); }
+
+.free-pass-kakao {
+    margin-top: 20px;
+    background: #FEE500;
+    color: #191919;
+}
+
+.free-pass-google {
+    margin-top: 10px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    color: #334155;
+}
+
+.free-pass-kakao svg,
+.free-pass-google svg {
+    width: 20px;
+    height: 20px;
+}
+
+.free-pass-later {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 4px;
+    border: 0;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 12px;
+    cursor: pointer;
+    text-underline-offset: 2px;
+}
+
+.free-pass-later:hover { text-decoration: underline; }

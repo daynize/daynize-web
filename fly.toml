@@ -19,6 +19,12 @@ primary_region = 'nrt'
   GEMINI_TRIGGER_TOKENS = '2500'
   GEMINI_TARGET_TOKENS = '1500'
   VAD_SILENCE_MS = '380'
+  DATA_DIR = '/data'
+
+# 게스트 패스/회원/학습 데이터용 SQLite. 배포 전 한 번: fly volumes create daynize_data -r nrt -s 1
+[mounts]
+  source = 'daynize_data'
+  destination = '/data'
 
 [http_service]
   internal_port = 8080
