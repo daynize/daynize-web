@@ -29,7 +29,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from generate_voice import FPS, MARKUP, ROOT, load_cues, split_segments  # noqa: E402
+from generate_voice import FPS, MARKUP, ROOT, cue_segments, load_cues  # noqa: E402
 
 OUT = ROOT / "src" / "voiceTiming.json"
 MODEL_CANDIDATES = [
@@ -165,7 +165,7 @@ def main() -> int:
         tmp = Path(tmp_name)
         for cue_id in ids:
             cue, entry = cues[cue_id], manifest["cues"][cue_id]
-            segs = split_segments(cue["kr"], cue.get("en"))
+            segs = cue_segments(cue)
             if len(segs) != len(entry["segments"]) or any(
                 s[1] != m["text"] for s, m in zip(segs, entry["segments"])
             ):

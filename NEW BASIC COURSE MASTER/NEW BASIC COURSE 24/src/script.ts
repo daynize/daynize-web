@@ -169,7 +169,7 @@ export const LECTURE_CUES: CueDef[] = [
   {id: 'i6', scene: 'intro', mood: 'dawn', kr: '월요일에({p|on Monday}), 생일에({p|on my birthday}), 크리스마스 날에({p|on Christmas Day})처럼 정확히 24시간 분량의 날짜입니다.', pad: 0.5},
   {id: 'i7', scene: 'intro', mood: 'dawn', kr: '이 24시간보다 단 1초라도 적은 시간은 {p|at}을 씁니다. 콕 집어내는 점의 느낌이죠.', pad: 0.5},
   {id: 'i8', scene: 'intro', mood: 'dawn', kr: '7시에({p|at 7 o’clock}), 정오에({p|at noon}), 밤에({p|at night})처럼 24시간보다 짧은 특정 시점입니다.', pad: 0.5},
-  {id: 'i9', scene: 'intro', mood: 'dawn', kr: '반대로 24시간보다 단 12초라도 많은 길고 넓은 시간은 {p|in}을 씁니다.', pad: 0.5},
+  {id: 'i9', scene: 'intro', mood: 'deepgreen', kr: '반대로 24시간보다 단 {k|1초}라도 많은 길고 넓은 시간은 {h|in}을 씁니다.', pad: 0.5},
   {id: 'i10', scene: 'intro', mood: 'dawn', kr: '아침에({p|in the morning}), 이번 달에({p|in this month}), 여름에({p|in summer}), 2026년에({p|in 2026})처럼 24시간을 훌쩍 넘어가는 기간입니다.', pad: 0.5},
   {id: 'i11', scene: 'intro', mood: 'dawn', kr: '아! 여기서 정말 중요한 꿀팁 하나! 아무리 짧은 시간이나 장소라도, 그 안의 ‘칸막이 공간’ 내부로 들어가면 무조건 {p|in}으로 변한다는 것도 꼭 기억해 두세요.', pad: 0.6},
 
@@ -202,4 +202,4 @@ const STORY_CUES: CueDef[] = STORY_LINES.map((line) => ({
 
 export const CUE_DEFS: CueDef[] = [...LECTURE_CUES, ...STORY_CUES, ...OUTRO_CUES];
 
-export const stripMarkup = (s: string) => s.replace(/\{[vpe]\|([^}]*)\}/g, '$1');
+export const stripMarkup = (s: string) => s.replace(/\{[vpehk]\|([^}]*)\}/g, '$1');

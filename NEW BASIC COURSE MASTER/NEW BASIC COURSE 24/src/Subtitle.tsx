@@ -10,7 +10,7 @@ interface Seg {
 
 const parseMarkup = (s: string): Seg[] => {
   const out: Seg[] = [];
-  const re = /\{([vpe])\|([^}]*)\}/g;
+  const re = /\{([vpehk])\|([^}]*)\}/g;
   let last = 0;
   let m: RegExpExecArray | null;
   while ((m = re.exec(s))) {

@@ -206,7 +206,7 @@ const InMeaning: React.FC<{scene: SceneSpan}> = ({scene}) => {
   const frame = useCurrentFrame();
   const sp = span(scene, ['i9']);
   const fade = useFade(sp.duration);
-  const moreAt = wf('i9', 'i9', '12초라도');
+  const moreAt = wf('i9', 'i9', '1초라도');
   const wideAt = wf('i9', 'i9', '넓은');
   const inAt = wf('i9', 'i9', 'in을');
   const st = PREP_STYLE.in;

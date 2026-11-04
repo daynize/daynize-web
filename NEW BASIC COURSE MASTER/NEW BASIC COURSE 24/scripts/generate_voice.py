@@ -49,6 +49,8 @@ VOICE_IDS = {
     "kr": "0emXFRrt8HxjqJpgeQtr",  # Korean commentary
     "en": "r1KmysJdVYZjJCm4mL3b",  # English example sentences
 }
+# Cues narrated as one segment by Google Cloud TTS (scripts/generate-google-tts.mjs), not ElevenLabs.
+GOOGLE_TTS_CUES = {"i9"}
 FPS = 30
 OUTPUT_FORMAT = "mp3_44100_128"
 
@@ -88,9 +90,13 @@ def load_cues(refresh: bool) -> List[dict]:
     return json.loads(CUES_JSON.read_text(encoding="utf-8"))
 
 
-MARKUP = re.compile(r"\{[vpe]\|([^}]*)\}")
+MARKUP = re.compile(r"\{[vpehk]\|([^}]*)\}")
 HANGUL = re.compile(r"[\u3131-\u318e\uac00-\ud7a3]")
 LATIN = re.compile(r"[A-Za-z]")
+
+
+def cue_segments(cue: dict) -> List[Segment]:
+    return split_segments(cue["kr"], cue.get("en"))
 
 
 def split_segments(kr_markup: str, en_markup: Optional[str]) -> List[Segment]:
@@ -240,7 +246,7 @@ def main() -> int:
             sys.exit(f"Unknown cue ids: {', '.join(sorted(unknown))}")
         cues = [c for c in cues if c["id"] in wanted]
 
-    plan = [(c["id"], split_segments(c["kr"], c.get("en"))) for c in cues]
+    plan = [(c["id"], cue_segments(c)) for c in cues]
     total_chars = sum(len(text) for _, segs in plan for _, text in segs)
     total_segments = sum(len(segs) for _, segs in plan)
 
@@ -274,6 +280,9 @@ def main() -> int:
     }
 
     for cue_id, segs in plan:
+        if cue_id in GOOGLE_TTS_CUES:
+            print(f"[{cue_id}] skipped (Google TTS cue: node scripts/generate-google-tts.mjs)")
+            continue
         print(f"[{cue_id}] {len(segs)} segment(s)")
         part_paths: List[Path] = []
         seg_info = []

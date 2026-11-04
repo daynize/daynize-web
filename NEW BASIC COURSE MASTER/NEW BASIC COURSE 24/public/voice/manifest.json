@@ -262,29 +262,29 @@
       "segments": [
         {
           "lang": "kr",
-          "text": "반대로 24시간보다 단 12초라도 많은 길고 넓은 시간은",
+          "text": "반대로 24시간보다 단 1초라도 많은 길고 넓은 시간은",
           "file": "parts/i9_01_kr.mp3",
-          "hash": "8193c5fc2c451c79",
-          "seconds": 5.016
+          "hash": "6cb189fc7d55ae8b",
+          "seconds": 4.362
         },
         {
           "lang": "en",
           "text": "in",
           "file": "parts/i9_02_en.mp3",
-          "hash": "987ac6bdbbb250de",
-          "seconds": 0.679
+          "hash": "984ecab07483b935",
+          "seconds": 0.627
         },
         {
           "lang": "kr",
           "text": "을 씁니다.",
           "file": "parts/i9_03_kr.mp3",
-          "hash": "0dd3832c4d7d0884",
-          "seconds": 1.149
+          "hash": "41673e95fe8c0165",
+          "seconds": 0.94
         }
       ],
       "file": "i9.mp3",
-      "seconds": 7.184,
-      "frames": 216
+      "seconds": 6.03,
+      "frames": 181
     },
     "i10": {
       "segments": [

@@ -33,12 +33,14 @@ export const COLORS = {
 export const FONT =
   '"Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Helvetica Neue", Arial, sans-serif';
 
-export type Kind = 'e' | 'v' | 'p';
+export type Kind = 'e' | 'v' | 'p' | 'h' | 'k';
 
 export const KIND_COLOR: Record<Kind, string> = {
   e: COLORS.cream,
   v: COLORS.tealBright,
   p: COLORS.orange,
+  h: '#FF6648',
+  k: '#F67608',
 };
 
 export const clamp01 = (n: number) => Math.min(1, Math.max(0, n));
@@ -70,7 +72,8 @@ export type MoodName =
   | 'sunny'
   | 'morning'
   | 'park'
-  | 'autumn';
+  | 'autumn'
+  | 'deepgreen';
 
 export interface Mood {
   top: string;
@@ -93,6 +96,7 @@ export const MOODS: Record<MoodName, Mood> = {
   morning: {top: '#5C8FD8', mid: '#F0B8A0', bottom: '#FFD9A0', glow: '#FFF1C2', building: '#3E4A7A', windows: '#FFE6A0'},
   park: {top: '#58A6D6', mid: '#A9D8B8', bottom: '#E4F0B8', glow: '#FFF6C0', building: '#3D5A6E', windows: '#FFF0B0'},
   autumn: {top: '#6E8EC8', mid: '#E8A870', bottom: '#F4C08A', glow: '#FFE0A0', building: '#5A4458', windows: '#FFD98A'},
+  deepgreen: {top: '#053A41', mid: '#053A41', bottom: '#053A41', glow: '#0B5560', building: '#042E34', windows: '#0B5560'},
   sunrise: {top: '#33337A', mid: '#B1587F', bottom: '#FFBE76', glow: '#FFE5A8', building: '#28225E', windows: '#FFE9A8'},
 };
 
