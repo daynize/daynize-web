@@ -1,5 +1,6 @@
 const { randomUUID } = require('node:crypto');
 const { GUEST_COOKIE, setCookie, readCookie, readSession } = require('./session-cookie');
+const { readAdminSession } = require('./admin-gate-api');
 
 // 비회원 10분 무료 체험(Free Pass) API. auth-api/payment-api와 같은 모듈 패턴.
 //   POST /api/free-pass/start       패스 조회/발급 + 남은 시간 (게스트 쿠키 발급)
@@ -138,8 +139,11 @@ function createFreePassApi(options = {}) {
 
     const sanitizeFingerprint = raw => (typeof raw === 'string' && FINGERPRINT_PATTERN.test(raw) ? raw.toLowerCase() : null);
 
-    // 음성 WebSocket 업그레이드 게이트. 회원은 무제한, 게스트는 패스 유효 + 세션 횟수 이내일 때만.
+    const isAdmin = request => Boolean(readAdminSession(request, codec, now));
+
+    // 음성 WebSocket 업그레이드 게이트. 회원과 관리자는 무제한, 게스트는 패스 유효 + 세션 횟수 이내일 때만.
     function checkVoice(request) {
+        if (isAdmin(request)) return { ok: true, member: true, admin: true };
         if (readSession(request, codec)) return { ok: true, member: true };
         const { pass, limited } = resolvePass(request, { fingerprint: null, create: false });
         if (!pass) return { ok: false, status: 403, reason: 'free-pass-required' };
@@ -180,6 +184,11 @@ function createFreePassApi(options = {}) {
         const session = readSession(request, codec);
 
         if (pathname === '/api/free-pass/start' && request.method === 'POST') {
+            if (isAdmin(request)) {
+                request.resume();
+                json(response, 200, { status: 'member', admin: true }, cors);
+                return true;
+            }
             if (startRateLimited(clientIp(request))) {
                 request.resume();
                 json(response, 429, { error: '요청이 너무 많습니다.' }, { ...cors, 'Retry-After': '60' });
@@ -196,6 +205,10 @@ function createFreePassApi(options = {}) {
         }
 
         if (pathname === '/api/free-pass/status' && request.method === 'GET') {
+            if (isAdmin(request)) {
+                json(response, 200, { status: 'member', admin: true }, cors);
+                return true;
+            }
             if (session) {
                 json(response, 200, { status: 'member' }, cors);
                 return true;
@@ -245,7 +258,7 @@ function createFreePassApi(options = {}) {
         return true;
     }
 
-    return { handle, checkVoice, onLogin, durationMs };
+    return { handle, checkVoice, onLogin, durationMs, isAdmin };
 }
 
 module.exports = { createFreePassApi };

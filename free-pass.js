@@ -1,6 +1,9 @@
 // 비회원 10분 무료 체험(Free Pass) — 정적 index.html 전용 바닐라 모듈.
-// app/hooks/useFreePassTimer.ts 와 같은 흐름: /api/auth/me → /api/free-pass/start → 카운트다운 → 만료 시 /landing/?expired=1.
+// app/hooks/use10MinTimer.ts 와 같은 흐름: 관리자 토큰이 있으면 타이머를 시작하지 않는다.
+// 그 외에는 /api/auth/me → /api/free-pass/start → 카운트다운 → 만료 시 /landing/?expired=1.
 // 로그인 복귀(?login=kakao|google)에서는 localStorage 학습 기록을 /api/free-pass/migrate 로 올린다.
+
+import { hasAdminAccess, mountAdminGate, ADMIN_AUTH_EVENT } from './admin-gate.js';
 
 const API_BASE = ['localhost', '127.0.0.1'].includes(location.hostname)
     ? `http://${location.hostname}:8081`
@@ -134,6 +137,11 @@ function createModal() {
     window.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
     return {
         mount: () => document.body.append(root),
+        forceClose: () => {
+            dismissible = true;
+            close();
+            root.remove();
+        },
         open: (variant, { dismissible: canDismiss = true } = {}) => {
             dismissible = canDismiss;
             const copy = COPY[variant];
@@ -185,6 +193,9 @@ function clearLoginParam() {
 
 // ── 메인 ─────────────────────────────────────────────────────────
 export async function startFreePass() {
+    mountAdminGate();
+    if (hasAdminAccess()) return { status: 'admin' };
+
     const params = new URLSearchParams(location.search);
     const justLoggedIn = ['kakao', 'google'].includes(params.get('login'));
 
@@ -217,12 +228,26 @@ export async function startFreePass() {
     let deadline = null;
     let expired = false;
     let warned = false;
+    let stopped = false;
     let ticker;
+    let syncTimer;
+
+    const stop = () => {
+        if (stopped) return;
+        stopped = true;
+        clearInterval(ticker);
+        clearInterval(syncTimer);
+        document.removeEventListener('visibilitychange', onVisible);
+        banner.remove();
+        modal.forceClose();
+    };
+    window.addEventListener(ADMIN_AUTH_EVENT, stop, { once: true });
 
     const expire = () => {
-        if (expired) return;
+        if (expired || stopped) return;
         expired = true;
         clearInterval(ticker);
+        clearInterval(syncTimer);
         banner.setRemaining(0, true);
         location.replace(EXPIRED_REDIRECT);
     };
@@ -260,15 +285,17 @@ export async function startFreePass() {
         }
     };
 
+    const onVisible = () => { if (document.visibilityState === 'visible') sync(); };
+
     banner.mount();
     modal.mount();
     banner.onOpen(() => modal.open('warning'));
     await sync();
-    if (expired) return { status: 'expired' };
+    if (expired || stopped) return { status: expired ? 'expired' : 'admin' };
 
     ticker = setInterval(tick, 1000);
-    setInterval(sync, SYNC_INTERVAL_MS);
-    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') sync(); });
+    syncTimer = setInterval(sync, SYNC_INTERVAL_MS);
+    document.addEventListener('visibilitychange', onVisible);
     return { status: 'active' };
 }
 

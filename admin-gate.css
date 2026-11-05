@@ -1,0 +1,122 @@
+/* 관리자 게이트 모달. 맛보기 배너와 같은 딥그린/오렌지 톤. */
+
+.admin-gate-lock {
+    overflow: hidden;
+}
+
+.admin-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(5, 58, 65, .55);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.admin-gate-card {
+    width: min(100%, 400px);
+    padding: 28px 24px 22px;
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 28px;
+    background: #fff;
+    color: #053A41;
+    font-family: var(--sans, "Noto Sans KR", sans-serif);
+    box-shadow: 0 24px 60px rgba(5, 58, 65, .25);
+}
+
+.admin-gate-badge {
+    display: inline-flex;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(5, 58, 65, .1);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.admin-gate-card h2 {
+    margin: 16px 0 0;
+    font-size: 21px;
+    line-height: 1.35;
+    word-break: keep-all;
+}
+
+.admin-gate-card p {
+    margin: 8px 0 0;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+.admin-gate-card form {
+    margin-top: 20px;
+}
+
+.admin-gate-card label {
+    display: block;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.admin-gate-card input {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    color: #053A41;
+    font: 500 15px/1.4 var(--sans, "Noto Sans KR", sans-serif);
+}
+
+.admin-gate-card input:focus {
+    outline: 2px solid #053A41;
+    border-color: #053A41;
+}
+
+.admin-gate-error {
+    color: #FF6648 !important;
+}
+
+.admin-gate-card button[type="submit"],
+.admin-gate-home {
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px 16px;
+    border: 0;
+    border-radius: 12px;
+    background: #F67608;
+    color: #fff;
+    font: 700 15px/1 var(--sans, "Noto Sans KR", sans-serif);
+    cursor: pointer;
+}
+
+.admin-gate-home {
+    background: #053A41;
+}
+
+.admin-gate-card button:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.admin-gate-close {
+    width: 100%;
+    margin-top: 12px;
+    padding: 6px;
+    border: 0;
+    background: transparent;
+    color: #94a3b8;
+    font: 500 12px/1 var(--sans, "Noto Sans KR", sans-serif);
+    cursor: pointer;
+}
+
+@media (min-width: 640px) {
+    .admin-gate {
+        align-items: center;
+    }
+}

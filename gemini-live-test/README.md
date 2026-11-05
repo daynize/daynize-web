@@ -12,6 +12,12 @@ npm start
 
 Before starting a conversation, set `GEMINI_API_KEY` in this folder's `.env` to your Google AI Studio API key, then restart the server. Never put the key in HTML or browser JavaScript. `.env` is ignored by Git and is not served over HTTP.
 
+For the DAYNIZE admin gate, configure both secrets on the API server. `ADMIN_GATE_SECRET` is the password entered at `/admin-gate` or with `?mode=admin_dev`; `AUTH_SESSION_SECRET` signs the seven-day `daynize_admin_auth` cookie and must remain stable across deploys:
+
+```sh
+fly secrets set ADMIN_GATE_SECRET='replace-with-a-long-random-password' AUTH_SESSION_SECRET="$(openssl rand -hex 32)" -a daynize-relay-api
+```
+
 Open http://localhost:8080 in a current browser and click the floating voice button once. Spotlight opens inline and immediately begins microphone permission and Gemini connection without page navigation or another start click. Muting sends `audioStreamEnd` but keeps response playback alive. Speaker mute, live captions, voice and playback speed are available in the icon tray. Ending the call or closing the modal releases audio resources. Headphones are recommended to avoid feedback. Microphone audio is sent to Google while enabled.
 
 The server listens only on the loopback interface, at port 8080. Both HTTP assets and `ws://localhost:8080/ws/gemini-live` use that port (`/ws` and the legacy `/` WebSocket paths also work). Open the served URL, not the HTML as a local file: AudioWorklet and microphone capture need a secure context (localhost qualifies). Port 8080 must be free.

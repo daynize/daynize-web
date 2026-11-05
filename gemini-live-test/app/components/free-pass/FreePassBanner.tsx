@@ -1,7 +1,8 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
-import { useFreePassTimer, type UseFreePassTimerOptions } from '../../hooks/useFreePassTimer';
+import { use10MinTimer } from '../../hooks/use10MinTimer';
+import type { UseFreePassTimerOptions } from '../../hooks/useFreePassTimer';
 import ConversionModal from './ConversionModal';
 
 export interface FreePassBannerProps extends Omit<UseFreePassTimerOptions, 'onExpire'> {
@@ -30,7 +31,7 @@ export default function FreePassBanner({
         setModalOpen(true);
     }, [expiredRedirect]);
 
-    const timer = useFreePassTimer({ ...timerOptions, apiBase, onExpire });
+    const timer = use10MinTimer({ ...timerOptions, apiBase, onExpire });
 
     useEffect(() => {
         if (timer.isActive && !warned && timer.remainingMs <= warnAtMs) {

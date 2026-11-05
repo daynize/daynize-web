@@ -6,6 +6,7 @@ const { randomBytes } = require('node:crypto');
 const { createPaymentApi } = require('./payment-api');
 const { createAuthApi } = require('./auth-api');
 const { createFreePassApi } = require('./free-pass-api');
+const { createAdminGateApi } = require('./admin-gate-api');
 const { createStore } = require('./store');
 const { createCookieCodec } = require('./session-cookie');
 const { createLatencyTrace } = require('./latency-trace');
@@ -99,6 +100,13 @@ function createRelayServer(options = {}) {
     });
     // 음성 WS 게이트는 프론트가 /api/free-pass/start 를 호출하고 WS 가 api 호스트(쿠키 전달)로 붙을 때만 켠다.
     const enforceVoiceLimits = options.enforceVoiceLimits ?? ['1', 'true', 'on'].includes(String(process.env.FREE_PASS_ENFORCE_VOICE || '').toLowerCase());
+    const adminGateApi = createAdminGateApi({
+        codec: cookieCodec,
+        secret: options.adminGateSecret,
+        allowedOrigins: trustedOrigins,
+        now: options.authNow,
+        trustProxyHeaders: options.trustProxyHeaders
+    });
     const authApi = createAuthApi({
         kakaoClientId: options.kakaoClientId,
         kakaoClientSecret: options.kakaoClientSecret,
@@ -163,6 +171,14 @@ function createRelayServer(options = {}) {
             if (await authApi.handle(request, response, pathname)) return;
         } catch (error) {
             console.error('[auth] handler failure', error);
+            if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
+            response.end();
+            return;
+        }
+        try {
+            if (await adminGateApi.handle(request, response, pathname)) return;
+        } catch (error) {
+            console.error('[admin-gate] handler failure', error);
             if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
             response.end();
             return;
@@ -378,7 +394,9 @@ function createRelayServer(options = {}) {
             return;
         }
         let sessionLimitMs = maxSessionMs;
-        if (enforceVoiceLimits) {
+        if (freePassApi.isAdmin(request)) {
+            sessionLimitMs = null;
+        } else if (enforceVoiceLimits) {
             const gate = freePassApi.checkVoice(request);
             if (!gate.ok) {
                 socket.end(`HTTP/1.1 ${gate.status} ${gate.status === 429 ? 'Too Many Requests' : 'Forbidden'}\r\nX-Free-Pass: ${gate.reason}\r\nConnection: close\r\n\r\n`);
@@ -413,7 +431,9 @@ function createRelayServer(options = {}) {
         trace.event('session_open', { mode: transcriptionOnly ? 'transcribe' : 'live' });
         let clientPingAt;
         let upstreamPingAt;
-        const sessionTimer = setTimeout(() => fail('Your conversation time limit was reached. Start a new session.'), sessionLimitMs);
+        const sessionTimer = Number.isFinite(sessionLimitMs)
+            ? setTimeout(() => fail('Your conversation time limit was reached. Start a new session.'), sessionLimitMs)
+            : null;
         const heartbeat = setInterval(() => {
             if (!alive) return client.terminate();
             alive = false;
@@ -425,7 +445,7 @@ function createRelayServer(options = {}) {
                 upstream.ping();
             }
         }, heartbeatInterval);
-        sessionTimer.unref();
+        if (sessionTimer) sessionTimer.unref();
         heartbeat.unref();
         client.on('pong', () => {
             alive = true;

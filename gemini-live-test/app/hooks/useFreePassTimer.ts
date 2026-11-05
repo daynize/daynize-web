@@ -28,6 +28,8 @@ export interface UseFreePassTimerOptions {
     syncIntervalMs?: number;
     onExpire?: () => void;
     fetchImpl?: typeof fetch;
+    /** 관리자 토큰이 있으면 카운트다운과 /api/free-pass/start 호출을 하지 않는다. */
+    suspended?: boolean;
 }
 
 export interface FreePassTimer {
@@ -91,7 +93,8 @@ export function useFreePassTimer({
     storageKey = DEFAULT_STORAGE_KEY,
     syncIntervalMs = 30_000,
     onExpire,
-    fetchImpl
+    fetchImpl,
+    suspended = false
 }: UseFreePassTimerOptions = {}): FreePassTimer {
     const [status, setStatus] = useState<FreePassStatus>('loading');
     const [remainingMs, setRemainingMs] = useState(durationMs);
@@ -143,6 +146,11 @@ export function useFreePassTimer({
     }, [apiBase, applyStatus, durationMs, fetchImpl, storageKey]);
 
     useEffect(() => {
+        if (suspended) {
+            deadlineRef.current = null;
+            setStatus('member');
+            return;
+        }
         void sync();
         const interval = setInterval(() => void sync(), syncIntervalMs);
         const onVisible = () => { if (document.visibilityState === 'visible') void sync(); };
@@ -151,7 +159,7 @@ export function useFreePassTimer({
             clearInterval(interval);
             document.removeEventListener('visibilitychange', onVisible);
         };
-    }, [sync, syncIntervalMs]);
+    }, [suspended, sync, syncIntervalMs]);
 
     useEffect(() => {
         if (status !== 'active') return;

@@ -13,7 +13,7 @@
         "autostart:stop": "node scripts/autostart.mjs stop",
         "test": "node --test test/*.test.*",
         "test:browser": "playwright test",
-        "check": "node --check server.js && node --check payment-api.js && node --check auth-api.js && node --check free-pass-api.js && node --check store.js && node --check session-cookie.js && node --check session-safety.mjs && node --check live-service.mjs && node --check audio-engine.mjs && node --check ambient-orb.mjs && node --check tutor-widget.mjs && node --check daynize-tutor.mjs && node --check audio.mjs && node --check pcm-worklet.mjs && node --check teaching-prompt.mjs && node --check lesson-context.mjs"
+        "check": "node --check server.js && node --check payment-api.js && node --check auth-api.js && node --check free-pass-api.js && node --check admin-gate-api.js && node --check store.js && node --check session-cookie.js && node --check session-safety.mjs && node --check live-service.mjs && node --check audio-engine.mjs && node --check ambient-orb.mjs && node --check tutor-widget.mjs && node --check daynize-tutor.mjs && node --check audio.mjs && node --check pcm-worklet.mjs && node --check teaching-prompt.mjs && node --check lesson-context.mjs"
     },
     "engines": {
         "node": ">=22.13"

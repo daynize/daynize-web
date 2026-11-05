@@ -51,6 +51,40 @@ async function start(base, { ip = '203.0.113.10', fingerprint, cookie, origin = 
     return { response, body: await response.json(), guestCookie: guestCookieOf(response) };
 }
 
+test('admin gate issues a seven-day auth cookie and bypasses guest limits', { timeout: 10000 }, async context => {
+    const now = clock();
+    const base = await withServer(context, { authNow: now, adminGateSecret: 'admin-secret' });
+
+    const invalid = await fetch(`${base}/api/admin-gate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Origin: MAIN_ORIGIN },
+        body: JSON.stringify({ password: 'wrong' })
+    });
+    assert.equal(invalid.status, 401);
+    assert.equal(invalid.headers.get('set-cookie'), null);
+
+    const verified = await fetch(`${base}/api/admin-gate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Origin: MAIN_ORIGIN },
+        body: JSON.stringify({ password: 'admin-secret' })
+    });
+    assert.equal(verified.status, 200);
+    assert.equal(verified.headers.get('access-control-allow-credentials'), 'true');
+    const adminCookie = verified.headers.getSetCookie().find(line => line.startsWith('daynize_admin_auth='));
+    assert.match(adminCookie, /Max-Age=604800/);
+    assert.match(adminCookie, /HttpOnly/);
+    const token = (await verified.json()).token;
+    assert.match(token, /^[-_A-Za-z0-9]+\.[-_A-Za-z0-9]+$/);
+
+    const pass = await start(base, { cookie: adminCookie.split(';', 1)[0] });
+    assert.deepEqual(pass.body, { status: 'member', admin: true });
+
+    const status = await (await fetch(`${base}/api/free-pass/status`, {
+        headers: { Cookie: adminCookie.split(';', 1)[0] }
+    })).json();
+    assert.deepEqual(status, { status: 'member', admin: true });
+});
+
 function mockOauthFetch() {
     return async (url, request = {}) => {
         if (url.startsWith('https://kauth.kakao.com/oauth/token')) {
