@@ -265,6 +265,21 @@
             white-space: nowrap;
         }
 
+        .main-nav .nav-account {
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: #3e4943;
+            font-size: 16px;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .main-nav .nav-account:hover {
+            color: var(--sage);
+        }
+
         .main-nav a:hover {
             color: var(--sage);
         }
@@ -1626,6 +1641,115 @@
             scrollbar-width: thin;
         }
 
+        .account-modal {
+            max-width: 520px;
+        }
+
+        .login-socials {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .login-subtitle {
+            text-align: center;
+        }
+
+        .login-social-button {
+            display: flex;
+            flex: 1 1 0;
+            min-width: 0;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 8px 11px;
+            border: 1px solid #e1e5df;
+            border-radius: 18px;
+            background: #fff;
+            color: var(--ink);
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.2;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(44, 54, 46, .07);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .login-social-button:hover,
+        .login-social-button:focus-visible {
+            transform: scale(1.06);
+            box-shadow: 0 12px 26px rgba(44, 54, 46, .14);
+        }
+
+        .login-social-icon {
+            display: grid;
+            width: 48px;
+            height: 48px;
+            place-items: center;
+            border-radius: 50%;
+        }
+
+        .login-social-icon svg {
+            width: 27px;
+            height: 27px;
+        }
+
+        .login-social-google .login-social-icon {
+            background: #fff;
+            border: 1px solid #e2e5e2;
+        }
+
+        .login-social-kakao .login-social-icon {
+            background: #fee500;
+        }
+
+        .login-social-naver .login-social-icon {
+            background: #03cf5d;
+            color: #fff;
+        }
+
+        .account-section {
+            margin: 0 0 22px;
+            padding: 0 0 18px;
+            border-bottom: 1px solid #e5e7e0;
+        }
+
+        .account-section h3 {
+            margin: 0 0 10px;
+            color: #304d3d;
+            font-family: var(--serif);
+            font-size: 20px;
+        }
+
+        .account-section p {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        .account-provider-badge,
+        .account-status-badge {
+            display: inline-flex;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: var(--sage-soft);
+            color: var(--sage);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .account-controls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .account-controls [data-logout] {
+            margin-left: auto;
+        }
+
         .legal-modal-body::-webkit-scrollbar {
             width: 10px;
         }
@@ -1765,14 +1889,18 @@
             .main-nav {
                 position: absolute;
                 top: 100%;
-                right: 0;
-                left: 0;
+                right: max(18px, calc((100vw - 720px) / 2 - 4px));
+                left: auto;
                 display: none;
                 flex-direction: column;
                 align-items: stretch;
                 gap: 0;
+                width: min(320px, calc(100vw - 44px));
                 padding: 8px 22px 18px;
+                box-shadow: 0 14px 28px rgba(54, 68, 60, .14);
                 border-bottom: 1px solid var(--line);
+                border-left: 1px solid var(--line);
+                border-right: 1px solid var(--line);
                 background: rgba(248, 247, 242, .98);
             }
 
@@ -1782,6 +1910,11 @@
 
             .main-nav a {
                 padding: 12px 8px;
+            }
+
+            .main-nav .nav-account {
+                padding: 12px 8px;
+                text-align: left;
             }
 
             .nav-cta {
@@ -1996,7 +2129,6 @@
     </style>
     <link rel="stylesheet" href="exit-quiz.css">
     <link rel="stylesheet" href="notes.css">
-    <link rel="stylesheet" href="free-pass.css">
     <link rel="stylesheet" href="pop-article.css">
 </head>
 
@@ -2015,11 +2147,70 @@
                 <a href="#lessons">동영상 강의</a>
                 <a href="#conversation">오늘의 회화</a>
                 <a href="#voice">음성 스튜디오</a>
-                <a href="kecho/">K-ECHO</a>
-                <a class="nav-cta" href="#register">수강 신청</a>
+                <button class="nav-account" type="button" data-account-action>로그인</button>
             </nav>
         </div>
     </header>
+
+    <dialog class="legal-modal account-modal" id="login-dialog" aria-labelledby="login-dialog-title">
+        <div class="legal-modal-header">
+            <h2 id="login-dialog-title">로그인</h2>
+            <button class="legal-close" type="button" data-close-account aria-label="닫기">×</button>
+        </div>
+        <div class="legal-modal-body">
+            <p class="login-subtitle">로그인으로 학습 기록을 이어가세요.</p>
+            <div class="login-socials" role="list" aria-label="소셜 로그인">
+                <a class="login-social-button login-social-google" data-social-login="google" href="#" role="listitem" aria-label="Google로 로그인">
+                    <span class="login-social-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false"><path fill="#4285F4" d="M21.35 12.27c0-.7-.06-1.38-.18-2.02H12v3.83h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.7 2.91-4.2 2.91-7.2Z"/><path fill="#34A853" d="M12 21.75c2.63 0 4.84-.87 6.45-2.36l-3.14-2.45c-.87.58-1.98.92-3.31.92-2.54 0-4.7-1.72-5.47-4.03H3.28v2.53A9.74 9.74 0 0 0 12 21.75Z"/><path fill="#FBBC05" d="M6.53 13.83a5.86 5.86 0 0 1 0-3.66V7.64H3.28a9.75 9.75 0 0 0 0 8.72l3.25-2.53Z"/><path fill="#EA4335" d="M12 6.14c1.43 0 2.72.49 3.73 1.45l2.8-2.8C16.84 3.1 14.63 2.25 12 2.25a9.74 9.74 0 0 0-8.72 5.39l3.25 2.53C7.3 7.86 9.46 6.14 12 6.14Z"/></svg>
+                    </span>
+                    <span>Google</span>
+                </a>
+                <a class="login-social-button login-social-kakao" data-social-login="kakao" href="#" role="listitem" aria-label="카카오로 로그인">
+                    <span class="login-social-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false"><path fill="#191919" d="M12 4.1c-4.42 0-8 2.83-8 6.32 0 2.24 1.5 4.2 3.76 5.32l-.96 3.57c-.08.3.27.54.53.36l4.05-2.73c.2.02.41.03.62.03 4.42 0 8-2.83 8-6.32S16.42 4.1 12 4.1Z"/></svg>
+                    </span>
+                    <span>카카오</span>
+                </a>
+                <a class="login-social-button login-social-naver" data-social-login="naver" href="#" role="listitem" aria-label="네이버로 로그인">
+                    <span class="login-social-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M6 4h4.2l3.6 6.1V4H18v16h-4.1l-3.7-6.1V20H6V4Z"/></svg>
+                    </span>
+                    <span>네이버</span>
+                </a>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="legal-modal account-modal" id="profile-dialog" aria-labelledby="profile-dialog-title">
+        <div class="legal-modal-header">
+            <h2 id="profile-dialog-title">내 프로필</h2>
+            <button class="legal-close" type="button" data-close-account aria-label="닫기">×</button>
+        </div>
+        <div class="legal-modal-body">
+            <section class="account-section" aria-labelledby="profile-account-title">
+                <h3 id="profile-account-title">계정 정보</h3>
+                <p><strong>이메일</strong><br><span data-profile-email>확인 중…</span></p>
+                <span class="account-provider-badge" data-profile-provider>로그인 계정 확인 중…</span>
+            </section>
+            <section class="account-section" aria-labelledby="profile-entitlement-title">
+                <h3 id="profile-entitlement-title">이용권 정보</h3>
+                <p><strong>회원 상태</strong><br><span data-profile-status>확인 중…</span></p>
+                <p data-profile-billing hidden><strong>다음 결제 예정일</strong><br><span data-profile-next-billing>-</span><br><strong>결제 수단</strong><br><span data-profile-payment-method>-</span></p>
+            </section>
+            <section class="account-section" aria-labelledby="profile-progress-title">
+                <h3 id="profile-progress-title">나의 학습 기록</h3>
+                <p>지난주 영어 <strong data-progress-weekly>0 / 20강 완료</strong></p>
+                <p>오늘의 회화 <strong data-progress-conversation>0 / 20강 완료</strong></p>
+                <p>최근 학습 진행일<br><span data-progress-last-date>기록 없음</span></p>
+            </section>
+            <div class="account-controls">
+                <button type="button" data-open-legal="terms-dialog">이용약관</button>
+                <button type="button" data-open-legal="privacy-dialog">개인정보처리방침</button>
+                <button class="button secondary" type="button" data-logout>로그아웃</button>
+            </div>
+        </div>
+    </dialog>
 
     <main id="main">
         <section class="hero" id="top" aria-labelledby="hero-title">
@@ -2572,9 +2763,27 @@
     <script src="src/data/numbersCourseData.js"></script>
     <script type="module">
         import { trackRecentLesson as saveLessonContext, saveRecentLesson } from './gemini-live-test/lesson-context.mjs';
+        import { checkIsPaidUser, rememberMembershipEmail } from './membership-status.js';
+        import { requireActionAccess } from './auth-paywall-guard.js';
         (() => {
             const menuButton = document.querySelector('.menu-toggle');
             const navigation = document.querySelector('#main-nav');
+            const accountAction = document.querySelector('[data-account-action]');
+            const loginDialog = document.querySelector('#login-dialog');
+            const profileDialog = document.querySelector('#profile-dialog');
+            const profileEmail = document.querySelector('[data-profile-email]');
+            const profileStatus = document.querySelector('[data-profile-status]');
+            const profileProvider = document.querySelector('[data-profile-provider]');
+            const profileBilling = document.querySelector('[data-profile-billing]');
+            const profileNextBilling = document.querySelector('[data-profile-next-billing]');
+            const profilePaymentMethod = document.querySelector('[data-profile-payment-method]');
+            const progressWeekly = document.querySelector('[data-progress-weekly]');
+            const progressConversation = document.querySelector('[data-progress-conversation]');
+            const progressLastDate = document.querySelector('[data-progress-last-date]');
+            const configuredAuthApiBase = document.querySelector('meta[name="daynize-payment-api"]')?.content || 'https://api.daynize.co.kr';
+            const authApiBase = ['localhost', '127.0.0.1'].includes(window.location.hostname) && window.location.port !== '8081'
+                ? `http://${window.location.hostname}:8081`
+                : configuredAuthApiBase;
             const logoImage = document.querySelector('.main-logo-img');
             const logoFallback = document.querySelector('.logo-fallback');
             const showLogoFallback = () => { logoImage.hidden = true; logoFallback.hidden = false; };
@@ -2593,6 +2802,101 @@
                     menuButton.setAttribute('aria-label', '메뉴 열기');
                 }
             });
+
+            const closeAccountDialogs = () => {
+                [loginDialog, profileDialog].forEach(dialog => {
+                    if (dialog instanceof HTMLDialogElement && dialog.open) dialog.close();
+                });
+            };
+            const closeNavigation = () => {
+                navigation.classList.remove('is-open');
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.setAttribute('aria-label', '메뉴 열기');
+            };
+            const clearClientSession = () => {
+                try {
+                    localStorage.clear();
+                    sessionStorage.clear();
+                } catch { /* storage may be unavailable */ }
+                for (const cookie of document.cookie.split(';')) {
+                    const name = cookie.split('=')[0]?.trim();
+                    if (name) document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax`;
+                }
+            };
+            const openSocialLogin = provider => {
+                const returnTo = new URLSearchParams(location.search).get('return_to')
+                    || `${window.location.origin}${window.location.pathname}${window.location.hash}`;
+                window.location.href = `${authApiBase}/api/auth/${provider}?return_to=${encodeURIComponent(returnTo)}`;
+            };
+            const renderAccount = (auth, profile = null) => {
+                const loggedIn = auth?.loggedIn === true;
+                accountAction.textContent = loggedIn ? '내 프로필' : '로그인';
+                accountAction.dataset.loggedIn = String(loggedIn);
+                if (loggedIn) {
+                    const user = profile?.user || auth?.user || auth;
+                    profileEmail.textContent = user?.email || '이메일 정보 없음';
+                    profileProvider.textContent = user?.provider === 'kakao' ? '카카오 계정' : user?.provider === 'google' ? 'Google 계정' : user?.provider === 'naver' ? '네이버 계정' : '소셜 로그인 계정';
+                    profileStatus.textContent = checkIsPaidUser({ ...auth, ...profile }) ? '정회원 이용 중' : '미결제 회원';
+                    const billingDate = profile?.nextBillingDate;
+                    profileBilling.hidden = !billingDate && !profile?.paymentMethod;
+                    profileNextBilling.textContent = billingDate ? new Date(billingDate).toLocaleDateString('ko-KR') : '-';
+                    profilePaymentMethod.textContent = profile?.paymentMethod || '-';
+                    const weekly = profile?.learningProgress?.weeklyEnglish || {};
+                    const conversation = profile?.learningProgress?.dailyConversation || {};
+                    progressWeekly.textContent = `${weekly.completed || 0} / ${weekly.total || 20}강 완료`;
+                    progressConversation.textContent = `${conversation.completed || 0} / ${conversation.total || 20}강 완료`;
+                    progressLastDate.textContent = profile?.learningProgress?.lastStudyDate
+                        ? new Date(profile.learningProgress.lastStudyDate).toLocaleDateString('ko-KR')
+                        : '기록 없음';
+                }
+                return loggedIn;
+            };
+            const fetchAuth = async () => {
+                const response = await fetch(`${authApiBase}/api/auth/me`, { credentials: 'include', cache: 'no-store' });
+                const auth = response.ok ? await response.json() : null;
+                rememberMembershipEmail(auth?.email || auth?.user?.email);
+                const profileResponse = auth?.loggedIn === true
+                    ? await fetch(`${authApiBase}/api/auth/profile`, { credentials: 'include', cache: 'no-store' })
+                    : null;
+                const profile = profileResponse?.ok ? await profileResponse.json() : null;
+                const nextAuthState = { ...auth, ...profile };
+                renderAccount(nextAuthState);
+                window.dispatchEvent(new CustomEvent('daynize:auth-state-changed', { detail: nextAuthState }));
+                const oauthProvider = new URLSearchParams(location.search).get('login');
+                if (auth?.loggedIn === true && ['kakao', 'google', 'naver'].includes(oauthProvider)) {
+                    const cleanUrl = new URL(location.href);
+                    cleanUrl.searchParams.delete('login');
+                    cleanUrl.searchParams.delete('status');
+                    history.replaceState(history.state, '', cleanUrl);
+                    closeAccountDialogs();
+                }
+                if (auth?.loggedIn !== true && new URLSearchParams(location.search).get('login') === 'required') {
+                    loginDialog.showModal();
+                }
+                return nextAuthState;
+            };
+            accountAction.addEventListener('click', async () => {
+                const auth = await fetchAuth().catch(() => null);
+                if (auth?.loggedIn === true) profileDialog.showModal();
+                else loginDialog.showModal();
+                closeNavigation();
+            });
+            document.querySelectorAll('[data-close-account]').forEach(button => button.addEventListener('click', closeAccountDialogs));
+            document.querySelectorAll('[data-social-login]').forEach(link => link.addEventListener('click', event => {
+                event.preventDefault();
+                openSocialLogin(link.dataset.socialLogin);
+            }));
+            document.querySelector('[data-logout]').addEventListener('click', async () => {
+                await fetch(`${authApiBase}/api/auth/logout`, { method: 'POST', credentials: 'include' }).catch(() => {});
+                clearClientSession();
+                closeAccountDialogs();
+                closeNavigation();
+                const guestState = { loggedIn: false, isAdmin: false, hasActiveSubscription: false };
+                renderAccount(guestState);
+                window.dispatchEvent(new CustomEvent('daynize:auth-state-changed', { detail: guestState }));
+                if (window.location.hash !== '#register') history.replaceState(history.state, '', `${window.location.pathname}${window.location.search}#register`);
+            });
+            void fetchAuth().catch(() => renderAccount({ loggedIn: false }));
 
             document.querySelectorAll('[data-open-legal]').forEach((trigger) => {
                 trigger.addEventListener('click', () => {
@@ -2712,7 +3016,7 @@
                     watch.type = 'button';
                     watch.dataset.lessonId = lesson.id;
                     if (article) watch.dataset.articleId = article.id;
-                    watch.append(document.createTextNode(article ? '읽어 보기 ' : lesson.dialogue_lines ? '대화 보기 ' : category.categoryId === 'numbers' ? '학습 시작 ' : '시청하기 '), makeElement('span', '', '→'));
+                    watch.append(document.createTextNode(article ? '읽어 보기 ' : lesson.dialogue_lines ? '🔒 대화 보기 ' : category.categoryId === 'numbers' ? '🔒 학습 시작 ' : '🔒 시청하기 '), makeElement('span', '', '→'));
                     copy.append(meta, watch);
                     if (article?.audio) {
                         const previewLabel = makeElement('p', 'pop-card-audio-label', article.audio.label || '공식 미리듣기');
@@ -2982,7 +3286,8 @@
                 }
                 videoFrame.append(makeElement('div', 'video-placeholder', '지원하는 YouTube 또는 MP4 영상 주소가 아닙니다.'));
             };
-            const openLesson = (lesson) => {
+            const openLesson = async (lesson) => {
+                if (!await requireActionAccess()) return;
                 selectedLesson = lesson;
                 quiz.markWatched(lesson.id);
                 trackRecentLesson(lesson, 'lesson');
@@ -3994,6 +4299,41 @@
             const checkoutApiBase = ['localhost', '127.0.0.1'].includes(window.location.hostname) && window.location.port !== '8081'
                 ? `http://${window.location.hostname}:8081`
                 : document.querySelector('meta[name="daynize-payment-api"]')?.content || window.location.origin;
+            const registrationSection = document.querySelector('#register');
+            const navCheckout = document.querySelector('.nav-cta[href="#register"]');
+            let paidUiLocked = false;
+            const showPaidCheckoutState = () => {
+                paidUiLocked = true;
+                registrationSection.hidden = true;
+                if (!navCheckout) return;
+                navCheckout.hidden = true;
+                if (navCheckout.parentElement.querySelector('.member-status-badge')) return;
+                const badge = document.createElement('span');
+                badge.className = 'member-status-badge';
+                badge.setAttribute('role', 'status');
+                badge.textContent = '✦ 프리미엄 회원 · 정회원 이용 중';
+                navCheckout.parentElement.append(badge);
+            };
+            const hidePaidCheckout = async () => {
+                if (checkIsPaidUser()) {
+                    showPaidCheckoutState();
+                    return true;
+                }
+                try {
+                    const response = await fetch(`${checkoutApiBase}/api/auth/me`, { credentials: 'include', cache: 'no-store' });
+                    const auth = response.ok ? await response.json() : null;
+                    rememberMembershipEmail(auth?.email || auth?.user?.email);
+                    const paid = checkIsPaidUser(auth);
+                    paidUiLocked = paid;
+                    if (!paid) return false;
+                    showPaidCheckoutState();
+                    return true;
+                } catch (error) {
+                    console.warn('[membership] paid UI check failed; keeping guest checkout visible', error);
+                    return false;
+                }
+            };
+            void hidePaidCheckout();
             const checkoutAmount = 19000;
             const checkoutProvider = 'NHN_KCP';
             const checkoutResumeKey = 'daynize.checkout.resume.v1';
@@ -4191,6 +4531,10 @@
             registrationForm.addEventListener('change', updateRegistrationSubmitState);
             registrationForm.addEventListener('submit', async (event) => {
                 event.preventDefault();
+                if (paidUiLocked || checkIsPaidUser() || await hidePaidCheckout()) {
+                    showRegistrationMessage('정회원 이용 중인 계정은 결제할 필요가 없습니다.');
+                    return;
+                }
                 updateRegistrationSubmitState();
                 if (!registrationForm.reportValidity()) {
                     showRegistrationMessage('성함, 연락처, 이메일과 필수 약관 동의를 확인해 주세요.', true);
@@ -4387,7 +4731,6 @@
     <script type="module" src="./gemini-live-test/daynize-tutor.mjs" data-daynize-tutor
         data-transcription-endpoint="https://api.daynize.co.kr/transcribe"></script>
     <script type="module" src="./gemini-live-test/voice-studio-live.mjs?v=voice-stt-69b3ca6a"></script>
-    <script type="module" src="./free-pass.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 const { createHmac, timingSafeEqual } = require('node:crypto');
 
-// HMAC 서명 쿠키 코덱. auth-api(로그인 세션)와 free-pass-api(게스트 패스)가 같은 시크릿을 공유한다.
+// HMAC 서명 쿠키 코덱. 인증 API의 로그인 세션을 보호한다.
 
 const SESSION_COOKIE = 'daynize_session';
 const GUEST_COOKIE = 'daynize_guest';
@@ -32,8 +32,12 @@ function createCookieCodec({ secret, now = Date.now }) {
 
 const isSecure = request => Boolean(request.socket.encrypted) || request.headers['x-forwarded-proto'] === 'https';
 
-const setCookie = (request, name, value, maxAge, path = '/') =>
-    `${name}=${value}; HttpOnly; Path=${path}; Max-Age=${maxAge}; SameSite=Lax${isSecure(request) ? '; Secure' : ''}`;
+const setCookie = (request, name, value, maxAge, path = '/', options = {}) => {
+    const sameSite = options.sameSite ?? 'Lax';
+    const secure = options.secure ?? isSecure(request);
+    const domain = options.domain ? `; Domain=${options.domain}` : '';
+    return `${name}=${value}; HttpOnly; Path=${path}; Max-Age=${maxAge}; SameSite=${sameSite}${secure ? '; Secure' : ''}${domain}`;
+};
 
 const readCookie = (request, name) => (request.headers.cookie || '')
     .split(';').map(part => part.trim()).find(part => part.startsWith(`${name}=`))?.slice(name.length + 1);

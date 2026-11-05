@@ -41,6 +41,9 @@ function mockOauthFetch(calls = []) {
         }
         if (url.startsWith('https://kapi.kakao.com/v2/user/me')) {
             assert.match(request.headers.Authorization, /^Bearer token-/);
+            if (request.headers.Authorization === 'Bearer token-no-email') {
+                return Response.json({ id: 998877, properties: { nickname: '카카오사용자' }, kakao_account: {} });
+            }
             return Response.json({ id: 112233, kakao_account: { email: 'Learner@Example.com', profile: { nickname: '김하늘' } } });
         }
         if (url.startsWith('https://www.googleapis.com/oauth2/v3/userinfo')) {
@@ -63,7 +66,7 @@ test('kakao login round-trip issues a verified session and logout clears it', { 
     const base = await withServer(context, { ...authOptions, authFetchImpl: mockOauthFetch(calls) });
 
     const config = await (await fetch(`${base}/api/auth/config`)).json();
-    assert.deepEqual(config, { kakao: true, google: true });
+    assert.deepEqual(config, { kakao: true, google: true, naver: false });
 
     const { authorize, stateCookie, state } = await startLogin(base, 'kakao', `${MAIN_ORIGIN}/?via=landing#register`);
     assert.equal(authorize.origin + authorize.pathname, 'https://kauth.kakao.com/oauth/authorize');
@@ -82,6 +85,7 @@ test('kakao login round-trip issues a verified session and logout clears it', { 
     assert.equal(landed.origin, MAIN_ORIGIN);
     assert.equal(landed.searchParams.get('via'), 'landing');
     assert.equal(landed.searchParams.get('login'), 'kakao');
+    assert.equal(landed.searchParams.get('status'), 'success');
     assert.equal(landed.hash, '#register');
     const sessionCookie = sessionCookieOf(callback);
     assert.ok(sessionCookie);
@@ -92,7 +96,7 @@ test('kakao login round-trip issues a verified session and logout clears it', { 
         loggedIn: true,
         isAdmin: false,
         hasActiveSubscription: false,
-        user: { provider: 'kakao', id: '112233', name: '김하늘', email: 'learner@example.com' }
+        user: { provider: 'kakao', id: '112233', name: '김하늘', email: 'learner@example.com', membershipStatus: 'GUEST' }
     });
 
     const logout = await fetch(`${base}/api/auth/logout`, { method: 'POST', headers: { Cookie: sessionCookie } });
@@ -117,6 +121,7 @@ test('google login lands back with login=google and a session', { timeout: 10000
     const landed = new URL(callback.headers.get('location'));
     assert.equal(landed.href.replace(landed.search, ''), `${MAIN_ORIGIN}/`);
     assert.equal(landed.searchParams.get('login'), 'google');
+    assert.equal(landed.searchParams.get('status'), 'success');
     const me = await (await fetch(`${base}/api/auth/me`, { headers: { Cookie: sessionCookieOf(callback) } })).json();
     assert.equal(me.user.provider, 'google');
     assert.equal(me.user.id, 'google-7');
@@ -160,10 +165,37 @@ test('return_to outside the allowed origins falls back to the default page', { t
     assert.equal(new URL(callback.headers.get('location')).origin, MAIN_ORIGIN);
 });
 
+test('local 4173 return_to is preserved for local OAuth verification', { timeout: 10000 }, async context => {
+    const base = await withServer(context, { ...authOptions, authFetchImpl: mockOauthFetch() });
+    const localOrigin = 'http://127.0.0.1:4173/';
+    const { stateCookie, state } = await startLogin(base, 'kakao', localOrigin);
+    const callback = await fetch(`${base}/api/auth/kakao/callback?code=abc&state=${state}`, {
+        redirect: 'manual',
+        headers: { Cookie: stateCookie }
+    });
+    const landed = new URL(callback.headers.get('location'));
+    assert.equal(landed.origin, 'http://127.0.0.1:4173');
+    assert.equal(landed.searchParams.get('login'), 'kakao');
+    assert.equal(landed.searchParams.get('status'), 'success');
+});
+
+test('kakao callback uses a stable fallback identity when email consent is missing', { timeout: 10000 }, async context => {
+    const base = await withServer(context, { ...authOptions, authFetchImpl: mockOauthFetch() });
+    const { stateCookie, state } = await startLogin(base, 'kakao');
+    const callback = await fetch(`${base}/api/auth/kakao/callback?code=no-email&state=${state}`, {
+        redirect: 'manual', headers: { Cookie: stateCookie }
+    });
+    assert.equal(callback.status, 302);
+    const me = await (await fetch(`${base}/api/auth/me`, { headers: { Cookie: sessionCookieOf(callback) } })).json();
+    assert.equal(me.user.id, '998877');
+    assert.equal(me.user.name, '카카오사용자');
+    assert.equal(me.user.email, 'kakao_998877@users.daynize.local');
+});
+
 test('auth endpoints report readiness and refuse to start when credentials are missing', { timeout: 10000 }, async context => {
     const base = await withServer(context, { ...authOptions, kakaoClientId: '', kakaoRedirectUri: '' });
     const config = await (await fetch(`${base}/api/auth/config`)).json();
-    assert.deepEqual(config, { kakao: false, google: true });
+    assert.deepEqual(config, { kakao: false, google: true, naver: false });
     assert.equal((await fetch(`${base}/api/auth/kakao`, { redirect: 'manual' })).status, 503);
     assert.equal((await fetch(`${base}/api/auth/unknown`, { redirect: 'manual' })).status, 404);
 });

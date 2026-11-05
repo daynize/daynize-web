@@ -1,13 +1,14 @@
 const { randomBytes } = require('node:crypto');
 const { SESSION_COOKIE, b64url, createCookieCodec, isSecure, setCookie, readCookie } = require('./session-cookie');
 
-// 카카오/구글 OAuth 2.0 인가 코드 플로우. payment-api와 같은 모듈 패턴:
+// 카카오/구글/네이버 OAuth 2.0 인가 코드 플로우. payment-api와 같은 모듈 패턴:
 // createAuthApi(options) -> { handle(request, response, pathname) }.
 // 세션은 HMAC 서명된 무상태 쿠키 하나로 유지한다(재시작해도 로그인 유지).
 // 로그인 성공 시 options.onLogin({ request, user }) 훅으로 회원 저장/게스트 패스 연결을 위임한다.
 
 const STATE_COOKIE = 'daynize_oauth_state';
-const SESSION_TTL_S = 30 * 24 * 60 * 60;
+const DEFAULT_SESSION_TTL_S = 30 * 24 * 60 * 60;
+const PERSISTENT_SESSION_TTL_S = 10 * 365 * 24 * 60 * 60;
 const STATE_TTL_S = 10 * 60;
 
 const PROVIDERS = {
@@ -15,11 +16,14 @@ const PROVIDERS = {
         authorizeUrl: 'https://kauth.kakao.com/oauth/authorize',
         tokenUrl: 'https://kauth.kakao.com/oauth/token',
         profileUrl: 'https://kapi.kakao.com/v2/user/me',
-        profile: info => ({
-            id: String(info.id ?? ''),
-            name: info.kakao_account?.profile?.nickname ?? '',
-            email: (info.kakao_account?.email ?? '').toLowerCase()
-        })
+        profile: info => {
+            const kakaoId = String(info?.id ?? '');
+            const account = info?.kakao_account ?? {};
+            const name = account.profile?.nickname ?? info?.properties?.nickname ?? '';
+            const email = String(account.email ?? '').trim().toLowerCase();
+            // Kakao 계정이 이메일 동의를 거부해도 고유 ID로 회원을 안정적으로 식별한다.
+            return { id: kakaoId, name, email: email || `kakao_${kakaoId}@users.daynize.local` };
+        }
     },
     google: {
         authorizeUrl: 'https://accounts.google.com/o/oauth2/v2/auth',
@@ -30,6 +34,16 @@ const PROVIDERS = {
             id: String(info.sub ?? ''),
             name: info.name ?? '',
             email: (info.email ?? '').toLowerCase()
+        })
+    },
+    naver: {
+        authorizeUrl: 'https://nid.naver.com/oauth2.0/authorize',
+        tokenUrl: 'https://nid.naver.com/oauth2.0/token',
+        profileUrl: 'https://openapi.naver.com/v1/nid/me',
+        profile: info => ({
+            id: String(info.response?.id ?? ''),
+            name: info.response?.name ?? info.response?.nickname ?? '',
+            email: (info.response?.email ?? '').toLowerCase()
         })
     }
 };
@@ -55,13 +69,22 @@ function createAuthApi(options = {}) {
             clientId: options.googleClientId ?? process.env.GOOGLE_CLIENT_ID ?? '',
             clientSecret: options.googleClientSecret ?? process.env.GOOGLE_CLIENT_SECRET ?? '',
             redirectUri: options.googleRedirectUri ?? process.env.GOOGLE_REDIRECT_URI ?? ''
+        },
+        naver: {
+            clientId: options.naverClientId ?? process.env.NAVER_CLIENT_ID ?? '',
+            clientSecret: options.naverClientSecret ?? process.env.NAVER_CLIENT_SECRET ?? '',
+            redirectUri: options.naverRedirectUri ?? process.env.NAVER_REDIRECT_URI ?? ''
         }
     };
     const allowedOrigins = options.allowedOrigins ?? (process.env.ALLOWED_ORIGINS || '').split(',').filter(Boolean);
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
     const now = options.now ?? Date.now;
+    // Production sessions survive browser/device restarts until logout. Test clocks retain the short TTL.
+    const sessionTtlS = options.sessionTtlS ?? (options.now ? DEFAULT_SESSION_TTL_S : PERSISTENT_SESSION_TTL_S);
     const onLogin = options.onLogin;
+    const getProfile = options.getProfile ?? (() => ({}));
     const hasActiveSubscription = options.hasActiveSubscription ?? (() => false);
+    const getMembershipStatus = options.getMembershipStatus ?? (session => hasActiveSubscription(session) ? 'PAID' : 'GUEST');
     const isAdmin = options.isAdmin ?? (() => false);
     let codec = options.codec;
     if (!codec) {
@@ -82,7 +105,7 @@ function createAuthApi(options = {}) {
     }
 
     const loopbackHost = /^(localhost|127\.0\.0\.1|\[::1\]):\d+$/;
-    const devOrigin = /^http:\/\/(localhost|127\.0\.0\.1):(5500|8081)$/;
+    const devOrigin = /^http:\/\/(localhost|127\.0\.0\.1):(4173|5500|8081)$/;
     const isAllowedOrigin = (origin, request) => {
         if (typeof origin !== 'string') return false;
         if (allowedOrigins.includes(origin)) return true;
@@ -99,6 +122,11 @@ function createAuthApi(options = {}) {
     } : {};
     const secure = isSecure;
     const cookie = setCookie;
+    const productionCookie = request => process.env.NODE_ENV === 'production'
+        || String(request.headers.host || '').endsWith('daynize.co.kr');
+    const sessionCookie = (request, value, maxAge) => cookie(request, SESSION_COOKIE, value, maxAge, '/', productionCookie(request)
+        ? { sameSite: 'None', secure: true, domain: '.daynize.co.kr' }
+        : {});
 
     // return_to는 허용된 오리진(또는 로컬 개발 오리진)의 URL만 받는다.
     const safeReturnTo = raw => {
@@ -143,24 +171,40 @@ function createAuthApi(options = {}) {
         }
 
         if (pathname === '/api/auth/config' && request.method === 'GET') {
-            json(response, 200, { kakao: ready('kakao'), google: ready('google') }, cors);
+            json(response, 200, { kakao: ready('kakao'), google: ready('google'), naver: ready('naver') }, cors);
             return true;
         }
         if (pathname === '/api/auth/me' && request.method === 'GET') {
             const session = unseal(readCookie(request, SESSION_COOKIE));
             const admin = Boolean(isAdmin(request));
             json(response, 200, session
-                ? { loggedIn: true, isAdmin: admin, hasActiveSubscription: admin || Boolean(hasActiveSubscription(session)), user: { provider: session.provider, id: session.id, name: session.name, email: session.email } }
+                ? { loggedIn: true, isAdmin: admin, hasActiveSubscription: admin || Boolean(hasActiveSubscription(session)), user: { provider: session.provider, id: session.id, name: session.name, email: session.email, membershipStatus: admin ? 'PAID' : getMembershipStatus(session) } }
                 : { loggedIn: false, isAdmin: admin, hasActiveSubscription: admin }, cors);
+            return true;
+        }
+        if (pathname === '/api/auth/profile' && request.method === 'GET') {
+            const session = unseal(readCookie(request, SESSION_COOKIE));
+            if (!session) {
+                json(response, 401, { error: '로그인이 필요합니다.' }, cors);
+                return true;
+            }
+            const admin = Boolean(isAdmin(request));
+            const profile = await getProfile(session);
+            json(response, 200, {
+                ...profile,
+                user: { provider: session.provider, id: session.id, name: session.name, email: session.email, ...profile?.user },
+                membershipStatus: admin ? 'PAID' : getMembershipStatus(session),
+                hasActiveSubscription: admin || Boolean(hasActiveSubscription(session))
+            }, cors);
             return true;
         }
         if (pathname === '/api/auth/logout' && request.method === 'POST') {
             request.resume();
-            json(response, 200, { success: true }, { ...cors, 'Set-Cookie': cookie(request, SESSION_COOKIE, '', 0) });
+            json(response, 200, { success: true }, { ...cors, 'Set-Cookie': sessionCookie(request, '', 0) });
             return true;
         }
 
-        const match = /^\/api\/auth\/(kakao|google)(\/callback)?$/.exec(pathname);
+        const match = /^\/api\/auth\/(kakao|google|naver)(\/callback)?$/.exec(pathname);
         if (!match || request.method !== 'GET') {
             json(response, 404, { error: '로그인 API 경로를 찾을 수 없습니다.' }, cors);
             return true;
@@ -225,7 +269,7 @@ function createAuthApi(options = {}) {
                 backWithError(request, response, returnTo, `${provider} profile fetch failed (${profileResponse.status})`);
                 return true;
             }
-            profile = config.profile(await profileResponse.json());
+            profile = config.profile(await profileResponse.json().catch(() => ({})));
         } catch (error) {
             backWithError(request, response, returnTo, `${provider} upstream error (${error.message})`);
             return true;
@@ -237,7 +281,7 @@ function createAuthApi(options = {}) {
 
         const issuedAt = Math.floor(now() / 1000);
         const user = { provider, id: profile.id, name: profile.name, email: profile.email };
-        const session = seal({ ...user, iat: issuedAt, exp: issuedAt + SESSION_TTL_S });
+        const session = seal({ ...user, iat: issuedAt, exp: issuedAt + sessionTtlS });
         // 회원 저장 실패가 로그인 자체를 막아서는 안 된다.
         try {
             await onLogin?.({ request, user });
@@ -246,12 +290,13 @@ function createAuthApi(options = {}) {
         }
         const target = resolveTarget(request, returnTo);
         target.searchParams.set('login', provider);
+        target.searchParams.set('status', 'success');
         console.info(`[auth] ${provider} login ok (user ${profile.id})`);
         response.writeHead(302, {
             Location: target.href,
             'Cache-Control': 'no-store',
             'Set-Cookie': [
-                cookie(request, SESSION_COOKIE, session, SESSION_TTL_S),
+                sessionCookie(request, session, sessionTtlS),
                 cookie(request, STATE_COOKIE, '', 0, '/api/auth')
             ]
         });
