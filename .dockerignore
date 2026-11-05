@@ -3,6 +3,8 @@ fly.toml
 !Dockerfile
 !gemini-live-test/
 !gemini-live-test/**
+!scripts/
+!scripts/grant-subscription.js
 gemini-live-test/.env
 gemini-live-test/.access-password
 gemini-live-test/node_modules/

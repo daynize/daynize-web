@@ -6,6 +6,7 @@ COPY gemini-live-test/package.json gemini-live-test/package-lock.json ./
 RUN npm ci --omit=dev
 
 COPY gemini-live-test/ ./
+COPY scripts/grant-subscription.js ./scripts/grant-subscription.js
 COPY ["DAYNIZE LOGO ONLY.png", "/DAYNIZE LOGO ONLY.png"]
 COPY timeline.json ./timeline.json
 COPY public/ ./public/

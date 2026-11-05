@@ -2,7 +2,13 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
-const { createStore } = require('../gemini-live-test/store');
+
+// Local development keeps the relay under gemini-live-test/, while the
+// production image copies that directory's contents directly into /app.
+const storeModulePath = fs.existsSync(path.join(__dirname, '..', 'gemini-live-test', 'store.js'))
+    ? path.join(__dirname, '..', 'gemini-live-test', 'store.js')
+    : path.join(__dirname, '..', 'store.js');
+const { createStore } = require(storeModulePath);
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const DEFAULT_DB_PATH = path.join(__dirname, '..', 'gemini-live-test', '.data', 'daynize.sqlite');
