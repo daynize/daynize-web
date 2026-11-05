@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS study_data (
 CREATE TABLE IF NOT EXISTS entitlements (
     email TEXT PRIMARY KEY,
     has_active_subscription INTEGER NOT NULL DEFAULT 0,
+    status TEXT NOT NULL DEFAULT 'PAID',
     source TEXT NOT NULL,
     payment_id TEXT,
     updated_at INTEGER NOT NULL
@@ -44,6 +45,12 @@ function createStore({ path = ':memory:' } = {}) {
     const db = new DatabaseSync(path);
     db.exec('PRAGMA journal_mode = WAL; PRAGMA busy_timeout = 3000;');
     db.exec(SCHEMA);
+    // Older relay databases predate the explicit entitlement status column.
+    // Keep them readable while making manual and payment grants auditable as PAID.
+    const entitlementColumns = new Set(db.prepare('PRAGMA table_info(entitlements)').all().map(column => column.name));
+    if (!entitlementColumns.has('status')) {
+        db.exec("ALTER TABLE entitlements ADD COLUMN status TEXT NOT NULL DEFAULT 'PAID'");
+    }
 
     const statements = {
         passById: db.prepare('SELECT * FROM guest_passes WHERE id = ?'),
@@ -60,10 +67,10 @@ function createStore({ path = ':memory:' } = {}) {
         upsertStudy: db.prepare(`INSERT INTO study_data (user_key, key, value, updated_at) VALUES (?, ?, ?, ?)
             ON CONFLICT(user_key, key) DO UPDATE SET value = excluded.value, updated_at = excluded.updated_at`),
         studyByUser: db.prepare('SELECT key, value, updated_at FROM study_data WHERE user_key = ?'),
-        upsertEntitlement: db.prepare(`INSERT INTO entitlements (email, has_active_subscription, source, payment_id, updated_at)
-            VALUES (?, 1, ?, ?, ?)
-            ON CONFLICT(email) DO UPDATE SET has_active_subscription = 1, source = excluded.source, payment_id = excluded.payment_id, updated_at = excluded.updated_at`),
-        entitlementByEmail: db.prepare('SELECT has_active_subscription FROM entitlements WHERE email = ?')
+        upsertEntitlement: db.prepare(`INSERT INTO entitlements (email, has_active_subscription, status, source, payment_id, updated_at)
+            VALUES (?, 1, 'PAID', ?, ?, ?)
+            ON CONFLICT(email) DO UPDATE SET has_active_subscription = 1, status = 'PAID', source = excluded.source, payment_id = excluded.payment_id, updated_at = excluded.updated_at`),
+        entitlementByEmail: db.prepare('SELECT email, has_active_subscription, status, source, payment_id, updated_at FROM entitlements WHERE email = ?')
     };
 
     return {
@@ -103,7 +110,13 @@ function createStore({ path = ':memory:' } = {}) {
         hasActiveSubscription: email => {
             const normalized = String(email || '').trim().toLowerCase();
             if (!normalized) return false;
-            return Number(statements.entitlementByEmail.get(normalized)?.has_active_subscription || 0) === 1;
+            const entitlement = statements.entitlementByEmail.get(normalized);
+            return Number(entitlement?.has_active_subscription || 0) === 1 && (!entitlement.status || entitlement.status === 'PAID');
+        },
+        getEntitlement: email => {
+            const normalized = String(email || '').trim().toLowerCase();
+            if (!normalized) return null;
+            return statements.entitlementByEmail.get(normalized) ?? null;
         },
         close: () => db.close()
     };

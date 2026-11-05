@@ -18,6 +18,20 @@ For the DAYNIZE admin gate, configure both secrets on the API server. `ADMIN_GAT
 fly secrets set ADMIN_GATE_SECRET='replace-with-a-long-random-password' AUTH_SESSION_SECRET="$(openssl rand -hex 32)" -a daynize-relay-api
 ```
 
+To grant a paid entitlement manually, run the CLI from the repository root. It writes `hasActiveSubscription=1` and `status=PAID` to the same SQLite database used by the relay. The social-login email is normalized to lowercase, so the matching Google/Kakao account is paid on its next `/api/auth/me` check:
+
+```sh
+node scripts/grant-subscription.js user@email.com
+```
+
+For the deployed Fly volume, point the command at the relay's mounted data directory (or set `DAYNIZE_DB_PATH`):
+
+```sh
+DATA_DIR=/data node scripts/grant-subscription.js user@email.com
+```
+
+For local persistence, start the relay with the same `DATA_DIR` and then run the CLI. `--db /path/to/daynize.sqlite` is also supported.
+
 Open http://localhost:8080 in a current browser and click the floating voice button once. Spotlight opens inline and immediately begins microphone permission and Gemini connection without page navigation or another start click. Muting sends `audioStreamEnd` but keeps response playback alive. Speaker mute, live captions, voice and playback speed are available in the icon tray. Ending the call or closing the modal releases audio resources. Headphones are recommended to avoid feedback. Microphone audio is sent to Google while enabled.
 
 The server listens only on the loopback interface, at port 8080. Both HTTP assets and `ws://localhost:8080/ws/gemini-live` use that port (`/ws` and the legacy `/` WebSocket paths also work). Open the served URL, not the HTML as a local file: AudioWorklet and microphone capture need a secure context (localhost qualifies). Port 8080 must be free.

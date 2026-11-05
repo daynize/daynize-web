@@ -3,5 +3,6 @@ node_modules/
 *.log
 .access-password
 .tools/
+.data/
 test-results/
 playwright-report/
