@@ -21,8 +21,10 @@ fly secrets set ADMIN_GATE_SECRET='replace-with-a-long-random-password' AUTH_SES
 To grant a paid entitlement manually, run the CLI from the repository root. It writes `hasActiveSubscription=1` and `status=PAID` to the same SQLite database used by the relay. The social-login email is normalized to lowercase, so the matching Google/Kakao account is paid on its next `/api/auth/me` check:
 
 ```sh
-node scripts/grant-subscription.js user@email.com
+node scripts/grant-subscription.js user1@email.com user2@email.com user3@email.com
 ```
+
+Each email is normalized and validated independently. The CLI prints `[SUCCESS]` or `[FAIL]` for every address, continues after an invalid address, and exits with status `1` if any address failed.
 
 For the deployed Fly volume, point the command at the relay's mounted data directory (or set `DAYNIZE_DB_PATH`):
 
