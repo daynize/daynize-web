@@ -90,6 +90,8 @@ test('kakao login round-trip issues a verified session and logout clears it', { 
     const me = await (await fetch(`${base}/api/auth/me`, { headers: { Cookie: sessionCookie } })).json();
     assert.deepEqual(me, {
         loggedIn: true,
+        isAdmin: false,
+        hasActiveSubscription: false,
         user: { provider: 'kakao', id: '112233', name: '김하늘', email: 'learner@example.com' }
     });
 
@@ -98,7 +100,7 @@ test('kakao login round-trip issues a verified session and logout clears it', { 
     assert.match(logout.headers.getSetCookie().find(line => line.startsWith('daynize_session=')), /Max-Age=0/);
 
     const anonymous = await (await fetch(`${base}/api/auth/me`)).json();
-    assert.deepEqual(anonymous, { loggedIn: false });
+    assert.deepEqual(anonymous, { loggedIn: false, isAdmin: false, hasActiveSubscription: false });
 });
 
 test('google login lands back with login=google and a session', { timeout: 10000 }, async context => {
@@ -136,7 +138,7 @@ test('callback rejects state mismatch and forged or expired sessions stay logged
     const forged = await (await fetch(`${base}/api/auth/me`, {
         headers: { Cookie: 'daynize_session=eyJmYWtlIjp0cnVlfQ.forged-signature' }
     })).json();
-    assert.deepEqual(forged, { loggedIn: false });
+    assert.deepEqual(forged, { loggedIn: false, isAdmin: false, hasActiveSubscription: false });
 
     const { stateCookie: freshState, state } = await startLogin(base, 'kakao');
     const callback = await fetch(`${base}/api/auth/kakao/callback?code=abc&state=${state}`, {
@@ -145,7 +147,7 @@ test('callback rejects state mismatch and forged or expired sessions stay logged
     const sessionCookie = sessionCookieOf(callback);
     currentTime += 31 * 24 * 60 * 60 * 1000;
     const expired = await (await fetch(`${base}/api/auth/me`, { headers: { Cookie: sessionCookie } })).json();
-    assert.deepEqual(expired, { loggedIn: false });
+    assert.deepEqual(expired, { loggedIn: false, isAdmin: false, hasActiveSubscription: false });
 });
 
 test('return_to outside the allowed origins falls back to the default page', { timeout: 10000 }, async context => {

@@ -112,7 +112,6 @@ function createModal() {
             <ul class="free-pass-perks">
                 <li>지금까지 본 강의·노트 기록 보존</li>
                 <li>AI 데이나 음성대화 계속 이용</li>
-                <li>신용카드 입력 없음</li>
             </ul>
             <button type="button" class="free-pass-kakao" data-provider="kakao">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.48 3 2 6.58 2 11c0 2.83 1.86 5.31 4.66 6.73l-1.1 4.07a.4.4 0 0 0 .61.43l4.75-3.16c.35.03.7.05 1.08.05 5.52 0 10-3.58 10-8S17.52 3 12 3Z"/></svg>

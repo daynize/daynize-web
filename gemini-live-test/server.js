@@ -19,6 +19,7 @@ const FILES = new Map([
     ['/', ['index.html', 'text/html; charset=utf-8']],
     ['/index.html', ['index.html', 'text/html; charset=utf-8']],
     ['/audio.mjs', ['audio.mjs', 'text/javascript; charset=utf-8']],
+    ['/auth-paywall-guard.js', ['auth-paywall-guard.js', 'text/javascript; charset=utf-8']],
     ['/pcm-worklet.mjs', ['pcm-worklet.mjs', 'text/javascript; charset=utf-8']],
     ...['live-service.mjs', 'audio-engine.mjs', 'ambient-orb.mjs', 'session-safety.mjs', 'tutor-widget.mjs', 'daynize-tutor.mjs', 'voice-studio-live.mjs', 'lesson-context.mjs'].map(file => [`/${file}`, [file, 'text/javascript; charset=utf-8']]),
     ['/spotlight-bar.css', ['spotlight-bar.css', 'text/css; charset=utf-8']],
@@ -64,6 +65,7 @@ function createRelayServer(options = {}) {
     const maxTranscriptionBytes = options.maxTranscriptionBytes ?? 8 * 1024 * 1024;
     const maxTranscriptionsPerMinute = options.maxTranscriptionsPerMinute ?? 20;
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
+    let store;
     const paymentApi = createPaymentApi({
         storeId: options.portoneStoreId,
         channelKey: options.portoneChannelKey,
@@ -74,7 +76,13 @@ function createRelayServer(options = {}) {
         amount: options.portoneAmount,
         allowedOrigins: trustedOrigins,
         fetchImpl: options.paymentFetchImpl ?? fetchImpl,
-        now: options.paymentNow
+        now: options.paymentNow,
+        onPaid: details => store?.grantActiveSubscription({
+            email: details.email,
+            source: details.paymentType === 'subscription' ? 'subscription-payment' : 'payment',
+            paymentId: details.paymentId,
+            at: details.at
+        })
     });
     let authSessionSecret = options.authSessionSecret ?? process.env.AUTH_SESSION_SECRET ?? '';
     if (!authSessionSecret) {
@@ -84,8 +92,9 @@ function createRelayServer(options = {}) {
     const cookieCodec = createCookieCodec({ secret: authSessionSecret, now: options.authNow ?? Date.now });
     // DATA_DIR(플라이 볼륨)이 없으면 메모리 DB라 재시작 시 게스트 패스/학습 데이터가 사라진다.
     const dataDir = options.dataDir ?? process.env.DATA_DIR;
-    const store = options.store ?? createStore({ path: dataDir ? path.join(dataDir, 'daynize.sqlite') : ':memory:' });
+    store = options.store ?? createStore({ path: dataDir ? path.join(dataDir, 'daynize.sqlite') : ':memory:' });
     if (!dataDir && !options.store) console.warn('[free-pass] DATA_DIR is not set; guest passes and study data live in memory only.');
+    const hasActiveSubscription = options.hasActiveSubscription ?? (session => store.hasActiveSubscription(session.email));
     const freePassApi = createFreePassApi({
         store,
         codec: cookieCodec,
@@ -96,7 +105,8 @@ function createRelayServer(options = {}) {
         maxVoiceSessionMs: options.freePassMaxVoiceSessionMs,
         maxPassesPerIpPerDay: options.freePassMaxPerIpPerDay,
         maxStartsPerMinute: options.freePassMaxStartsPerMinute,
-        trustProxyHeaders: options.trustProxyHeaders
+        trustProxyHeaders: options.trustProxyHeaders,
+        hasActiveSubscription
     });
     // 음성 WS 게이트는 프론트가 /api/free-pass/start 를 호출하고 WS 가 api 호스트(쿠키 전달)로 붙을 때만 켠다.
     const enforceVoiceLimits = options.enforceVoiceLimits ?? ['1', 'true', 'on'].includes(String(process.env.FREE_PASS_ENFORCE_VOICE || '').toLowerCase());
@@ -119,7 +129,9 @@ function createRelayServer(options = {}) {
         allowedOrigins: trustedOrigins,
         fetchImpl: options.authFetchImpl ?? fetchImpl,
         now: options.authNow,
-        onLogin: freePassApi.onLogin
+        onLogin: freePassApi.onLogin,
+        isAdmin: adminGateApi.isAdmin,
+        hasActiveSubscription
     });
     if (!Number.isInteger(maxTranscriptionBytes) || maxTranscriptionBytes < 44 || !Number.isInteger(maxTranscriptionsPerMinute) || maxTranscriptionsPerMinute < 1) {
         throw new Error('Invalid transcription limits.');
@@ -396,6 +408,11 @@ function createRelayServer(options = {}) {
         let sessionLimitMs = maxSessionMs;
         if (freePassApi.isAdmin(request)) {
             sessionLimitMs = null;
+        } else if (freePassApi.isPaidMember(request)) {
+            sessionLimitMs = null;
+        } else if (freePassApi.isAuthenticated(request)) {
+            socket.end('HTTP/1.1 402 Payment Required\r\nX-Free-Pass: subscription-required\r\nConnection: close\r\n\r\n');
+            return;
         } else if (enforceVoiceLimits) {
             const gate = freePassApi.checkVoice(request);
             if (!gate.ok) {

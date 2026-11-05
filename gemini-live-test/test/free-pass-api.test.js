@@ -192,7 +192,7 @@ test('voice gate allows three guest sessions capped at five minutes, members are
     context.after(() => new Promise(resolve => upstream.close(resolve)));
     const now = clock();
     const base = await withServer(context, {
-        authNow: now, enforceVoiceLimits: true, authFetchImpl: mockOauthFetch(), upstreamUrl: `ws://127.0.0.1:${upstream.address().port}`
+        authNow: now, enforceVoiceLimits: true, hasActiveSubscription: () => true, authFetchImpl: mockOauthFetch(), upstreamUrl: `ws://127.0.0.1:${upstream.address().port}`
     });
     const { guestCookie } = await start(base);
     const upgrade = cookie => new Promise(resolve => {
@@ -230,7 +230,7 @@ test('social login links the guest pass and migrates local study data', async co
     assert.ok(sessionCookie);
 
     const asMember = await start(base, { cookie: `${guestCookie}; ${sessionCookie}` });
-    assert.deepEqual(asMember.body, { status: 'member' });
+    assert.equal(asMember.body.status, 'active');
 
     const unauthorized = await fetch(`${base}/api/free-pass/migrate`, {
         method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ data: {} })

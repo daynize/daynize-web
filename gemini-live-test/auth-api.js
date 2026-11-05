@@ -61,6 +61,8 @@ function createAuthApi(options = {}) {
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
     const now = options.now ?? Date.now;
     const onLogin = options.onLogin;
+    const hasActiveSubscription = options.hasActiveSubscription ?? (() => false);
+    const isAdmin = options.isAdmin ?? (() => false);
     let codec = options.codec;
     if (!codec) {
         let sessionSecret = options.sessionSecret ?? process.env.AUTH_SESSION_SECRET ?? '';
@@ -146,9 +148,10 @@ function createAuthApi(options = {}) {
         }
         if (pathname === '/api/auth/me' && request.method === 'GET') {
             const session = unseal(readCookie(request, SESSION_COOKIE));
+            const admin = Boolean(isAdmin(request));
             json(response, 200, session
-                ? { loggedIn: true, user: { provider: session.provider, id: session.id, name: session.name, email: session.email } }
-                : { loggedIn: false }, cors);
+                ? { loggedIn: true, isAdmin: admin, hasActiveSubscription: admin || Boolean(hasActiveSubscription(session)), user: { provider: session.provider, id: session.id, name: session.name, email: session.email } }
+                : { loggedIn: false, isAdmin: admin, hasActiveSubscription: admin }, cors);
             return true;
         }
         if (pathname === '/api/auth/logout' && request.method === 'POST') {

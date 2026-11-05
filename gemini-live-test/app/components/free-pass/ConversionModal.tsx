@@ -105,7 +105,7 @@ export default function ConversionModal({ open, onClose, variant = 'warning', di
                 <p className="mt-2 break-keep text-sm leading-relaxed text-slate-600">{copy.sub}</p>
 
                 <ul className="mt-4 space-y-1.5 text-[13px] text-slate-700">
-                    {['지금까지 본 강의·노트 기록 보존', 'AI 데이나 음성대화 계속 이용', '신용카드 입력 없음'].map(item => (
+                    {['지금까지 본 강의·노트 기록 보존', 'AI 데이나 음성대화 계속 이용'].map(item => (
                         <li key={item} className="flex items-center gap-2">
                             <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#F67608]" aria-hidden="true" />
                             {item}

@@ -47,6 +47,7 @@ function createPaymentApi(options = {}) {
     const allowedOrigins = options.allowedOrigins ?? (process.env.ALLOWED_ORIGINS || '').split(',').filter(Boolean);
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
     const now = options.now ?? Date.now;
+    const onPaid = options.onPaid;
     const orders = new Map();
     let lastOrderTimestamp = 0;
 
@@ -255,7 +256,7 @@ function createPaymentApi(options = {}) {
             }
             return true;
         }
-        if (order.status === 'PAID') {
+            if (order.status === 'PAID') {
             json(response, 200, { success: true, orderId, amount, email: order.email, status: 'PAID' }, cors);
             return true;
         }
@@ -290,6 +291,7 @@ function createPaymentApi(options = {}) {
                 return true;
             }
             order.status = 'PAID';
+            await onPaid?.({ email: order.email, paymentId: orderId, paymentType: order.paymentType, at: now() });
             json(response, 200, { success: true, orderId, amount, email: order.email, status: 'PAID' }, cors);
         } catch {
             json(response, 502, { error: '결제 확인에 실패했습니다. 잠시 후 다시 확인해 주세요.' }, cors);

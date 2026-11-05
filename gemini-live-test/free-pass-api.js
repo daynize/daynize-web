@@ -58,6 +58,7 @@ function createFreePassApi(options = {}) {
     const maxStartsPerMinute = options.maxStartsPerMinute ?? 30;
     const trustProxyHeaders = options.trustProxyHeaders ?? (process.env.NODE_ENV === 'production' || Boolean(process.env.FLY_APP_NAME));
     const allowedOrigins = options.allowedOrigins ?? (process.env.ALLOWED_ORIGINS || '').split(',').filter(Boolean);
+    const hasActiveSubscription = options.hasActiveSubscription ?? (() => false);
 
     const loopbackHost = /^(localhost|127\.0\.0\.1|\[::1\]):\d+$/;
     const devOrigin = /^http:\/\/(localhost|127\.0\.0\.1):(5500|8081)$/;
@@ -140,11 +141,19 @@ function createFreePassApi(options = {}) {
     const sanitizeFingerprint = raw => (typeof raw === 'string' && FINGERPRINT_PATTERN.test(raw) ? raw.toLowerCase() : null);
 
     const isAdmin = request => Boolean(readAdminSession(request, codec, now));
+    const authenticatedSession = request => readSession(request, codec);
+    const isAuthenticated = request => Boolean(authenticatedSession(request));
+    const isPaidMember = request => {
+        const session = authenticatedSession(request);
+        return Boolean(session && hasActiveSubscription(session));
+    };
 
     // 음성 WebSocket 업그레이드 게이트. 회원과 관리자는 무제한, 게스트는 패스 유효 + 세션 횟수 이내일 때만.
     function checkVoice(request) {
         if (isAdmin(request)) return { ok: true, member: true, admin: true };
-        if (readSession(request, codec)) return { ok: true, member: true };
+        const session = readSession(request, codec);
+        if (session && hasActiveSubscription(session)) return { ok: true, member: true };
+        if (session) return { ok: false, status: 402, reason: 'subscription-required' };
         const { pass, limited } = resolvePass(request, { fingerprint: null, create: false });
         if (!pass) return { ok: false, status: 403, reason: 'free-pass-required' };
         const state = describe(pass, limited);
@@ -195,7 +204,7 @@ function createFreePassApi(options = {}) {
                 return true;
             }
             const body = await readJsonBody(request);
-            if (session) {
+            if (session && hasActiveSubscription(session)) {
                 json(response, 200, { status: 'member' }, cors);
                 return true;
             }
@@ -209,7 +218,7 @@ function createFreePassApi(options = {}) {
                 json(response, 200, { status: 'member', admin: true }, cors);
                 return true;
             }
-            if (session) {
+            if (session && hasActiveSubscription(session)) {
                 json(response, 200, { status: 'member' }, cors);
                 return true;
             }
@@ -258,7 +267,7 @@ function createFreePassApi(options = {}) {
         return true;
     }
 
-    return { handle, checkVoice, onLogin, durationMs, isAdmin };
+    return { handle, checkVoice, onLogin, durationMs, isAdmin, isAuthenticated, isPaidMember };
 }
 
 module.exports = { createFreePassApi };

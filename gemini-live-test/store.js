@@ -31,6 +31,13 @@ CREATE TABLE IF NOT EXISTS study_data (
     updated_at INTEGER NOT NULL,
     PRIMARY KEY (user_key, key)
 );
+CREATE TABLE IF NOT EXISTS entitlements (
+    email TEXT PRIMARY KEY,
+    has_active_subscription INTEGER NOT NULL DEFAULT 0,
+    source TEXT NOT NULL,
+    payment_id TEXT,
+    updated_at INTEGER NOT NULL
+);
 `;
 
 function createStore({ path = ':memory:' } = {}) {
@@ -52,7 +59,11 @@ function createStore({ path = ':memory:' } = {}) {
         userByKey: db.prepare('SELECT * FROM users WHERE user_key = ?'),
         upsertStudy: db.prepare(`INSERT INTO study_data (user_key, key, value, updated_at) VALUES (?, ?, ?, ?)
             ON CONFLICT(user_key, key) DO UPDATE SET value = excluded.value, updated_at = excluded.updated_at`),
-        studyByUser: db.prepare('SELECT key, value, updated_at FROM study_data WHERE user_key = ?')
+        studyByUser: db.prepare('SELECT key, value, updated_at FROM study_data WHERE user_key = ?'),
+        upsertEntitlement: db.prepare(`INSERT INTO entitlements (email, has_active_subscription, source, payment_id, updated_at)
+            VALUES (?, 1, ?, ?, ?)
+            ON CONFLICT(email) DO UPDATE SET has_active_subscription = 1, source = excluded.source, payment_id = excluded.payment_id, updated_at = excluded.updated_at`),
+        entitlementByEmail: db.prepare('SELECT has_active_subscription FROM entitlements WHERE email = ?')
     };
 
     return {
@@ -83,6 +94,17 @@ function createStore({ path = ':memory:' } = {}) {
             return entries.length;
         },
         getStudyData: userKey => Object.fromEntries(statements.studyByUser.all(userKey).map(row => [row.key, JSON.parse(row.value)])),
+        grantActiveSubscription: ({ email, source = 'payment', paymentId = null, at = Date.now() }) => {
+            const normalized = String(email || '').trim().toLowerCase();
+            if (!normalized) return false;
+            statements.upsertEntitlement.run(normalized, source, paymentId, at);
+            return true;
+        },
+        hasActiveSubscription: email => {
+            const normalized = String(email || '').trim().toLowerCase();
+            if (!normalized) return false;
+            return Number(statements.entitlementByEmail.get(normalized)?.has_active_subscription || 0) === 1;
+        },
         close: () => db.close()
     };
 }

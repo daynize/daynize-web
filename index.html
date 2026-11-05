@@ -12,6 +12,7 @@
     <title>데이나이즈 (Daynize) | 일상 대화로 배우는 지난주 영어</title>
     <meta name="keywords" content="데이나이즈, Daynize, DAYNIZE, 지난주 영어, 영어 회화, 실전 영어, K-ECHO, 드라마 대사 검색, 쉐도잉">
     <meta name="robots" content="index, follow, max-image-preview:large">
+    <script type="module" src="/auth-paywall-guard.js"></script>
     <link rel="canonical" href="https://www.daynize.co.kr/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ko_KR">
@@ -4117,7 +4118,11 @@
                 updateRegistrationSubmitState();
             };
 
-            if (new URLSearchParams(window.location.search).get('checkout') === 'cancelled') {
+            const checkoutState = new URLSearchParams(window.location.search).get('checkout');
+            if (checkoutState === 'required') {
+                restoreCheckoutInput();
+                showRegistrationMessage('유료 콘텐츠는 활성 구독 회원만 이용할 수 있습니다. 결제를 완료해 주세요.', true);
+            } else if (checkoutState === 'cancelled') {
                 restoreCheckoutInput();
                 history.replaceState(null, '', `${window.location.pathname}${window.location.hash || '#register'}`);
                 showRegistrationMessage('결제가 취소되었습니다. 입력하신 신청 정보는 그대로 두었습니다.', true);
