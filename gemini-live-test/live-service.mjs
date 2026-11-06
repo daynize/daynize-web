@@ -68,7 +68,7 @@ export function resolveWebSocketUrl({ endpoint, env = globalThis.process?.env, c
     const local = ['localhost', '127.0.0.1', '[::1]'].includes(page?.hostname);
     const fallback = local || page?.hostname?.endsWith('.trycloudflare.com')
         ? `${page.protocol === 'https:' ? 'wss:' : 'ws:'}//${page.host}/ws/gemini-live`
-        : (page && page.protocol !== 'file:') || env?.NODE_ENV === 'production' ? 'wss://daynize-relay-api.fly.dev/ws/gemini-live' : 'ws://localhost:8080/ws/gemini-live';
+        : (page && page.protocol !== 'file:') || env?.NODE_ENV === 'production' ? 'wss://api.daynize.co.kr/ws/gemini-live' : 'ws://localhost:8080/ws/gemini-live';
     const url = new URL(configured || fallback);
     if (!['ws:', 'wss:'].includes(url.protocol) || url.username || url.password || url.hash) throw new Error('WebSocket 주소를 확인해주세요.');
     if (page?.protocol === 'https:' && url.protocol !== 'wss:') throw new Error('HTTPS 페이지에는 보안 WebSocket(WSS) 주소가 필요합니다.');

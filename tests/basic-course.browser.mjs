@@ -60,7 +60,7 @@ test('teaching context persists from course and reading clicks with working stat
             assert.equal(await page.evaluate(() => localStorage.getItem('daynize_recent_lesson')), null);
             const config = await page.request.get(new URL('/gemini-live-test/runtime-config.json', base).href);
             assert.equal(config.status(), 200);
-            assert.equal((await config.json()).wsUrl, 'wss://daynize-relay-api.fly.dev/ws/gemini-live');
+            assert.equal((await config.json()).wsUrl, 'wss://api.daynize.co.kr/ws/gemini-live');
             const favicon = await page.request.get(new URL('/favicon.ico', base).href);
             assert.equal(favicon.status(), 200);
             assert.deepEqual([...(await favicon.body()).subarray(0, 4)], [0, 0, 1, 0]);

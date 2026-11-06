@@ -231,8 +231,8 @@ test('retryable upstream error and backpressure use browser-safe close codes', a
 test('URL configuration is explicit, environment-aware and secure on HTTPS', () => {
     const page = { hostname: 'www.daynize.co.kr', host: 'www.daynize.co.kr', protocol: 'https:' };
     assert.equal(resolveWebSocketUrl({ env: {}, config: {}, page: null }), 'ws://localhost:8080/ws/gemini-live');
-    assert.equal(resolveWebSocketUrl({ env: { NODE_ENV: 'production' }, config: {}, page: null }), 'wss://daynize-relay-api.fly.dev/ws/gemini-live');
-    assert.equal(resolveWebSocketUrl({ env: {}, config: {}, page }), 'wss://daynize-relay-api.fly.dev/ws/gemini-live');
+    assert.equal(resolveWebSocketUrl({ env: { NODE_ENV: 'production' }, config: {}, page: null }), 'wss://api.daynize.co.kr/ws/gemini-live');
+    assert.equal(resolveWebSocketUrl({ env: {}, config: {}, page }), 'wss://api.daynize.co.kr/ws/gemini-live');
     assert.equal(resolveWebSocketUrl({ env: { NEXT_PUBLIC_WS_URL: 'wss://relay.example/ws' }, config: {}, page }), 'wss://relay.example/ws');
     assert.equal(resolveWebSocketUrl({ endpoint: 'wss://override.example/ws', env: { WS_URL: 'wss://env.example/ws' }, page }), 'wss://override.example/ws');
     assert.equal(resolveWebSocketUrl({ config: { wsUrl: 'wss://runtime.example/ws' }, page }), 'wss://runtime.example/ws');
