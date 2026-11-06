@@ -1645,6 +1645,29 @@
             font-size: 15px;
         }
 
+        /* 카카오/네이버 인앱 웹뷰 등 일부 환경은 <dialog>의 기본 중앙 정렬(브라우저 기본
+           스타일시트가 해주는 position:fixed + margin:auto)을 제대로 구현하지 않아, 다이얼로그가
+           화면 맨 위로 밀려 올라가고 배경만 어두워지는 증상이 난다. 각 다이얼로그 타입(.legal-modal,
+           .course-dialog 등)이 이미 정해 둔 width/max-height/overflow는 그대로 둔 채(이 규칙보다
+           클래스 선택자가 우선 적용된다), 위치 고정과 뷰포트 변화(iOS 주소창 접힘/펼침) 대응만
+           모든 <dialog>에 공통으로 보강한다.
+           모든 dialog에 공통으로 적용되는 기본값 — 각 타입은 width/height를 자신의 클래스에서
+           덮어쓴다(선택자 우선순위가 더 높으므로 이 규칙과 충돌하지 않는다). */
+        dialog[open] {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            max-height: 100dvh;
+        }
+
+        dialog::backdrop {
+            position: fixed;
+            inset: 0;
+        }
+
         .legal-modal {
             width: min(760px, calc(100% - 32px));
             max-width: none;
@@ -2995,6 +3018,13 @@
                 if (window.location.hash !== '#register') history.replaceState(history.state, '', `${window.location.pathname}${window.location.search}#register`);
             });
             void fetchAuth().catch(() => renderAccount({ loggedIn: false }));
+            // 결제는 별도 페이지(/payment/success)에서 완료되고, 거기서 "데이나이즈로 돌아가기"
+            // 대신 브라우저 뒤로가기로 돌아오면 bfcache가 이 페이지를 그대로 복원해 버려서
+            // fetchAuth()가 다시 실행되지 않는다 — 결제는 DB에 이미 반영됐는데 화면만 결제 전
+            // 상태로 얼어붙어 보이는 원인이다. pageshow(persisted)로 그 경우만 다시 동기화한다.
+            window.addEventListener('pageshow', event => {
+                if (event.persisted) void fetchAuth().catch(() => {});
+            });
 
             document.querySelectorAll('[data-open-legal]').forEach((trigger) => {
                 trigger.addEventListener('click', () => {
@@ -4449,8 +4479,13 @@
                 navCheckout.hidden = false;
                 navCheckout.parentElement.querySelector('.member-status-badge')?.remove();
             };
+            // 이 리스너가 비로그인 전환만 처리하고 있었다 — 결제 성공 직후나, 이미 결제한 계정으로
+            // 막 로그인했을 때처럼 "방금 유료로 바뀐" 경우를 반영하는 쪽이 빠져 있어서, 결제가
+            // DB에는 바로 반영돼도 화면(신청 폼/배지)은 새로고침 전까지 미결제로 보이는 원인이었다.
+            // 매번 같은 기준(checkIsPaidUser)으로 양방향 모두 맞춘다.
             window.addEventListener('daynize:auth-state-changed', event => {
-                if (event.detail?.loggedIn !== true) resetGuestCheckoutState();
+                if (checkIsPaidUser(event.detail)) showPaidCheckoutState();
+                else resetGuestCheckoutState();
             });
             const hidePaidCheckout = async () => {
                 if (checkIsPaidUser()) {
