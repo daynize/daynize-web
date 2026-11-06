@@ -22,6 +22,9 @@
         });
     </script>
     <script type="module" src="/auth-paywall-guard.js"></script>
+    <!-- 구형 iOS Safari(15.4 미만) 등 <dialog>.showModal()을 지원하지 않는 브라우저용 폴백 스타일.
+         네이티브 지원 브라우저에는 영향 없음(dialog-polyfill.js가 해당 dialog에만 적용). -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.6/dist/dialog-polyfill.css">
     <link rel="canonical" href="https://www.daynize.co.kr/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ko_KR">
@@ -4873,6 +4876,20 @@
     <script type="module" src="./gemini-live-test/daynize-tutor.mjs" data-daynize-tutor
         data-transcription-endpoint="https://api.daynize.co.kr/transcribe"></script>
     <script type="module" src="./gemini-live-test/voice-studio-live.mjs?v=voice-stt-69b3ca6a"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.6/dist/dialog-polyfill.js"></script>
+    <script>
+        // 로그인/프로필/강의/결제/퀴즈 등 이 페이지의 모든 <dialog>를 훑어서, 네이티브
+        // showModal()이 없는 브라우저(구형 iOS Safari, 일부 구형 웹뷰)에만 폴리필을 등록한다.
+        // showModal이 이미 있는 브라우저는 건드리지 않으므로 기존 동작은 그대로 유지된다.
+        if (window.dialogPolyfill) {
+            document.querySelectorAll('dialog').forEach(dialog => {
+                if (typeof dialog.showModal !== 'function') {
+                    try { window.dialogPolyfill.registerDialog(dialog); }
+                    catch (error) { console.warn('[daynize] dialog polyfill registration failed', error); }
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
