@@ -83,6 +83,10 @@ function createPaymentApi(options = {}) {
     // 로그인한 사용자의 결제 엔티티는 입력폼 이메일이 아니라 로그인 세션 이메일로 귀속시켜,
     // hasActiveSubscription(session.email) 조회가 항상 결제 시점 이메일과 일치하게 한다.
     const getSession = options.getSession ?? (() => null);
+    // 카카오 이메일 미동의로 받은 합성 식별자(kakao_*@kakao.daynize)는 실제 수신함이 아니므로
+    // 영수증용으로 강제하지 않고, 대신 결제 시점에 입력한 실제 이메일과 세션 이메일을 연결해 둔다.
+    const linkEmails = options.linkEmails ?? (() => false);
+    const fallbackSessionEmail = /@kakao\.daynize$/i;
     const orders = new Map();
     let lastOrderTimestamp = 0;
 
@@ -261,11 +265,15 @@ function createPaymentApi(options = {}) {
                 return true;
             }
             const name = typeof body.name === 'string' ? body.name.trim() : '';
-            // 로그인 상태면 입력폼 이메일을 무시하고 세션 이메일을 결제 엔티티의 기준으로 쓴다
-            // (폼 값이 세션 이메일과 달라져도 하나로 모아서 hasActiveSubscription 조회가 어긋나지 않게 한다).
+            // 로그인 상태면 입력폼 이메일 대신 세션 이메일을 결제 엔티티의 기준으로 쓴다(폼 값이 달라져도
+            // hasActiveSubscription 조회가 어긋나지 않게). 단, 카카오 이메일 미동의로 받은 합성 식별자는
+            // 실제 수신함이 아니므로 강제하지 않고 사용자가 입력한 영수증 이메일을 그대로 쓰며,
+            // 결제 성공 시 그 이메일과 세션 이메일을 연결해 세션 쪽에도 권한이 반영되게 한다.
             const session = getSession(request);
             const formEmail = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
-            const email = session?.email ? String(session.email).trim().toLowerCase() : formEmail;
+            const sessionEmail = session?.email ? String(session.email).trim().toLowerCase() : '';
+            const sessionEmailIsFallback = fallbackSessionEmail.test(sessionEmail);
+            const email = sessionEmail && !sessionEmailIsFallback ? sessionEmail : formEmail;
             const phone = typeof body.phone === 'string' ? body.phone.trim() : '';
             const digits = phone.replace(/\D/g, '');
             if (!body.privacyConsent || !body.termsConsent || (paymentType === 'subscription' && body.billingConsent !== true) || !name || name.length > 30 ||
@@ -273,6 +281,7 @@ function createPaymentApi(options = {}) {
                 json(response, 400, { error: '성함, 연락처, 이메일과 필수 약관 동의를 확인해 주세요.' }, cors);
                 return true;
             }
+            if (sessionEmail && email !== sessionEmail) linkEmails({ receiptEmail: email, sessionEmail });
             const timestamp = Math.max(now(), lastOrderTimestamp + 1);
             lastOrderTimestamp = timestamp;
             const orderId = `order_${timestamp}`;

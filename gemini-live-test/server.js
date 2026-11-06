@@ -85,6 +85,7 @@ function createRelayServer(options = {}) {
         fetchImpl: options.paymentFetchImpl ?? fetchImpl,
         now: options.paymentNow,
         getSession: request => readSession(request, cookieCodec),
+        linkEmails: ({ receiptEmail, sessionEmail }) => store?.linkEmails({ receiptEmail, sessionEmail, at: Date.now() }),
         onPaid: async details => {
             store?.grantActiveSubscription({
                 email: details.email,

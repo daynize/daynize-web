@@ -325,9 +325,39 @@ test('misconfiguration returns JSON errors instead of crashing the relay', async
 
 // 로그인한 사용자가 폼에 다른 이메일을 입력해도, 결제 엔티티는 세션 이메일로 귀속돼야
 // hasActiveSubscription(session.email) 조회가 어긋나지 않는다 (카카오 이메일 미동의 fallback 포함).
-test('a logged-in buyer\'s order email is the session email, not the form email', { timeout: 10000 }, async context => {
+test('a logged-in google buyer\'s order email is forced to the session email', { timeout: 10000 }, async context => {
     const base = await withServer(context, {
         portoneStoreId: 'store-test', portoneChannelKey: 'channel-test', portoneApiSecret: 'secret-test-only', portoneMode: 'test',
+        googleClientId: 'google-client', googleClientSecret: 'google-secret', googleRedirectUri: 'https://api.daynize.co.kr/api/auth/google/callback',
+        authSessionSecret: 'session-secret-for-tests',
+        authFetchImpl: async url => {
+            if (url.startsWith('https://oauth2.googleapis.com/token')) return Response.json({ access_token: 'token-google' });
+            if (url.startsWith('https://www.googleapis.com/oauth2/v3/userinfo')) return Response.json({ sub: 'google-7', email: 'learner@example.com', name: '김하늘' });
+            return Response.json({ error: 'unexpected upstream' }, { status: 500 });
+        }
+    });
+    const authorizeResponse = await fetch(`${base}/api/auth/google`, { redirect: 'manual' });
+    const state = new URL(authorizeResponse.headers.get('location')).searchParams.get('state');
+    const stateCookie = authorizeResponse.headers.getSetCookie().find(line => line.startsWith('daynize_oauth_state='))?.split(';', 1)[0];
+    const callback = await fetch(`${base}/api/auth/google/callback?code=abc&state=${state}`, { redirect: 'manual', headers: { Cookie: stateCookie } });
+    const sessionCookie = callback.headers.getSetCookie().find(line => line.startsWith('daynize_session='))?.split(';', 1)[0];
+
+    const response = await fetch(`${base}/api/payment/orders`, {
+        method: 'POST',
+        headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', Cookie: sessionCookie },
+        body: JSON.stringify({ ...buyer, email: 'someone-else@example.com' }) // 세션 이메일과 다른 값을 폼에 넣어도
+    });
+    const created = await response.json();
+    assert.equal(response.status, 201);
+    assert.equal(created.email, 'learner@example.com');
+});
+
+// 카카오 이메일 미동의 세션(합성 식별자)은 폼 이메일을 그대로 영수증으로 쓰고,
+// 결제가 완료되면 그 영수증 이메일과 로그인 세션을 서버가 연결해 세션 쪽 권한도 함께 PAID로 전환해야 한다.
+test('a no-consent kakao session keeps the typed receipt email, and paying unlocks the session itself', { timeout: 10000 }, async context => {
+    let verifiedPaymentId;
+    const base = await withServer(context, {
+        portoneStoreId: 'store-test', portoneChannelKey: 'channel-test', portoneApiSecret: 'secret-test-only', portoneMode: 'test', portonePgProvider: 'NHN_KCP',
         kakaoClientId: 'kakao-client', kakaoClientSecret: 'kakao-secret', kakaoRedirectUri: 'https://api.daynize.co.kr/api/auth/kakao/callback',
         authSessionSecret: 'session-secret-for-tests',
         authFetchImpl: async (url, request = {}) => {
@@ -337,6 +367,15 @@ test('a logged-in buyer\'s order email is the session email, not the form email'
                 return Response.json({ id: 998877, properties: { nickname: '카카오사용자' }, kakao_account: {} });
             }
             return Response.json({ error: 'unexpected upstream' }, { status: 500 });
+        },
+        paymentFetchImpl: async (url, request = {}) => {
+            verifiedPaymentId = decodeURIComponent(new URL(url).pathname.split('/').at(-1));
+            assert.equal(request.headers.Authorization, 'PortOne secret-test-only');
+            return Response.json({
+                id: verifiedPaymentId, status: 'PAID', amount: { total: 19000 }, currency: 'KRW',
+                orderName: '데이나이즈 매일 영어 라이브 패스', selectedChannel: { type: 'TEST' }, paymentMethod: { type: 'CARD' },
+                customer: { email: buyer.email, fullName: buyer.name, phoneNumber: buyer.phone }
+            });
         }
     });
 
@@ -349,13 +388,30 @@ test('a logged-in buyer\'s order email is the session email, not the form email'
     const sessionCookie = callback.headers.getSetCookie().find(line => line.startsWith('daynize_session='))?.split(';', 1)[0];
     assert.ok(sessionCookie);
 
-    const response = await fetch(`${base}/api/payment/orders`, {
+    const beforePay = await (await fetch(`${base}/api/auth/me`, { headers: { Cookie: sessionCookie } })).json();
+    assert.equal(beforePay.hasActiveSubscription, false);
+
+    const orderResponse = await fetch(`${base}/api/payment/orders`, {
         method: 'POST',
         headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', Cookie: sessionCookie },
-        body: JSON.stringify(buyer) // buyer.email = 'learner@example.com', 세션 이메일과 다르다
+        body: JSON.stringify(buyer) // buyer.email = 'learner@example.com', 세션 이메일(kakao_998877@kakao.daynize)과 다르다
     });
-    const created = await response.json();
-    assert.equal(response.status, 201);
-    assert.equal(created.email, 'kakao_998877@kakao.daynize');
-    assert.notEqual(created.email, buyer.email);
+    const created = await orderResponse.json();
+    assert.equal(orderResponse.status, 201);
+    assert.equal(created.email, buyer.email); // 폼 이메일을 그대로 영수증으로 쓴다 (잠그지 않음)
+
+    const checkoutCookie = orderResponse.headers.getSetCookie().find(line => line.startsWith('daynize_checkout='))?.split(';', 1)[0];
+    const verify = await fetch(`${base}/api/payment/verify`, {
+        method: 'POST',
+        headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', Cookie: `${sessionCookie}; ${checkoutCookie}` },
+        body: JSON.stringify({ paymentId: created.orderId })
+    });
+    assert.equal(verify.status, 200);
+    assert.equal(verifiedPaymentId, created.orderId);
+
+    // 결제는 learner@example.com으로 됐지만, 로그인 세션(kakao_998877@kakao.daynize) 쪽도 PAID여야 한다.
+    const afterPay = await (await fetch(`${base}/api/auth/me`, { headers: { Cookie: sessionCookie } })).json();
+    assert.equal(afterPay.hasActiveSubscription, true);
+    assert.equal(afterPay.user.membershipStatus, 'PAID');
+    assert.equal(afterPay.user.email, 'kakao_998877@kakao.daynize');
 });
