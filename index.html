@@ -2863,7 +2863,7 @@
     <script src="src/data/numbersCourseData.js"></script>
     <script type="module">
         import { trackRecentLesson as saveLessonContext, saveRecentLesson } from './gemini-live-test/lesson-context.mjs';
-        import { checkIsPaidUser, rememberMembershipEmail } from './membership-status.js';
+        import { checkIsPaidUser, rememberMembershipEmail, forgetMembershipEmail } from './membership-status.js';
         import { requireActionAccess } from './auth-paywall-guard.js';
         (() => {
             const menuButton = document.querySelector('.menu-toggle');
@@ -2975,7 +2975,10 @@
             const fetchAuth = async () => {
                 const response = await fetch(`${authApiBase}/api/auth/me`, { credentials: 'include', cache: 'no-store' });
                 const auth = response.ok ? await response.json() : null;
-                rememberMembershipEmail(auth?.email || auth?.user?.email);
+                // 서버가 비로그인이라고 확인해 주면(또는 확인 자체에 실패하면) 이전 방문자가 남겨둔
+                // 이메일을 바로 지운다 — 새 기기/새 방문자에게 그 흔적으로 회원 UI가 보이지 않게 한다.
+                if (auth?.loggedIn === true) rememberMembershipEmail(auth?.email || auth?.user?.email);
+                else forgetMembershipEmail();
                 const profileResponse = auth?.loggedIn === true
                     ? await fetch(`${authApiBase}/api/auth/profile`, { credentials: 'include', cache: 'no-store' })
                     : null;
@@ -4487,15 +4490,19 @@
                 if (checkIsPaidUser(event.detail)) showPaidCheckoutState();
                 else resetGuestCheckoutState();
             });
+            // 기본값은 항상 "비회원"이다 — 서버가 실제로 유효한 세션을 확인해 주기 전까지는
+            // (localStorage에 사전승인 이메일이 남아 있어도) 정회원 UI를 절대 먼저 보여주지 않는다.
+            // 새 기기/다른 브라우저에서 로그인한 적이 없는데도 "내 프로필"류 UI가 보인다면, 이 함수가
+            // 서버 확인 없이 로컬 값만으로 판단했기 때문일 가능성이 가장 커서 그 지름길을 없앴다.
             const hidePaidCheckout = async () => {
-                if (checkIsPaidUser()) {
-                    showPaidCheckoutState();
-                    return true;
-                }
                 try {
                     const response = await fetch(`${checkoutApiBase}/api/auth/me`, { credentials: 'include', cache: 'no-store' });
                     const auth = response.ok ? await response.json() : null;
-                    rememberMembershipEmail(auth?.email || auth?.user?.email);
+                    if (auth?.loggedIn === true) {
+                        rememberMembershipEmail(auth?.email || auth?.user?.email);
+                    } else {
+                        forgetMembershipEmail();
+                    }
                     applySessionEmailLock(auth);
                     const paid = checkIsPaidUser(auth);
                     paidUiLocked = paid;
@@ -4709,7 +4716,7 @@
             registrationForm.addEventListener('change', updateRegistrationSubmitState);
             registrationForm.addEventListener('submit', async (event) => {
                 event.preventDefault();
-                if (paidUiLocked || checkIsPaidUser() || await hidePaidCheckout()) {
+                if (paidUiLocked || await hidePaidCheckout()) {
                     showRegistrationMessage('정회원 이용 중인 계정은 결제할 필요가 없습니다.');
                     return;
                 }
