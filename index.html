@@ -4436,6 +4436,19 @@
                 badge.textContent = '✦ 프리미엄 회원 · 정회원 이용 중';
                 navCheckout.parentElement.append(badge);
             };
+            // showPaidCheckoutState()는 결제 폼/배지를 숨기기만 하고 되돌리는 쪽이 없었다 — 로그아웃해도
+            // 새로고침 전까지 "정회원 이용 중" 배지와 숨겨진 신청 폼이 그대로 남아 있던 원인이다.
+            const resetGuestCheckoutState = () => {
+                if (!paidUiLocked) return;
+                paidUiLocked = false;
+                registrationSection.hidden = false;
+                if (!navCheckout) return;
+                navCheckout.hidden = false;
+                navCheckout.parentElement.querySelector('.member-status-badge')?.remove();
+            };
+            window.addEventListener('daynize:auth-state-changed', event => {
+                if (event.detail?.loggedIn !== true) resetGuestCheckoutState();
+            });
             const hidePaidCheckout = async () => {
                 if (checkIsPaidUser()) {
                     showPaidCheckoutState();
