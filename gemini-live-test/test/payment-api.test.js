@@ -415,3 +415,33 @@ test('a no-consent kakao session keeps the typed receipt email, and paying unloc
     assert.equal(afterPay.user.membershipStatus, 'PAID');
     assert.equal(afterPay.user.email, 'kakao_998877@kakao.daynize');
 });
+
+// PortOne 승인 직후 조회 API가 짧게 404/5xx를 돌려주는 전파 지연이 실제 결제 성공을
+// "결제가 확인되지 않았습니다" 오류로 오판하지 않아야 한다.
+test('a transient PortOne lookup failure right after approval is retried, not treated as unpaid', { timeout: 10000 }, async context => {
+    let calls = 0;
+    const base = await withServer(context, {
+        portoneStoreId: 'store-test', portoneChannelKey: 'channel-test', portoneApiSecret: 'secret-test-only',
+        portoneMode: 'test', portonePgProvider: 'NHN_KCP',
+        paymentFetchImpl: async (url, request) => {
+            calls += 1;
+            const orderId = decodeURIComponent(new URL(url).pathname.split('/').at(-1));
+            if (calls === 1) return new Response('Not Found', { status: 404 });
+            return Response.json({
+                id: orderId, status: 'PAID', amount: { total: 19000 }, currency: 'KRW',
+                orderName: '데이나이즈 매일 영어 라이브 패스', selectedChannel: { type: 'TEST' }, paymentMethod: { type: 'CARD' },
+                customer: { email: buyer.email, fullName: buyer.name, phoneNumber: buyer.phone }
+            });
+        }
+    });
+    const created = await createOrder(base);
+    assert.equal(created.response.status, 201);
+    const verify = await fetch(`${base}/api/payment/verify`, {
+        method: 'POST',
+        headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', Cookie: created.cookie },
+        body: JSON.stringify({ paymentId: created.body.orderId })
+    });
+    assert.equal(verify.status, 200);
+    assert.equal((await verify.json()).status, 'PAID');
+    assert.equal(calls, 2);
+});

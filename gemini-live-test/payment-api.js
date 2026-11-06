@@ -194,6 +194,12 @@ function createPaymentApi(options = {}) {
                 if (!upstream.ok || payment.status !== 'PAID' || payment.id !== paymentId || payment.amount?.total !== amount ||
                     payment.currency !== 'KRW' || payment.orderName !== PRODUCT_NAME ||
                     selectedChannel?.type !== (mode === 'test' ? 'TEST' : 'LIVE') || !email) {
+                    console.error(`[payment] webhook could not verify paymentId=${paymentId}: ${JSON.stringify({
+                        upstreamOk: upstream.ok, upstreamStatus: upstream.status, paymentStatus: payment.status,
+                        idMatch: payment.id === paymentId, amount: payment.amount?.total, expectedAmount: amount,
+                        currency: payment.currency, orderName: payment.orderName, channelType: selectedChannel?.type,
+                        expectedChannelType: mode === 'test' ? 'TEST' : 'LIVE', hasEmail: Boolean(email)
+                    })}`);
                     json(response, 409, { error: 'Webhook payment could not be verified.' });
                     return true;
                 }
@@ -359,10 +365,22 @@ function createPaymentApi(options = {}) {
         }
 
         try {
-            const upstream = await fetchImpl(`https://api.portone.io/payments/${encodeURIComponent(orderId)}`, {
-                headers: { Authorization: `PortOne ${apiSecret}` },
-                signal: AbortSignal.timeout(10000)
-            });
+            // PortOne이 결제를 승인한 직후에는 조회 API가 아주 짧게(초 단위) 전파 지연으로
+            // 404/5xx를 돌려줄 수 있다. 그걸 "결제 안 됨"으로 오판하지 않도록 몇 번 더 시도한다.
+            let upstream;
+            const maxAttempts = 3;
+            for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+                upstream = await fetchImpl(`https://api.portone.io/payments/${encodeURIComponent(orderId)}`, {
+                    headers: { Authorization: `PortOne ${apiSecret}` },
+                    signal: AbortSignal.timeout(10000)
+                });
+                if (upstream.ok) break;
+                const upstreamBody = await upstream.clone().text().catch(() => '');
+                console.error(`[payment] PortOne payment lookup failed (attempt ${attempt}/${maxAttempts}): orderId=${orderId} status=${upstream.status} body=${upstreamBody}`);
+                const transient = upstream.status === 404 || upstream.status >= 500;
+                if (!transient || attempt === maxAttempts) break;
+                await new Promise(resolve => setTimeout(resolve, attempt * 500));
+            }
             if (!upstream.ok) {
                 json(response, 402, { error: '결제가 확인되지 않았습니다. 결제창에서 다시 시도해 주세요.' }, cors);
                 return true;
@@ -371,6 +389,7 @@ function createPaymentApi(options = {}) {
             if (payment.status !== 'PAID') {
                 // Not a data mismatch: PortOne itself says no money moved yet (READY/FAILED/CANCELLED...).
                 // Clients use this to tell a misreported SDK cancel apart from a genuinely unpaid order.
+                console.error(`[payment] order ${orderId} not yet PAID at PortOne: status=${payment.status ?? 'UNKNOWN'}`);
                 json(response, 402, { error: '결제가 완료되지 않았습니다. 결제창에서 다시 시도해 주세요.', status: payment.status ?? 'UNKNOWN' }, cors);
                 return true;
             }
@@ -384,6 +403,13 @@ function createPaymentApi(options = {}) {
                 payment.currency !== 'KRW' || payment.orderName !== PRODUCT_NAME ||
                 selectedChannel?.type !== (mode === 'test' ? 'TEST' : 'LIVE') ||
                 (paymentMethodType && paymentMethodType !== 'CARD') || !matchingCustomer) {
+                console.error(`[payment] order ${orderId} verification mismatch: ${JSON.stringify({
+                    idMatch: payment.id === orderId, amount: payment.amount?.total, expectedAmount: amount,
+                    currency: payment.currency, orderName: payment.orderName, channelType: selectedChannel?.type,
+                    expectedChannelType: mode === 'test' ? 'TEST' : 'LIVE', paymentMethodType, matchingCustomer,
+                    customerEmail: customer.email, orderEmail: order.email, customerName: customer.fullName, orderName_: order.name,
+                    customerPhone: customer.phoneNumber, orderPhone: order.phone
+                })}`);
                 json(response, 409, { error: '결제 정보가 신청 내용과 일치하지 않아 완료할 수 없습니다. 고객센터에 문의해 주세요.' }, cors);
                 return true;
             }
@@ -391,7 +417,8 @@ function createPaymentApi(options = {}) {
             order.status = 'PAID';
             order.entitlementGranted = true;
             json(response, 200, { success: true, orderId, amount, email: order.email, status: 'PAID' }, cors);
-        } catch {
+        } catch (error) {
+            console.error(`[payment] order ${orderId} verification threw`, error);
             json(response, 502, { error: '결제 확인에 실패했습니다. 잠시 후 다시 확인해 주세요.' }, cors);
         }
         return true;
