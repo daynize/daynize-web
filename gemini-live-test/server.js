@@ -5,11 +5,11 @@ const { WebSocket, WebSocketServer } = require('ws');
 const { randomBytes } = require('node:crypto');
 const { createPaymentApi } = require('./payment-api');
 const { createAuthApi } = require('./auth-api');
-const { createFreePassApi } = require('./free-pass-api');
 const { createAdminGateApi } = require('./admin-gate-api');
 const { createStore } = require('./store');
-const { createCookieCodec } = require('./session-cookie');
+const { createCookieCodec, readSession } = require('./session-cookie');
 const { createLatencyTrace } = require('./latency-trace');
+const { sendPaymentCompletionEmail } = require('./payment-mailer');
 require('dotenv').config({ path: path.join(__dirname, '.env'), quiet: true });
 
 const GEMINI_ENDPOINT = 'wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent';
@@ -60,56 +60,64 @@ function createRelayServer(options = {}) {
     const transcriptionSilenceMs = options.transcriptionSilenceMs ?? (Number(process.env.TRANSCRIPTION_VAD_SILENCE_MS) || 500);
     const authorizeRequest = options.authorizeRequest;
     const maxConnections = options.maxConnections ?? 8;
-    const maxSessionMs = options.maxSessionMs ?? 10 * 60 * 1000;
+    const maxSessionMs = options.maxSessionMs ?? null;
     const initTimeoutMs = options.initTimeoutMs ?? 5000;
     const maxTranscriptionBytes = options.maxTranscriptionBytes ?? 8 * 1024 * 1024;
     const maxTranscriptionsPerMinute = options.maxTranscriptionsPerMinute ?? 20;
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
     let store;
-    const paymentApi = createPaymentApi({
-        storeId: options.portoneStoreId,
-        channelKey: options.portoneChannelKey,
-        billingChannelKey: options.portoneBillingChannelKey,
-        apiSecret: options.portoneApiSecret,
-        mode: options.portoneMode,
-        pgProvider: options.portonePgProvider,
-        amount: options.portoneAmount,
-        allowedOrigins: trustedOrigins,
-        fetchImpl: options.paymentFetchImpl ?? fetchImpl,
-        now: options.paymentNow,
-        onPaid: details => store?.grantActiveSubscription({
-            email: details.email,
-            source: details.paymentType === 'subscription' ? 'subscription-payment' : 'payment',
-            paymentId: details.paymentId,
-            at: details.at
-        })
-    });
     let authSessionSecret = options.authSessionSecret ?? process.env.AUTH_SESSION_SECRET ?? '';
     if (!authSessionSecret) {
         authSessionSecret = randomBytes(32).toString('hex');
         console.warn('[auth] AUTH_SESSION_SECRET is not set; using a per-boot secret, so logins and guest passes reset on every restart. Set it with: fly secrets set AUTH_SESSION_SECRET=$(openssl rand -hex 32)');
     }
     const cookieCodec = createCookieCodec({ secret: authSessionSecret, now: options.authNow ?? Date.now });
+    const paymentApi = createPaymentApi({
+        storeId: options.portoneStoreId,
+        channelKey: options.portoneChannelKey,
+        billingChannelKey: options.portoneBillingChannelKey,
+        apiSecret: options.portoneApiSecret,
+        webhookSecret: options.portoneWebhookSecret,
+        mode: options.portoneMode,
+        pgProvider: options.portonePgProvider,
+        amount: options.portoneAmount,
+        allowedOrigins: trustedOrigins,
+        fetchImpl: options.paymentFetchImpl ?? fetchImpl,
+        now: options.paymentNow,
+        getSession: request => readSession(request, cookieCodec),
+        onPaid: async details => {
+            store?.grantActiveSubscription({
+                email: details.email,
+                source: details.paymentType === 'subscription' ? 'subscription-payment' : 'payment',
+                paymentId: details.paymentId,
+                nextBillingDate: details.nextBillingDate || null,
+                paymentMethod: details.payMethod || null,
+                at: details.at
+            });
+            if (!store || !details.paymentId || store.hasPaymentNotification(details.paymentId)) return;
+            try {
+                const sent = await sendPaymentCompletionEmail({
+                    paymentId: details.paymentId,
+                    buyerName: details.buyerName || '(이름 없음)',
+                    buyerEmail: details.email,
+                    amount: Number(details.amount || 0),
+                    payMethod: details.payMethod || 'UNKNOWN',
+                    paidAt: details.paidAt || new Date(details.at || Date.now()).toISOString()
+                });
+                if (!sent) throw new Error('No SMTP or local sendmail transport is available.');
+                store.recordPaymentNotification(details.paymentId, details.at);
+                console.info(`[payment] admin notification sent for ${details.paymentId}`);
+            } catch (error) {
+                // Email is an operational alert; it must not roll back a verified payment entitlement.
+                console.error(`[payment] admin notification failed for ${details.paymentId}: ${error.message}`);
+            }
+        }
+    });
     // DATA_DIR(플라이 볼륨)이 없으면 메모리 DB라 재시작 시 게스트 패스/학습 데이터가 사라진다.
     const dataDir = options.dataDir ?? process.env.DATA_DIR;
     store = options.store ?? createStore({ path: dataDir ? path.join(dataDir, 'daynize.sqlite') : ':memory:' });
-    if (!dataDir && !options.store) console.warn('[free-pass] DATA_DIR is not set; guest passes and study data live in memory only.');
+    if (!dataDir && !options.store) console.warn('[store] DATA_DIR is not set; member and study data live in memory only.');
     const hasActiveSubscription = options.hasActiveSubscription ?? (session => store.hasActiveSubscription(session.email));
-    const freePassApi = createFreePassApi({
-        store,
-        codec: cookieCodec,
-        allowedOrigins: trustedOrigins,
-        now: options.authNow,
-        durationMs: options.freePassDurationMs,
-        maxVoiceSessions: options.freePassMaxVoiceSessions,
-        maxVoiceSessionMs: options.freePassMaxVoiceSessionMs,
-        maxPassesPerIpPerDay: options.freePassMaxPerIpPerDay,
-        maxStartsPerMinute: options.freePassMaxStartsPerMinute,
-        trustProxyHeaders: options.trustProxyHeaders,
-        hasActiveSubscription
-    });
-    // 음성 WS 게이트는 프론트가 /api/free-pass/start 를 호출하고 WS 가 api 호스트(쿠키 전달)로 붙을 때만 켠다.
-    const enforceVoiceLimits = options.enforceVoiceLimits ?? ['1', 'true', 'on'].includes(String(process.env.FREE_PASS_ENFORCE_VOICE || '').toLowerCase());
     const adminGateApi = createAdminGateApi({
         codec: cookieCodec,
         secret: options.adminGateSecret,
@@ -124,14 +132,44 @@ function createRelayServer(options = {}) {
         googleClientId: options.googleClientId,
         googleClientSecret: options.googleClientSecret,
         googleRedirectUri: options.googleRedirectUri,
+        naverClientId: options.naverClientId,
+        naverClientSecret: options.naverClientSecret,
+        naverRedirectUri: options.naverRedirectUri,
         codec: cookieCodec,
         defaultReturnTo: options.authDefaultReturnTo,
         allowedOrigins: trustedOrigins,
         fetchImpl: options.authFetchImpl ?? fetchImpl,
         now: options.authNow,
-        onLogin: freePassApi.onLogin,
+        onLogin: ({ user }) => {
+            const userKey = `${user.provider}:${user.id}`;
+            store.upsertUser({ userKey, provider: user.provider, providerId: user.id, name: user.name, email: user.email, at: Date.now() });
+            store.applyPendingMembership({ email: user.email, at: Date.now() });
+        },
         isAdmin: adminGateApi.isAdmin,
-        hasActiveSubscription
+        hasActiveSubscription,
+        getProfile: session => {
+            const userKey = `${session.provider}:${session.id}`;
+            const user = store.getUser(userKey);
+            const entitlement = store.getEntitlement(session.email);
+            const rows = store.getStudyProgress(userKey);
+            const values = Object.fromEntries(rows.map(row => [row.key, row.value]));
+            const completed = key => {
+                const value = values[key];
+                if (Array.isArray(value)) return value.length;
+                if (value && typeof value === 'object') return Number(value.completed ?? value.completedCount ?? 0) || 0;
+                return Number(value) || 0;
+            };
+            return {
+                nextBillingDate: entitlement?.next_billing_date || null,
+                paymentMethod: entitlement?.payment_method || null,
+                learningProgress: {
+                    lastStudyDate: rows[0]?.updated_at ? new Date(rows[0].updated_at).toISOString() : null,
+                    weeklyEnglish: { completed: completed('daynize.weekly.completed'), total: 20 },
+                    dailyConversation: { completed: completed('daynize.conversation.completed'), total: 20 }
+                },
+                user: user || null
+            };
+        }
     });
     if (!Number.isInteger(maxTranscriptionBytes) || maxTranscriptionBytes < 44 || !Number.isInteger(maxTranscriptionsPerMinute) || maxTranscriptionsPerMinute < 1) {
         throw new Error('Invalid transcription limits.');
@@ -144,7 +182,7 @@ function createRelayServer(options = {}) {
     const latencyLogger = options.latencyLogger ?? (line => console.log(line));
     const heartbeatInterval = options.heartbeatInterval ?? 20000;
     if (!Number.isFinite(heartbeatInterval) || heartbeatInterval <= 0) throw new Error('Invalid heartbeat interval.');
-    if (!Number.isInteger(maxConnections) || maxConnections < 1 || !Number.isFinite(maxSessionMs) || maxSessionMs < 1000) {
+    if (!Number.isInteger(maxConnections) || maxConnections < 1 || (maxSessionMs !== null && (!Number.isFinite(maxSessionMs) || maxSessionMs < 1000))) {
         throw new Error('Invalid connection or session limits.');
     }
     if (!Number.isFinite(initTimeoutMs) || initTimeoutMs <= 0) throw new Error('Invalid session init timeout.');
@@ -191,14 +229,6 @@ function createRelayServer(options = {}) {
             if (await adminGateApi.handle(request, response, pathname)) return;
         } catch (error) {
             console.error('[admin-gate] handler failure', error);
-            if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
-            response.end();
-            return;
-        }
-        try {
-            if (await freePassApi.handle(request, response, pathname)) return;
-        } catch (error) {
-            console.error('[free-pass] handler failure', error);
             if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
             response.end();
             return;
@@ -406,25 +436,21 @@ function createRelayServer(options = {}) {
             return;
         }
         let sessionLimitMs = maxSessionMs;
-        if (freePassApi.isAdmin(request)) {
+        const authenticatedSession = readSession(request, cookieCodec);
+        if (adminGateApi.isAdmin(request) || (authenticatedSession && hasActiveSubscription(authenticatedSession))) {
             sessionLimitMs = null;
-        } else if (freePassApi.isPaidMember(request)) {
-            sessionLimitMs = null;
-        } else if (freePassApi.isAuthenticated(request)) {
-            socket.end('HTTP/1.1 402 Payment Required\r\nX-Free-Pass: subscription-required\r\nConnection: close\r\n\r\n');
+        } else if (!authenticatedSession) {
+            socket.end('HTTP/1.1 401 Unauthorized\r\nX-Access-Required: login\r\nConnection: close\r\n\r\n');
             return;
-        } else if (enforceVoiceLimits) {
-            const gate = freePassApi.checkVoice(request);
-            if (!gate.ok) {
-                socket.end(`HTTP/1.1 ${gate.status} ${gate.status === 429 ? 'Too Many Requests' : 'Forbidden'}\r\nX-Free-Pass: ${gate.reason}\r\nConnection: close\r\n\r\n`);
-                return;
-            }
-            if (!gate.member) sessionLimitMs = Math.min(maxSessionMs, gate.maxSessionMs);
+        } else {
+            socket.end('HTTP/1.1 402 Payment Required\r\nX-Access-Required: subscription\r\nConnection: close\r\n\r\n');
+            return;
         }
-        clients.handleUpgrade(request, socket, head, client => clients.emit('connection', client, requestedVoice, sessionId, requestUrl.pathname === '/ws/transcribe', expectsInit, sessionLimitMs));
+        const membershipStatus = authenticatedSession && hasActiveSubscription(authenticatedSession) ? 'PAID' : 'GUEST';
+        clients.handleUpgrade(request, socket, head, client => clients.emit('connection', client, requestedVoice, sessionId, requestUrl.pathname === '/ws/transcribe', expectsInit, sessionLimitMs, membershipStatus));
     });
 
-    clients.on('connection', (client, requestedVoice, sessionId, transcriptionOnly = false, expectsInit = false, sessionLimitMs = maxSessionMs) => {
+    clients.on('connection', (client, requestedVoice, sessionId, transcriptionOnly = false, expectsInit = false, sessionLimitMs = maxSessionMs, membershipStatus = 'GUEST') => {
         for (const [key, session] of resumableSessions) if (session.expiresAt <= Date.now()) resumableSessions.delete(key);
         const resumeKey = sessionId ? `${sessionId}:${requestedVoice}` : undefined;
         const resumeHandle = resumableSessions.get(resumeKey)?.handle;
@@ -535,7 +561,7 @@ function createRelayServer(options = {}) {
         if (awaitingInit) initTimer = setTimeout(() => {
             if (sessionInit !== undefined) return;
             send({ type: 'session-warning', message: '학습 정보를 받지 못해 기본 인사 표현으로 복습을 시작합니다.' });
-            sessionInit = { mode: 'TEACHING', context: null };
+            sessionInit = { mode: 'TEACHING', context: { membershipStatus } };
             sendSetup();
         }, initTimeoutMs);
         upstream.on('open', () => {
@@ -610,7 +636,7 @@ function createRelayServer(options = {}) {
             if (message?.type === 'INIT_SESSION') {
                 // Only the first handshake on an opted-in connection counts; later copies are ignored.
                 if (awaitingInit && sessionInit === undefined) {
-                    sessionInit = { mode: message.mode, context: message.context };
+                    sessionInit = { mode: message.mode, context: { ...(message.context || {}), membershipStatus } };
                     trace.event('init_received');
                     sendSetup();
                 }

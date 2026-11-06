@@ -1,4 +1,5 @@
 const { randomBytes } = require('node:crypto');
+const { createHmac, timingSafeEqual } = require('node:crypto');
 
 const PRODUCT_NAME = '데이나이즈 매일 영어 라이브 패스';
 const DEFAULT_AMOUNT = 19000;
@@ -36,11 +37,42 @@ async function readJson(request) {
     }
 }
 
+async function readRaw(request) {
+    const chunks = [];
+    let size = 0;
+    for await (const chunk of request) {
+        size += chunk.length;
+        if (size > MAX_BODY_BYTES) throw Object.assign(new Error('Request body is too large.'), { status: 413 });
+        chunks.push(chunk);
+    }
+    return Buffer.concat(chunks);
+}
+
+function verifyWebhookSignature(rawBody, headers, secret) {
+    if (!secret) return false;
+    const id = headers['webhook-id'];
+    const timestamp = headers['webhook-timestamp'];
+    const signatures = String(headers['webhook-signature'] || '').split(' ');
+    if (!id || !timestamp || !signatures.length) return false;
+    const timestampMs = Number(timestamp) * 1000;
+    if (!Number.isFinite(timestampMs) || Math.abs(Date.now() - timestampMs) > 5 * 60 * 1000) return false;
+    const secretBytes = Buffer.from(String(secret).replace(/^whsec_/, ''), 'base64');
+    const signed = `${id}.${timestamp}.${rawBody.toString('utf8')}`;
+    const expected = createHmac('sha256', secretBytes).update(signed).digest('base64');
+    return signatures.some(value => {
+        const encoded = value.replace(/^v1,/, '');
+        const actual = Buffer.from(encoded);
+        const wanted = Buffer.from(expected);
+        return actual.length === wanted.length && timingSafeEqual(actual, wanted);
+    });
+}
+
 function createPaymentApi(options = {}) {
     const storeId = options.storeId ?? process.env.PORTONE_STORE_ID ?? '';
     const channelKey = options.channelKey ?? process.env.PORTONE_CHANNEL_KEY ?? '';
     const billingChannelKey = options.billingChannelKey ?? process.env.PORTONE_BILLING_CHANNEL_KEY ?? '';
     const apiSecret = options.apiSecret ?? process.env.PORTONE_API_SECRET ?? '';
+    const webhookSecret = options.webhookSecret ?? process.env.PORTONE_WEBHOOK_SECRET ?? '';
     const mode = options.mode ?? process.env.PORTONE_MODE ?? '';
     const pgProvider = options.pgProvider ?? process.env.PORTONE_PG_PROVIDER ?? 'NHN_KCP';
     const amount = DEFAULT_AMOUNT;
@@ -48,6 +80,9 @@ function createPaymentApi(options = {}) {
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
     const now = options.now ?? Date.now;
     const onPaid = options.onPaid;
+    // 로그인한 사용자의 결제 엔티티는 입력폼 이메일이 아니라 로그인 세션 이메일로 귀속시켜,
+    // hasActiveSubscription(session.email) 조회가 항상 결제 시점 이메일과 일치하게 한다.
+    const getSession = options.getSession ?? (() => null);
     const orders = new Map();
     let lastOrderTimestamp = 0;
 
@@ -122,6 +157,54 @@ function createPaymentApi(options = {}) {
             response.writeHead(isAllowed ? 204 : 403, { ...cors, 'Cache-Control': 'no-store' }).end();
             return true;
         }
+        if (pathname === '/api/payment/webhook') {
+            if (request.method !== 'POST' || !/^application\/json(?:\s*;|$)/i.test(request.headers['content-type'] || '')) {
+                json(response, 405, { error: 'JSON POST webhook requests only.' });
+                return true;
+            }
+            let rawBody;
+            try { rawBody = await readRaw(request); } catch (error) {
+                json(response, error.status || 400, { error: 'Invalid webhook body.' });
+                return true;
+            }
+            const signatureValid = verifyWebhookSignature(rawBody, request.headers, webhookSecret);
+            if (!signatureValid) console.warn('[payment] webhook signature unavailable/invalid; relying on PortOne API re-verification.');
+            let webhook;
+            try { webhook = JSON.parse(rawBody.toString('utf8')); } catch {
+                json(response, 400, { error: 'Invalid webhook JSON.' });
+                return true;
+            }
+            const paid = webhook.type === 'Transaction.Paid' || String(webhook.status || '').toLowerCase() === 'paid' || webhook.paymentStatus === 'PAID';
+            if (!paid) { json(response, 200, { received: true, ignored: true }); return true; }
+            const paymentId = webhook.data?.paymentId || webhook.paymentId || webhook.merchant_uid;
+            if (!paymentId) { json(response, 400, { error: 'Webhook has no paymentId.' }); return true; }
+            try {
+                const upstream = await fetchImpl(`https://api.portone.io/payments/${encodeURIComponent(paymentId)}`, {
+                    headers: { Authorization: `PortOne ${apiSecret}` }, signal: AbortSignal.timeout(10000)
+                });
+                const payment = await upstream.json().catch(() => ({}));
+                const selectedChannel = payment.selectedChannel ?? payment.channel;
+                const customer = payment.customer || {};
+                const paymentMethod = payment.paymentMethod?.type ?? payment.method?.type ?? 'UNKNOWN';
+                const email = String(customer.email || '').trim().toLowerCase();
+                if (!upstream.ok || payment.status !== 'PAID' || payment.id !== paymentId || payment.amount?.total !== amount ||
+                    payment.currency !== 'KRW' || payment.orderName !== PRODUCT_NAME ||
+                    selectedChannel?.type !== (mode === 'test' ? 'TEST' : 'LIVE') || !email) {
+                    json(response, 409, { error: 'Webhook payment could not be verified.' });
+                    return true;
+                }
+                await onPaid?.({
+                    email, paymentId, paymentType: 'payment', at: now(),
+                    buyerName: customer.fullName || customer.name || '', amount: payment.amount.total,
+                    payMethod: paymentMethod, paidAt: payment.paidAt || webhook.timestamp || new Date().toISOString()
+                });
+                json(response, 200, { received: true, status: 'PAID', paymentId });
+            } catch (error) {
+                console.error('[payment] webhook processing failed', error);
+                json(response, 500, { error: 'Webhook processing failed.' });
+            }
+            return true;
+        }
         if (!isAllowed) {
             json(response, 403, { error: '요청한 페이지에서 결제에 접근할 수 없습니다.' });
             return true;
@@ -178,7 +261,11 @@ function createPaymentApi(options = {}) {
                 return true;
             }
             const name = typeof body.name === 'string' ? body.name.trim() : '';
-            const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
+            // 로그인 상태면 입력폼 이메일을 무시하고 세션 이메일을 결제 엔티티의 기준으로 쓴다
+            // (폼 값이 세션 이메일과 달라져도 하나로 모아서 hasActiveSubscription 조회가 어긋나지 않게 한다).
+            const session = getSession(request);
+            const formEmail = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
+            const email = session?.email ? String(session.email).trim().toLowerCase() : formEmail;
             const phone = typeof body.phone === 'string' ? body.phone.trim() : '';
             const digits = phone.replace(/\D/g, '');
             if (!body.privacyConsent || !body.termsConsent || (paymentType === 'subscription' && body.billingConsent !== true) || !name || name.length > 30 ||
@@ -208,6 +295,7 @@ function createPaymentApi(options = {}) {
                 pgProvider,
                 storeId,
                 paymentType,
+                email,
                 channelKey: orders.get(orderId).channelKey
             }, { ...cors, 'Set-Cookie': `${SESSION_COOKIE}=${token}; ${cookieOptions(request)}` });
             orders.get(orderId).sessionToken = token;
@@ -256,7 +344,7 @@ function createPaymentApi(options = {}) {
             }
             return true;
         }
-            if (order.status === 'PAID') {
+            if (order.status === 'PAID' && order.entitlementGranted) {
             json(response, 200, { success: true, orderId, amount, email: order.email, status: 'PAID' }, cors);
             return true;
         }
@@ -290,8 +378,9 @@ function createPaymentApi(options = {}) {
                 json(response, 409, { error: '결제 정보가 신청 내용과 일치하지 않아 완료할 수 없습니다. 고객센터에 문의해 주세요.' }, cors);
                 return true;
             }
+            await onPaid?.({ email: order.email, paymentId: orderId, paymentType: order.paymentType, at: now(), buyerName: order.name, amount: payment.amount.total, payMethod: paymentMethodType || 'CARD', paidAt: payment.paidAt || new Date().toISOString() });
             order.status = 'PAID';
-            await onPaid?.({ email: order.email, paymentId: orderId, paymentType: order.paymentType, at: now() });
+            order.entitlementGranted = true;
             json(response, 200, { success: true, orderId, amount, email: order.email, status: 'PAID' }, cors);
         } catch {
             json(response, 502, { error: '결제 확인에 실패했습니다. 잠시 후 다시 확인해 주세요.' }, cors);

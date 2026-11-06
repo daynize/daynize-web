@@ -322,3 +322,40 @@ test('misconfiguration returns JSON errors instead of crashing the relay', async
     broken = false;
     assert.equal((await createOrder(failing)).response.status, 201);
 });
+
+// 로그인한 사용자가 폼에 다른 이메일을 입력해도, 결제 엔티티는 세션 이메일로 귀속돼야
+// hasActiveSubscription(session.email) 조회가 어긋나지 않는다 (카카오 이메일 미동의 fallback 포함).
+test('a logged-in buyer\'s order email is the session email, not the form email', { timeout: 10000 }, async context => {
+    const base = await withServer(context, {
+        portoneStoreId: 'store-test', portoneChannelKey: 'channel-test', portoneApiSecret: 'secret-test-only', portoneMode: 'test',
+        kakaoClientId: 'kakao-client', kakaoClientSecret: 'kakao-secret', kakaoRedirectUri: 'https://api.daynize.co.kr/api/auth/kakao/callback',
+        authSessionSecret: 'session-secret-for-tests',
+        authFetchImpl: async (url, request = {}) => {
+            if (url.startsWith('https://kauth.kakao.com/oauth/token')) return Response.json({ access_token: 'token-no-email' });
+            if (url.startsWith('https://kapi.kakao.com/v2/user/me')) {
+                assert.equal(request.headers.Authorization, 'Bearer token-no-email');
+                return Response.json({ id: 998877, properties: { nickname: '카카오사용자' }, kakao_account: {} });
+            }
+            return Response.json({ error: 'unexpected upstream' }, { status: 500 });
+        }
+    });
+
+    const authorizeResponse = await fetch(`${base}/api/auth/kakao`, { redirect: 'manual' });
+    const state = new URL(authorizeResponse.headers.get('location')).searchParams.get('state');
+    const stateCookie = authorizeResponse.headers.getSetCookie().find(line => line.startsWith('daynize_oauth_state='))?.split(';', 1)[0];
+    const callback = await fetch(`${base}/api/auth/kakao/callback?code=no-email&state=${state}`, {
+        redirect: 'manual', headers: { Cookie: stateCookie }
+    });
+    const sessionCookie = callback.headers.getSetCookie().find(line => line.startsWith('daynize_session='))?.split(';', 1)[0];
+    assert.ok(sessionCookie);
+
+    const response = await fetch(`${base}/api/payment/orders`, {
+        method: 'POST',
+        headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', Cookie: sessionCookie },
+        body: JSON.stringify(buyer) // buyer.email = 'learner@example.com', 세션 이메일과 다르다
+    });
+    const created = await response.json();
+    assert.equal(response.status, 201);
+    assert.equal(created.email, 'kakao_998877@kakao.daynize');
+    assert.notEqual(created.email, buyer.email);
+});

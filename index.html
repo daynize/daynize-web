@@ -4302,6 +4302,21 @@
             const registrationSection = document.querySelector('#register');
             const navCheckout = document.querySelector('.nav-cta[href="#register"]');
             let paidUiLocked = false;
+            // 로그인 상태면 결제 폼의 이메일을 세션 이메일로 고정한다. 폼에 다른 이메일을 입력해도
+            // 결제 엔티티가 로그인 계정과 어긋나 "결제했는데 계속 결제 안내가 뜨는" 현상을 막는다.
+            const checkoutEmailInput = registrationForm.elements.email;
+            const applySessionEmailLock = auth => {
+                const sessionEmail = auth?.user?.email || auth?.email;
+                if (auth?.loggedIn === true && sessionEmail) {
+                    checkoutEmailInput.value = sessionEmail;
+                    checkoutEmailInput.readOnly = true;
+                    checkoutEmailInput.title = '로그인된 계정 이메일로 결제가 연결됩니다.';
+                } else {
+                    checkoutEmailInput.readOnly = false;
+                    checkoutEmailInput.title = '';
+                }
+            };
+            window.addEventListener('daynize:auth-state-changed', event => applySessionEmailLock(event.detail));
             const showPaidCheckoutState = () => {
                 paidUiLocked = true;
                 registrationSection.hidden = true;
@@ -4323,6 +4338,7 @@
                     const response = await fetch(`${checkoutApiBase}/api/auth/me`, { credentials: 'include', cache: 'no-store' });
                     const auth = response.ok ? await response.json() : null;
                     rememberMembershipEmail(auth?.email || auth?.user?.email);
+                    applySessionEmailLock(auth);
                     const paid = checkIsPaidUser(auth);
                     paidUiLocked = paid;
                     if (!paid) return false;
@@ -4588,7 +4604,9 @@
                         customerId: order.orderId,
                         fullName: registrationForm.elements.name.value.trim(),
                         phoneNumber: toKcpPhone(registrationForm.elements.phone.value),
-                        email: registrationForm.elements.email.value.trim()
+                        // 서버가 응답한 email(로그인 시 세션 이메일)을 그대로 써서, PG에 보고되는
+                        // customer.email이 결제 엔티티(order.email)와 항상 같게 유지한다.
+                        email: order.email || registrationForm.elements.email.value.trim()
                     };
                     const amount = Number(order.amount);
                     const payload = {
