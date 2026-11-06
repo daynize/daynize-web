@@ -14,12 +14,15 @@ test('homepage BASIC COURSE contains the 20 new curriculum videos', async () => 
     for (const [index, lesson] of basic[0].lessons.entries()) {
         const number = String(index + 1).padStart(2, '0');
         assert.equal(lesson.id, `basic-${number}`);
-        assert.equal(lesson.videoUrl, `VIDEOS/basic-course-20/renders/basic-${number}.mp4`);
+        // 영상은 Cloudflare R2에서 서비스된다(Pages 정적 자산의 25MB 파일 제한을 넘기 때문).
+        // 로컬 VIDEOS/ 폴더는 그 업로드 원본으로만 남아 있어, R2 URL 자체가 아니라 업로드한
+        // 원본 파일이 아직 로컬에 있는지로 무결성을 확인한다.
+        assert.equal(lesson.videoUrl, `https://pub-0e9dc9c0460d43219870328d8caf683d.r2.dev/basic-course-20/renders/basic-${number}.mp4`);
         assert.equal(lesson.thumbnail, `IMAGE/basic-course-20/basic-${number}.jpg`);
         assert.ok(lesson.title.startsWith(`${index + 1}강 · `));
         assert.ok(lesson.script.length >= 3);
         assert.ok(lesson.durationSeconds > 120);
-        assert.ok((await stat(path.join(root, lesson.videoUrl))).size > 0);
+        assert.ok((await stat(path.join(root, 'VIDEOS/basic-course-20/renders', `basic-${number}.mp4`))).size > 0);
         assert.ok((await stat(path.join(root, lesson.thumbnail))).size > 0);
     }
     for (const id of ['speaking', 'daily', 'situations', 'culture', 'review']) assert.ok(categories.some(category => category.categoryId === id));

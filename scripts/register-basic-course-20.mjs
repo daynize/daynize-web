@@ -61,7 +61,11 @@ const lessons = LESSONS.map((lesson, index) => {
         desc: lesson.desc,
         duration: format(seconds),
         durationSeconds: seconds,
-        videoUrl: `VIDEOS/basic-course-20/renders/basic-${number}.mp4`,
+        // 영상은 Pages의 25MB 파일 제한 때문에 R2(daynize-media 버킷)로 서비스한다.
+        // 로컬 videoDir에는 그대로 저장하되(업로드 원본), courses.json에는 R2 URL을 쓴다.
+        // 새 영상을 추가했다면 아래로 업로드부터 해야 한다:
+        //   npx wrangler r2 object put daynize-media/basic-course-20/renders/basic-${number}.mp4 --file=<local path> --content-type=video/mp4 --remote
+        videoUrl: `https://pub-0e9dc9c0460d43219870328d8caf683d.r2.dev/basic-course-20/renders/basic-${number}.mp4`,
         thumbnail: `IMAGE/basic-course-20/basic-${number}.jpg`,
         keyPhrase: lesson.phrase,
         explanation: lesson.explanation,

@@ -13,8 +13,11 @@ assert.equal(production.videos.length, 21);
 const lessons = [];
 for (const lesson of course.lessons) {
     const number = String(lesson.episode).padStart(2, '0');
-    const videoUrl = `VIDEOS/basic-course-21/renders/basic-${number}.mp4`;
-    const bytes = (await stat(path.join(root, videoUrl))).size;
+    const localPath = `VIDEOS/basic-course-21/renders/basic-${number}.mp4`;
+    // 영상은 Pages의 25MB 파일 제한 때문에 R2(daynize-media 버킷)로 서비스한다.
+    // localPath(업로드 원본)는 무결성 검사에만 쓰고, courses.json에는 R2 URL을 쓴다.
+    const videoUrl = `https://pub-0e9dc9c0460d43219870328d8caf683d.r2.dev/basic-course-21/renders/basic-${number}.mp4`;
+    const bytes = (await stat(path.join(root, localPath))).size;
     const receipt = production.videos.find(video => video.episode === lesson.episode);
     assert.equal(bytes, receipt.bytes);
     lessons.push({

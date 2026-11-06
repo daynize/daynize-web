@@ -101,7 +101,10 @@ const updateCourses = async () => {
     for (const lesson of LESSONS) {
         const item = category.lessons.find((l) => l.id === lesson.id);
         if (!item) throw new Error(`courses.json에 ${lesson.id} 항목이 없습니다.`);
-        item.videoUrl = `VIDEOS/field-specific/${lesson.id}.mp4`;
+        // 영상은 Pages의 25MB 파일 제한 때문에 R2(daynize-media 버킷)로 서비스한다. renderVideo()가
+        // 로컬 OUT_DIR(VIDEOS/field-specific)에 렌더링하면, 거기서 R2로 업로드한 뒤 이 URL로 등록한다:
+        //   npx wrangler r2 object put daynize-media/field-specific/<id>.mp4 --file=<out path> --content-type=video/mp4 --remote
+        item.videoUrl = `https://pub-0e9dc9c0460d43219870328d8caf683d.r2.dev/field-specific/${lesson.id}.mp4`;
         item.script = lesson.sentences.map(({ ko, en }) => ({ ko, en }));
     }
     await writeFile(COURSES, `${JSON.stringify(data, null, 4)}\n`);

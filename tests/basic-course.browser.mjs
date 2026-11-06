@@ -139,7 +139,9 @@ test('BASIC COURSE displays 20 lessons and plays new MP4s on desktop and mobile'
                 await video.waitFor();
                 await page.waitForFunction(() => document.querySelector('#video-frame video')?.readyState >= 1);
                 const metadata = await video.evaluate(element => ({ src: element.currentSrc, duration: element.duration, width: element.videoWidth, height: element.videoHeight, inline: element.playsInline, poster: element.getAttribute('poster'), fit: getComputedStyle(element).objectFit }));
-                assert.equal(new URL(metadata.src).pathname, `/${lesson.videoUrl}`);
+                // videoUrl은 이제 Cloudflare R2의 절대 URL이다(Pages 정적 자산 25MB 제한 때문에
+                // 더는 로컬/상대 경로로 서비스하지 않는다).
+                assert.equal(metadata.src, lesson.videoUrl);
                 assert.ok(Math.abs(metadata.duration - lesson.durationSeconds) < 1);
                 assert.equal(metadata.width, 1080);
                 assert.equal(metadata.height, 1920);

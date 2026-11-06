@@ -3700,7 +3700,10 @@
                     const dailyCategory = data.find((category) => category?.categoryId === 'daily');
                     if (speakingCategory && dailyCategory) {
                         const existingVideoLessons = speakingCategory.lessons.filter((lesson) => lesson.videoUrl);
-                        const existingByUrl = new Map(existingVideoLessons.map((lesson) => [lesson.videoUrl, lesson]));
+                        // id(단어)로 매칭한다 — videoUrl 문자열로 매칭하면 courses.json의 영상 경로가
+                        // 바뀔 때마다(R2 이전 등) 여기 비교 기준도 같이 손봐야 해서 어긋나기 쉽다.
+                        const existingById = new Map(existingVideoLessons.map((lesson) => [lesson.id, lesson]));
+                        const verbsR2Base = 'https://pub-0e9dc9c0460d43219870328d8caf683d.r2.dev/verbs';
                         const verbLessons = [
                             ['care', '돌보다 · 신경 쓰다'], ['bring', '가져오다 · 데려오다'],
                             ['catch', '잡다 · 알아듣다'], ['check', '확인하다 · 살펴보다'],
@@ -3712,8 +3715,8 @@
                             ['run', '달리다 · 운영하다'], ['set', '놓다 · 설정하다'],
                             ['take', '가져가다 · 데려가다'], ['turn', '돌다 · 바꾸다']
                         ].map(([word, meaning], index) => {
-                            const videoUrl = `VIDEOS/verbs/${word}.mp4`;
-                            const existingLesson = existingByUrl.get(videoUrl);
+                            const videoUrl = `${verbsR2Base}/${word}.mp4`;
+                            const existingLesson = existingById.get(word);
                             if (existingLesson) {
                                 return {
                                     ...existingLesson,
