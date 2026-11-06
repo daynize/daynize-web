@@ -4494,7 +4494,11 @@
                     const values = JSON.parse(sessionStorage.getItem(checkoutResumeKey) || 'null');
                     if (!values || typeof values !== 'object') return;
                     for (const name of ['name', 'phone', 'email']) {
-                        if (typeof values[name] === 'string') registrationForm.elements.namedItem(name).value = values[name];
+                        if (typeof values[name] !== 'string') continue;
+                        // 카카오 이메일 미동의로 받은 합성 식별자는 실수로 저장돼 있었더라도 복원하지 않는다
+                        // (실제 수신함이 아니므로 영수증 이메일 입력란에 채워 넣으면 안 된다).
+                        if (name === 'email' && fallbackSessionEmail.test(values[name])) continue;
+                        registrationForm.elements.namedItem(name).value = values[name];
                     }
                     if (['payment', 'subscription'].includes(values.paymentType)) registrationForm.elements.paymentType.value = values.paymentType;
                     for (const name of ['privacyConsent', 'termsConsent', 'billingConsent']) {
