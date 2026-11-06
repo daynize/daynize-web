@@ -71,12 +71,18 @@ input:focus-visible {
     padding: 12px 20px;
     border-radius: 24px;
     color: #eef3ef;
-    background: rgba(39, 91, 66, .76);
+    background: linear-gradient(135deg, #0A454C, #175860);
     border: 1px solid rgba(255, 255, 255, .22);
     backdrop-filter: blur(22px) saturate(155%);
     -webkit-backdrop-filter: blur(22px) saturate(155%);
-    box-shadow: 0 12px 34px rgba(9, 31, 21, .25), inset 0 1px 0 rgba(255, 255, 255, .2);
+    box-shadow: 0 10px 25px -5px rgba(5, 58, 65, .32), 0 12px 34px rgba(9, 31, 21, .25), inset 0 1px 0 rgba(255, 255, 255, .28);
     font-weight: 600;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.launch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px -6px rgba(5, 58, 65, .4), 0 14px 38px rgba(9, 31, 21, .28), inset 0 1px 0 rgba(255, 255, 255, .32);
 }
 
 #spotlight-modal {
