@@ -445,3 +445,82 @@ test('a transient PortOne lookup failure right after approval is retried, not tr
     assert.equal((await verify.json()).status, 'PAID');
     assert.equal(calls, 2);
 });
+
+async function loginGoogle(base) {
+    const authorizeResponse = await fetch(`${base}/api/auth/google`, { redirect: 'manual' });
+    const state = new URL(authorizeResponse.headers.get('location')).searchParams.get('state');
+    const stateCookie = authorizeResponse.headers.getSetCookie().find(line => line.startsWith('daynize_oauth_state='))?.split(';', 1)[0];
+    const callback = await fetch(`${base}/api/auth/google/callback?code=abc&state=${state}`, { redirect: 'manual', headers: { Cookie: stateCookie } });
+    return callback.headers.getSetCookie().find(line => line.startsWith('daynize_session='))?.split(';', 1)[0];
+}
+
+// /api/auth/profile가 단건 결제는 "결제일+30일"을 만료 예정일로, 정기 결제는 다음 청구 예정일로
+// 계산해서 돌려줘야 프로필 UI의 "단건/정기 구분 + 다음 결제일" 표시가 맞게 나온다.
+test('profile reports SINGLE payment type with a +30 day expiry after a one-time payment', { timeout: 10000 }, async context => {
+    const base = await withServer(context, {
+        portoneStoreId: 'store-test', portoneChannelKey: 'channel-test', portoneApiSecret: 'secret-test-only', portoneMode: 'test', portonePgProvider: 'NHN_KCP',
+        googleClientId: 'google-client', googleClientSecret: 'google-secret', googleRedirectUri: 'https://api.daynize.co.kr/api/auth/google/callback',
+        authSessionSecret: 'session-secret-for-tests',
+        authFetchImpl: async url => {
+            if (url.startsWith('https://oauth2.googleapis.com/token')) return Response.json({ access_token: 'token-google' });
+            if (url.startsWith('https://www.googleapis.com/oauth2/v3/userinfo')) return Response.json({ sub: 'google-7', email: 'learner@example.com', name: '김하늘' });
+            return Response.json({ error: 'unexpected upstream' }, { status: 500 });
+        },
+        paymentFetchImpl: async url => {
+            const orderId = decodeURIComponent(new URL(url).pathname.split('/').at(-1));
+            return Response.json({
+                id: orderId, status: 'PAID', amount: { total: 19000 }, currency: 'KRW',
+                orderName: '데이나이즈 매일 영어 라이브 패스', selectedChannel: { type: 'TEST', key: 'channel-test' }, paymentMethod: { type: 'CARD' },
+                customer: { email: 'learner@example.com', fullName: buyer.name, phoneNumber: buyer.phone }
+            });
+        }
+    });
+    const sessionCookie = await loginGoogle(base);
+    const order = await fetch(`${base}/api/payment/orders`, {
+        method: 'POST', headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', Cookie: sessionCookie },
+        body: JSON.stringify(buyer)
+    });
+    const created = await order.json();
+    const checkoutCookie = order.headers.getSetCookie().find(line => line.startsWith('daynize_checkout='))?.split(';', 1)[0];
+    const beforePay = Date.now();
+    await fetch(`${base}/api/payment/verify`, {
+        method: 'POST', headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', Cookie: `${sessionCookie}; ${checkoutCookie}` },
+        body: JSON.stringify({ paymentId: created.orderId })
+    });
+
+    const profile = await (await fetch(`${base}/api/auth/profile`, { headers: { Cookie: sessionCookie } })).json();
+    assert.equal(profile.paymentType, 'SINGLE');
+    const expectedExpiry = beforePay + 30 * 24 * 60 * 60 * 1000;
+    assert.ok(Math.abs(new Date(profile.nextBillingDate).getTime() - expectedExpiry) < 10000, `expiry ${profile.nextBillingDate} should be ~30 days from payment`);
+});
+
+// 빌링키(정기결제) 채널로 들어온 웹훅은 paymentType을 'subscription'으로 구분해야
+// 프로필이 "정기 구독 중"으로, next_billing_date도 갱신 기준으로 표시된다.
+test('a webhook charge on the billing channel is classified as SUBSCRIPTION, not a one-time payment', { timeout: 10000 }, async context => {
+    const base = await withServer(context, {
+        portoneStoreId: 'store-test', portoneChannelKey: 'channel-single', portoneBillingChannelKey: 'channel-billing',
+        portoneApiSecret: 'secret-test-only', portoneMode: 'test', portonePgProvider: 'NHN_KCP',
+        googleClientId: 'google-client', googleClientSecret: 'google-secret', googleRedirectUri: 'https://api.daynize.co.kr/api/auth/google/callback',
+        authSessionSecret: 'session-secret-for-tests',
+        authFetchImpl: async url => {
+            if (url.startsWith('https://oauth2.googleapis.com/token')) return Response.json({ access_token: 'token-google' });
+            if (url.startsWith('https://www.googleapis.com/oauth2/v3/userinfo')) return Response.json({ sub: 'google-9', email: 'subscriber@example.com', name: '구독자' });
+            return Response.json({ error: 'unexpected upstream' }, { status: 500 });
+        },
+        paymentFetchImpl: async () => Response.json({
+            id: 'sub-charge-001', status: 'PAID', amount: { total: 19000 }, currency: 'KRW',
+            orderName: '데이나이즈 매일 영어 라이브 패스', selectedChannel: { type: 'TEST', key: 'channel-billing' }, paymentMethod: { type: 'CARD' },
+            customer: { email: 'subscriber@example.com', fullName: '구독자' }, paidAt: new Date().toISOString()
+        })
+    });
+    const sessionCookie = await loginGoogle(base);
+
+    const webhook = await fetch(`${base}/api/payment/webhook`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'Transaction.Paid', data: { paymentId: 'sub-charge-001' } })
+    });
+    assert.equal(webhook.status, 200);
+
+    const profile = await (await fetch(`${base}/api/auth/profile`, { headers: { Cookie: sessionCookie } })).json();
+    assert.equal(profile.paymentType, 'SUBSCRIPTION');
+});

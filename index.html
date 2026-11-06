@@ -2218,7 +2218,7 @@
             <section class="account-section" aria-labelledby="profile-entitlement-title">
                 <h3 id="profile-entitlement-title">이용권 정보</h3>
                 <p><strong>회원 상태</strong><br><span data-profile-status>확인 중…</span></p>
-                <p data-profile-billing hidden><strong>다음 결제 예정일</strong><br><span data-profile-next-billing>-</span><br><strong>결제 수단</strong><br><span data-profile-payment-method>-</span></p>
+                <p data-profile-billing hidden><strong data-profile-billing-label>다음 결제 예정일</strong><br><span data-profile-next-billing>-</span><br><strong>결제 수단</strong><br><span data-profile-payment-method>-</span></p>
             </section>
             <section class="account-section" aria-labelledby="profile-progress-title">
                 <h3 id="profile-progress-title">나의 학습 기록</h3>
@@ -2797,6 +2797,7 @@
             const profileStatus = document.querySelector('[data-profile-status]');
             const profileProvider = document.querySelector('[data-profile-provider]');
             const profileBilling = document.querySelector('[data-profile-billing]');
+            const profileBillingLabel = document.querySelector('[data-profile-billing-label]');
             const profileNextBilling = document.querySelector('[data-profile-next-billing]');
             const profilePaymentMethod = document.querySelector('[data-profile-payment-method]');
             const progressWeekly = document.querySelector('[data-progress-weekly]');
@@ -2850,25 +2851,35 @@
                     || `${window.location.origin}${window.location.pathname}${window.location.hash}`;
                 window.location.href = `${authApiBase}/api/auth/${provider}?return_to=${encodeURIComponent(returnTo)}`;
             };
-            const renderAccount = (auth, profile = null) => {
+            // 호출부(fetchAuth/logout)는 전부 auth와 profile을 { ...auth, ...profile }로 미리 합쳐서
+            // 인자 하나로 넘긴다 — 그래서 여기서는 전부 auth에서 읽어야 한다. profile을 따로 참조하면
+            // 그 값은 항상 호출 기본값인 null이라 결제 정보/학습 기록이 영원히 표시되지 않는다.
+            const renderAccount = auth => {
                 const loggedIn = auth?.loggedIn === true;
                 accountAction.textContent = loggedIn ? '내 프로필' : '로그인';
                 accountAction.dataset.loggedIn = String(loggedIn);
                 if (loggedIn) {
-                    const user = profile?.user || auth?.user || auth;
+                    const user = auth?.user || auth;
                     profileEmail.textContent = user?.email || '이메일 정보 없음';
                     profileProvider.textContent = user?.provider === 'kakao' ? '카카오 계정' : user?.provider === 'google' ? 'Google 계정' : user?.provider === 'naver' ? '네이버 계정' : '소셜 로그인 계정';
-                    profileStatus.textContent = checkIsPaidUser({ ...auth, ...profile }) ? '정회원 이용 중' : '미결제 회원';
-                    const billingDate = profile?.nextBillingDate;
-                    profileBilling.hidden = !billingDate && !profile?.paymentMethod;
-                    profileNextBilling.textContent = billingDate ? new Date(billingDate).toLocaleDateString('ko-KR') : '-';
-                    profilePaymentMethod.textContent = profile?.paymentMethod || '-';
-                    const weekly = profile?.learningProgress?.weeklyEnglish || {};
-                    const conversation = profile?.learningProgress?.dailyConversation || {};
+                    const isPaid = checkIsPaidUser(auth);
+                    const isSubscription = auth?.paymentType === 'SUBSCRIPTION';
+                    profileStatus.textContent = isPaid
+                        ? (isSubscription ? '정회원 (정기 구독 중)' : '정회원 (단건 결제)')
+                        : '미결제 회원';
+                    const billingDate = auth?.nextBillingDate;
+                    profileBilling.hidden = !billingDate && !auth?.paymentMethod;
+                    profileBillingLabel.textContent = isSubscription ? '다음 결제 예정일' : '만료 예정일';
+                    profileNextBilling.textContent = billingDate
+                        ? new Date(billingDate).toISOString().slice(0, 10)
+                        : '-';
+                    profilePaymentMethod.textContent = auth?.paymentMethod || '-';
+                    const weekly = auth?.learningProgress?.weeklyEnglish || {};
+                    const conversation = auth?.learningProgress?.dailyConversation || {};
                     progressWeekly.textContent = `${weekly.completed || 0} / ${weekly.total || 20}강 완료`;
                     progressConversation.textContent = `${conversation.completed || 0} / ${conversation.total || 20}강 완료`;
-                    progressLastDate.textContent = profile?.learningProgress?.lastStudyDate
-                        ? new Date(profile.learningProgress.lastStudyDate).toLocaleDateString('ko-KR')
+                    progressLastDate.textContent = auth?.learningProgress?.lastStudyDate
+                        ? new Date(auth.learningProgress.lastStudyDate).toLocaleDateString('ko-KR')
                         : '기록 없음';
                 }
                 return loggedIn;

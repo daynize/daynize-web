@@ -203,8 +203,11 @@ function createPaymentApi(options = {}) {
                     json(response, 409, { error: 'Webhook payment could not be verified.' });
                     return true;
                 }
+                // 정기결제 갱신(빌링키 자동 청구)도 같은 웹훅으로 들어오는데, 어느 채널로 결제됐는지를
+                // 보지 않으면 전부 단건 결제로 분류돼 프로필의 "다음 결제 예정일" 표시가 틀어진다.
+                const isSubscriptionCharge = Boolean(billingChannelKey) && selectedChannel?.key === billingChannelKey;
                 await onPaid?.({
-                    email, paymentId, paymentType: 'payment', at: now(),
+                    email, paymentId, paymentType: isSubscriptionCharge ? 'subscription' : 'payment', at: now(),
                     buyerName: customer.fullName || customer.name || '', amount: payment.amount.total,
                     payMethod: paymentMethod, paidAt: payment.paidAt || webhook.timestamp || new Date().toISOString()
                 });

@@ -160,8 +160,16 @@ function createRelayServer(options = {}) {
                 if (value && typeof value === 'object') return Number(value.completed ?? value.completedCount ?? 0) || 0;
                 return Number(value) || 0;
             };
+            // PortOne은 구독 갱신 일정을 따로 알려주지 않으므로, 마지막 결제일(updated_at) 기준
+            // +30일을 다음 결제/만료 예정일로 계산한다. 실제 예정일을 받는 연동이 생기면
+            // entitlement.next_billing_date가 그 값으로 채워져 있을 테니 그걸 우선한다.
+            const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+            const paymentType = entitlement ? (entitlement.source === 'subscription-payment' ? 'SUBSCRIPTION' : 'SINGLE') : null;
+            const nextBillingDate = entitlement?.next_billing_date
+                || (entitlement?.updated_at ? new Date(entitlement.updated_at + THIRTY_DAYS_MS).toISOString() : null);
             return {
-                nextBillingDate: entitlement?.next_billing_date || null,
+                paymentType,
+                nextBillingDate,
                 paymentMethod: entitlement?.payment_method || null,
                 learningProgress: {
                     lastStudyDate: rows[0]?.updated_at ? new Date(rows[0].updated_at).toISOString() : null,
