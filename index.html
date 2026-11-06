@@ -165,6 +165,38 @@
             letter-spacing: .08em;
         }
 
+        /* 딥그린 바탕에 오렌지/골드 빛이 3.6초마다 한 번씩 왼쪽에서 오른쪽으로 스쳐 지나간다. */
+        .eyebrow-shimmer {
+            display: inline-block;
+            background-image: linear-gradient(100deg,
+                    #053A41 0%, #053A41 42%,
+                    #ffd27a 48%, #F6A623 50%, #F67608 52%,
+                    #053A41 58%, #053A41 100%);
+            background-size: 260% 100%;
+            background-position: 180% 0;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: eyebrow-shimmer-sweep 3.6s ease-in-out infinite;
+        }
+
+        @keyframes eyebrow-shimmer-sweep {
+            0%, 15% {
+                background-position: 180% 0;
+            }
+
+            55%, 100% {
+                background-position: -80% 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .eyebrow-shimmer {
+                animation: none;
+                background-position: -80% 0;
+            }
+        }
+
         .section-title {
             margin: 0;
             font-family: var(--serif);
@@ -554,18 +586,29 @@
             overflow: hidden;
             padding: 0;
             scroll-snap-align: start;
-            border: 1px solid rgba(255, 255, 255, .95);
-            border-radius: 4px;
+            border: 1.5px solid rgba(246, 118, 8, .16);
+            border-radius: var(--card-radius);
             background: #fff;
-            box-shadow: 0 12px 32px rgba(31, 40, 34, .09);
+            box-shadow: 0 12px 32px rgba(5, 58, 65, .08);
             text-align: left;
             cursor: pointer;
-            transition: transform .32s ease, box-shadow .32s ease;
+            transition: transform .32s ease, box-shadow .32s ease, border-color .32s ease;
         }
 
         .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 18px 38px rgba(31, 40, 34, .14);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(5, 58, 65, .16);
+            border-color: rgba(246, 118, 8, .4);
+        }
+
+        /* 캐러셀의 첫 카드(BASIC COURSE)는 입문 강좌라 한 번 더 강조한다. */
+        .category-card:first-child {
+            border-color: #F67608;
+            box-shadow: 0 12px 32px rgba(5, 58, 65, .1), 0 0 0 1px rgba(246, 118, 8, .1);
+        }
+
+        .category-card:first-child:hover {
+            box-shadow: 0 20px 44px rgba(5, 58, 65, .18), 0 0 0 1px rgba(246, 118, 8, .16);
         }
 
         .category-card img {
@@ -2275,7 +2318,7 @@
         <section class="section video-section" id="lessons" aria-labelledby="lessons-title">
             <div class="wrap">
                 <div class="section-head">
-                    <p class="eyebrow">THIS WEEK'S CLASS</p>
+                    <p class="eyebrow eyebrow-shimmer">PREMIUM COURSE</p>
                     <h2 class="section-title" id="lessons-title">다시 보고 싶은 순간,<br>내 속도에 맞춘 동영상 강의</h2>
                     <p class="section-intro">짧고 또렷한 설명으로 시작해, 생활 속 영어를 차근차근 익혀 봅니다.</p>
                 </div>
