@@ -22,7 +22,7 @@ const PROVIDERS = {
             const name = account.profile?.nickname ?? info?.properties?.nickname ?? '';
             const email = String(account.email ?? '').trim().toLowerCase();
             // Kakao 계정이 이메일 동의를 거부해도 고유 ID로 회원을 안정적으로 식별한다.
-            return { id: kakaoId, name, email: email || `kakao_${kakaoId}@users.daynize.local` };
+            return { id: kakaoId, name, email: email || `kakao_${kakaoId}@kakao.daynize` };
         }
     },
     google: {
@@ -258,7 +258,9 @@ function createAuthApi(options = {}) {
             });
             const token = await tokenResponse.json().catch(() => ({}));
             if (!tokenResponse.ok || !token.access_token) {
-                backWithError(request, response, returnTo, `${provider} token exchange failed (${token.error || tokenResponse.status})`);
+                // client_id/redirect_uri가 틀리면 보통 콘솔 설정 문제이므로, 비밀값은 빼고 함께 남긴다.
+                console.error(`[auth] ${provider} token exchange failed: status=${tokenResponse.status} client_id=${creds.clientId} redirect_uri=${creds.redirectUri} body=${JSON.stringify(token)}`);
+                backWithError(request, response, returnTo, `${provider} token exchange failed (${token.error || tokenResponse.status}${token.error_description ? `: ${token.error_description}` : ''})`);
                 return true;
             }
             const profileResponse = await fetchImpl(config.profileUrl, {
@@ -266,6 +268,8 @@ function createAuthApi(options = {}) {
                 signal: AbortSignal.timeout(10000)
             });
             if (!profileResponse.ok) {
+                const profileErrorBody = await profileResponse.text().catch(() => '');
+                console.error(`[auth] ${provider} profile fetch failed: status=${profileResponse.status} body=${profileErrorBody}`);
                 backWithError(request, response, returnTo, `${provider} profile fetch failed (${profileResponse.status})`);
                 return true;
             }

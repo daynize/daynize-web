@@ -189,7 +189,7 @@ test('kakao callback uses a stable fallback identity when email consent is missi
     const me = await (await fetch(`${base}/api/auth/me`, { headers: { Cookie: sessionCookieOf(callback) } })).json();
     assert.equal(me.user.id, '998877');
     assert.equal(me.user.name, '카카오사용자');
-    assert.equal(me.user.email, 'kakao_998877@users.daynize.local');
+    assert.equal(me.user.email, 'kakao_998877@kakao.daynize');
 });
 
 test('auth endpoints report readiness and refuse to start when credentials are missing', { timeout: 10000 }, async context => {
