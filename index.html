@@ -12,6 +12,15 @@
     <title>데이나이즈 (Daynize) | 일상 대화로 배우는 지난주 영어</title>
     <meta name="keywords" content="데이나이즈, Daynize, DAYNIZE, 지난주 영어, 영어 회화, 실전 영어, K-ECHO, 드라마 대사 검색, 쉐도잉">
     <meta name="robots" content="index, follow, max-image-preview:large">
+    <script>
+        // 전역 안전망: 우리 쪽 모듈에서 놓친 unhandled rejection이 있어도 화면엔 영향 없이
+        // 콘솔에만 태그를 달아 남긴다(브라우저 기본 로그는 그대로 두고, 추적만 쉽게 한다).
+        // 확장 프로그램이 내는 에러(예: "message channel closed...")는 페이지 JS 컨텍스트
+        // 밖에서 발생해 여기로 들어오지 않으므로 건드리지 않는다.
+        window.addEventListener('unhandledrejection', event => {
+            console.error('[daynize] unhandled promise rejection', event.reason);
+        });
+    </script>
     <script type="module" src="/auth-paywall-guard.js"></script>
     <link rel="canonical" href="https://www.daynize.co.kr/">
     <meta property="og:type" content="website">
