@@ -2882,7 +2882,17 @@
                 [loginDialog, profileDialog].forEach(dialog => {
                     if (dialog instanceof HTMLDialogElement && dialog.open) dialog.close();
                 });
+                resetLoginSubtitle();
             };
+            // 회원전용 콘텐츠(강의 영상 등)를 비로그인 상태로 클릭하면 auth-paywall-guard.js가
+            // daynize:auth-required를 쏘면서 로그인 모달을 연다. 그 경우에만 안내 문구를 바꿔서
+            // 왜 로그인 창이 떴는지 알려주고, 평범한 "로그인" 버튼 클릭이면 기본 문구로 둔다.
+            const DEFAULT_LOGIN_SUBTITLE = '로그인으로 학습 기록을 이어가세요.';
+            const loginSubtitle = document.querySelector('.login-subtitle');
+            const resetLoginSubtitle = () => { if (loginSubtitle) loginSubtitle.textContent = DEFAULT_LOGIN_SUBTITLE; };
+            window.addEventListener('daynize:auth-required', () => {
+                if (loginSubtitle) loginSubtitle.textContent = '이 강의는 회원전용입니다. 로그인 후 시청해 주세요.';
+            });
             const closeNavigation = () => {
                 navigation.classList.remove('is-open');
                 menuButton.setAttribute('aria-expanded', 'false');
@@ -2963,7 +2973,7 @@
             accountAction.addEventListener('click', async () => {
                 const auth = await fetchAuth().catch(() => null);
                 if (auth?.loggedIn === true) profileDialog.showModal();
-                else loginDialog.showModal();
+                else { resetLoginSubtitle(); loginDialog.showModal(); }
                 closeNavigation();
             });
             document.querySelectorAll('[data-close-account]').forEach(button => button.addEventListener('click', closeAccountDialogs));
