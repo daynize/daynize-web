@@ -1,0 +1,42 @@
+# Cloudflare Pages는 인식하는 정적 확장자(.js, .css 등)에 기본 4시간(max-age=14400) 캐시를
+# 붙인다. .mjs/.json/.html은 이미 max-age=0(즉시 재검증)인데, 같은 사이트의 .js/.css 파일만
+# 최대 4시간 동안 모바일 브라우저·인앱 웹뷰·CDN 엣지에 구버전이 남을 수 있었다 — 특히
+# membership-status.js(회원 판정 로직)처럼 자주 고치는 인증 관련 스크립트가 여기 해당됐다.
+# 모든 곳에서 즉시 재검증하도록 .js/.css도 .mjs/.html과 같은 캐시 정책으로 맞춘다.
+/*.js
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/*.css
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+# 위 글롭이 하위 폴더까지 안 먹힐 가능성에 대비해, 지금 실제로 긴 캐시가 붙어있는 걸 확인한
+# 루트 파일들은 명시적으로도 한 번 더 지정해 둔다.
+/membership-status.js
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/auth-paywall-guard.js
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/admin-gate.js
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/admin-gate.css
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/exit-quiz.js
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/exit-quiz.css
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/notes.js
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/notes.css
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/pop-article.css
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/gemini-live-test/spotlight-bar.css
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0

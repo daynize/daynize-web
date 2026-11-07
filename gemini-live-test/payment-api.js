@@ -83,10 +83,11 @@ function createPaymentApi(options = {}) {
     // 로그인한 사용자의 결제 엔티티는 입력폼 이메일이 아니라 로그인 세션 이메일로 귀속시켜,
     // hasActiveSubscription(session.email) 조회가 항상 결제 시점 이메일과 일치하게 한다.
     const getSession = options.getSession ?? (() => null);
-    // 카카오 이메일 미동의로 받은 합성 식별자(kakao_*@kakao.daynize)는 실제 수신함이 아니므로
-    // 영수증용으로 강제하지 않고, 대신 결제 시점에 입력한 실제 이메일과 세션 이메일을 연결해 둔다.
+    // 카카오/네이버가 이메일 미동의로 내려준 합성 식별자(kakao_*@kakao.daynize,
+    // naver_*@naver.daynize)는 실제 수신함이 아니므로 영수증용으로 강제하지 않고, 대신 결제
+    // 시점에 입력한 실제 이메일과 세션 이메일을 연결해 둔다.
     const linkEmails = options.linkEmails ?? (() => false);
-    const fallbackSessionEmail = /@kakao\.daynize$/i;
+    const fallbackSessionEmail = /@(kakao|naver)\.daynize$/i;
     const orders = new Map();
     let lastOrderTimestamp = 0;
 

@@ -32,7 +32,8 @@ const sessionCookieOf = response => response.headers.getSetCookie()
 function mockOauthFetch(calls = []) {
     return async (url, request = {}) => {
         calls.push({ url, request });
-        if (url.startsWith('https://kauth.kakao.com/oauth/token') || url.startsWith('https://oauth2.googleapis.com/token')) {
+        if (url.startsWith('https://kauth.kakao.com/oauth/token') || url.startsWith('https://oauth2.googleapis.com/token')
+            || url.startsWith('https://nid.naver.com/oauth2.0/token')) {
             const body = new URLSearchParams(request.body);
             if (body.get('grant_type') !== 'authorization_code' || !body.get('code')) {
                 return Response.json({ error: 'invalid_grant' }, { status: 400 });
@@ -49,6 +50,14 @@ function mockOauthFetch(calls = []) {
         if (url.startsWith('https://www.googleapis.com/oauth2/v3/userinfo')) {
             assert.match(request.headers.Authorization, /^Bearer token-/);
             return Response.json({ sub: 'google-7', email: 'learner@example.com', name: '김하늘' });
+        }
+        if (url.startsWith('https://openapi.naver.com/v1/nid/me')) {
+            assert.match(request.headers.Authorization, /^Bearer token-/);
+            // 네이버는 "이메일" 제공 항목이 선택/거부 상태면 response.email을 아예 비워서 돌려준다.
+            if (request.headers.Authorization === 'Bearer token-no-email') {
+                return Response.json({ response: { id: 'naver-998877', nickname: '네이버사용자' } });
+            }
+            return Response.json({ response: { id: 'naver-7', email: 'Learner@Naver.com', name: '김하늘' } });
         }
         return Response.json({ error: 'unexpected upstream' }, { status: 500 });
     };
@@ -190,6 +199,41 @@ test('kakao callback uses a stable fallback identity when email consent is missi
     assert.equal(me.user.id, '998877');
     assert.equal(me.user.name, '카카오사용자');
     assert.equal(me.user.email, 'kakao_998877@kakao.daynize');
+});
+
+test('naver callback uses a stable fallback identity when the email field is withheld', { timeout: 10000 }, async context => {
+    const base = await withServer(context, {
+        ...authOptions,
+        naverClientId: 'naver-client', naverClientSecret: 'naver-secret',
+        naverRedirectUri: 'https://api.daynize.co.kr/api/auth/naver/callback',
+        authFetchImpl: mockOauthFetch()
+    });
+    const { stateCookie, state } = await startLogin(base, 'naver');
+    const callback = await fetch(`${base}/api/auth/naver/callback?code=no-email&state=${state}`, {
+        redirect: 'manual', headers: { Cookie: stateCookie }
+    });
+    assert.equal(callback.status, 302);
+    const me = await (await fetch(`${base}/api/auth/me`, { headers: { Cookie: sessionCookieOf(callback) } })).json();
+    assert.equal(me.user.id, 'naver-998877');
+    assert.equal(me.user.name, '네이버사용자');
+    assert.equal(me.user.email, 'naver_naver-998877@naver.daynize');
+});
+
+test('naver callback uses the real email when the provider returns one', { timeout: 10000 }, async context => {
+    const base = await withServer(context, {
+        ...authOptions,
+        naverClientId: 'naver-client', naverClientSecret: 'naver-secret',
+        naverRedirectUri: 'https://api.daynize.co.kr/api/auth/naver/callback',
+        authFetchImpl: mockOauthFetch()
+    });
+    const { stateCookie, state } = await startLogin(base, 'naver');
+    const callback = await fetch(`${base}/api/auth/naver/callback?code=abc&state=${state}`, {
+        redirect: 'manual', headers: { Cookie: stateCookie }
+    });
+    assert.equal(callback.status, 302);
+    const me = await (await fetch(`${base}/api/auth/me`, { headers: { Cookie: sessionCookieOf(callback) } })).json();
+    assert.equal(me.user.id, 'naver-7');
+    assert.equal(me.user.email, 'learner@naver.com');
 });
 
 test('auth endpoints report readiness and refuse to start when credentials are missing', { timeout: 10000 }, async context => {

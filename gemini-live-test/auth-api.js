@@ -40,11 +40,15 @@ const PROVIDERS = {
         authorizeUrl: 'https://nid.naver.com/oauth2.0/authorize',
         tokenUrl: 'https://nid.naver.com/oauth2.0/token',
         profileUrl: 'https://openapi.naver.com/v1/nid/me',
-        profile: info => ({
-            id: String(info.response?.id ?? ''),
-            name: info.response?.name ?? info.response?.nickname ?? '',
-            email: (info.response?.email ?? '').toLowerCase()
-        })
+        profile: info => {
+            const naverId = String(info.response?.id ?? '');
+            const name = info.response?.name ?? info.response?.nickname ?? '';
+            const email = String(info.response?.email ?? '').trim().toLowerCase();
+            // 네이버 이메일 제공 항목이 "선택"으로 설정돼 있거나 사용자가 거부하면 email이 빈
+            // 문자열로 온다. 카카오와 같은 이유로 고유 ID 기반 안정적인 식별자로 대체한다 —
+            // 빈 문자열을 그대로 쓰면 이메일 미동의 사용자들이 전부 같은 키로 충돌한다.
+            return { id: naverId, name, email: email || `naver_${naverId}@naver.daynize` };
+        }
     }
 };
 

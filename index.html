@@ -4438,11 +4438,12 @@
             let paidUiLocked = false;
             // 로그인 상태면 결제 폼의 이메일을 세션 이메일로 고정한다. 폼에 다른 이메일을 입력해도
             // 결제 엔티티가 로그인 계정과 어긋나 "결제했는데 계속 결제 안내가 뜨는" 현상을 막는다.
-            // 단, 카카오 이메일 미동의로 받은 내부 식별용 이메일(kakao_*@kakao.daynize)은 실제
-            // 수신함이 아니므로 잠그지 않고 비워 두어, 영수증을 받을 실제 이메일을 입력받는다
-            // (서버가 결제 시점에 이 이메일과 로그인 세션을 연결해 권한을 맞춰 준다).
+            // 단, 카카오/네이버가 이메일 미동의로 내려준 내부 식별용 이메일
+            // (kakao_*@kakao.daynize, naver_*@naver.daynize)은 실제 수신함이 아니므로 잠그지
+            // 않고 비워 두어, 영수증을 받을 실제 이메일을 입력받는다(서버가 결제 시점에 이
+            // 이메일과 로그인 세션을 연결해 권한을 맞춰 준다).
             const checkoutEmailInput = registrationForm.elements.email;
-            const fallbackSessionEmail = /@kakao\.daynize$/i;
+            const fallbackSessionEmail = /@(kakao|naver)\.daynize$/i;
             let lastLockedEmail = '';
             const applySessionEmailLock = auth => {
                 const sessionEmail = auth?.user?.email || auth?.email || '';
