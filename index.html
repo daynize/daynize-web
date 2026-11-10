@@ -1810,10 +1810,88 @@
             color: #fff;
         }
 
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+        }
+
+        /* 프로필 모달 전용 리디자인. 색상/글래스모피즘은 여기(.account-*)에만 적용되고
+           다른 다이얼로그(.legal-modal 공통 베이스)는 그대로 둔다. */
+        .account-modal {
+            background: #fff;
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+            border-color: #ececec;
+        }
+
+        .account-modal .legal-modal-header {
+            background: #fff;
+        }
+
+        .account-modal-header {
+            gap: 14px;
+        }
+
+        .account-identity {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 0;
+        }
+
+        .account-avatar {
+            display: grid;
+            width: 52px;
+            height: 52px;
+            flex: 0 0 auto;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(255, 102, 72, .12);
+            color: #ff6648;
+        }
+
+        .account-avatar svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .account-identity-text {
+            min-width: 0;
+        }
+
+        .account-modal-eyebrow {
+            margin: 0 0 2px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+        }
+
+        .account-modal-header h2 {
+            overflow: hidden;
+            font-size: 21px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .account-identity-email {
+            margin: 2px 0 0;
+            overflow: hidden;
+            color: var(--muted);
+            font-size: 14px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
         .account-section {
-            margin: 0 0 22px;
-            padding: 0 0 18px;
-            border-bottom: 1px solid #e5e7e0;
+            margin: 0 0 18px;
+            padding: 0 0 16px;
+            border-bottom: 1px solid #eee;
         }
 
         .account-section h3 {
@@ -1833,10 +1911,160 @@
             display: inline-flex;
             padding: 4px 10px;
             border-radius: 999px;
-            background: var(--sage-soft);
-            color: var(--sage);
+            background: rgba(255, 102, 72, .12);
+            color: #ff6648;
             font-size: 13px;
             font-weight: 700;
+        }
+
+        /* 이용권 정보 / 학습 기록 글래스모피즘 카드 */
+        .account-card {
+            margin: 0 0 18px;
+            padding: 18px 20px;
+            border: 1px solid rgba(255, 255, 255, .6);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .8);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(20, 20, 20, .08);
+        }
+
+        .account-card h3 {
+            margin: 0 0 14px;
+            color: #304d3d;
+            font-family: var(--serif);
+            font-size: 18px;
+        }
+
+        .account-card-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            border-top: 1px solid rgba(0, 0, 0, .05);
+        }
+
+        .account-card-row:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .account-card-label {
+            flex: 0 0 auto;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .account-card-value {
+            flex: 1 1 auto;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .account-pass-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 11px;
+            border-radius: 999px;
+            background: #ff6648;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .02em;
+        }
+
+        .account-manage-button {
+            padding: 7px 14px;
+            border: 1px solid #ff6648;
+            border-radius: 999px;
+            background: #fff;
+            color: #ff6648;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .account-manage-button:hover,
+        .account-manage-button:focus-visible {
+            background: #ff6648;
+            color: #fff;
+        }
+
+        .account-payment-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: #f4f4f4;
+            color: var(--ink);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .account-payment-badge svg {
+            width: 18px;
+            height: 18px;
+            color: #ff6648;
+        }
+
+        .account-progress-row {
+            margin: 0 0 14px;
+        }
+
+        .account-progress-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 10px;
+            margin: 0 0 7px;
+            font-size: 14px;
+        }
+
+        .account-progress-head strong {
+            color: #304d3d;
+        }
+
+        .account-progress-bar {
+            height: 8px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, .07);
+        }
+
+        .account-progress-fill {
+            height: 100%;
+            min-width: 2px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #ff6648, #ff8a66);
+            transition: width .4s ease;
+        }
+
+        .account-progress-footer {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 4px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .account-streak-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 11px;
+            border-radius: 999px;
+            background: rgba(255, 102, 72, .12);
+            color: #ff6648;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
         }
 
         .account-controls {
@@ -1846,8 +2074,22 @@
             gap: 10px;
         }
 
-        .account-controls [data-logout] {
+        .account-controls [data-open-legal] {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 999px;
+            background: #f2f2f2;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .account-logout-button {
             margin-left: auto;
+            border: 1px solid #d9d9d9;
+            background: #fff;
+            color: var(--ink);
         }
 
         .legal-modal-body::-webkit-scrollbar {
@@ -2283,32 +2525,63 @@
     </dialog>
 
     <dialog class="legal-modal account-modal" id="profile-dialog" aria-labelledby="profile-dialog-title">
-        <div class="legal-modal-header">
-            <h2 id="profile-dialog-title">내 프로필</h2>
+        <div class="legal-modal-header account-modal-header">
+            <div class="account-identity">
+                <span class="account-avatar" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" focusable="false"><path fill="currentColor" d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm0 2.25c-4.14 0-7.5 2.52-7.5 5.63v.37a.75.75 0 0 0 .75.75h13.5a.75.75 0 0 0 .75-.75v-.37c0-3.11-3.36-5.63-7.5-5.63Z"/></svg>
+                </span>
+                <div class="account-identity-text">
+                    <p class="account-modal-eyebrow">내 프로필</p>
+                    <h2 id="profile-dialog-title" data-profile-name>확인 중…</h2>
+                    <p class="account-identity-email" data-profile-email>확인 중…</p>
+                </div>
+            </div>
             <button class="legal-close" type="button" data-close-account aria-label="닫기">×</button>
         </div>
         <div class="legal-modal-body">
             <section class="account-section" aria-labelledby="profile-account-title">
-                <h3 id="profile-account-title">계정 정보</h3>
-                <p><strong>이름</strong><br><span data-profile-name>확인 중…</span></p>
-                <p><strong>이메일</strong><br><span data-profile-email>확인 중…</span></p>
+                <h3 id="profile-account-title" class="sr-only">계정 정보</h3>
                 <span class="account-provider-badge" data-profile-provider>로그인 계정 확인 중…</span>
             </section>
-            <section class="account-section" aria-labelledby="profile-entitlement-title">
+            <section class="account-card" aria-labelledby="profile-entitlement-title">
                 <h3 id="profile-entitlement-title">이용권 정보</h3>
-                <p><strong>회원 상태</strong><br><span data-profile-status>확인 중…</span></p>
-                <p data-profile-billing hidden><strong data-profile-billing-label>다음 결제 예정일</strong><br><span data-profile-next-billing>-</span><br><strong>결제 수단</strong><br><span data-profile-payment-method>-</span></p>
+                <div class="account-card-row">
+                    <span class="account-card-label">회원 상태</span>
+                    <span class="account-card-value" data-profile-status>확인 중…</span>
+                    <span class="account-pass-badge" data-profile-pass-badge hidden>PASS Active</span>
+                </div>
+                <div class="account-card-row" data-profile-billing hidden>
+                    <span class="account-card-label" data-profile-billing-label>다음 결제 예정일</span>
+                    <span class="account-card-value" data-profile-next-billing>-</span>
+                    <button type="button" class="account-manage-button" data-manage-pass>이용권 관리</button>
+                </div>
+                <div class="account-card-row" data-profile-payment-row hidden>
+                    <span class="account-card-label">결제 수단</span>
+                    <span class="account-payment-badge">
+                        <svg viewBox="0 0 24 24" fill="none" focusable="false" aria-hidden="true"><path fill="currentColor" d="M3 6.75A2.25 2.25 0 0 1 5.25 4.5h13.5A2.25 2.25 0 0 1 21 6.75v10.5A2.25 2.25 0 0 1 18.75 19.5H5.25A2.25 2.25 0 0 1 3 17.25V6.75Zm1.5 2.25v8.25c0 .414.336.75.75.75h13.5a.75.75 0 0 0 .75-.75V9H4.5Zm0-2.25v.75h15v-.75a.75.75 0 0 0-.75-.75H5.25a.75.75 0 0 0-.75.75Z"/></svg>
+                        <span data-profile-payment-method>-</span>
+                    </span>
+                </div>
             </section>
-            <section class="account-section" aria-labelledby="profile-progress-title">
+            <section class="account-card" aria-labelledby="profile-progress-title">
                 <h3 id="profile-progress-title">나의 학습 기록</h3>
-                <p>지난주 영어 <strong data-progress-weekly>0 / 20강 완료</strong></p>
-                <p>오늘의 회화 <strong data-progress-conversation>0 / 20강 완료</strong></p>
-                <p>최근 학습 진행일<br><span data-progress-last-date>기록 없음</span></p>
+                <div class="account-progress-row">
+                    <div class="account-progress-head"><span>지난주 영어</span><strong data-progress-weekly>0 / 20강 완료</strong></div>
+                    <div class="account-progress-bar"><div class="account-progress-fill" data-progress-weekly-bar style="width:0%"></div></div>
+                </div>
+                <div class="account-progress-row">
+                    <div class="account-progress-head"><span>오늘의 회화</span><strong data-progress-conversation>0 / 20강 완료</strong></div>
+                    <div class="account-progress-bar"><div class="account-progress-fill" data-progress-conversation-bar style="width:0%"></div></div>
+                </div>
+                <div class="account-progress-footer">
+                    <span>최근 학습 진행일 <strong data-progress-last-date>기록 없음</strong></span>
+                    <span class="account-streak-badge" data-progress-streak>🔥 0일 연속 학습 중!</span>
+                </div>
             </section>
             <div class="account-controls">
                 <button type="button" data-open-legal="terms-dialog">이용약관</button>
                 <button type="button" data-open-legal="privacy-dialog">개인정보처리방침</button>
-                <button class="button secondary" type="button" data-logout>로그아웃</button>
+                <button class="button secondary account-logout-button" type="button" data-logout>로그아웃</button>
             </div>
         </div>
     </dialog>
@@ -2876,13 +3149,18 @@
             const profileEmail = document.querySelector('[data-profile-email]');
             const profileStatus = document.querySelector('[data-profile-status]');
             const profileProvider = document.querySelector('[data-profile-provider]');
+            const profilePassBadge = document.querySelector('[data-profile-pass-badge]');
             const profileBilling = document.querySelector('[data-profile-billing]');
             const profileBillingLabel = document.querySelector('[data-profile-billing-label]');
             const profileNextBilling = document.querySelector('[data-profile-next-billing]');
+            const profilePaymentRow = document.querySelector('[data-profile-payment-row]');
             const profilePaymentMethod = document.querySelector('[data-profile-payment-method]');
             const progressWeekly = document.querySelector('[data-progress-weekly]');
+            const progressWeeklyBar = document.querySelector('[data-progress-weekly-bar]');
             const progressConversation = document.querySelector('[data-progress-conversation]');
+            const progressConversationBar = document.querySelector('[data-progress-conversation-bar]');
             const progressLastDate = document.querySelector('[data-progress-last-date]');
+            const progressStreak = document.querySelector('[data-progress-streak]');
             const configuredAuthApiBase = document.querySelector('meta[name="daynize-payment-api"]')?.content || 'https://api.daynize.co.kr';
             const authApiBase = ['localhost', '127.0.0.1'].includes(window.location.hostname) && window.location.port !== '8081'
                 ? `http://${window.location.hostname}:8081`
@@ -2959,20 +3237,32 @@
                     profileStatus.textContent = isPaid
                         ? (isSubscription ? '정회원 (정기 구독 중)' : '정회원 (단건 결제)')
                         : '미결제 회원';
+                    profilePassBadge.hidden = !isPaid;
                     const billingDate = auth?.nextBillingDate;
-                    profileBilling.hidden = !billingDate && !auth?.paymentMethod;
+                    profileBilling.hidden = !billingDate;
                     profileBillingLabel.textContent = isSubscription ? '다음 결제 예정일' : '만료 예정일';
                     profileNextBilling.textContent = billingDate
                         ? new Date(billingDate).toISOString().slice(0, 10)
                         : '-';
+                    profilePaymentRow.hidden = !auth?.paymentMethod;
                     profilePaymentMethod.textContent = auth?.paymentMethod || '-';
                     const weekly = auth?.learningProgress?.weeklyEnglish || {};
                     const conversation = auth?.learningProgress?.dailyConversation || {};
-                    progressWeekly.textContent = `${weekly.completed || 0} / ${weekly.total || 20}강 완료`;
-                    progressConversation.textContent = `${conversation.completed || 0} / ${conversation.total || 20}강 완료`;
-                    progressLastDate.textContent = auth?.learningProgress?.lastStudyDate
-                        ? new Date(auth.learningProgress.lastStudyDate).toLocaleDateString('ko-KR')
+                    const weeklyTotal = weekly.total || 20;
+                    const conversationTotal = conversation.total || 20;
+                    const toPercent = (completed, total) => `${Math.min(100, Math.max(0, (Number(completed) || 0) / total * 100))}%`;
+                    progressWeekly.textContent = `${weekly.completed || 0} / ${weeklyTotal}강 완료`;
+                    progressWeeklyBar.style.width = toPercent(weekly.completed, weeklyTotal);
+                    progressConversation.textContent = `${conversation.completed || 0} / ${conversationTotal}강 완료`;
+                    progressConversationBar.style.width = toPercent(conversation.completed, conversationTotal);
+                    const lastStudyDate = auth?.learningProgress?.lastStudyDate;
+                    progressLastDate.textContent = lastStudyDate
+                        ? new Date(lastStudyDate).toLocaleDateString('ko-KR')
                         : '기록 없음';
+                    // 서버에 연속 학습일(스트릭) 집계가 아직 없어서, 오늘 학습 기록이 있는지만으로
+                    // 1일/0일을 보여준다 — 진짜 N일 연속 스트릭은 백엔드 집계가 생기면 교체한다.
+                    const studiedToday = lastStudyDate && new Date(lastStudyDate).toDateString() === new Date().toDateString();
+                    progressStreak.textContent = `🔥 ${studiedToday ? 1 : 0}일 연속 학습 중!`;
                 }
                 return loggedIn;
             };
@@ -3038,6 +3328,19 @@
                 renderAccount(guestState);
                 window.dispatchEvent(new CustomEvent('daynize:auth-state-changed', { detail: guestState }));
                 if (window.location.hash !== '#register') history.replaceState(history.state, '', `${window.location.pathname}${window.location.search}#register`);
+            });
+            // 구독/결제 수단을 바꾸는 별도 관리 화면은 아직 없어서, 결제가 이뤄지는
+            // #register 섹션으로 보내는 걸로 "이용권 관리"를 연결한다.
+            document.querySelector('[data-manage-pass]')?.addEventListener('click', () => {
+                closeAccountDialogs();
+                closeNavigation();
+                const register = document.querySelector('#register');
+                if (register) {
+                    history.pushState(history.state, '', '#register');
+                    register.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    window.location.assign(new URL('/?checkout=required#register', location.origin).href);
+                }
             });
             void fetchAuth().catch(() => renderAccount({ loggedIn: false }));
             // 결제는 별도 페이지(/payment/success)에서 완료되고, 거기서 "데이나이즈로 돌아가기"
