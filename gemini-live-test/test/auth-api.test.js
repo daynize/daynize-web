@@ -110,7 +110,11 @@ test('kakao login round-trip issues a verified session and logout clears it', { 
 
     const logout = await fetch(`${base}/api/auth/logout`, { method: 'POST', headers: { Cookie: sessionCookie } });
     assert.equal((await logout.json()).success, true);
-    assert.match(logout.headers.getSetCookie().find(line => line.startsWith('daynize_session=')), /Max-Age=0/);
+    // Domain 속성을 붙이기 전(과거 배포)에 발급된 쿠키가 브라우저에 남아있어도 로그아웃이
+    // 지워주도록, Domain 있는 버전과 없는 버전 둘 다 Max-Age=0으로 삭제 지시가 나가야 한다.
+    const sessionClears = logout.headers.getSetCookie().filter(line => line.startsWith('daynize_session='));
+    assert.equal(sessionClears.length, 2);
+    assert.ok(sessionClears.every(line => /Max-Age=0/.test(line)));
 
     const anonymous = await (await fetch(`${base}/api/auth/me`)).json();
     assert.deepEqual(anonymous, { loggedIn: false, isAdmin: false, hasActiveSubscription: false });

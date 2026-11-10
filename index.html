@@ -2290,6 +2290,7 @@
         <div class="legal-modal-body">
             <section class="account-section" aria-labelledby="profile-account-title">
                 <h3 id="profile-account-title">계정 정보</h3>
+                <p><strong>이름</strong><br><span data-profile-name>확인 중…</span></p>
                 <p><strong>이메일</strong><br><span data-profile-email>확인 중…</span></p>
                 <span class="account-provider-badge" data-profile-provider>로그인 계정 확인 중…</span>
             </section>
@@ -2871,6 +2872,7 @@
             const accountAction = document.querySelector('[data-account-action]');
             const loginDialog = document.querySelector('#login-dialog');
             const profileDialog = document.querySelector('#profile-dialog');
+            const profileName = document.querySelector('[data-profile-name]');
             const profileEmail = document.querySelector('[data-profile-email]');
             const profileStatus = document.querySelector('[data-profile-status]');
             const profileProvider = document.querySelector('[data-profile-provider]');
@@ -2948,6 +2950,8 @@
                 accountAction.dataset.loggedIn = String(loggedIn);
                 if (loggedIn) {
                     const user = auth?.user || auth;
+                    // user.name은 소셜 로그인 공급자(네이버 등)가 내려주는 실명/닉네임 그대로다.
+                    profileName.textContent = user?.name || '이름 정보 없음';
                     profileEmail.textContent = user?.email || '이메일 정보 없음';
                     profileProvider.textContent = user?.provider === 'kakao' ? '카카오 계정' : user?.provider === 'google' ? 'Google 계정' : user?.provider === 'naver' ? '네이버 계정' : '소셜 로그인 계정';
                     const isPaid = checkIsPaidUser(auth);
@@ -2972,6 +2976,9 @@
                 }
                 return loggedIn;
             };
+            // 로그아웃 시 "지금 이 유저가 결제 상태였는지"를 판단하기 위한 캐시일 뿐,
+            // 권한 판정 자체는 여전히 서버 응답(fetchAuth)만 기준으로 한다.
+            let latestAuthState = null;
             const fetchAuth = async () => {
                 const response = await fetch(`${authApiBase}/api/auth/me`, { credentials: 'include', cache: 'no-store' });
                 const auth = response.ok ? await response.json() : null;
@@ -2984,6 +2991,7 @@
                     : null;
                 const profile = profileResponse?.ok ? await profileResponse.json() : null;
                 const nextAuthState = { ...auth, ...profile };
+                latestAuthState = nextAuthState;
                 renderAccount(nextAuthState);
                 window.dispatchEvent(new CustomEvent('daynize:auth-state-changed', { detail: nextAuthState }));
                 const oauthProvider = new URLSearchParams(location.search).get('login');
@@ -3011,11 +3019,22 @@
                 openSocialLogin(link.dataset.socialLogin);
             }));
             document.querySelector('[data-logout]').addEventListener('click', async () => {
+                // 결제 여부와 무관하게 정상 유저의 로그아웃 흐름은 그대로 둔다(리로드 없이 즉시
+                // 게스트 UI로 전환). 미결제 상태였던 유저만, 과거에 로그인했던 잔여 Google/카카오
+                // 세션 흔적이 새로고침 없이는 완전히 끊기지 않는 경우가 있어 그 경우에 한해
+                // location.reload()로 확실히 끊어낸다.
+                const wasPaid = checkIsPaidUser(latestAuthState);
                 await fetch(`${authApiBase}/api/auth/logout`, { method: 'POST', credentials: 'include' }).catch(() => {});
                 clearClientSession();
                 closeAccountDialogs();
                 closeNavigation();
+                if (!wasPaid) {
+                    if (window.location.hash !== '#register') window.location.hash = 'register';
+                    window.location.reload();
+                    return;
+                }
                 const guestState = { loggedIn: false, isAdmin: false, hasActiveSubscription: false };
+                latestAuthState = guestState;
                 renderAccount(guestState);
                 window.dispatchEvent(new CustomEvent('daynize:auth-state-changed', { detail: guestState }));
                 if (window.location.hash !== '#register') history.replaceState(history.state, '', `${window.location.pathname}${window.location.search}#register`);

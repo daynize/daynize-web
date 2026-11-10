@@ -204,7 +204,11 @@ function createAuthApi(options = {}) {
         }
         if (pathname === '/api/auth/logout' && request.method === 'POST') {
             request.resume();
-            json(response, 200, { success: true }, { ...cors, 'Set-Cookie': sessionCookie(request, '', 0) });
+            // Domain=.daynize.co.kr 속성을 붙이기 전(과거 배포)에 발급된 세션 쿠키는 이름은 같지만
+            // Domain이 달라 별개의 쿠키로 브라우저에 남는다. 지금 스킴만 지우면 그 구버전 쿠키가
+            // 계속 전송돼 로그아웃 직후에도 예전 계정으로 다시 "로그인된" 것처럼 보일 수 있으니
+            // 두 스킴을 모두 지운다(둘 다 그냥 Max-Age=0짜리 삭제 쿠키라 다른 계정엔 영향 없음).
+            json(response, 200, { success: true }, { ...cors, 'Set-Cookie': [sessionCookie(request, '', 0), cookie(request, SESSION_COOKIE, '', 0)] });
             return true;
         }
 
