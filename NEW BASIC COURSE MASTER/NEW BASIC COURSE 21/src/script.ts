@@ -150,7 +150,7 @@ export const LECTURE_CUES: CueDef[] = [
   {id: 'i7a', scene: 'intro', mood: 'dawn', kr: '컵에 담긴 물({v|water}), 공기({v|air}), 돈이라는 개념({v|money}), 사랑({v|love}), 정보({v|information}),', pad: 0.3},
   {id: 'i7b', scene: 'intro', mood: 'dawn', kr: '조언({v|advice}), 시간({v|time}), 소금({v|salt}), 행복({v|happiness}), 그리고 당신의 머리카락({v|hair}) 같은 명사들입니다.', pad: 0.6},
 
-  {id: 'b1a', scene: 'bridge', mood: 'bridge', kr: '예를 들어, “나 물 두 개만 줘”라고 할 때,', pad: 0.3},
+  {id: 'b1a', scene: 'bridge', mood: 'bridge', kr: '예를 들어, “나 물 두 잔만 줘”라고 할 때,', pad: 0.3},
   {id: 'b1b', scene: 'bridge', mood: 'bridge', kr: '{e|I want two waters}라고 쓰면 아주 어색하고 틀린 문장이 됩니다.', pad: 0.3},
   {id: 'b1c', scene: 'bridge', mood: 'bridge', kr: '물은 형태가 없기 때문에 {e|I want two} {p|glasses of} {e|water}처럼 중간에 ‘컵({p|glass})’이라는 다리가 수량을 나타내주어야 완성된 문장이 됩니다.', pad: 0.9},
   {id: 'b2a', scene: 'bridge', mood: 'bridge', kr: '다시 한 번 말하자면, {v|불가산명사} 바로 앞에는 숫자({e|one}, {e|two})나 부정관사({e|a}, {e|an})가 직접 오지 못하고, 복수형 {e|s}도 붙지 못합니다.', pad: 0.4},

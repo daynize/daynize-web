@@ -51,7 +51,7 @@ const WaterDemo: React.FC<{scene: SceneSpan}> = ({scene}) => {
         }}
       >
         <span>🥤</span>
-        <span>“나 물 두 개만 줘”</span>
+        <span>“나 물 두 잔만 줘”</span>
       </div>
 
       <Sequence from={tB} durationInFrames={sp.duration - tB} layout="none">

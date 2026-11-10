@@ -304,15 +304,15 @@
       "segments": [
         {
           "lang": "kr",
-          "text": "예를 들어, “나 물 두 개만 줘”라고 할 때,",
+          "text": "예를 들어, “나 물 두 잔만 줘”라고 할 때,",
           "file": "parts/b1a_01_kr.mp3",
-          "hash": "41c44c2f53249d14",
-          "seconds": 3.657
+          "hash": "2bbb228c85d1fc19",
+          "seconds": 3.605
         }
       ],
       "file": "b1a.mp3",
-      "seconds": 3.657,
-      "frames": 110
+      "seconds": 3.605,
+      "frames": 108
     },
     "b1b": {
       "segments": [
