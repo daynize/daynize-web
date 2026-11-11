@@ -26,6 +26,8 @@ test('grant-subscription CLI creates and updates a PAID entitlement by normalize
             status: 'PAID',
             source: 'manual-cli',
             payment_id: null,
+            next_billing_date: null,
+            payment_method: null,
             updated_at: store.getEntitlement('learner@example.com').updated_at
         });
         store.close();

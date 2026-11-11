@@ -87,6 +87,9 @@ function createPaymentApi(options = {}) {
     // naver_*@naver.daynize)는 실제 수신함이 아니므로 영수증용으로 강제하지 않고, 대신 결제
     // 시점에 입력한 실제 이메일과 세션 이메일을 연결해 둔다.
     const linkEmails = options.linkEmails ?? (() => false);
+    // 이미 결제된 회원이 프로필 모달에서 카드를 재등록(billing key 재발급)했을 때만 쓰인다 — 신규
+    // 가입자의 첫 카드 인증은 아직 결제가 없으니(onPaid가 아직 안 불림) 여기서 손댈 엔티틀먼트가 없다.
+    const onBillingMethodUpdated = options.onBillingMethodUpdated ?? (() => {});
     const fallbackSessionEmail = /@(kakao|naver)\.daynize$/i;
     const orders = new Map();
     let lastOrderTimestamp = 0;
@@ -357,6 +360,7 @@ function createPaymentApi(options = {}) {
                     return true;
                 }
                 order.status = 'BILLING_AUTHENTICATED';
+                await onBillingMethodUpdated({ email: order.email, paymentMethod: 'CARD', at: now() });
                 json(response, 200, { orderId, status: order.status, email: order.email }, cors);
             } catch {
                 json(response, 502, { error: '카드 인증 확인에 실패했습니다. 잠시 후 다시 시도해 주세요.' }, cors);

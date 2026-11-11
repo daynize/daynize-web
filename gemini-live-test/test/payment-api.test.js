@@ -2,6 +2,7 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { once } = require('node:events');
 const { createRelayServer } = require('../server');
+const { createStore } = require('../store');
 
 const buyer = {
     name: '김하늘',
@@ -296,6 +297,37 @@ test('billing authentication verifies issued key, order, customer and dedicated 
     assert.equal(verified.status, 200);
     assert.equal((await verified.json()).status, 'BILLING_AUTHENTICATED');
 });
+
+test('an already-paid member re-registering a card (profile "결제 수단 변경") gets payment_method persisted', async context => {
+    const store = createStore();
+    context.after(() => store.close());
+    store.grantActiveSubscription({ email: buyer.email, source: 'subscription-payment', paymentMethod: 'KAKAOPAY' });
+    assert.equal(store.getEntitlement(buyer.email).payment_method, 'KAKAOPAY');
+
+    let issueId;
+    const base = await withServer(context, {
+        store,
+        portoneStoreId: 'store-test', portoneChannelKey: 'channel-payment', portoneBillingChannelKey: 'channel-billing',
+        portoneApiSecret: 'secret-test-only', portoneMode: 'test',
+        paymentFetchImpl: async () => Response.json({
+            status: 'ISSUED', billingKey: 'billing-test', storeId: 'store-test', issueId,
+            customer: { id: issueId }, channels: [{ key: 'channel-billing', type: 'TEST', pgProvider: 'KCP_V2' }]
+        })
+    });
+    const created = await createOrder(base, { ...buyer, paymentType: 'subscription', billingConsent: true });
+    assert.equal(created.response.status, 201);
+    issueId = created.body.orderId;
+    const verified = await fetch(`${base}/api/payment/billing/verify`, {
+        method: 'POST',
+        headers: { Origin: new URL(base).origin, 'Content-Type': 'application/json', Cookie: created.cookie },
+        body: JSON.stringify({ issueId, billingKey: 'billing-test' })
+    });
+    assert.equal(verified.status, 200);
+    assert.equal((await verified.json()).status, 'BILLING_AUTHENTICATED');
+    // 카드 재등록(billing/verify) 성공만으로 결제 수단이 즉시 갱신돼야 한다 — 요금 청구(onPaid) 없이도.
+    assert.equal(store.getEntitlement(buyer.email).payment_method, 'CARD');
+});
+
 test('misconfiguration returns JSON errors instead of crashing the relay', async context => {
     const originalError = console.error;
     console.error = () => { };

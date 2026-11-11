@@ -55,13 +55,90 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700&family=Gowun+Batang:wght@400;700&display=swap"
         rel="stylesheet">
+    <!-- 히어로의 큐브 영문 텍스트("GREAT THINGS TAKE TIME")에 쓰는 하이테크 폰트 — Orbitron/Rajdhani는
+         한글 글리프가 없어서, 'Orbitron'/'Rajdhani'가 쓰인 CSS font-family는 한글 타이틀에는 자동으로
+         --serif로 폴백된다(의도된 동작, 버그 아님). -->
+    <!-- 프로필 모달(나의 학습 기록/강의일지)은 명조체 대신 Pretendard로 모던하게 표시한다 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+    <!-- 본문 전체 기본 폰트 '에스코어드림'(OFL, 눈누 CDN 미러) — font-weight별로 파일이 아예
+         달라서(가변폰트 아님) 실제 쓰는 weight(400/500/600/700/800/900) 6종을 전부 불러온다. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-4regular@0.0.1/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-5medium@0.0.1/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-6bold@0.0.1/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-7extrabold@0.0.1/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-8heavy@0.0.1/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-9black@0.0.1/index.css">
     <link rel="preconnect" href="https://images.unsplash.com">
     <script src="https://cdn.portone.io/v2/browser-sdk.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <style>
+        /* '지난 주 영어' 대형 타이틀용 — KOTRA에서 받은 라이선스 폰트 파일을 자가 호스팅한다
+           (재배포 금지 조건이라 외부 CDN 대신 이 사이트 자체 ./fonts/에서만 서빙한다). */
+        @font-face {
+            font-family: "KOTRABold";
+            src: url("./fonts/KOTRABold.woff2") format("woff2"),
+                 url("./fonts/KOTRABold.otf") format("opentype");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* 본문 전체 기본 폰트 '에스코어드림'. 가변 폰트가 아니라 굵기별로 완전히 다른 파일이라서,
+           font-weight별로 실제 쓰는 파일을 직접 매핑해 둔다 — 이렇게 하나의 family("S-CoreDream")로
+           묶어 두면 사이트 전역의 기존 font-weight: 400/500/600/700/800/900 선언이 그대로
+           맞는 굵기 파일을 찾아간다(개별 선언을 하나하나 고칠 필요가 없다). */
+        @font-face {
+            font-family: "S-CoreDream";
+            src: url("https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-4regular@0.0.1/S-CoreDream-4Regular.woff") format("woff");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "S-CoreDream";
+            src: url("https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-5medium@0.0.1/S-CoreDream-5Medium.woff") format("woff");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "S-CoreDream";
+            src: url("https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-6bold@0.0.1/S-CoreDream-6Bold.woff") format("woff");
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "S-CoreDream";
+            src: url("https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-7extrabold@0.0.1/S-CoreDream-7ExtraBold.woff") format("woff");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "S-CoreDream";
+            src: url("https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-8heavy@0.0.1/S-CoreDream-8Heavy.woff") format("woff");
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "S-CoreDream";
+            src: url("https://cdn.jsdelivr.net/npm/@noonnu/s-coredream-9black@0.0.1/S-CoreDream-9Black.woff") format("woff");
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
         :root {
             color-scheme: light;
             --paper: #f8f7f2;
@@ -72,8 +149,17 @@
             --sage-soft: #e7eee8;
             --gold: #b68b4c;
             --line: #deded5;
-            --serif: "Noto Serif KR", Georgia, serif;
-            --sans: "Noto Sans KR", sans-serif;
+            /* '지난 주 영어' 타이틀을 제외한 본문 전체가 이 두 변수를 거쳐가므로, 여기를
+               '에스코어드림'으로 바꾸는 것만으로 사이트 전역 폰트가 한 번에 바뀐다. */
+            --serif: "S-CoreDream", "Noto Serif KR", Georgia, serif;
+            --sans: "S-CoreDream", "Noto Sans KR", sans-serif;
+            /* 히어로 큐브(영문 "GREAT THINGS TAKE TIME")용 하이테크 폰트. 한글 글리프가 없어서
+               한글 텍스트에 적용해도 --serif로 자동 폴백되고, 영문 텍스트에서만 실제로 보인다. */
+            --font-display-future: "Orbitron", var(--sans);
+            --font-accent-future: "Rajdhani", var(--sans);
+            --font-title-kotra: "KOTRABold", var(--serif);
+            /* '지난 주 영어' 대형 타이틀 전용(고운바탕 Bold, OFL, Google Fonts). */
+            --font-title-gowun: "Gowun Batang", var(--serif);
             --shadow: 0 18px 55px rgba(44, 54, 46, .09);
             --deep-green-1: #0A454C;
             --deep-green-2: #175860;
@@ -376,11 +462,20 @@
         }
 
         .hero-grid {
+            position: relative;
             display: grid;
             grid-template-columns: 1.04fr .96fr;
             align-items: center;
             min-height: 520px;
             gap: 35px;
+            padding: 56px 54px;
+            overflow: hidden;
+            border-radius: 24px;
+            background:
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='1.3' intercept='-.1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+                linear-gradient(135deg, #d9dbdd 0%, #d0d3d6 55%, #c7cace 100%);
+            background-blend-mode: overlay, normal;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
         }
 
         .hero-copy {
@@ -408,16 +503,40 @@
 
         h1 {
             margin: 0;
-            font-family: var(--serif);
-            font-size: clamp(48px, 7vw, 82px);
-            font-weight: 500;
-            line-height: 1.22;
-            letter-spacing: 0;
+            /* 고운바탕(Gowun Batang) Bold — Google Fonts, 한글 글리프 지원. 로드 전/실패 시엔
+               --serif(에스코어드림 → Noto Serif KR)로 자연스럽게 폴백된다. */
+            font-family: var(--font-title-gowun);
+            font-size: clamp(46px, 6.8vw, 80px);
+            font-weight: 700;
+            line-height: 1.26;
+            letter-spacing: -.01em;
+            /* 투명 글자+그림자로 "새겨진" 느낌을 내던 이전 방식 대신, 진한 단색으로 또렷하게
+               채운다. 아주 옅은 그림자만 남겨 살짝의 입체감만 더한다. */
+            color: var(--ink);
+            text-shadow: 0 2px 10px rgba(32, 43, 39, .12);
+        }
+
+        /* "지난 주"(윗줄)의 실제 글자 폭에 맞춰 래퍼를 줄이고(width: max-content), "영어"는 그
+           폭 100%로 글자 사이 간격만 늘려(inter-character justify) 양쪽 끝을 맞춘다 — 폰트
+           크기를 키우지 않고도 두 줄의 가로 폭이 정확히 일치한다. */
+        .hero-title-wrap {
+            display: inline-block;
+            max-width: 100%;
+            width: max-content;
         }
 
         h1 span {
             display: block;
-            color: var(--sage);
+            width: 100%;
+            white-space: nowrap;
+            text-align-last: justify;
+            text-justify: inter-character;
+        }
+
+        /* 두 글자뿐인 둘째 줄은 글자 자체도 조금 키워서, 글자 사이 빈 틈이 과하게 벌어지지
+           않으면서 첫 줄과 같은 폭으로 맞아떨어지게 한다. */
+        .hero-title-line2 {
+            font-size: 1.2em;
         }
 
         .hero-subtitle {
@@ -487,26 +606,140 @@
         }
 
         .hero-art {
-            display: grid;
+            position: relative;
+            z-index: 1;
+            display: flex;
             width: 100%;
             min-width: 0;
-            place-items: center;
-            isolation: isolate;
-            background: var(--paper);
-            -webkit-mask-image: none;
-            mask-image: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 20px 10px;
+            text-align: center;
         }
 
-        .hero-art img {
+        /* 360도로 천천히 계속 회전하는 순수 CSS 3D 주사위.
+           .cube에 건 애니메이션이 정적 기울기(rotateX(-20deg))와 Y축 회전을 한 번에
+           정의하므로 0%→100%가 시각적으로 끊김 없이 이어진다. */
+        .cube-container {
+            --cube-size: 220px;
             display: block;
+            width: var(--cube-size);
+            height: var(--cube-size);
+            perspective: 1000px;
+        }
+
+        /* 큐브가 바닥에 놓인 것처럼 보이게 하는 옅은 접지 그림자. position+z-index로 명시적
+           스태킹 컨텍스트를 만든 이유: .cube-container가 perspective 때문에 이미 자체
+           스태킹 컨텍스트라서, 이 요소를 그냥 두면(position:static) 페인트 순서상 DOM 순서와
+           무관하게 .cube-container보다 먼저(아래에) 그려져 버려 안 보이는 현상이 있었다. */
+        .cube-shadow {
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+            /* 큐브가 고정 기울기(rotateX(-20deg))로 항상 살짝 앞으로 숙여져 있어서, 레이아웃상의
+               220px 박스 바닥보다 실제 보이는 큐브 밑면이 위쪽에 있다 — 그 시각적 차이만큼
+               추가로 내려서 큐브 바로 아래에 붙게 한다. */
+            margin-top: 26px;
+            width: min(58%, 150px);
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(ellipse at center, rgba(32, 43, 39, .16) 0%, rgba(32, 43, 39, .08) 55%, rgba(32, 43, 39, 0) 75%);
+            filter: blur(2px);
+        }
+
+        .cube {
+            position: relative;
             width: 100%;
-            height: auto;
-            aspect-ratio: 1200 / 896;
-            object-fit: contain;
-            mix-blend-mode: normal;
-            border: 0;
-            border-radius: 0;
-            box-shadow: none;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotateCube 22s linear infinite;
+        }
+
+        .cube-face {
+            position: absolute;
+            display: flex;
+            width: var(--cube-size);
+            height: var(--cube-size);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            border: 1px solid rgba(0, 0, 0, .08);
+            /* 거친 콘크리트/스투코 느낌 — feTurbulence로 만든 요철(noise)에 feDiffuseLighting로
+               가상의 빛(좌상단 방향)을 비춰서, 단순 그레인이 아니라 실제 울퉁불퉁한 표면처럼
+               밝은 돌기/어두운 홈이 번갈아 보이게 한다. */
+            background:
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.25' numOctaves='5' seed='9' stitchTiles='stitch' result='noise'/%3E%3CfeDiffuseLighting in='noise' surfaceScale='3.5' diffuseConstant='0.75' lighting-color='%23ffffff' result='light'%3E%3CfeDistantLight azimuth='235' elevation='45'/%3E%3C/feDiffuseLighting%3E%3CfeComponentTransfer in='light'%3E%3CfeFuncR type='linear' slope='1.1' intercept='-.25'/%3E%3CfeFuncG type='linear' slope='1.1' intercept='-.25'/%3E%3CfeFuncB type='linear' slope='1.1' intercept='-.25'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+                linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+            background-blend-mode: overlay, normal;
+            /* "GREAT"/"THINGS"는 Orbitron(지오메트릭/하이테크), "TAKE TIME"은 .cube-face
+               div:last-child에서 Rajdhani로 따로 덮어써서 두 폰트를 함께 쓴다. */
+            font-family: var(--font-display-future), 'Arial Black', sans-serif;
+            font-weight: 900;
+            letter-spacing: .1em;
+            color: transparent;
+            text-align: center;
+            /* 가독성 때문에 어두운 레이어를 더 진하고 또렷하게(불투명도 ↑, 블러 ↓) 강조했다. */
+            text-shadow:
+                -1px -1px 1px rgba(255, 255, 255, .55),
+                1px 2px 2px rgba(0, 0, 0, .75),
+                2px 4px 6px rgba(0, 0, 0, .5),
+                0 0 16px rgba(52, 93, 77, .22);
+        }
+
+        .cube-face div {
+            font-size: clamp(18px, 3vw, 24px);
+            line-height: 1.25;
+        }
+
+        /* 세 줄 중 마지막("TAKE TIME")만 Rajdhani로 바꿔 더 가볍고 넓게 트래킹한 보조 라인으로
+           — Orbitron 두 줄(묵직한 디스플레이체) 아래에 하이테크 서브텍스트처럼 읽히게 한다. */
+        .cube-face div:last-child {
+            font-family: var(--font-accent-future), 'Arial Narrow', sans-serif;
+            font-weight: 600;
+            font-size: clamp(13px, 2.1vw, 16px);
+            letter-spacing: .32em;
+            text-shadow:
+                -1px -1px 1px rgba(255, 255, 255, .55),
+                1px 2px 2px rgba(0, 0, 0, .75),
+                2px 3px 5px rgba(0, 0, 0, .5),
+                0 0 14px rgba(182, 139, 76, .28);
+        }
+
+        .cube-face--front {
+            transform: rotateY(0deg) translateZ(calc(var(--cube-size) / 2));
+        }
+
+        .cube-face--back {
+            transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2));
+        }
+
+        .cube-face--right {
+            transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2));
+        }
+
+        .cube-face--left {
+            transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2));
+        }
+
+        .cube-face--top {
+            transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2));
+        }
+
+        .cube-face--bottom {
+            transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2));
+        }
+
+        @keyframes rotateCube {
+            0% {
+                transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+            }
         }
 
         /* Small brand statement */
@@ -1476,6 +1709,12 @@
             display: none;
         }
 
+        /* 프로필 모달의 "이용권 관리"/"변경"에서 들어온 경우: 결제 수단 변경은 정기결제 카드
+           재등록만 의미가 있어서 '단건 수강권' 선택지를 숨긴다. */
+        .registration-form.is-payment-manage .payment-types label:first-child {
+            display: none;
+        }
+
         .privacy-check {
             display: flex;
             align-items: flex-start;
@@ -1826,10 +2065,19 @@
             -webkit-backdrop-filter: none;
             backdrop-filter: none;
             border-color: #ececec;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Noto Sans KR', sans-serif;
         }
 
         .account-modal .legal-modal-header {
             background: #fff;
+        }
+
+        /* 모달 안의 제목들은 본문 사이트의 명조체(--serif) 대신 모달 자체 폰트(Pretendard)를
+           그대로 쓴다 */
+        .account-modal .legal-modal-header h2,
+        .account-modal .account-section h3,
+        .account-modal .account-card h3 {
+            font-family: inherit;
         }
 
         .account-modal-header {
@@ -1936,6 +2184,200 @@
             font-size: 18px;
         }
 
+        /* '나의 학습 기록' 카드 헤더: 제목 + 강의일지 토글 */
+        .account-card-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin: 0 0 14px;
+        }
+
+        .account-card-head h3 {
+            margin: 0;
+        }
+
+        .account-toggle {
+            display: inline-flex;
+            align-items: center;
+            flex: 0 0 auto;
+            gap: 8px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .account-toggle-label {
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .account-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 38px;
+            height: 22px;
+            flex: 0 0 auto;
+        }
+
+        .account-toggle-switch input {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            margin: 0;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        .account-toggle-track {
+            position: absolute;
+            inset: 0;
+            border-radius: 999px;
+            background: #d9d9d9;
+            transition: background .25s ease;
+        }
+
+        .account-toggle-track::before {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+            transition: transform .25s ease;
+            content: "";
+        }
+
+        .account-toggle-switch input:checked~.account-toggle-track {
+            background: #ff6648;
+        }
+
+        .account-toggle-switch input:checked~.account-toggle-track::before {
+            transform: translateX(16px);
+        }
+
+        .account-toggle-switch input:focus-visible~.account-toggle-track {
+            box-shadow: 0 0 0 3px rgba(255, 102, 72, .25);
+        }
+
+        /* 강의일지(5대 커리큘럼 도넛 그래프) 토글 패널 — max-height + opacity로 부드럽게 접고 펼친다 */
+        .account-journal {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height .45s ease, opacity .3s ease;
+        }
+
+        .account-journal.is-open {
+            max-height: 700px;
+            opacity: 1;
+        }
+
+        .account-journal-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding-top: 14px;
+            margin-top: 14px;
+            border-top: 1px solid rgba(0, 0, 0, .05);
+        }
+
+        @property --percent {
+            syntax: '<number>';
+            inherits: true;
+            initial-value: 0;
+        }
+
+        /* 커리큘럼 1줄 = [도넛] + [이름/진행 Bar] + [이동 화살표], 클릭하면 해당 강의로 이동 */
+        .account-journal-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 6px;
+            border-radius: 12px;
+            color: inherit;
+            text-decoration: none;
+            transition: background .2s ease;
+        }
+
+        .account-journal-row:hover,
+        .account-journal-row:focus-visible {
+            background: rgba(0, 0, 0, .035);
+        }
+
+        .account-journal-donut-sm {
+            --percent: 0;
+            --donut-color: #ff6648;
+            position: relative;
+            display: grid;
+            width: 44px;
+            height: 44px;
+            flex: 0 0 auto;
+            border-radius: 50%;
+            background: conic-gradient(var(--donut-color) calc(var(--percent) * 1%), rgba(0, 0, 0, .08) 0);
+            place-items: center;
+            transition: --percent .8s ease;
+        }
+
+        .account-journal-donut-sm::before {
+            position: absolute;
+            inset: 4px;
+            border-radius: 50%;
+            background: #fff;
+            content: "";
+        }
+
+        .account-journal-percent-sm {
+            position: relative;
+            z-index: 1;
+            color: #304d3d;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .account-journal-row-main {
+            display: flex;
+            min-width: 0;
+            flex: 1 1 auto;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .account-journal-row-name {
+            overflow: hidden;
+            color: #304d3d;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .account-journal-row-bar {
+            height: 6px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, .07);
+        }
+
+        .account-journal-row-fill {
+            display: block;
+            height: 100%;
+            min-width: 2px;
+            border-radius: 999px;
+            transition: width .5s ease;
+        }
+
+        .account-journal-row-chevron {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 auto;
+            color: #b9c0bc;
+        }
+
         .account-card-row {
             display: flex;
             flex-wrap: wrap;
@@ -2011,38 +2453,6 @@
             color: #ff6648;
         }
 
-        .account-progress-row {
-            margin: 0 0 14px;
-        }
-
-        .account-progress-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 10px;
-            margin: 0 0 7px;
-            font-size: 14px;
-        }
-
-        .account-progress-head strong {
-            color: #304d3d;
-        }
-
-        .account-progress-bar {
-            height: 8px;
-            overflow: hidden;
-            border-radius: 999px;
-            background: rgba(0, 0, 0, .07);
-        }
-
-        .account-progress-fill {
-            height: 100%;
-            min-width: 2px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #ff6648, #ff8a66);
-            transition: width .4s ease;
-        }
-
         .account-progress-footer {
             display: flex;
             flex-wrap: wrap;
@@ -2065,6 +2475,73 @@
             font-size: 13px;
             font-weight: 700;
             white-space: nowrap;
+        }
+
+        /* 학습 기록을 사용자가 직접 0%로 되돌리는 버튼. 실수로 누르기 쉬운 삭제성 동작이라
+           눈에 띄지 않는 보조 버튼으로 두고, 확인 모달(.confirm-modal)에서 한 번 더 막는다 */
+        .account-reset-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            margin-top: 14px;
+            padding: 10px;
+            border: 1px dashed #d9d9d9;
+            border-radius: 12px;
+            background: transparent;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: border-color .2s ease, color .2s ease;
+        }
+
+        .account-reset-button svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        .account-reset-button:hover,
+        .account-reset-button:focus-visible {
+            border-color: #ff6648;
+            color: #ff6648;
+        }
+
+        .confirm-modal {
+            width: min(380px, calc(100% - 32px));
+        }
+
+        .confirm-modal-body {
+            text-align: center;
+        }
+
+        .confirm-modal-body p {
+            margin: 4px 0 20px;
+            color: var(--ink);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .confirm-modal-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .confirm-modal-actions .button {
+            flex: 1 1 0;
+            min-height: 46px;
+        }
+
+        .confirm-reset-button {
+            border: 1px solid #ff6648;
+            background: #ff6648;
+            color: #fff;
+        }
+
+        .confirm-reset-button:hover,
+        .confirm-reset-button:focus-visible {
+            background: #e85639;
         }
 
         .account-controls {
@@ -2271,6 +2748,7 @@
             .hero-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
+                padding: 40px 28px;
             }
 
             .hero-copy {
@@ -2280,6 +2758,10 @@
             .hero-art {
                 width: min(100%, 570px);
                 margin: 0 auto;
+            }
+
+            .cube-container {
+                --cube-size: 170px;
             }
 
             .conversation-layout,
@@ -2324,7 +2806,7 @@
             }
 
             h1 {
-                font-size: clamp(48px, 14vw, 64px);
+                font-size: clamp(46px, 13.5vw, 60px);
             }
 
             .hero-subtitle {
@@ -2561,22 +3043,31 @@
                         <svg viewBox="0 0 24 24" fill="none" focusable="false" aria-hidden="true"><path fill="currentColor" d="M3 6.75A2.25 2.25 0 0 1 5.25 4.5h13.5A2.25 2.25 0 0 1 21 6.75v10.5A2.25 2.25 0 0 1 18.75 19.5H5.25A2.25 2.25 0 0 1 3 17.25V6.75Zm1.5 2.25v8.25c0 .414.336.75.75.75h13.5a.75.75 0 0 0 .75-.75V9H4.5Zm0-2.25v.75h15v-.75a.75.75 0 0 0-.75-.75H5.25a.75.75 0 0 0-.75.75Z"/></svg>
                         <span data-profile-payment-method>-</span>
                     </span>
+                    <button type="button" class="account-manage-button" data-manage-pass>변경</button>
                 </div>
             </section>
             <section class="account-card" aria-labelledby="profile-progress-title">
-                <h3 id="profile-progress-title">나의 학습 기록</h3>
-                <div class="account-progress-row">
-                    <div class="account-progress-head"><span>지난주 영어</span><strong data-progress-weekly>0 / 20강 완료</strong></div>
-                    <div class="account-progress-bar"><div class="account-progress-fill" data-progress-weekly-bar style="width:0%"></div></div>
-                </div>
-                <div class="account-progress-row">
-                    <div class="account-progress-head"><span>오늘의 회화</span><strong data-progress-conversation>0 / 20강 완료</strong></div>
-                    <div class="account-progress-bar"><div class="account-progress-fill" data-progress-conversation-bar style="width:0%"></div></div>
+                <div class="account-card-head">
+                    <h3 id="profile-progress-title">나의 학습 기록</h3>
+                    <label class="account-toggle">
+                        <span class="account-toggle-label">강의일지 보기</span>
+                        <span class="account-toggle-switch">
+                            <input type="checkbox" data-journal-toggle aria-controls="account-journal-panel">
+                            <span class="account-toggle-track" aria-hidden="true"></span>
+                        </span>
+                    </label>
                 </div>
                 <div class="account-progress-footer">
                     <span>최근 학습 진행일 <strong data-progress-last-date>기록 없음</strong></span>
                     <span class="account-streak-badge" data-progress-streak>🔥 0일 연속 학습 중!</span>
                 </div>
+                <div class="account-journal" id="account-journal-panel" data-journal-panel aria-hidden="true">
+                    <div class="account-journal-grid" data-journal-grid></div>
+                </div>
+                <button type="button" class="account-reset-button" data-reset-progress>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 4v6h6M20 20v-6h-6M4.5 15a8 8 0 0 0 14.5 3M19.5 9A8 8 0 0 0 5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    학습 기록 초기화
+                </button>
             </section>
             <div class="account-controls">
                 <button type="button" data-open-legal="terms-dialog">이용약관</button>
@@ -2586,12 +3077,26 @@
         </div>
     </dialog>
 
+    <dialog class="legal-modal confirm-modal" id="reset-confirm-dialog" aria-labelledby="reset-confirm-title">
+        <div class="legal-modal-header">
+            <h2 id="reset-confirm-title">학습 기록 초기화</h2>
+            <button class="legal-close" type="button" data-close-reset-confirm aria-label="닫기">×</button>
+        </div>
+        <div class="legal-modal-body confirm-modal-body">
+            <p>정말로 모든 학습 기록을 초기화하시겠습니까?<br>이 작업은 되돌릴 수 없습니다.</p>
+            <div class="confirm-modal-actions">
+                <button type="button" class="button secondary" data-close-reset-confirm>취소</button>
+                <button type="button" class="button confirm-reset-button" data-confirm-reset>초기화</button>
+            </div>
+        </div>
+    </dialog>
+
     <main id="main">
         <section class="hero" id="top" aria-labelledby="hero-title">
             <div class="wrap hero-grid">
                 <div class="hero-copy">
                     <p class="hero-kicker">천천히, 그러나 분명하게</p>
-                    <h1 id="hero-title">지난 주 <span>영어</span></h1>
+                    <h1 id="hero-title"><span class="hero-title-wrap"><span>지난 주</span><span class="hero-title-line2">영어</span></span></h1>
                     <p class="hero-subtitle">지난 주에는 몰랐던 걸,<br><em>이제는 안다...</em></p>
                     <p class="hero-desc">배운 만큼 자신감이 되고, 지나온 시간만큼 나만의 이야기가 됩니다. 오늘의 한 문장을 함께 시작해요.</p>
                     <div class="button-row">
@@ -2600,9 +3105,17 @@
                     </div>
                 </div>
                 <div class="hero-art">
-                    <img src="./IMAGE/hero-great-things-cutout-v3.webp" width="1200" height="896"
-                        alt="Great things take time. 좋은 일에는 시간이 필요합니다." fetchpriority="high" loading="eager"
-                        decoding="async">
+                    <div class="cube-container" role="img" aria-label="GREAT THINGS TAKE TIME">
+                        <div class="cube">
+                            <div class="cube-face cube-face--front"><div>GREAT</div><div>THINGS</div><div>TAKE TIME</div></div>
+                            <div class="cube-face cube-face--back"><div>GREAT</div><div>THINGS</div><div>TAKE TIME</div></div>
+                            <div class="cube-face cube-face--right"><div>GREAT</div><div>THINGS</div><div>TAKE TIME</div></div>
+                            <div class="cube-face cube-face--left"><div>GREAT</div><div>THINGS</div><div>TAKE TIME</div></div>
+                            <div class="cube-face cube-face--top"><div>GREAT</div><div>THINGS</div><div>TAKE TIME</div></div>
+                            <div class="cube-face cube-face--bottom"><div>GREAT</div><div>THINGS</div><div>TAKE TIME</div></div>
+                        </div>
+                    </div>
+                    <div class="cube-shadow" aria-hidden="true"></div>
                 </div>
             </div>
         </section>
@@ -3155,12 +3668,14 @@
             const profileNextBilling = document.querySelector('[data-profile-next-billing]');
             const profilePaymentRow = document.querySelector('[data-profile-payment-row]');
             const profilePaymentMethod = document.querySelector('[data-profile-payment-method]');
-            const progressWeekly = document.querySelector('[data-progress-weekly]');
-            const progressWeeklyBar = document.querySelector('[data-progress-weekly-bar]');
-            const progressConversation = document.querySelector('[data-progress-conversation]');
-            const progressConversationBar = document.querySelector('[data-progress-conversation-bar]');
             const progressLastDate = document.querySelector('[data-progress-last-date]');
             const progressStreak = document.querySelector('[data-progress-streak]');
+            const journalPanel = document.querySelector('[data-journal-panel]');
+            const journalToggleInput = document.querySelector('[data-journal-toggle]');
+            const journalGrid = document.querySelector('[data-journal-grid]');
+            const resetProgressButton = document.querySelector('[data-reset-progress]');
+            const resetConfirmDialog = document.querySelector('#reset-confirm-dialog');
+            const resetConfirmButton = document.querySelector('[data-confirm-reset]');
             const configuredAuthApiBase = document.querySelector('meta[name="daynize-payment-api"]')?.content || 'https://api.daynize.co.kr';
             const authApiBase = ['localhost', '127.0.0.1'].includes(window.location.hostname) && window.location.port !== '8081'
                 ? `http://${window.location.hostname}:8081`
@@ -3219,6 +3734,57 @@
                     || `${window.location.origin}${window.location.pathname}${window.location.hash}`;
                 window.location.href = `${authApiBase}/api/auth/${provider}?return_to=${encodeURIComponent(returnTo)}`;
             };
+            // '강의일지' 5대 커리큘럼. id는 백엔드(/api/auth/profile의 learningProgress.curriculums)
+            // 데이터 키, categoryId는 courses.json의 실제 카테고리(이 페이지 #conversation 섹션에서
+            // ?category=<id>로 여는 강의)와 연결하는 링크용 키라서 서로 다르다.
+            // color는 커리큘럼별 고정 브랜드 색(에메랄드/틸/그린/오렌지/라임)으로, 항상 이 정의에서만 입힌다.
+            const CURRICULUM_DEFS = [
+                { id: 'basicCourse', categoryId: 'basic-course', label: 'Basic Course', color: '#10b981' },
+                { id: 'rootVerbsLearn', categoryId: 'speaking', label: '뿌리동사 익히기', color: '#14b8a6' },
+                { id: 'rootVerbsApply', categoryId: 'root-verb-usage', label: '뿌리동사 활용하기', color: '#22c55e' },
+                { id: 'numbers', categoryId: 'numbers', label: 'Numbers', color: '#f97316' },
+                { id: 'fieldSpecific', categoryId: 'situations', label: '분야별영어', color: '#84cc16' },
+            ];
+            const clampPercent = value => Math.min(100, Math.max(0, Math.round(Number(value) || 0)));
+            // 백엔드가 항상 5개 항목을 내려준다(진도 집계가 없으면 0%) — 로그인 전/리셋 직후에는
+            // 그냥 전부 0으로 그린다.
+            const resolveCurriculumProgress = auth => {
+                const serverCurriculums = auth?.learningProgress?.curriculums || {};
+                return CURRICULUM_DEFS.map(def => {
+                    const entry = serverCurriculums[def.id];
+                    const percent = clampPercent(typeof entry === 'object' ? entry?.percent : entry);
+                    return { label: def.label, percent, color: def.color, categoryId: def.categoryId };
+                });
+            };
+            const renderJournal = curriculums => {
+                if (!journalGrid) return;
+                journalGrid.innerHTML = '';
+                curriculums.forEach(({ label, percent, color, categoryId }) => {
+                    const row = document.createElement('a');
+                    row.className = 'account-journal-row';
+                    row.href = `?category=${encodeURIComponent(categoryId)}#conversation`;
+                    row.innerHTML = `
+                        <span class="account-journal-donut-sm" style="--percent:${percent};--donut-color:${color}">
+                            <span class="account-journal-percent-sm">${percent}%</span>
+                        </span>
+                        <span class="account-journal-row-main">
+                            <span class="account-journal-row-name">${label}</span>
+                            <span class="account-journal-row-bar"><span class="account-journal-row-fill" style="width:${percent}%;background:${color}"></span></span>
+                        </span>
+                        <svg class="account-journal-row-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    `;
+                    journalGrid.appendChild(row);
+                });
+            };
+            const setJournalOpen = open => {
+                if (!journalPanel) return;
+                journalPanel.classList.toggle('is-open', open);
+                journalPanel.setAttribute('aria-hidden', String(!open));
+                if (journalToggleInput) journalToggleInput.checked = open;
+                try { localStorage.setItem(JOURNAL_OPEN_KEY, String(open)); } catch { /* storage may be unavailable */ }
+            };
+            journalToggleInput?.addEventListener('change', () => setJournalOpen(journalToggleInput.checked));
+            try { setJournalOpen(localStorage.getItem(JOURNAL_OPEN_KEY) === 'true'); } catch { /* storage may be unavailable */ }
             // 호출부(fetchAuth/logout)는 전부 auth와 profile을 { ...auth, ...profile }로 미리 합쳐서
             // 인자 하나로 넘긴다 — 그래서 여기서는 전부 auth에서 읽어야 한다. profile을 따로 참조하면
             // 그 값은 항상 호출 기본값인 null이라 결제 정보/학습 기록이 영원히 표시되지 않는다.
@@ -3246,15 +3812,6 @@
                         : '-';
                     profilePaymentRow.hidden = !auth?.paymentMethod;
                     profilePaymentMethod.textContent = auth?.paymentMethod || '-';
-                    const weekly = auth?.learningProgress?.weeklyEnglish || {};
-                    const conversation = auth?.learningProgress?.dailyConversation || {};
-                    const weeklyTotal = weekly.total || 20;
-                    const conversationTotal = conversation.total || 20;
-                    const toPercent = (completed, total) => `${Math.min(100, Math.max(0, (Number(completed) || 0) / total * 100))}%`;
-                    progressWeekly.textContent = `${weekly.completed || 0} / ${weeklyTotal}강 완료`;
-                    progressWeeklyBar.style.width = toPercent(weekly.completed, weeklyTotal);
-                    progressConversation.textContent = `${conversation.completed || 0} / ${conversationTotal}강 완료`;
-                    progressConversationBar.style.width = toPercent(conversation.completed, conversationTotal);
                     const lastStudyDate = auth?.learningProgress?.lastStudyDate;
                     progressLastDate.textContent = lastStudyDate
                         ? new Date(lastStudyDate).toLocaleDateString('ko-KR')
@@ -3263,6 +3820,7 @@
                     // 1일/0일을 보여준다 — 진짜 N일 연속 스트릭은 백엔드 집계가 생기면 교체한다.
                     const studiedToday = lastStudyDate && new Date(lastStudyDate).toDateString() === new Date().toDateString();
                     progressStreak.textContent = `🔥 ${studiedToday ? 1 : 0}일 연속 학습 중!`;
+                    renderJournal(resolveCurriculumProgress(auth));
                 }
                 return loggedIn;
             };
@@ -3329,17 +3887,39 @@
                 window.dispatchEvent(new CustomEvent('daynize:auth-state-changed', { detail: guestState }));
                 if (window.location.hash !== '#register') history.replaceState(history.state, '', `${window.location.pathname}${window.location.search}#register`);
             });
-            // 구독/결제 수단을 바꾸는 별도 관리 화면은 아직 없어서, 결제가 이뤄지는
-            // #register 섹션으로 보내는 걸로 "이용권 관리"를 연결한다.
-            document.querySelector('[data-manage-pass]')?.addEventListener('click', () => {
+            // 구독/결제 수단을 바꾸는 별도 관리 화면은 아직 없어서, "이용권 관리"와 "결제 수단 변경"
+            // 둘 다 실제 PortOne 결제창이 뜨는 #register 섹션(결제 폼 제출 시 ensurePortOneSdk →
+            // PortOne.requestPayment/requestIssueBillingKey)으로 보낸다. 단, 이 두 버튼은 이미 결제된
+            // 회원에게만 보이는데(data-profile-billing/data-profile-payment-row가 그때만 노출) 그
+            // 신청 폼은 showPaidCheckoutState()가 정회원에게 평소 숨겨 버리므로, enterPaymentManageMode()로
+            // 폼을 다시 보이게 하면서 카드 재등록 전용 문구로 바꿔 재사용한다.
+            document.querySelectorAll('[data-manage-pass]').forEach(button => button.addEventListener('click', () => {
                 closeAccountDialogs();
                 closeNavigation();
                 const register = document.querySelector('#register');
                 if (register) {
+                    enterPaymentManageMode();
                     history.pushState(history.state, '', '#register');
                     register.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 } else {
                     window.location.assign(new URL('/?checkout=required#register', location.origin).href);
+                }
+            }));
+            // '학습 기록 초기화': 실수 방지용 확인 모달을 한 번 거친 뒤에만 서버 데이터를 지운다.
+            resetProgressButton?.addEventListener('click', () => resetConfirmDialog?.showModal());
+            document.querySelectorAll('[data-close-reset-confirm]').forEach(button => button.addEventListener('click', () => resetConfirmDialog?.close()));
+            resetConfirmButton?.addEventListener('click', async () => {
+                resetConfirmButton.disabled = true;
+                try {
+                    const response = await fetch(`${authApiBase}/api/auth/reset-progress`, { method: 'POST', credentials: 'include' });
+                    if (!response.ok) throw new Error(`reset failed: ${response.status}`);
+                    resetConfirmDialog?.close();
+                    await fetchAuth().catch(() => {});
+                } catch (error) {
+                    console.error('[profile] reset-progress failed', error);
+                    alert('학습 기록 초기화에 실패했습니다. 잠시 후 다시 시도해 주세요.');
+                } finally {
+                    resetConfirmButton.disabled = false;
                 }
             });
             void fetchAuth().catch(() => renderAccount({ loggedIn: false }));
@@ -4757,7 +5337,15 @@
                 : document.querySelector('meta[name="daynize-payment-api"]')?.content || window.location.origin;
             const registrationSection = document.querySelector('#register');
             const navCheckout = document.querySelector('.nav-cta[href="#register"]');
+            const registerTitleEl = document.querySelector('#register-title');
+            const registrationIntroEl = document.querySelector('.registration-copy > p:not(.eyebrow)');
+            const DEFAULT_REGISTER_TITLE_HTML = registerTitleEl.innerHTML;
+            const DEFAULT_REGISTRATION_INTRO = registrationIntroEl.textContent;
+            const DEFAULT_SUBMIT_LABEL_HTML = '수강 신청하기 <span aria-hidden="true">→</span>';
             let paidUiLocked = false;
+            // 프로필 모달의 "이용권 관리"/"변경" 버튼으로 들어온 상태 — 이미 결제된 회원이라도
+            // 평소엔 숨겨지는 신청 폼(showPaidCheckoutState)을 카드 재등록용으로만 다시 보여준다.
+            let paymentManageMode = false;
             // 로그인 상태면 결제 폼의 이메일을 세션 이메일로 고정한다. 폼에 다른 이메일을 입력해도
             // 결제 엔티티가 로그인 계정과 어긋나 "결제했는데 계속 결제 안내가 뜨는" 현상을 막는다.
             // 단, 카카오/네이버가 이메일 미동의로 내려준 내부 식별용 이메일
@@ -4784,6 +5372,7 @@
             };
             window.addEventListener('daynize:auth-state-changed', event => applySessionEmailLock(event.detail));
             const showPaidCheckoutState = () => {
+                if (paymentManageMode) return;
                 paidUiLocked = true;
                 registrationSection.hidden = true;
                 if (!navCheckout) return;
@@ -4942,6 +5531,35 @@
                 registrationSubmit.disabled = checkoutInProgress || !isValid;
                 registrationValidationMessage.hidden = isValid;
             };
+            const idleSubmitLabelHtml = () => paymentManageMode
+                ? '결제 수단 변경하기 <span aria-hidden="true">→</span>'
+                : DEFAULT_SUBMIT_LABEL_HTML;
+            // 프로필 모달의 "이용권 관리"/"변경" 버튼은 둘 다 이 모드로 진입한다 — 평소엔
+            // showPaidCheckoutState()가 숨겨 버리는 신청 폼을 카드 재등록 전용으로 다시 열고,
+            // 문구/결제유형만 바꿔서 그대로 재사용한다(새 백엔드 엔드포인트 없이 기존
+            // requestIssueBillingKey → /api/payment/billing/verify 흐름을 그대로 탄다).
+            const enterPaymentManageMode = () => {
+                paymentManageMode = true;
+                registrationSection.hidden = false;
+                registrationForm.hidden = false;
+                registrationForm.classList.add('is-payment-manage');
+                registerTitleEl.innerHTML = '결제 수단<br>변경하기';
+                registrationIntroEl.textContent = '이미 정회원이신가요? 아래에서 결제 수단(카드)을 다시 등록해 주세요.';
+                registrationForm.elements.paymentType.value = 'subscription';
+                const name = latestAuthState?.user?.name || latestAuthState?.name || '';
+                if (name && !registrationForm.elements.name.value) registrationForm.elements.name.value = name;
+                registrationSubmit.innerHTML = idleSubmitLabelHtml();
+                showRegistrationMessage('카드 정보를 다시 등록하면 결제 수단이 바로 변경됩니다. 지금 요금이 청구되지는 않습니다.');
+                updateRegistrationSubmitState();
+            };
+            const exitPaymentManageMode = () => {
+                paymentManageMode = false;
+                registrationForm.classList.remove('is-payment-manage');
+                registerTitleEl.innerHTML = DEFAULT_REGISTER_TITLE_HTML;
+                registrationIntroEl.textContent = DEFAULT_REGISTRATION_INTRO;
+                registrationSubmit.innerHTML = idleSubmitLabelHtml();
+                if (checkIsPaidUser(latestAuthState)) showPaidCheckoutState();
+            };
             const preserveCheckoutInput = () => {
                 const values = Object.fromEntries(new FormData(registrationForm));
                 try { sessionStorage.setItem(checkoutResumeKey, JSON.stringify(values)); } catch (_) { }
@@ -5039,7 +5657,7 @@
             registrationForm.addEventListener('change', updateRegistrationSubmitState);
             registrationForm.addEventListener('submit', async (event) => {
                 event.preventDefault();
-                if (paidUiLocked || await hidePaidCheckout()) {
+                if (!paymentManageMode && (paidUiLocked || await hidePaidCheckout())) {
                     showRegistrationMessage('정회원 이용 중인 계정은 결제할 필요가 없습니다.');
                     return;
                 }
@@ -5056,7 +5674,7 @@
                 let watchdog;
                 const resetSubmitButton = () => {
                     checkoutInProgress = false;
-                    registrationSubmit.innerHTML = '수강 신청하기 <span aria-hidden="true">→</span>';
+                    registrationSubmit.innerHTML = idleSubmitLabelHtml();
                     updateRegistrationSubmitState();
                 };
                 updateRegistrationSubmitState();
@@ -5177,7 +5795,10 @@
                         });
                         if (verified.status !== 'BILLING_AUTHENTICATED' || verified.orderId !== order.orderId) throw new Error('정기결제 카드 인증 상태를 확인하지 못했습니다.');
                         try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }
-                        showRegistrationMessage('정기결제 카드 인증이 완료되었습니다. 아직 요금이 청구되지 않았습니다.');
+                        showRegistrationMessage(paymentManageMode
+                            ? '결제 수단이 성공적으로 변경되었습니다. 다음 결제부터 새 카드로 청구됩니다.'
+                            : '정기결제 카드 인증이 완료되었습니다. 아직 요금이 청구되지 않았습니다.');
+                        if (paymentManageMode) setTimeout(exitPaymentManageMode, 3000);
                         return;
                     }
                     const verified = await apiRequest('/api/payment/verify', {

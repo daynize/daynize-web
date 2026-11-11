@@ -86,6 +86,7 @@ function createAuthApi(options = {}) {
     // Production sessions survive browser/device restarts until logout. Test clocks retain the short TTL.
     const sessionTtlS = options.sessionTtlS ?? (options.now ? DEFAULT_SESSION_TTL_S : PERSISTENT_SESSION_TTL_S);
     const onLogin = options.onLogin;
+    const resetProgress = options.resetProgress;
     const getProfile = options.getProfile ?? (() => ({}));
     const hasActiveSubscription = options.hasActiveSubscription ?? (() => false);
     const getMembershipStatus = options.getMembershipStatus ?? (session => hasActiveSubscription(session) ? 'PAID' : 'GUEST');
@@ -200,6 +201,23 @@ function createAuthApi(options = {}) {
                 membershipStatus: admin ? 'PAID' : getMembershipStatus(session),
                 hasActiveSubscription: admin || Boolean(hasActiveSubscription(session))
             }, cors);
+            return true;
+        }
+        if (pathname === '/api/auth/reset-progress' && request.method === 'POST') {
+            request.resume();
+            const session = unseal(readCookie(request, SESSION_COOKIE));
+            if (!session) {
+                json(response, 401, { error: '로그인이 필요합니다.' }, cors);
+                return true;
+            }
+            try {
+                await resetProgress?.(session);
+            } catch (error) {
+                console.error('[auth] reset-progress failed', error);
+                json(response, 500, { error: '학습 기록을 초기화하지 못했습니다. 잠시 후 다시 시도해 주세요.' }, cors);
+                return true;
+            }
+            json(response, 200, { success: true }, cors);
             return true;
         }
         if (pathname === '/api/auth/logout' && request.method === 'POST') {

@@ -86,6 +86,9 @@ function createRelayServer(options = {}) {
         now: options.paymentNow,
         getSession: request => readSession(request, cookieCodec),
         linkEmails: ({ receiptEmail, sessionEmail }) => store?.linkEmails({ receiptEmail, sessionEmail, at: Date.now() }),
+        onBillingMethodUpdated: async ({ email, paymentMethod, at }) => {
+            store?.updatePaymentMethod(email, paymentMethod, at);
+        },
         onPaid: async details => {
             store?.grantActiveSubscription({
                 email: details.email,
@@ -148,6 +151,7 @@ function createRelayServer(options = {}) {
         },
         isAdmin: adminGateApi.isAdmin,
         hasActiveSubscription,
+        resetProgress: session => store.resetStudyProgress(`${session.provider}:${session.id}`),
         getProfile: session => {
             const userKey = `${session.provider}:${session.id}`;
             const user = store.getUser(userKey);
@@ -159,6 +163,21 @@ function createRelayServer(options = {}) {
                 if (Array.isArray(value)) return value.length;
                 if (value && typeof value === 'object') return Number(value.completed ?? value.completedCount ?? 0) || 0;
                 return Number(value) || 0;
+            };
+            // 5대 커리큘럼 성취도(%). 아직 과목별 진도 집계 파이프라인이 없어서 키가 없으면 0% —
+            // 강의 진행 로직이 'daynize.course.<id>' 키로 study_data에 쓰기 시작하면 바로 반영된다.
+            const curriculumPercent = key => {
+                const value = values[key];
+                const raw = value && typeof value === 'object' ? value.percent : value;
+                const percent = Number(raw);
+                return Math.min(100, Math.max(0, Number.isFinite(percent) ? percent : 0));
+            };
+            const curriculums = {
+                basicCourse: { percent: curriculumPercent('daynize.course.basicCourse') },
+                rootVerbsLearn: { percent: curriculumPercent('daynize.course.rootVerbsLearn') },
+                rootVerbsApply: { percent: curriculumPercent('daynize.course.rootVerbsApply') },
+                numbers: { percent: curriculumPercent('daynize.course.numbers') },
+                fieldSpecific: { percent: curriculumPercent('daynize.course.fieldSpecific') }
             };
             // PortOne은 구독 갱신 일정을 따로 알려주지 않으므로, 마지막 결제일(updated_at) 기준
             // +30일을 다음 결제/만료 예정일로 계산한다. 실제 예정일을 받는 연동이 생기면
@@ -174,7 +193,8 @@ function createRelayServer(options = {}) {
                 learningProgress: {
                     lastStudyDate: rows[0]?.updated_at ? new Date(rows[0].updated_at).toISOString() : null,
                     weeklyEnglish: { completed: completed('daynize.weekly.completed'), total: 20 },
-                    dailyConversation: { completed: completed('daynize.conversation.completed'), total: 20 }
+                    dailyConversation: { completed: completed('daynize.conversation.completed'), total: 20 },
+                    curriculums
                 },
                 user: user || null
             };

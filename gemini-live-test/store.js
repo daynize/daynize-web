@@ -75,6 +75,8 @@ function createStore({ path = ':memory:' } = {}) {
         upsertStudy: db.prepare(`INSERT INTO study_data (user_key, key, value, updated_at) VALUES (?, ?, ?, ?)
             ON CONFLICT(user_key, key) DO UPDATE SET value = excluded.value, updated_at = excluded.updated_at`),
         studyByUser: db.prepare('SELECT key, value, updated_at FROM study_data WHERE user_key = ?'),
+        deleteStudyByUser: db.prepare('DELETE FROM study_data WHERE user_key = ?'),
+        updatePaymentMethod: db.prepare('UPDATE entitlements SET payment_method = ?, updated_at = ? WHERE email = ?'),
         upsertEntitlement: db.prepare(`INSERT INTO entitlements (email, has_active_subscription, status, source, payment_id, next_billing_date, payment_method, updated_at)
             VALUES (?, 1, 'PAID', ?, ?, ?, ?, ?)
             ON CONFLICT(email) DO UPDATE SET has_active_subscription = 1, status = 'PAID', source = excluded.source, payment_id = excluded.payment_id,
@@ -114,6 +116,15 @@ function createStore({ path = ':memory:' } = {}) {
             return entries.length;
         },
         getStudyData: userKey => Object.fromEntries(statements.studyByUser.all(userKey).map(row => [row.key, JSON.parse(row.value)])),
+        // '학습 기록 초기화' 버튼: 해당 유저의 모든 진도(주간 영어/오늘의 회화/5대 커리큘럼)를 한 번에 지운다.
+        resetStudyProgress: userKey => { statements.deleteStudyByUser.run(userKey); return true; },
+        // 프로필 모달의 '이용권 관리'/'변경'에서 기존 회원이 카드를 재등록(billing key 재발급)했을 때
+        // 결제 수단만 갱신한다 — 이미 결제된 회원에 한해서만 호출되므로 엔티틀먼트 row가 없으면 없는 대로 둔다.
+        updatePaymentMethod: (email, paymentMethod, at = Date.now()) => {
+            const normalized = String(email || '').trim().toLowerCase();
+            if (!normalized || !paymentMethod) return false;
+            return statements.updatePaymentMethod.run(paymentMethod, at, normalized).changes > 0;
+        },
         grantActiveSubscription: ({ email, source = 'payment', paymentId = null, nextBillingDate = null, paymentMethod = null, at = Date.now() }) => {
             const normalized = String(email || '').trim().toLowerCase();
             if (!normalized) return false;
