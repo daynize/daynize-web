@@ -1,7 +1,7 @@
 export type SocialProvider = 'kakao' | 'google';
 
 export const DEFAULT_API_BASE = 'https://api.daynize.co.kr';
-export const DEFAULT_RETURN_TO = 'https://www.daynize.co.kr/?via=freepass';
+export const DEFAULT_RETURN_TO = 'https://www.daynize.co.kr/';
 
 // 백엔드 OAuth 시작 엔드포인트(auth-api.js GET /api/auth/{provider}?return_to=).
 // 로그인 완료 후 return_to?login=kakao|google 로 돌아온다.

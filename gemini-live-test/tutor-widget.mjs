@@ -3,8 +3,23 @@ import { LiveService, resolveWebSocketUrl } from './live-service.mjs';
 import { AmbientOrb } from './ambient-orb.mjs';
 import { SessionSafety, PHASES, SILENCE_LIMIT_MS } from './session-safety.mjs';
 import { createInitSessionMessage } from './lesson-context.mjs';
+import { requireActionAccess } from '../auth-paywall-guard.js';
 
 const asset = name => new URL(name, import.meta.url).href;
+// 아이콘은 더 이상 외부 .svg 파일을 <img>로 불러오지 않고 인라인으로 박아 넣는다. 배포 스테이징
+// 스크립트(deploy.sh)가 gemini-live-test/icons/를 포함하지 않아 실제 사이트에서 전부 404로
+// 깨져 보였던 문제라, 배포 목록에 의존하지 않도록 아예 네트워크 요청 자체를 없앴다. currentColor를
+// 쓰므로 CSS color만으로 테마를 맞출 수 있어 invert(1) 필터 꼼수도 함께 걷어냈다.
+const ICON_PATHS = {
+    mic: '<path d="M12 19v3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><rect x="9" y="2" width="6" height="13" rx="3"/>',
+    'mic-off': '<path d="M12 19v3"/><path d="M15 9.34V5a3 3 0 0 0-5.68-1.33"/><path d="M16.95 16.95A7 7 0 0 1 5 12v-2"/><path d="M18.89 13.23A7 7 0 0 0 19 12v-2"/><path d="m2 2 20 20"/><path d="M9 9v3a3 3 0 0 0 5.12 2.12"/>',
+    'volume-2': '<path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/>',
+    'volume-x': '<path d="M11 4.702a.7.7 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.7.7 0 0 0 11 19.298z"/><path d="m16.5 14.5 5-5"/><path d="m16.5 9.5 5 5"/>',
+    'settings-2': '<path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/>',
+    x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+    'rotate-ccw': '<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>',
+};
+const iconSvg = name => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON_PATHS[name]}</svg>`;
 const STATES = {
     idle: ['대화 준비', '오늘은 어떤 이야기를 나눠볼까요?'],
     connecting: ['연결 중', '마이크와 선생님을 연결하고 있어요.'],
@@ -34,10 +49,10 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.initialized = true;
         this.abort = new AbortController();
         const signal = this.abort.signal;
-        const icon = (name, light = false) => `<img class="icon${light ? ' light' : ''}" src="${asset(`icons/${name}.svg`)}" alt="" aria-hidden="true">`;
+        const icon = (name, light = false) => `<span class="icon${light ? ' light' : ''}" data-icon="${name}">${iconSvg(name)}</span>`;
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="${asset('spotlight-bar.css')}?v=glass-learning-1">
-            <button class="launch" type="button" aria-haspopup="dialog">${icon('mic', true)}<span>AI 음성 회화 시작하기</span></button>
+            <button class="launch" type="button" aria-haspopup="dialog">${icon('mic', true)}<span>🔒 AI 음성 회화 시작하기</span></button>
             <dialog id="spotlight-modal" aria-labelledby="tutor-title" aria-describedby="privacy">
                 <div class="spotlight-bar">
                     <section class="identity">
@@ -88,7 +103,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.startButton.addEventListener('touchend', unlockAudio, { signal, passive: true });
         this.dialog.addEventListener('touchend', unlockAudio, { signal, passive: true });
         this.dialog.addEventListener('pointerdown', unlockAudio, { signal, passive: true });
-        this.launch.addEventListener('click', () => this.open(), { signal });
+        this.launch.addEventListener('click', () => void this.open(), { signal });
         this.dialog.addEventListener('cancel', event => { event.preventDefault(); this.close(); }, { signal });
         this.dialog.addEventListener('click', event => {
             if (event.target !== this.dialog) return;
@@ -108,7 +123,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
             query('.speaker').setAttribute('aria-pressed', String(muted));
             query('.speaker').setAttribute('aria-label', muted ? '스피커 켜기' : '스피커 끄기');
             query('.speaker').title = muted ? '스피커 켜기' : '스피커 끄기';
-            query('.speaker img').src = asset(`icons/${muted ? 'volume-x' : 'volume-2'}.svg`);
+            query('.speaker .icon').innerHTML = iconSvg(muted ? 'volume-x' : 'volume-2');
             if (!muted && this.audio.context) {
                 try {
                     if (this.audio.context.state === 'closed') this.audio.unlock();
@@ -176,8 +191,10 @@ export class DaynizeVoiceTutor extends HTMLElement {
         return resolveWebSocketUrl({ endpoint: this.config?.endpoint || this.getAttribute('endpoint') });
     }
 
-    open() {
+    async open() {
         if (this.dialog.open) return;
+        if (!await requireActionAccess()) return;
+        this.launch.querySelector('span').textContent = 'AI 음성 회화 시작하기';
         this.minimized = false;
         this.dialog.showModal();
         this.dialog.classList.add('active');
@@ -332,7 +349,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         const label = muted ? '마이크 켜기' : '마이크 끄기';
         this.muteButton.setAttribute('aria-label', label);
         this.muteButton.title = label;
-        this.muteButton.querySelector('img').src = asset(`icons/${muted ? 'mic-off' : 'mic'}.svg`);
+        this.muteButton.querySelector('.icon').innerHTML = iconSvg(muted ? 'mic-off' : 'mic');
         if (!this.audio.sources.size) this.setState(muted ? 'muted' : 'listening');
         this.updateTransport();
     }
@@ -357,7 +374,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.dataset.safetyPhase = result.phase;
         const notice = this.shadowRoot.querySelector('.safety-notice');
         if (result.reason) {
-            const message = result.reason === 'timeout' ? '오늘의 튜터링 시간이 완료되었습니다!' : `${Math.round(SILENCE_LIMIT_MS / 1000)}초 동안 음성 입력이 없어 대화를 자동 종료했습니다.`;
+            const message = `${Math.round(SILENCE_LIMIT_MS / 1000)}초 동안 음성 입력이 없어 대화를 자동 종료했습니다.`;
             this.end();
             this.setState('ended', message);
             notice.textContent = message;
@@ -403,7 +420,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.muteButton.setAttribute('aria-pressed', 'false');
         this.muteButton.setAttribute('aria-label', '마이크 끄기');
         this.muteButton.title = '마이크 끄기';
-        this.muteButton.querySelector('img').src = asset('icons/mic.svg');
+        this.muteButton.querySelector('.icon').innerHTML = iconSvg('mic');
         this.setState('ended');
     }
 
@@ -442,10 +459,19 @@ export class DaynizeVoiceTutor extends HTMLElement {
         const delta = Math.min(0.05, Math.max(0, (timestamp - (this.lastVisualTimestamp ?? timestamp - 16.67)) / 1000));
         this.lastVisualTimestamp = timestamp;
         const voiceLevels = [this.audio.inputVolume(), this.audio.outputVolume()].map(volume => Math.min(1, Math.max(0, (volume - 0.003) * 14)));
-        this.orb.render({ timestamp, input: voiceLevels[0], output: voiceLevels[1], state: this.dataset.state, reduced });
+        // orb.render()는 블러 필터를 여러 번 적용하는 가장 무거운 캔버스 작업이다. 침묵 중(idle이고
+        // 입/출력 레벨이 거의 0)에는 숨쉬기 애니메이션 외엔 시각적으로 거의 변화가 없으므로 한 프레임
+        // 걸러 렌더링해 부하를 절반으로 줄인다 — 말이 시작되는 즉시 매 프레임 렌더링으로 복귀한다.
+        this._orbSkip = (this._orbSkip ?? 0) + 1;
+        const silent = this.dataset.state === 'idle' && voiceLevels[0] < 0.02 && voiceLevels[1] < 0.02;
+        if (!silent || this._orbSkip % 2 === 0) {
+            this.orb.render({ timestamp, input: voiceLevels[0], output: voiceLevels[1], state: this.dataset.state, reduced });
+        }
         this.waveLevels ??= [0, 0];
         for (const [channel, level] of voiceLevels.entries()) {
-            const response = 1 - Math.exp(-delta / (level > this.waveLevels[channel] ? 0.045 : 0.18));
+            // 어택(소리가 커질 때)은 0.1초 안에 거의 다 따라잡도록 더 빠르게, 릴리즈(잦아들 때)는
+            // 기존처럼 천천히 — 말하자마자 파형이 즉각 반응하되 끊길 때 뚝 끊기지 않게 한다.
+            const response = 1 - Math.exp(-delta / (level > this.waveLevels[channel] ? 0.028 : 0.18));
             this.waveLevels[channel] += (level - this.waveLevels[channel]) * response;
         }
         const activity = this.config?.designPreview ? 0.45 : Math.max(...this.waveLevels);
@@ -453,24 +479,46 @@ export class DaynizeVoiceTutor extends HTMLElement {
         const drift = reduced ? 0 : phase * 0.45;
         context.lineCap = 'round';
         context.lineJoin = 'round';
-        for (let layer = 0; layer < 12; layer++) {
-            const gradient = context.createLinearGradient(0, 0, Math.max(width, 1), 0);
-            gradient.addColorStop(0, 'rgba(117,220,171,0.04)');
-            gradient.addColorStop(0.18, '#76dcb0');
-            gradient.addColorStop(0.48, layer % 3 === 0 ? '#75adcf' : '#70cfbd');
-            gradient.addColorStop(0.76, '#d5c48b');
-            gradient.addColorStop(1, 'rgba(224,209,158,0.04)');
-            context.strokeStyle = gradient;
+        // 레이어마다 색 배열은 딱 두 가지뿐이라(layer % 3 === 0 여부), 프레임마다 그라디언트를
+        // 새로 만들 필요가 없다 — 너비가 바뀔 때만(리사이즈) 두 개만 다시 만들고 재사용한다.
+        if (this._gradientWidth !== width) {
+            this._gradientWidth = width;
+            const make = midColor => {
+                const gradient = context.createLinearGradient(0, 0, Math.max(width, 1), 0);
+                gradient.addColorStop(0, 'rgba(117,220,171,0.04)');
+                gradient.addColorStop(0.18, '#76dcb0');
+                gradient.addColorStop(0.48, midColor);
+                gradient.addColorStop(0.76, '#d5c48b');
+                gradient.addColorStop(1, 'rgba(224,209,158,0.04)');
+                return gradient;
+            };
+            this._gradients = { a: make('#75adcf'), b: make('#70cfbd') };
+        }
+        // envelope은 layer와 무관하게 position(가로 위치)만의 함수인데도 기존 코드는 레이어마다
+        // 매번 다시 계산하고 있었다(레이어 수만큼 중복 sin/pow 연산). 프레임당 한 번만 미리 계산해
+        // 모든 레이어가 재사용하게 하고, 레이어 수도 12 → 8로 줄여 렌더링 부하를 크게 낮춘다 —
+        // 겹쳐 그리는 레이어가 많을수록 시각적 차이는 적고 비용만 느는 구간이라 체감 품질 손실은
+        // 거의 없다.
+        const step = 2;
+        const pointCount = Math.floor(width / step) + 1;
+        if (!this._envelope || this._envelope.length !== pointCount) this._envelope = new Float32Array(pointCount);
+        for (let index = 0; index < pointCount; index++) {
+            const progress = (index * step) / Math.max(width, 1);
+            this._envelope[index] = Math.sin(progress * Math.PI) ** 1.4;
+        }
+        const LAYER_COUNT = 8;
+        for (let layer = 0; layer < LAYER_COUNT; layer++) {
+            context.strokeStyle = layer % 3 === 0 ? this._gradients.a : this._gradients.b;
             context.globalAlpha = layer % 4 === 0 ? 0.7 : 0.22;
             context.lineWidth = layer % 4 === 0 ? 1.05 : 0.65;
             context.beginPath();
-            for (let position = 0; position <= width; position += 1.5) {
+            for (let index = 0; index < pointCount; index++) {
+                const position = index * step;
                 const progress = position / Math.max(width, 1);
-                const envelope = Math.sin(progress * Math.PI) ** 1.4;
                 const wave = Math.sin(progress * Math.PI * 4 - drift + layer * 0.16);
                 const secondary = Math.sin(progress * Math.PI * 6 + drift * 0.35 + layer * 0.12) * 0.16;
-                const vertical = height / 2 + (wave * 0.8 + secondary) * amplitude * envelope * (0.74 + layer * 0.02);
-                if (position === 0) context.moveTo(position, vertical); else context.lineTo(position, vertical);
+                const vertical = height / 2 + (wave * 0.8 + secondary) * amplitude * this._envelope[index] * (0.74 + layer * 0.02);
+                if (index === 0) context.moveTo(position, vertical); else context.lineTo(position, vertical);
             }
             context.stroke();
         }

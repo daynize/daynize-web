@@ -127,12 +127,12 @@ test('resetActivity restarts the inactivity countdown', () => {
     assert.equal(run(session, 19000 + LIMIT, 19000 + LIMIT).reason, 'silence');
 });
 
-test('wall-clock limit ends at 10 minutes in every phase', () => {
+test('long sessions do not end from a wall-clock preview limit', () => {
     for (const phase of Object.values(PHASES)) {
         const session = new SessionSafety(0);
         session.setPhase(phase, 0);
         assert.equal(session.check(599999, 0.05, phase === PHASES.SPEAKING).reason, undefined);
-        assert.equal(session.check(600000, 0.05, phase === PHASES.SPEAKING).reason, 'timeout');
+    assert.equal(session.check(600000, 0.05, phase === PHASES.SPEAKING).reason, undefined);
     }
 });
 

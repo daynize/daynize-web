@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { checkIsPaidUser, rememberMembershipEmail } from '../lib/membership-status';
 
 // 데이나이즈 비회원 랜딩 — 유튜브 숏폼 유입 전용.
 // 의존성: Next.js(App Router) + Tailwind CSS 뿐. framer-motion/lucide 없이
@@ -104,7 +105,7 @@ function HeroSection() {
 }
 
 // ── 섹션 2: 30초 체험 (어순 조립 애니메이션) ─────────────────────
-function QuickWinSection({ onSignup }: { onSignup: () => void }) {
+function QuickWinSection({ onSignup, isPaid }: { onSignup: () => void; isPaid: boolean }) {
     const [phase, setPhase] = useState<Phase>('idle');
     const [revealed, setRevealed] = useState(0);
     const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
@@ -210,13 +211,19 @@ function QuickWinSection({ onSignup }: { onSignup: () => void }) {
                         >
                             <ReplayIcon className="h-4 w-4" /> 다시 보기
                         </button>
-                        <button
-                            type="button"
-                            onClick={onSignup}
-                            className="inline-flex items-center gap-1.5 rounded-full bg-[#F67608] px-4 py-2 text-sm font-bold text-white transition-transform hover:scale-[1.03]"
-                        >
-                            풀버전 시작 <ArrowRightIcon className="h-4 w-4" />
-                        </button>
+                        {isPaid ? (
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#053A41] px-4 py-2 text-sm font-bold text-white">
+                                ✦ 정회원 이용 중
+                            </span>
+                        ) : (
+                            <button
+                                type="button"
+                                onClick={onSignup}
+                                className="inline-flex items-center gap-1.5 rounded-full bg-[#F67608] px-4 py-2 text-sm font-bold text-white transition-transform hover:scale-[1.03]"
+                            >
+                                풀버전 시작 <ArrowRightIcon className="h-4 w-4" />
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>
@@ -270,7 +277,7 @@ function FeaturesSection() {
 }
 
 // ── 섹션 4: 최종 CTA + 간편가입 모달 ─────────────────────────────
-function FinalCtaSection({ onSignup }: { onSignup: () => void }) {
+function FinalCtaSection({ onSignup, isPaid }: { onSignup: () => void; isPaid: boolean }) {
     return (
         <section aria-label="시작하기" className="mt-16 px-5 pb-20 sm:mt-24">
             <div
@@ -280,17 +287,25 @@ function FinalCtaSection({ onSignup }: { onSignup: () => void }) {
                 <h2 className="break-keep text-xl font-extrabold leading-snug sm:text-2xl">
                     평생 미뤄온 영어, 오늘은 뿌리동사 하나면 충분합니다
                 </h2>
-                <button
-                    type="button"
-                    onClick={onSignup}
-                    className="mt-7 inline-flex w-full max-w-[420px] items-center justify-center gap-2 rounded-2xl px-6 py-4 text-[16px] font-extrabold text-white shadow-lg transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] sm:text-lg"
-                    style={{ background: `linear-gradient(135deg, ${ACCENT} 0%, ${ACCENT_WARM} 100%)` }}
-                >
-                    👉 3초 간편가입하고 전체 뿌리동사 강좌 시작하기
-                </button>
-                <p className="mt-3 text-[13px] text-white/70">
-                    신용카드 입력 없음 · 카카오/구글 3초 간편 시작
-                </p>
+                {isPaid ? (
+                    <div className="mt-7 inline-flex items-center justify-center rounded-full bg-white/15 px-5 py-3 font-bold text-white">
+                        ✦ 프리미엄 회원 · 정회원 이용 중
+                    </div>
+                ) : (
+                    <>
+                        <button
+                            type="button"
+                            onClick={onSignup}
+                            className="mt-7 inline-flex w-full max-w-[420px] items-center justify-center gap-2 rounded-2xl px-6 py-4 text-[16px] font-extrabold text-white shadow-lg transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] sm:text-lg"
+                            style={{ background: `linear-gradient(135deg, ${ACCENT} 0%, ${ACCENT_WARM} 100%)` }}
+                        >
+                            👉 3초 간편가입하고 전체 뿌리동사 강좌 시작하기
+                        </button>
+                        <p className="mt-3 text-[13px] text-white/70">
+                            신용카드 입력 없음 · 카카오/구글 3초 간편 시작
+                        </p>
+                    </>
+                )}
             </div>
         </section>
     );
@@ -361,8 +376,25 @@ function SignupModal({ open, onClose }: { open: boolean; onClose: () => void }) 
 // ── 페이지 루트 ──────────────────────────────────────────────────
 export default function LandingPage() {
     const [signupOpen, setSignupOpen] = useState(false);
+    const [isPaid, setIsPaid] = useState(false);
     const openSignup = useCallback(() => setSignupOpen(true), []);
     const closeSignup = useCallback(() => setSignupOpen(false), []);
+
+    useEffect(() => {
+        let active = true;
+        fetch('https://api.daynize.co.kr/api/auth/me', { credentials: 'include', cache: 'no-store' })
+            .then(response => response.ok ? response.json() : null)
+            .then(auth => {
+                if (!active) return;
+                rememberMembershipEmail(auth?.email || auth?.user?.email);
+                if (checkIsPaidUser(auth)) {
+                    setIsPaid(true);
+                    setSignupOpen(false);
+                }
+            })
+            .catch(() => { /* guest fallback keeps the existing signup UI */ });
+        return () => { active = false; };
+    }, []);
 
     return (
         <main
@@ -385,11 +417,11 @@ export default function LandingPage() {
             />
             <div className="relative mx-auto max-w-[1080px]">
                 <HeroSection />
-                <QuickWinSection onSignup={openSignup} />
+                <QuickWinSection onSignup={openSignup} isPaid={isPaid} />
                 <FeaturesSection />
-                <FinalCtaSection onSignup={openSignup} />
+                <FinalCtaSection onSignup={openSignup} isPaid={isPaid} />
             </div>
-            <SignupModal open={signupOpen} onClose={closeSignup} />
+            {!isPaid && <SignupModal open={signupOpen} onClose={closeSignup} />}
         </main>
     );
 }

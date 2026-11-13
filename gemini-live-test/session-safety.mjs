@@ -1,4 +1,3 @@
-export const SESSION_LIMIT_MS = 600000;
 export const SILENCE_WARNING_MS = 45000;
 export const SILENCE_LIMIT_MS = 60000;
 export const SPEECH_RMS_THRESHOLD = 0.008;
@@ -15,7 +14,7 @@ export const PHASES = Object.freeze({ IDLE: 'IDLE', LISTENING: 'LISTENING', THIN
 
 // Inactivity (warning / auto-end) is only ever counted in LISTENING. In IDLE,
 // THINKING and SPEAKING the countdown is held at zero; entering LISTENING
-// always restarts it from zero. The 10 minute wall-clock limit always applies.
+// always restarts it from zero.
 export class SessionSafety {
     constructor(now) {
         this.startedAt = now;
@@ -70,16 +69,14 @@ export class SessionSafety {
             else if (now - Math.max(this.lastAudioAt, this.phaseSince) >= SPEAKING_STALL_MS) this.setPhase(PHASES.LISTENING, now);
         }
         if (this.phase !== PHASES.LISTENING) this.lastSoundAt = now;
-        const elapsed = Math.max(0, now - this.startedAt);
         // Double check: the countdown can only exist in LISTENING with an empty output queue.
         const silent = this.phase === PHASES.LISTENING && !outputActive ? Math.max(0, now - this.lastSoundAt) : 0;
         return {
             phase: this.phase,
-            elapsed,
             silent,
             warning: silent >= SILENCE_WARNING_MS,
             remaining: Math.max(0, Math.ceil((SILENCE_LIMIT_MS - silent) / 1000)),
-            reason: elapsed >= SESSION_LIMIT_MS ? 'timeout' : silent >= SILENCE_LIMIT_MS ? 'silence' : undefined
+            reason: silent >= SILENCE_LIMIT_MS ? 'silence' : undefined
         };
     }
 }

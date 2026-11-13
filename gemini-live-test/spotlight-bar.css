@@ -52,11 +52,19 @@ input:focus-visible {
 }
 
 .icon {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 18px;
     height: 18px;
-    filter: invert(1);
+    color: currentColor;
     opacity: .84;
+}
+
+.icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .launch {
@@ -214,8 +222,13 @@ input:focus-visible {
 }
 
 .end {
-    background: #a64d441a;
+    background: #e06a521f;
     border-radius: 50%;
+    color: #ff8f72;
+}
+
+.end:hover {
+    background: #e06a5233;
 }
 
 .icon-tray .end:focus-visible {

@@ -78,7 +78,7 @@ export function mountAdminGate() {
         <div class="admin-gate-card">
             <span class="admin-gate-badge">관리자</span>
             <h2 id="admin-gate-title" data-title>관리자 확인</h2>
-            <p data-copy>관리자 암호를 입력하면 맛보기 타이머를 끄고 콘텐츠를 제한 없이 엽니다.</p>
+            <p data-copy>관리자 암호를 입력하면 관리자 권한으로 콘텐츠를 엽니다.</p>
             <form data-form>
                 <label for="admin-gate-password">관리자 암호</label>
                 <input id="admin-gate-password" type="password" name="password" autocomplete="current-password" required>
@@ -97,7 +97,7 @@ export function mountAdminGate() {
 
     const showReady = () => {
         title.textContent = '관리자 모드가 켜졌습니다';
-        copy.textContent = '10분 맛보기 제한 없이 모든 강의와 AI 데이나 대화를 사용할 수 있습니다.';
+        copy.textContent = '관리자 권한으로 모든 강의와 AI 데이나 대화를 사용할 수 있습니다.';
         form.hidden = true;
         home.hidden = false;
     };

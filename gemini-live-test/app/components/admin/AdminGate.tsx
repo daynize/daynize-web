@@ -107,8 +107,8 @@ export default function AdminGate({ open, onClose, apiBase = DEFAULT_API_BASE, d
                 </h2>
                 <p className="mt-2 break-keep text-sm leading-relaxed text-slate-600">
                     {done
-                        ? '10분 맛보기 제한 없이 모든 강의와 AI 데이나 대화를 사용할 수 있습니다.'
-                        : '관리자 암호를 입력하면 맛보기 타이머를 끄고 콘텐츠를 제한 없이 엽니다.'}
+                        ? '관리자 권한으로 모든 강의와 AI 데이나 대화를 사용할 수 있습니다.'
+                        : '관리자 암호를 입력하면 관리자 권한으로 콘텐츠를 엽니다.'}
                 </p>
                 {done ? (
                     <button type="button" onClick={() => { stripAdminMode(); window.location.href = '/'; }} className="mt-5 w-full rounded-xl bg-[#053A41] py-3.5 text-[15px] font-bold text-white">
