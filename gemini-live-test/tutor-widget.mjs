@@ -51,7 +51,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         const signal = this.abort.signal;
         const icon = (name, light = false) => `<span class="icon${light ? ' light' : ''}" data-icon="${name}">${iconSvg(name)}</span>`;
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="${asset('spotlight-bar.css')}?v=glass-learning-1">
+            <link rel="stylesheet" href="${asset('spotlight-bar.css')}?v=glass-learning-2">
             <button class="launch" type="button" aria-haspopup="dialog">${icon('mic', true)}<span>🔒 AI 음성 회화 시작하기</span></button>
             <dialog id="spotlight-modal" aria-labelledby="tutor-title" aria-describedby="privacy">
                 <div class="spotlight-bar">
