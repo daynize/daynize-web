@@ -2544,6 +2544,78 @@
             background: #e85639;
         }
 
+        .welcome-modal {
+            width: min(400px, calc(100% - 32px));
+            transition: opacity .18s ease, transform .18s ease;
+        }
+
+        .welcome-modal.is-closing {
+            opacity: 0;
+            transform: scale(.96);
+        }
+
+        .welcome-modal::backdrop {
+            transition: opacity .18s ease;
+        }
+
+        .welcome-modal.is-closing::backdrop {
+            opacity: 0;
+        }
+
+        .welcome-modal-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            z-index: 2;
+            width: 36px;
+            height: 36px;
+            font-size: 20px;
+        }
+
+        .welcome-modal-body {
+            padding: 44px 30px 32px;
+            text-align: center;
+        }
+
+        .welcome-modal-emoji {
+            display: block;
+            margin: 0 0 14px;
+            font-size: 42px;
+            line-height: 1;
+        }
+
+        .welcome-modal-title {
+            margin: 0 0 10px;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--ink);
+        }
+
+        .welcome-modal-text {
+            margin: 0 0 26px;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .welcome-modal-confirm {
+            width: 100%;
+            min-height: 48px;
+            border: 1px solid #ff6648;
+            border-radius: 999px;
+            background: #ff6648;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .2s ease;
+        }
+
+        .welcome-modal-confirm:hover,
+        .welcome-modal-confirm:focus-visible {
+            background: #e85639;
+        }
+
         .account-controls {
             display: flex;
             flex-wrap: wrap;
@@ -3088,6 +3160,16 @@
                 <button type="button" class="button secondary" data-close-reset-confirm>취소</button>
                 <button type="button" class="button confirm-reset-button" data-confirm-reset>초기화</button>
             </div>
+        </div>
+    </dialog>
+
+    <dialog class="legal-modal welcome-modal" id="welcome-dialog" aria-labelledby="welcome-dialog-title">
+        <button class="legal-close welcome-modal-close" type="button" data-close-welcome aria-label="닫기">×</button>
+        <div class="legal-modal-body welcome-modal-body">
+            <span class="welcome-modal-emoji" aria-hidden="true">🎉</span>
+            <p class="welcome-modal-title" id="welcome-dialog-title">환영합니다, <span data-welcome-name>회원</span>님!</p>
+            <p class="welcome-modal-text">DAYNIZE와 함께 오늘 하루도 알찬 영어 공부를 시작해보세요.</p>
+            <button type="button" class="welcome-modal-confirm" data-close-welcome>확인</button>
         </div>
     </dialog>
 
@@ -3756,6 +3838,7 @@
             const resetProgressButton = document.querySelector('[data-reset-progress]');
             const resetConfirmDialog = document.querySelector('#reset-confirm-dialog');
             const resetConfirmButton = document.querySelector('[data-confirm-reset]');
+            const welcomeDialog = document.querySelector('#welcome-dialog');
             const configuredAuthApiBase = document.querySelector('meta[name="daynize-payment-api"]')?.content || 'https://api.daynize.co.kr';
             const authApiBase = ['localhost', '127.0.0.1'].includes(window.location.hostname) && window.location.port !== '8081'
                 ? `http://${window.location.hostname}:8081`
@@ -3907,6 +3990,16 @@
             // 로그아웃 시 "지금 이 유저가 결제 상태였는지"를 판단하기 위한 캐시일 뿐,
             // 권한 판정 자체는 여전히 서버 응답(fetchAuth)만 기준으로 한다.
             let latestAuthState = null;
+            // 소셜 로그인 리다이렉트로 돌아온 직후 딱 한 번만 웰컴 모달을 띄운다. URL의
+            // ?login= 파라미터는 아래에서 바로 지워지므로, 새로고침해도 다시 뜨지 않는다.
+            let welcomeModalShown = false;
+            const showWelcomeModal = auth => {
+                if (welcomeModalShown || !(welcomeDialog instanceof HTMLDialogElement)) return;
+                welcomeModalShown = true;
+                const nameEl = welcomeDialog.querySelector('[data-welcome-name]');
+                if (nameEl) nameEl.textContent = auth?.user?.name || auth?.name || '회원';
+                if (!welcomeDialog.open) welcomeDialog.showModal();
+            };
             const fetchAuth = async () => {
                 const response = await fetch(`${authApiBase}/api/auth/me`, { credentials: 'include', cache: 'no-store' });
                 const auth = response.ok ? await response.json() : null;
@@ -3929,6 +4022,7 @@
                     cleanUrl.searchParams.delete('status');
                     history.replaceState(history.state, '', cleanUrl);
                     closeAccountDialogs();
+                    showWelcomeModal(nextAuthState);
                 }
                 if (auth?.loggedIn !== true && new URLSearchParams(location.search).get('login') === 'required') {
                     loginDialog.showModal();
@@ -3942,6 +4036,14 @@
                 closeNavigation();
             });
             document.querySelectorAll('[data-close-account]').forEach(button => button.addEventListener('click', closeAccountDialogs));
+            const closeWelcomeModal = () => {
+                if (!(welcomeDialog instanceof HTMLDialogElement) || !welcomeDialog.open || welcomeDialog.classList.contains('is-closing')) return;
+                welcomeDialog.classList.add('is-closing');
+                const finishClosingWelcome = () => { welcomeDialog.classList.remove('is-closing'); welcomeDialog.close(); };
+                welcomeDialog.addEventListener('transitionend', finishClosingWelcome, { once: true });
+                setTimeout(finishClosingWelcome, 220);
+            };
+            document.querySelectorAll('[data-close-welcome]').forEach(button => button.addEventListener('click', closeWelcomeModal));
             document.querySelectorAll('[data-social-login]').forEach(link => link.addEventListener('click', event => {
                 event.preventDefault();
                 openSocialLogin(link.dataset.socialLogin);
