@@ -1,4 +1,4 @@
-import { mountVoiceTutor } from './tutor-widget.mjs';
+import { mountVoiceTutor } from './tutor-widget.mjs?v=2';
 import { resolveWebSocketUrl } from './live-service.mjs';
 
 const loader = document.querySelector('script[data-daynize-tutor]');
