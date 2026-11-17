@@ -74,7 +74,9 @@ input:focus-visible {
     z-index: 10000;
     display: flex;
     align-items: center;
-    gap: 10px;
+    flex-wrap: nowrap;
+    gap: 8px;
+    max-width: calc(100vw - 32px);
     min-height: 52px;
     padding: 12px 20px;
     border-radius: 24px;
@@ -85,7 +87,18 @@ input:focus-visible {
     -webkit-backdrop-filter: blur(22px) saturate(155%);
     box-shadow: 0 10px 25px -5px rgba(5, 58, 65, .32), 0 12px 34px rgba(9, 31, 21, .25), inset 0 1px 0 rgba(255, 255, 255, .28);
     font-weight: 600;
+    white-space: nowrap;
     transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.launch .icon {
+    flex-shrink: 0;
+}
+
+.launch > span:not(.icon) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .launch:hover {
@@ -443,7 +456,18 @@ input:focus-visible {
     .launch {
         right: 16px;
         bottom: max(16px, env(safe-area-inset-bottom));
+        max-width: calc(100vw - 32px);
+        padding: 10px 16px;
+        gap: 6px;
         font-size: 13px;
+    }
+}
+
+@media(max-width:360px) {
+    .launch {
+        padding: 9px 14px;
+        gap: 5px;
+        font-size: 12px;
     }
 }
 
