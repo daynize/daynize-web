@@ -216,6 +216,59 @@
         .card-glass h3 { font-size: 17px; font-weight: 700; }
         .card-glass p { margin: 12px 0 0; font-size: 14px; line-height: 1.7; color: rgba(255, 255, 255, .72); }
 
+        /* ── FAQ(아코디언) — CS 방어용. 이 페이지 기존 다크 글래스모피즘 톤을 그대로 따른다. */
+        .faq-list {
+            max-width: 720px;
+            margin: 40px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .faq-item {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after {
+            content: '+';
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .faq-item[open] summary::after {
+            content: '\2212';
+            background: var(--orange);
+        }
+        .faq-item summary:focus-visible {
+            outline: 2px solid var(--orange);
+            outline-offset: -2px;
+        }
+        .faq-answer {
+            padding: 0 22px 20px;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, .72);
+        }
+
         .card-light {
             border: 1px solid rgba(15, 23, 42, .08);
             border-radius: 18px;
@@ -441,6 +494,40 @@
                 <h2>지금 바로 데이나이즈의 프리미엄 커리큘럼을 시작하세요.</h2>
                 <a href="https://www.daynize.co.kr/#register" class="btn-primary">전 코스 무제한 수강하기 (월 19,000원)</a>
                 <p class="hero-sub" style="color: rgba(255,255,255,.5);">* 언제든 해지 가능 | 안전한 정기 결제 시스템</p>
+            </div>
+        </section>
+
+        <!-- 7단: FAQ -->
+        <section id="faq" class="section-deep" style="padding-top: 8px;">
+            <div class="wrap">
+                <p class="eyebrow">FAQ</p>
+                <h2 class="section-title">자주 묻는 질문</h2>
+                <div class="faq-list">
+                    <details class="faq-item card-glass">
+                        <summary>구독료 및 결제 방식은 어떻게 되나요?</summary>
+                        <p class="faq-answer">월 19,000원(VAT 포함) 정기구독 상품이며, 최초 결제일 기준으로 매월 동일 일자에 등록하신 카드로 자동 결제됩니다.</p>
+                    </details>
+                    <details class="faq-item card-glass">
+                        <summary>해지 및 환불 규정이 궁금합니다.</summary>
+                        <p class="faq-answer">마이페이지에서 언제든 클릭 한 번으로 다음 달 정기결제를 해지할 수 있습니다. 환불은 전자상거래 등에서의 소비자보호에 관한 법률 기준에 따라, 결제일로부터 7일 이내에 유료 콘텐츠(강의 영상 및 AI 튜터 보이스 스튜디오) 이용 이력이 없는 경우 전액 환불이 가능합니다. 7일 경과 후 또는 콘텐츠 이용 개시 이후에는 잔여 기간에 대해 일할 계산 및 위약금 규정에 따라 처리됩니다.</p>
+                    </details>
+                    <details class="faq-item card-glass">
+                        <summary>결제 카드를 변경하거나 결제에 실패한 경우 어떻게 하나요?</summary>
+                        <p class="faq-answer">마이페이지 &gt; 구독 관리에서 [결제 카드 변경]을 통해 언제든 다른 카드로 교체할 수 있습니다. 한도 초과 등으로 자동 결제에 실패하더라도 3일간 학습 권한이 유지되며, 안내 메일을 통해 카드를 변경하시면 즉시 정상 이용이 이어집니다.</p>
+                    </details>
+                    <details class="faq-item card-glass">
+                        <summary>스마트폰, 태블릿, PC 등 여러 기기에서 동시 접속이 가능한가요?</summary>
+                        <p class="faq-answer">네, 하나의 계정으로 PC, 스마트폰, 태블릿 등 기기 제한 없이 자유롭게 학습할 수 있습니다. 다만 계정 공유 방지를 위해 동시 스트리밍 접속은 제한될 수 있습니다.</p>
+                    </details>
+                    <details class="faq-item card-glass">
+                        <summary>결제 영수증(카드 매출전표) 발급이 가능한가요?</summary>
+                        <p class="faq-answer">결제 완료 시 등록된 이메일로 포트원(KG이니시스/NHN KCP) 결제 내역서가 자동 발송되며, 마이페이지 결제 내역에서도 언제든 매출전표를 조회 및 출력하실 수 있습니다.</p>
+                    </details>
+                    <details class="faq-item card-glass">
+                        <summary>기타 학습 및 결제 문의는 어디로 하나요?</summary>
+                        <p class="faq-answer">고객센터 이메일(contact@daynize.co.kr) 또는 유선(070-4010-1147)으로 문의해 주시면 영업일 기준 24시간 이내에 신속히 안내해 드립니다.</p>
+                    </details>
+                </div>
             </div>
         </section>
     </main>

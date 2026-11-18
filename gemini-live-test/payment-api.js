@@ -80,6 +80,9 @@ function createPaymentApi(options = {}) {
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
     const now = options.now ?? Date.now;
     const onPaid = options.onPaid;
+    // 정기결제(빌링키) 자동 청구가 실패했을 때 호출 — PAST_DUE 전환 + 안내 메일 발송은 호출하는
+    // 쪽(server.js)의 책임이고, 이 모듈은 "실패를 검증해서 알려주는" 역할만 한다.
+    const onPaymentFailed = options.onPaymentFailed ?? (() => {});
     // 로그인한 사용자의 결제 엔티티는 입력폼 이메일이 아니라 로그인 세션 이메일로 귀속시켜,
     // hasActiveSubscription(session.email) 조회가 항상 결제 시점 이메일과 일치하게 한다.
     const getSession = options.getSession ?? (() => null);
@@ -90,6 +93,8 @@ function createPaymentApi(options = {}) {
     // 이미 결제된 회원이 프로필 모달에서 카드를 재등록(billing key 재발급)했을 때만 쓰인다 — 신규
     // 가입자의 첫 카드 인증은 아직 결제가 없으니(onPaid가 아직 안 불림) 여기서 손댈 엔티틀먼트가 없다.
     const onBillingMethodUpdated = options.onBillingMethodUpdated ?? (() => {});
+    // PAST_DUE 여부를 확인(카드 변경 직후 즉시 재청구 판단)하기 위한 조회용 콜백.
+    const getEntitlement = options.getEntitlement ?? (() => null);
     const fallbackSessionEmail = /@(kakao|naver)\.daynize$/i;
     const orders = new Map();
     let lastOrderTimestamp = 0;
@@ -183,7 +188,36 @@ function createPaymentApi(options = {}) {
                 return true;
             }
             const paid = webhook.type === 'Transaction.Paid' || String(webhook.status || '').toLowerCase() === 'paid' || webhook.paymentStatus === 'PAID';
-            if (!paid) { json(response, 200, { received: true, ignored: true }); return true; }
+            if (!paid) {
+                // 정기결제(빌링키) 자동 청구 실패 웹훅. 정확한 webhook.type 문자열은 PortOne 콘솔에서
+                // 실제 수신되는 값으로 재확인이 필요하므로(TODO: 테스트 체크리스트 참고), 문자열
+                // 매칭은 힌트로만 쓰고 최종 판단은 항상 PortOne 결제 조회 API 재검증으로 내린다 —
+                // 위의 결제완료(Transaction.Paid) 처리와 동일한 신뢰 원칙이다.
+                const looksFailed = webhook.type === 'Transaction.Failed' || /fail/i.test(String(webhook.type || '')) ||
+                    String(webhook.status || '').toLowerCase() === 'failed' || webhook.paymentStatus === 'FAILED';
+                const failedPaymentId = webhook.data?.paymentId || webhook.paymentId || webhook.merchant_uid;
+                if (!looksFailed || !failedPaymentId) { json(response, 200, { received: true, ignored: true }); return true; }
+                try {
+                    const upstream = await fetchImpl(`https://api.portone.io/payments/${encodeURIComponent(failedPaymentId)}`, {
+                        headers: { Authorization: `PortOne ${apiSecret}` }, signal: AbortSignal.timeout(10000)
+                    });
+                    const payment = await upstream.json().catch(() => ({}));
+                    const selectedChannel = payment.selectedChannel ?? payment.channel;
+                    const email = String(payment.customer?.email || '').trim().toLowerCase();
+                    // 정기결제 전용 채널(billingChannelKey)로 들어온 실패만 "구독 자동 청구 실패"로
+                    // 취급한다 — 단건 결제 실패는 이 방어 로직의 대상이 아니다.
+                    const isSubscriptionCharge = Boolean(billingChannelKey) && selectedChannel?.key === billingChannelKey;
+                    if (upstream.ok && payment.status === 'FAILED' && isSubscriptionCharge && email) {
+                        await onPaymentFailed({ email, paymentId: failedPaymentId, at: now() });
+                    } else {
+                        console.warn(`[payment] failure webhook could not be verified/attributed as a subscription charge: paymentId=${failedPaymentId}`);
+                    }
+                } catch (error) {
+                    console.error('[payment] failure webhook verification threw', error);
+                }
+                json(response, 200, { received: true, ignored: false });
+                return true;
+            }
             const paymentId = webhook.data?.paymentId || webhook.paymentId || webhook.merchant_uid;
             if (!paymentId) { json(response, 400, { error: 'Webhook has no paymentId.' }); return true; }
             try {
@@ -193,7 +227,8 @@ function createPaymentApi(options = {}) {
                 const payment = await upstream.json().catch(() => ({}));
                 const selectedChannel = payment.selectedChannel ?? payment.channel;
                 const customer = payment.customer || {};
-                const paymentMethod = payment.paymentMethod?.type ?? payment.method?.type ?? 'UNKNOWN';
+                const rawPaymentMethod = payment.paymentMethod?.type ?? payment.method?.type ?? 'UNKNOWN';
+                const paymentMethod = rawPaymentMethod === 'PaymentMethodCard' ? 'CARD' : rawPaymentMethod;
                 const email = String(customer.email || '').trim().toLowerCase();
                 if (!upstream.ok || payment.status !== 'PAID' || payment.id !== paymentId || payment.amount?.total !== amount ||
                     payment.currency !== 'KRW' || payment.orderName !== PRODUCT_NAME ||
@@ -360,8 +395,32 @@ function createPaymentApi(options = {}) {
                     return true;
                 }
                 order.status = 'BILLING_AUTHENTICATED';
-                await onBillingMethodUpdated({ email: order.email, paymentMethod: 'CARD', at: now() });
-                json(response, 200, { orderId, status: order.status, email: order.email }, cors);
+                // 카드사/끝자리 표시용 라벨. PortOne 응답의 정확한 카드 정보 필드명은 실제 테스트
+                // 응답으로 재확인이 필요해(TODO: 테스트 체크리스트 참고) 여러 후보 경로를 방어적으로
+                // 시도하고, 하나도 안 맞으면 조용히 null로 둔다(화면은 기존처럼 'CARD'만 보여줌).
+                const cardInfo = info.methods?.find(method => method.type === 'BillingKeyPaymentMethodCard')?.card
+                    ?? info.methods?.[0]?.card ?? null;
+                const cardLabel = cardInfo
+                    ? [cardInfo.publisher || cardInfo.issuer || cardInfo.name, cardInfo.number].filter(Boolean).join(' ') || null
+                    : null;
+                await onBillingMethodUpdated({ email: order.email, paymentMethod: 'CARD', billingKey, cardLabel, at: now() });
+                // 결제 실패 유예(PAST_DUE) 중이던 회원이 카드를 바꾼 경우, 바꾸자마자 미납분을 즉시
+                // 재청구해서 정상(PAID) 상태로 바로 복구한다 — 다음 정기 결제일까지 기다리게 하지 않는다.
+                let recovered = false;
+                const recoveryEntitlement = getEntitlement?.(order.email);
+                if (recoveryEntitlement?.status === 'PAST_DUE') {
+                    try {
+                        const retryPaymentId = `retry_${orderId}_${now()}`;
+                        const charge = await chargeBillingKey({ paymentId: retryPaymentId, billingKey, email: order.email, buyerName: order.name });
+                        if (charge?.ok) {
+                            await onPaid?.({ email: order.email, paymentId: retryPaymentId, paymentType: 'subscription', at: now(), buyerName: order.name, amount, payMethod: 'CARD', paidAt: charge.paidAt || new Date().toISOString() });
+                            recovered = true;
+                        }
+                    } catch (error) {
+                        console.error('[payment] immediate recovery charge after card change failed', error);
+                    }
+                }
+                json(response, 200, { orderId, status: order.status, email: order.email, recovered }, cors);
             } catch {
                 json(response, 502, { error: '카드 인증 확인에 실패했습니다. 잠시 후 다시 시도해 주세요.' }, cors);
             }
@@ -403,7 +462,11 @@ function createPaymentApi(options = {}) {
             }
             const selectedChannel = payment.selectedChannel ?? payment.channel;
             const customer = payment.customer || {};
-            const paymentMethodType = payment.paymentMethod?.type ?? payment.method?.type;
+            // PortOne V2's REST API reports card payments as "PaymentMethodCard" (its class-style enum), not
+            // the plain "CARD" we store/compare against elsewhere — normalize so the verification below (and
+            // onPaid's recorded payMethod) doesn't false-positive-reject a payment that is actually fine.
+            const rawPaymentMethodType = payment.paymentMethod?.type ?? payment.method?.type;
+            const paymentMethodType = rawPaymentMethodType === 'PaymentMethodCard' ? 'CARD' : rawPaymentMethodType;
             const matchingCustomer = (!customer.email || customer.email.trim().toLowerCase() === order.email) &&
                 (!customer.fullName || customer.fullName.trim() === order.name) &&
                 (!customer.phoneNumber || normalizePhone(customer.phoneNumber) === normalizePhone(order.phone));
@@ -432,7 +495,39 @@ function createPaymentApi(options = {}) {
         return true;
     }
 
-    return { handle };
+    // 저장해 둔 빌링키로 서버가 직접 재청구한다(정기결제 실패 후 자동 재시도, 또는 카드 변경 직후
+    // 즉시 복구용). PortOne V2 REST API 엔드포인트/응답 필드명은 문서 기준으로 작성했지만 실제
+    // 라이브 호출로 검증된 적은 없으니, 처음 쓰기 전에 반드시 테스트 모드로 한 번 확인할 것
+    // (TODO: 테스트 체크리스트의 "자동 재결제 검증" 항목 참고, 문서: PortOne V2 REST API
+    // "빌링키 결제" — POST /payments/{paymentId}/billing-key).
+    async function chargeBillingKey({ paymentId, billingKey, email, buyerName }) {
+        if (!billingKey) return { ok: false, reason: 'NO_BILLING_KEY' };
+        try {
+            const upstream = await fetchImpl(`https://api.portone.io/payments/${encodeURIComponent(paymentId)}/billing-key`, {
+                method: 'POST',
+                headers: { Authorization: `PortOne ${apiSecret}`, 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    billingKey,
+                    orderName: `${PRODUCT_NAME} 월 구독`,
+                    customer: { id: paymentId, email, fullName: buyerName || undefined },
+                    amount: { total: amount },
+                    currency: 'KRW'
+                }),
+                signal: AbortSignal.timeout(15000)
+            });
+            const payment = await upstream.json().catch(() => ({}));
+            if (!upstream.ok || payment.status !== 'PAID') {
+                console.warn(`[payment] billing-key charge not PAID: paymentId=${paymentId} status=${payment.status ?? upstream.status}`);
+                return { ok: false, reason: payment.status || `HTTP_${upstream.status}`, raw: payment };
+            }
+            return { ok: true, paymentId, paidAt: payment.paidAt || new Date().toISOString(), raw: payment };
+        } catch (error) {
+            console.error(`[payment] billing-key charge threw for paymentId=${paymentId}`, error);
+            return { ok: false, reason: 'REQUEST_FAILED' };
+        }
+    }
+
+    return { handle, chargeBillingKey };
 }
 
 module.exports = { createPaymentApi };

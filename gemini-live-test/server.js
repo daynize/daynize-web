@@ -6,10 +6,11 @@ const { randomBytes } = require('node:crypto');
 const { createPaymentApi } = require('./payment-api');
 const { createAuthApi } = require('./auth-api');
 const { createAdminGateApi } = require('./admin-gate-api');
+const { createAdminDraftApi } = require('./admin-draft-api');
 const { createStore } = require('./store');
 const { createCookieCodec, readSession } = require('./session-cookie');
 const { createLatencyTrace } = require('./latency-trace');
-const { sendPaymentCompletionEmail } = require('./payment-mailer');
+const { sendPaymentCompletionEmail, sendPaymentFailedEmail, sendSubscriptionSuspendedEmail } = require('./payment-mailer');
 require('dotenv').config({ path: path.join(__dirname, '.env'), quiet: true });
 
 const GEMINI_ENDPOINT = 'wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent';
@@ -86,8 +87,25 @@ function createRelayServer(options = {}) {
         now: options.paymentNow,
         getSession: request => readSession(request, cookieCodec),
         linkEmails: ({ receiptEmail, sessionEmail }) => store?.linkEmails({ receiptEmail, sessionEmail, at: Date.now() }),
-        onBillingMethodUpdated: async ({ email, paymentMethod, at }) => {
+        getEntitlement: email => store?.getEntitlement(email),
+        onBillingMethodUpdated: async ({ email, paymentMethod, billingKey, cardLabel, at }) => {
             store?.updatePaymentMethod(email, paymentMethod, at);
+            store?.updateBillingDetails({ email, billingKey, cardLabel, at });
+        },
+        // 정기결제(빌링키) 자동 청구 실패 웹훅 — 즉시 권한을 박탈하지 않고 PAST_DUE로 전환한 뒤,
+        // 카드 변경을 안내하는 메일을 보낸다. 실제 재시도(1일 후/3일 후)는 아래 pastDueScheduler가
+        // 주기적으로 스캔하며 수행한다.
+        onPaymentFailed: async ({ email, paymentId, at }) => {
+            if (!store) return;
+            const changed = store.markPastDue({ email, at });
+            if (!changed) return; // 이미 PAST_DUE였던 경우 중복 메일을 보내지 않는다.
+            const user = store.getUserByEmail(email);
+            try {
+                await sendPaymentFailedEmail({ to: email, name: user?.name || '' });
+                console.info(`[payment] grace-period notice sent to ${email} (paymentId=${paymentId})`);
+            } catch (error) {
+                console.error(`[payment] grace-period notice failed for ${email}`, error);
+            }
         },
         onPaid: async details => {
             store?.grantActiveSubscription({
@@ -121,6 +139,58 @@ function createRelayServer(options = {}) {
     const dataDir = options.dataDir ?? process.env.DATA_DIR;
     store = options.store ?? createStore({ path: dataDir ? path.join(dataDir, 'daynize.sqlite') : ':memory:' });
     if (!dataDir && !options.store) console.warn('[store] DATA_DIR is not set; member and study data live in memory only.');
+    // 정기결제 실패 자동 재결제 스케줄러. 결제 실패 웹훅으로 PAST_DUE가 된 회원을 주기적으로
+    // 스캔해서 1일 후/3일 후 각 한 번씩 저장된 빌링키로 재청구를 시도하고, 3일 후 재시도까지
+    // 실패하면 그제서야 구독을 정지한다. Fly 머신이 하나만 떠 있는(min_machines_running=1) 현재
+    // 구성에서는 이 단순한 setInterval 방식으로 충분하지만, 나중에 여러 머신으로 확장하면 중복
+    // 재시도를 막기 위한 분산 락(또는 DB 기반 잠금)이 추가로 필요하다는 점을 기억해 둘 것.
+    const PAST_DUE_RETRY_OFFSETS_MS = [1 * 24 * 60 * 60 * 1000, 3 * 24 * 60 * 60 * 1000]; // 1일 후, 3일 후
+    const pastDueScanIntervalMs = options.pastDueScanIntervalMs ?? 60 * 60 * 1000; // 1시간마다 스캔
+    let pastDueScanInFlight = false;
+    const scanPastDueEntitlements = async () => {
+        if (!store || pastDueScanInFlight) return;
+        pastDueScanInFlight = true;
+        try {
+            const rows = store.listPastDueEntitlements();
+            const nowMs = Date.now();
+            for (const row of rows) {
+                const elapsedMs = nowMs - Number(row.past_due_since || nowMs);
+                const dueIndex = PAST_DUE_RETRY_OFFSETS_MS.findIndex((offsetMs, index) => elapsedMs >= offsetMs && Number(row.retry_count || 0) <= index);
+                if (dueIndex === -1) continue;
+                if (!row.billing_key) {
+                    console.error(`[payment] ${row.email} is PAST_DUE but has no stored billing_key; cannot auto-retry. The member must re-register a card from 마이페이지.`);
+                    continue;
+                }
+                const retryPaymentId = `retry_${row.email.replace(/[^a-z0-9]/gi, '_')}_${nowMs}`;
+                const charge = await paymentApi.chargeBillingKey({ paymentId: retryPaymentId, billingKey: row.billing_key, email: row.email });
+                store.recordRetryAttempt(row.email, nowMs);
+                if (charge?.ok) {
+                    store.grantActiveSubscription({ email: row.email, source: 'subscription-retry', paymentId: retryPaymentId, nextBillingDate: null, paymentMethod: null, at: nowMs });
+                    console.info(`[payment] auto-retry succeeded for ${row.email} (attempt ${dueIndex + 1})`);
+                    continue;
+                }
+                console.warn(`[payment] auto-retry failed for ${row.email} (attempt ${dueIndex + 1}): ${charge?.reason}`);
+                if (dueIndex === PAST_DUE_RETRY_OFFSETS_MS.length - 1) {
+                    // 마지막(3일 후) 재시도까지 실패 — 유예 기간 종료, 구독 정지.
+                    store.suspendSubscription(row.email, nowMs);
+                    const user = store.getUserByEmail(row.email);
+                    try {
+                        await sendSubscriptionSuspendedEmail({ to: row.email, name: user?.name || '' });
+                    } catch (error) {
+                        console.error(`[payment] suspension notice failed for ${row.email}`, error);
+                    }
+                }
+            }
+        } catch (error) {
+            console.error('[payment] PAST_DUE scan failed', error);
+        } finally {
+            pastDueScanInFlight = false;
+        }
+    };
+    const pastDueScanTimer = options.disablePastDueScheduler ? null : setInterval(() => { void scanPastDueEntitlements(); }, pastDueScanIntervalMs);
+    // heartbeat(608번째 줄)와 같은 이유: 이 타이머 혼자서는 프로세스 종료를 막지 않아야 한다
+    // (테스트 하네스나 graceful shutdown이 close()를 부르지 않아도 프로세스가 멈춰 있지 않게).
+    pastDueScanTimer?.unref();
     const hasActiveSubscription = options.hasActiveSubscription ?? (session => store.hasActiveSubscription(session.email));
     const adminGateApi = createAdminGateApi({
         codec: cookieCodec,
@@ -128,6 +198,15 @@ function createRelayServer(options = {}) {
         allowedOrigins: trustedOrigins,
         now: options.authNow,
         trustProxyHeaders: options.trustProxyHeaders
+    });
+    // 주간 학습 콘텐츠 자동 생성 봇(AI Draft Bot) — admin-gate.js가 발급한 관리자 세션을
+    // 그대로 재사용한다(별도 비밀값/쿠키 없음).
+    const adminDraftApi = createAdminDraftApi({
+        isAdmin: adminGateApi.isAdmin,
+        apiKey,
+        model: options.adminDraftModel,
+        allowedOrigins: trustedOrigins,
+        fetchImpl: options.adminDraftFetchImpl ?? fetchImpl
     });
     const authApi = createAuthApi({
         kakaoClientId: options.kakaoClientId,
@@ -189,7 +268,10 @@ function createRelayServer(options = {}) {
             return {
                 paymentType,
                 nextBillingDate,
-                paymentMethod: entitlement?.payment_method || null,
+                // card_label(예: "신한카드 1234")이 있으면 그걸 우선 보여주고, 없으면 기존처럼
+                // payment_method('CARD' 등)로 대체한다 — 과거에 저장된 회원도 그대로 표시된다.
+                paymentMethod: entitlement?.card_label || entitlement?.payment_method || null,
+                subscriptionStatus: entitlement?.status || null,
                 learningProgress: {
                     lastStudyDate: rows[0]?.updated_at ? new Date(rows[0].updated_at).toISOString() : null,
                     weeklyEnglish: { completed: completed('daynize.weekly.completed'), total: 20 },
@@ -258,6 +340,14 @@ function createRelayServer(options = {}) {
             if (await adminGateApi.handle(request, response, pathname)) return;
         } catch (error) {
             console.error('[admin-gate] handler failure', error);
+            if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
+            response.end();
+            return;
+        }
+        try {
+            if (await adminDraftApi.handle(request, response, pathname)) return;
+        } catch (error) {
+            console.error('[admin-draft] handler failure', error);
             if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
             response.end();
             return;
@@ -711,6 +801,7 @@ function createRelayServer(options = {}) {
             for (const client of clients.clients) client.terminate();
             await new Promise(resolve => clients.close(resolve));
             if (server.listening) await new Promise(resolve => server.close(resolve));
+            if (pastDueScanTimer) clearInterval(pastDueScanTimer);
             if (!options.store) store.close();
         }
     };

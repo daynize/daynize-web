@@ -1768,6 +1768,81 @@
             color: #9b3d35;
         }
 
+        /* ── 결제 섹션 하단 FAQ(아코디언) ──────────────────────────────
+           CS 방어용: 정기결제/해지/카드변경/영수증 등 반복 문의를 줄이기 위한 섹션.
+           사이트 기존 디자인 토큰(화이트 배경, .glass 카드, --sage 짙은 그린 텍스트,
+           --gold 계열 포인트 컬러)을 그대로 따른다. */
+        .faq-section {
+            background: var(--white);
+            padding: 72px 0 96px;
+        }
+
+        .faq-list {
+            max-width: 760px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .faq-item {
+            border-radius: var(--card-radius);
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            font-weight: 700;
+            color: var(--sage);
+            font-size: 16px;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            flex-shrink: 0;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--sage-soft);
+            color: var(--sage);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 400;
+            transition: transform .2s ease, background .2s ease, color .2s ease;
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+            background: var(--gold);
+            color: #fff;
+            transform: rotate(180deg);
+        }
+
+        .faq-item summary:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: -2px;
+        }
+
+        .faq-answer {
+            padding: 0 24px 22px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.75;
+        }
+
         .site-footer {
             padding: 34px 0 26px;
             border-top: 1px solid var(--line);
@@ -3525,6 +3600,42 @@
                 </form>
             </div>
         </section>
+
+        <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">FAQ</p>
+                    <h2 class="section-title" id="faq-title">자주 묻는 질문</h2>
+                    <p class="section-intro">결제와 이용에 대해 가장 많이 묻는 질문을 모았습니다. 원하시는 답을 못 찾으셨다면 고객센터로 편하게 연락해 주세요.</p>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item glass">
+                        <summary>구독료 및 결제 방식은 어떻게 되나요?</summary>
+                        <p class="faq-answer">월 19,000원(VAT 포함) 정기구독 상품이며, 최초 결제일 기준으로 매월 동일 일자에 등록하신 카드로 자동 결제됩니다.</p>
+                    </details>
+                    <details class="faq-item glass">
+                        <summary>해지 및 환불 규정이 궁금합니다.</summary>
+                        <p class="faq-answer">마이페이지에서 언제든 클릭 한 번으로 다음 달 정기결제를 해지할 수 있습니다. 환불은 전자상거래 등에서의 소비자보호에 관한 법률 기준에 따라, 결제일로부터 7일 이내에 유료 콘텐츠(강의 영상 및 AI 튜터 보이스 스튜디오) 이용 이력이 없는 경우 전액 환불이 가능합니다. 7일 경과 후 또는 콘텐츠 이용 개시 이후에는 잔여 기간에 대해 일할 계산 및 위약금 규정에 따라 처리됩니다.</p>
+                    </details>
+                    <details class="faq-item glass">
+                        <summary>결제 카드를 변경하거나 결제에 실패한 경우 어떻게 하나요?</summary>
+                        <p class="faq-answer">마이페이지 &gt; 구독 관리에서 [결제 카드 변경]을 통해 언제든 다른 카드로 교체할 수 있습니다. 한도 초과 등으로 자동 결제에 실패하더라도 3일간 학습 권한이 유지되며, 안내 메일을 통해 카드를 변경하시면 즉시 정상 이용이 이어집니다.</p>
+                    </details>
+                    <details class="faq-item glass">
+                        <summary>스마트폰, 태블릿, PC 등 여러 기기에서 동시 접속이 가능한가요?</summary>
+                        <p class="faq-answer">네, 하나의 계정으로 PC, 스마트폰, 태블릿 등 기기 제한 없이 자유롭게 학습할 수 있습니다. 다만 계정 공유 방지를 위해 동시 스트리밍 접속은 제한될 수 있습니다.</p>
+                    </details>
+                    <details class="faq-item glass">
+                        <summary>결제 영수증(카드 매출전표) 발급이 가능한가요?</summary>
+                        <p class="faq-answer">결제 완료 시 등록된 이메일로 포트원(KG이니시스/NHN KCP) 결제 내역서가 자동 발송되며, 마이페이지 결제 내역에서도 언제든 매출전표를 조회 및 출력하실 수 있습니다.</p>
+                    </details>
+                    <details class="faq-item glass">
+                        <summary>기타 학습 및 결제 문의는 어디로 하나요?</summary>
+                        <p class="faq-answer">고객센터 이메일(contact@daynize.co.kr) 또는 유선(070-4010-1147)으로 문의해 주시면 영업일 기준 24시간 이내에 신속히 안내해 드립니다.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
@@ -3963,9 +4074,14 @@
                     profileProvider.textContent = user?.provider === 'kakao' ? '카카오 계정' : user?.provider === 'google' ? 'Google 계정' : user?.provider === 'naver' ? '네이버 계정' : '소셜 로그인 계정';
                     const isPaid = checkIsPaidUser(auth);
                     const isSubscription = auth?.paymentType === 'SUBSCRIPTION';
-                    profileStatus.textContent = isPaid
-                        ? (isSubscription ? '정회원 (정기 구독 중)' : '정회원 (단건 결제)')
-                        : '미결제 회원';
+                    // 정기결제가 실패해 유예 기간(PAST_DUE) 중이어도 이용 권한은 그대로 유지되지만,
+                    // 카드를 확인해야 한다는 걸 마이페이지에서 바로 알 수 있도록 표시해 준다.
+                    const isPastDue = auth?.subscriptionStatus === 'PAST_DUE';
+                    profileStatus.textContent = isPastDue
+                        ? '정회원 (카드 확인 필요 — 결제 실패)'
+                        : isPaid
+                            ? (isSubscription ? '정회원 (정기 구독 중)' : '정회원 (단건 결제)')
+                            : '미결제 회원';
                     profilePassBadge.hidden = !isPaid;
                     const billingDate = auth?.nextBillingDate;
                     profileBilling.hidden = !billingDate;
@@ -5977,9 +6093,13 @@
                         });
                         if (verified.status !== 'BILLING_AUTHENTICATED' || verified.orderId !== order.orderId) throw new Error('정기결제 카드 인증 상태를 확인하지 못했습니다.');
                         try { sessionStorage.removeItem(checkoutResumeKey); } catch (_) { }
-                        showRegistrationMessage(paymentManageMode
-                            ? '결제 수단이 성공적으로 변경되었습니다. 다음 결제부터 새 카드로 청구됩니다.'
-                            : '정기결제 카드 인증이 완료되었습니다. 아직 요금이 청구되지 않았습니다.');
+                        // 결제 실패 유예(PAST_DUE) 중이었다면 서버가 카드 인증 직후 미납분을 바로
+                        // 재청구한다 — verified.recovered가 true면 그 재청구까지 성공한 것.
+                        showRegistrationMessage(verified.recovered
+                            ? '결제 수단이 변경되었고, 미납된 결제도 정상적으로 처리되었습니다. 바로 이용하실 수 있습니다.'
+                            : paymentManageMode
+                                ? '결제 수단이 성공적으로 변경되었습니다. 다음 결제부터 새 카드로 청구됩니다.'
+                                : '정기결제 카드 인증이 완료되었습니다. 아직 요금이 청구되지 않았습니다.');
                         if (paymentManageMode) setTimeout(exitPaymentManageMode, 3000);
                         return;
                     }

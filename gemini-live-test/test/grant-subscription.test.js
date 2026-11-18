@@ -28,6 +28,13 @@ test('grant-subscription CLI creates and updates a PAID entitlement by normalize
             payment_id: null,
             next_billing_date: null,
             payment_method: null,
+            // 정기결제 실패 방어(유예 기간 + 자동 재결제) 기능에서 추가된 컬럼들 — 새로 만든
+            // 엔티틀먼트는 전부 미설정(null)/기본값(0) 상태로 시작한다.
+            billing_key: null,
+            card_label: null,
+            past_due_since: null,
+            retry_count: 0,
+            last_retry_at: null,
             updated_at: store.getEntitlement('learner@example.com').updated_at
         });
         store.close();
