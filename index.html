@@ -551,6 +551,27 @@
             font-style: normal;
         }
 
+        /* 히어로 영문 2줄 타이틀("Spoonic English" / "Spoonful Lesson"). 글꼴·굵기·색상은 h1의
+           기존 값을 그대로 물려받아(큰 타이포그래피 느낌과 딥그린 컬러 유지) 폰트 크기·줄 간격만
+           다시 잡고, 한글 타이틀의 글자 사이 간격 늘리기(h1 span의 inter-character justify)
+           트릭은 영문에는 맞지 않아 이 안에서만 되돌린다 — 두 줄 다 완전히 같은 스타일이다. */
+        .hero-title-en {
+            font-size: clamp(30px, 3.4vw, 56px);
+            line-height: 1.22;
+        }
+
+        .hero-title-en span {
+            display: block;
+            width: auto;
+            white-space: nowrap;
+            text-align-last: auto;
+            text-justify: auto;
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+            line-height: inherit;
+        }
+
         .hero-desc {
             max-width: 500px;
             margin: 16px 0 30px;
@@ -2931,6 +2952,10 @@
                 max-width: 620px;
             }
 
+            .hero-title-en {
+                font-size: clamp(28px, 5vw, 46px);
+            }
+
             .hero-art {
                 width: min(100%, 570px);
                 margin: 0 auto;
@@ -2983,6 +3008,10 @@
 
             h1 {
                 font-size: clamp(46px, 13.5vw, 60px);
+            }
+
+            .hero-title-en {
+                font-size: clamp(26px, 8vw, 36px);
             }
 
             .hero-subtitle {
@@ -3282,8 +3311,7 @@
             <div class="wrap hero-grid">
                 <div class="hero-copy">
                     <p class="hero-kicker">천천히, 그러나 분명하게</p>
-                    <h1 id="hero-title"><span class="hero-title-wrap"><span>지난 주</span><span class="hero-title-line2">영어</span></span></h1>
-                    <p class="hero-subtitle">지난 주에는 몰랐던 걸,<br><em>이제는 안다...</em></p>
+                    <h1 id="hero-title" class="hero-title-en"><span>Spoonic English</span><span>Spoonful Lesson</span></h1>
                     <p class="hero-desc">배운 만큼 자신감이 되고, 지나온 시간만큼 나만의 이야기가 됩니다. 오늘의 한 문장을 함께 시작해요.</p>
                     <div class="button-row">
                         <a class="button" href="#lessons">이번 주 수업 만나기 <span aria-hidden="true">→</span></a>
