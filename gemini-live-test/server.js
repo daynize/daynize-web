@@ -7,6 +7,7 @@ const { createPaymentApi } = require('./payment-api');
 const { createAuthApi } = require('./auth-api');
 const { createAdminGateApi } = require('./admin-gate-api');
 const { createAdminDraftApi } = require('./admin-draft-api');
+const { createLessonViewApi } = require('./lesson-view-api');
 const { createStore } = require('./store');
 const { createCookieCodec, readSession } = require('./session-cookie');
 const { createLatencyTrace } = require('./latency-trace');
@@ -208,6 +209,12 @@ function createRelayServer(options = {}) {
         allowedOrigins: trustedOrigins,
         fetchImpl: options.adminDraftFetchImpl ?? fetchImpl
     });
+    // 미시청 강의 'N' 배지용 시청 기록. 결제/소셜로그인과 같은 세션 쿠키를 그대로 재사용한다.
+    const lessonViewApi = createLessonViewApi({
+        allowedOrigins: trustedOrigins,
+        getSession: request => readSession(request, cookieCodec),
+        onView: ({ userKey, lessonId, at }) => store?.recordLessonView(userKey, lessonId, at)
+    });
     const authApi = createAuthApi({
         kakaoClientId: options.kakaoClientId,
         kakaoClientSecret: options.kakaoClientSecret,
@@ -272,6 +279,8 @@ function createRelayServer(options = {}) {
                 // payment_method('CARD' 등)로 대체한다 — 과거에 저장된 회원도 그대로 표시된다.
                 paymentMethod: entitlement?.card_label || entitlement?.payment_method || null,
                 subscriptionStatus: entitlement?.status || null,
+                // 미시청 강의 'N' 배지 판단용 — 이 사용자가 재생을 시작한 적 있는 lesson.id 목록.
+                watchedLessonIds: store.getWatchedLessonIds(userKey),
                 learningProgress: {
                     lastStudyDate: rows[0]?.updated_at ? new Date(rows[0].updated_at).toISOString() : null,
                     weeklyEnglish: { completed: completed('daynize.weekly.completed'), total: 20 },
@@ -348,6 +357,14 @@ function createRelayServer(options = {}) {
             if (await adminDraftApi.handle(request, response, pathname)) return;
         } catch (error) {
             console.error('[admin-draft] handler failure', error);
+            if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
+            response.end();
+            return;
+        }
+        try {
+            if (await lessonViewApi.handle(request, response, pathname)) return;
+        } catch (error) {
+            console.error('[lesson-view] handler failure', error);
             if (!response.headersSent) response.writeHead(500, { 'Cache-Control': 'no-store' });
             response.end();
             return;

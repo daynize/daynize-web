@@ -46,6 +46,14 @@ CREATE TABLE IF NOT EXISTS email_links (
     session_email TEXT NOT NULL,
     created_at INTEGER NOT NULL
 );
+-- 미시청 강의 'N' 배지용 시청 기록. 강의를 재생 시작한 시점에 1회만 기록되면 되므로
+-- (user_key, lesson_id) 조합당 한 행만 있으면 충분하다 — 다시 봐도 중복 insert는 무시된다.
+CREATE TABLE IF NOT EXISTS user_lesson_views (
+    user_key TEXT NOT NULL,
+    lesson_id TEXT NOT NULL,
+    viewed_at INTEGER NOT NULL,
+    PRIMARY KEY (user_key, lesson_id)
+);
 `;
 
 function createStore({ path = ':memory:' } = {}) {
@@ -114,7 +122,9 @@ function createStore({ path = ':memory:' } = {}) {
         recordNotification: db.prepare('INSERT OR IGNORE INTO payment_notifications (payment_id, sent_at) VALUES (?, ?)'),
         upsertEmailLink: db.prepare(`INSERT INTO email_links (receipt_email, session_email, created_at) VALUES (?, ?, ?)
             ON CONFLICT(receipt_email) DO UPDATE SET session_email = excluded.session_email, created_at = excluded.created_at`),
-        emailLinkByReceipt: db.prepare('SELECT session_email FROM email_links WHERE receipt_email = ?')
+        emailLinkByReceipt: db.prepare('SELECT session_email FROM email_links WHERE receipt_email = ?'),
+        insertLessonView: db.prepare('INSERT OR IGNORE INTO user_lesson_views (user_key, lesson_id, viewed_at) VALUES (?, ?, ?)'),
+        lessonViewsByUser: db.prepare('SELECT lesson_id FROM user_lesson_views WHERE user_key = ?')
     };
 
     return {
@@ -251,6 +261,13 @@ function createStore({ path = ':memory:' } = {}) {
             if (!normalized) return null;
             return statements.userByEmail.get(normalized) ?? null;
         },
+        // 미시청 강의 'N' 배지: 강의 재생을 시작한 시점에 1회 기록(중복 재생은 조용히 무시된다).
+        recordLessonView: (userKey, lessonId, at = Date.now()) => {
+            if (!userKey || !lessonId) return false;
+            statements.insertLessonView.run(userKey, String(lessonId), at);
+            return true;
+        },
+        getWatchedLessonIds: userKey => userKey ? statements.lessonViewsByUser.all(userKey).map(row => row.lesson_id) : [],
         hasPaymentNotification: paymentId => Boolean(paymentId && statements.notificationByPayment.get(String(paymentId))),
         recordPaymentNotification: (paymentId, at = Date.now()) => {
             if (!paymentId) return false;

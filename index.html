@@ -1011,6 +1011,7 @@
         }
 
         .grid-lesson {
+            position: relative;
             display: flex;
             min-width: 0;
             flex-direction: column;
@@ -1020,6 +1021,34 @@
             background: rgba(255, 255, 255, .92);
             box-shadow: var(--card-shadow);
             transition: box-shadow .2s ease, transform .2s ease;
+        }
+
+        /* 미시청 강의 배지. .grid-lesson이 overflow:hidden이라 카드 밖으로 음수 오프셋을 주면
+           잘려 나가므로, 썸네일 안쪽 여백에 깔끔하게 배치한다. */
+        .lesson-new-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #FF3B30;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            line-height: 1;
+            box-shadow: 0 3px 10px rgba(255, 59, 48, .4), 0 1px 3px rgba(0, 0, 0, .18);
+            pointer-events: none;
+            transition: opacity .35s ease, transform .35s ease;
+        }
+
+        .lesson-new-badge.is-watched {
+            opacity: 0;
+            transform: scale(.4);
         }
 
         .grid-lesson:hover {
@@ -4129,6 +4158,10 @@
                 const profile = profileResponse?.ok ? await profileResponse.json() : null;
                 const nextAuthState = { ...auth, ...profile };
                 latestAuthState = nextAuthState;
+                watchedLessonIds = new Set(Array.isArray(profile?.watchedLessonIds) ? profile.watchedLessonIds : []);
+                // 로그인 확인이 늦게 끝나 강의 목록이 '전부 미시청'으로 먼저 그려졌을 수 있으니,
+                // 강의 목록 다이얼로그가 열려 있다면 배지만 최신 시청 기록으로 다시 그린다.
+                if (categoryDialog.open && selectedCategory) renderLessons(selectedCategory);
                 renderAccount(nextAuthState);
                 window.dispatchEvent(new CustomEvent('daynize:auth-state-changed', { detail: nextAuthState }));
                 const oauthProvider = new URLSearchParams(location.search).get('login');
@@ -4267,6 +4300,10 @@
             let courseCategories = [];
             let selectedCategory = null;
             let selectedLesson = null;
+            // 미시청 강의 'N' 배지 판단 기준. 로그인한 회원이면 fetchAuth()가 /api/auth/profile의
+            // watchedLessonIds로 채우고, 게스트거나 아직 로딩 전이면 빈 Set이라 전부 미시청으로
+            // 보인다(해당 상태에서 실제로 시청 기록이 없으니 틀린 표시도 아니다).
+            let watchedLessonIds = new Set();
             let popArticles = [];
             let selectedArticle = null;
             let articleOpenedFromCategory = false;
@@ -4371,6 +4408,11 @@
                         copy.append(previewLabel, preview, previewStatus);
                     }
                     card.append(image, copy);
+                    if (!watchedLessonIds.has(lesson.id)) {
+                        const badge = makeElement('span', 'lesson-new-badge', 'N');
+                        badge.setAttribute('aria-hidden', 'true');
+                        card.append(badge);
+                    }
                     lessonGrid.append(card);
                 });
             };
@@ -4617,11 +4659,27 @@
                 }
                 videoFrame.append(makeElement('div', 'video-placeholder', '지원하는 YouTube 또는 MP4 영상 주소가 아닙니다.'));
             };
+            // 미시청 강의 'N' 배지 기록. 비디오든(openLesson) 글 콘텐츠든(openArticle로 넘어가는
+            // 카드든) 강의 카드를 열어 보는 순간 호출한다. 서버 응답은 기다리지 않는다
+            // (fire-and-forget) — 실패해도 재생/열람 자체를 막을 이유가 없고, 다음에 fetchAuth()가
+            // 다시 돌면 어차피 서버 상태로 동기화된다.
+            const markLessonViewed = (lesson) => {
+                if (!lesson || watchedLessonIds.has(lesson.id)) return;
+                watchedLessonIds.add(lesson.id);
+                const badge = lessonGrid.querySelector(`[data-lesson-id="${CSS.escape(lesson.id)}"]`)?.closest('.grid-lesson')?.querySelector('.lesson-new-badge');
+                if (badge) {
+                    badge.classList.add('is-watched');
+                    badge.addEventListener('transitionend', () => badge.remove(), { once: true });
+                    setTimeout(() => badge.remove(), 400);
+                }
+                fetch(`${authApiBase}/api/lessons/${encodeURIComponent(lesson.id)}/view`, { method: 'POST', credentials: 'include' }).catch(() => {});
+            };
             const openLesson = async (lesson) => {
                 if (!await requireActionAccess()) return;
                 selectedLesson = lesson;
                 quiz.markWatched(lesson.id);
                 trackRecentLesson(lesson, 'lesson');
+                markLessonViewed(lesson);
                 const isDialogue = Array.isArray(lesson.dialogue_lines);
                 const isNumbers = selectedCategory?.categoryId === 'numbers' && Array.isArray(lesson.examples);
                 const numbersContent = document.querySelector('#numbers-study-content');
@@ -4818,7 +4876,7 @@
                 if (!button || !selectedCategory) return;
                 const lesson = selectedCategory.lessons.find((item) => item.id === button.dataset.lessonId);
                 const article = button.dataset.articleId && popArticles.find((item) => item.id === button.dataset.articleId);
-                if (article) openArticle(article);
+                if (article) { markLessonViewed(lesson); openArticle(article); }
                 else if (lesson) {
                     selectedLesson = lesson;
                     openLesson(lesson);
@@ -4964,7 +5022,7 @@
                     document.querySelector('#lessons')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     if (videoDialog.open) videoDialog.close();
                     const article = lesson.articleId && popArticles.find((item) => item.id === lesson.articleId);
-                    if (article) openArticle(article);
+                    if (article) { markLessonViewed(lesson); openArticle(article); }
                     else openLesson(lesson);
                 }
             });
