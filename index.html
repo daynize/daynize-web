@@ -556,14 +556,18 @@
            다시 잡고, 한글 타이틀의 글자 사이 간격 늘리기(h1 span의 inter-character justify)
            트릭은 영문에는 맞지 않아 이 안에서만 되돌린다 — 두 줄 다 완전히 같은 스타일이다. */
         .hero-title-en {
-            font-size: clamp(30px, 3.4vw, 56px);
+            /* .section-title(아래 "이해할수록 몰입되는 순간" 등)의 clamp(32px, 4vw, 48px)보다
+               최소/비례/최대 세 값이 전부 크거나 같아, 어떤 화면 폭에서도 이 타이틀이 그보다
+               작아지지 않는다. */
+            font-size: clamp(34px, 4.4vw, 54px);
             line-height: 1.22;
+            text-transform: uppercase;
         }
 
         .hero-title-en span {
             display: block;
             width: auto;
-            white-space: nowrap;
+            white-space: normal;
             text-align-last: auto;
             text-justify: auto;
             font-size: inherit;
@@ -2953,7 +2957,7 @@
             }
 
             .hero-title-en {
-                font-size: clamp(28px, 5vw, 46px);
+                font-size: clamp(34px, 5vw, 50px);
             }
 
             .hero-art {
@@ -3011,7 +3015,7 @@
             }
 
             .hero-title-en {
-                font-size: clamp(26px, 8vw, 36px);
+                font-size: clamp(34px, 8vw, 48px);
             }
 
             .hero-subtitle {
@@ -3346,7 +3350,7 @@
             <div class="wrap">
                 <div class="section-head">
                     <p class="eyebrow eyebrow-shimmer">PREMIUM COURSE</p>
-                    <h2 class="section-title" id="lessons-title">다시 보고 싶은 순간,<br>내 속도에 맞춘 동영상 강의</h2>
+                    <h2 class="section-title" id="lessons-title">이해할수록 몰입되는 순간,<br>내 속도에 맞춘 동영상 강의</h2>
                     <p class="section-intro">짧고 또렷한 설명으로 시작해, 생활 속 영어를 차근차근 익혀 봅니다.</p>
                 </div>
                 <div class="category-carousel" aria-label="영어 강의 카테고리">
