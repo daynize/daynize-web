@@ -1,0 +1,288 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>DAYNIZE 랜딩페이지 미리보기</title>
+<script src="https://cdn.tailwindcss.com/3.4.1"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&family=Inter:wght@400;600;700;800&display=swap">
+<style>
+  /* 브랜드 고정 팔레트 — 이 페이지는 데이나이즈 실제 브랜드 컬러를 그대로 미리보기하는 것이 목적이라
+     뷰어 테마와 무관하게 고정된 단일 비주얼(화이트/다크 지브라 스트라이프)로 렌더링한다. */
+  :root {
+    color-scheme: light;
+    --orange: #FF6648;
+    --orange-press: #E85639;
+    --navy: #14213D;
+    --deep: #053A41;
+    --paper: #FFFFFF;
+    --ink: #0F172A;
+    --muted: #475569;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Pretendard", "Inter", -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+  }
+  h1, h2, h3 { font-family: "Pretendard", "Inter", sans-serif; letter-spacing: -0.01em; text-wrap: balance; }
+  .accent-underline {
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 6px;
+  }
+  .btn-primary {
+    background: var(--orange);
+    transition: background .15s ease, transform .1s ease;
+  }
+  .btn-primary:hover { background: var(--orange-press); }
+  .btn-primary:active { transform: scale(.98); }
+  .card-glass {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    backdrop-filter: blur(10px);
+  }
+  .card-glass:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.22); }
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { animation: rise .5s ease both; }
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .toast {
+    position: fixed; left: 50%; bottom: max(24px, env(safe-area-inset-bottom, 0px));
+    transform: translate(-50%, 12px); opacity: 0; pointer-events: none;
+    background: var(--navy); color: #fff; padding: 12px 20px; border-radius: 999px;
+    font-size: 14px; font-weight: 600; box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    transition: opacity .2s ease, transform .2s ease; z-index: 100;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+</style>
+
+<div class="min-h-screen" style="background: var(--paper);">
+
+  <!-- 상단 내비게이션 -->
+  <header class="sticky z-50 border-b" style="top: env(safe-area-inset-top, 0px); background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-color: rgba(15,23,42,.08);">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+      <a href="#top" class="flex items-center">
+        <img id="logo-header" src="" alt="DAYNIZE" class="h-8 w-auto" />
+      </a>
+
+      <nav class="hidden items-center gap-8 text-sm font-semibold md:flex" style="color:var(--muted);">
+        <a href="#value" class="hover:[color:var(--orange)]" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--muted)'">서비스 소개</a>
+        <a href="#curriculum" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--muted)'">커리큘럼</a>
+        <a href="#reviews" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--muted)'">후기</a>
+        <a href="#" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--muted)'">로그인</a>
+        <a href="tel:070-4010-1147" style="color:#94A3B8;">고객센터</a>
+      </nav>
+
+      <button type="button" onclick="scrollToCheckout()" class="btn-primary hidden rounded-full px-5 py-2.5 text-sm font-bold text-white md:inline-flex">
+        전 코스 무제한 수강하기
+      </button>
+
+      <button type="button" aria-label="메뉴" onclick="toggleMenu()" class="inline-flex h-10 w-10 items-center justify-center rounded-full border md:hidden" style="border-color: rgba(15,23,42,.12);">
+        <span id="menu-icon" class="text-xl leading-none">☰</span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" hidden class="border-t px-5 py-4 md:hidden" style="border-color: rgba(15,23,42,.08);">
+      <nav class="flex flex-col gap-4 text-sm font-semibold" style="color:var(--muted);">
+        <a href="#value" onclick="toggleMenu()">서비스 소개</a>
+        <a href="#curriculum" onclick="toggleMenu()">커리큘럼</a>
+        <a href="#reviews" onclick="toggleMenu()">후기</a>
+        <a href="#" onclick="toggleMenu()">로그인</a>
+        <a href="tel:070-4010-1147" style="color:#94A3B8;">고객센터</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1단: 히어로 (화이트) -->
+    <section class="px-5 pb-20 pt-16 sm:px-8 sm:pt-24" style="background: var(--paper);">
+      <div class="mx-auto max-w-4xl text-center">
+        <h1 class="text-3xl font-extrabold leading-tight sm:text-5xl" style="color:var(--ink);">
+          <span class="block">영어로 말하는 법을 설명하는 법,</span>
+          <span class="mt-1 block sm:mt-2">
+            그게 <span class="accent-underline font-extrabold" style="color:var(--orange); text-decoration-thickness: 2px;">GRAMMAR</span>입니다.
+          </span>
+        </h1>
+
+        <p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed sm:text-lg" style="color:var(--muted);">
+          GRAMMAR가 필요한 것이 아니라, 그것이 기본입니다. 200개 핵심 기본과 어순 이동 법칙을
+          <span class="font-bold" style="color:var(--orange);">"정말 쉽게 구현"</span>하여, 원어민의 사고를 체화하는
+          프리미엄 영어 인공지능 플랫폼.
+        </p>
+
+        <button type="button" onclick="scrollToCheckout()" class="btn-primary mt-10 inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-bold text-white shadow-lg" style="box-shadow: 0 10px 25px rgba(255,102,72,.25);">
+          전 코스 무제한 수강하기 (월 19,000원)
+        </button>
+
+        <p class="mt-4 text-sm" style="color:#94A3B8;">* 언제든 해지 가능 | 안전한 정기 결제 시스템</p>
+      </div>
+    </section>
+
+    <!-- 2단: 3대 핵심 가치 (다크 네이비) -->
+    <section id="value" class="px-5 py-20 text-white sm:px-8" style="background: var(--navy);">
+      <div class="mx-auto max-w-6xl">
+        <h2 class="text-center text-2xl font-extrabold sm:text-3xl">나만의 시간으로 더 체계적이고 빠르게</h2>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-3">
+          <div class="card-glass reveal rounded-2xl p-7">
+            <h3 class="text-lg font-bold">실전 200 기본 데이터베이스</h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/70">기초부터 원어민까지 체계화된 루트 버브 커리큘럼</p>
+          </div>
+          <div class="card-glass reveal rounded-2xl p-7" style="animation-delay:.08s">
+            <h3 class="text-lg font-bold">AI 튜터 데이나(Dayna) 연동</h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/70">Gemini Live API 기반 실시간 음성 대화 및 1:1 맞춤 발음 교정</p>
+          </div>
+          <div class="card-glass reveal rounded-2xl p-7" style="animation-delay:.16s">
+            <h3 class="text-lg font-bold">압도적인 가성비와 투명성</h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/70">월 19,000원(부가세 포함)으로 누리는 전용 콘텐츠 무제한 이용</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3단: 핵심 커리큘럼 (화이트) -->
+    <section id="curriculum" class="px-5 py-20 sm:px-8" style="background: var(--paper);">
+      <div class="mx-auto max-w-6xl">
+        <h2 class="text-center text-sm font-bold uppercase tracking-widest" style="color:var(--orange);">Core Curriculum</h2>
+
+        <div class="mt-10 grid gap-6 sm:grid-cols-3">
+          <div class="rounded-2xl border p-7 shadow-sm" style="border-color: rgba(15,23,42,.08);">
+            <span class="text-xs font-bold" style="color:var(--orange);">Step 1</span>
+            <h3 class="mt-2 text-lg font-bold" style="color:var(--navy);">기본 동사의 활용과 5형식 마스터</h3>
+            <p class="mt-3 text-sm leading-relaxed" style="color:var(--muted);">뼈대가 잡히는 어근 중심의 문장 구조 학습, 다양한 예문을 통한 영어문장 체화, 사용자의 계획에 따라 조정가능한 주도적인 강의시간.</p>
+          </div>
+          <div class="rounded-2xl border p-7 shadow-sm" style="border-color: rgba(15,23,42,.08);">
+            <span class="text-xs font-bold" style="color:var(--orange);">Step 2</span>
+            <h3 class="mt-2 text-lg font-bold" style="color:var(--navy);">데이나 AI 보이스 스튜디오</h3>
+            <p class="mt-3 text-sm leading-relaxed" style="color:var(--muted);">원어민급 고품질 음성 섀도우와 실시간 대화, 강의학습을 트레킹하여 학습의 완성을 주도적으로 구현, 유저의 필요에 적합한 질문 또는 환경 구현.</p>
+          </div>
+          <div class="rounded-2xl border p-7 shadow-sm" style="border-color: rgba(15,23,42,.08);">
+            <span class="text-xs font-bold" style="color:var(--orange);">Step 3</span>
+            <h3 class="mt-2 text-lg font-bold" style="color:var(--navy);">NUMBERS &amp; BUSINESS COURSE</h3>
+            <p class="mt-3 text-sm leading-relaxed" style="color:var(--muted);">순차적인 기수와 서수의 활용, 금융에 대한 전반적인 용어 이해.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4단: 이용 방법 (화이트) -->
+    <section class="px-5 py-20 sm:px-8" style="background: var(--paper);">
+      <div class="mx-auto max-w-6xl">
+        <h2 class="text-center text-2xl font-extrabold sm:text-3xl" style="color:var(--navy);">이용 방법</h2>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-3">
+          <div class="rounded-2xl p-7 text-center" style="background:#F8FAFC;">
+            <span class="text-3xl font-extrabold" style="color:var(--orange);">01</span>
+            <h3 class="mt-4 text-lg font-bold" style="color:var(--navy);">간편 회원가입</h3>
+            <p class="mt-2 text-sm leading-relaxed" style="color:var(--muted);">카카오/구글/네이버 소셜 로그인으로 30초 안에 가입 완료</p>
+          </div>
+          <div class="rounded-2xl p-7 text-center" style="background:#F8FAFC;">
+            <span class="text-3xl font-extrabold" style="color:var(--orange);">02</span>
+            <h3 class="mt-4 text-lg font-bold" style="color:var(--navy);">정식 구독 신청</h3>
+            <p class="mt-2 text-sm leading-relaxed" style="color:var(--muted);">월 19,000원, 안전한 정기 결제로 전 코스 이용권 발급</p>
+          </div>
+          <div class="rounded-2xl p-7 text-center" style="background:#F8FAFC;">
+            <span class="text-3xl font-extrabold" style="color:var(--orange);">03</span>
+            <h3 class="mt-4 text-lg font-bold" style="color:var(--navy);">데이나와 무제한 학습</h3>
+            <p class="mt-2 text-sm leading-relaxed" style="color:var(--muted);">AI 튜터 데이나와 실시간 대화하며 매일 꾸준히 학습</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5단: 수강생 후기 (다크 딥그린) -->
+    <section id="reviews" class="px-5 py-20 text-white sm:px-8" style="background: var(--deep);">
+      <div class="mx-auto max-w-6xl">
+        <h2 class="text-center text-2xl font-extrabold sm:text-3xl">수강생들이 증명하는 DAYNIZE의 효과</h2>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-3">
+          <div class="card-glass rounded-2xl p-7">
+            <div class="flex items-center gap-3">
+              <img src="/_blob/04341e8cd069ee67c78b028fff3d9cd5" alt="김정숙 님" class="h-12 w-12 rounded-full object-cover" />
+              <div>
+                <p class="text-sm font-bold">김정숙 님</p>
+                <p class="text-xs text-white/50">60대 · 수강생</p>
+              </div>
+            </div>
+            <p class="mt-5 text-sm leading-relaxed text-white/80">"나이가 들어서 새로운 걸 배우는 게 두려웠어요. 그런데 '데이나이즈'는 어렵게 외우는 게 아니라, 소리와 느낌으로 자연스럽게 영어를 체득하게 해주네요. 젊어진 기분으로 매일 즐겁게 공부하고 있어요!"</p>
+          </div>
+          <div class="card-glass rounded-2xl p-7">
+            <div class="flex items-center gap-3">
+              <img src="/_blob/5d15e556928cb172ad479268da13fc0e" alt="박민수 님" class="h-12 w-12 rounded-full object-cover" />
+              <div>
+                <p class="text-sm font-bold">박민수 님</p>
+                <p class="text-xs text-white/50">40대 · 직장인</p>
+              </div>
+            </div>
+            <p class="mt-5 text-sm leading-relaxed text-white/80">"예전엔 영어로 말할 때마다 머릿속에서 문장을 만드느라 바빴는데, 이젠 그런 게 싹 사라졌어요. '데이나이즈'의 음성 트레이너(Dayna)가 원어민처럼 바로바로 교정해주니 자신감이 생깁니다."</p>
+          </div>
+          <div class="card-glass rounded-2xl p-7">
+            <div class="flex items-center gap-3">
+              <img src="/_blob/d0a350e8944b5def6491bfe06649d9ec" alt="이지훈 님" class="h-12 w-12 rounded-full object-cover" />
+              <div>
+                <p class="text-sm font-bold">이지훈 님</p>
+                <p class="text-xs text-white/50">고등학생</p>
+              </div>
+            </div>
+            <p class="mt-5 text-sm leading-relaxed text-white/80">"데이나이즈 덕분에 영어 공부가 게임처럼 재미있어졌어요! 등하굣길에 앱을 켜고 Dayna와 대화하다 보면, 어느새 발음도 좋아지고 자연스러운 표현이 입에 붙어요."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6단: 최종 결제 유도 + 푸터 (다크 딥그린) -->
+    <section id="checkout" class="px-5 pb-16 pt-4 text-white sm:px-8" style="background: var(--deep);">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="text-2xl font-extrabold sm:text-3xl">지금 바로 데이나이즈의 프리미엄 커리큘럼을 시작하세요.</h2>
+
+        <button type="button" onclick="mockPayment()" class="btn-primary mt-8 inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-bold text-white shadow-lg">
+          전 코스 무제한 수강하기 (월 19,000원)
+        </button>
+
+        <p class="mt-4 text-sm text-white/50">* 언제든 해지 가능 | 안전한 정기 결제 시스템</p>
+      </div>
+    </section>
+
+    <footer class="border-t border-white/10 px-5 py-12 text-white/60 sm:px-8" style="background: var(--deep); padding-bottom: max(48px, env(safe-area-inset-bottom, 0px));">
+      <div class="mx-auto flex max-w-6xl flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+        <div class="space-y-1.5 text-xs leading-relaxed">
+          <p>사업자등록번호: 665-13-02896 | 대표: 강성준</p>
+          <p>주소: 경기 오산시 오산로 212번길 11-3, 301-N06호</p>
+          <p>고객센터: 070-4010-1147 | 이메일: contact@daynize.co.kr</p>
+          <p>통신판매업 신고 완료</p>
+        </div>
+        <div class="sm:self-end">
+          <img id="logo-footer" src="" alt="DAYNIZE" class="h-7 w-auto" />
+        </div>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<div id="toast" class="toast">결제 버튼 데모 — 실제 PortOne 연동은 handlePayment()에서 처리됩니다</div>
+
+<script>
+  const LOGO_URL = '/_blob/bfa7575af6a6d83ded54c5f63b04724d';
+  document.getElementById('logo-header').src = LOGO_URL;
+  document.getElementById('logo-footer').src = LOGO_URL;
+
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+    menu.hidden = !menu.hidden;
+    icon.textContent = menu.hidden ? '☰' : '×';
+  }
+  function scrollToCheckout() {
+    document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' });
+  }
+  function mockPayment() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
+  }
+</script>
