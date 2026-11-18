@@ -36,6 +36,7 @@
   }
   .btn-primary {
     background: var(--orange);
+    text-decoration: none;
     transition: background .15s ease, transform .1s ease;
   }
   .btn-primary:hover { background: var(--orange-press); }
@@ -50,14 +51,6 @@
     .reveal { animation: rise .5s ease both; }
   }
   @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-  .toast {
-    position: fixed; left: 50%; bottom: max(24px, env(safe-area-inset-bottom, 0px));
-    transform: translate(-50%, 12px); opacity: 0; pointer-events: none;
-    background: var(--navy); color: #fff; padding: 12px 20px; border-radius: 999px;
-    font-size: 14px; font-weight: 600; box-shadow: 0 10px 30px rgba(0,0,0,.25);
-    transition: opacity .2s ease, transform .2s ease; z-index: 100;
-  }
-  .toast.show { opacity: 1; transform: translate(-50%, 0); }
 </style>
 
 <div class="min-h-screen" style="background: var(--paper);">
@@ -77,9 +70,9 @@
         <a href="tel:070-4010-1147" style="color:#94A3B8;">고객센터</a>
       </nav>
 
-      <button type="button" onclick="scrollToCheckout()" class="btn-primary hidden rounded-full px-5 py-2.5 text-sm font-bold text-white md:inline-flex">
+      <a href="https://www.daynize.co.kr/#register" class="btn-primary hidden rounded-full px-5 py-2.5 text-sm font-bold text-white md:inline-flex">
         전 코스 무제한 수강하기
-      </button>
+      </a>
 
       <button type="button" aria-label="메뉴" onclick="toggleMenu()" class="inline-flex h-10 w-10 items-center justify-center rounded-full border md:hidden" style="border-color: rgba(15,23,42,.12);">
         <span id="menu-icon" class="text-xl leading-none">☰</span>
@@ -114,9 +107,9 @@
           프리미엄 영어 인공지능 플랫폼.
         </p>
 
-        <button type="button" onclick="scrollToCheckout()" class="btn-primary mt-10 inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-bold text-white shadow-lg" style="box-shadow: 0 10px 25px rgba(255,102,72,.25);">
+        <a href="https://www.daynize.co.kr/#register" class="btn-primary mt-10 inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-bold text-white shadow-lg" style="box-shadow: 0 10px 25px rgba(255,102,72,.25);">
           전 코스 무제한 수강하기 (월 19,000원)
-        </button>
+        </a>
 
         <p class="mt-4 text-sm" style="color:#94A3B8;">* 언제든 해지 가능 | 안전한 정기 결제 시스템</p>
       </div>
@@ -239,9 +232,9 @@
       <div class="mx-auto max-w-4xl text-center">
         <h2 class="text-2xl font-extrabold sm:text-3xl">지금 바로 데이나이즈의 프리미엄 커리큘럼을 시작하세요.</h2>
 
-        <button type="button" onclick="mockPayment()" class="btn-primary mt-8 inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-bold text-white shadow-lg">
+        <a href="https://www.daynize.co.kr/#register" class="btn-primary mt-8 inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-bold text-white shadow-lg">
           전 코스 무제한 수강하기 (월 19,000원)
-        </button>
+        </a>
 
         <p class="mt-4 text-sm text-white/50">* 언제든 해지 가능 | 안전한 정기 결제 시스템</p>
       </div>
@@ -263,8 +256,6 @@
   </main>
 </div>
 
-<div id="toast" class="toast">결제 버튼 데모 — 실제 PortOne 연동은 handlePayment()에서 처리됩니다</div>
-
 <script>
   const LOGO_URL = '/_blob/bfa7575af6a6d83ded54c5f63b04724d';
   document.getElementById('logo-header').src = LOGO_URL;
@@ -275,14 +266,5 @@
     const icon = document.getElementById('menu-icon');
     menu.hidden = !menu.hidden;
     icon.textContent = menu.hidden ? '☰' : '×';
-  }
-  function scrollToCheckout() {
-    document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' });
-  }
-  function mockPayment() {
-    const toast = document.getElementById('toast');
-    toast.classList.add('show');
-    clearTimeout(window.__toastTimer);
-    window.__toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
   }
 </script>
