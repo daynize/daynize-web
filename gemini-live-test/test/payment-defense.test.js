@@ -153,8 +153,12 @@ test('자동 재결제 스케줄러: 1일차 재시도 성공 시 즉시 ACTIVE(
         paymentFetchImpl: async (url, request) => {
             assert.match(url, /^https:\/\/api\.portone\.io\/payments\/retry_learner_example_com_\d+\/billing-key$/);
             assert.equal(request.method, 'POST');
+            const sent = JSON.parse(request.body);
+            assert.equal(sent.storeId, STORE_ID);
+            assert.equal(sent.channelKey, BILLING_CHANNEL_KEY);
             chargeCalls += 1;
-            return new Response(JSON.stringify({ status: 'PAID', paidAt: new Date().toISOString() }), { status: 200 });
+            // PortOne V2 응답은 결제 객체를 { payment: {...} }로 감싸서 내려준다(PayWithBillingKeyResponse).
+            return new Response(JSON.stringify({ payment: { status: 'PAID', paidAt: new Date().toISOString() } }), { status: 200 });
         }
     });
 
@@ -186,7 +190,7 @@ test('자동 재결제 스케줄러: 3일차 재시도까지 실패하면 구독
         portoneMode: 'test',
         paymentFetchImpl: async () => {
             chargeCalls += 1;
-            return new Response(JSON.stringify({ status: 'FAILED' }), { status: 200 });
+            return new Response(JSON.stringify({ payment: { status: 'FAILED' } }), { status: 200 });
         }
     });
 
@@ -230,7 +234,10 @@ test('PAST_DUE 상태에서 카드 변경 시 즉시 미납분을 재청구해 A
                 }), { status: 200 });
             }
             if (parsed.pathname.endsWith('/billing-key') && request.method === 'POST') {
-                return new Response(JSON.stringify({ status: 'PAID', paidAt: new Date().toISOString() }), { status: 200 });
+                const sent = JSON.parse(request.body);
+                assert.equal(sent.storeId, STORE_ID);
+                assert.equal(sent.channelKey, BILLING_CHANNEL_KEY);
+                return new Response(JSON.stringify({ payment: { status: 'PAID', paidAt: new Date().toISOString() } }), { status: 200 });
             }
             throw new Error(`unexpected upstream call: ${url}`);
         }

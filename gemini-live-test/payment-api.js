@@ -506,8 +506,13 @@ function createPaymentApi(options = {}) {
             const upstream = await fetchImpl(`https://api.portone.io/payments/${encodeURIComponent(paymentId)}/billing-key`, {
                 method: 'POST',
                 headers: { Authorization: `PortOne ${apiSecret}`, 'Content-Type': 'application/json' },
+                // PortOne V2 "빌링키 결제" 요청 바디(BillingKeyPaymentInput)는 storeId/channelKey를
+                // 필수로 요구한다 — 둘 다 빠져 있으면 요청 자체가 거부된다. channelKey는 이 빌링키가
+                // 발급될 때 쓰인 정기결제 채널(billingChannelKey)과 같아야 한다.
                 body: JSON.stringify({
+                    storeId,
                     billingKey,
+                    channelKey: billingChannelKey,
                     orderName: `${PRODUCT_NAME} 월 구독`,
                     customer: { id: paymentId, email, fullName: buyerName || undefined },
                     amount: { total: amount },
@@ -515,7 +520,9 @@ function createPaymentApi(options = {}) {
                 }),
                 signal: AbortSignal.timeout(15000)
             });
-            const payment = await upstream.json().catch(() => ({}));
+            // 응답은 결제 객체 자체가 아니라 { payment: {...} } 래퍼(PayWithBillingKeyResponse)다.
+            const body = await upstream.json().catch(() => ({}));
+            const payment = body.payment ?? body;
             if (!upstream.ok || payment.status !== 'PAID') {
                 console.warn(`[payment] billing-key charge not PAID: paymentId=${paymentId} status=${payment.status ?? upstream.status}`);
                 return { ok: false, reason: payment.status || `HTTP_${upstream.status}`, raw: payment };
