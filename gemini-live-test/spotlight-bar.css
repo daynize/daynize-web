@@ -72,8 +72,9 @@ input:focus-visible {
     bottom: max(28px, env(safe-area-inset-bottom));
     right: 28px;
     z-index: 10000;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: nowrap;
     gap: 8px;
     max-width: calc(100vw - 32px);
