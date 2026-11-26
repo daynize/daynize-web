@@ -194,7 +194,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
     async open() {
         if (this.dialog.open) return;
         if (!await requireActionAccess()) return;
-        this.launch.querySelector('span').textContent = 'AI 음성 회화 시작하기';
+        this.launch.querySelector('span:not(.icon)').textContent = 'AI 음성 회화 시작하기';
         this.minimized = false;
         this.dialog.showModal();
         this.dialog.classList.add('active');
@@ -216,7 +216,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
     }
 
     updateLauncher() {
-        this.launch.querySelector('span').textContent = this.minimized ? `AI 음성 회화${this.callActive ? ` · ${STATES[this.dataset.state][0]}` : ''}` : 'AI 음성 회화 시작하기';
+        this.launch.querySelector('span:not(.icon)').textContent = this.minimized ? `AI 음성 회화${this.callActive ? ` · ${STATES[this.dataset.state][0]}` : ''}` : 'AI 음성 회화 시작하기';
     }
 
     close() {
@@ -305,7 +305,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
                 this.muteButton.disabled = true;
                 this.startButton.hidden = freshSession;
                 this.startButton.disabled = delay === 0;
-                this.startButton.querySelector('span').textContent = '지금 다시 연결';
+                this.startButton.querySelector('span:not(.icon)').textContent = '지금 다시 연결';
                 this.setState('reconnecting', freshSession ? '새 대화로 전환하고 있어요.' : `${Math.ceil(delay / 1000)}초 후 다시 연결합니다. (${attempt}/${service.options.maxRetries})`);
             } else if (state === 'CONNECTED') {
                 this.startButton.hidden = true;
@@ -415,7 +415,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.startButton.hidden = true;
         this.startButton.disabled = false;
         this.dataset.connectionState = 'DISCONNECTED';
-        this.startButton.querySelector('span').textContent = '다시 대화하기';
+        this.startButton.querySelector('span:not(.icon)').textContent = '다시 대화하기';
         this.muteButton.disabled = true;
         this.muteButton.setAttribute('aria-pressed', 'false');
         this.muteButton.setAttribute('aria-label', '마이크 끄기');
@@ -428,7 +428,7 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.end();
         this.setState('error', error.message);
         this.startButton.hidden = false;
-        this.startButton.querySelector('span').textContent = '다시 연결하기';
+        this.startButton.querySelector('span:not(.icon)').textContent = '다시 연결하기';
     }
 
     setState(state, message) {
