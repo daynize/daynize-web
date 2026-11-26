@@ -3,7 +3,7 @@ import { LiveService, resolveWebSocketUrl } from './live-service.mjs';
 import { AmbientOrb } from './ambient-orb.mjs';
 import { SessionSafety, PHASES, SILENCE_LIMIT_MS } from './session-safety.mjs';
 import { createInitSessionMessage } from './lesson-context.mjs';
-import { requireActionAccess } from '../auth-paywall-guard.js';
+import { requireActionAccess, getAccessState } from '../auth-paywall-guard.js';
 
 const asset = name => new URL(name, import.meta.url).href;
 // 아이콘은 더 이상 외부 .svg 파일을 <img>로 불러오지 않고 인라인으로 박아 넣는다. 배포 스테이징
@@ -42,6 +42,10 @@ export class DaynizeVoiceTutor extends HTMLElement {
         this.callActive = false;
         this.duration = 0;
         this.bargeIn = false;
+        // 로그인+구독 완료가 실제로 확인되기 전까지는 항상 잠금 상태로 보여준다 — 기본값은
+        // "미확인 = 잠김"이라, refreshAccessState()가 아직 응답받기 전(또는 실패했을 때)에도
+        // 안전하게 잠긴 라벨("🔒 ...")이 그대로 유지된다.
+        this.unlocked = false;
     }
 
     connectedCallback() {
@@ -185,6 +189,21 @@ export class DaynizeVoiceTutor extends HTMLElement {
             this.checkSafety();
         }, { signal });
         this.setState('idle');
+        // 로그인/구독 상태는 비동기로만 확인할 수 있으니, 확인되기 전까지는(또는 로그인 안 한
+        // 상태라면) 위에서 이미 잠금으로 그려진 라벨을 그대로 둔다. 페이지 어디선가 로그인/결제가
+        // 완료되면(index.html의 fetchAuth()가 쏘는 이벤트) 새로고침 없이도 다시 확인해 잠금을 푼다.
+        void this.refreshAccessState();
+        window.addEventListener('daynize:auth-state-changed', () => void this.refreshAccessState(), { signal });
+    }
+
+    async refreshAccessState() {
+        try {
+            const access = await getAccessState();
+            this.unlocked = access.isPaid === true;
+        } catch {
+            this.unlocked = false;
+        }
+        this.updateLauncher();
     }
 
     get endpoint() {
@@ -194,8 +213,11 @@ export class DaynizeVoiceTutor extends HTMLElement {
     async open() {
         if (this.dialog.open) return;
         if (!await requireActionAccess()) return;
-        this.launch.querySelector('span:not(.icon)').textContent = 'AI 음성 회화 시작하기';
+        // requireActionAccess()가 true를 돌려줬다는 건 이 순간 로그인+구독이 확인됐다는 뜻이므로,
+        // 다음 번 updateLauncher() 호출(minimize/close 등)부터는 잠금 라벨로 되돌아가지 않는다.
+        this.unlocked = true;
         this.minimized = false;
+        this.updateLauncher();
         this.dialog.showModal();
         this.dialog.classList.add('active');
         this.launch.hidden = true;
@@ -216,7 +238,10 @@ export class DaynizeVoiceTutor extends HTMLElement {
     }
 
     updateLauncher() {
-        this.launch.querySelector('span:not(.icon)').textContent = this.minimized ? `AI 음성 회화${this.callActive ? ` · ${STATES[this.dataset.state][0]}` : ''}` : 'AI 음성 회화 시작하기';
+        const label = this.minimized ? `AI 음성 회화${this.callActive ? ` · ${STATES[this.dataset.state][0]}` : ''}` : 'AI 음성 회화 시작하기';
+        // 로그인+구독이 확인된(unlocked) 경우에만 자물쇠를 뗀다 — 그 전까지는 처음 그려질 때와
+        // 똑같이 잠금 라벨을 유지한다.
+        this.launch.querySelector('span:not(.icon)').textContent = this.unlocked ? label : `🔒 ${label}`;
     }
 
     close() {
