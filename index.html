@@ -5202,6 +5202,14 @@
                         data.splice(numbersIndex >= 0 ? numbersIndex : situationsIndex < 0 ? 1 : situationsIndex, 0, dialogueCategory);
                     }
                     courseCategories = data.filter((category) => category && category.categoryId && category.categoryName && Array.isArray(category.lessons));
+                    // '추억의 Pop & Culture' 카드를 BASIC COURSE 바로 뒤(원래 6번째 → 2번째)로 옮긴다.
+                    // 나머지 카드(뿌리동사 익히기/활용하기, NUMBERS, 분야별 영어, 지난 주 복습)의
+                    // 상대 순서는 그대로 둔다.
+                    const cultureIndex = courseCategories.findIndex((category) => category.categoryId === 'culture');
+                    if (cultureIndex > 0) {
+                        const [cultureCategory] = courseCategories.splice(cultureIndex, 1);
+                        courseCategories.splice(1, 0, cultureCategory);
+                    }
                     if (!courseCategories.length) throw new Error('표시할 강의 카테고리가 없습니다.');
                     renderCategories();
                     const requestedCategoryId = new URLSearchParams(window.location.search).get('category');
